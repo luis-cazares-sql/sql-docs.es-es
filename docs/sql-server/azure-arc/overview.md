@@ -5,16 +5,16 @@ description: Administre instancias de SQL Server con SQL Server habilitado par
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 10/07/2020
+ms.date: 12/08/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.custom: references_regions
-ms.openlocfilehash: 59a3dab4136749f85e1f752ee823f8815080fd76
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: c1ba7f7552b5050e3c1fa7bc765acfa431f3df30
+ms.sourcegitcommit: 18e2f0706e03d0b2b6324845244fbafaa077a8dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987991"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97103150"
 ---
 # <a name="azure-arc-enabled-sql-server-preview"></a>SQL Server habilitado para Azure Arc (versión preliminar)
 
@@ -43,8 +43,9 @@ SQL Server habilitado para Azure Arc admite SQL Server 2012 o una versión po
 
 ### <a name="required-permissions"></a>Permisos necesarios
 
-Para conectar el hospedaje y las instancias de SQL Server a Azure Arc, debe tener una cuenta con privilegios para realizar las siguientes acciones:
-   * Microsoft.AzureData/*
+Para conectar las instancias de SQL Server y el equipo de hospedaje a Azure Arc, debe tener una cuenta con privilegios a fin de realizar las acciones siguientes:
+   * Microsoft.AzureArcData/sqlServerInstances/read
+   * Microsoft.AzureArcData/sqlServerInstances/write
    * Microsoft.HybridCompute/machines/read
    * Microsoft.HybridCompute/machines/write
    * Microsoft.GuestConfiguration/guestConfigurationAssignments/read
@@ -59,6 +60,10 @@ Antes de configurar sus máquinas e instancias de SQL Server con Azure Arc, rev
 
 Revise [la configuración de red, la seguridad de la capa de transporte y los proveedores de recursos](/azure/azure-arc/servers/agent-overview#prerequisites) necesarios para el agente de Azure Connected Machine.
 
+El proveedor de recursos `Microsoft.AzureArcData` es necesario para conectar las instancias de SQL Server a Azure Arc. Vea las instrucciones de registro del proveedor de recursos en la sección [Requisitos previos](connect.md#prerequisites).
+
+Si ya tiene instancias de SQL Server conectadas a Azure Arc, siga estos pasos para migrar los recursos de **SQL Server: Azure Arc** existentes al nuevo espacio de nombres.
+
 ### <a name="supported-azure-regions"></a>Regiones de Azure compatibles
 
 La versión preliminar pública está disponible en las siguientes regiones:
@@ -66,7 +71,7 @@ La versión preliminar pública está disponible en las siguientes regiones:
 - Este de EE. UU. 2
 - Oeste de EE. UU. 2
 - Este de Australia
-- Sudeste Asiático
+- Sudeste de Asia
 - Norte de Europa
 - Oeste de Europa
 - Sur de Reino Unido

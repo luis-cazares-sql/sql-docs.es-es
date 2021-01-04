@@ -8,13 +8,13 @@ ms.date: 11/05/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: language-extensions
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 40fd6b73bf28b6a201a1c0fedd1624a09d67b9c0
-ms.sourcegitcommit: fe59f8dc27fd633f5dfce54519d6f5dcea577f56
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: 344e5f35e35202b6a44a4932db8a27424fdb8753
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91935368"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471806"
 ---
 # <a name="extensibility-architecture-in-sql-server-language-extensions"></a>Arquitectura de extensibilidad en extensiones de lenguaje de SQL Server
 
@@ -38,15 +38,15 @@ Cualquier lenguaje externo admitido se puede ejecutar si se llama a un procedimi
 
 La arquitectura está diseñada de modo que el código externo se ejecuta en un proceso independiente de SQL Server, pero con componentes que administran internamente la cadena de solicitudes de datos y operaciones en SQL Server. 
   
-  ***Arquitectura de los componentes en Windows:***
+  ***Arquitectura de los componentes en Windows:** _
 
   ![Arquitectura de componentes en Windows](../media/generic-architecture-windows.png "Arquitectura de componentes en Windows")
   
-  ***Arquitectura de los componentes en Linux:***
+  _*_Arquitectura de los componentes en Linux:_*_
   
   ![Arquitectura de componentes en Linux](../media/generic-architecture-linux.png "Arquitectura de componentes en Linux")
   
-Los componentes incluyen un servicio **Launchpad** que se usa para invocar los entornos de ejecución externos (como Java) y la lógica específica de la biblioteca para cargar intérpretes y bibliotecas.
+Los componentes incluyen un servicio _ *Launchpad** que se usa para invocar entornos de ejecución externos (como Java) y lógica específica de la biblioteca para cargar intérpretes y bibliotecas.
 
 <a name="launchpad"></a>
 

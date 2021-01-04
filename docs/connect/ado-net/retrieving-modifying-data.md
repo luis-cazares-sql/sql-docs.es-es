@@ -1,7 +1,7 @@
 ---
 title: Recuperación y modificación de datos
-description: En .NET Framework, el proveedor de datos SqlClient de Microsoft para SQL Server sirve como puente entre una aplicación y un origen de datos para leer y actualizar datos.
-ms.date: 11/13/2020
+description: En .NET, el proveedor de datos SqlClient de Microsoft para SQL Server sirve como puente entre una aplicación y un origen de datos para leer y actualizar datos.
+ms.date: 11/30/2020
 ms.assetid: 722e7f87-3691-46c6-87e8-7d159722d675
 ms.prod: sql
 ms.prod_service: connectivity
@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: d6e4d6c298c632c446e1671b5d9adabaa19e0776
-ms.sourcegitcommit: c127c0752e84cccd38a7e23ac74c0362a40f952e
+ms.openlocfilehash: c3cf3766ffc6c8acf6025b58aa0adbaafafa2188
+ms.sourcegitcommit: 2add15a99df7b85d271adb261523689984dfd134
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96761493"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97038963"
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>Recuperación y modificación de datos en ADO.NET
 
@@ -41,6 +41,10 @@ Contiene temas en los que se describe cómo crear comandos y generadores de coma
 
 [Objetos DataAdapter y DataReader](dataadapters-datareaders.md)  
 Contiene temas en los que se describen DataReaders, DataAdapters, los parámetros, el control de eventos DataAdapter y la ejecución de operaciones por lotes.
+
+[Transacciones y simultaneidad](transactions-and-concurrency.md) Contiene temas en los que se describe cómo realizar transacciones locales y transacciones distribuidas, y trabajar con la simultaneidad optimista.
+
+[Recuperación de la información del esquema de la base de datos](retrieving-database-schema-information.md) Se describe cómo obtener las bases de datos o catálogos disponibles, las tablas y las vistas de una base de datos, las restricciones que existen para las tablas y otra información del esquema de un origen de datos.
 
 ## <a name="see-also"></a>Vea también
 

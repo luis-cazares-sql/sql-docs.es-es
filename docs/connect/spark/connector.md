@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: rajmera3
 ms.author: raajmera
 ms.reviewer: mikeray
-ms.openlocfilehash: 7450ebddf94a4378313bb1793bcefe34a88407a5
-ms.sourcegitcommit: 0c0e4ab90655dde3e34ebc08487493e621f25dda
+ms.openlocfilehash: b4c7027fd4695e1c1110fb19ae8cefc9be34ac10
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442944"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97438858"
 ---
 # <a name="apache-spark-connector-sql-server--azure-sql"></a>Conector de Apache Spark: SQL Server y Azure SQL
 
@@ -25,7 +25,7 @@ Esta biblioteca contiene el código fuente del conector de Apache Spark para SQL
 
 [Apache Spark](https://spark.apache.org/) es un motor de análisis unificado para el procesamiento de datos a gran escala.
 
-Puede importar el conector en el proyecto a través de las coordenadas Maven: `com.microsoft.azure:spark-mssql-connector:1.0.0`. También puede compilar el conector desde el origen o descargar el archivo jar de la sección Versión de GitHub. Para obtener la información más reciente sobre el conector, vea el [repositorio de GitHub del conector de Spark para SQL](https://github.com/microsoft/sql-spark-connector).
+Puede obtener el conector en [Maven](https://search.maven.org/search?q=spark-mssql-connector). Para importar el conector, use la coordenada `com.microsoft.azure:spark-mssql-connector:<latest version>`. También puede compilar el conector desde el origen o descargar el archivo jar de la sección Versión de GitHub. Para obtener la información más reciente sobre el conector, vea el [repositorio de GitHub del conector de Spark para SQL](https://github.com/microsoft/sql-spark-connector).
 
 ## <a name="supported-features"></a>Características admitidas
 
@@ -51,7 +51,7 @@ El conector de Apache Spark para SQL Server y Azure SQL admite las opciones de
 
 Además, se admiten estas opciones:
 
-| Opción | Valor predeterminado | Descripción |
+| Opción | Default | Descripción |
 | --------- | ------------------ | ------------------------------------------ |
 | `reliabilityLevel` | `BEST_EFFORT` | `BEST_EFFORT` o `NO_DUPLICATES`. `NO_DUPLICATES` implementa una inserción confiable en escenarios de reinicio del ejecutor. |
 | `dataPoolDataSource` | `none` | `none` implica que el valor no está establecido y el conector debe escribir en una única instancia de SQL Server. Establezca este valor en el nombre del origen de datos para escribir en una tabla de grupo de datos en un clúster de macrodatos.|

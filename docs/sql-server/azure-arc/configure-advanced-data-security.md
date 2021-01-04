@@ -8,12 +8,12 @@ ms.reviewer: mikeray
 ms.date: 09/10/2020
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: 2bd589ebacd9ea35e15881eaaeb022d4f2302986
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: e0c68752d21de5945c06433af8c08f6208322f7c
+ms.sourcegitcommit: 18e2f0706e03d0b2b6324845244fbafaa077a8dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988031"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97103179"
 ---
 # <a name="configure-advanced-data-security-for-azure-arc-enabled-sql-server-instance"></a>Configuración de Advanced Data Security para una instancia de SQL Server habilitada para Azure Arc
 
@@ -50,17 +50,17 @@ El siguiente paso solo es necesario si aún no ha configurado el agente MMA en 
 
 1. Para obtener más detalles, vea [Administración de extensiones con Azure Arc](/azure/azure-arc/servers/manage-vm-extensions)
 
-## <a name="enable-advanced-data-security"></a>Habilitación de Advanced Data Security
+## <a name="enable-azure-defender"></a>Habilitación de Azure Defender
 
-Luego hay que habilitar Advanced Data Security para la instancia de SQL Server.
+A continuación, tendrá que habilitar Azure Defender para la instancia de SQL Server.
 
 1. Vaya a Security Center y abra la página **Precios y configuración** de la barra lateral.
 
 1. Seleccione el área de trabajo que ha configurado para la extensión MMA en el paso anterior.
 
-1. Seleccione **Estándar**. Asegúrese de que la opción **SQL servers on Machine (Preview)** (Servidores SQL Server en máquina [versión preliminar]) está habilitada.
+1. Seleccione **Azure Defender activado**. Asegúrese de que la opción **Servidores SQL Server en máquinas** está habilitada.
 
-   ![Actualización del área de trabajo](media/configure-advanced-data-security/upgrade-log-analytics-workspace.png)
+   ![Actualización del área de trabajo](media/configure-advanced-data-security/enable-azure-defender.png)
 
  > [!NOTE]
    > El primer análisis para generar la valoración de vulnerabilidades se produce 24 horas después de la habilitación de Advanced Data Security. Después, se realizan exámenes automáticos el domingo de cada semana.

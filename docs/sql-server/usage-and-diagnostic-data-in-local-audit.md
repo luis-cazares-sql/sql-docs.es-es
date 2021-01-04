@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: a0665916-7789-4f94-9086-879275802cf3
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: bd75bde9e125ffc99f1af6f382aa91d2f1e0caf7
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: f927e003673cb4397250fe532d57452ddb4e6445
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987301"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97474566"
 ---
 # <a name="local-audit-for-sql-server-usage-and-diagnostic-data-collection-ceip"></a>Auditoría local para la recopilación de datos de uso y diagnóstico de SQL Server (CEIP)
 
@@ -27,7 +27,7 @@ ms.locfileid: "91987301"
 
 ## <a name="introduction"></a>Introducción
 
-Microsoft SQL Server contiene características habilitadas para Internet que pueden recopilar y enviar información sobre el equipo o dispositivo. Esto se denomina *información estándar del equipo*. El componente de auditoría local de [recopilación de datos de uso y diagnóstico de SQL Server](usage-and-diagnostic-data-configuration-for-sql-server.md) escribe los datos que recopila el servicio en una carpeta designada y que representa los datos (registros) que se enviarán a Microsoft. El propósito de la auditoría local es permitir que los clientes vean todos los datos que Microsoft recopila con esta característica, por motivos de cumplimiento, reglamentarios o por validación de privacidad.  
+Microsoft SQL Server contiene características habilitadas para Internet que pueden recopilar y enviar información sobre el equipo o dispositivo. Esto se denomina *información estándar del equipo*. El componente de auditoría local de [recopilación de datos de uso y diagnóstico de SQL Server](usage-and-diagnostic-data-configuration-for-sql-server.md) escribe los datos que recopila el servicio en una carpeta designada y que representa los datos (registros) que se enviarán a Microsoft. El propósito de la auditoría local es permitir que los clientes vean todos los datos que Microsoft recopila con esta característica, por motivos de cumplimiento, reglamentarios o por validación de privacidad.  
 
 A partir de SQL Server 2016 CU2 y CU3, la auditoría local se puede configurar en el nivel de instancia para Motor de base de datos de SQL Server y Analysis Services (SSAS). En SQL Server 2016 CU4, 2016 SP1 y versiones posteriores, la auditoría local también está habilitada para SQL Server Integration Services (SSIS). Otros componentes de SQL Server que se instalan durante la configuración y herramientas de SQL Server que se descargan o instalan después de la configuración no cuentan con la funcionalidad de auditoría local para la recopilación de datos de uso y diagnóstico.
 
@@ -44,7 +44,7 @@ A continuación, aparecen los requisitos previos para habilitar la auditoría lo
 
 1. La instancia aplica una revisión a SQL Server 2016 RTM CU2 o a una versión posterior. En el caso de Integration Services, la revisión de la instancia se aplica a SQL 2016 RTM CU4, SQL 2016 SP1 o versiones posteriores.
 
-1. El usuario debe ser un administrador del sistema o debe tener un rol con acceso para agregar y modificar una clave del Registro, crear carpetas, administrar la seguridad de las carpetas y detener e iniciar un servicio de Windows.  
+1. El usuario debe ser un administrador del sistema o debe tener un rol con acceso para agregar y modificar una clave del Registro, crear carpetas, administrar la seguridad de las carpetas y detener e iniciar un servicio de Windows.  
 
 ## <a name="pre-configuration-steps-prior-to-turning-on-local-audit"></a>Pasos de configuración previa antes de activar la auditoría local
 
@@ -73,7 +73,7 @@ Complete los pasos siguientes para obtener la cuenta de inicio de sesión del se
 
 ### <a name="configure-a-new-folder-for-the-local-audit-files"></a>Configure una carpeta nueva para los archivos de auditoría local.    
 
-Cree una carpeta nueva (directorio de auditoría local) donde la uditoría local escribirá los registros. Por ejemplo, la ruta de acceso completa al directorio de auditoría local para una instancia predeterminada del motor de la base de datos sería la siguiente: *C:\\SQLCEIPAudit\\MSSQLSERVER\\DB\\* . 
+Cree una carpeta nueva (directorio de auditoría local) donde la uditoría local escribirá los registros. Por ejemplo, la ruta de acceso completa al directorio de auditoría local para una instancia predeterminada del motor de la base de datos sería la siguiente: *C:\\SQLCEIPAudit\\MSSQLSERVER\\DB\\* . 
  
   >[!NOTE] 
   >Configure la ruta de acceso al directorio para auditoría local fuera de la ruta de instalación de SQL Server para evitar que el hecho de permitir la funcionalidad de auditoría y de aplicar revisiones provoque problemas potenciales con SQL Server.
@@ -108,23 +108,23 @@ Cree una carpeta nueva (directorio de auditoría local) donde la uditoría local
 
 1. Vaya a la ruta de CPE correspondiente:
 
-   | Versión | ***Motor de base de datos***: Clave del Registro |
+   | Versión | **_Motor de base de datos_* _: clave del Registro |
    | :------ | :----------------------------- |
-   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL**13**.*Nombre-Instancia*\\CPE |
-   | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL**14**.*Nombre-Instancia*\\CPE |
-   | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL**15**.*Nombre-Instancia*\\CPE |
+   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL_ *13**.* Nombre_de_la_instancia*\\CPE |
+   | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL **14**.*Nombre-Instancia*\\CPE |
+   | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL **15**.*Nombre-Instancia*\\CPE |
    | &nbsp; | &nbsp; |
 
-   | Versión | ***Analysis Services***: Clave del Registro |
+   | Versión | ***Analysis Services** _: clave del Registro |
    | :------ | :------------------------------- |
-   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS**13**.*Nombre-Instancia*\\CPE |
-   | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS**14**.*Nombre-Instancia*\\CPE |
-   | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS**15**.*Nombre-Instancia*\\CPE |  
+   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS_ *13**.* Nombre-de-la-instancia*\\CPE |
+   | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS **14**.*Nombre-Instancia*\\CPE |
+   | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS **15**.*Nombre-Instancia*\\CPE |  
    | &nbsp; | &nbsp; |
 
-   | Versión | ***Integration Services***: Clave del Registro |
+   | Versión | ***Integration Services** _: clave del Registro |
    | :------ | :---------------------------------- |
-   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\**130** |
+   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\_ *130** |
    | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\**140** |
    | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\**150** |
    | &nbsp; | &nbsp; |
@@ -137,7 +137,7 @@ Cree una carpeta nueva (directorio de auditoría local) donde la uditoría local
 
 Una vez que haya seguido los pasos de configuración previa, puede activar la auditoría local. Para ello, use una cuenta de administrador del sistema o un rol similar con acceso para modificar las claves del Registro a fin de activar o desactivar la auditoría local con los pasos siguientes. 
 
-1. Inicie **regedit**.  
+1. Inicie **regedit**.  
 
 1. Vaya a la [ruta](#create-a-registry-key-setting-to-configure-local-audit-target-directory) de CPE correspondiente. 
 
@@ -173,9 +173,9 @@ La auditoría local generará un archivo de registro al día. Los archivos de re
 
 ## <a name="maintenance"></a>Mantenimiento 
 
-1. Para limitar el uso del espacio en disco que ocupan los archivos que escribe la auditoría local, configure una directiva o un trabajo periódico para limpiar el directorio de Auditoría local y quitar los archivos antiguos e innecesarios.  
+1. Para limitar el uso del espacio en disco que ocupan los archivos que escribe la auditoría local, configure una directiva o un trabajo periódico para limpiar el directorio de Auditoría local y quitar los archivos antiguos e innecesarios.  
 
-2. Proteja la ruta de acceso al directorio de la auditoría local para que solo las personas adecuadas puedan tener acceso a él. Tenga en cuenta que los archivos de registro contienen información según lo descrito en [Cómo configurar SQL Server 2016 para enviar comentarios a Microsoft](https://support.microsoft.com/kb/3153756). El acceso a este archivo debe evitar que la mayoría de los miembros de su organización pueda leerlo.  
+2. Proteja la ruta de acceso al directorio de la auditoría local para que solo las personas adecuadas puedan tener acceso a él. Tenga en cuenta que los archivos de registro contienen información según lo descrito en [Cómo configurar SQL Server 2016 para enviar comentarios a Microsoft](https://support.microsoft.com/kb/3153756). El acceso a este archivo debe evitar que la mayoría de los miembros de su organización pueda leerlo.  
 
 ## <a name="data-dictionary-of-local-audit-output-data-structure"></a>Diccionario de datos de la estructura de datos de salida de la auditoría local 
 
@@ -184,13 +184,13 @@ La auditoría local generará un archivo de registro al día. Los archivos de re
 - Cada fila es una salida de una sesión de servicio de SQLCEIP que se identifica como **sessionID**.
 - Las filas se emiten en una secuencia que se identifica por **sequence**.
 - Cada fila de punto de datos contiene la salida de un **queryIdentifier**, que puede ser una consulta T-SQL, una sesión de XE o un mensaje relacionado con un tipo de seguimiento, identificado como **traceName**.
-- Los valores**queryIdentifiers** están agrupados y tienen versiones junto con **querySetVersion**.
-- Los valores**data** contienen la salida de la ejecución de consulta correspondiente, que usó **queryTimeInTicks**.
-- Los valores**queryIdentifiers** para consultas T-SQL tienen la definición de consulta T-SQL almacenada en la consulta.
+- Los valores **queryIdentifiers** están agrupados y tienen versiones junto con **querySetVersion**.
+- Los valores **data** contienen la salida de la ejecución de consulta correspondiente, que usó **queryTimeInTicks**.
+- Los valores **queryIdentifiers** para consultas T-SQL tienen la definición de consulta T-SQL almacenada en la consulta.
 
-| Jerarquía de información de la auditoría local lógica | Columnas relacionadas |
+| Jerarquía de información de la auditoría local lógica | Columnas relacionadas |
 | ------ | -------|
-| Encabezado | emitTime, schemaVersion 
+| Encabezado | emitTime, schemaVersion 
 | Máquina | operatingSystem 
 | Instancia | instanceUniqueID, correlationID y clientVersion 
 | Sesión | sessionID, traceName 
@@ -199,12 +199,12 @@ La auditoría local generará un archivo de registro al día. Los archivos de re
 
 ### <a name="namevalue-pairs-definition-and-examples"></a>Definición y ejemplos de pares nombre-valor 
 
-Las columnas siguientes representan el orden de la salida de archivo de auditoría local. Se usa un hash unidireccional con SHA 256 para anonimizar los valores para varias de las columnas siguientes.  
+Las columnas siguientes representan el orden de la salida de archivo de auditoría local. Se usa un hash unidireccional con SHA 256 para anonimizar los valores para varias de las columnas siguientes.  
 
 | NOMBRE | Descripción | Valores de ejemplo
 |-------|--------| ----------|
 |instanceUniqueID| Identificador de instancia anonimizada | 888770C4D5A8C6729F76F33D472B28883AE518C92E1999888B171A085059FD 
-|schemaVersion| La versión del esquema de SQLCEIP |  3 
+|schemaVersion| La versión del esquema de SQLCEIP |  3 
 |emitTime |Hora de emisión del punto de datos en hora UTC | 2016-09-08T17:20:22.1124269Z 
 |sessionID | El identificador de la sesión del servicio SQLCEIP | 89decf9a-ad11-485c-94a7-fefb3a02ed86 
 |correlationId | El marcador de posición para un identificador adicional | 0 
@@ -216,7 +216,7 @@ Las columnas siguientes representan el orden de la salida de archivo de auditor�
 |queryIdentifier | Un identificador de la consulta | SQLServerProperties.002 
 |datos   | El resultado de la información recopilada en queryIdentifier como salida de la consulta T-SQL, la sesión de XE o la aplicación |  [{"Collation": "SQL_Latin1_General_CP1_CI_AS","SqlFTinstalled": "0" "SqlIntSec": "1","IsSingleUser": "0","SqlFilestreamMode": "0","SqlPbInstalled": "0","SqlPbNodeRole": "","SqlVersionMajor": "13","SqlVersionMinor": "0","SqlVersionBuild": "2161","ProductBuildType": "","ProductLevel": "RTM","ProductUpdateLevel": "CU2","ProductUpdateReference": "KB3182270","ProductRevision": "3","SQLEditionId": "-1534726760","IsClustered": "0","IsHadrEnabled": "0","SqlAdvAInstalled": "0","PacketReceived": "1210","Version": "Microsoft SQL Server 2016 (RTM-CU2) (KB3182270) - 13.0.2161.3 (X64) \n\tSep  7 2016 14:24:16 \n\tCopyright (c) Microsoft Corporation\n\tStandard Edition (64-bit) on Windows Server 2012 R2 Datacenter 6.3 \u003cX64\u003e (Build 9600: ) (Hypervisor)\n"}],
 |Query| Si corresponde, la definición de consulta T-SQL relacionada con el identificador queryIdentifier que genera los datos.        El servicio CEIP de SQL Server no carga este componente. Solo se incluye en la auditoría local como referencia para los clientes.| SELECT\n      SERVERPROPERTY(\u0027Collation\u0027) AS [Collation],\n      SERVERPROPERTY(\u0027IsFullTextInstalled\u0027) AS [SqlFTinstalled],\n      SERVERPROPERTY(\u0027IsIntegratedSecurityOnly\u0027) AS [SqlIntSec],\n      SERVERPROPERTY(\u0027IsSingleUser\u0027) AS [IsSingleUser],\n      SERVERPROPERTY (\u0027FileStreamEffectiveLevel\u0027) AS [SqlFilestreamMode],\n      SERVERPROPERTY(\u0027IsPolyBaseInstalled\u0027) AS [SqlPbInstalled],\n      SERVERPROPERTY(\u0027PolyBaseRole\u0027) AS [SqlPbNodeRole],\n      SERVERPROPERTY(\u0027ProductMajorVersion\u0027) AS [SqlVersionMajor],\n      SERVERPROPERTY(\u0027ProductMinorVersion\u0027) AS [SqlVersionMinor],\n      SERVERPROPERTY(\u0027ProductBuild\u0027) AS [SqlVersionBuild],\n      SERVERPROPERTY(\u0027ProductBuildType\u0027) AS ProductBuildType,\n      SERVERPROPERTY(\u0027ProductLevel\u0027) AS ProductLevel,\n      SERVERPROPERTY(\u0027ProductUpdateLevel\u0027) AS ProductUpdateLevel,\n      SERVERPROPERTY(\u0027ProductUpdateReference\u0027) AS ProductUpdateReference,\n      RIGHT(CAST(SERVERPROPERTY(\u0027ProductVersion\u0027) AS NVARCHAR(30)),CHARINDEX(\u0027.\u0027, REVERSE(CAST(SERVERPROPERTY(\u0027ProductVersion\u0027) AS NVARCHAR(30)))) - 1) AS ProductRevision,\n      SERVERPROPERTY(\u0027EditionID\u0027) AS SQLEditionId,\n      SERVERPROPERTY(\u0027IsClustered\u0027) AS IsClustered,\n      SERVERPROPERTY(\u0027IsHadrEnabled\u0027) AS IsHadrEnabled,\n      SERVERPROPERTY(\u0027IsAdvancedAnalyticsInstalled\u0027) AS [SqlAdvAInstalled],\n      @@PACK_RECEIVED AS PacketReceived,\n      @@VERSION AS Version
-|queryTimeInTicks | La duración necesaria para que se ejecute la consulta con la siguiente categoría de seguimiento: (SQLServerXeQueries, SQLServerPeriodicQueries) |  0 
+|queryTimeInTicks | La duración necesaria para que se ejecute la consulta con la siguiente categoría de seguimiento: (SQLServerXeQueries, SQLServerPeriodicQueries) |  0 
  
 ### <a name="trace-categories"></a>Categorías de seguimiento 
 Actualmente recopilamos las siguientes categorías de seguimiento: 

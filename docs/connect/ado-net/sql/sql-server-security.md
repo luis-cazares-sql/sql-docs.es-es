@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-kaywon
-ms.openlocfilehash: ea2f8a65cb8ca16efd625309f73d7dccc3e27505
-ms.sourcegitcommit: fe5c45a492e19a320a1a36b037704bf132dffd51
+ms.openlocfilehash: e70f6da7755b28c400cc80a5ee6de79a004e4e42
+ms.sourcegitcommit: 2add15a99df7b85d271adb261523689984dfd134
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80911671"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97038923"
 ---
 # <a name="sql-server-security"></a>Seguridad de SQL Server
 
@@ -36,6 +36,9 @@ Los temas de esta sección describen brevemente las características de segurida
 ## <a name="in-this-section"></a>En esta sección  
 [Autenticación en SQL Server](authentication-sql-server.md)  
 Describe los inicios de sesión y la autenticación en SQL Server y proporciona vínculos a recursos adicionales. 
+
+[Autenticación con Azure Active Directory](azure-active-directory-authentication.md)  
+Se describe cómo usar los modos de autenticación de Azure Active Directory compatibles para conectarse a orígenes de datos de Azure SQL con SqlClient.
   
 [Escenarios de seguridad de aplicaciones en SQL Server](application-security-scenarios-sql-server.md)  
 Contiene temas que describen diferentes escenarios de seguridad de aplicaciones para aplicaciones de ADO.NET y SQL Server.  
