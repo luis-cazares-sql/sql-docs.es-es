@@ -8,13 +8,13 @@ ms.technology: report-server-sharepoint
 ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
-monikerRange: '>=sql-server-2016 <=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 5de7b0a5b155c519a7a7d24331fb9ad2dc571e3e
-ms.sourcegitcommit: 66a0672e47415dbd5cfd8d19075102c8c3973e70
+monikerRange: '>=sql-server-2016 <=sql-server-2016'
+ms.openlocfilehash: cbc258c5da9252a4463caf4b9b096c5a899d9e0a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83765126"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97409692"
 ---
 # <a name="manage-a-reporting-services-sharepoint-service-application"></a>Administrar una aplicación de servicio de SharePoint de Reporting Services
 
@@ -93,7 +93,7 @@ ms.locfileid: "83765126"
 |Configuración|Comentarios|  
 |-------------|--------------|  
 |Habilitar la descarga del Generador de informes|El valor predeterminado es TRUE.<br /><br /> Especifica si los clientes pueden ver el botón para descargar la aplicación del Generador de informes.|  
-|URL de inicio del Generador de informes|Especifique una dirección URL personalizada si el servidor de informes no utiliza la dirección URL predeterminada del Generador de informes. Esta configuración es opcional. Si no especifica un valor, se usará la dirección URL predeterminada, que inicia el Generador de informes. Para iniciar el Generador de informes 3.0 como aplicación ClickOnce, escriba el valor siguiente: https://\<nombreDeEquipo>/ReportServer/ReportBuilder/ReportBuilder_3_0_0_0.application.|  
+|URL de inicio del Generador de informes|Especifique una dirección URL personalizada si el servidor de informes no utiliza la dirección URL predeterminada del Generador de informes. Esta configuración es opcional. Si no especifica un valor, se usará la dirección URL predeterminada, que inicia el Generador de informes. Para iniciar el Generador de informes 3.0 como aplicación ClickOnce, escriba el valor siguiente: https://\<computername>/ReportServer/ReportBuilder/ReportBuilder_3_0_0_0.application.|  
 |Habilitar la impresión de cliente|El valor predeterminado es TRUE.<br /><br /> Especifica si los usuarios pueden descargar el control del lado cliente, que proporciona opciones de impresión.|  
 |Tiempo de espera de sesión de edición|El valor predeterminado es 7200 segundos.|  
 |Límite de caché de sesión de edición|El valor predeterminado es 5.|  
@@ -147,7 +147,7 @@ Get-SPRSServiceApplication | select typename, name, service, ueaccountname
  Seleccione para especificar una cuenta.  
   
  **Cuenta**  
- Especifique una cuenta de usuario de dominio de Windows. Use este formato: *\<dominio>\\<cuenta de usuario\>* .  
+ Especifique una cuenta de usuario de dominio de Windows. Use este formato: *\<domain>\\<cuenta de usuario\>* .  
   
  **Contraseña**  
  Escriba la contraseña.  
