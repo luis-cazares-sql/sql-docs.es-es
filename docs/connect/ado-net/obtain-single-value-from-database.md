@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: c4815d048e5648e2c89c2cc32b8f159cc515f2b5
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: 3937c1d4617f3cecb9012d82d590f75634ab1043
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96428294"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771499"
 ---
 # <a name="obtaining-a-single-value-from-a-database"></a>Obtención de un valor único de una base de datos
 
@@ -37,3 +37,4 @@ El ejemplo de código siguiente inserta un valor nuevo en la base de datos utili
 
 - [Comandos y parámetros](commands-parameters.md)
 - [Ejecución de un comando](execute-command.md)
+- [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)

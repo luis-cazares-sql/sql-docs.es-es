@@ -9,12 +9,12 @@ author: yualan
 ms.author: alayu
 ms.custom: seodec18; sqlfreshmay19; seo-lt-2019
 ms.date: 05/14/2019
-ms.openlocfilehash: 7eb89be3b94565f7a8642dad893642176a22822b
-ms.sourcegitcommit: fb8724fb99c46ecf3a6d7b02a743af9b590402f0
+ms.openlocfilehash: c168ceb916ac1b65f4e6d45c9ee1054b15b0cb75
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92439299"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97637662"
 ---
 # <a name="quickstart-use-azure-data-studio-to-connect-and-query-azure-sql-database"></a>Inicio rápido: Uso de Azure Data Studio para conectarse a una base de datos de Azure SQL y consultarla
 
@@ -24,7 +24,7 @@ En este inicio rápido, se usará Azure Data Studio para conectarse a un servido
 
 Para completar este inicio rápido, necesita Azure Data Studio y un servidor de Azure SQL Database.
 
-- [Instalación de Azure Data Studio](./download-azure-data-studio.md?view=sql-server-ver15)
+- [Instalación de Azure Data Studio](./download-azure-data-studio.md)
 
 Si no tiene un servidor de Azure SQL, complete uno de los siguientes inicios rápidos de Azure SQL Database. Recuerde el nombre completo del servidor y las credenciales de inicio de sesión para los pasos posteriores:
 
@@ -37,7 +37,7 @@ Si no tiene un servidor de Azure SQL, complete uno de los siguientes inicios rá
 
 Use Azure Data Studio para establecer una conexión con el servidor de Azure SQL Database.
 
-1. La primera vez que ejecute Azure Data Studio, se debe abrir la **página principal** . Si no ve la **página principal** , seleccione **Ayuda** > **Página principal** . Seleccione **Nueva conexión** para abrir el panel **Conexión** :
+1. La primera vez que ejecute Azure Data Studio, se debe abrir la **página principal**. Si no ve la **página principal**, seleccione **Ayuda** > **Página principal**. Seleccione **Nueva conexión** para abrir el panel **Conexión**:
    
    ![Captura de pantalla en el que se muestra el cuadro de diálogo de bienvenida de Azure Data Studio con la opción Nueva conexión resaltada.](media/quickstart-sql-database/new-connection-icon.png)
 
@@ -45,7 +45,7 @@ Use Azure Data Studio para establecer una conexión con el servidor de Azure SQL
 
    | Configuración       | Valor sugerido | Descripción |
    | ------------ | ------------------ | ------------------------------------------------- | 
-   | **Nombre del servidor** | Nombre completo del servidor | Algo como: **servername.database.windows.net** . |
+   | **Nombre del servidor** | Nombre completo del servidor | Algo como: **servername.database.windows.net**. |
    | **Autenticación** | Inicio de sesión SQL| En este tutorial se usa la autenticación de SQL. |
    | **Nombre de usuario** | Nombre de usuario de la cuenta de administrador del servidor | Nombre de usuario de la cuenta usada para crear el servidor. |
    | **Contraseña (Inicio de sesión de SQL)** | Contraseña de la cuenta de administrador del servidor | Contraseña de la cuenta usada para crear el servidor. |
@@ -55,19 +55,19 @@ Use Azure Data Studio para establecer una conexión con el servidor de Azure SQL
 
    ![Captura de pantalla de la página Conexión de Azure Data Studio.](media/quickstart-sql-database/new-connection-screen.png)  
 
-3. Seleccione **Conectar** .
+3. Seleccione **Conectar**.
 
-4. Si el servidor no tiene una regla de firewall que permita a Azure Data Studio conectarse, se abrirá el formulario **Crear nueva regla de firewall** . Rellene el formulario para crear una nueva regla de firewall. Para obtener detalles, vea [Reglas de firewall](/azure/sql-database/sql-database-firewall-configure).
+4. Si el servidor no tiene una regla de firewall que permita a Azure Data Studio conectarse, se abrirá el formulario **Crear nueva regla de firewall**. Rellene el formulario para crear una nueva regla de firewall. Para obtener detalles, vea [Reglas de firewall](/azure/sql-database/sql-database-firewall-configure).
 
    ![Nueva regla de firewall](media/quickstart-sql-database/firewall.png)  
 
-Después de conectarse correctamente, el servidor se abre en la barra lateral **SERVIDORES** .
+Después de conectarse correctamente, el servidor se abre en la barra lateral **SERVIDORES**.
 
 ## <a name="create-the-tutorial-database"></a>Crear la base de datos del tutorial
 
 En las secciones siguientes se crea la base de datos TutorialDB que se usa en otros tutoriales de Azure Data Studio.
 
-1. Haga clic con el botón derecho en el servidor de Azure SQL en la barra lateral **SERVIDORES** y seleccione **Nueva consulta** .
+1. Haga clic con el botón derecho en el servidor de Azure SQL en la barra lateral **SERVIDORES** y seleccione **Nueva consulta**.
 
 1. Pegue este SQL en el editor de consultas.
 
@@ -84,13 +84,13 @@ En las secciones siguientes se crea la base de datos TutorialDB que se usa en ot
    GO
    ```
 
-1. En la barra de herramientas, seleccione **Ejecutar** . Aparecen notificaciones en el panel **MENSAJES** que muestran el progreso de la consulta.
+1. En la barra de herramientas, seleccione **Ejecutar**. Aparecen notificaciones en el panel **MENSAJES** que muestran el progreso de la consulta.
 
 ## <a name="create-a-table"></a>Creación de una tabla
 
-El editor de consultas se conecta a la base de datos **master** , pero lo que se pretende aquí es crear una tabla en la base de datos **TutorialDB** . 
+El editor de consultas se conecta a la base de datos **master**, pero lo que se pretende aquí es crear una tabla en la base de datos **TutorialDB**. 
 
-1. Conéctese a la base de datos **TutorialDB** .
+1. Conéctese a la base de datos **TutorialDB**.
 
    ![Cambiar el contexto](media/quickstart-sql-database/change-context2.png)
 
@@ -98,7 +98,7 @@ El editor de consultas se conecta a la base de datos **master** , pero lo que se
 
 1. Cree una tabla `Customers`. 
 
-   Reemplace la consulta anterior del editor de consultas por esta y seleccione **Ejecutar** .
+   Reemplace la consulta anterior del editor de consultas por esta y seleccione **Ejecutar**.
 
    ```sql
    -- Create a new table called 'Customers' in schema 'dbo'
@@ -120,7 +120,7 @@ El editor de consultas se conecta a la base de datos **master** , pero lo que se
 
 ## <a name="insert-rows-into-the-table"></a>Insertar filas en la tabla
 
-Reemplace la consulta anterior por esta y seleccione **Ejecutar** .
+Reemplace la consulta anterior por esta y seleccione **Ejecutar**.
 
    ```sql
    -- Insert rows into table 'Customers'
@@ -136,7 +136,7 @@ Reemplace la consulta anterior por esta y seleccione **Ejecutar** .
 
 ## <a name="view-the-result"></a>Ver el resultado
 
-Reemplace la consulta anterior por esta y seleccione **Ejecutar** .
+Reemplace la consulta anterior por esta y seleccione **Ejecutar**.
 
    ```sql
    -- Select rows from table 'Customers'
