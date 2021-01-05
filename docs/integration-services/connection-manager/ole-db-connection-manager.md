@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 91e3622e-4b1a-439a-80c7-a00b90d66979
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: bdeaca276e64ec436b3ee39cc97439bbdc25aa98
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 7c50a2e201bcba99299998dc232e1246005eb168
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91719531"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97639504"
 ---
 # <a name="ole-db-connection-manager"></a>Administrador de conexiones OLE DB
 
@@ -112,7 +112,7 @@ Para usar la autenticación de identidad administrada en Azure SQL Managed Insta
     
 1. [Aprovisione un administrador de Azure Active Directory](/azure/sql-database/sql-database-aad-authentication-configure#provision-an-azure-active-directory-administrator-for-your-managed-instance) para la instancia administrada en Azure Portal, si aún no lo ha hecho. El administrador de Azure AD puede ser un usuario o un grupo de Azure AD. Si concede un rol de administrador al grupo con identidad administrada, omita los pasos 2-4. El administrador tendrá acceso completo a la base de datos.
 
-1. [Cree inicios de sesión](../../t-sql/statements/create-login-transact-sql.md?view=azuresqldb-mi-current) para la identidad administrada de Data Factory. En SQL Server Management Studio (SSMS), conéctese a la instancia administrada con una cuenta de SQL Server que sea **sysadmin**. En la base de datos **maestra**, ejecute el siguiente script T-SQL:
+1. [Cree inicios de sesión](../../t-sql/statements/create-login-transact-sql.md?view=azuresqldb-mi-current&preserve-view=true) para la identidad administrada de Data Factory. En SQL Server Management Studio (SSMS), conéctese a la instancia administrada con una cuenta de SQL Server que sea **sysadmin**. En la base de datos **maestra**, ejecute el siguiente script T-SQL:
 
     ```sql
     CREATE LOGIN [your data factory name] FROM EXTERNAL PROVIDER;
@@ -124,7 +124,7 @@ Para usar la autenticación de identidad administrada en Azure SQL Managed Insta
     CREATE USER [your data factory name] FROM EXTERNAL PROVIDER;
     ```
 
-1. Conceda a la identidad administrada de Data Factory los permisos necesarios, tal como lo haría normalmente para los usuarios de SQL y otros usuarios. Ejecute el código siguiente: Para más opciones, consulte [este documento](../../t-sql/statements/alter-role-transact-sql.md?view=azuresqldb-mi-current).
+1. Conceda a la identidad administrada de Data Factory los permisos necesarios, tal como lo haría normalmente para los usuarios de SQL y otros usuarios. Ejecute el código siguiente: Para más opciones, consulte [este documento](../../t-sql/statements/alter-role-transact-sql.md?view=azuresqldb-mi-current&preserve-view=true).
 
     ```sql
     ALTER ROLE [role name e.g., db_owner] ADD MEMBER [your data factory name];

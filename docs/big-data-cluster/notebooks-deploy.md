@@ -10,12 +10,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 24fef9f2290a85a8e87e8b3b3dd2098b31a9d792
-ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
+ms.openlocfilehash: 868c7685c59ae1ccf43057fdd03dfbb0b5bdaf21
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97489622"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97637429"
 ---
 # <a name="deploy-sql-server-big-data-cluster-with-azure-data-studio-notebook"></a>Implementación de clústeres de macrodatos de SQL Server con un cuaderno de Azure Data Studio
 
@@ -23,7 +23,7 @@ ms.locfileid: "97489622"
 
 [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] proporciona una extensión para Azure Data Studio que incluye cuadernos de implementación. Un cuaderno de implementación incluye documentación y código que se puede usar en Azure Data Studio para crear un clúster de macrodatos de SQL Server.
 
-Los [cuadernos](../azure-data-studio/notebooks/notebooks-guidance.md), que al principio se implementaban como un proyecto de código abierto, se han implementado en [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md?view=sql-server-ver15). Puede usar Markdown para el texto de las celdas de texto y uno de los kernels disponibles para escribir código en las celdas de código.
+Los [cuadernos](../azure-data-studio/notebooks/notebooks-guidance.md), que al principio se implementaban como un proyecto de código abierto, se han implementado en [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md). Puede usar Markdown para el texto de las celdas de texto y uno de los kernels disponibles para escribir código en las celdas de código.
 
 Puede usar cuadernos para implementar clústeres de macrodatos para [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)].
 

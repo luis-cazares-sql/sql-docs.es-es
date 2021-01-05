@@ -8,37 +8,27 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: 9dcc6a90-0add-42c2-815b-862e4e2a21ac
-ms.openlocfilehash: 759b8d7067ca9215e8b9862b810294667e4d409b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 593a966baf3565ef2ed6d30eba92901dc8cbcca2
+ms.sourcegitcommit: 86534989f7827f1c36ed1333ad9c4557dfd77f3d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471526"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97515350"
 ---
 # <a name="sql-server-on-linux"></a>SQL Server en Linux
 
 [!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
 
-::: moniker range="= sql-server-2017 "
+::: moniker range="= sql-server-2017 || = sql-server-linux-2017"
 A partir de SQL Server 2017, SQL Server se ejecuta en Linux. Es el mismo motor de base de datos de SQL Server, con muchas características y servicios similares, independientemente del sistema operativo.
+
+> [!TIP]
+> [SQL Server 2019](sql-server-linux-overview.md?view=sql-server-ver15&preserve-view=true) ya está disponible. Para obtener información sobre las novedades para Linux de la última versión, vea [Novedades de SQL Server 2019 para Linux](sql-server-linux-whats-new-2019.md?view=sql-server-ver15&preserve-view=true).
 ::: moniker-end
 
 ::: moniker range=">= sql-server-ver15 || >= sql-server-linux-ver15"
 SQL Server 2019 se ejecuta en Linux. Es el mismo motor de base de datos de SQL Server, con muchas características y servicios similares, independientemente del sistema operativo. Para obtener más información sobre esta versión, vea [Novedades de SQL Server 2019 para Linux](sql-server-linux-whats-new-2019.md).
 ::: moniker-end
-
-::: moniker range="= sql-server-2017"
-> [!TIP]
-> [SQL Server 2019](sql-server-linux-overview.md?view=sql-server-ver15) ya está disponible. Para obtener información sobre las novedades para Linux de la última versión, vea [Novedades de SQL Server 2019 para Linux](sql-server-linux-whats-new-2019.md?view=sql-server-ver15).
-::: moniker-end
-
-::: moniker range="= sql-server-linux-2017"
-> [!TIP]
-> [SQL Server 2019](sql-server-linux-overview.md?view=sql-server-linux-ver15) ya está disponible. Para obtener información sobre las novedades para Linux de la última versión, vea [Novedades de SQL Server 2019 para Linux](sql-server-linux-whats-new-2019.md?view=sql-server-linux-ver15).
-::: moniker-end
-
-> [!TIP]
-> SQL Server 2019 ya está disponible. Para obtener información sobre las novedades para Linux de la última versión, vea [Novedades de SQL Server 2019 para Linux](sql-server-linux-whats-new-2019.md).
 
 ## <a name="install"></a>Instalar
 
@@ -78,7 +68,7 @@ Si ya está familiarizado con SQL Server, revise las [Notas de la versión](sql-
 
 [!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] tiene el mismo motor de base de datos subyacente en todas las plataformas compatibles, incluido Linux. Por lo tanto, muchas características y capacidades existentes funcionan de la misma manera en Linux. En esta parte de la documentación se exponen algunas de estas características desde la perspectiva de Linux. También se mencionan áreas que tienen requisitos únicos en Linux.
 
-Si ya está familiarizado con SQL Server en Linux, revise las [Notas de la versión](sql-server-linux-release-notes-2019.md) para obtener instrucciones generales y saber los problemas conocidos de esta versión. Eche un vistazo a las [novedades de SQL Server 2019 en Linux](../sql-server/what-s-new-in-sql-server-ver15.md?view=sql-server-ver15).
+Si ya está familiarizado con SQL Server en Linux, revise las [Notas de la versión](sql-server-linux-release-notes-2019.md) para obtener instrucciones generales y saber los problemas conocidos de esta versión. Eche un vistazo a las [novedades de SQL Server 2019 en Linux](../sql-server/what-s-new-in-sql-server-ver15.md).
 
 ::: moniker-end
 

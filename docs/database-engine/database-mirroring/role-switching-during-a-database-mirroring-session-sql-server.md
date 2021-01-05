@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - role switching [SQL Server]
@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: a782d60d-0373-4386-bd77-9ec192553700
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 3aefc181c1dc42e939579dcdce274a27086dd1ed
-ms.sourcegitcommit: 99f61724de5edf6640efd99916d464172eb23f92
+ms.openlocfilehash: 3b1c872205f92f33b1e2f3c7e831cf841380d79d
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87362241"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97637810"
 ---
 # <a name="role-switching-during-a-database-mirroring-session-sql-server"></a>Conmutación de roles durante una sesión de creación de reflejo de la base de datos (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "87362241"
 > [!NOTE]  
 >  En este tema se supone que está familiarizado con los modos operativos de creación de reflejo de la base de datos. Para más información, consulte [Database Mirroring Operating Modes](../../database-engine/database-mirroring/database-mirroring-operating-modes.md).  
   
- En la siguiente ilustración se muestran los asociados de creación de reflejo **Partner_A** y **Partner_B**en el proceso de conmutación de los roles principal y reflejo durante una serie de conmutaciones por error automáticas o manuales.  
+ En la siguiente ilustración se muestran los asociados de creación de reflejo **Partner_A** y **Partner_B** en el proceso de conmutación de los roles principal y reflejo durante una serie de conmutaciones por error automáticas o manuales.  
   
  ![Dos intercambios de asociados entre roles](../../database-engine/database-mirroring/media/dbm-roleswitching.gif "Dos intercambios de asociados entre roles")  
   
