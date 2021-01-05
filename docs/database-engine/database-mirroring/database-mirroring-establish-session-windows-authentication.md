@@ -6,7 +6,7 @@ ms.date: 05/17/2016
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - Windows authentication [SQL Server]
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 143c68a5-589f-4e7f-be59-02707e1a430a
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: ff824174a3c9f806267e5b2a6a58e056fb57d513
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 7584e4611d957f48efcb73d12b5965f0a4727b45
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85643416"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642041"
 ---
 # <a name="configure-database-mirroring"></a>Configuración de la creación de reflejo de la base de datos
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -71,7 +71,7 @@ ms.locfileid: "85643416"
   
      La sintaxis para una dirección de red de servidor es la siguiente:  
   
-     TCP<b>\://</b> _\<system-address\>_ <b>\:</b> _\<port\>_  
+     TCP <b>\://</b> _\<system-address\>_ <b>\:</b> _\<port\>_  
   
      donde _\<system-address>_ es una cadena que identifica de forma inequívoca el sistema del equipo de destino y _\<port>_ es el número de puerto que usa el punto de conexión de la creación de reflejo de la instancia de servidor asociado. Para obtener más información, vea [Especificar una dirección de red de servidor &#40;creación de reflejo de la base de datos&#41;](../../database-engine/database-mirroring/specify-a-server-network-address-database-mirroring.md).  
   

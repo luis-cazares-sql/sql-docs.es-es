@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - database mirroring [SQL Server], interoperability
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 53e98134-e274-4dfd-8b72-0cc0fd5c800e
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: fd18ca39f11525f3fd91f759ff34f4ce6ebd0dbb
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 4f15bfe798c4fdec07be55f9dbb871c2980bc777
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85789705"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642076"
 ---
 # <a name="database-mirroring-and-log-shipping-sql-server"></a>Crear reflejo de la base de datos y trasvase de registros (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "85789705"
   
  Durante una sesión de trasvase de registros, los trabajos de copia de seguridad de la base de datos principal crean copias de seguridad de registros en una carpeta. Los trabajos de copia de los servidores secundarios copian de ahí las copias de seguridad. Para que los trabajos de copia de seguridad y los trabajos de copia se realicen correctamente, deben tener acceso a la carpeta de copias de seguridad del trasvase de registros. Para ofrecer la máxima disponibilidad del servidor principal, se recomienda establecer la carpeta de copias de seguridad en una ubicación compartida en un equipo host independiente. Asegúrese de que todos los servidores de trasvase de registros, incluido el servidor reflejado/principal, pueden acceder a la ubicación compartida de copias de seguridad (conocida como *recurso compartido de copia de seguridad*).  
   
- Para que el trasvase de registros pueda continuar tras realizar la conmutación por error de la creación de reflejo de la base de datos, debe configurar también el servidor reflejado como servidor principal, con la misma configuración que utiliza para el servidor primario en la base de datos principal. La base de datos reflejada se encuentra en el estado de restauración, lo que impide que los trabajos de copia de seguridad puedan realizar una copia de seguridad del registro en la base de datos reflejada. De esta forma se asegura que la base de datos reflejada/primaria no interfiere con la base de datos principal/primaria cuyas copias de seguridad de registros están copiando los servidores secundarios. Para evitar falsas alertas, después de que el trabajo de copia de seguridad se ejecute en la base de datos reflejada/principal, el trabajo de copia de seguridad registra un mensaje en la tabla**log_shipping_monitor_history_detail** y el trabajo del agente devuelve un estado de correcto.  
+ Para que el trasvase de registros pueda continuar tras realizar la conmutación por error de la creación de reflejo de la base de datos, debe configurar también el servidor reflejado como servidor principal, con la misma configuración que utiliza para el servidor primario en la base de datos principal. La base de datos reflejada se encuentra en el estado de restauración, lo que impide que los trabajos de copia de seguridad puedan realizar una copia de seguridad del registro en la base de datos reflejada. De esta forma se asegura que la base de datos reflejada/primaria no interfiere con la base de datos principal/primaria cuyas copias de seguridad de registros están copiando los servidores secundarios. Para evitar falsas alertas, después de que el trabajo de copia de seguridad se ejecute en la base de datos reflejada/principal, el trabajo de copia de seguridad registra un mensaje en la tabla **log_shipping_monitor_history_detail** y el trabajo del agente devuelve un estado de correcto.  
   
  La base de datos reflejada/primaria está inactiva en la sesión de trasvase de registros. No obstante, si en la creación de reflejo se realiza la conmutación por error, la base de datos reflejada anterior se pone en línea como la base de datos principal. En ese momento, dicha base de datos pasa también a ser la base de datos principal activa del trasvase de registros. Los trabajos de copia de seguridad del trasvase de registros que previamente no pudieron trasvasar los registros en esa base de datos comienzan el trasvase. En contraposición, como consecuencia de una conmutación por error, la base de datos principal/primaria anterior se convierte en la nueva base de datos reflejada/primaria, entra en el estado de restauración y los trabajos de copia de seguridad de esa base de datos dejan de realizar la copia de seguridad de registros.  
   

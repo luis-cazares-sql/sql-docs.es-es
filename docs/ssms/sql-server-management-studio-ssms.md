@@ -16,12 +16,12 @@ helpviewer_keywords:
 - SQL Server Management Studio for Analysis Services
 ms.custom: seo-lt-2019
 ms.date: 09/11/2019
-ms.openlocfilehash: 396df64c5c5be5d7ea9c5fc67d7cb1ff0a7d990f
-ms.sourcegitcommit: 80701484b8f404316d934ad2a85fd773e26ca30c
+ms.openlocfilehash: 1b523e86ff04de37bf0177430502c92132872e6b
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93243854"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641744"
 ---
 # <a name="what-is-sql-server-management-studio-ssms"></a>¿Qué es SQL Server Management Studio (SSMS)?
 
@@ -43,7 +43,7 @@ ms.locfileid: "93243854"
 |Cómo usar el **Explorador de plantillas** para compilar y administrar archivos de texto reutilizable que se pueden usar para acelerar el desarrollo de consultas y scripts.|[Explorador de plantillas](../ssms/template/template-explorer.md)|  
 |Cómo usar el **Explorador de soluciones** desusado para compilar proyectos que se emplean para administrar elementos de administración como scripts y consultas.|[Explorador de soluciones](../ssms/solution/solution-explorer.md)|  
 |Cómo usar las herramientas de diseño visual incluidas en [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)].|[Visual Database Tools](../ssms/visual-db-tools/visual-database-tools.md)|  
-|Cómo usar los editores de lenguaje de [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] para compilar y depurar interactivamente consultas y scripts.|[Editores de texto y consultas](./f1-help/database-engine-query-editor-sql-server-management-studio.md?view=sql-server-ver15)
+|Cómo usar los editores de lenguaje de [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] para compilar y depurar interactivamente consultas y scripts.|[Editores de texto y consultas](./f1-help/database-engine-query-editor-sql-server-management-studio.md)
 
 ## <a name="sql-server-management-studio-for-business-intelligence"></a>SQL Server Management Studio para Business Intelligence
 

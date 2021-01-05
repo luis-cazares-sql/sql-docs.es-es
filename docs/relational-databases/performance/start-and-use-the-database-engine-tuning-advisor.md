@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: a4e3226a-3917-4ec8-bdf0-472879d231c9
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: c8cd352c5347cbc48979af4e03775c9d7da8f3d1
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 9bf93bf9b59df77efe905a6c0debb722c63c3bbb
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96504974"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643065"
 ---
 # <a name="start-and-use-the-database-engine-tuning-advisor"></a>Iniciar y utilizar el Asistente para la optimización de motor de base de datos
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -55,7 +55,7 @@ ms.locfileid: "96504974"
   
 #### <a name="to-start-the-database-engine-tuning-advisor-from-the-sql-server-management-studio-query-editor"></a>Para iniciar el Asistente para la optimización de motor de base de datos desde el Editor de consultas de SQL Server Management Studio  
   
-1.  Abra un archivo de script [!INCLUDE[tsql](../../includes/tsql-md.md)] en [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]. Para obtener más información, vea [Editores de consultas y texto &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md?view=sql-server-ver15).  
+1.  Abra un archivo de script [!INCLUDE[tsql](../../includes/tsql-md.md)] en [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]. Para obtener más información, vea [Editores de consultas y texto &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md).  
   
 2.  Seleccione una consulta en el script [!INCLUDE[tsql](../../includes/tsql-md.md)] o seleccione el script completo, haga clic con el botón derecho en la selección y elija **Analizar la consulta en el Asistente para la optimización de motor de base de datos**. Se abre la GUI del Asistente para la optimización de motor de base de datos e importa el script como una carga de trabajo de archivo XML. Puede especificar un nombre de sesión y opciones de optimización para optimizar las consultas [!INCLUDE[tsql](../../includes/tsql-md.md)] seleccionadas como carga de trabajo.  
   
@@ -88,7 +88,7 @@ ms.locfileid: "96504974"
   
 ###  <a name="to-create-transact-sql-script-workloads"></a><a name="SSMS"></a> Para crear cargas de trabajo de scripts Transact-SQL  
   
-1.  Inicie el Editor de consultas en [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]. Para obtener más información, vea [Editores de consultas y texto &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md?view=sql-server-ver15).  
+1.  Inicie el Editor de consultas en [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]. Para obtener más información, vea [Editores de consultas y texto &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md).  
   
 2.  Escriba el script [!INCLUDE[tsql](../../includes/tsql-md.md)] en el Editor de consultas. Este script debe contener un conjunto de instrucciones [!INCLUDE[tsql](../../includes/tsql-md.md)] que se ejecutan en una o varias bases de datos que desea optimizar.  
   

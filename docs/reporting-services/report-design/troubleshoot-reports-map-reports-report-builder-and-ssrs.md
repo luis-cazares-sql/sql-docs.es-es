@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: a690aec2-056b-40bc-8cab-c694bd2d6d62
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: a3dc21f30222704622f86732c11bd5f1db7b46d1
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+ms.openlocfilehash: 6411d6f3810153614de0e60e9b20555e061836e3
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87112028"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641604"
 ---
 # <a name="troubleshoot-reports-map-reports-report-builder-and-ssrs"></a>Solucionar problemas de informes: informes de mapa (Generador de informes y SSRS)
   Podrían producirse problemas con los mapas de un informe paginado de [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] al agregar un mapa o una capa de mapa a un informe, personalizar un mapa o una capa de mapa existentes en un informe, obtener una vista previa de un mapa en un informe o publicar un informe con un mapa. Utilice este tema como ayuda para solucionar estos problemas.  
@@ -44,7 +44,7 @@ ms.locfileid: "87112028"
   
 1.  Cargue o publique los archivos ESRI .shp y .dbf en el servidor de informes.  
   
-2.  En el informe, en el panel MApa de la vista Diseño, seleccione la capa que contenga los datos insertados y abra las propiedades de **Datos de la capa** . En **Usar datos espaciales de**, seleccione **Vincular a archivo de forma ESRI**y, a continuación, vaya a la carpeta del servidor de informes que contenga los archivos de forma ESRI, selecciónela y haga clic en Aceptar.  
+2.  En el informe, en el panel MApa de la vista Diseño, seleccione la capa que contenga los datos insertados y abra las propiedades de **Datos de la capa** . En **Usar datos espaciales de**, seleccione **Vincular a archivo de forma ESRI** y, a continuación, vaya a la carpeta del servidor de informes que contenga los archivos de forma ESRI, selecciónela y haga clic en Aceptar.  
   
 3.  Guarde el informe. Los datos insertados de la capa que cambió se han quitado de la definición de informe.  
   
@@ -137,7 +137,7 @@ ms.locfileid: "87112028"
   
 -   **Transparencia.** Puede especificar independientemente la transparencia de cada capa de mapa. Los valores predeterminados de la transparencia difieren en función de cómo se agregue una capa. Un valor de transparencia del 0% significa que la capa es opaca y que ningún dato de otra capa se mostrará a través de esta. Para permitir que otros datos se muestren a través de una capa existente, ajuste el valor a un porcentaje mayor que le proporcione el efecto que desee.  
   
--   **Visibilidad.** La visibilidad de una capa es **Visible**, **Oculta**o **ZoomBased**, según el nivel de zoom de la ventanilla del mapa. También se puede especificar el intervalo máximo y mínimo del nivel de ampliación. La visibilidad puede basarse en una expresión que se evalúa como uno de estos valores.  
+-   **Visibilidad.** La visibilidad de una capa es **Visible**, **Oculta** o **ZoomBased**, según el nivel de zoom de la ventanilla del mapa. También se puede especificar el intervalo máximo y mínimo del nivel de ampliación. La visibilidad puede basarse en una expresión que se evalúa como uno de estos valores.  
   
     > [!TIP]  
     >  Puede alternar la visibilidad para cada capa en el panel Mapa. Al diseñar cada capa, desactive todas las demás para determinar si el problema es de una capa individual o de la transparencia entre las capas.  
@@ -207,6 +207,6 @@ ms.locfileid: "87112028"
   
 ## <a name="see-also"></a>Consulte también  
  [Mapas &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/maps-report-builder-and-ssrs.md)   
- [Solucionar problemas del Generador de informes](/previous-versions/sql/2014/reporting-services/troubleshoot-report-builder?view=sql-server-2014)  
+ [Solucionar problemas del Generador de informes](/previous-versions/sql/2014/reporting-services/troubleshoot-report-builder?view=sql-server-2014&preserve-view=true)  
   
   

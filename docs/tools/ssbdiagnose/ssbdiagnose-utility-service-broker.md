@@ -26,12 +26,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: 2457f180cef24b13568a6718128efa78635c3e41
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: 8590f3677d27c367782999877cb6892251785278
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714263"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641310"
 ---
 # <a name="ssbdiagnose-utility-service-broker"></a>utilidad ssbdiagnose (Service Broker)
 
@@ -121,7 +121,7 @@ ssbdiagnose
  Especifica que los errores o los mensajes con el *error_id* especificado no se deben incluir en los informes. Puede especificar **-IGNORE** varias veces para suprimir varios identificadores de mensaje.  
   
  **\<baseconnectionoptions>**  
- Especifica la información de conexión base que se usa en **ssbdiagnose** cuando no se incluyen opciones de conexión en una cláusula determinada. La información de conexión proporcionada en una cláusula específica invalida la información de **baseconnectionoption** . Este proceso se realiza para cada parámetro de forma individual. Por ejemplo, si tanto **-S** como **-d** se especifican en **baseconnetionoptions**y solo se especifica **-d** en **toconnetionoptions**, **ssbdiagnose** usará -S de **baseconnetionoptions** y -d de **toconnetionoptions**.  
+ Especifica la información de conexión base que se usa en **ssbdiagnose** cuando no se incluyen opciones de conexión en una cláusula determinada. La información de conexión proporcionada en una cláusula específica invalida la información de **baseconnectionoption** . Este proceso se realiza para cada parámetro de forma individual. Por ejemplo, si tanto **-S** como **-d** se especifican en **baseconnetionoptions** y solo se especifica **-d** en **toconnetionoptions**, **ssbdiagnose** usará -S de **baseconnetionoptions** y -d de **toconnetionoptions**.  
   
  **CONFIGURATION**  
  Solicita un informe de errores de configuración entre un par de servicios de [!INCLUDE[ssSB](../../includes/sssb-md.md)] o de un único servicio.  
@@ -310,7 +310,7 @@ WHERE database_id = DB_ID();
  Notifica un problema que impide que **ssbdiagnose** complete un análisis de configuración o supervise conversaciones.  
   
 ## <a name="sqlcmd-environment-variables"></a>Variables de entorno de sqlcmd  
- La utilidad **ssbdiagnose** admite las variables de entorno SQLCMDSERVER, SQLCMDUSER, SQLCMDPASSWORD y SQLCMDLOGINTIMOUT que también emplea la utilidad **sqlcmd** . Puede establecer las variables de entorno mediante el comando SET del símbolo del sistema o el comando **setvar** en los scripts de [!INCLUDE[tsql](../../includes/tsql-md.md)] que ejecute con **sqlcmd**. Para obtener más información sobre cómo usar **setvar** en **sqlcmd**, vea [Usar sqlcmd con variables de script](../../ssms/scripting/sqlcmd-use-with-scripting-variables.md?view=sql-server-ver15).  
+ La utilidad **ssbdiagnose** admite las variables de entorno SQLCMDSERVER, SQLCMDUSER, SQLCMDPASSWORD y SQLCMDLOGINTIMOUT que también emplea la utilidad **sqlcmd** . Puede establecer las variables de entorno mediante el comando SET del símbolo del sistema o el comando **setvar** en los scripts de [!INCLUDE[tsql](../../includes/tsql-md.md)] que ejecute con **sqlcmd**. Para obtener más información sobre cómo usar **setvar** en **sqlcmd**, vea [Usar sqlcmd con variables de script](../../ssms/scripting/sqlcmd-use-with-scripting-variables.md).  
   
 ## <a name="permissions"></a>Permisos  
  En cada cláusula **connectionoptions** , el inicio de sesión especificado con los parámetros **-E** o **-U** debe ser miembro del rol fijo de servidor **sysadmin** en la instancia especificada en **-S**.  

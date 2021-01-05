@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: 60e8ef0a-0851-41cf-a6d8-cca1e04cbcdb
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 36fde81f6317d45b2169282d99e4eef27b3467b3
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: 67f25ef21a7d4897bba7242da796bd41f9fc655e
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714273"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642226"
 ---
 # <a name="sqlservr-application"></a>sqlservr (aplicación)
 
@@ -85,8 +85,8 @@ Los parámetros siguientes están obsoletos y no se admiten en [!INCLUDE[ssCurre
 
 |Parámetro | Más información|
 |:-----|:-----|
-|**-h** | En versiones anteriores de instancias de 32 bits de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] para reservar espacio de direcciones de memoria virtual para los metadatos de Agregar memoria sin interrupción cuando AWE está habilitado. Se admite a través de [!INCLUDE[sssql14](../includes/sssql14-md.md)]. Para obtener más información, vea [Características de SQL Server en desuso y descontinuadas en SQL Server 2016](../database-engine/discontinued-database-engine-functionality-in-sql-server.md?view=sql-server-ver15).|
-|**-g** | *memoria_para_reserva*<br/><br>Se aplica a las versiones anteriores de las instancias de 32 bits de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]. Se admite a través de [!INCLUDE[sssql14](../includes/sssql14-md.md)]. Especifica un número entero de megabytes (MB) de memoria que [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] deja disponibles para las asignaciones de memoria en el proceso de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] , pero fuera del bloque de memoria de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] . Para obtener más información, vea [la documentación de SQL Server 2014 sobre opciones de configuración de memoria de servidor](/previous-versions/sql/2014/database-engine/configure-windows/server-memory-server-configuration-options?view=sql-server-2014).|
+|**-h** | En versiones anteriores de instancias de 32 bits de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] para reservar espacio de direcciones de memoria virtual para los metadatos de Agregar memoria sin interrupción cuando AWE está habilitado. Se admite a través de [!INCLUDE[sssql14](../includes/sssql14-md.md)]. Para obtener más información, vea [Características de SQL Server en desuso y descontinuadas en SQL Server 2016](../database-engine/discontinued-database-engine-functionality-in-sql-server.md).|
+|**-g** | *memoria_para_reserva*<br/><br>Se aplica a las versiones anteriores de las instancias de 32 bits de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]. Se admite a través de [!INCLUDE[sssql14](../includes/sssql14-md.md)]. Especifica un número entero de megabytes (MB) de memoria que [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] deja disponibles para las asignaciones de memoria en el proceso de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] , pero fuera del bloque de memoria de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] . Para obtener más información, vea [la documentación de SQL Server 2014 sobre opciones de configuración de memoria de servidor](/previous-versions/sql/2014/database-engine/configure-windows/server-memory-server-configuration-options?view=sql-server-2014&preserve-view=true).|
 | &nbsp; | &nbsp; |
 
 ## <a name="see-also"></a>Consulte también

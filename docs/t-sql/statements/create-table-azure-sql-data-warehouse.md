@@ -12,12 +12,12 @@ ms.assetid: ea21c73c-40e8-4c54-83d4-46ca36b2cf73
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
-ms.openlocfilehash: fdadefa5b898a2b37c7e5a7f087c429ccc6b8d4f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: bf8ef986da54559c5928677643f6bd99c63c2266
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97438968"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643021"
 ---
 # <a name="create-table-azure-synapse-analytics"></a>CREATE TABLE (Azure Synapse Analytics)
 
@@ -172,7 +172,7 @@ Crea una o varias particiones de tabla. Estas particiones son segmentos de tabla
 
 ### <a name="ordered-clustered-columnstore-index-option"></a>Opción de índice de almacén de columnas agrupado ordenado 
 
-El índice de almacén de columnas agrupado (CCI) es el valor predeterminado para crear tablas en [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)].  Los datos de un CCI no se ordenan antes de comprimirse en segmentos de almacén de columnas.  Al crear un CCI con ORDER, los datos se ordenan antes de agregarse a los segmentos de índice y el rendimiento de las consultas se puede mejorar. Consulte [Optimización del rendimiento con el índice de almacén de columnas agrupado ordenado](/azure/sql-data-warehouse/performance-tuning-ordered-cci?view=azure-sqldw-latest) para obtener más información.  
+El índice de almacén de columnas agrupado (CCI) es el valor predeterminado para crear tablas en [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)].  Los datos de un CCI no se ordenan antes de comprimirse en segmentos de almacén de columnas.  Al crear un CCI con ORDER, los datos se ordenan antes de agregarse a los segmentos de índice y el rendimiento de las consultas se puede mejorar. Consulte [Optimización del rendimiento con el índice de almacén de columnas agrupado ordenado](/azure/sql-data-warehouse/performance-tuning-ordered-cci?view=azure-sqldw-latest&preserve-view=true) para obtener más información.  
 
 Se puede crear un CCI ordenado en columnas de cualquier tipo de datos que se admita en [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)], excepto en las columnas de cadena.  
 
@@ -596,4 +596,4 @@ WITH
 [CREATE TABLE AS SELECT &#40;Azure Synapse Analytics&#41;](../../t-sql/statements/create-table-as-select-azure-sql-data-warehouse.md)   
 [DROP TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/drop-table-transact-sql.md)   
 [ALTER TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-transact-sql.md)   
-[sys.index_columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-index-columns-transact-sql.md?view=azure-sqldw-latest) 
+[sys.index_columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-index-columns-transact-sql.md) 

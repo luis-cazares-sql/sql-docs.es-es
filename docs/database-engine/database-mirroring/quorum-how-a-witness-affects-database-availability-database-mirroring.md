@@ -6,7 +6,7 @@ ms.date: 03/01/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - quorum [SQL Server], database mirroring
@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: a62d9dd7-3667-4751-a294-a61fc9caae7c
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: c28e70d2f66dffc00ff2ac9138f97dc8d0e08991
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: f30f336ade4b3ab911d6ed365ddfa637230ea02e
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85789658"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641375"
 ---
 # <a name="quorum-how-a-witness-affects-database-availability-database-mirroring"></a>Cuórum: Cómo un testigo afecta a la disponibilidad de la base de datos (reflejo de base de datos)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -99,7 +99,7 @@ ms.locfileid: "85789658"
   
  ![Cómo cooperan el testigo y los asociados](../../database-engine/database-mirroring/media/dbm-quorum-scenarios.gif "Cómo cooperan el testigo y los asociados")  
   
- En el escenario 1 se muestra cómo, después de un error del servidor principal original (**Partner_A**), el servidor reflejado y el testigo se ponen de acuerdo en que el principal, **Partner_A**, ya no está disponible y forman un cuórum. Tras ello, el servidor reflejado, **Partner_B** , asume el rol principal. Se da la conmutación automática por error y **Partner_B**pone en línea su copia de la base de datos. Después, **Partner_B** se bloquea y la base de datos se queda sin conexión. Más adelante, el antiguo servidor principal, **Partner_A**, se vuelve a conectar al testigo recuperando el cuórum, pero al comunicarse con el testigo, **Partner_A** detecta que no puede poner en línea su copia de la base de datos, ya que ahora **Partner_B** posee el rol principal. Cuando **Partner_B** se vuelve a unir a la sesión, vuelve a poner en línea la base de datos.  
+ En el escenario 1 se muestra cómo, después de un error del servidor principal original (**Partner_A**), el servidor reflejado y el testigo se ponen de acuerdo en que el principal, **Partner_A**, ya no está disponible y forman un cuórum. Tras ello, el servidor reflejado, **Partner_B** , asume el rol principal. Se da la conmutación automática por error y **Partner_B** pone en línea su copia de la base de datos. Después, **Partner_B** se bloquea y la base de datos se queda sin conexión. Más adelante, el antiguo servidor principal, **Partner_A**, se vuelve a conectar al testigo recuperando el cuórum, pero al comunicarse con el testigo, **Partner_A** detecta que no puede poner en línea su copia de la base de datos, ya que ahora **Partner_B** posee el rol principal. Cuando **Partner_B** se vuelve a unir a la sesión, vuelve a poner en línea la base de datos.  
   
  En el escenario 2, el testigo pierde el cuórum, mientras que los asociados, **Partner_A** y **Partner_B**, conservan el cuórum entre sí y la base de datos permanece en línea. A continuación, los asociados pierden también su quórum y la base de datos se queda sin conexión. Más adelante, el servidor principal, **Partner_A**, se vuelve a conectar al testigo y recupera el cuórum. El testigo confirma que **Partner_A** sigue siendo el propietario del rol principal y **Partner_A** vuelve a poner la base de datos en línea.  
   

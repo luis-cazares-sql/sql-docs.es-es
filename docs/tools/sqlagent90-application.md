@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: e8b80e8d-d0c9-4500-a868-0ce08233da08
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 1930add6748d979c0a00455529ca932e8d0b43c8
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: 63f185f686d21c5c9a490bee83d2c9afaf449b8f
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714083"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641895"
 ---
 # <a name="sqlagent90-application"></a>sqlagent90, aplicación
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -49,5 +49,5 @@ sqlagent90
  Después de mostrar un mensaje de copyright, **sqlagent90** muestra la salida en la ventana del símbolo del sistema solo si se especificó el modificador **-v** . Para detener **sqlagent90**, pulse Crtl+C en el símbolo del sistema. No cierre la ventana del símbolo del sistema antes de detener **sqlagent90**.  
   
 ## <a name="see-also"></a>Consulte también  
- [Tareas administrativas automatizadas &#40;Agente SQL Server&#41;](../ssms/agent/automated-administration-tasks-sql-server-agent.md?view=sql-server-ver15)  
+ [Tareas administrativas automatizadas &#40;Agente SQL Server&#41;](../ssms/agent/automated-administration-tasks-sql-server-agent.md)  
   

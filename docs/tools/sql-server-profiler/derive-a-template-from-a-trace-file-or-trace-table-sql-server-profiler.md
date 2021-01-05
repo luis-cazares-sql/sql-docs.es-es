@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/01/2017
-ms.openlocfilehash: 02af487c0d7301ce7d5d71ff046b90fb25efc8ab
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: 3a1f608eba9a91510258c15ccaf109e43806ef1c
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88713713"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641944"
 ---
 # <a name="derive-a-template-from-a-trace-file-or-trace-table-sql-server-profiler"></a>Derivar una plantilla a partir de un archivo o tabla de seguimiento (SQL Server Profiler)
 
@@ -28,7 +28,7 @@ ms.locfileid: "88713713"
   
 1.  Abra el archivo o tabla de seguimiento que servirá de base para la plantilla. Para obtener más información, vea [Abrir un archivo de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/open-a-trace-file-sql-server-profiler.md) o el Asistente para la optimización del [Abrir una tabla de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/open-a-trace-table-sql-server-profiler.md).  
   
-2.  En el menú **Archivo** , seleccione **Guardar como**y, a continuación, haga clic en **Plantilla de seguimiento**.  
+2.  En el menú **Archivo** , seleccione **Guardar como** y, a continuación, haga clic en **Plantilla de seguimiento**.  
   
 3.  Escriba un nombre o seleccione un nombre de la lista. Haga clic en **OK**.  
   
@@ -37,7 +37,7 @@ ms.locfileid: "88713713"
   
 ## <a name="see-also"></a>Consulte también  
  [Crear una plantilla de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/create-a-trace-template-sql-server-profiler.md)   
- [Modificar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](./modify-trace-templates.md?view=sql-server-ver15)   
+ [Modificar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](./modify-trace-templates.md)   
  [Derivar una plantilla a partir de un seguimiento en ejecución &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/derive-a-template-from-a-running-trace-sql-server-profiler.md)   
  [SQL Server Profiler](../../tools/sql-server-profiler/sql-server-profiler.md)  
   
