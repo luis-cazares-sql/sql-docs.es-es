@@ -1,6 +1,6 @@
 ---
 title: Opciones de configuración de la memoria del servidor | Microsoft Docs
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 08/14/2019
 ms.prod: sql
 ms.prod_service: high-availability
@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 29ce373e-18f8-46ff-aea6-15bbb10fb9c2
 author: pmasl
 ms.author: pelopes
-ms.openlocfilehash: 8620da6349efe012e9e0d75d6ddf5efada437832
-ms.sourcegitcommit: 039fb38c583019b3fd06894160568387a19ba04e
+ms.openlocfilehash: 71cab9c11aaa4f3dc569761fdfef407601162b1c
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87442805"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878923"
 ---
 # <a name="server-memory-configuration-options"></a>Opciones de configuración de la memoria del servidor
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -68,7 +68,7 @@ Las opciones de servidor **memoria de servidor mínima** y **memoria de servidor
 <sup>2</sup> Consulte la página de documentación sobre cómo [Establecer la opción de configuración del servidor Máximo de subprocesos de trabajo](../../database-engine/configure-windows/configure-the-max-worker-threads-server-configuration-option.md) para obtener información sobre los subprocesos de trabajo predeterminados calculados para un determinado número de CPU con afinidad en el host actual.
 
 ## <a name="use-ssmanstudiofull"></a>Use [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]  
-Use las dos opciones de memoria de servidor **memoria de servidor mínima** y **memoria de servidor máxima**para reconfigurar la cantidad de memoria (en megabytes) administrada por el Administrador de memoria de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. De forma predeterminada, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] puede cambiar sus requisitos de memoria de manera dinámica basándose en los recursos del sistema disponibles.  
+Use las dos opciones de memoria de servidor **memoria de servidor mínima** y **memoria de servidor máxima** para reconfigurar la cantidad de memoria (en megabytes) administrada por el Administrador de memoria de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. De forma predeterminada, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] puede cambiar sus requisitos de memoria de manera dinámica basándose en los recursos del sistema disponibles.  
   
 ### <a name="procedure-for-configuring-a-fixed-amount-of-memory-not-recommended"></a>Procedimiento para configurar una cantidad fija de memoria (no recomendado)  
 Para establecer una cantidad fija de memoria:  
@@ -104,9 +104,9 @@ Para habilitar la opción de bloqueo de páginas en memoria:
   
      Se abrirá el cuadro de diálogo **Directiva de grupo** .  
   
-2.  En la consola **Directiva de grupo** , expanda **Configuración del equipo**y, a continuación, expanda **Configuración de Windows**.  
+2.  En la consola **Directiva de grupo** , expanda **Configuración del equipo** y, a continuación, expanda **Configuración de Windows**.  
   
-3.  Expanda **Configuración de seguridad**y, a continuación, expanda **Directivas locales**.  
+3.  Expanda **Configuración de seguridad** y, a continuación, expanda **Directivas locales**.  
   
 4.  Seleccione la carpeta **Asignación de derechos de usuario** .  
   

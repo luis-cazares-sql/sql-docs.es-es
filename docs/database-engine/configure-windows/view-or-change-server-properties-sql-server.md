@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 55f3ac04-5626-4ad2-96bd-a1f1b079659d
 author: markingmyname
 ms.author: maghan
-ms.custom: contperfq4
-ms.openlocfilehash: 846d393640e02365348f5ffd7057c0142163f5d9
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.custom: contperf-fy20q4
+ms.openlocfilehash: aabe0f1c418440053998ce1a1b388e82d74b06c9
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85763981"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878868"
 ---
 # <a name="view-or-change-server-properties-sql-server"></a>Ver o cambiar las propiedades del servidor (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -135,7 +135,7 @@ GO
   
 ### <a name="to-view-or-change-server-properties"></a>Para ver o cambiar las propiedades del servidor  
   
-1.  En el menú **Inicio** , elija **Todos los programas**, [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)], **Herramientas de configuración**y, por último, **Administrador de configuración de SQL Server**.  
+1.  En el menú **Inicio** , elija **Todos los programas**, [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)], **Herramientas de configuración** y, por último, **Administrador de configuración de SQL Server**.  
   
 2.  En **Administrador de configuración de SQL Server**, haga clic en **Servicios de SQL Server**.  
   

@@ -1,7 +1,7 @@
 ---
 title: Conexión a SQL Server cuando los administradores del sistema están bloqueados | Microsoft Docs
 description: Aprenda a recuperar el acceso a SQL Server como administrador del sistema si se le ha bloqueado por error.
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 05/20/2020
 ms.prod: sql
 ms.prod_service: high-availability
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c0c0082e-b867-480f-a54b-79f2a94ceb67
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 801602c78193f9fc3fa9cdab40b98c3dc3dd42e0
-ms.sourcegitcommit: 291ae8f6b72fd355f8f24ce5300339306293ea7e
+ms.openlocfilehash: 3b4cf5946fba4eb3c79150b29ef44bd232f9c155
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512321"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878956"
 ---
 # <a name="connect-to-sql-server-when-system-administrators-are-locked-out"></a>Conexión a SQL Server cuando los administradores del sistema están bloqueados 
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -83,7 +83,7 @@ Siga estas instrucciones con la sesión iniciada en Windows como miembro del gru
     > [!NOTE]  
     >  En algunas versiones anteriores de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] no hay ninguna pestaña **Parámetros de inicio** . En ese caso, en la pestaña **Opciones avanzadas** , haga doble clic en **Parámetros de inicio**. Los parámetros se abrirán en una ventana muy pequeña. Tenga cuidado de no cambiar ninguno de los parámetros existentes. Al final, agregue un nuevo parámetro `;-m` y, a continuación, haga clic en **Aceptar**. (Es un punto y coma, después un guion y a continuación una letra m minúscula).  
   
-4.  Haga clic en **Aceptar**y, después del mensaje para reiniciar, haga clic con el botón derecho en el nombre del servidor; luego, haga clic en **Reiniciar**.  
+4.  Haga clic en **Aceptar** y, después del mensaje para reiniciar, haga clic con el botón derecho en el nombre del servidor; luego, haga clic en **Reiniciar**.  
   
 5.  Después de que [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] se haya reiniciado, el servidor se encuentra en modo de usuario único. Asegúrese de que el Agente de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] no se esté ejecutando. Si está iniciado, usará su única conexión.  
   
@@ -94,7 +94,7 @@ Siga estas instrucciones con la sesión iniciada en Windows como miembro del gru
   
      En algunas configuraciones, SSMS intentará realizar varias conexiones. Se producirá un error en varias conexiones porque [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] está en modo de usuario único. En función del escenario, realice una de las siguientes acciones.  
   
-    1.  Conéctese al Explorador de objetos mediante autenticación de Windows, que incluye las credenciales de administrador. Expanda **Seguridad**e **Inicios de sesión**y haga doble clic en su propio inicio de sesión. En la página **Roles de servidor** , seleccione **sysadmin**y, a continuación, haga clic en **Aceptar**.  
+    1.  Conéctese al Explorador de objetos mediante autenticación de Windows, que incluye las credenciales de administrador. Expanda **Seguridad** e **Inicios de sesión** y haga doble clic en su propio inicio de sesión. En la página **Roles de servidor** , seleccione **sysadmin** y, a continuación, haga clic en **Aceptar**.  
   
     2.  En lugar de conectar con el Explorador de objetos, conectar con una ventana de consulta mediante la autenticación de Windows (que incluye sus credenciales de administrador). (Solo puede conectarse de esta forma si no se conectó con el Explorador de objetos). Ejecute código como el siguiente para agregar un nuevo inicio de sesión Autenticación de Windows que sea miembro del rol fijo de servidor **sysadmin** . El ejemplo siguiente agrega un usuario de dominio denominado `CONTOSO\PatK`.  
   

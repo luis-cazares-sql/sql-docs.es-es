@@ -1,7 +1,7 @@
 ---
 title: Archivos y grupos de archivos de base de datos | Microsoft Docs
 description: Obtenga información sobre los archivos de base de datos y cómo crear grupos de archivos en SQL Server con fines administrativos y de asignación. Vea ejemplos, reglas y recomendaciones.
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 05/29/2020
 ms.prod: sql
 ms.prod_service: database-engine
@@ -33,12 +33,12 @@ helpviewer_keywords:
 ms.assetid: 9ca11918-480d-4838-9198-cec221ef6ad0
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: b9a4fc2995b0442f46794ad8ad226b48bfa4726b
-ms.sourcegitcommit: d35d0901296580bfceda6e0ab2e14cf2b7e99a0f
+ms.openlocfilehash: f14eaec691218c4f7a9cad82dabb2f31f36b6245
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92497004"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878763"
 ---
 # <a name="database-files-and-filegroups"></a>Archivos y grupos de archivos de base de datos
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -53,7 +53,7 @@ ms.locfileid: "92497004"
 |Secundario|Archivos de datos opcionales definidos por el usuario. Los datos se pueden distribuir en varios discos colocando cada archivo en una unidad de disco distinta. La extensión de nombre de archivo recomendada para los archivos de datos secundarios es .ndf.|  
 |Registro de transacciones|El registro contiene la información que se utiliza para recuperar la base de datos. Cada base de datos debe tener al menos un archivo de registro. La extensión recomendada para los nombres de archivos de registro es .ldf.|  
   
- Por ejemplo, una base de datos sencilla denominada **Ventas** tiene un archivo principal que contenga todos los datos y objetos y un archivo de registro con la información del registro de transacciones. Puede crearse una base de datos más compleja, **Pedidos** , compuesta por un archivo principal y cinco archivos secundarios. Los datos y objetos de la base de datos se reparten entre los seis archivos, y cuatro archivos de registro adicionales contienen la información del registro de transacciones.  
+ Por ejemplo, una base de datos sencilla denominada **Ventas** tiene un archivo principal que contenga todos los datos y objetos y un archivo de registro con la información del registro de transacciones. Puede crearse una base de datos más compleja, **Pedidos**, compuesta por un archivo principal y cinco archivos secundarios. Los datos y objetos de la base de datos se reparten entre los seis archivos, y cuatro archivos de registro adicionales contienen la información del registro de transacciones.  
   
  De forma predeterminada, los datos y los registros de transacciones se colocan en la misma unidad y ruta de acceso para manipular los sistemas de disco único, pero puede que esta opción no resulte óptima para los entornos de producción. Se recomienda colocar los archivos de datos y de registro en distintos discos.  
 

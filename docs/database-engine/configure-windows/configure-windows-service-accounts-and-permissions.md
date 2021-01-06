@@ -1,7 +1,7 @@
 ---
 title: Configurar los permisos y las cuentas de servicio de Windows | Microsoft Docs
 description: Familiarícese con las cuentas de servicio que se usan para iniciar y ejecutar servicios en SQL Server. Vea cómo configurarlas y asignar los permisos adecuados.
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 03/17/2020
 ms.prod: sql
 ms.prod_service: high-availability
@@ -51,12 +51,12 @@ helpviewer_keywords:
 ms.assetid: 309b9dac-0b3a-4617-85ef-c4519ce9d014
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: b52093904be2bd3ae649e4472dc9b08ffdea89b6
-ms.sourcegitcommit: 7f76975c29d948a9a3b51abce564b9c73d05dcf0
+ms.openlocfilehash: da2fc97ef8e5637dfff48d2070cb652b40ae4d28
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96901035"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878931"
 ---
 # <a name="configure-windows-service-accounts-and-permissions"></a>Configurar los permisos y las cuentas de servicio de Windows
 
