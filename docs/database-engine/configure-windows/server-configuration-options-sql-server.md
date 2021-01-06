@@ -1,11 +1,8 @@
 ---
-title: Opciones de configuración de servidor (SQL Server) | Microsoft Docs
+title: Opciones de configuración de servidor (SQL Server)
 description: Descubra cómo administrar y optimizar los recursos de SQL Server. Vea las opciones de configuración disponibles, la configuración posible, los valores predeterminados y los requisitos de reinicio.
-ms.custom: ''
-ms.date: 07/20/2020
 ms.prod: sql
 ms.prod_service: high-availability
-ms.reviewer: ''
 ms.technology: configuration
 ms.topic: conceptual
 keywords:
@@ -27,15 +24,17 @@ helpviewer_keywords:
 - stored procedures [SQL Server], configuration options
 - server configuration [SQL Server]
 - administering SQL Server, configuration options
-ms.assetid: 9f38eba6-39b1-4f1d-ba24-ee4f7e2bc969
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 6ffbb3df5a8a8dac4ce22c27a1194520e8b058de
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.reviewer: ''
+ms.custom: ''
+ms.date: 07/20/2020
+ms.openlocfilehash: bcadbc294414b2fe992d3864be240a1998a5e477
+ms.sourcegitcommit: a81823f20262227454c0b5ce9c8ac607aaf537e2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86923621"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97684227"
 ---
 # <a name="server-configuration-options-sql-server"></a>Opciones de configuración de servidor (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

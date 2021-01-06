@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 0b12445989fd044a39ab88b2d840368aec206025
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: 3cf6d932a3f458e971d827c1ca4c493c298c2241
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96419716"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771394"
 ---
 # <a name="sql-server-data-type-mappings"></a>Asignaciones de tipos de datos de SQL Server
 
@@ -71,7 +71,7 @@ Para obtener información sobre los tipos de datos de SQL Server, vea [Tipos de
 
 ## <a name="see-also"></a>Vea también
 
-- [Tipos de datos de SQL Server y ADO.NET](./sql/sql-server-data-types.md)
-- [Datos binarios y datos de valores grandes de SQL Server](./sql/sql-server-binary-large-value-data.md)
-- [Configurar parámetros](configure-parameters.md)
+- [Tipos de datos de SQL Server en ADO.NET](./sql/sql-server-data-types.md)
+- [Datos binarios y datos de valores grandes de SQL Server](./sql/sql-server-binary-large-value-data.md)
+- [Configuración de parámetros](configure-parameters.md)
 - [Asignaciones de tipos de datos en ADO.NET](data-type-mappings-ado-net.md)

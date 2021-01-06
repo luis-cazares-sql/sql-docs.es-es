@@ -18,6 +18,6 @@ FYI: In the following link syntax to SQL 2014 content, the two 'view' related pa
 [SQL Server 2014 documentation](/previous-versions/sql/2014/index?view=sql-server-2014&preserve-view=true) is still available on our main Docs address.
 -->
 
-La [documentación de SQL Server 2019](../../sql-server/index.yml?preserve-view=true&view=sql-server-ver15) está disponible en nuestra dirección principal de Docs. A continuación, use el menú desplegable de control de versiones que se encuentra en la parte superior de la página para seleccionar otra versión de interés.
+La [documentación de SQL Server 2019](../../sql-server/index.yml?view=sql-server-ver15&preserve-view=true) está disponible en nuestra dirección principal de Docs. A continuación, use el menú desplegable de control de versiones que se encuentra en la parte superior de la página para seleccionar otra versión de interés.
 
 Para obtener más información acerca de la documentación de las versiones anteriores de SQL Server, consulte la [documentación sobre versiones anteriores de SQL Server](/previous-versions/sql/).

@@ -5,17 +5,17 @@ ms.custom: ag-guide, seodec18
 ms.date: 06/13/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 ms.assetid: dfd2b639-8fd4-4cb9-b134-768a3898f9e6
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 15ae1302fcff002816e8e8e7a5e37b6fbe8bd503
-ms.sourcegitcommit: 442fbe1655d629ecef273b02fae1beb2455a762e
+ms.openlocfilehash: fa6d63d665a2a81d0a112a1685b3ead1969479d1
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93235475"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643750"
 ---
 # <a name="monitor-performance-for-always-on-availability-groups"></a>Supervisión del rendimiento para grupos de disponibilidad Always On
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -87,7 +87,7 @@ ms.locfileid: "93235475"
 En los grupos de disponibilidad Always On, el RTO y RPO se calculan y se muestran para las bases de datos hospedadas en las réplicas secundarias. En el panel de la réplica principal, el RTO y RPO se agrupan por la réplica secundaria. 
 
 Para ver el RTO y RPO en el panel, siga estos pasos:
-1. En SQL Server Management Studio, expanda el nodo **Alta disponibilidad de Always On** , haga clic con el botón derecho en el nombre del grupo de disponibilidad y seleccione **Mostrar panel**. 
+1. En SQL Server Management Studio, expanda el nodo **Alta disponibilidad de Always On**, haga clic con el botón derecho en el nombre del grupo de disponibilidad y seleccione **Mostrar panel**. 
 1. Seleccione **Agregar o quitar columnas** en la pestaña **Agrupar por**. Active **Tiempo de recuperación calculado (segundos)** [RTO] y **Pérdida de datos calculada (tiempo)** [RPO]. 
 
    ![Captura de pantalla que muestra RTO y RPO en el panel.](media/rto-rpo-dashboard.png)
@@ -96,7 +96,7 @@ Para ver el RTO y RPO en el panel, siga estos pasos:
 El cálculo del tiempo de recuperación determina cuánto tiempo se necesita para recuperar la *base de datos secundaria* después de que s e produzca una conmutación por error.  El tiempo de conmutación por error suele ser breve y constante. El tiempo de detección depende de la configuración del clúster y no de las réplicas de disponibilidad individuales. 
 
 
-Para una base de datos secundaria (DB_sec), el cálculo y la presentación de su RTO se basan en sus valores **redo_queue_size** y **redo_rate** :
+Para una base de datos secundaria (DB_sec), el cálculo y la presentación de su RTO se basan en sus valores **redo_queue_size** y **redo_rate**:
 
 ![Cálculo del RTO](media/calculate-rto.png)
 
@@ -116,9 +116,9 @@ Para la base de datos principal, el valor **last_commit_time** es la hora de con
 
 ### <a name="performance-counters-used-in-rtorpo-formulas"></a>Contadores de rendimiento que se usan en las fórmulas de RTO/RPO
 
-- **redo_queue_size** (KB) [ *se usa en el RTO* ]: el tamaño de cola de fase de puesta al día es el tamaño de los registros de transacciones entre sus valores **last_received_lsn** y **last_redone_lsn**. **last_received_lsn** es el identificador de bloque de registro que identifica el punto en el que todos los bloques de registro han sido recibidos por la réplica secundaria en la que se hospeda esta base de datos secundaria. **Last_redone_lsn** es el número de secuencia de registro real de la última entrada de registro que se rehízo en la base de datos secundaria. En función de estos dos valores, se pueden encontrar los identificadores del bloque de registro inicial ( **last_received_lsn** ) y el bloque de registro final ( **last_redone_lsn** ). El espacio entre estos dos bloques de registro puede representar la cantidad de bloques de registro de transacciones que todavía no se han puesto al día. Esto se mide en kilobytes (KB).
--  **redo_rate** (KB/s) [ *se usa en el RTO* ]: un valor acumulativo que representa, en un período de tiempo transcurrido, qué cantidad del registro de transacciones (KB) se ha puesto al día en la base de datos secundaria, expresada en kilobytes (KB)/segundo. 
-- **last_commit_time** (Datetime) [ *se usa en el RPO* ]: para la base de datos principal, **last_commit_time** es la hora de confirmación de la transacción más reciente. Para la base de datos secundaria, el valor **last_commit_time** es la hora de confirmación más reciente de la transacción en la base de datos principal que también se ha protegido correctamente en la base de datos secundaria. Como en la base de datos secundaria este valor se debe sincronizar con el mismo valor de la principal, cualquier diferencia entre estos dos valores es la estimación de la pérdida de datos (RPO).  
+- **redo_queue_size** (KB) [*se usa en el RTO*]: el tamaño de cola de fase de puesta al día es el tamaño de los registros de transacciones entre sus valores **last_received_lsn** y **last_redone_lsn**. **last_received_lsn** es el identificador de bloque de registro que identifica el punto en el que todos los bloques de registro han sido recibidos por la réplica secundaria en la que se hospeda esta base de datos secundaria. **Last_redone_lsn** es el número de secuencia de registro real de la última entrada de registro que se rehízo en la base de datos secundaria. En función de estos dos valores, se pueden encontrar los identificadores del bloque de registro inicial (**last_received_lsn**) y el bloque de registro final (**last_redone_lsn**). El espacio entre estos dos bloques de registro puede representar la cantidad de bloques de registro de transacciones que todavía no se han puesto al día. Esto se mide en kilobytes (KB).
+-  **redo_rate** (KB/s) [*se usa en el RTO*]: un valor acumulativo que representa, en un período de tiempo transcurrido, qué cantidad del registro de transacciones (KB) se ha puesto al día en la base de datos secundaria, expresada en kilobytes (KB)/segundo. 
+- **last_commit_time** (Datetime) [*se usa en el RPO*]: para la base de datos principal, **last_commit_time** es la hora de confirmación de la transacción más reciente. Para la base de datos secundaria, el valor **last_commit_time** es la hora de confirmación más reciente de la transacción en la base de datos principal que también se ha protegido correctamente en la base de datos secundaria. Como en la base de datos secundaria este valor se debe sincronizar con el mismo valor de la principal, cualquier diferencia entre estos dos valores es la estimación de la pérdida de datos (RPO).  
  
 ## <a name="estimate-rto-and-rpo-using-dmvs"></a>Estimación de RTO y RPO mediante DMV
 
@@ -206,7 +206,7 @@ Se pueden consultar las DMV [sys.dm_hadr_database_replica_states](../../../relat
   ```sql
    exec proc_calculate_RTO @secondary_database_name = N'DB_sec'
   ```
-3. En la salida se muestra el valor de RTO de la base de datos de réplica secundaria de destino. Guarde los valores *group_id* , *replica_id* y *group_database_id* para usarlos con el procedimiento almacenado de estimación del RPO. 
+3. En la salida se muestra el valor de RTO de la base de datos de réplica secundaria de destino. Guarde los valores *group_id*, *replica_id* y *group_database_id* para usarlos con el procedimiento almacenado de estimación del RPO. 
    
    Resultado de ejemplo:
 <br>RTO of Database DB_sec' is 0
@@ -299,7 +299,7 @@ Se pueden consultar las DMV [sys.dm_hadr_database_replica_states](../../../relat
       end
  ```
 
-2. Ejecute **proc_calculate_RPO** con los valores *group_id* , *replica_id* y *group_database_id* de la base secundaria de destino. 
+2. Ejecute **proc_calculate_RPO** con los valores *group_id*, *replica_id* y *group_database_id* de la base secundaria de destino. 
 
  ```sql
    exec proc_calculate_RPO @group_id= 'F176DD65-C3EE-4240-BA23-EA615F965C9B',
@@ -330,61 +330,61 @@ Para crear las directivas, siga las instrucciones siguientes en todas las instan
 
 1.  [Inicie el servicio Agente SQL Server](~/ssms/agent/start-stop-or-pause-the-sql-server-agent-service.md) si aún no se ha iniciado.  
   
-2.  En SQL Server Management Studio, en el menú **Herramientas** , haga clic en **Opciones**.  
+2.  En SQL Server Management Studio, en el menú **Herramientas**, haga clic en **Opciones**.  
   
-3.  En la pestaña **SQL Server Always On** , seleccione **Habilitar directiva Always On definida por el usuario** y haga clic en **Aceptar**.  
+3.  En la pestaña **SQL Server Always On**, seleccione **Habilitar directiva Always On definida por el usuario** y haga clic en **Aceptar**.  
   
      Esta configuración permite mostrar las directivas personalizadas configuradas correctamente en el panel Always On.  
   
 4.  Cree una [condición de administración basada en directivas](~/relational-databases/policy-based-management/create-a-new-policy-based-management-condition.md) con las especificaciones siguientes:  
   
-    -   **Nombre** : `RTO`  
+    -   **Nombre**: `RTO`  
   
     -   **Faceta:** **Estado de la réplica de base de datos**  
   
-    -   **Campo** : `Add(@EstimatedRecoveryTime, 60)`  
+    -   **Campo**: `Add(@EstimatedRecoveryTime, 60)`  
   
-    -   **Operador** : **<=**  
+    -   **Operador**: **<=**  
   
-    -   **Valor** : `600`  
+    -   **Valor**: `600`  
   
      Se produce un error en esta condición cuando el tiempo de conmutación por error posible supera los 10 minutos, incluida una sobrecarga de 60 segundos para la detección de errores y la conmutación por error.  
   
 5.  Cree una segunda [condición de administración basada en directivas](~/relational-databases/policy-based-management/create-a-new-policy-based-management-condition.md) con las especificaciones siguientes:  
   
-    -   **Nombre** : `RPO`  
+    -   **Nombre**: `RPO`  
   
     -   **Faceta:** **Estado de la réplica de base de datos**  
   
-    -   **Campo** : `@EstimatedDataLoss`  
+    -   **Campo**: `@EstimatedDataLoss`  
   
-    -   **Operador** : **<=**  
+    -   **Operador**: **<=**  
   
-    -   **Valor** : `3600`  
+    -   **Valor**: `3600`  
   
      Se produce un error en esta condición cuando la posible pérdida de datos supera 1 hora.  
   
 6.  Cree una tercera [condición de administración basada en directivas](~/relational-databases/policy-based-management/create-a-new-policy-based-management-condition.md) con las especificaciones siguientes:  
   
-    -   **Nombre** : `IsPrimaryReplica`  
+    -   **Nombre**: `IsPrimaryReplica`  
   
     -   **Faceta:** **Grupo de disponibilidad**  
   
-    -   **Campo** : `@LocalReplicaRole`  
+    -   **Campo**: `@LocalReplicaRole`  
   
-    -   **Operador** : **=**  
+    -   **Operador**: **=**  
   
-    -   **Valor** : `Primary`  
+    -   **Valor**: `Primary`  
   
      Esta condición comprueba si la réplica de disponibilidad local de un grupo de disponibilidad determinado es la réplica principal.  
   
 7.  Cree una [directiva de administración basada en directivas](~/relational-databases/policy-based-management/create-a-policy-based-management-policy.md) con las especificaciones siguientes:  
   
-    -   Página **General** :  
+    -   Página **General**:  
   
-        -   **Nombre** : `CustomSecondaryDatabaseRTO`  
+        -   **Nombre**: `CustomSecondaryDatabaseRTO`  
   
-        -   **Condición de comprobación** : `RTO`  
+        -   **Condición de comprobación**: `RTO`  
   
         -   **Para destinos:** **Cada DatabaseReplicaState** en **IsPrimaryReplica AvailabilityGroup**  
   
@@ -392,43 +392,43 @@ Para crear las directivas, siga las instrucciones siguientes en todas las instan
   
         -   **Modo de evaluación:** **Al programar**  
   
-        -   **Programación** : **CollectorSchedule_Every_5min**  
+        -   **Programación**: **CollectorSchedule_Every_5min**  
   
-        -   **Habilitado** : **seleccionado**  
+        -   **Habilitado**: **seleccionado**  
   
-    -   Página **Descripción** :  
+    -   Página **Descripción**:  
   
-        -   **Categoría** : **Advertencias de base de datos de disponibilidad**  
+        -   **Categoría**: **Advertencias de base de datos de disponibilidad**  
   
              Esta configuración permite que los resultados de evaluación de directivas se muestren en el panel Always On.  
   
-        -   **Descripción** : **La réplica actual tiene un RTO que supera los 10 minutos, asumiendo una sobrecarga de 1 minuto para la detección y la conmutación por error. Debe investigar los problemas de rendimiento en la instancia de servidor respectiva inmediatamente.**  
+        -   **Descripción**: **La réplica actual tiene un RTO que supera los 10 minutos, asumiendo una sobrecarga de 1 minuto para la detección y la conmutación por error. Debe investigar los problemas de rendimiento en la instancia de servidor respectiva inmediatamente.**  
   
-        -   **Texto para mostrar** : **RTO superado**  
+        -   **Texto para mostrar**: **RTO superado**  
   
 8.  Cree una segunda [directiva de administración basada en directivas](~/relational-databases/policy-based-management/create-a-policy-based-management-policy.md) con las especificaciones siguientes:  
   
-    -   Página **General** :  
+    -   Página **General**:  
   
-        -   **Nombre** : `CustomAvailabilityDatabaseRPO`  
+        -   **Nombre**: `CustomAvailabilityDatabaseRPO`  
   
-        -   **Condición de comprobación** : `RPO`  
+        -   **Condición de comprobación**: `RPO`  
   
         -   **Para destinos:** **Cada DatabaseReplicaState** en **IsPrimaryReplica AvailabilityGroup**  
   
         -   **Modo de evaluación:** **Al programar**  
   
-        -   **Programación** : **CollectorSchedule_Every_30min**  
+        -   **Programación**: **CollectorSchedule_Every_30min**  
   
-        -   **Habilitado** : **seleccionado**  
+        -   **Habilitado**: **seleccionado**  
   
-    -   Página **Descripción** :  
+    -   Página **Descripción**:  
   
-        -   **Categoría** : **Advertencias de base de datos de disponibilidad**  
+        -   **Categoría**: **Advertencias de base de datos de disponibilidad**  
   
-        -   **Descripción** : **La base de datos de disponibilidad ha superado el RPO de 1 hora. Debe investigar los problemas de rendimiento en las réplicas de disponibilidad inmediatamente.**  
+        -   **Descripción**: **La base de datos de disponibilidad ha superado el RPO de 1 hora. Debe investigar los problemas de rendimiento en las réplicas de disponibilidad inmediatamente.**  
   
-        -   **Texto para mostrar** : **RPO superado**  
+        -   **Texto para mostrar**: **RPO superado**  
   
  Al terminar se crean dos nuevos trabajos del Agente SQL Server, uno por programación de evaluación de directivas. Estos trabajos deben tener nombres que comiencen por **syspolicy_check_schedule**.  
   

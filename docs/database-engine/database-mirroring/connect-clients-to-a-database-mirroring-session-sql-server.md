@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - partners [SQL Server], connecting clients to
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 0d5d2742-2614-43de-9ab9-864addb6299b
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 8da63d8ff15d03b55586a72a578d6074fa2a5473
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 680273a6bab1283be56d130c84b4c156d8fcd280
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85789775"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644346"
 ---
 # <a name="connect-clients-to-a-database-mirroring-session-sql-server"></a>Conectar clientes a una sesión de creación de reflejo de la base de datos (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -175,7 +175,7 @@ Server=123.34.45.56,4724;
   
  Por ejemplo, si se usa el tiempo de espera predeterminado de 15 segundos, *LoginTimeout* *= 15*. En este caso, los tiempos de reintento en los primeros tres ciclos son los siguientes:  
   
-|Round|Cálculo de*RetryTime*|Tiempo de reintento por intento|  
+|Round|Cálculo de *RetryTime*|Tiempo de reintento por intento|  
 |-----------|-----------------------------|----------------------------|  
 |1|0 **+(** 0,08 **&#42;** 15 **)**|1,2 segundos|  
 |2|1,2 **+(** 0,08 **&#42;** 15 **)**|2,4 segundos|  

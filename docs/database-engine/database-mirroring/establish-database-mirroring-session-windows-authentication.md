@@ -6,19 +6,19 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - database mirroring [SQL Server], sessions
 ms.assetid: 7cb418d6-dce1-4a0d-830e-9c5ccfe3bd72
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 5dc5aae2308f0f2cada44175ebcef691894720f4
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: ece2afa5381b2692c3cb3b99358fc02891e75e97
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85754702"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644320"
 ---
 # <a name="establish-database-mirroring-session---windows-authentication"></a>Establecer una sesión de creación de reflejo de la base de datos - Autenticación de Windows
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -43,16 +43,16 @@ ms.locfileid: "85754702"
   
 1.  Después de conectarse a la instancia del servidor principal, en el Explorador de objetos, haga clic en el nombre del servidor para expandir el árbol del servidor.  
   
-2.  Expanda **Bases de datos**y seleccione la base de datos que se va a reflejar.  
+2.  Expanda **Bases de datos** y seleccione la base de datos que se va a reflejar.  
   
-3.  Haga clic con el botón derecho en la base de datos, seleccione **Tareas**y, luego, haga clic en **Reflejado**. Así se abre la página **Creación de reflejo** del cuadro de diálogo **Propiedades de la base de datos** .  
+3.  Haga clic con el botón derecho en la base de datos, seleccione **Tareas** y, luego, haga clic en **Reflejado**. Así se abre la página **Creación de reflejo** del cuadro de diálogo **Propiedades de la base de datos** .  
   
 4.  Para empezar la configuración de la creación de reflejo, haga clic en **Configurar seguridad** para iniciar el Asistente para la configuración de seguridad de la creación de reflejo de bases de datos.  
   
     > [!NOTE]  
     >  Durante una sesión de creación de reflejo de la base de datos, puede utilizar este asistente para agregar o cambiar la instancia del servidor testigo.  
   
-5.  El Asistente para la configuración de seguridad de la creación de reflejo de bases de datos crea automáticamente el punto de conexión de creación de reflejo de la base de datos (si no existe ninguno) en cada instancia de servidor y especifica la dirección de red del servidor en el campo correspondiente al rol de la instancia de servidor (**Entidad de seguridad**, **Reflejado**o **Testigo**).  
+5.  El Asistente para la configuración de seguridad de la creación de reflejo de bases de datos crea automáticamente el punto de conexión de creación de reflejo de la base de datos (si no existe ninguno) en cada instancia de servidor y especifica la dirección de red del servidor en el campo correspondiente al rol de la instancia de servidor (**Entidad de seguridad**, **Reflejado** o **Testigo**).  
   
     > [!IMPORTANT]  
     >  Cuando se crea un extremo, el Asistente para la configuración de seguridad de la creación de reflejo de bases de datos siempre utiliza la Autenticación de Windows. Antes de poder usar el asistente con la autenticación basada en certificados, se debe haber configurado el extremo de creación de reflejo para el uso de certificados en cada una de las instancias de servidor. Además, todos los campos del cuadro de diálogo **Cuentas de servicio** deben permanecer vacíos. Para obtener información sobre la creación de un punto de conexión de creación de reflejo de la base de datos, vea [CREATE ENDPOINT &#40;Transact-SQL&#41;](../../t-sql/statements/create-endpoint-transact-sql.md).  

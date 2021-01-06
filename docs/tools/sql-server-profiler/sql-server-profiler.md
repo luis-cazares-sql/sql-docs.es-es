@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 05/01/2020
-ms.openlocfilehash: 485bb37dee0c118cf313bd7b3740b56c41e20c90
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: 3169f8fbbc86fc95a62631c0cc93d77b6a46b0a4
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88713783"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643428"
 ---
 # <a name="sql-server-profiler"></a>SQL Server Profiler
 
@@ -118,7 +118,7 @@ Una plantilla define la configuración predeterminada de un seguimiento. En conc
 
 ### <a name="trace"></a>Seguimiento
 
-Un seguimiento captura datos basándose en clases de evento, columnas de datos y filtros seleccionados. Por ejemplo, puede crear un seguimiento para supervisar errores de excepción. Para ello, seleccione la clase de evento **Exception** y las columnas de datos **Error**, **State**y **Severity** . Deben recopilarse los datos de estas tres columnas para que los resultados del seguimiento proporcionen datos con significado. Una vez hecho esto, puede ejecutar un seguimiento configurado de esta forma y recopilar datos de cualquier evento **Exception** que se produzca en el servidor. Los datos de seguimiento se pueden guardar o utilizar inmediatamente para el análisis. Los seguimientos se pueden volver a reproducir posteriormente, aunque ciertos eventos, como los eventos **Exception** , nunca se vuelven a reproducir. También puede guardar el seguimiento como plantilla para crear seguimientos parecidos en el futuro.  
+Un seguimiento captura datos basándose en clases de evento, columnas de datos y filtros seleccionados. Por ejemplo, puede crear un seguimiento para supervisar errores de excepción. Para ello, seleccione la clase de evento **Exception** y las columnas de datos **Error**, **State** y **Severity** . Deben recopilarse los datos de estas tres columnas para que los resultados del seguimiento proporcionen datos con significado. Una vez hecho esto, puede ejecutar un seguimiento configurado de esta forma y recopilar datos de cualquier evento **Exception** que se produzca en el servidor. Los datos de seguimiento se pueden guardar o utilizar inmediatamente para el análisis. Los seguimientos se pueden volver a reproducir posteriormente, aunque ciertos eventos, como los eventos **Exception** , nunca se vuelven a reproducir. También puede guardar el seguimiento como plantilla para crear seguimientos parecidos en el futuro.  
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ofrece dos formas realizar un seguimiento de una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]: puede hacerlo con [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] o con procedimientos almacenados del sistema.  
 
@@ -164,7 +164,7 @@ Si no se establece un filtro, se devolverán todos los eventos de las clases de 
 |Describe cómo reproducir hasta un cursor.|[Reproducir hasta un cursor &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/replay-to-a-cursor-sql-server-profiler.md)|  
 |Describe cómo reproducir un script [!INCLUDE[tsql](../../includes/tsql-md.md)].|[Reproducir un script Transact-SQL &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/replay-a-transact-sql-script-sql-server-profiler.md)|  
 |Describe cómo crear una plantilla de seguimiento.|[Crear una plantilla de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/create-a-trace-template-sql-server-profiler.md)|  
-|Describe cómo modificar una plantilla de seguimiento.|[Modificar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](./modify-trace-templates.md?view=sql-server-ver15)|  
+|Describe cómo modificar una plantilla de seguimiento.|[Modificar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](./modify-trace-templates.md)|  
 |Describe cómo establecer opciones globales de seguimiento.|[Establecer opciones globales de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/set-global-trace-options-sql-server-profiler.md)|  
 |Describe cómo buscar un valor o una columna de datos durante una traza.|[Buscar un valor o una columna de datos durante la ejecución de un seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/find-a-value-or-data-column-while-tracing-sql-server-profiler.md)|  
 |Describe cómo derivar una plantilla a partir de un seguimiento en ejecución.|[Derivar una plantilla a partir de un seguimiento en ejecución &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/derive-a-template-from-a-running-trace-sql-server-profiler.md)|  
@@ -173,7 +173,7 @@ Si no se establece un filtro, se devolverán todos los eventos de las clases de 
 |Describe cómo exportar una plantilla de seguimiento.|[Exportar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/export-a-trace-template-sql-server-profiler.md)|  
 |Describe cómo importar una plantilla de seguimiento.|[Importar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/import-a-trace-template-sql-server-profiler.md)|  
 |Describe cómo extraer un script de un seguimiento.|[Extraer un script de un seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/extract-a-script-from-a-trace-sql-server-profiler.md)|  
-|Describe cómo establecer correlaciones de un seguimiento con datos del registro de rendimiento de Windows.|[Establecer correlaciones de un seguimiento con datos del registro de rendimiento de Windows &#40;SQL Server Profiler&#41;](./correlate-a-trace-with-windows-performance-log-data.md?view=sql-server-ver15)|  
+|Describe cómo establecer correlaciones de un seguimiento con datos del registro de rendimiento de Windows.|[Establecer correlaciones de un seguimiento con datos del registro de rendimiento de Windows &#40;SQL Server Profiler&#41;](./correlate-a-trace-with-windows-performance-log-data.md)|  
 |Describe cómo organizar las columnas mostradas en un seguimiento.|[Organizar las columnas mostradas en un seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/organize-columns-displayed-in-a-trace-sql-server-profiler.md)|  
 |Describe cómo iniciar [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)].|[Iniciar SQL Server Profiler](../../tools/sql-server-profiler/start-sql-server-profiler.md)|  
 |Describe cómo guardar seguimientos y plantillas de seguimiento.|[Guardar seguimientos y plantillas de seguimiento](../../tools/sql-server-profiler/save-traces-and-trace-templates.md)|  

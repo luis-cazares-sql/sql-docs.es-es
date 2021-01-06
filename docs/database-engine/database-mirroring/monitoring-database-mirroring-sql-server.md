@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - monitoring [SQL Server], database mirroring
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a7b1b9b0-7c19-4acc-9de3-3a7c5e70694d
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: f8479b88d100f9687469ad615d0b92c50aedb6ad
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 9b77b54ba48dc2c3820d055227411f61983b1a7c
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85771823"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644297"
 ---
 # <a name="monitoring-database-mirroring-sql-server"></a>Supervisar la creación de reflejo de la base de datos (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -102,7 +102,7 @@ ms.locfileid: "85771823"
   
  La tabla de estado puede actualizarse de forma automática o manual por un administrador del sistema, con un intervalo de actualización mínimo de 15 segundos. Este mínimo evita que las instancias de servidor se sobrecarguen con solicitudes de estado.  
   
- El Monitor de creación de reflejo de la base de datos o el trabajo del Monitor, si se está ejecutando, actualizan de forma automática la tabla de estado. El**Trabajo del Monitor de creación de reflejo de la base de datos** actualiza la tabla de forma predeterminada una vez por minuto (un administrador del sistema puede especificar un período de actualización de 1 a 120 minutos). Por su parte, el Monitor de creación de reflejo de la base de datos actualiza la tabla de forma automática cada 30 segundos. Para llevar a cabo estas actualizaciones, el **Trabajo del Monitor de creación de reflejo de la base de datos** y el Monitor de creación de reflejo de la base de datos llaman al procedimiento **sp_dbmmonitorupdate**.  
+ El Monitor de creación de reflejo de la base de datos o el trabajo del Monitor, si se está ejecutando, actualizan de forma automática la tabla de estado. El **Trabajo del Monitor de creación de reflejo de la base de datos** actualiza la tabla de forma predeterminada una vez por minuto (un administrador del sistema puede especificar un período de actualización de 1 a 120 minutos). Por su parte, el Monitor de creación de reflejo de la base de datos actualiza la tabla de forma automática cada 30 segundos. Para llevar a cabo estas actualizaciones, el **Trabajo del Monitor de creación de reflejo de la base de datos** y el Monitor de creación de reflejo de la base de datos llaman al procedimiento **sp_dbmmonitorupdate**.  
   
  La primera vez que se ejecuta **sp_dbmmonitorupdate** , crea la tabla de **estado de la creación de reflejo de la base de datos** y el rol fijo de base de datos **dbm_monitor** en la base de datos **msdb** . **sp_dbmmonitorupdate** actualiza el estado de la creación de reflejo de la base de datos mediante la inserción de una nueva fila en cada una de las bases de datos reflejadas de la instancia de servidor; para obtener más información, vea "Tabla de estado de la creación de reflejo de la base de datos", más adelante en este tema. Este procedimiento también evalúa las estadísticas de rendimiento de las nuevas filas y trunca las filas anteriores al período de retención actual (el valor predeterminado es 7 días). Para obtener más información, vea [sp_dbmmonitorupdate &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-dbmmonitorupdate-transact-sql.md).  
   
@@ -110,7 +110,7 @@ ms.locfileid: "85771823"
 >  A menos que un miembro del rol fijo de servidor **sysadmin** use el Monitor de creación de reflejo de la base de datos, la tabla de estado solo se actualiza automáticamente si el **Trabajo del Monitor de creación de reflejo de la base de datos** existe y un Agente [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] está en ejecución.  
   
 #### <a name="database-mirroring-monitor-job"></a>Trabajo del Monitor de creación de reflejo de la base de datos  
- El trabajo de supervisión, **Trabajo del Monitor de creación de reflejo de la base de datos**, funciona de forma independiente dl Monitor de creación de reflejo de la base de datos. El**Trabajo del Monitor de creación de reflejo de la base de datos** solo se crea automáticamente si se usa [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] para iniciar una sesión de creación de reflejo. Si los comandos ALTER DATABASE *database_name* SET PARTNER se usan siempre para iniciar la sesión de creación de reflejo de la base de datos, el trabajo solo existirá si el administrador del sistema ejecuta el procedimiento almacenado **sp_dbmmonitoraddmonitoring** .  
+ El trabajo de supervisión, **Trabajo del Monitor de creación de reflejo de la base de datos**, funciona de forma independiente dl Monitor de creación de reflejo de la base de datos. El **Trabajo del Monitor de creación de reflejo de la base de datos** solo se crea automáticamente si se usa [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] para iniciar una sesión de creación de reflejo. Si los comandos ALTER DATABASE *database_name* SET PARTNER se usan siempre para iniciar la sesión de creación de reflejo de la base de datos, el trabajo solo existirá si el administrador del sistema ejecuta el procedimiento almacenado **sp_dbmmonitoraddmonitoring** .  
   
  Suponiendo que el Agente **esté en ejecución, después de crear el** Trabajo del Monitor de creación de reflejo de la base de datos [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , se llama al trabajo una vez por minuto de forma predeterminada. Después, el trabajo llama al procedimiento almacenado del sistema **sp_dbmmonitorupdate** .  
   
@@ -137,7 +137,7 @@ ms.locfileid: "85771823"
  Los miembros del rol fijo de base de datos **dbm_monitor** dependen del **Trabajo del Monitor de creación de reflejo de la base de datos** para actualizar la tabla de estado a intervalos periódicos. Si el trabajo no existe o el Agente [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] está inactivo, el estado pasa a estar cada vez más desusado y es posible que no refleje la configuración de la sesión de creación de reflejo. Por ejemplo, después de una conmutación por error, es posible que parezca que los asociados comparten el mismo rol (de servidor principal o reflejado) o que el servidor principal actual se muestre como reflejado, a la vez que el servidor reflejado actual se muestra como principal.  
   
 #### <a name="dropping-the-database-mirroring-monitor-job"></a>Quitar el Trabajo del Monitor de creación de reflejo de la base de datos  
- El **Trabajo del Monitor de creación de reflejo de la base de datos**se mantendrá hasta su eliminación. El administrador del sistema debe administrar el trabajo de supervisión. Para quitar el **Trabajo del Monitor de creación de reflejo de la base de datos**, use **sp_dbmmonitordropmonitoring**. Para obtener más información, vea [sp_dbmmonitordropmonitoring &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-dbmmonitordropmonitoring-transact-sql.md).  
+ El **Trabajo del Monitor de creación de reflejo de la base de datos** se mantendrá hasta su eliminación. El administrador del sistema debe administrar el trabajo de supervisión. Para quitar el **Trabajo del Monitor de creación de reflejo de la base de datos**, use **sp_dbmmonitordropmonitoring**. Para obtener más información, vea [sp_dbmmonitordropmonitoring &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-dbmmonitordropmonitoring-transact-sql.md).  
   
 ###  <a name="status-displayed-by-the-database-mirroring-monitor"></a><a name="perf_metrics_of_dbm_monitor"></a> Estado que muestra el Monitor de creación de reflejo de la base de datos  
  En la página **Estado** del Monitor de creación de reflejo de la base de datos se describen los asociados y el estado de la sesión de creación de reflejo. El estado incluye las estadísticas de rendimiento como, por ejemplo, el estado del registro de transacciones y otra información que se utiliza para realizar una estimación del tiempo necesario para completar una conmutación por error y la potencial pérdida de datos, si no se sincroniza la sesión. Además, en la página **Estado** se muestra el estado y la información sobre la sesión de creación de reflejo en general.  
@@ -295,11 +295,11 @@ ms.locfileid: "85771823"
   
  Los siguientes eventos están disponibles en la creación de reflejo de la base de datos:  
   
--   Clase de evento**Database Mirroring State Change**  
+-   Clase de evento **Database Mirroring State Change**  
   
      Este evento indica cuándo cambia el estado de creación de reflejo de una base de datos reflejada. Para obtener más información, consulte [Database Mirroring State Change Event Class](../../relational-databases/event-classes/database-mirroring-state-change-event-class.md).  
   
--   Clase de evento**Audit Database Mirroring Login**  
+-   Clase de evento **Audit Database Mirroring Login**  
   
      Este evento le permite emitir mensajes de auditoría relacionados con la seguridad de transporte de la creación de reflejo de la base de datos. Para obtener más información, consulte [Audit Database Mirroring Login Event Class](../../relational-databases/event-classes/audit-database-mirroring-login-event-class.md).  
   

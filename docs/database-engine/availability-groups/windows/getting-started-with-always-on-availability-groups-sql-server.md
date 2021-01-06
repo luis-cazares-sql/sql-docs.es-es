@@ -5,7 +5,7 @@ ms.custom: seodec18
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: reference
 helpviewer_keywords:
 - Availability Groups [SQL Server], deploying
@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 33f2f2d0-79e0-4107-9902-d67019b826aa
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 64dbc41027229f1904cf653a46c9015ca54d2c8c
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: 9420d44b3291ae5dbc822f47f7aac56c3dc188de
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94584303"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644114"
 ---
 # <a name="getting-started-with-always-on-availability-groups"></a>Introducción a los grupos de disponibilidad Always On
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -40,7 +40,7 @@ En este tema se describen los pasos para las instancias de configuración de [!I
 |**Habilite [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)].** La característica [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] debe habilitarse en cada instancia de [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] que va a participar en un grupo de disponibilidad.<br /><br /> **Requisitos previos:**  El equipo host debe ser en un nodo de clúster de conmutación por error de Windows Server (WSFC).<br /><br /> Para obtener información sobre otros requisitos previos, vea "Requisitos previos y restricciones de las instancias de SQL Server" en [Requisitos previos, restricciones y recomendaciones para Grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability.md).|[Habilitar y deshabilitar grupos de disponibilidad AlwaysOn](../../../database-engine/availability-groups/windows/enable-and-disable-always-on-availability-groups-sql-server.md)|  
 |**Crear un extremo de creación de reflejo de la base de datos (si no hay ninguno)** Asegúrese de que cada instancia del servidor posee un [extremo de creación de reflejo de la base de datos](../../../database-engine/database-mirroring/the-database-mirroring-endpoint-sql-server.md). La instancia de servidor utiliza este extremo para recibir conexiones de [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] de otras instancias de servidor.|Para determinar si existe un extremo de creación de reflejo de la base de datos: <br />                    [sys.database_mirroring_endpoints](../../../relational-databases/system-catalog-views/sys-database-mirroring-endpoints-transact-sql.md)<br /><br /> **Para la autenticación de Windows:**  Para crear un extremo de creación de reflejo de la base de datos con:<br /><br /> [Asistente para nuevo grupo de disponibilidad](../../../database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio.md)<br /><br /> [Transact-SQL](../../../database-engine/database-mirroring/create-a-database-mirroring-endpoint-for-windows-authentication-transact-sql.md)<br /><br /> [SQL Server PowerShell](../../../database-engine/availability-groups/windows/database-mirroring-always-on-availability-groups-powershell.md)<br /><br /> **Para la autenticación de certificado**. Para crear un punto de conexión de creación de reflejo de la base de datos con:[Transact-SQL](../../../database-engine/database-mirroring/use-certificates-for-a-database-mirroring-endpoint-transact-sql.md)|  
   
-##  <a name="creating-and-configuring-a-new-availability-group"></a><a name="ConfigAG"></a>Crear y configurar un nuevo grupo de disponibilidad  
+##  <a name="creating-and-configuring-a-new-availability-group"></a><a name="ConfigAG"></a> Creating and Configuring a New Availability Group  
   
 |Paso|Vínculos|  
 |----------|-----------|  

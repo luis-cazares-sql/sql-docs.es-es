@@ -6,7 +6,7 @@ ms.date: 05/16/2016
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - partners [SQL Server]
@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: a7f95ddc-5154-4ed5-8117-c9fcf2221f13
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: c1b95d55a979738f787e4814a9f40f929c521868
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 906dc46e076ce49242ecb0aa416d13cbb770147e
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85754732"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644441"
 ---
 # <a name="database-mirroring-sql-server"></a>Creación de reflejo de la base de datos (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -121,7 +121,7 @@ ms.locfileid: "85754732"
   
  Una instancia del servidor sirve la base de datos a los clientes ( *servidor principal*). La otra instancia actúa como un servidor en estado de espera semiactiva (el *servidor reflejado*), dependiendo de la configuración y del estado de la sesión de creación de reflejo. Cuando una sesión de creación de reflejo de la base de datos está sincronizada, la creación de reflejo de la base de datos proporciona un servidor en espera activa que admite la conmutación por error rápida sin que se produzca ninguna pérdida de datos derivada de las transacciones confirmadas. Cuando la sesión no está sincronizada, el servidor reflejado suele estar disponible como servidor en espera activa (con posible pérdida de datos).  
   
- Los dos servidores, principal y reflejado, se comunican y colaboran como *asociados* en una *sesión de creación de reflejo de la base de datos*. Los dos asociados tienen roles complementarios en la sesión: el *rol principal* y el *rol reflejado*. En cada momento, un asociado realiza el rol principal y el otro realiza el rol reflejado. Cada asociado se describe como *poseedor* de su rol actual. El asociado que posee el rol principal se denomina *servidor principal*y su copia de la base de datos es la base de datos principal actual. El asociado que posee el rol reflejado se denomina *servidor reflejado*y su copia de la base de datos es la base de datos reflejada actual. Cuando se implementa la creación de reflejo de la base de datos en un entorno de producción, la base de datos principal es la *base de datos de producción*.  
+ Los dos servidores, principal y reflejado, se comunican y colaboran como *asociados* en una *sesión de creación de reflejo de la base de datos*. Los dos asociados tienen roles complementarios en la sesión: el *rol principal* y el *rol reflejado*. En cada momento, un asociado realiza el rol principal y el otro realiza el rol reflejado. Cada asociado se describe como *poseedor* de su rol actual. El asociado que posee el rol principal se denomina *servidor principal* y su copia de la base de datos es la base de datos principal actual. El asociado que posee el rol reflejado se denomina *servidor reflejado* y su copia de la base de datos es la base de datos reflejada actual. Cuando se implementa la creación de reflejo de la base de datos en un entorno de producción, la base de datos principal es la *base de datos de producción*.  
   
  La creación de reflejo de la base de datos implica *rehacer* cada operación de inserción, actualización y eliminación que se produce desde la base de datos principal a la base de datos reflejada tan pronto como sea posible. Para rehacer estas operaciones, se envía cada flujo de entradas del registro de transacciones activo al servidor reflejado, que las aplica a la base de datos reflejada, en secuencia, lo más rápido posible. A diferencia de la replicación, que trabaja en el nivel lógico, la creación de reflejo de la base de datos trabaja en el nivel de registro físico. A partir de [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)], el servidor principal comprime el flujo de entradas del registro de transacciones antes de enviarla al servidor reflejado. Esta compresión del registro se produce en todas las sesiones de creación de reflejo.  
   
@@ -212,7 +212,7 @@ ms.locfileid: "85754732"
 |`SSInstance_2`|Asociado|Testigo|Asociado|Asociado|  
 |`SSInstance_3`|Asociado|Asociado|Testigo|Testigo|  
   
- En la siguiente ilustración se muestran dos instancias de servidor que participan como asociados en dos sesiones de creación de reflejo. Una sesión es para una base de datos llamada **Db_1**y la otra, para una base de datos llamada **Db_2**.  
+ En la siguiente ilustración se muestran dos instancias de servidor que participan como asociados en dos sesiones de creación de reflejo. Una sesión es para una base de datos llamada **Db_1** y la otra, para una base de datos llamada **Db_2**.  
   
  ![Dos instancias de servidor en dos sesiones simultáneas](../../database-engine/database-mirroring/media/dbm-concurrent-sessions.gif "Dos instancias de servidor en dos sesiones simultáneas")  
   

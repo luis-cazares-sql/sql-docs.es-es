@@ -6,7 +6,7 @@ ms.date: 03/07/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - witness [SQL Server], establishing
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4b5ecffd-f025-4ab7-b69d-8958c6477127
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 4cf7d77550f96c72867ecc8133df3cb4f64b7300
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 397a7b11c5188a94186f1618ced09cf2043bec5a
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85763932"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643650"
 ---
 # <a name="add-or-replace-a-database-mirroring-witness-sql-server-management-studio"></a>Agregar o reemplazar un testigo de creación de reflejo de la base de datos (SQL Server Management Studio)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -32,15 +32,15 @@ ms.locfileid: "85763932"
   
 1.  Después de conectarse a la instancia del servidor principal, en el Explorador de objetos, haga clic en el nombre del servidor para expandir el árbol del servidor.  
   
-2.  Expanda **Bases de datos**y seleccione la base de datos principal de la sesión en la que desee agregar o reemplazar un testigo.  
+2.  Expanda **Bases de datos** y seleccione la base de datos principal de la sesión en la que desee agregar o reemplazar un testigo.  
   
-3.  Haga clic con el botón derecho en la base de datos, seleccione **Tareas**y, luego, haga clic en **Reflejado**. Así se abre la página **Creación de reflejo** del cuadro de diálogo **Propiedades de la base de datos** .  
+3.  Haga clic con el botón derecho en la base de datos, seleccione **Tareas** y, luego, haga clic en **Reflejado**. Así se abre la página **Creación de reflejo** del cuadro de diálogo **Propiedades de la base de datos** .  
   
 4.  Haga clic en **Configurar seguridad**.  
   
 5.  Cuando aparezca la pantalla de bienvenida del **Asistente para la configuración de seguridad de la creación de reflejo de bases de datos** , seleccione **Siguiente**.  
   
-6.  En el cuadro de diálogo **Incluir servidor testigo** , haga clic en **Sí**y, después, en **Siguiente**.  
+6.  En el cuadro de diálogo **Incluir servidor testigo** , haga clic en **Sí** y, después, en **Siguiente**.  
   
 7.  En el cuadro de diálogo **Elegir los servidores para configurar** , se marcará automáticamente la casilla **Instancia del servidor testigo** . Haga clic en **Next**.  
   
@@ -56,7 +56,7 @@ ms.locfileid: "85763932"
   
     -   Si todas las instancias del servidor utilizan la misma cuenta de servicio, deje los campos en blanco.  
   
-    -   Si la instancia del servidor testigo usa una cuenta de servicio diferente de las de los asociados, llene los campos **Principal**, **Reflejado**y **Testigo** con el nombre de la cuenta:  
+    -   Si la instancia del servidor testigo usa una cuenta de servicio diferente de las de los asociados, llene los campos **Principal**, **Reflejado** y **Testigo** con el nombre de la cuenta:  
   
          *DOMAINNAME* **\\** *nombre de usuario*  
   

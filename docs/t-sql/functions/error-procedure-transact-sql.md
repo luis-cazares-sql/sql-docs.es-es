@@ -25,18 +25,18 @@ ms.assetid: b81edbf0-856a-498f-ba87-48ff1426d980
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 8822addbf09d03d3b38cf43666dce33f4277e24e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 05ab2a8c6f9b278fb548eb215653e0434232b2ae
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480456"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643775"
 ---
 # <a name="error_procedure-transact-sql"></a>ERROR_PROCEDURE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]  
 
 Esta función devuelve el nombre del procedimiento almacenado o del desencadenador en el que se produce un error, si ese error ha causado la ejecución de un bloque CATCH de una construcción TRY…CATCH. 
-- Desde SQL Server 2017 hasta la [versión actual](../../sql-server/what-s-new-in-sql-server-ver15.md?view=sql-server-ver15) se devuelve nombre_de_esquema.nombre_de_procedimiento_almacenado
+- Desde SQL Server 2017 hasta la [versión actual](../../sql-server/what-s-new-in-sql-server-ver15.md) se devuelve nombre_de_esquema.nombre_de_procedimiento_almacenado
 - SQL Server 2016 devuelve nombre_de_procedimiento_almacenado
 
  ![Icono de vínculo de tema](../../database-engine/configure-windows/media/topic-link.gif "Icono de vínculo de tema") [Convenciones de sintaxis de Transact-SQL](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  

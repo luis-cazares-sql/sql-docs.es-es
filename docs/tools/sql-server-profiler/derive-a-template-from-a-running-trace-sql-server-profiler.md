@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/01/2017
-ms.openlocfilehash: a8c04c84468a61987f27f9bdd0a53d51869111d5
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: e93bf18fe2effb89f5718af4737525872ca4f73b
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88713723"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643420"
 ---
 # <a name="derive-a-template-from-a-running-trace-sql-server-profiler"></a>Derivar una plantilla a partir de un seguimiento en ejecución (SQL Server Profiler)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "88713723"
   
 1.  Si es necesario, vaya a la ventana que contiene el seguimiento.  
   
-2.  En el menú **Archivo** , seleccione **Guardar como**y, a continuación, haga clic en **Plantilla de seguimiento**.  
+2.  En el menú **Archivo** , seleccione **Guardar como** y, a continuación, haga clic en **Plantilla de seguimiento**.  
   
 3.  Escriba un nombre o seleccione un nombre de la lista. Haga clic en **OK**.  
   
@@ -37,6 +37,6 @@ ms.locfileid: "88713723"
 ## <a name="see-also"></a>Consulte también  
  [Plantillas y permisos de SQL Server Profiler](../../tools/sql-server-profiler/sql-server-profiler-templates-and-permissions.md)   
  [Crear una plantilla de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/create-a-trace-template-sql-server-profiler.md)   
- [Modificar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](./modify-trace-templates.md?view=sql-server-ver15)   
+ [Modificar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](./modify-trace-templates.md)   
  [SQL Server Profiler](../../tools/sql-server-profiler/sql-server-profiler.md)  
   

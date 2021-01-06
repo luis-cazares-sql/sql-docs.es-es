@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 08/01/2016
-ms.openlocfilehash: e31f01bb380c84cf3391cc3feebb432b388317ee
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: e8c60ee409fdb391776e0265422c2b975e3c5a4f
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88713733"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643438"
 ---
 # <a name="create-a-trace-sql-server-profiler"></a>Crear un seguimiento (SQL Server Profiler)
 
@@ -27,7 +27,7 @@ En este tema se describe cómo utilizar [!INCLUDE[ssSqlProfiler](../../includes/
   
 ### <a name="to-create-a-trace"></a>Para crear un seguimiento  
   
-1.  En el menú **Archivo** , haga clic en **Nueva seguimiento**y conéctese a una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
+1.  En el menú **Archivo** , haga clic en **Nueva seguimiento** y conéctese a una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
      Aparecerá el cuadro de diálogo **Propiedades de seguimiento** .  
   
@@ -45,7 +45,7 @@ En este tema se describe cómo utilizar [!INCLUDE[ssSqlProfiler](../../includes/
   
     -   Haga clic en **Guardar en tabla** para capturar el seguimiento en una tabla de base de datos.  
   
-         Si lo desea, haga clic en **Establecer número máximo de filas**y especifique un valor.  
+         Si lo desea, haga clic en **Establecer número máximo de filas** y especifique un valor.  
   
     > **PRECAUCIÓN** Si no guarda los resultados del seguimiento puede en un archivo o una tabla, podrá ver el seguimiento mientras el [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] esté abierto. No obstante, perderá los resultados del seguimiento al detenerlo y cerrar el [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)]. Para evitarlo, haga clic en la opción **Guardar** del menú **Archivo** para guardar los resultados antes de cerrar el [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)].  
   
@@ -59,5 +59,5 @@ En este tema se describe cómo utilizar [!INCLUDE[ssSqlProfiler](../../includes/
  [Permisos necesarios para ejecutar SQL Server Profiler](../../tools/sql-server-profiler/permissions-required-to-run-sql-server-profiler.md)   
  [Plantillas y permisos de SQL Server Profiler](../../tools/sql-server-profiler/sql-server-profiler-templates-and-permissions.md)   
  [SQL Server Profiler](../../tools/sql-server-profiler/sql-server-profiler.md)   
- [Establecer correlaciones de un seguimiento con datos del registro de rendimiento de Windows &#40;SQL Server Profiler&#41;](./correlate-a-trace-with-windows-performance-log-data.md?view=sql-server-ver15)  
+ [Establecer correlaciones de un seguimiento con datos del registro de rendimiento de Windows &#40;SQL Server Profiler&#41;](./correlate-a-trace-with-windows-performance-log-data.md)  
   

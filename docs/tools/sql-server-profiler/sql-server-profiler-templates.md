@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: 69b3baf3c5c1f19120dff76608d273cfa0cb79e0
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: b29ba66b9cf0e05f1585ff4f37723cf8fffba669
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88713993"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643402"
 ---
 # <a name="sql-server-profiler-templates"></a>Plantillas de SQL Server Profiler
 
@@ -52,14 +52,14 @@ Puede utilizar el [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] 
 ## <a name="default-template"></a>Plantilla predeterminada  
  [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] designa de forma automática la plantilla **Standard** como plantilla predeterminada para aplicar a cualquier seguimiento nuevo. No obstante, puede cambiar la plantilla predeterminada por cualquier otra predefinida o definida por el usuario. Para cambiar la plantilla predeterminada, active la casilla **Usar como plantilla predeterminada para tipo de servidor seleccionado** cuando cree o edite una plantilla desde la pestaña **General** del cuadro de diálogo **Propiedades de la plantilla de seguimiento** .  
   
- Para obtener acceso al cuadro de diálogo **Propiedades de la plantilla de seguimiento**, en el menú **Archivo** de [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)], elija **Plantillas**y haga clic en **Nueva plantilla** o **Editar plantilla**.  
+ Para obtener acceso al cuadro de diálogo **Propiedades de la plantilla de seguimiento**, en el menú **Archivo** de [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)], elija **Plantillas** y haga clic en **Nueva plantilla** o **Editar plantilla**.  
   
 > [!NOTE]  
 >  La plantilla predeterminada es específica para un tipo de servidor concreto. Si la cambia para un tipo de servidor, seguirá siendo la misma para el resto de tipos de servidor. Para obtener más información sobre cómo configurar una plantilla predeterminada para un servidor específico, vea [Configurar los valores predeterminados de definición de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/set-trace-definition-defaults-sql-server-profiler.md).  
   
 ## <a name="see-also"></a>Consulte también  
  [Crear una plantilla de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/create-a-trace-template-sql-server-profiler.md)   
- [Modificar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](./modify-trace-templates.md?view=sql-server-ver15)   
+ [Modificar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](./modify-trace-templates.md)   
  [Exportar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/export-a-trace-template-sql-server-profiler.md)   
  [Importar una plantilla de seguimiento &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/import-a-trace-template-sql-server-profiler.md)  
   

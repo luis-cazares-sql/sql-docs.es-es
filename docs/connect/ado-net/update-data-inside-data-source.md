@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 41b81d0adedf48f0e33efe6c60d83dd4ed7b597a
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: aca7b1adb8ce91a12832bccfd6cbd27b07229d22
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96428302"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771487"
 ---
 # <a name="updating-data-in-a-data-source"></a>Actualización de datos en un origen de datos
 
@@ -43,4 +43,6 @@ En el ejemplo de código siguiente se ejecuta el procedimiento almacenado que se
 ## <a name="see-also"></a>Vea también
 
 - [Uso de comandos para modificar datos](use-commands-to-modify-data.md)
+- [Actualización de orígenes de datos con objetos DataAdapter](update-data-sources-with-dataadapters.md)
 - [Comandos y parámetros](commands-parameters.md)
+- [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)
