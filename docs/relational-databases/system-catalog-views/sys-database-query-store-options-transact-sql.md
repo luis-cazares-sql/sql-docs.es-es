@@ -1,8 +1,6 @@
 ---
+title: sys.database_query_store_options (Transact-SQL)
 description: sys.database_query_store_options (Transact-SQL)
-title: sys.database_query_store_options (Transact-SQL) | Microsoft Docs
-ms.custom: ''
-ms.date: 05/27/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -18,18 +16,20 @@ dev_langs:
 helpviewer_keywords:
 - database_query_store_options catalog view
 - sys.database_query_store_options catalog view
-ms.assetid: 16b47d55-8019-41ff-ad34-1e0112178067
 author: markingmyname
 ms.author: maghan
+ms.custom: ''
+ms.date: 05/27/2020
 monikerRange: =azuresqldb-current||>=sql-server-2016||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c6b346496eb08e9121abac463b3e87f6e27362e2
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: f8fce0932d546470206bbc7752429090c0212158
+ms.sourcegitcommit: d681796e8c012eca2d9629d3b816749e9f50f868
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484787"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98005420"
 ---
 # <a name="sysdatabase_query_store_options-transact-sql"></a>sys.database_query_store_options (Transact-SQL)
+
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
 
   Devuelve las opciones de Almacén de consultas para esta base de datos.  
@@ -50,7 +50,7 @@ ms.locfileid: "97484787"
 |**stale_query_threshold_days**|**bigint**|Número de días que se conserva la información de una consulta en el Almacén de consultas. El valor predeterminado es **30**. Establézcalo en 0 para deshabilitar la Directiva de retención.<br />En la edición básica de [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] , el valor predeterminado es 7 días.<br /><br /> Cambie mediante la `ALTER DATABASE <database> SET QUERY_STORE ( CLEANUP_POLICY = ( STALE_QUERY_THRESHOLD_DAYS = <value> ) )` instrucción.|  
 |**max_plans_per_query**|**bigint**|Limita el número máximo de planes almacenados. El valor predeterminado es **200**. Si se alcanza el valor máximo, Almacén de consultas deja de capturar nuevos planes para esa consulta. Si se establece en 0, se quita la limitación con respecto al número de planes capturados.<br /><br /> Cambie mediante la `ALTER DATABASE<database> SET QUERY_STORE (MAX_PLANS_PER_QUERY = <n>)` instrucción.|  
 |**query_capture_mode**|**smallint**|El modo de captura de consulta actualmente activo:<br /><br /> **1** = todas las consultas se capturan. Este es el valor de configuración predeterminado para [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ( [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores).<br /><br /> 2 = captura automática de consultas relevantes según el recuento de ejecución y el consumo de recursos. Es el valor de configuración predeterminado para [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)].<br /><br /> 3 = ninguno: detiene la captura de nuevas consultas. El almacén de consultas seguirá recopilando estadísticas de compilación y tiempo de ejecución para las consultas que ya se capturaron. Use esta configuración con precaución, ya que puede que se pierda la captura de consultas importantes.|  
-|**query_capture_mode_desc**|**nvarchar(60)**|Descripción textual del modo de captura real de Almacén de consultas:<br /><br /> TODOS (valor predeterminado para [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] )<br /><br /> **Auto** (valor predeterminado para [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] )<br /><br /> Ninguno|  
+|**query_capture_mode_desc**|**nvarchar(60)**|Descripción textual del modo de captura real de Almacén de consultas:<br /><br /> TODOS (valor predeterminado para [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] )<br /><br /> **Auto** (valor predeterminado para [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] )<br /><br /> NONE|  
 |**size_based_cleanup_mode**|**smallint**|Controla si la limpieza se activará automáticamente cuando la cantidad total de datos se acerque al tamaño máximo:<br /><br /> 0 = la limpieza basada en el tamaño no se activará automáticamente.<br /><br /> **1** = la limpieza basada en el tamaño automático se activará automáticamente cuando el tamaño en disco alcance el **90 por ciento** de *max_storage_size_mb*. Es el valor de configuración predeterminado.<br /><br />La limpieza según el tamaño quita primero las consultas menos caras y más antiguas. Se detiene cuando se alcanza aproximadamente el **80 por ciento** de *max_storage_size_mb* .|  
 |**size_based_cleanup_mode_desc**|**nvarchar(60)**|Descripción textual del modo de limpieza real basado en el tamaño de Almacén de consultas:<br /><br /> Apagado <br /> **Auto** (valor predeterminado)|  
 |**wait_stats_capture_mode**|**smallint**|Controla si Almacén de consultas realiza la captura de las estadísticas de espera: <br /><br /> 0 = OFF <br /> **1** = activado<br /> **Válido para** : [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] y versiones posteriores.|
