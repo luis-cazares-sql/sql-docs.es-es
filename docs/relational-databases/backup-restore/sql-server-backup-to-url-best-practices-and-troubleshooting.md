@@ -1,5 +1,5 @@
 ---
-title: Procedimientos recomendados y solución de problemas de Copia de seguridad en URL
+title: Procedimientos recomendados y solución de problemas de copia de seguridad en URL
 description: Conozca los procedimientos recomendados y sugerencias para la solución de problemas de copias de seguridad y restauraciones de SQL Server en Azure Blob Storage.
 ms.custom: seo-lt-2019
 ms.date: 12/17/2019
@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.assetid: de676bea-cec7-479d-891a-39ac8b85664f
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 4212c397c712351e951060032f6e7a2ece6a5c3f
-ms.sourcegitcommit: 5a1ed81749800c33059dac91b0e18bd8bb3081b1
+ms.openlocfilehash: dc7532aaead7b2257755f2db689c2cbbbd05d3c3
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96129029"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97639276"
 ---
-# <a name="sql-server-backup-to-url-best-practices-and-troubleshooting"></a>Procedimientos recomendados y solución de problemas de Copia de seguridad en URL de SQL Server
+# <a name="sql-server-back-up-to-url-best-practices-and-troubleshooting"></a>Procedimientos recomendados y solución de problemas de copia de seguridad en URL de SQL Server
 
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
@@ -52,86 +52,118 @@ ms.locfileid: "96129029"
 -   Use la opción `WITH COMPRESSION` como se recomienda en la sección [Administración de copias de seguridad](#managing-backups-mb1), ya que es muy importante al realizar la copia de seguridad de archivos grandes.  
   
 ## <a name="troubleshooting-backup-to-or-restore-from-url"></a>Resolución de problemas para realizar la copia de seguridad de una dirección URL o una restauración a partir de esta  
- A continuación se indican algunas formas rápidas de solucionar errores al hacer copia de seguridad o restaurar desde el servicio Azure Blob Storage.  
-  
- Para evitar errores debidos a opciones no admitidas o a limitaciones, consulte la lista de limitaciones y la información de compatibilidad con los comandos BACKUP y RESTORE del artículo [Copia de seguridad y restauración de SQL Server con el servicio de Almacenamiento de blobs de Microsoft Azure](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md) .  
-  
- **Errores de autenticación:**  
-  
--   `WITH CREDENTIAL` es una opción nueva que es necesaria para la copia de seguridad o la restauración con el servicio Azure Blob Storage. He aquí algunos errores relacionados con las credenciales:  
-  
-     La credencial especificada en el comando **BACKUP** o **RESTORE** no existe. Para evitar este problema, puede incluir instrucciones T-SQL para crear la credencial si no existe ninguna en la instrucción de copia de seguridad. He aquí un ejemplo que puede usar:  
-  
-    ```sql  
-    IF NOT EXISTS  
-    (SELECT * FROM sys.credentials   
-    WHERE credential_identity = 'mycredential')  
-    CREATE CREDENTIAL <credential name> WITH IDENTITY = 'mystorageaccount'  
-    , SECRET = '<storage access key>' ;  
-    ```  
-  
--   La credencial existe pero la cuenta de inicio de sesión usada para ejecutar el comando de copia de seguridad no tiene permisos de acceso a las credenciales. Use una cuenta de inicio de sesión en el rol **db_backupoperator** con los permisos **_Alter any credential_* _.  
-  
--   Compruebe los valores de clave y nombre de la cuenta de almacenamiento. La información almacenada en la credencial debe coincidir con los valores de propiedad de la cuenta de Azure Storage que se usa en las operaciones de copia de seguridad y restauración.  
-  
- _ *Errores de copia de seguridad:* *  
-  
--   Las copias de seguridad en paralelo en el mismo blob produce errores en una de las copias de seguridad y hacen que aparezca un **Error de inicialización** .  
-  
--   Si usa blobs en páginas, por ejemplo, `BACKUP... TO URL... WITH CREDENTIAL`, utilice los registros de errores siguientes como ayuda para solucionar problemas de copia de seguridad:  
-  
-    -   Establezca la marca de seguimiento 3051 para activar el registro en un registro de errores específico con el siguiente formato en:  
-  
-        `BackupToUrl-\<instname>-\<dbname>-action-\<PID>.log`, donde `\<action>` es uno de los siguientes:  
-  
-        -   **DB**  
-        -   **FILELISTONLY**  
-        -   **LABELONLY**  
-        -   **HEADERONLY**  
-        -   **VERIFYONLY**  
-  
-    -   También puede encontrar información si examina el registro de eventos de Windows, en los registros de aplicación con el nombre `SQLBackupToUrl`.  
 
-    -   Considere la posibilidad de usar COMPRESSION, MAXTRANSFERSIZE, BLOCKSIZE y varios argumentos de URL cuando realice copias de seguridad de bases de datos grandes.  Vea [Backing up a VLDB to Azure Blob Storage](/archive/blogs/sqlcat/backing-up-a-vldb-to-azure-blob-storage) (Copia de seguridad de una VLDB en Azure Blob Storage)
+A continuación se indican algunas formas rápidas de solucionar errores al hacer copia de seguridad o restaurar desde el servicio Azure Blob Storage.  
   
-        ```console
-        Msg 3202, Level 16, State 1, Line 1
-        Write on "https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak" failed: 1117(The request could not be performed because of an I/O device error.)
-        Msg 3013, Level 16, State 1, Line 1
-        BACKUP DATABASE is terminating abnormally.
-        ```
+Para evitar errores debidos a opciones no admitidas o a limitaciones, consulte la lista de limitaciones y la información de compatibilidad con los comandos BACKUP y RESTORE del artículo [Copia de seguridad y restauración de SQL Server con el servicio de Almacenamiento de blobs de Microsoft Azure](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md) .  
 
-        ```sql  
-        BACKUP DATABASE TestDb
-        TO URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak',
-        URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_1.bak',
-        URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_2.bak'
-        WITH COMPRESSION, MAXTRANSFERSIZE = 4194304, BLOCKSIZE = 65536;  
-        ```  
+**Error de inicialización** 
 
--   Al restaurar desde una copia de seguridad comprimida, puede aparecer el siguiente error:  
+Las copias de seguridad en paralelo en el mismo blob produce errores en una de las copias de seguridad y hacen que aparezca un **Error de inicialización** . 
+
+Si usa blobs en páginas, por ejemplo, `BACKUP... TO URL... WITH CREDENTIAL`, utilice los registros de errores siguientes como ayuda para solucionar problemas de copia de seguridad:  
   
-    -   `SqlException 3284 occurred. Severity: 16 State: 5  
-        Message Filemark on device 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak' is not aligned.           Reissue the Restore statement with the same block size used to create the backupset: '65536' looks like a possible value.`  
+Establezca la marca de seguimiento 3051 para activar el registro en un registro de errores específico con el siguiente formato en:  
   
-        Para resolver este error, vuelva a emitir la instrucción **RESTORE** con **BLOCKSIZE = 65536** especificado.  
+`BackupToUrl-\<instname>-\<dbname>-action-\<PID>.log`, donde `\<action>` es uno de los siguientes:  
   
--   Error durante la copia de seguridad porque los blobs tienen una concesión activa: una actividad de copia de seguridad con errores puede dar como resultado blobs con concesiones activas.  
+-   **DB**  
+-   **FILELISTONLY**  
+-   **LABELONLY**  
+-   **HEADERONLY**  
+-   **VERIFYONLY**  
   
-     Si se vuelve a intentar una instrucción de copia de seguridad, la operación de copia de seguridad puede producir un error similar al siguiente:  
+También puede encontrar información si examina el registro de eventos de Windows, en los registros de aplicación con el nombre `SQLBackupToUrl`.  
+
+**La solicitud no se pudo realizar debido a un error de dispositivo de E/S.**
+
+Considere la posibilidad de usar COMPRESSION, MAXTRANSFERSIZE, BLOCKSIZE y varios argumentos de URL cuando realice copias de seguridad de bases de datos grandes.  Vea [Backing up a VLDB to Azure Blob Storage](/archive/blogs/sqlcat/backing-up-a-vldb-to-azure-blob-storage) (Copia de seguridad de una VLDB en Azure Blob Storage)
+
+El error: 
+
+```console
+Msg 3202, Level 16, State 1, Line 1
+Write on "https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak" failed: 
+1117(The request could not be performed because of an I/O device error.)
+Msg 3013, Level 16, State 1, Line 1
+BACKUP DATABASE is terminating abnormally.
+```
+
+Una resolución de ejemplo: 
+
+```sql  
+BACKUP DATABASE TestDb
+TO URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak',
+URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_1.bak',
+URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_2.bak'
+WITH COMPRESSION, MAXTRANSFERSIZE = 4194304, BLOCKSIZE = 65536;  
+```  
+
+**Mensaje: La marca de archivo del dispositivo no está alineada.**
+
+Al restaurar desde una copia de seguridad comprimida, puede aparecer el siguiente error:  
   
-     `Backup to URL received an exception from the remote endpoint. Exception Message: The remote server returned an error: (412) There is currently a lease on the blob and no lease ID was specified in the request.`  
+```
+SqlException 3284 occurred. Severity: 16 State: 5  
+Message Filemark on device 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak' is not aligned.
+Reissue the Restore statement with the same block size used to create the backupset: '65536' looks like a possible value.  
+```
   
-     Si se intenta una instrucción de restauración en un archivo de blob de copia de seguridad que tiene una concesión activa, la operación de restauración produce un error similar al siguiente:  
+Para resolver este error, vuelva a emitir la instrucción **RESTORE** con **BLOCKSIZE = 65536** especificado.  
   
-     `Exception Message: The remote server returned an error: (409) Conflict..`  
+**una actividad de copia de seguridad con errores puede dar como resultado blobs con concesiones activas.**
+
+Error durante la copia de seguridad porque los blobs tienen una concesión activa: `Failed backup activity can result in blobs with active leases.`  
+
+Si se vuelve a intentar una instrucción de copia de seguridad, la operación de copia de seguridad puede producir un error similar al siguiente:  
+
+```
+Backup to URL received an exception from the remote endpoint. Exception Message: 
+The remote server returned an error: (412) There is currently a lease on the blob and no lease ID was specified in the request. 
+```
+
+Si se intenta una instrucción de restauración en un archivo de blob de copia de seguridad que tiene una concesión activa, la operación de restauración produce un error similar al siguiente:  
   
-     Cuando se produce ese error, es necesario eliminar los archivos de blob. Para obtener más información sobre este escenario y cómo corregir este problema, vea [Deleting Backup Blob Files with Active Leases](../../relational-databases/backup-restore/deleting-backup-blob-files-with-active-leases.md).  
+`Exception Message: The remote server returned an error: (409) Conflict..`  
+  
+Cuando se produce ese error, es necesario eliminar los archivos de blob. Para obtener más información sobre este escenario y cómo corregir este problema, vea [Deleting Backup Blob Files with Active Leases](../../relational-databases/backup-restore/deleting-backup-blob-files-with-active-leases.md).  
+
+**Error del sistema operativo 50: No se admite la solicitud**
+ 
+Al realizar una copia de seguridad de una base de datos, es posible que vea el error `Operating system error 50(The request is not supported)` por los siguientes motivos: 
+
+   - La cuenta de almacenamiento especificada no es De uso general V1/V2.
+   - El token de SAS tiene más de 128 caracteres.
+   - El token de SAS tenía un símbolo `?` al principio cuando se creó la credencial. Si es así, quítelo.
+   - La conexión actual no puede conectarse a la cuenta de almacenamiento desde la máquina actual mediante el Explorador de Storage o SQL Server Management Studio (SSMS). 
+   - La directiva asignada al token de SAS ha expirado. Cree una nueva directiva mediante el Explorador de Azure Storage y cree un nuevo token de SAS mediante la directiva o modifique la credencial y e intente hacer la copia de seguridad de nuevo. 
+
+**Errores de autenticación**
+  
+`WITH CREDENTIAL` es una opción nueva que es necesaria para la copia de seguridad o la restauración con el servicio Azure Blob Storage.
+
+He aquí algunos errores relacionados con las credenciales: `The credential specified in the **BACKUP** or **RESTORE** command does not exist. `
+
+Para evitar este problema, puede incluir instrucciones T-SQL para crear la credencial si no existe ninguna en la instrucción de copia de seguridad. He aquí un ejemplo que puede usar:  
+
+  
+```sql  
+IF NOT EXISTS  
+(SELECT * FROM sys.credentials   
+WHERE credential_identity = 'mycredential')  
+CREATE CREDENTIAL <credential name> WITH IDENTITY = 'mystorageaccount'  
+, SECRET = '<storage access key>' ;  
+```  
+  
+La credencial existe pero la cuenta de inicio de sesión usada para ejecutar el comando de copia de seguridad no tiene permisos de acceso a las credenciales. Use una cuenta de inicio de sesión en el rol **db_backupoperator** con los permisos **_Alter any credential_* _.  
+  
+Compruebe los valores de clave y nombre de la cuenta de almacenamiento. La información almacenada en la credencial debe coincidir con los valores de propiedad de la cuenta de Azure Storage que se usa en las operaciones de copia de seguridad y restauración.  
+  
   
 ## <a name="proxy-errors"></a>Errores de proxy  
  Si usa servidores proxy para tener acceso a Internet, pueden producirse los problemas siguientes:  
   
- **Limitación de la conexión por parte de los servidores proxy:**  
+ _ *Limitación de la conexión por los servidores proxy**  
   
  Los servidores proxy pueden tener configuraciones que limitan el número de conexiones por minuto. Copia de seguridad en URL es un proceso multiproceso y, por tanto, puede sobrepasar este límite. Si esto ocurre, el servidor proxy elimina la conexión. Para resolver este problema, cambie la configuración de proxy para que SQL Server no utilice el proxy. A continuación se muestran algunos ejemplos de los tipos o mensajes de error que puede ver en el registro de errores:  
   

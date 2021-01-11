@@ -18,12 +18,12 @@ ms.assetid: c9fa81b1-6c81-4c11-927b-fab16301a8f5
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016
-ms.openlocfilehash: 70df27b530fe6afb40f296afdc012ac2c40500a9
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 75c0f38e67fd4d02791c5d2b953f4354a5945dc2
+ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97468946"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697138"
 ---
 # <a name="replicate-partitioned-tables-and-indexes"></a>Replicar tablas e índices con particiones
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "97468946"
 |Función de partición|CREATE PARTITION FUNCTION|  
 |Esquema de partición|CREATE PARTITION SCHEME|  
   
- El primer conjunto de propiedades relacionadas con la creación de particiones son las opciones de esquema de artículo que determinan si las particiones de los objetos se deben copiar en el suscriptor. Estas opciones de esquema se pueden establecer de varias maneras:  
+ Las propiedades relacionadas con la creación de particiones son las opciones de esquema de artículo que determinan si las particiones de los objetos se deben copiar en el suscriptor. Estas opciones de esquema se pueden establecer de varias maneras:  
   
 -   En la página **Propiedades del artículo** del Asistente para nueva publicación o en el cuadro de diálogo Propiedades de la publicación. Para copiar los objetos enumerados en la tabla anterior, especifique el valor **true** para las propiedades **Copiar esquemas de particionamiento de tabla** y **Crear esquemas de particionamiento de índice**. Para obtener más información sobre cómo acceder a la página **Propiedades del artículo**, vea [Ver y modificar propiedades de publicación](../../../relational-databases/replication/publish/view-and-modify-publication-properties.md).  
   
@@ -61,15 +61,40 @@ ms.locfileid: "97468946"
   
 -   Si el suscriptor tiene para la tabla con particiones una definición diferente de la del publicador, se producirá un error en el Agente de distribución cuando intente aplicar los cambios en el suscriptor.  
   
- A pesar de estos posibles problemas, la modificación de particiones puede habilitarse en la replicación transaccional. Antes de habilitar la modificación de particiones, asegúrese de que todas las tablas implicadas en ella existen en el publicador y en el suscriptor, y de que la tabla y las definiciones de partición son las mismas.  
+A pesar de estos posibles problemas, la modificación de particiones puede habilitarse en la replicación transaccional. Antes de habilitar la modificación de particiones, asegúrese de que todas las tablas implicadas en ella existen en el publicador y en el suscriptor, y de que la tabla y las definiciones de partición son las mismas.  
   
- Cuando las particiones tienen exactamente el mismo esquema de partición en los publicadores y en los suscriptores puede activar *allow_partition_switch* junto con *replication_partition_switch* , con lo que solo se replicará la instrucción de cambio de partición en el suscriptor. También puede activar *allow_partition_switch* sin replicación de DDL. Esto resulta útil en el caso en que desee distribuir los meses anteriores de la partición pero mantener la partición replicada para otro año a efectos de copia de seguridad en el suscriptor.  
+Cuando las particiones tienen exactamente el mismo esquema de partición en los publicadores y en los suscriptores, puede activar *allow_partition_switch* junto con *replication_partition_switch*, con lo que solo se replicará la instrucción de conmutación de particiones en el suscriptor. También puede activar *allow_partition_switch* sin replicación de DDL. Esto resulta útil en el caso en que desee distribuir los meses anteriores de la partición pero mantener la partición replicada para otro año a efectos de copia de seguridad en el suscriptor.  
   
- Si habilita la conmutación de particiones en SQL Server 2008 R2 a través de la versión actual, puede que también necesite las operaciones de división y combinación más adelante. Antes de ejecutar una operación de división o combinación en una tabla replicada, asegúrese de que la partición en cuestión no tenga ningún comando replicado pendiente. También debe asegurarse de que no se ejecuten operaciones DML en la partición durante las operaciones de división y combinación. Si hay transacciones que no ha procesado el lector del registro o si se realizan operaciones de DML en una partición de una tabla replicada mientras se ejecuta una operación de división o combinación (que implica la misma partición), se podría producir un error de procesamiento con el agente de registro del LOG. Para corregir el error, puede solicitar que se vuelva a inicializar la suscripción.  
-  
-> [!WARNING]  
->  No debe habilitar la modificación de particiones para las publicaciones punto a punto, debido a la columna oculta que se usa para detectar y solucionar conflictos.  
-  
+Si habilita la conmutación de particiones en SQL Server 2008 R2 a través de la versión actual, puede que también necesite las operaciones de división y combinación más adelante. Antes de ejecutar una operación de división o combinación en una tabla replicada o habilitada para CDC, asegúrese de que la partición en cuestión no tenga ningún comando replicado pendiente. También debe asegurarse de que no se ejecuten operaciones DML en la partición durante las operaciones de división y combinación. Si hay transacciones que el lector del registro o el trabajo de captura CDC no ha procesado, o si se realizan operaciones de DML en una partición de una tabla replicada o de una tabla habilitada para CDC mientras se ejecuta una operación de división o combinación (que implica la misma partición), se podría producir un error de procesamiento (error 608: No se encontró ninguna entrada de catálogo para el identificador de partición) con el agente de registro o el trabajo de captura CDC. Para corregir el error, es posible que sea necesario reinicializar la suscripción o deshabilitar CDC en esa tabla o base de datos. 
+
+### <a name="unsupported-scenarios"></a>Escenarios no admitidos
+
+Los siguientes escenarios no se admiten cuando se usa la replicación con la conmutación de particiones: 
+
+**Replicación punto a punto**   
+La replicación punto a punto no se admite con la conmutación de particiones. 
+
+**Uso de variables con conmutación de particiones**   
+
+El uso de variables con la conmutación de particiones en tablas publicadas con replicación transaccional o captura de datos modificados (CDC) no se admite para la instrucción `ALTER TABLE ... SWITCH TO ... PARTITION ...`.
+
+Por ejemplo, el siguiente código de conmutación de particiones no funcionará con CDC habilitada en la base de datos o con TableA que participa en una publicación transaccional: 
+
+```sql
+DECLARE @SomeVariable INT = $PARTITION.pf_test(10);
+ALTER TABLE dbo.TableA
+SWITCH TO dbo.TableB 
+PARTITION @SomeVariable;
+```
+
+En su lugar, conmute la partición con la función de partición directamente, como en el ejemplo siguiente: 
+
+```sql
+ALTER TABLE NonPartitionedTable 
+SWITCH TO PartitionedTable PARTITION $PARTITION.pf_test(10);
+```
+
+
 ### <a name="enabling-partition-switching"></a>Habilitar la modificación de particiones  
  Las propiedades siguientes de las publicaciones transaccionales permiten a los usuarios controlar el comportamiento de la modificación de particiones en un entorno replicado:  
   

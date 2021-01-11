@@ -15,20 +15,19 @@ helpviewer_keywords:
 ms.assetid: 7d8c4684-9eb1-4791-8c3b-0f0bb15d9634
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 55bb82e19a97a91dbe00b44b195e74a250ddf1dc
-ms.sourcegitcommit: 7f76975c29d948a9a3b51abce564b9c73d05dcf0
+ms.openlocfilehash: f90e59f3e54b69a98e7ca058da971677faaafd0d
+ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96900981"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697111"
 ---
 # <a name="about-change-data-capture-sql-server"></a>Acerca de la captura de datos modificados (SQL Server)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
 
-> [!NOTE]
-> CDC ahora es compatible con SQL Server 2017 en Linux a partir de CU18 y SQL Server 2019 en Linux.
 
-  La captura de datos modificados registra la actividad de inserción, actualización y eliminación que se aplica a una tabla de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Esto hace que los detalles de estos cambios estén disponibles en un formato relacional de fácil uso. La información de las columnas y los metadatos que se necesitan para aplicar los cambios a un entorno de destino se capturan para las filas modificadas y se almacenan en tablas de cambios que reflejan la estructura de columnas de las tablas de origen sometidas a seguimiento. Se proporcionan funciones con valores de tabla para permitir el acceso sistemático a los datos modificados por los consumidores.  
+
+  La captura de datos modificados registra la actividad de inserción, actualización y eliminación que se aplica a una tabla de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Esto hace que los detalles de estos cambios estén disponibles en un formato relacional de fácil uso. La información de las columnas y los metadatos que se necesitan para aplicar los cambios a un entorno de destino se capturan para las filas modificadas y se almacenan en tablas de cambios que reflejan la estructura de columnas de las tablas de origen sometidas a seguimiento. Se proporcionan funciones con valores de tabla para permitir el acceso sistemático a los datos modificados por los consumidores.  
   
  Un buen ejemplo de consumidor de datos a quien va dirigida esta tecnología es una aplicación de extracción, transformación y carga (ETL). Una aplicación ETL carga incrementalmente los datos modificados de las tablas de origen de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] en un almacenamiento de datos o data mart. Aunque la representación de las tablas de origen dentro del almacén de datos debe reflejar los cambios en las tablas de origen, una tecnología de extremo a extremo que actualice una réplica del origen no resulta adecuada en este caso. En su lugar, necesita un flujo de datos modificados confiable y estructurado de forma que los consumidores puedan aplicarlo a representaciones de destino dispares de los datos. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] proporciona esta tecnología.  
   
@@ -47,7 +46,7 @@ ms.locfileid: "96900981"
 ## <a name="change-table"></a>Tabla de cambios  
  Las primeras cinco columnas de una tabla de cambios de captura de datos modificados son las columnas de metadatos. Proporcionan información adicional correspondiente al cambio registrado. Las columnas restantes reflejan el nombre y, normalmente, también el tipo de las columnas capturadas identificadas de la tabla de origen. Estas columnas contienen los datos de columnas capturadas que se recopilan en la tabla de origen.  
   
- Cada operación de inserción o eliminación aplicada a una tabla de origen aparece como una fila única dentro de la tabla de cambios. Las columnas de datos de la fila resultante de una operación de inserción contienen los valores de columna después de la inserción. Las columnas de datos de la fila resultante de una operación de eliminación contienen los valores de columna antes de la eliminación. Una operación de actualización requiere una entrada de fila para identificar los valores de columna antes de la actualización, y una segunda entrada de fila para identificar los valores de columna después de la actualización.  
+ Cada operación de inserción o eliminación aplicada a una tabla de origen aparece como una fila única dentro de la tabla de cambios. Las columnas de datos de la fila resultante de una operación de inserción contienen los valores de columna después de la inserción. Las columnas de datos de la fila resultante de una operación de eliminación contienen los valores de columna antes de la eliminación. Una operación de actualización requiere una entrada de una fila para identificar los valores de columna antes de la actualización, y una segunda entrada de fila para identificar los valores de columna después de la actualización.  
   
  Cada fila de una tabla de cambios también contiene metadatos adicionales que permiten interpretar los cambios realizados. La columna __$start_lsn identifica el número de secuencia de registro (LSN) de confirmación que fue asignado al cambio. El LSN de confirmación identifica tanto los cambios que se confirmaron dentro de la misma transacción como el orden de esas transacciones. La columna \_\_$seqval se puede usar para ordenar los cambios adicionales que se produzcan en la misma transacción. En la columna \_\_$operation se registra la operación que está asociada al cambio: 1 = eliminación, 2 = inserción, 3 = actualización (antes de la imagen) y 4 = actualización (después de la imagen). La columna \_\_$update_mask es una máscara de bits variable con un bit definido para cada columna capturada. Para las entradas correspondientes a operaciones de inserción y eliminación, la máscara de actualización siempre tendrá todos los bits activados. Las filas correspondientes a operaciones de actualización, sin embargo, tendrán solo activados los bits que correspondan a las columnas cambiadas.  
   
@@ -72,7 +71,7 @@ ms.locfileid: "96900981"
   
  Para hospedar una tabla de cambios con una estructura de columnas fija, el proceso de captura responsable de rellenar la tabla de cambios omitirá cualquier columna nueva que no se identifique para la captura cuando se habilite la tabla de origen para la captura de datos modificados. Si se quita una columna sometida a seguimiento, se proporcionarán valores NULL para la columna en las entradas de cambios subsiguientes. Sin embargo, si una columna existente sufre un cambio en su tipo de datos, el cambio se propagará a la tabla de cambios para garantizar que el mecanismo de captura no provoca la pérdida de datos de las columnas sometidas a seguimiento. El proceso de captura también expone cualquier cambio detectado en la estructura de columnas de las tablas sometidas a seguimiento en la tabla cdc.ddl_history. Los consumidores que quieran que se les avise de los ajustes que podrían tener que realizarse en las aplicaciones de nivel inferior, deberán usar el procedimiento almacenado [sys.sp_cdc_get_ddl_history](../../relational-databases/system-stored-procedures/sys-sp-cdc-get-ddl-history-transact-sql.md).  
   
- Normalmente, la instancia de captura actual continuará conservando su forma cuando se apliquen los cambios de la DDL a su tabla de origen asociada. Sin embargo, es posible crear una segunda instancia de captura para la tabla que refleje la nueva estructura de columnas. Esto permite al proceso de captura realizar cambios en la misma tabla de origen en dos tablas de cambios distintas que tienen dos estructuras de columnas diferentes. Así, mientras una tabla de cambios puede continuar alimentando los programas funcionales actuales, la segunda puede controlar un entorno de desarrollo que esté intentando incorporar datos de columnas nuevas. Permitir al mecanismo de captura rellenar ambas tablas de cambios a la vez implica que se puede llevar a cabo una transición de una a otra sin perder los datos modificados. Esto puede ocurrir siempre que se solapen dos escalas de tiempo de captura de datos modificados. Cuando se realiza la transición, se puede quitar la instancia de captura obsoleta.  
+ Normalmente, la instancia de captura actual continuará conservando su forma cuando se apliquen los cambios de la DDL a su tabla de origen asociada. Sin embargo, es posible crear una segunda instancia de captura para la tabla que refleje la nueva estructura de columnas. Esto permite al proceso de captura realizar cambios en la misma tabla de origen en dos tablas de cambios distintas que tienen dos estructuras de columnas diferentes. Así, mientras una tabla de cambios puede continuar alimentando los programas funcionales actuales, la segunda puede controlar un entorno de desarrollo que esté intentando incorporar datos de columnas nuevas. Permitir al mecanismo de captura rellenar ambas tablas de cambios a la vez implica que se puede llevar a cabo una transición de una a otra sin perder los datos modificados. Esto puede ocurrir siempre que se solapen dos escalas de tiempo de captura de datos modificados. Cuando la transición resulta afectada, se puede quitar la instancia de captura obsoleta.  
   
 > [!NOTE]  
 >  Solo se pueden asociar dos instancias de captura a una única tabla de origen al mismo tiempo, como máximo.  
@@ -138,9 +137,20 @@ CREATE TABLE T1(
      C2 NVARCHAR(10) collate Chinese_PRC_CI_AI --Unicode data type, CDC works well with this data type)
 ```
 
-## <a name="columnstore-indexes"></a>Índices de almacén de columnas
+## <a name="limitations"></a>Limitaciones
 
+La captura de datos modificados tiene las siguientes limitaciones: 
+
+**Linux**:    
+CDC ahora es compatible con SQL Server 2017 en Linux a partir de CU18 y SQL Server 2019 en Linux.
+
+**Índices de almacén de columnas**   
 La captura de datos modificados no se puede habilitar en las tablas con un índice de almacén de columnas agrupado. A partir de SQL Server 2016, se puede habilitar en las tablas con un índice de almacén de columnas no agrupado.
+
+**Conmutación de particiones con variables**   
+El uso de variables con conmutación de particiones en bases de datos o tablas con captura de datos modificados (CDC) no se admite para la instrucción `ALTER TABLE ... SWITCH TO ... PARTITION ...`. Consulte las [limitaciones de la conmutación de particiones](../replication/publish/replicate-partitioned-tables-and-indexes.md#replication-support-for-partition-switching) para más información. 
+
+
 
 ## <a name="see-also"></a>Consulte también  
  [Seguimiento de cambios de datos &#40;SQL Server&#41;](../../relational-databases/track-changes/track-data-changes-sql-server.md)   

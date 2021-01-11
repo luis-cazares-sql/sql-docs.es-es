@@ -6,7 +6,7 @@ ms.date: 05/17/2016
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - Windows authentication [SQL Server]
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 28c8fec5-5feb-4c84-8d72-f2bd1ae3b40d
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 9e5afd2b469b580ca3a183cff940887847729792
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: afd66ca781ca5f0a982fe5e932fd783c6c599a93
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85789720"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642134"
 ---
 # <a name="database-mirroring---allow-network-access---windows-authentication"></a>Creación de reflejo de la base de datos - Permitir el acceso de red - Autenticación de Windows
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "85789720"
   
 -   Si las instancias de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] se ejecutan como servicios bajo diferentes cuentas de dominio (en el mismo dominio o en dominios de confianza), el inicio de sesión de cada cuenta debe crearse en **master** en cada una de las instancias de los servidores remotos y se deben conceder permisos CONNECT a ese inicio de sesión en el punto de conexión.  
   
--   Si las instancias de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] se ejecutan con la cuenta de servicio de red, el inicio de sesión de cada cuenta de equipo host (*NombreDeDominio***\\***NombreDeEquipo$* ) se debe crear en **master** en cada una de las instancias de los servidores remotos, y a ese inicio de sesión se le deben conceder permisos CONNECT en el punto de conexión. Esto se debe a que una instancia de servidor que se ejecuta en la cuenta Servicio de red se autentica mediante la cuenta de dominio del equipo host.  
+-   Si las instancias de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] se ejecutan con la cuenta de servicio de red, el inicio de sesión de cada cuenta de equipo host (*NombreDeDominio* **\\** _NombreDeEquipo$_ ) se debe crear en **master** en cada una de las instancias de los servidores remotos, y a ese inicio de sesión se le deben conceder permisos CONNECT en el punto de conexión. Esto se debe a que una instancia de servidor que se ejecuta en la cuenta Servicio de red se autentica mediante la cuenta de dominio del equipo host.  
   
 > [!NOTE]  
 >  Asegúrese de que exista un extremo para cada instancia del servidor. Para obtener más información, vea [Crear un punto de conexión de creación de reflejo de la base de datos para la autenticación de Windows &#40;Transact-SQL&#41;](../../database-engine/database-mirroring/create-a-database-mirroring-endpoint-for-windows-authentication-transact-sql.md).  

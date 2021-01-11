@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: b1427fa78e52c985478996bfb41cb7a20e1ee608
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: 772ecef470b69a34e4bd4b0eba2ca60255657eaf
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96428298"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771428"
 ---
 # <a name="executing-a-command"></a>Ejecutar un comando
 
@@ -34,7 +34,7 @@ El proveedor de datos SqlClient de Microsoft para SQL Server tiene un objeto <x
 |`ExecuteNonQuery`|Ejecuta un comando que no devuelve ninguna fila.|  
 |`ExecuteXMLReader`|Devuelve un valor <xref:System.Xml.XmlReader>. Solo está disponible para un objeto `SqlCommand`.|
 
- Cada objeto command fuertemente tipado admite también una enumeración <xref:System.Data.CommandType> que especifica cómo se interpreta una cadena de comando, tal como se describe en la tabla siguiente.
+Cada objeto command fuertemente tipado admite también una enumeración <xref:System.Data.CommandType> que especifica cómo se interpreta una cadena de comando, tal como se describe en la tabla siguiente.
 
 |CommandType|Descripción|
 |-----------------|-----------------|  
@@ -55,8 +55,10 @@ En el ejemplo de código siguiente se muestra cómo se crea un objeto <xref:Micr
 
 [!INCLUDE[appliesto-netfx-xxxx-xxxx-md](../../includes/appliesto-netfx-xxxx-xxxx-md.md)]
 
-El proveedor de datos SqlClient de Microsoft para SQL Server agrega **contadores de rendimiento** para que pueda detectar problemas intermitentes relacionados con errores en las ejecuciones de comandos.
+El proveedor de datos SqlClient de Microsoft para SQL Server agrega **contadores de rendimiento** para que pueda detectar problemas intermitentes relacionados con errores en las ejecuciones de comandos. Para más información, consulte [Contadores de rendimiento en SqlClient](performance-counters.md).
 
 ## <a name="see-also"></a>Vea también
 
 - [Comandos y parámetros](commands-parameters.md)
+- [Objetos DataAdapter y DataReader](dataadapters-datareaders.md)
+- [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)

@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: ef687114ff2ceceabc1ed87d67a4585a5846029d
-ms.sourcegitcommit: 7a3fdd3f282f634f7382790841d2c2a06c917011
+ms.openlocfilehash: a878d8250a3e402cd1043dc289eb1712af45f385
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563090"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771548"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Agrupación de conexiones de SQL Server (ADO.NET)
 
@@ -41,7 +41,7 @@ La agrupación de conexiones puede mejorar de forma considerable el rendimiento 
 > [!NOTE]
 > El mecanismo "`blocking period`" no se aplica a Azure SQL Server de forma predeterminada. Este comportamiento se puede cambiar modificando la propiedad <xref:Microsoft.Data.SqlClient.PoolBlockingPeriod> en <xref:Microsoft.Data.SqlClient.SqlConnection.ConnectionString>, excepto en *.NET Standard*.
 
-## <a name="pool-creation-and-assignment"></a>Creación y asignación del grupo
+## <a name="pool-creation-and-assignment"></a>Creación y asignación de grupos
 
 Cuando se abre una conexión por primera vez, se crea un grupo de conexión basado en un algoritmo de coincidencia exacta que asocia el grupo con la cadena de conexión de la conexión. Cada grupo de conexión se asocia con una cadena de conexión distinta. Si se abre una nueva conexión y la cadena de conexión no coincide exactamente con un grupo existente, se crea un nuevo grupo.
 
@@ -59,7 +59,7 @@ En el siguiente ejemplo con C#, se crean tres nuevos objetos <xref:Microsoft.Dat
 
 [!code-csharp[SqlConnection_Pooling#1](~/../sqlclient/doc/samples/SqlConnection_Pooling.cs#1)]
 
-## <a name="adding-connections"></a>Agregar conexiones
+## <a name="add-connections"></a>Agregar conexiones
 
 Para cada cadena de conexión única se crea un grupo de conexión. Cuando se crea un grupo, se crean y agregan al grupo varios objetos de conexión y se satisface así el requisito de tamaño mínimo del grupo. Las conexiones se agregan al grupo según sea necesario, hasta el tamaño máximo del grupo especificado (**100 es el valor predeterminado**). y se liberan de nuevo en el grupo cuando se cierran o eliminan.
 
@@ -75,7 +75,7 @@ El agrupador de conexiones satisface las solicitudes de conexión al reasignar l
 
 Para obtener más información sobre los eventos asociados a la apertura y el cierre de conexiones, consulte [Audit Login, clase de eventos](/sql/relational-databases/event-classes/audit-login-event-class) y [Audit Logout, clase de eventos](/sql/relational-databases/event-classes/audit-logout-event-class) en la documentación de SQL Server.
 
-## <a name="removing-connections"></a>Cómo quitar conexiones
+## <a name="remove-connections"></a>Eliminación de conexiones
 
 El concentrador de conexiones quita una conexión del grupo después de haber estado inactiva durante aproximadamente **4-8** minutos o si detecta que se ha interrumpido la conexión con el servidor.
 
@@ -84,7 +84,7 @@ El concentrador de conexiones quita una conexión del grupo después de haber es
 
 Si existe una conexión en un servidor que ha desaparecido, se puede extraer del grupo aunque el agrupador de conexiones no haya detectado la conexión rota y la haya marcado como no válida. El motivo es que la sobrecarga de comprobar que la conexión es aún válida eliminaría los beneficios de tener un concentrador y ocasionaría que se produjera otro viaje de ida y vuelta (round trip) al servidor. Cuando esto ocurre, el primer intento para usar la conexión detectará que ésta se ha roto y se iniciará una excepción.
 
-## <a name="clearing-the-pool"></a>Borrado del grupo
+## <a name="clear-the-pool"></a>Borrado del grupo
 
 El proveedor de datos SqlClient de Microsoft para SQL Server incluyó por primera vez dos nuevos métodos para borrar el grupo: <xref:Microsoft.Data.SqlClient.SqlConnection.ClearAllPools%2A> y <xref:Microsoft.Data.SqlClient.SqlConnection.ClearPool%2A>. `ClearAllPools` borra los grupos de conexión de un proveedor dado, y `ClearPool` borra el grupo de conexión que está asociado a una conexión concreta.
 
@@ -97,7 +97,7 @@ Las conexiones se extraen del grupo y se asignan en función del contexto de tra
 
 Cuando se cierra una conexión, se libera de nuevo en el grupo y en la subdivisión adecuada en función de su contexto de transacción. Por lo tanto, puede cerrar la conexión sin generar un error, incluso aunque aún haya pendiente una transacción distribuida. Esto permite confirmar o anular la transacción distribuida más adelante.
 
-## <a name="controlling-connection-pooling-with-connection-string-keywords"></a>Control de la agrupación de conexiones con palabras clave de cadena de conexión
+## <a name="control-connection-pooling-with-connection-string-keywords"></a>Control de la agrupación de conexiones con palabras clave de cadena de conexión
 
 La propiedad `ConnectionString` del objeto <xref:Microsoft.Data.SqlClient.SqlConnection> admite pares clave-valor de cadena de conexión que se pueden utilizar para ajustar el comportamiento de la lógica de agrupación de conexiones. Para obtener más información, vea <xref:Microsoft.Data.SqlClient.SqlConnection.ConnectionString%2A>.
 
@@ -123,7 +123,7 @@ En el siguiente fragmento de código se muestra la creación de una conexión in
 
 Una vez activada una función de aplicación de SQL Server al llamar al procedimiento almacenado de sistema `sp_setapprole`, no se puede restablecer el contexto de seguridad de la conexión. Sin embargo, cuando se habilita la agrupación, la conexión se devuelve al grupo y se produce un error al utilizar de nuevo la conexión agrupada.
 
-### <a name="application-role-alternatives"></a>Alternativas a los roles de aplicación
+### <a name="application-role-alternatives"></a>Alternativas del rol de aplicación
 
 Se recomienda aprovechar las ventajas de los mecanismos de seguridad que se pueden usar en lugar de roles de aplicación.
 
@@ -131,3 +131,5 @@ Se recomienda aprovechar las ventajas de los mecanismos de seguridad que se pued
 
 - [Agrupación de conexiones](connection-pooling.md)
 - [SQL Server y ADO.NET](./sql/index.md)
+- [Contadores de rendimiento en SqlClient](performance-counters.md)
+- [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)

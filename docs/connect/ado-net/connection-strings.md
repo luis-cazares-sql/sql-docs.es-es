@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: e37d77304644d1adb50bb195dd32d4c4e1222c09
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: 257ed7d43f8ab204c7c7e7575c69251be6f2efdf
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96126584"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771640"
 ---
 # <a name="connection-strings-in-adonet"></a>Cadenas de conexión en ADO.NET
 
@@ -69,7 +69,7 @@ Todas las cadenas de conexión comparten la misma sintaxis básica que se ha des
 
 Los errores tipográficos pueden producir errores. Por ejemplo, `Integrated Security=true` es válido, pero `IntegratedSecurity=true` provoca un error.
 
-Las cadenas de conexión construidas manualmente en el entorno de ejecución desde la entrada de usuario no validada son vulnerables a ataques de inyección de cadenas y ponen en peligro la seguridad en el origen de datos. Para solucionar estos problemas, se ha creado el [generador de cadenas de conexión](connection-string-builders.md). Este generador de cadenas de conexión expone los parámetros como propiedades con establecimiento inflexible de tipos y permite validar la cadena de conexión antes de enviarla al origen de datos.
+Las cadenas de conexión construidas manualmente en el entorno de ejecución desde la entrada de usuario no validada son vulnerables a ataques de inyección de cadenas y ponen en peligro la seguridad en el origen de datos. Para solucionar estos problemas, se ha creado la clase <xref:Microsoft.Data.SqlClient.SqlConnectionStringBuilder>. Este [generador de cadenas de conexión](connection-string-builders.md) expone los parámetros como propiedades con establecimiento inflexible de tipos y permite validar la cadena de conexión antes de enviarla al origen de datos.
 
 ## <a name="in-this-section"></a>En esta sección
 
@@ -84,3 +84,7 @@ Describe cómo configurar cadenas de conexión específicas del proveedor para `
 
 [Protección de la información de conexión](protecting-connection-information.md)\
 Muestra técnicas de protección de la información utilizada para conectarse a un origen de datos.
+
+## <a name="see-also"></a>Consulte también
+
+- [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)

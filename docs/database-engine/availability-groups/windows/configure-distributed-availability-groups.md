@@ -5,17 +5,17 @@ ms.custom: seodec18
 ms.date: 01/28/2020
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 ms.assetid: f7c7acc5-a350-4a17-95e1-e689c78a0900
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: df4daf119464ccf90c751f97daeea0379d8e8a21
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: b6335c43c179dfcdb94ecae98b829f3ff8bb50aa
+ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96506354"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697096"
 ---
 # <a name="configure-an-always-on-distributed-availability-group"></a>Configuración de un grupo de disponibilidad Always On distribuido  
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -155,6 +155,10 @@ GO
 ## <a name="create-distributed-availability-group-on-first-cluster"></a>Crear un grupo de disponibilidad distribuido en el primer clúster  
  En el primer WSFC, cree un grupo de disponibilidad distribuido (denominado " `distributedag` " en este ejemplo). Utilice el comando **CREATE AVAILABILITY GROUP** con la opción **DISTRIBUTED** . El parámetro **AVAILABILITY GROUP ON** especifica los grupos de disponibilidad de los miembros, `ag1` y `ag2`.  
   
+# <a name="automatic-seeding"></a>[Propagación automática](#tab/automatic)
+
+Para crear el grupo de disponibilidad distribuido mediante la propagación automática, utilice el siguiente código de Transact-SQL: 
+
 ```sql  
 CREATE AVAILABILITY GROUP [distributedag]  
    WITH (DISTRIBUTED)   
@@ -176,6 +180,35 @@ CREATE AVAILABILITY GROUP [distributedag]
 GO   
 ```  
   
+
+# <a name="manual-seeding"></a>[Propagación manual](#tab/manual)
+
+Para crear el grupo de disponibilidad distribuido mediante la propagación manual, utilice el siguiente código de Transact-SQL: 
+
+```sql
+CREATE AVAILABILITY GROUP [distributedag]  
+   WITH (DISTRIBUTED)   
+   AVAILABILITY GROUP ON  
+      'ag1' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag1-listener.contoso.com:5022',    
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL   
+      ),   
+      'ag2' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag2-listener.contoso.com:5022',   
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL   
+      );    
+GO   
+
+```
+
+---
+
 > [!NOTE]  
 >  **LISTENER_URL** especifica el agente de escucha de cada grupo de disponibilidad, con el punto de conexión de creación de reflejo de la base de datos del grupo de disponibilidad. En este ejemplo, es el puerto `5022` (no el puerto `60173` usado para crear el agente de escucha). Si usa un equilibrador de carga, por ejemplo, en Azure, [agregue una regla de equilibrio de carga para el puerto del grupo de disponibilidad distribuido](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener#add-load-balancing-rule-for-distributed-availability-group). Agregue la regla al puerto de escucha, además del puerto de la instancia de SQL Server. 
 
@@ -196,6 +229,10 @@ ALTER AVAILABILITY GROUP [distributedag]
 ## <a name="join-distributed-availability-group-on-second-cluster"></a>Unir el grupo de disponibilidad distribuido en el segundo clúster  
  Después, únase al grupo de disponibilidad distribuido del segundo WSFC.  
   
+# <a name="automatic-seeding"></a>[Propagación automática](#tab/automatic)
+
+Para unirse al grupo de disponibilidad distribuido mediante la propagación automática, utilice el siguiente código de Transact-SQL: 
+
 ```sql  
 ALTER AVAILABILITY GROUP [distributedag]   
    JOIN   
@@ -216,6 +253,61 @@ ALTER AVAILABILITY GROUP [distributedag]
       );    
 GO  
 ```  
+
+
+
+# <a name="manual-seeding"></a>[Propagación manual](#tab/manual)
+
+Para unirse al grupo de disponibilidad distribuido mediante la propagación manual, utilice el siguiente código de Transact-SQL: 
+
+```sql
+ALTER AVAILABILITY GROUP [distributedag]   
+   JOIN   
+   AVAILABILITY GROUP ON  
+      'ag1' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag1-listener.contoso.com:5022',    
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL   
+      ),   
+      'ag2' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag2-listener.contoso.com:5022',   
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL  
+      );    
+GO  
+```
+
+Si la propagación manual se usa para crear la base de datos en el reenviador, realice una copia de seguridad completa y una copia de seguridad del registro de transacciones desde el principal global y restáurela en el reenviador con la opción NONRECOVERY. Por ejemplo:
+
+Para realizar una copia de seguridad en el principal global: 
+
+```sql
+BACKUP DATABASE [db1] 
+TO DISK = '<full backup location>' WITH FORMAT
+BACKUP LOG [db1] 
+TO DISK = '<log backup location>' WITH FORMAT
+```
+
+Para restaurar en el reenviador: 
+
+```sql
+RESTORE DATABASE [db1] 
+FROM DISK = '<full backup location>' WITH NORECOVERY
+RESTORE LOG [db1] FROM DISK = '<log backup location>' WITH NORECOVERY
+```
+
+Después, ejecute lo siguiente en el reenviador
+
+```sql
+ALTER DATABASE [db1] SET HADR AVAILABILITY GROUP = [distributedag]
+```
+
+---
+
 
 ## <a name="join-the-database-on-the-secondary-of-the-second-availability-group"></a><a name="failover"></a> Unión a la base de datos de la réplica secundaria del segundo grupo de disponibilidad
 Una vez que la base de datos de la réplica secundaria del segundo grupo de disponibilidad se encuentre en un estado de restauración, deberá unirla manualmente al grupo de disponibilidad.

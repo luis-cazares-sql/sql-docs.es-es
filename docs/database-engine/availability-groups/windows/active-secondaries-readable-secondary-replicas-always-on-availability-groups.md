@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 06/06/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 helpviewer_keywords:
 - connection access to availability replicas
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 78f3f81a-066a-4fff-b023-7725ff874fdf
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 82a8d9f4e787fd419e31e637775e33a4cf71f36d
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: c8f93191b689599a24ad960d316a02901de2e6e0
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94584867"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643827"
 ---
 # <a name="offload-read-only-workload-to-secondary-replica-of-an-always-on-availability-group"></a>Descarga de cargas de trabajo de solo lectura a la réplica secundaria de un grupo de disponibilidad Always On
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -162,7 +162,7 @@ ms.locfileid: "94584867"
   
  Solo [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] puede crear y actualizar las estadísticas temporales. No obstante, puede eliminar las estadísticas temporales y supervisar sus propiedades mediante las mismas herramientas que se usan para las estadísticas permanentes:  
   
--   Elimine las estadísticas temporales mediante la instrucción [DROP STATISTICS](../../../t-sql/statements/drop-statistics-transact-sql.md)[!INCLUDE[tsql](../../../includes/tsql-md.md)] .  
+-   Elimine las estadísticas temporales con la instrucción [DROP STATISTICS](../../../t-sql/statements/drop-statistics-transact-sql.md) de [!INCLUDE[tsql](../../../includes/tsql-md.md)].  
   
 -   Supervise las estadísticas con las vistas de catálogo **sys.stats** y **sys.stats_columns** . **sys_stats** incluye una columna, **is_temporary**, para indicar las estadísticas que son permanentes y las que son temporales.  
   

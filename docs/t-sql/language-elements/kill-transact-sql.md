@@ -35,12 +35,12 @@ ms.assetid: 071cf260-c794-4b45-adc0-0e64097938c0
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a42d01bead1a5d3882dcce0df67cda7785724b5e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 13afe3aa357bfd968874ae1f89bf0720c39fe49c
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97466156"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644461"
 ---
 # <a name="kill-transact-sql"></a>KILL (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -56,7 +56,8 @@ KILL termina una conexión normal, que detiene internamente las transacciones as
 ```syntaxsql  
 -- Syntax for SQL Server  
   
-KILL { session ID | UOW } [ WITH STATUSONLY ]   
+KILL { session ID [ WITH STATUSONLY ] | UOW [ WITH STATUSONLY | COMMIT | ROLLBACK ] }    
+
 ```  
   
 ```syntaxsql  
@@ -69,26 +70,37 @@ KILL 'session_id'
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="arguments"></a>Argumentos
-_session ID_  
-Es el identificador de sesión del proceso que se va a terminar. _session ID_ es un entero único (**int**) asignado a cada conexión de usuario en el momento de realizarla. El valor del Id. de sesión asociado con la conexión mientras ésta dure. Cuando la conexión finaliza, el valor entero se libera y se puede volver a asignar a una nueva conexión.  
+
+_Identificador de sesión_   
+Es el identificador de sesión del proceso que se va a terminar. `session_id` es un entero único (**int**) asignado a cada conexión de usuario en el momento de realizarla. El valor del Id. de sesión asociado con la conexión mientras ésta dure. Cuando la conexión finaliza, el valor entero se libera y se puede volver a asignar a una nueva conexión.  
+
 La consulta siguiente puede ayudarle a identificar el valor `session_id` que quiere terminar:  
+
  ```sql  
  SELECT conn.session_id, host_name, program_name,
      nt_domain, login_name, connect_time, last_request_end_time 
 FROM sys.dm_exec_sessions AS sess
 JOIN sys.dm_exec_connections AS conn
     ON sess.session_id = conn.session_id;
+
 ```  
+
+
+_UOW_   
+Identifica el identificador de unidad de trabajo (UOW) de las transacciones distribuidas. _UOW_ es un GUID que puede obtenerse desde la columna request_owner_guid de la vista de administración dinámica `sys.dm_tran_locks`. _UOW_ también puede obtenerse desde el registro de errores o a través del monitor MS DTC. Para obtener más información sobre cómo supervisar transacciones distribuidas, consulte la documentación de MS DTC.  
   
-_UOW_  
-**Válido para** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] y versiones posteriores.
-  
-Identifica el identificador de unidad de trabajo (UOW) de las transacciones distribuidas. _UOW_ es un GUID que puede obtenerse desde la columna request_owner_guid de la vista de administración dinámica sys.dm_tran_locks. _UOW_ también puede obtenerse desde el registro de errores o a través del monitor MS DTC. Para obtener más información sobre cómo supervisar transacciones distribuidas, consulte la documentación de MS DTC.  
-  
-Use KILL _UOW_ para detener transacciones distribuidas huérfanas. Estas transacciones no están asociadas a ningún identificador de sesión real, sino que se asocian artificialmente al identificador de sesión = "-2". Este Id. de sesión facilita la identificación de las transacciones huérfanas al consultar la columna de Id. de sesión en las vistas de administración dinámica sys.dm_tran_locks, sys.dm_exec_sessions o sys.dm_exec_requests.  
-  
-WITH STATUSONLY  
-Genera un informe de progreso sobre un argumento _session ID_ o _UOW_ especificado que se está revirtiendo a causa de una instrucción KILL anterior. KILL WITH STATUSONLY no termina el argumento _session ID_ o _UOW_ ni lo revierte. El comando solo muestra el progreso actual de la reversión.  
+Use KILL \<UOW> para detener transacciones distribuidas sin resolver. Estas transacciones no están asociadas a ningún identificador de sesión real, sino que se asocian artificialmente al identificador de sesión = "-2". Este identificador de sesión facilita la identificación de transacciones sin resolver consultando la columna del identificador de sesión en las vistas de administración dinámica `sys.dm_tran_locks`, ` sys.dm_exec_sessions` o `sys.dm_exec_requests`.  
+
+_WITH STATUSONLY_   
+Se utiliza para generar un informe de progreso para un argumento _UOW_ o `session_id` especificado que se está revirtiendo a causa de una instrucción KILL anterior. KILL WITH STATUSONLY no termina la UOW o el identificador de sesión ni lo revierte. El comando solo muestra el progreso actual de la reversión.
+
+_WITH COMMIT_   
+Se utiliza para terminar una transacción distribuida sin resolver con confirmación. Solo se aplica a las transacciones distribuidas. Debe especificar una _UOW_ para utilizar esta opción.  Vea [Transacciones distribuidas](../../database-engine/availability-groups/windows/configure-availability-group-for-distributed-transactions.md#manage-unresolved-transactions) para más información.
+
+_WITH ROLLBACK_   
+Se utiliza para terminar una transacción distribuida sin resolver con reversión. Solo se aplica a las transacciones distribuidas. Debe especificar una _UOW_ para utilizar esta opción.  Vea [Transacciones distribuidas](../../database-engine/availability-groups/windows/configure-availability-group-for-distributed-transactions.md#manage-unresolved-transactions) para más información.
+
+
   
 ## <a name="remarks"></a>Observaciones  
 KILL se utiliza normalmente para terminar un proceso que está bloqueando otros procesos importantes mediante bloqueos. KILL también se puede usar para detener un proceso que está ejecutando una consulta que usa los recursos necesarios del sistema. Los procesos del sistema y los procesos que ejecutan un procedimiento almacenado extendido no se pueden terminar.  

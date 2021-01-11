@@ -1,7 +1,7 @@
 ---
 title: Exportación a Microsoft Excel (Generador de informes) | Microsoft Docs
 description: En el Generador de informes, la extensión de representación en Excel representa un informe paginado en el formato Office Open XML para su uso con Microsoft Excel.
-ms.date: 01/09/2017
+ms.date: 12/23/2020
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: report-builder
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 74f726fc-2167-47af-9093-1644e03ef01f
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 865caa0938aa89feacbb5e330eb38f292039446c
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: 4e8b43d3e9e772b06961602bf2d8bd69aa51216e
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80342892"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878858"
 ---
 # <a name="exporting-to-microsoft-excel-report-builder-and-ssrs"></a>Exportar a Microsoft Excel (Generador de informes y SSRS)
   La extensión de representación de Excel [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] representa un informe paginado de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] en el formato de [!INCLUDE[ofprexcel](../../includes/ofprexcel-md.md)] (.xlsx). Con la extensión de representación de Excel, el ancho de las columnas de Excel refleja más exactamente el ancho de las columnas de los informes.  
@@ -47,7 +47,7 @@ ms.locfileid: "80342892"
   
 -   Si el elemento de informe que controla si la visualización de otro elemento va activarse o desactivarse no está en la fila o en la columna anterior o siguiente al elemento controlado, el esquema también se deshabilita.  
   
- Para obtener más información sobre las limitaciones de Excel, vea [Especificaciones y límites de Excel](https://support.office.com/article/Excel-specifications-and-limits-CA36E2DC-1F09-4620-B726-67C00B05040F).  
+ Para obtener más información sobre las limitaciones de Excel, vea [Especificaciones y límites de Excel](https://support.microsoft.com/en-us/office/excel-specifications-and-limits-1672b34d-7043-467e-8e27-269d656771c3).  
   
 ### <a name="sizes-of-excel-2003-xls-files"></a>Tamaño de los archivos de Excel 2003 (.xls)  
   
@@ -194,11 +194,11 @@ ms.locfileid: "80342892"
  Si no encuentra ninguna coincidencia, Excel usa el tamaño de página predeterminado para la impresora. La orientación se establece en Vertical si el ancho de página es menor que el alto; en caso contrario, se establece en Horizontal.  
   
 ##  <a name="worksheet-tab-names"></a><a name="WorksheetTabNames"></a> Nombres de las pestañas de las hojas de cálculo  
- Al exportar un informe a Excel, las páginas del mismo que se crearon con saltos de página se exportan a hojas de cálculo diferentes. Si proporcionó un nombre de página inicial para el informe, cada hoja de cálculo del libro de Excel tendrá este nombre de forma predeterminada. El nombre aparece en la pestaña de la hoja de cálculo. Sin embargo, dado que cada hoja de cálculo de un libro debe tener un nombre único, un número entero a partir de 1 que se incrementa en 1 se anexa al nombre de página inicial para cada hoja de cálculo adicional. Por ejemplo, si el nombre de la página inicial es **Informe de ventas por año fiscal**, la segunda hoja de cálculo se denominaría **Informe de ventas por año fiscal1**, la tercera **Informe de ventas por año fiscal2**y así sucesivamente.  
+ Al exportar un informe a Excel, las páginas del mismo que se crearon con saltos de página se exportan a hojas de cálculo diferentes. Si proporcionó un nombre de página inicial para el informe, cada hoja de cálculo del libro de Excel tendrá este nombre de forma predeterminada. El nombre aparece en la pestaña de la hoja de cálculo. Sin embargo, dado que cada hoja de cálculo de un libro debe tener un nombre único, un número entero a partir de 1 que se incrementa en 1 se anexa al nombre de página inicial para cada hoja de cálculo adicional. Por ejemplo, si el nombre de la página inicial es **Informe de ventas por año fiscal**, la segunda hoja de cálculo se denominaría **Informe de ventas por año fiscal1**, la tercera **Informe de ventas por año fiscal2** y así sucesivamente.  
   
- Si todas las páginas del informe creadas con saltos de página proporcionan nombres de página nuevos, cada hoja de cálculo tendrá el nombre de página asociado. Sin embargo, estos nombres de página podrían no ser únicos. Si los nombres de página no son únicos, las hojas de cálculo se denominan de la misma manera que los iniciales de las páginas. Por ejemplo, si el nombre de página de dos grupos es **Ventas de NW**, una pestaña de la hoja de cálculo tendrá el nombre **Ventas de NW**y la otra **Ventas de NW1**.  
+ Si todas las páginas del informe creadas con saltos de página proporcionan nombres de página nuevos, cada hoja de cálculo tendrá el nombre de página asociado. Sin embargo, estos nombres de página podrían no ser únicos. Si los nombres de página no son únicos, las hojas de cálculo se denominan de la misma manera que los iniciales de las páginas. Por ejemplo, si el nombre de página de dos grupos es **Ventas de NW**, una pestaña de la hoja de cálculo tendrá el nombre **Ventas de NW** y la otra **Ventas de NW1**.  
   
- Si el informe no proporciona un nombre de página inicial ni nombres de página relacionados con los saltos de página, las pestañas de la hoja de cálculo tendrán los nombres predeterminados **Hoja1**, **Hoja2**y así sucesivamente.  
+ Si el informe no proporciona un nombre de página inicial ni nombres de página relacionados con los saltos de página, las pestañas de la hoja de cálculo tendrán los nombres predeterminados **Hoja1**, **Hoja2** y así sucesivamente.  
   
  Reporting Services proporciona propiedades para establecer en los informes, regiones de datos, grupos y rectángulos con el fin de ayudarle a crear informes que se puedan exportar a Excel de la manera que desee. Para más información, vea [Paginación en Reporting Services &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/pagination-in-reporting-services-report-builder-and-ssrs.md).  
   

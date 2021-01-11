@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: a24241d3ef66739a85422397426278738987bf15
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: 14442892bc59fc733c6a67153832b95c3f368b95
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96428319"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771465"
 ---
 # <a name="configuring-parameters"></a>Configuración de parámetros
 
@@ -31,7 +31,7 @@ Los comandos parametrizados también pueden mejorar el rendimiento de ejecución
 
 Para crear un objeto <xref:System.Data.Common.DbParameter> , se puede usar su constructor o bien se puede agregar a <xref:System.Data.Common.DbCommand.DbParameterCollection%2A> mediante una llamada al método `Add` de la colección <xref:System.Data.Common.DbParameterCollection> . El método `Add` acepta como entrada argumentos del constructor o cualquier objeto de parámetro ya existente, en función del proveedor de datos.
 
-## <a name="supplying-the-parameterdirection-property"></a>Provisión de la propiedad ParameterDirection
+## <a name="supply-the-parameterdirection-property"></a>Provisión de la propiedad ParameterDirection
 
 Cuando se agregan parámetros distintos de los parámetros de entrada, se debe proporcionar una propiedad <xref:System.Data.ParameterDirection> . En la tabla siguiente se muestran los valores de `ParameterDirection` que se pueden usar con la enumeración <xref:System.Data.ParameterDirection> .
 
@@ -42,11 +42,11 @@ Cuando se agregan parámetros distintos de los parámetros de entrada, se debe p
 |<xref:System.Data.ParameterDirection.Output>|Se trata de un parámetro de salida.|
 |<xref:System.Data.ParameterDirection.ReturnValue>|El parámetro representa un valor devuelto de una operación como, por ejemplo, un procedimiento almacenado, una función integrada o una función definida por el usuario.|
 
-## <a name="working-with-parameter-placeholders"></a>Trabajo con marcadores de posición de parámetros
+## <a name="work-with-parameter-placeholders"></a>Trabajo con marcadores de posición de parámetros
 
 La sintaxis de los marcadores de posición de parámetros depende del origen de datos. El proveedor de datos SqlClient de Microsoft para SQL Server controla la asignación de nombres y la especificación de parámetros y marcadores de posición de parámetros de forma diferente. El proveedor de datos SqlClient usa parámetros con nombre con el formato `@`*parametername*.
 
-## <a name="specifying-parameter-data-types"></a>Especificación de tipos de datos de parámetro
+## <a name="specify-parameter-data-types"></a>Especificación de tipos de datos de parámetro
 
 El tipo de datos de un parámetro es específico del proveedor de datos SqlClient de Microsoft para SQL Server. Al especificar el tipo, el valor de `Parameter` se convierte en el tipo de proveedor de datos SqlClient de Microsoft para SQL Server antes de pasar el valor al origen de datos. Si lo desea, puede especificar el tipo de un objeto `Parameter` de forma genérica estableciendo la propiedad `DbType` del objeto `Parameter` en un <xref:System.Data.DbType>determinado.
 
@@ -89,7 +89,7 @@ El tipo de proveedor de datos SqlClient de Microsoft para SQL Server de un obje
 > [!NOTE]
 > Cuando se envía un valor de parámetro nulo al servidor, se debe especificar <xref:System.DBNull>, no `null` (`Nothing` en Visual Basic). El valor nulo en el sistema es un objeto vacío que no tiene ningún valor. Para representar los valores nulos, se usa<xref:System.DBNull> .
 
-## <a name="deriving-parameter-information"></a>Derivación de información de parámetros
+## <a name="derive-parameter-information"></a>Derivación de información de parámetro
 
 Los parámetros también se pueden derivar de un procedimiento almacenado mediante la clase `DbCommandBuilder` . La clase `SqlCommandBuilder` proporciona un método estático, `DeriveParameters`, que rellena automáticamente la colección de parámetros de un objeto de comando que usa información de parámetros de un procedimiento almacenado. Tenga en cuenta que `DeriveParameters` sobrescribirá toda la información de parámetros existente en el comando.
 
@@ -123,4 +123,6 @@ En este ejemplo se muestra cómo llamar a un procedimiento almacenado de SQL Ser
 ## <a name="see-also"></a>Vea también
 
 - [Comandos y parámetros](commands-parameters.md)
+- [Objetos DataAdapter y DataReader](dataadapters-datareaders.md)
 - [Asignaciones de tipos de datos en ADO.NET](data-type-mappings-ado-net.md)
+- [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)

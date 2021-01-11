@@ -2,7 +2,7 @@
 title: Regulador de recursos | Microsoft Docs
 description: Obtenga información sobre la característica Resource Governor de SQL Server, que permite especificar la cantidad máxima de CPU, E/S física y memoria que las solicitudes de aplicación entrantes pueden usar.
 ms.custom: ''
-ms.date: 03/14/2017
+ms.date: 12/21/2020
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: performance
@@ -13,17 +13,20 @@ helpviewer_keywords:
 ms.assetid: 2bc89b66-e801-45ba-b30d-8ed197052212
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 29d63602d4e3553ee2e5f1cb9053e445265fd301
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 6b5f22541039f781e49615b5e8916d138a5c375b
+ms.sourcegitcommit: bb54e4c9dd8c97365b7a96dfcd557b8b86d06978
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96506559"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97736893"
 ---
 # <a name="resource-governor"></a>regulador de recursos
-[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
   Resource Governor de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] es una característica que se puede usar para administrar la carga de trabajo y el consumo de recursos del sistema de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Resource Governor permite especificar la cantidad máxima de CPU, E/S física y memoria que las solicitudes de aplicación entrantes pueden usar.  
   
+> [!NOTE]
+> Aunque [Azure SQL Database aprovecha Resource Governor](https://azure.microsoft.com/blog/resource-governance-in-azure-sql-database/) (entre otras técnicas) para administrar recursos, no se admite la configuración de usuarios de grupos de recursos personalizados y grupos de cargas de trabajo en Azure SQL Database. Azure Synapse Analytics tiene una implementación diferente de un comportamiento similar de Resource Governor a través de la [característica de clasificación de carga de trabajo](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-classification).
+
 ## <a name="benefits-of-resource-governor"></a>Ventajas del regulador de recursos  
  El regulador de recursos que permite administrar las cargas de trabajo y los recursos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] mediante la especificación de los límites del consumo de recursos por solicitudes entrantes. En el contexto del Regulador de recursos, la carga de trabajo es un conjunto de consultas o solicitudes de dimensiones similares que pueden (y deberían) tratarse como una entidad única. No se trata de un requisito, pero cuanto más uniforme es el modelo del uso de recursos de una carga de trabajo, mayores son las ventajas que pueden obtenerse del Regulador de recursos. Los límites sobre los recursos pueden reconfigurarse en tiempo real con un impacto mínimo sobre las cargas de trabajo que se están ejecutando.  
   
@@ -61,8 +64,8 @@ ms.locfileid: "96506559"
   
 -   **Clasificación.** El proceso de clasificación asigna las sesiones de entrada a cada grupo de cargas de trabajo según las características de la sesión. Puede adaptar la lógica de clasificación escribiendo una función definida por el usuario, denominada función clasificadora. El regulador de recursos también admite una función clasificadora definida por el usuario para implementar las reglas de la clasificación. Para más información, consulte [Resource Governor Classifier Function](../../relational-databases/resource-governor/resource-governor-classifier-function.md).  
   
-> [!NOTE]  
->  El regulador de recursos no impone ningún control sobre las conexiones de administrador dedicadas (DAC). No hay ninguna necesidad de clasificar las consultas de DAC, las cuales se ejecutan en el grupo de cargas de trabajo y en el grupo de recursos de servidor internos.  
+> [!NOTE]
+> El regulador de recursos no impone ningún control sobre las conexiones de administrador dedicadas (DAC). No hay ninguna necesidad de clasificar las consultas de DAC, las cuales se ejecutan en el grupo de cargas de trabajo y en el grupo de recursos de servidor internos.  
   
  En el contexto del regulador de recursos, puede tratar los conceptos anteriores como componentes. La ilustración siguiente muestra estos componentes y su relación entre sí, tal y como existen en el entorno del motor de base de datos. Desde el punto de vista del procesamiento, el flujo simplificado es como sigue:  
   

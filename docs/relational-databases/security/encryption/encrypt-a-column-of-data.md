@@ -3,7 +3,7 @@ title: Cifrar una columna de datos | Microsoft Docs
 description: Obtenga información sobre cómo cifrar una columna de datos mediante el cifrado simétrico en SQL Server con Transact-SQL, que a veces se conoce como cifrado de nivel de columna o de nivel de celda.
 ms.custom: ''
 titleSuffix: SQL Server & Azure Synapse Analytics & Azure SQL Database & SQL Managed Instance
-ms.date: 01/02/2019
+ms.date: 12/15/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: vanto
@@ -18,55 +18,54 @@ ms.assetid: 38e9bf58-10c6-46ed-83cb-e2d76cda0adc
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
-ms.openlocfilehash: 89e06fabdf2cf443f96c379c1363cfb845c83da2
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c09f7f91edf2cada0464b6cfbc1922664a86866f
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477596"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641136"
 ---
 # <a name="encrypt-a-column-of-data"></a>Cifrar una columna de datos
 
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]  
 
-  En este artículo se describe cómo cifrar una columna de datos utilizando el cifrado simétrico en [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] mediante [!INCLUDE[tsql](../../../includes/tsql-md.md)]. A veces, esto se conoce como cifrado de nivel de columna, o cifrado de nivel de celda. Esta característica se encuentra en versión preliminar para Azure Synapse Analytics.
+En este artículo se describe cómo cifrar una columna de datos utilizando el cifrado simétrico en [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] mediante [!INCLUDE[tsql](../../../includes/tsql-md.md)]. A veces, esto se conoce como cifrado de nivel de columna, o cifrado de nivel de celda. Esta característica se encuentra en versión preliminar para Azure Synapse Analytics.
+
+Los ejemplos de este artículo se han validado con AdventureWorks2017. Para obtener bases de datos de ejemplo, vea [Bases de datos de ejemplo AdventureWorks](../../../samples/adventureworks-install-configure.md).
 
 ## <a name="security"></a>Seguridad  
   
 ### <a name="permissions"></a>Permisos  
- Los siguientes permisos son necesarios para realizar los pasos siguientes:  
-  
-- Permiso CONTROL en la base de datos.  
-  
-- Permiso CREATE CERTIFICATE en la base de datos. Solo los inicios de sesión de Windows, los inicios de sesión de SQL Server y los roles de aplicación pueden poseer certificados. Los grupos y roles no pueden poseer los certificados.  
-  
-- Permiso ALTER en la tabla.  
-  
-- Algún permiso en la clave y no debe haberse denegado el permiso VIEW DEFINITION.  
-  
-## <a name="using-transact-sql"></a>Usar Transact-SQL  
 
-Para usar los ejemplos siguientes, debe tener una clave maestra de base de datos. Si la base de datos aún no tiene una clave maestra de base de datos, ejecute la siguiente instrucción y proporcione la contraseña para crear una:
+Los siguientes permisos son necesarios para realizar los pasos siguientes:  
+  
+- El permiso `CONTROL` en la base de datos.  
+- El permiso `CREATE CERTIFICATE` en la base de datos. Solo los inicios de sesión de Windows, los inicios de sesión de SQL Server y los roles de aplicación pueden poseer certificados. Los grupos y roles no pueden poseer los certificados.  
+- Permiso `ALTER` en la tabla.  
+- Algún permiso en la clave y no debe haberse denegado el permiso `VIEW DEFINITION`.  
+  
+## <a name="create-database-master-key"></a>Creación de la clave maestra de base de datos  
+
+Para usar los ejemplos siguientes, debe tener una clave maestra de base de datos. Si la base de datos aún no tiene una clave maestra de base de datos, cree una. Para crear una, conéctese a la base de datos y ejecute el script siguiente. Asegúrese de utilizar una contraseña compleja.
+
+Copie y pegue el ejemplo siguiente en la ventana de consulta que está conectada a la base de datos de ejemplo AdventureWorks. Haga clic en **Ejecutar**.  
 
 ```sql  
 CREATE MASTER KEY ENCRYPTION BY   
-PASSWORD = '<some strong password>';  
+PASSWORD = '<complex password>';  
 ```  
 
 Realice siempre una copia de seguridad de la clave maestra de base de datos. Para obtener más información sobre las claves maestras de base de datos, vea [CREATE MASTER KEY &#40;Transact-SQL&#41;](../../../t-sql/statements/create-master-key-transact-sql.md).
 
-### <a name="to-encrypt-a-column-of-data-using-symmetric-encryption-that-includes-an-authenticator"></a>Para cifrar una columna de datos usando el cifrado simétrico que incluye un autenticador  
+## <a name="example-encrypt-with-symmetric-encryption-and-authenticator"></a>Ejemplo: Cifrar con cifrado simétrico y autenticador
   
 1. En el **Explorador de objetos**, conéctese a una instancia del [!INCLUDE[ssDE](../../../includes/ssde-md.md)].  
   
 2. En la barra de Estándar, haga clic en **Nueva consulta**.  
   
-3. Copie y pegue el siguiente ejemplo en la ventana de consulta y haga clic en **Ejecutar**.  
+3. Copie y pegue el ejemplo siguiente en la ventana de consulta que está conectada a la base de datos de ejemplo AdventureWorks. Haga clic en **Ejecutar**.
 
     ```sql
-    USE AdventureWorks2012;  
-    GO  
-  
     CREATE CERTIFICATE Sales09  
        WITH SUBJECT = 'Customer Credit Card Numbers';  
     GO  
@@ -90,7 +89,7 @@ Realice siempre una copia de seguridad de la clave maestra de base de datos. Par
     -- Save the result in column CardNumber_Encrypted.    
     UPDATE Sales.CreditCard  
     SET CardNumber_Encrypted = EncryptByKey(Key_GUID('CreditCards_Key11')  
-        , CardNumber, 1, HashBytes('SHA1', CONVERT( varbinary  
+        , CardNumber, 1, HASHBYTES('SHA2_256', CONVERT( varbinary  
         , CreditCardID)));  
     GO  
   
@@ -108,24 +107,21 @@ Realice siempre una copia de seguridad de la clave maestra de base de datos. Par
     SELECT CardNumber, CardNumber_Encrypted   
         AS 'Encrypted card number', CONVERT(nvarchar,  
         DecryptByKey(CardNumber_Encrypted, 1 ,   
-        HashBytes('SHA1', CONVERT(varbinary, CreditCardID))))  
+        HASHBYTES('SHA2_256', CONVERT(varbinary, CreditCardID))))  
         AS 'Decrypted card number' FROM Sales.CreditCard;  
     GO  
     ```  
   
-### <a name="to-encrypt-a-column-of-data-using-a-simple-symmetric-encryption"></a>Para cifrar una columna de datos usando un cifrado simétrico simple  
-  
+## <a name="encrypt-with-simple-symmetric-encryption"></a>Cifrado simétrico simple  
+
 1. En el **Explorador de objetos**, conéctese a una instancia del [!INCLUDE[ssDE](../../../includes/ssde-md.md)].  
   
 2. En la barra de Estándar, haga clic en **Nueva consulta**.  
   
-3. Copie y pegue el siguiente ejemplo en la ventana de consulta y haga clic en **Ejecutar**.  
+3. Copie y pegue el ejemplo siguiente en la ventana de consulta que está conectada a la base de datos de ejemplo AdventureWorks. Haga clic en **Ejecutar**.  
   
     ```sql
-    USE AdventureWorks2012;  
-    GO  
-  
-    CREATE CERTIFICATE HumanResources037  
+     CREATE CERTIFICATE HumanResources037  
        WITH SUBJECT = 'Employee Social Security Numbers';  
     GO  
   

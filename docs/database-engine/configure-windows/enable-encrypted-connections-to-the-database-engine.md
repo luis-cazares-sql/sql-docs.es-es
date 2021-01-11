@@ -1,6 +1,6 @@
 ---
 title: Habilitación de conexiones cifradas | Microsoft Docs
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 08/29/2019
 ms.prod: sql
 ms.prod_service: security
@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: e1e55519-97ec-4404-81ef-881da3b42006
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: d147177be88db5bba50955711a8585ff11d872d9
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+ms.openlocfilehash: b18a3131329e0485221a0ae2cdaafd0726a4f31c
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670978"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878978"
 ---
 # <a name="enable-encrypted-connections-to-the-database-engine"></a>Habilitación de conexiones cifradas en el Motor de base de datos
 
@@ -71,7 +71,7 @@ Al habilitar el cifrado TLS aumenta la seguridad de los datos que se transmiten 
  El cliente debe ser capaz de comprobar la propiedad del certificado utilizado por el servidor. Si el cliente tiene el certificado de clave pública de la entidad de certificación que firmó el certificado del servidor, no es necesario realizar una mayor configuración. [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows incluye los certificados de clave pública de muchas entidades de certificación. Si el certificado del servidor lo firmó una entidad de certificación pública o privada para la que el cliente no tiene certificado de clave pública, debe instalar el certificado de clave pública de esta entidad de certificación.  
   
 > [!NOTE]  
-> Si desea utilizar el cifrado con un clúster de conmutación por error, debe instalar el certificado del servidor con el nombre DNS completo del servidor virtual en todos los nodos del clúster de conmutación por error. Por ejemplo, si tiene un clúster con dos nodos cuyos nombres son ***test1.\*\<your company>\*.com*** y ***test2.\*\<your company>\*.com***, y un servidor virtual denominado ***virtsql***, debe instalar un certificado para ***virtsql.\*\<your company>\*.com*** en los dos nodos. Puede establecer el valor de la opción **ForceEncryption** en el cuadro de propiedades **Protocolos para virtsql** de **Configuración de red de SQL Server** en **Sí**.
+> Si desea utilizar el cifrado con un clúster de conmutación por error, debe instalar el certificado del servidor con el nombre DNS completo del servidor virtual en todos los nodos del clúster de conmutación por error. Por ejemplo, si tiene un clúster con dos nodos cuyos nombres son **_test1.\_\<your company>\*.com*** y **_test2.\_\<your company>\*.com***, ay un servidor virtual denominado **_virtsql_*_, debe instalar un certificado para _ *_virtsql.\_\<your company>\*.com*** en ambos nodos. Puede establecer el valor de la opción **ForceEncryption** en el cuadro de propiedades **Protocolos para virtsql** de **Configuración de red de SQL Server** en **Sí**.
 
 > [!NOTE]
 > Al crear conexiones cifradas para un indexador de Azure Search en [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] en una máquina virtual de Azure, vea [Configuración de una conexión desde un indexador de Azure Search a SQL Server en una máquina virtual de Azure](/azure/search/search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers). 
@@ -110,19 +110,19 @@ Si usa [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] a través de [!INCLUDE[
   
 3. En el cuadro de diálogo **Agregar o quitar complemento** , haga clic en **Agregar**.  
   
-4. En el cuadro de diálogo **Agregar un complemento independiente** , haga clic en **Certificados**y, después, en **Agregar**.  
+4. En el cuadro de diálogo **Agregar un complemento independiente** , haga clic en **Certificados** y, después, en **Agregar**.  
   
-5. En el cuadro de diálogo **Complemento de certificados** , haga clic en **Cuenta de equipo**y, después, en **Finalizar**.  
+5. En el cuadro de diálogo **Complemento de certificados** , haga clic en **Cuenta de equipo** y, después, en **Finalizar**.  
   
 6. En el cuadro de diálogo **Agregar un complemento independiente** , haga clic en **Cerrar.**  
   
 7. En el cuadro de diálogo **Agregar o quitar complemento** , haga clic en **Aceptar**.  
   
-8. En el complemento **Certificados** , expanda **Certificados**, expanda **Personal**. Tras ello, haga clic con el botón derecho en **Certificados**, seleccione **Todas las tareas**y, finalmente, haga clic en **Importar**.  
+8. En el complemento **Certificados** , expanda **Certificados**, expanda **Personal**. Tras ello, haga clic con el botón derecho en **Certificados**, seleccione **Todas las tareas** y, finalmente, haga clic en **Importar**.  
 
-9. Haga clic con el botón derecho en el certificado importado, seleccione **Todas las tareas**y, luego, haga clic en **Administrar claves privadas**. En el cuadro de diálogo **Seguridad**, agregue el permiso de lectura para la cuenta de usuario que usa la cuenta de servicio de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
+9. Haga clic con el botón derecho en el certificado importado, seleccione **Todas las tareas** y, luego, haga clic en **Administrar claves privadas**. En el cuadro de diálogo **Seguridad**, agregue el permiso de lectura para la cuenta de usuario que usa la cuenta de servicio de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
-10. Finalice el **Asistente para importación de certificados**para agregar un certificado al equipo y cierre la consola MMC. Para obtener más información acerca de cómo agregar un certificado a un equipo, vea la documentación de Windows.  
+10. Finalice el **Asistente para importación de certificados** para agregar un certificado al equipo y cierre la consola MMC. Para obtener más información acerca de cómo agregar un certificado a un equipo, vea la documentación de Windows.  
 
 > [!IMPORTANT]
 > En los entornos de producción, se recomienda obtener un certificado de confianza emitido por una entidad de certificación.    
@@ -136,9 +136,9 @@ Si usa [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] a través de [!INCLUDE[
 
 ## <a name="export-server-certificate"></a>Exportación del certificado de servidor  
   
-1. En el complemento **Certificados** , busque el certificado en la carpeta **Certificados** / **Personal** , haga clic con el botón derecho en **Certificado**, seleccione **Todas las tareas**y, luego, haga clic en **Exportar**.  
+1. En el complemento **Certificados** , busque el certificado en la carpeta **Certificados** / **Personal** , haga clic con el botón derecho en **Certificado**, seleccione **Todas las tareas** y, luego, haga clic en **Exportar**.  
   
-2. Complete el **Asistente para exportación de certificados**y guarde el archivo del certificado en una ubicación adecuada.  
+2. Complete el **Asistente para exportación de certificados** y guarde el archivo del certificado en una ubicación adecuada.  
   
 ## <a name="configure-server"></a>Configuración del servidor
 
@@ -151,7 +151,7 @@ Configure el servidor para forzar conexiones cifradas.
   
 2. En el cuadro de diálogo **Propiedades** de **Protocolos de** _\<instance name>_ , en la pestaña **Certificado**, seleccione el certificado que quiera en el cuadro desplegable **Certificado** y haga clic en **Aceptar**.  
   
-3. En la pestaña **Marcas** , en el cuadro **ForceEncryption** , seleccione **Sí**y, a continuación, haga clic en **Aceptar** para cerrar el cuadro de diálogo.  
+3. En la pestaña **Marcas** , en el cuadro **ForceEncryption** , seleccione **Sí** y, a continuación, haga clic en **Aceptar** para cerrar el cuadro de diálogo.  
   
 4. Reinicie el servicio [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .  
 
@@ -174,7 +174,7 @@ Configure el cliente para que solicite conexiones cifradas.
   
 Para cifrar una conexión desde [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]:  
 
-1. En la barra de herramientas del Explorador de objetos, haga clic en **Conectar**y, a continuación, en **Motor de base de datos**.  
+1. En la barra de herramientas del Explorador de objetos, haga clic en **Conectar** y, a continuación, en **Motor de base de datos**.  
   
 2. En el cuadro de diálogo **Conectar al servidor** , rellene la información de conexión y, a continuación, haga clic en **Opciones**.  
   

@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: e7a618ef92a9f4a4cc969112886a4246ad25adc6
-ms.sourcegitcommit: 866554663ca3191748b6e4eb4d8d82fa58c4e426
+ms.openlocfilehash: dfbe41fe29a3dadc69a2a428f1bf8b606a2a7050
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559207"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771360"
 ---
 # <a name="retrieve-data-by-a-datareader"></a>Recuperación de datos mediante un objeto DataReader
 
@@ -42,9 +42,9 @@ En el ejemplo de código siguiente se realiza una iteración por un objeto **Dat
 
 [!code-csharp[DataWorks SqlClient.HasRows#1](~/../sqlclient/doc/samples/SqlDataReader_HasRows.cs#1)]
 
-## <a name="closing-the-datareader"></a>Cerrar el DataReader  
+## <a name="close-the-datareader"></a>Cierre de DataReader  
 
-Llame siempre al método **Close** cuando haya terminado de usar el objeto **DataReader**.
+Llame siempre al método `Close()` cuando haya terminado de usar el objeto `DataReader`.
 
 > [!NOTE]
 > Si **Command** contiene parámetros de salida o valores devueltos, no estarán disponibles hasta que se cierre el objeto **DataReader**.  
@@ -71,4 +71,5 @@ Mientras un objeto **DataReader** está abierto, puede usar el método **GetSche
 
 - [Objetos DataAdapter y DataReader](dataadapters-datareaders.md)
 - [Comandos y parámetros](commands-parameters.md)
+- [Recuperación de la información del esquema de la base de datos](retrieving-database-schema-information.md)
 - [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)

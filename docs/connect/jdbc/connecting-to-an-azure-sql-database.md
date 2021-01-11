@@ -2,7 +2,7 @@
 title: Conectarse a una base de datos de SQL Azure
 description: En este artículo se describen los problemas que se producen al usar Microsoft JDBC Driver para SQL Server para conectarse a una instancia de Azure SQL Database.
 ms.custom: ''
-ms.date: 08/12/2019
+ms.date: 12/18/2020
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 49645b1f-39b1-4757-bda1-c51ebc375c34
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: bda9c33588c8248d0aff62f555ec46451d0e9e78
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 03768a309ac10fc16fd1a743660df6fe74b088e7
+ms.sourcegitcommit: bc8474fa200ef0de7498dbb103bc76e3e3a4def4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91725496"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709674"
 ---
 # <a name="connecting-to-an-azure-sql-database"></a>Conectarse a una base de datos de SQL Azure
 
@@ -43,7 +43,13 @@ Al conectar con una instancia de [!INCLUDE[ssAzure](../../includes/ssazure_md.md
 
 - Inactiva por la puerta de enlace de SQL Azure, donde pueden darse mensajes **keepalive** de TCP (pasando a no ser una conexión inactiva desde una perspectiva de TCP) y no tener una consulta activa en 30 minutos. En este escenario, la puerta de enlace determinará si la conexión TDS está inactiva después de 30 minutos y la finalizará.  
   
-Para evitar que un componente de red elimine las conexiones inactivada, se debe establecer la siguiente configuración del Registro (o su equivalente si no es Windows) en el sistema operativo donde esté cargado el controlador:  
+Para solucionar el segundo punto y evitar que la puerta de enlace termine las conexiones inactivas, puede:
+
+* Usar la [directiva de conexión](/azure/azure-sql/database/connectivity-architecture#connection-policy) **Redirect** al configurar el origen de datos de Azure SQL.
+
+* Mantenga las conexiones activas a través de la actividad ligera. Este método no se recomienda y solo debe usarse si no hay otras opciones posibles.
+
+Para abordar el primer punto y evitar que un componente de red elimine las conexiones inactivas, se debe establecer la siguiente configuración del Registro (o su equivalente si no es Windows) en el sistema operativo donde esté cargado el controlador:  
   
 |Configuración del registro|Valor recomendado|  
 |----------------------|-----------------------|  
@@ -53,7 +59,13 @@ Para evitar que un componente de red elimine las conexiones inactivada, se debe 
   
 Reinicie el equipo para que surta efecto la configuración del Registro.  
 
-Para llevar a cabo esta tarea cuando se ejecuta en Azure, cree una tarea de inicio para agregar las claves del Registro.  Por ejemplo, agregue la siguiente tarea de inicio al archivo de definición de servicios:  
+Los valores KeepAliveTime y KeepAliveInterval se indican en milisegundos. Esta configuración tendrá el efecto de desconectar una conexión que no responde en un plazo de 10 a 40 segundos. Después de enviar un paquete de mantenimiento de conexión, si no se recibe ninguna respuesta, se volverá a intentar cada segundo hasta diez veces. Si no se recibe ninguna respuesta durante ese tiempo, el socket del lado cliente se desconecta. Dependiendo del entorno, puede que desee aumentar el valor de KeepAliveInterval para adaptarse a interrupciones conocidas (por ejemplo, migraciones de máquinas virtuales) que podrían hacer que un servidor deje de responder durante más de diez segundos.
+
+> [!NOTE]
+> TcpMaxDataRetransmissions no es controlable en Windows Vista o Windows 2008 y versiones posteriores.
+
+Para llevar a cabo esta configuración cuando se ejecuta en Azure, cree una tarea de inicio para agregar las claves del Registro.  Por ejemplo, agregue la siguiente tarea de inicio al archivo de definición de servicios:  
+
 
 ```xml
 <Startup>  
@@ -62,7 +74,7 @@ Para llevar a cabo esta tarea cuando se ejecuta en Azure, cree una tarea de inic
 </Startup>  
 ```
 
-A continuación, agregue un archivo AddKeepAlive.cmd al proyecto. Establezca la configuración "Copy to Output Directory" en Copy always. A continuación se muestra un archivo AddKeepAlive.cmd de ejemplo:  
+A continuación, agregue un archivo AddKeepAlive.cmd al proyecto. Establezca la configuración "Copy to Output Directory" en Copy always. El siguiente script es un archivo AddKeepAlive.cmd de ejemplo:  
 
 ```bat
 if exist keepalive.txt goto done  

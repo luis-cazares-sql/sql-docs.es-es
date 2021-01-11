@@ -5,7 +5,7 @@ ms.custom: seodec18
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 helpviewer_keywords:
 - Transparent Data Encryption, AlwaysOn Availability Groups
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 09eb6ebc-3051-4fff-86a5-93524507b1fc
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 2569f44e4642df714c8108b6540b81d013d30b82
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: 8001dbf4a5799d275bced4f565ee00a7a70d6c61
+ms.sourcegitcommit: 44eebb659f9b226c08aea6c31a909b22ad4fec60
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94584312"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860593"
 ---
 # <a name="add-an-encrypted-database-to-an-always-on-availability-group"></a>Adición de una base de datos cifrada a un grupo de disponibilidad Always On
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -33,15 +33,13 @@ ms.locfileid: "94584312"
   
      Para que una base de datos descifrada se pueda agregar a un grupo de disponibilidad mediante el asistente:  
   
-    1.  Cree una copia de seguridad de registros de la base de datos principal.  
+    1.  Cree una copia de seguridad completa de la base de datos principal. 
   
-    2.  Cree una copia de seguridad completa de la base de datos principal.  
+    2.  Cree una copia de seguridad de registros de la base de datos principal.  
   
     3.  Restaure la copia de seguridad de base de datos en la instancia del servidor que hospeda la réplica secundaria.  
-  
-    4.  Cree una nueva copia de seguridad de registros a partir de la base de datos principal.  
-  
-    5.  Restaure esta copia de seguridad de registros en la base de datos secundaria.  
+    
+    4.  Restaure la copia de seguridad del registro de transacciones en la base de datos secundaria.  
   
 ##  <a name="related-tasks"></a><a name="RelatedTasks"></a> Tareas relacionadas  
   

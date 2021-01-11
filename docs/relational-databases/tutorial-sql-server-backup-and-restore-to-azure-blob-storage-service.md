@@ -2,27 +2,35 @@
 title: 'Inicio rápido: Copia de seguridad y restauración en el servicio Azure Blob Storage'
 description: 'Inicio rápido: información sobre cómo escribir copias de seguridad en el servicio Azure Blob Storage y cómo restaurar desde este servicio. Cree un contenedor de blobs de Azure, escriba una copia de seguridad y, después, lleve a cabo la restauración.'
 ms.custom: seo-dt-2019
-ms.date: 04/09/2018
+ms.date: 12/21/2020
 ms.prod: sql
-ms.prod_service: database-engine
+ms.technology: backup-restore
+ms.prod_service: backup-restore
 ms.reviewer: ''
-ms.technology: performance
 ms.topic: quickstart
-ms.assetid: 9e1d94ce-2c93-45d1-ae2a-2a7d1fa094c4
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.openlocfilehash: faf3ccecd17ece2b66371d81a68589f184fe48a0
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: d27f53f80c8f987106f90816a4566339d777e6f6
+ms.sourcegitcommit: bb54e4c9dd8c97365b7a96dfcd557b8b86d06978
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96506412"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97736903"
 ---
 # <a name="quickstart-sql-backup-and-restore-to-azure-blob-storage-service"></a>Inicio rápido: Copia de seguridad y restauración de SQL en el servicio Azure Blob Storage
-[!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md](../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md)]
+
+[!INCLUDE [sqlserver2016-asdbmi](../includes/applies-to-version/sqlserver2016-asdbmi.md)]
+
 Con este inicio rápido, entenderá mejor cómo escribir copias de seguridad en el servicio Azure Blob Storage y cómo restaurar desde este servicio.  En el artículo se explica cómo crear un contenedor de blobs de Azure, escribir una copia de seguridad en el Blob service y, luego, realizar una restauración.
+
+> [!NOTE]
+> SQL Server 2012 SP1 CU2 incorporó la compatibilidad con la copia de seguridad en Azure Blob Storage. SQL Server 2014 y versiones anteriores no admiten la firma de acceso compartido (SAS) que se describe en este artículo de inicio rápido.
+>
+> Para SQL Server 2014 y versiones anteriores, use [Tutorial: Copia de seguridad y restauración de SQL Server en el servicio Azure Blob Storage](/previous-versions/sql/2014/relational-databases/backup-restore/sql-server-backup-to-url).
+>
   
-## <a name="prerequisites"></a>Requisitos previos  
+## <a name="prerequisites"></a>Requisitos previos
+
 Para completar este inicio rápido, debe estar familiarizado con los conceptos de copias de seguridad y restauración de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] y con la sintaxis de T-SQL.  Necesita una cuenta de Azure Storage, SQL Server Management Studio (SSMS) y acceso a un servidor que ejecute SQL Server o Azure SQL Managed Instance. Además, la cuenta que se usa para emitir comandos BACKUP o RESTORE debe tener el rol de base de datos **db_backupoperator** con permisos **Modificar cualquier credencial**. 
 
 - Obtenga una [cuenta de Azure](https://azure.microsoft.com/offers/ms-azr-0044p/) gratis.
@@ -214,12 +222,12 @@ En este paso, restaure la base de datos con la GUI de SQL Server Management Stu
 
    ![Selección de restaurar el archivo](media/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service/select-restore-file.png)
 
-1. Seleccione **Aceptar** para cerrar el cuadro de diálogo **Seleccionar dispositivos de copia de seguridad**. 
-1. Seleccione **Aceptar** para restaurar la base de datos. 
+1. Seleccione **Aceptar** para cerrar el cuadro de diálogo **Seleccionar dispositivos de copia de seguridad**.
+1. Seleccione **Aceptar** para restaurar la base de datos.
 
 # <a name="transact-sql"></a>[Transact-SQL](#tab/tsql)
 
-Para restaurar la base de datos local desde Azure Blob Storage, modifique el comando de Transact-SQL siguiente para usar su propia cuenta de almacenamiento y, luego, ejecútelo dentro de una ventana de consulta nueva. 
+Para restaurar la base de datos local desde Azure Blob Storage, modifique el comando de Transact-SQL siguiente para usar su propia cuenta de almacenamiento y, luego, ejecútelo dentro de una ventana de consulta nueva.
 
 ```sql
 USE [master]

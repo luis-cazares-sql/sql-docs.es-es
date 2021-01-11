@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 091f7c2736c240951beb0f434fdcd2efb39a9b59
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: d738650db9dbb7b0b2ed3f9411945173f73f748f
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96428303"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771330"
 ---
 # <a name="generating-commands-with-commandbuilders"></a>Generación de comandos con objetos CommandBuilder
 
@@ -39,9 +39,9 @@ El requisito mínimo para que la generación automática de comandos funcione co
 
 Cuando se asocia con un objeto `DataAdapter`, <xref:System.Data.Common.DbCommandBuilder> genera automáticamente las propiedades `InsertCommand`, `UpdateCommand` y `DeleteCommand` del objeto `DataAdapter` si son referencias nulas. Si ya existe algún objeto `Command` para una propiedad, se utilizará el objeto `Command` existente.
 
-Las vistas de bases de datos creadas al unir una o varias tablas no se consideran una tabla única de base de datos. En esta instancia, no se puede utilizar <xref:System.Data.Common.DbCommandBuilder> para generar comandos automáticamente; debe especificar los comandos de forma explícita.
+Las vistas de bases de datos creadas al unir una o varias tablas no se consideran una tabla única de base de datos. En esta instancia, no se puede utilizar <xref:System.Data.Common.DbCommandBuilder> para generar comandos automáticamente; debe especificar los comandos de forma explícita. Para obtener información sobre cómo establecer comandos de forma explícita para devolver al origen de datos las actualizaciones efectuadas en el `DataSet`, consulte [Actualización de orígenes de datos con objetos DataAdapter](update-data-sources-with-dataadapters.md).
 
-Es posible que desee asignar parámetros de salida a la fila actualizada de un `DataSet`. Una tarea habitual consiste en recuperar, a partir del origen de datos, el valor de un campo de identidad de generación automática o una marca de tiempo. <xref:System.Data.Common.DbCommandBuilder> no asigna de forma predeterminada los parámetros de salida a las columnas de una fila actualizada. En esta instancia, debe especificar el comando de manera explícita.
+Es posible que desee asignar parámetros de salida a la fila actualizada de un `DataSet`. Una tarea habitual consiste en recuperar, a partir del origen de datos, el valor de un campo de identidad de generación automática o una marca de tiempo. <xref:System.Data.Common.DbCommandBuilder> no asigna de forma predeterminada los parámetros de salida a las columnas de una fila actualizada. En esta instancia, debe especificar el comando de manera explícita. Para consultar un ejemplo de asignación de un campo de identidad de generación automática a una columna de una fila insertada, consulte [Recuperación de valores de identidad o autonuméricos](retrieve-identity-or-autonumber-values.md).
 
 ## <a name="rules-for-automatically-generated-commands"></a>Reglas para comandos generados automáticamente
 
@@ -74,13 +74,13 @@ La lógica de generación automática de comandos crea instrucciones INSERT, UPD
 
 La lógica de generación automática de comandos puede ocasionar un error cuando los nombres de las tablas o de las columnas incluyen algún carácter especial, como espacios, puntos, comillas y otros caracteres no alfanuméricos, incluso si están delimitados por corchetes. En función del proveedor, el establecimiento de los parámetros QuotePrefix y QuoteSuffix puede permitir que la lógica de generación procese espacios, pero los caracteres especiales no pueden convertirse en caracteres de escape. Se pueden utilizar nombres completos de tabla, como *catalog.schema.table*.
 
-## <a name="using-the-commandbuilder-to-automatically-generate-an-sql-statement"></a>Uso de CommandBuilder para generar automáticamente una instrucción SQL
+## <a name="use-the-commandbuilder-to-automatically-generate-an-sql-statement"></a>Uso de CommandBuilder para generar automáticamente una instrucción SQL
 
 Para generar instrucciones SQL automáticamente para un `DataAdapter`, defina en primer lugar la propiedad `SelectCommand` del `DataAdapter` y, a continuación, cree un objeto `CommandBuilder` y especifique como argumento el `DataAdapter` para el que `CommandBuilder` generará automáticamente las instrucciones SQL.
 
 [!code-csharp[SqlCommandBuilder_Create#1](~/../sqlclient/doc/samples/SqlCommandBuilder_Create.cs#1)]
 
-## <a name="modifying-the-selectcommand"></a>Modificar SelectCommand
+## <a name="modify-the-selectcommand"></a>Modificación de SelectCommand
 
 Es posible que se inicie una excepción si modifica valor `CommandText` de `SelectCommand` después de generar automáticamente los comandos INSERT, UPDATE o DELETE. Si el valor `SelectCommand.CommandText` modificado contiene información del esquema que sea incoherente con el valor `SelectCommand.CommandText` utilizado en el momento de la generación automática de los comandos de inserción, actualización o eliminación, las futuras llamadas al método `DataAdapter.Update` pueden tratar de obtener acceso a columnas que ya no existen en la tabla actual a la que hace referencia `SelectCommand`, con lo que se iniciará una excepción.
 
@@ -100,3 +100,4 @@ En el siguiente ejemplo se crea de nuevo la tabla en el conjunto de datos. Se ll
 
 - [Comandos y parámetros](commands-parameters.md)
 - [Ejecución de un comando](execute-command.md)
+- [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)

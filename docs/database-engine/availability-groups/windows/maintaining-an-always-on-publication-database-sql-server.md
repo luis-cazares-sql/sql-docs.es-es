@@ -5,7 +5,7 @@ ms.custom: seodec18
 ms.date: 05/18/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 helpviewer_keywords:
 - Availability Groups [SQL Server], interoperability
@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 55b345fe-2eb9-4b04-a900-63d858eec360
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 864fca7c1d2983bec6296f1e82304cff31f658cb
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: f07f8eaa1dc5657c2dfdb296bc9efffec9b308b2
+ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94584226"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697131"
 ---
 # <a name="manage-a-replicated-publisher-database-as-part-of-an-always-on-availability-group"></a>Administración de una base de datos del publicador replicada como parte de un grupo de disponibilidad Always On
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -99,6 +99,27 @@ ms.locfileid: "94584226"
     ```  
   
      En este momento, la copia de la base de datos publicada se puede conservar o quitar.  
+
+## <a name="remove-original-publisher"></a>Eliminación del publicador original
+
+Puede haber instancias (reemplazo del servidor anterior, actualización del sistema operativo, etc.) donde desee quitar un publicador original de un grupo de disponibilidad Always On. Siga los pasos de esta sección para quitar el publicador del grupo de disponibilidad. 
+
+Supongamos que tiene los servidores N1, N2 y D1, donde N1 y N2 son la réplica principal y secundaria del grupo de disponibilidad AG1, N1 es el publicador original de una publicación transaccional y D1 es el distribuidor. Quiere reemplazar el publicador original N1 por el nuevo publicador N3. 
+
+Para quitar el publicador, siga estos pasos: 
+
+1. Instale y configure SQL Server en el nodo N3. La versión de SQL Server debe ser la misma que la del publicador original. 
+1. En el servidor de distribuidor D1, agregue N3 como publicador mediante [sp_adddistpublisher](../../../relational-databases/system-stored-procedures/sp-adddistpublisher-transact-sql.md). 
+1. Configure N3 como publicador con D1 como su distribuidor. 
+1. Agregue N3 como una réplica al grupo de disponibilidad AG1. 
+1. En la réplica N3, compruebe que los suscriptores de inserción de la publicación aparecen como servidores vinculados. Use [sp_addlinkedserver](../../../relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql.md) o SQL Server Management Studio. 
+1. Una vez que N3 esté sincronizado, conmute por error el grupo de disponibilidad a N3 como principal. 
+1. Quite N1 del grupo de disponibilidad AG1. 
+
+Tenga en cuenta lo siguiente:
+- No quite el servidor remoto del publicador original (en este caso, N1) ni los metadatos asociados a él del distribuidor, aunque ya no se pueda acceder al servidor. Los metadatos de servidor del publicador original son necesarios en el distribuidor para satisfacer las consultas de los metadatos de la publicación y, sin ellos, la replicación fallará. 
+- Para SQL Server 2014, una vez que se haya quitado el publicador original, no podrá usar el nombre del publicador original para administrar la replicación en el monitor de replicación. Si intenta registrar nuevas réplicas como publicador en el monitor de replicación, la información no se mostrará ya que no hay metadatos asociados a él. Para administrar la replicación en este escenario, tendrá que hacer clic con el botón derecho en las publicaciones y suscripciones individuales en SQL Server Management Studio (SSMS).
+- Para SQL Server 2016 SP2-CU3, SQL Server 2017 CU6 y versiones posteriores, registre el agente de escucha del publicador del grupo de disponibilidad en el monitor de replicación para administrar la replicación mediante la versión de 17.7 de SQL Server Management Studio y versiones posteriores. 
   
 ##  <a name="related-tasks"></a><a name="RelatedTasks"></a> Tareas relacionadas  
   
@@ -108,7 +129,7 @@ ms.locfileid: "94584226"
   
 -   [Preguntas más frecuentes para administradores de replicación](../../../relational-databases/replication/administration/frequently-asked-questions-for-replication-administrators.md)  
   
--   [Suscriptores de replicación y grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/replication-subscribers-and-always-on-availability-groups-sql-server.md)  
+-   [Suscriptores de replicación y Grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/replication-subscribers-and-always-on-availability-groups-sql-server.md)  
   
 ## <a name="see-also"></a>Consulte también  
  [Requisitos previos, restricciones y recomendaciones para Grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability.md)   

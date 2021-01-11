@@ -2,7 +2,7 @@
 title: Procedimientos recomendados con el almacén de consultas | Microsoft Docs
 description: Obtenga información sobre las prácticas recomendadas para utilizar el Almacén de consultas de SQL Server con su carga de trabajo, como usar las versiones más recientes de SQL Server Management Studio e Información de rendimiento de consultas.
 ms.custom: ''
-ms.date: 09/02/2020
+ms.date: 12/23/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.technology: performance
@@ -13,12 +13,12 @@ ms.assetid: 5b13b5ac-1e4c-45e7-bda7-ebebe2784551
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d71da2a6d0bcc0cb43529331116acdbb4a6d8136
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a973fd5ec66f101c162e35baec0269f7b6d3d601
+ms.sourcegitcommit: d8a9ad86401bff422d506078c6200494c795e7c0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97418779"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97765214"
 ---
 # <a name="best-practices-with-query-store"></a>Procedimientos recomendados con el almacén de consultas
 
@@ -124,7 +124,7 @@ ALTER DATABASE [QueryStoreDB]
 SET QUERY_STORE (CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 90));
 ```
 
-**Modo de limpieza basado en el tamaño**: especifica si la limpieza automática de los datos se lleva a cabo cuando el tamaño de datos del almacén de consultas se aproxime al límite. Active la limpieza basada en el tamaño para asegurarse de que el almacén de consultas siempre se ejecuta en modo de lectura y escritura, y recopila los datos más recientes.
+**Modo de limpieza basado en el tamaño**: especifica si la limpieza automática de los datos se lleva a cabo cuando el tamaño de datos del almacén de consultas se aproxime al límite. Active la limpieza basada en el tamaño para asegurarse de que el almacén de consultas siempre se ejecuta en modo de lectura y escritura, y recopila los datos más recientes.  Tenga en cuenta que no hay ninguna garantía en las cargas de trabajo pesadas de que la limpieza de Almacén de consultas mantenga el tamaño de los datos en el límite. Es posible que la limpieza automática de datos quede fuera y cambie (temporalmente) al modo de solo lectura.
 
 ```sql
 ALTER DATABASE [QueryStoreDB]

@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 0be62b3c2a63f7b25889e25f88969aa5aaa9b50e
-ms.sourcegitcommit: c127c0752e84cccd38a7e23ac74c0362a40f952e
+ms.openlocfilehash: 6f2feb876d0f232f4d7951de8ee1cc84587e6486
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96772295"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771389"
 ---
 # <a name="update-data-sources-with-dataadapters"></a>Actualización de orígenes de datos con objetos DataAdapter
 
@@ -75,7 +75,7 @@ En los ejemplos siguientes se muestra cómo realizar las actualizaciones en las 
 
 ## <a name="autoincrement-columns"></a>AutoIncrement (columnas)
 
-Si las tablas del origen de datos tienen columnas con incremento automático, puede rellenar las columnas de `DataSet` devolviendo el valor de incremento automático como un parámetro de salida de un procedimiento almacenado y asignándolo a una columna de la tabla, o devolviendo el valor de incremento automático de la primera fila de un conjunto de resultados devuelto por un procedimiento almacenado o una instrucción SQL, o mediante el evento `RowUpdated` de `DataAdapter` para ejecutar una instrucción SELECT adicional.
+Si las tablas del origen de datos tienen columnas con incremento automático, puede rellenar las columnas de `DataSet` devolviendo el valor de incremento automático como un parámetro de salida de un procedimiento almacenado y asignándolo a una columna de la tabla, o devolviendo el valor de incremento automático de la primera fila de un conjunto de resultados devuelto por un procedimiento almacenado o una instrucción SQL, o mediante el evento `RowUpdated` de `DataAdapter` para ejecutar una instrucción SELECT adicional. Para obtener más información y un ejemplo, consulte [Recuperación de valores de identidad o autonuméricos](retrieve-identity-or-autonumber-values.md).
 
 ## <a name="ordering-of-inserts-updates-and-deletes"></a>Ordenación de inserciones, actualizaciones y eliminaciones
 
@@ -172,4 +172,5 @@ GO
 ## <a name="see-also"></a>Consulte también
 
 - [Objetos DataAdapter y DataReader](dataadapters-datareaders.md)
+- [Recuperación de valores de identidad o autonuméricos](retrieve-identity-or-autonumber-values.md)
 - [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)

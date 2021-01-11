@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 67b805e4ec95047b843e6b72ba10dc8fee4688d5
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: 8151915dc6c16c6225fec9ab90cb5a88e86b992f
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96419826"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771455"
 ---
 # <a name="connection-events"></a>Eventos de conexión
 
@@ -32,7 +32,7 @@ Todos los proveedores de datos SqlClient de Microsoft tienen objetos **Connectio
 |**InfoMessage**|Se produce cuando se devuelve un mensaje informativo desde un origen de datos. Los mensajes informativos son aquellos procedentes de orígenes de datos que no inician una excepción.|  
 |**StateChange**|Se produce cuando cambia el estado del objeto **Connection**.|  
 
-## <a name="working-with-the-infomessage-event"></a>Trabajar con el evento InfoMessage
+## <a name="work-with-the-infomessage-event"></a>Trabajo con el evento InfoMessage
 
 Con el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage> del objeto <xref:Microsoft.Data.SqlClient.SqlConnection> puede recuperar advertencias o mensajes informativos de un origen de datos de SQL Server. Si se devuelven errores desde el origen de datos con un nivel de seguridad entre 11 y 16, se inicia una excepción. Sin embargo, el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage> se puede utilizar para obtener mensajes del origen de datos que no estén asociados a un error. En el caso de Microsoft SQL Server, cualquier error que tenga la gravedad 10, como máximo, se considera de tipo informativo y se captura mediante el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage>. Para obtener más información, consulte el artículo [Niveles de gravedad de error del motor de base de datos](/sql/relational-databases/errors-events/database-engine-error-severities).
 
@@ -44,7 +44,7 @@ En el ejemplo de código siguiente se muestra cómo se puede agregar un controla
 
 [!code-csharp[SqlConnection_._InfoMessage#1](~/../sqlclient/doc/samples/SqlConnection_InfoMessage_StateChange.cs#1)]
 
-## <a name="handling-errors-as-infomessages"></a>Controlar errores como InfoMessages
+## <a name="handle-errors-as-infomessages"></a>Gestión de errores como eventos InfoMessage
 
 Normalmente, el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage> solo se activa para mensajes informativos y de advertencia enviados desde el servidor. Sin embargo, cuando se produce un error real, se detiene la ejecución de los métodos **ExecuteNonQuery** o **ExecuteReader** que iniciaron la operación del servidor y se inicia una excepción.
 
@@ -53,7 +53,7 @@ Si desea seguir procesando el resto de las instrucciones de un comando, independ
 > [!NOTE]
 > Los errores con un nivel de gravedad de 17, como mínimo, que hacen que el servidor interrumpa el procesamiento de comandos, deben controlarse como excepciones. En este caso, se inicia una excepción, independientemente del modo en que se controle el error en el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage>.
 
-## <a name="working-with-the-statechange-event"></a>Trabajar con el evento StateChange
+## <a name="work-with-the-statechange-event"></a>Trabajo con el evento StateChange
 
 El evento **StateChange** se produce cuando cambia el estado de un objeto **Connection**. El evento **StateChange** recibe la clase <xref:System.Data.StateChangeEventArgs>, que permite determinar el cambio de estado de **Connection** por medio de las propiedades **OriginalState** y **CurrentState**. La propiedad **OriginalState** es una enumeración <xref:System.Data.ConnectionState> que indica el estado del objeto **Connection** antes del cambio. **CurrentState** es una enumeración <xref:System.Data.ConnectionState> que indica el estado del objeto **Connection** después del cambio.
 
@@ -64,3 +64,4 @@ En el ejemplo de código siguiente se utiliza el evento **StateChange** para esc
 ## <a name="see-also"></a>Vea también
 
 - [Conexión a un origen de datos](connecting-to-data-source.md)
+- [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)

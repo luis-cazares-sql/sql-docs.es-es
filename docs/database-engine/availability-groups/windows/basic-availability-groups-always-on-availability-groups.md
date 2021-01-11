@@ -5,23 +5,23 @@ ms.custom: seodec18
 ms.date: 02/01/2018
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 ms.assetid: 285adbc7-ac9b-40f6-b4a9-3f1591d3b632
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 88704561006f0beff14ae69fff2b79c14ef3114b
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: 50db7fba110c33cc6c50211cd1b431bf1380ba26
+ms.sourcegitcommit: 44eebb659f9b226c08aea6c31a909b22ad4fec60
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94584629"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860588"
 ---
 # <a name="basic-always-on-availability-groups-for-a-single-database"></a>Grupos de disponibilidad Always On básicos para una sola base de datos
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-  Los grupos de disponibilidad básica Always On ofrecen una solución de alta disponibilidad para SQL Server 2016 y SQL Server 2017 Standard Edition. Un grupo de disponibilidad básica admite un entorno de conmutación por error para una base de datos única. Se crea y administra prácticamente igual que [Grupos de disponibilidad Always On &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/always-on-availability-groups-sql-server.md) tradicional (avanzado) con Enterprise Edition. En este documento se resumen las diferencias y limitaciones de los grupos de disponibilidad básica.  
-  
+ Los grupos de disponibilidad Always On ofrecen una solución de alta disponibilidad para SQL Server desde la versión 2016 y superiores en Standard Edition. Un grupo de disponibilidad básica admite un entorno de conmutación por error para una base de datos única. Se crea y administra prácticamente igual que [Grupos de disponibilidad Always On &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/always-on-availability-groups-sql-server.md) tradicional (avanzado) con Enterprise Edition. En este documento se resumen las diferencias y limitaciones de los grupos de disponibilidad básica.
+
 ## <a name="features"></a>Características  
  Grupos de disponibilidad básica AlwaysOn reemplaza la característica en desuso de creación de reflejo de la base de datos y proporciona un nivel similar de compatibilidad de características. Los grupos de disponibilidad básica permiten que una base de datos principal mantenga una réplica única. Esta réplica puede usar el modo de confirmación sincrónica o el modo de confirmación asincrónica. Para obtener más información sobre los modos de disponibilidad, vea [Modos de disponibilidad &#40;Grupos de disponibilidad AlwaysOn&#41;](../../../database-engine/availability-groups/windows/availability-modes-always-on-availability-groups.md). La réplica secundaria permanece inactiva a menos que exista una necesidad de conmutación por error. Esta conmutación por error invierte las asignaciones principales y secundarias de roles, lo que provoca que la réplica secundaria se convierta en la principal base de datos activa. Para obtener más información sobre la conmutación por error, vea [Conmutación por error y modos de conmutación por error &#40;Grupos de disponibilidad AlwaysOn&#41;](../../../database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups.md). Los grupos de disponibilidad básica pueden funcionar en un entorno híbrido que abarca el local y Microsoft Azure.  
   

@@ -12,12 +12,12 @@ ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 12/15/2019
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=azuresqldb-mi-current'
-ms.openlocfilehash: c59e142ec924a573e127d9caa0cd7d6ac9bf9e8f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a380eabba4a20a65fd291b938d270a440f66d754
+ms.sourcegitcommit: 44eebb659f9b226c08aea6c31a909b22ad4fec60
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97440503"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860603"
 ---
 # <a name="release-notes-for-sql-server-data-tools-ssdt"></a>Notas de la versión de SQL Server Data Tools (SSDT)
 
@@ -44,6 +44,35 @@ GeneMi , 2019/03/22.
 
 P.S.  there's no need to keep this large HTML comment indefinitely.
 -->
+
+## <a name="1597nbsp-ssdt-for-vs-2017"></a>15.9.7,&nbsp; SSDT para VS 2017
+
+_Publicado:_ &nbsp; 5 de enero de 2021  
+_Número de compilación:_ &nbsp; 14.0.16228.0  
+_SSDT para Visual Studio 2017._
+
+### <a name="whats-new"></a>Novedades
+
+| Nuevo elemento | Detalles |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Integration Services (SSIS) | La creación de SSISDB pasó a ser opcional en el Asistente para la creación de IR. |
+| Integration Services (SSIS) | Se solucionó un problema por el cual los elementos del cuadro combinado de suscripción de Azure estaban duplicados en el Asistente para la creación de IR y el Asistente para proyectos habilitados para Azure cuando suscripciones distintas tenían el mismo nombre. |
+| Integration Services (SSIS) | Se corrigió un problema que a veces el botón Conectar no se puede habilitar en el Asistente para la creación de IR. |
+| Integration Services (SSIS) | Se solucionó un problema por el cual los elementos del cuadro combinado de suscripción de Azure estaban duplicados en el Asistente para la creación de IR y el Asistente para proyectos habilitados para Azure cuando suscripciones distintas tenían el mismo nombre. |
+| Integration Services (SSIS) | Se corrigió un problema que hacía que el código generado automáticamente bajo bufferwrapper.cs del componente de script agregaba comillas dobles adicionales cuando la configuración regional actual era Alemania. |
+| Integration Services (SSIS) | Se corrigió un problema en que el botón Descargar WSDL no aparecía cuando la versión del servidor de destino era SQL Server 2012, 2014, 2016. |
+| Integration Services (SSIS) | Se corrigió un problema en el que se generaba un error en la compilación de proyectos grandes debido a una excepción de memoria insuficiente. |
+| Integration Services (SSIS) | Se corrigió un problema en el que el paquete no se cambiaba a la versión de servidor de destino actual del proyecto cuando se guardaba como copia en el sistema de archivos o MSDB en el modelo de implementación de paquetes. |
+| Integration Services (SSIS) | Se corrigió un problema en el que el destino de procesamiento de dimensiones no funcionaba debido a un error de tipo "No se admite dicha interfaz". |
+| Integration Services (SSIS) | Se corrigieron algunos problemas relacionados con la accesibilidad y la configuración elevada de ppp. |
+
+### <a name="known-issues"></a>Problemas conocidos
+
+| Problema conocido | Detalles |
+| :---------- | :------ |
+| La tarea Ejecutar paquete de SSIS no admite la depuración cuando ExecuteOutofProcess está establecido en True. | Este problema solo se aplica a la depuración. Las funciones de guardado, implementación y ejecución mediante DTExec.exe o el catálogo de SSIS no se verán afectadas. |
+| &nbsp; | &nbsp; |
+
 
 ## <a name="1596nbsp-ssdt-for-vs-2017"></a>15.9.6,&nbsp; SSDT para VS 2017
 

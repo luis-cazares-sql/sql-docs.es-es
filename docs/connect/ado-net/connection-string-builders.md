@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: bdb4294fda1f26ec346f786ec29061f8d4f9ee27
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: 38c1ad34fb4819460c08f00da4c1dbd31749b7cb
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96419806"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771441"
 ---
 # <a name="connection-string-builders"></a>Generadores de cadenas de conexión
 
@@ -44,7 +44,7 @@ data source=(local);Integrated Security=True;
 initial catalog="AdventureWorks;NewValue=Bad"
 ```
 
-## <a name="building-connection-strings-from-configuration-files"></a>Crear cadenas de conexión a partir de archivos de configuración
+## <a name="build-connection-strings-from-configuration-files"></a>Creación de cadenas de conexión a partir de archivos de configuración
 
 Si determinados elementos de una cadena de conexión se conocen de antemano, se pueden almacenar en un archivo de configuración y recuperar en tiempo de ejecución para construir una cadena de conexión completa. Por ejemplo, se puede conocer por adelantado el nombre de la base de datos, pero no el del servidor. También es posible que desee que un usuario indique un nombre y una contraseña en tiempo de ejecución sin que pueda inyectar otros valores en ella.
 
@@ -74,3 +74,4 @@ En este ejemplo se muestra la recuperación de una cadena de conexión incluida 
 ## <a name="see-also"></a>Vea también
 
 - [Cadenas de conexión](connection-strings.md)
+- [Microsoft ADO.NET para SQL Server](microsoft-ado-net-sql-server.md)
