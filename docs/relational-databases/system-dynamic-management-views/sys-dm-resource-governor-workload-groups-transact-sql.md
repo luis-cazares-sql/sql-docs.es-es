@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_resource_governor_workload_groups dynamic management view
 ms.assetid: f63c4914-1272-43ef-b135-fe1aabd953e0
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 696543b1fc06090609a6404f228970e02a540a8e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3b38844c891edaf9a7592a2dd573c86cc5fa1fcb
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484617"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097555"
 ---
 # <a name="sysdm_resource_governor_workload_groups-transact-sql"></a>sys.dm_resource_governor_workload_groups (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -69,7 +69,7 @@ ms.locfileid: "97484617"
 |request_max_memory_grant_percent_numeric|**float**|**Se aplica a: a** partir de [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] .<br /><br />Valor actual de la concesión máxima de memoria, en porcentaje, para una única solicitud. No admite valores NULL.| 
 |pdw_node_id|**int**|**Se aplica a**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] , [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> Identificador del nodo en el que se encuentra esta distribución.|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  Esta vista de administración dinámica muestra la configuración en memoria. Para ver los metadatos de la configuración almacenada, use el sys.resource_governor_workload_groups &#40;vista de catálogo [de Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-resource-governor-workload-groups-transact-sql.md) .  
   
  Cuando `ALTER RESOURCE GOVERNOR RESET STATISTICS` se ejecuta correctamente, se restablecen los contadores siguientes `statistics_start_time` : `total_request_count` , `total_queued_request_count` ,, `total_cpu_limit_violation_count` , `total_cpu_usage_ms` , `max_request_cpu_time_ms` ,,,,, `total_lock_wait_count` `total_lock_wait_time_ms` `total_query_optimization_count` `total_suboptimal_plan_generation_count` `total_reduced_memgrant_count` y `max_request_grant_memory_kb` . El contador `statistics_start_time` se establece en la fecha y hora actuales del sistema, y los otros contadores se establecen en cero (0).  

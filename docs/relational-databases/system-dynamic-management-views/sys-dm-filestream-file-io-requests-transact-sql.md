@@ -1,6 +1,6 @@
 ---
 description: sys.dm_filestream_file_io_requests (Transact-SQL)
-title: Sys. dm_filestream_file_io_requests (Transact-SQL) | Microsoft Docs
+title: sys.dm_filestream_file_io_requests (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/03/2017
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_filestream_file_io_requests catalog view
 ms.assetid: d41e39a5-14d5-4f3d-a2e3-a822b454c1ed
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 9f4f675f0022b3afeeaccbdc6e907b5ce1c17ca7
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 69b34fd2a8ec5adf393994399011cf1b2df6ea03
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543900"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097677"
 ---
 # <a name="sysdm_filestream_file_io_requests-transact-sql"></a>sys.dm_filestream_file_io_requests (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "89543900"
 |**id_de_solicitud**|**int**|Muestra el identificador de solicitud único asignado por el controlador a esta solicitud. No admite valores NULL.|  
 |**irp_id**|**int**|Muestra el identificador de IRP único. Esto es útil para identificar todas las solicitudes de E/S relacionadas con el IRP determinado. No admite valores NULL.|  
 |**handle_id**|**int**|Indica el id. del identificador del espacio de nombres. Se trata del identificador específico del NSO y es único en una instancia. No admite valores NULL.|  
-|**client_thread_id**|**varbinary(8**|Muestra el identificador de subproceso de la aplicación cliente que origina la solicitud.<br /><br /> ADVERTENCIA esto solo es significativo si la aplicación cliente se ejecuta en el mismo equipo que SQL Server. ** \* \* \* \* ** Cuando la aplicación cliente se ejecuta de forma remota, en el **client_thread_id** se muestra el identificador de subproceso del proceso del sistema que funciona en nombre del cliente remoto.<br /><br /> Acepta valores NULL.|  
+|**client_thread_id**|**varbinary(8**|Muestra el identificador de subproceso de la aplicación cliente que origina la solicitud.<br /><br /> ADVERTENCIA esto solo es significativo si la aplicación cliente se ejecuta en el mismo equipo que SQL Server. **\* \* \* \*** Cuando la aplicación cliente se ejecuta de forma remota, en el **client_thread_id** se muestra el identificador de subproceso del proceso del sistema que funciona en nombre del cliente remoto.<br /><br /> Acepta valores NULL.|  
 |**client_process_id**|**varbinary(8**|Muestra el identificador de proceso de la aplicación cliente si esta se ejecuta en la misma máquina que SQL Server. Para un cliente remoto, muestra el identificador de proceso del sistema que funciona en nombre de la aplicación cliente. Acepta valores NULL.|  
 |**handle_context_address**|**varbinary(8**|Muestra la dirección de la estructura NSO interna asociada con el identificador del cliente. Acepta valores NULL.|  
 |**filestream_transaction_id**|**varbinary(128)**|Muestra el identificador de la transacción asociada con el identificador determinado y todas las solicitudes asociadas con este identificador. Es el valor devuelto por la función **get_filestream_transaction_context** . Acepta valores NULL.|  

@@ -19,14 +19,14 @@ helpviewer_keywords:
 - syscacheobjects system table
 - sys.syscacheobjects compatibility view
 ms.assetid: 9b14f37c-b7f5-4f71-b070-cce89a83f69e
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 25160eb8e7a25e2a4ec6d2f8b318fc78e7af61ef
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 4b33b97a5b3753d63e1df4759d26970cf6359ee2
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88399681"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097820"
 ---
 # <a name="syssyscacheobjects-transact-sql"></a>sys.syscacheobjects (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -40,9 +40,9 @@ ms.locfileid: "88399681"
 |-----------------|---------------|-----------------|  
 |**bucketid**|**int**|Identificador de depósito. El valor indica un intervalo de 0 a (tamaño de directorio -1). El tamaño de directorio es el de la tabla hash.|  
 |**cacheobjtype**|**nvarchar (17)**|Tipo de objeto en caché:<br /><br /> Plan compilado<br /><br /> Plan ejecutable<br /><br /> Árbol de análisis<br /><br /> Cursor<br /><br /> Procedimiento almacenado extendido|  
-|**objtype**|**nvarchar (8)**|Tipo de objeto:<br /><br /> Procedimiento almacenado<br /><br /> Instrucción preparada<br /><br /> Consulta ad hoc ( [!INCLUDE[tsql](../../includes/tsql-md.md)] enviada como eventos de lenguaje desde las utilidades **sqlcmd** o **osql** , en lugar de llamadas a procedimiento remoto)<br /><br /> ReplProc (procedimiento de replicación) <br /><br /> Desencadenador<br /><br /> Ver<br /><br /> Default<br /><br /> Tabla de usuario<br /><br /> Tabla del sistema<br /><br /> Comprobar<br /><br /> Regla|  
+|**objtype**|**nvarchar (8)**|Tipo de objeto:<br /><br /> Procedimiento almacenado<br /><br /> Instrucción preparada<br /><br /> Consulta ad hoc ( [!INCLUDE[tsql](../../includes/tsql-md.md)] enviada como eventos de lenguaje desde las utilidades **sqlcmd** o **osql** , en lugar de llamadas a procedimiento remoto)<br /><br /> ReplProc (procedimiento de replicación) <br /><br /> Desencadenador<br /><br /> Ver<br /><br /> Valor predeterminado<br /><br /> Tabla de usuario<br /><br /> Tabla del sistema<br /><br /> Comprobar<br /><br /> Regla|  
 |**objid**|**int**|Una de las claves principales utilizadas para buscar un objeto en la caché. Este es el identificador de objeto almacenado en **sysobjects** para los objetos de base de datos (procedimientos, vistas, desencadenadores, etc.). En el caso de los objetos de caché como ad hoc o preparados SQL, **objid** es un valor generado internamente.|  
-|**DBID**|**smallint**|Id. de la base de datos donde se ha compilado el objeto de caché.|  
+|**dbid**|**smallint**|Id. de la base de datos donde se ha compilado el objeto de caché.|  
 |**dbidexec**|**smallint**|Id. de la base de datos desde la que se ejecuta la consulta.<br /><br /> Para la mayoría de los objetos, **dbidexec** tiene el mismo valor que **DBID**.<br /><br /> En el caso de las vistas del sistema, **dbidexec** es el identificador de base de datos desde el que se ejecuta la consulta.<br /><br /> En el caso de las consultas ad hoc, **dbidexec** es 0. Esto significa que **dbidexec** tiene el mismo valor que **DBID**.|  
 |**UID**|**smallint**|Indica el creador del plan para los planes de consulta ad hoc y los planes preparados.<br /><br /> -2 = El lote enviado no depende de la resolución implícita de nombre y puede compartirse entre usuarios distintos. Este es el método preferido. Cualquier otro valor representa el Id. del usuario que envía la consulta en la base de datos.<br /><br /> Produce un desbordamiento o devuelve NULL si el número de usuarios y roles es superior a 32.767.|  
 |**refcounts**|**int**|Número de otros objetos de caché que hacen referencia a este objeto de caché. La cuenta comienza en 1.|  
@@ -58,7 +58,7 @@ ms.locfileid: "88399681"
 |**lastreads**|**bigint**|Se conserva únicamente por compatibilidad con versiones anteriores. Siempre devuelve 0.|  
 |**lastwrites**|**bigint**|Se conserva únicamente por compatibilidad con versiones anteriores. Siempre devuelve 0.|  
 |**SqlBytes**|**int**|Longitud en bytes de la definición del procedimiento o el lote enviado.|  
-|**Server**|**nvarchar(3900)**|Definición del módulo o los primeros 3900 caracteres del lote enviado.|  
+|**sql**|**nvarchar(3900)**|Definición del módulo o los primeros 3900 caracteres del lote enviado.|  
   
 ## <a name="see-also"></a>Consulte también  
  [Vistas de compatibilidad &#40;Transact-SQL&#41;](~/relational-databases/system-compatibility-views/system-compatibility-views-transact-sql.md)  

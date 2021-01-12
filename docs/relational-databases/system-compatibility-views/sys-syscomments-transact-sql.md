@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.syscomments compatibility view
 - syscomments system table
 ms.assetid: 767dd410-6bc9-4c4a-ab0f-6d2cf6163426
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 3956dd945052a8977a2d9fccfefa6a34ea7b33fa
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 34ff2576f81e7756b4e6ee30a98df6617bd0be0d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88423359"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099179"
 ---
 # <a name="syssyscomments-transact-sql"></a>sys.syscomments (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "88423359"
   Contiene una entrada por cada vista, regla, valor predeterminado, desencadenador, restricción CHECK, restricción DEFAULT y procedimiento almacenado de la base de datos. La columna de **texto** contiene las instrucciones de definición de SQL originales.  
   
 > [!IMPORTANT]  
->  [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)] Se recomienda utilizar restricciones sys.sql_modules en su lugar. Para obtener más información, vea [Sys. sql_modules &#40;&#41;de Transact-SQL ](../../relational-databases/system-catalog-views/sys-sql-modules-transact-sql.md).  
+>  [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)] Se recomienda utilizar restricciones sys.sql_modules en su lugar. Para obtener más información, vea [sys.sql_modules &#40;&#41;de Transact-SQL ](../../relational-databases/system-catalog-views/sys-sql-modules-transact-sql.md).  
   
 |Nombre de la columna|Tipo de datos|Descripción|  
 |-----------------|---------------|-----------------|  
@@ -45,7 +45,7 @@ ms.locfileid: "88423359"
 |**ctext**|**varbinary(8000)**|Los bytes sin formato de la instrucción de definición de SQL.|  
 |**texttype**|**smallint**|0 = Comentario proporcionado por el usuario<br /><br /> 1 = Comentario proporcionado por el sistema<br /><br /> 4 = Comentario cifrado|  
 |**language**|**smallint**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
-|**cifra**|**bit**|Indica si se ofusca la definición de procedimiento.<br /><br /> 0 = no ofuscado<br /><br /> 1 = ofuscó<br /><br /> Importante para ofuscar definiciones de procedimientos almacenados, utilice CREATE PROCEDURE con la palabra clave Encryption. ** \* \* \* \* **|  
+|**cifra**|**bit**|Indica si se ofusca la definición de procedimiento.<br /><br /> 0 = no ofuscado<br /><br /> 1 = ofuscó<br /><br /> Importante para ofuscar definiciones de procedimientos almacenados, utilice CREATE PROCEDURE con la palabra clave Encryption. **\* \* \* \***|  
 |**comprimido**|**bit**|Siempre devuelve 0. Ello indica que el procedimiento está comprimido.|  
 |**text**|**nvarchar(4000)**|Texto real de la instrucción de definición de SQL.<br /><br /> La semántica de la expresión descodificada es equivalente al texto original; no obstante, no existen garantías sintácticas. Por ejemplo, los espacios en blanco se quitan de la expresión descodificada.<br /><br /> Esta [!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] vista compatible con obtiene información de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] las estructuras actuales y puede devolver más caracteres que la definición de **nvarchar (4000)** . **sp_help** devuelve **nvarchar (4000)** como tipo de datos de la columna de texto. Al trabajar con **syscomments** , considere la posibilidad de usar **nvarchar (Max)**. En el caso de los nuevos trabajos de desarrollo, no use **syscomments**.|  
   

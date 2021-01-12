@@ -13,14 +13,14 @@ dev_langs:
 helpviewer_keywords:
 - change data capture [SQL Server], functions
 ms.assetid: e5270557-aca3-44ab-8715-daccd498b88d
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 466ee70540b93e50e1dea62be5beab6599d5bfb5
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: de8544cec3cb1dd3ee5e3c78eff73c4bfe3b0fd3
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88498203"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098785"
 ---
 # <a name="change-data-capture-functions-transact-sql"></a>Funciones de captura de datos modificados (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "88498203"
         [cdc.fn_cdc_get_all_changes_&#60;capture_instance&#62;  &#40;Transact-SQL&#41;](../../relational-databases/system-functions/cdc-fn-cdc-get-all-changes-capture-instance-transact-sql.md)
     :::column-end:::
     :::column:::
-        [Sys. fn_cdc_has_column_changed &#40;Transact-SQL&#41;](../../relational-databases/system-functions/sys-fn-cdc-has-column-changed-transact-sql.md)
+        [sys.fn_cdc_has_column_changed &#40;&#41;de Transact-SQL ](../../relational-databases/system-functions/sys-fn-cdc-has-column-changed-transact-sql.md)
     :::column-end:::
 :::row-end:::  
 :::row:::

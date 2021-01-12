@@ -1,6 +1,6 @@
 ---
 description: sys.dm_hadr_database_replica_states (Transact-SQL)
-title: Sys. dm_hadr_database_replica_states (Transact-SQL) | Microsoft Docs
+title: sys.dm_hadr_database_replica_states (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/26/2018
 ms.prod: sql
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], monitoring
 - sys.dm_hadr_database_replica_states dynamic management view
 ms.assetid: 1a17b0c9-2535-4f3d-8013-cd0a6d08f773
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 31d6534b055b9bc82052445202d35ff5a63bcb19
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 18642535521a50c7beb005c0ae8181f04ac3c6d5
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89533458"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097597"
 ---
 # <a name="sysdm_hadr_database_replica_states-transact-sql"></a>sys.dm_hadr_database_replica_states (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -75,11 +75,11 @@ ms.locfileid: "89533458"
 |**secondary_lag_seconds**|**bigint**|El número de segundos que la réplica secundaria está detrás de la réplica principal durante la sincronización.<br /><br />**Se aplica a:** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores.|  
   
 ##  <a name="understanding-the-lsn-column-values"></a><a name="LSNcolumns"></a> Descripción de los valores de columna LSN  
- Los valores de las columnas **end_of_log_lsn**, **last_hardened_lsn**, **last_received_lsn**, **last_sent_lsn**, **recovery_lsn**y **truncation_lsn** no son números de secuencia de registro (LSN) reales. En su lugar, cada uno de estos valores refleja un identificador de bloque de registro rellenado con ceros.  
+ Los valores de las columnas **end_of_log_lsn**, **last_hardened_lsn**, **last_received_lsn**, **last_sent_lsn**, **recovery_lsn** y **truncation_lsn** no son números de secuencia de registro (LSN) reales. En su lugar, cada uno de estos valores refleja un identificador de bloque de registro rellenado con ceros.  
   
- **end_of_log_lsn**, **last_hardened_lsn**y **recovery_lsn** son Flush LSN. Por ejemplo, **last_hardened_lsn** indica el inicio del bloque siguiente después de los bloques que ya están en el disco.  Por lo tanto, cualquier LSN < el valor de **last_hardened_lsn** está en el disco.  El LSN que se >= en este valor no se vacía.  
+ **end_of_log_lsn**, **last_hardened_lsn** y **recovery_lsn** son Flush LSN. Por ejemplo, **last_hardened_lsn** indica el inicio del bloque siguiente después de los bloques que ya están en el disco.  Por lo tanto, cualquier LSN < el valor de **last_hardened_lsn** está en el disco.  El LSN que se >= en este valor no se vacía.  
   
- De los valores de LSN devueltos por **Sys. dm_hadr_database_replica_states**, solo **LAST_REDONE_LSN** es un LSN real.  
+ De los valores de LSN devueltos por **Sys.dm_hadr_database_replica_states**, solo **LAST_REDONE_LSN** es un LSN real.  
   
 ## <a name="security"></a>Seguridad  
   

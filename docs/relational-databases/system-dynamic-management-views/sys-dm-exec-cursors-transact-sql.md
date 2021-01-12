@@ -1,6 +1,6 @@
 ---
 description: sys.dm_exec_cursors (Transact-SQL)
-title: Sys. dm_exec_cursors (Transact-SQL) | Microsoft Docs
+title: sys.dm_exec_cursors (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_cursors dynamic management function
 ms.assetid: f520b63c-36af-40f1-bf71-6901d6331d3d
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 351f97ed08d1a6a79f8611d19842dc93138277ce
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 8ab1ed9e722f2363c0568932e7eb337bc09dbe41
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543958"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099014"
 ---
 # <a name="sysdm_exec_cursors-transact-sql"></a>sys.dm_exec_cursors (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -53,8 +53,8 @@ dm_exec_cursors (session_id | 0 )
 |**name**|**nvarchar(256)**|Nombre del cursor tal como lo ha definido el usuario.|  
 |**properties**|**nvarchar(256)**|Especifica las propiedades del cursor. Los valores de las propiedades siguientes se concatenan para formar el valor de esta columna:<br />Interfaz de declaración<br />Tipo de cursor <br />Simultaneidad de cursor<br />Alcance del cursor<br />Nivel de anidamiento de cursor<br /><br /> Por ejemplo, el valor devuelto en esta columna podría ser "TSQL &#124; Dynamic &#124; optimistic &#124; global (0)".|  
 |**sql_handle**|**varbinary (64)**|Identificador del texto del lote que declaró el cursor.|  
-|**statement_start_offset**|**int**|Número de caracteres en el lote que se está ejecutando actualmente o procedimiento almacenado en el que se inicia la instrucción que se está ejecutando actualmente. Se puede usar junto con el **sql_handle**, el **statement_end_offset**y la función de administración dinámica [Sys. dm_exec_sql_text](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md) para recuperar la instrucción que se está ejecutando actualmente para la solicitud.|  
-|**statement_end_offset**|**int**|Número de caracteres en el lote que se está ejecutando actualmente o procedimiento almacenado en el que finaliza la instrucción que se está ejecutando actualmente. Se puede usar junto con el **sql_handle**, el **statement_start_offset**y la función de administración dinámica **Sys. dm_exec_sql_text** para recuperar la instrucción que se está ejecutando actualmente para la solicitud.|  
+|**statement_start_offset**|**int**|Número de caracteres en el lote que se está ejecutando actualmente o procedimiento almacenado en el que se inicia la instrucción que se está ejecutando actualmente. Se puede usar junto con el **sql_handle**, el **statement_end_offset** y la función de administración dinámica [Sys.dm_exec_sql_text](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md) para recuperar la instrucción que se está ejecutando actualmente para la solicitud.|  
+|**statement_end_offset**|**int**|Número de caracteres en el lote que se está ejecutando actualmente o procedimiento almacenado en el que finaliza la instrucción que se está ejecutando actualmente. Se puede usar junto con el **sql_handle**, el **statement_start_offset** y la función de administración dinámica **Sys.dm_exec_sql_text** para recuperar la instrucción que se está ejecutando actualmente para la solicitud.|  
 |**plan_generation_num**|**bigint**|Número de secuencia que se puede usar para distinguir entre instancias de los planes después de una nueva compilación.|  
 |**creation_time**|**datetime**|Marca de tiempo a la que se creó este cursor.|  
 |**is_open**|**bit**|Especifica si el cursor está abierto.|  

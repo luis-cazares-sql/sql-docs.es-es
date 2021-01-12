@@ -1,6 +1,6 @@
 ---
-description: Sys. dm_resource_governor_external_resource_pool_affinity (Transact-SQL)
-title: Sys. dm_resource_governor_external_resource_pool_affinity (Transact-SQL) | Microsoft Docs
+description: sys.dm_resource_governor_external_resource_pool_affinity (Transact-SQL)
+title: sys.dm_resource_governor_external_resource_pool_affinity (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 11/13/2017
 ms.prod: sql
@@ -18,16 +18,16 @@ helpviewer_keywords:
 - sys.dm_resource_governor_external_resource_pool_affinity
 - dm_resource_governor_external_resource_pool_affinity
 ms.assetid: e32fac49-5161-47c0-8540-af3fe730c00c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 9ad8fa57e43d1b456434f007e224464af11aa53e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: eef4f3a36c61a24a1a90c5904db578634a791a80
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546506"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097513"
 ---
-# <a name="sysdm_resource_governor_external_resource_pool_affinity-transact-sql"></a>Sys. dm_resource_governor_external_resource_pool_affinity (Transact-SQL)
+# <a name="sysdm_resource_governor_external_resource_pool_affinity-transact-sql"></a>sys.dm_resource_governor_external_resource_pool_affinity (Transact-SQL)
 [!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 **Se aplica a:** [!INCLUDE[sssql15-md](../../includes/sssql15-md.md)] [!INCLUDE[rsql-productname-md](../../includes/rsql-productname-md.md)]y [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)][!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)]
 
@@ -35,7 +35,7 @@ Devuelve información de afinidad de CPU acerca de la configuración actual del 
   
 |Nombre de la columna|Tipo de datos|Descripción|
 |----------------|---------------|-----------------|
-|pool_id|**int**|IDENTIFICADOR del grupo de recursos externos. No admite valores NULL.|
+|{1}pool_id{2}|**int**|IDENTIFICADOR del grupo de recursos externos. No admite valores NULL.|
 |processor_group|**smallint**|Identificador del grupo de procesadores lógicos de Windows. No admite valores NULL.|
 |cpu_mask|**bigint**|Máscara binaria que representa las CPU asociadas a este grupo. No admite valores NULL.|
   
@@ -51,7 +51,7 @@ Requiere el permiso `VIEW SERVER STATE`.
 
 [Resource governance for machine learning in SQL Server](../../machine-learning/administration/resource-governor.md) (Gobernanza de recursos para aprendizaje automático en SQL Server)
 
-[Sys. dm_resource_governor_resource_pool_affinity &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pool-affinity-transact-sql.md)
+[sys.dm_resource_governor_resource_pool_affinity &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pool-affinity-transact-sql.md)
 
 [Opción de configuración de servidor Scripts externos habilitados](../../database-engine/configure-windows/external-scripts-enabled-server-configuration-option.md)
 

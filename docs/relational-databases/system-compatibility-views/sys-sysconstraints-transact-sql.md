@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.sysconstraints compatibility view
 - sysconstraints system table
 ms.assetid: f2b2e2ad-ba24-48a1-913c-8ee4e0895dc4
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 8a50f67470a91af617ae76baadf1a029bfa56b59
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 3014430aad20c74d22a72e1756503baadbe7cb68
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88423339"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099153"
 ---
 # <a name="syssysconstraints-transact-sql"></a>sys.sysconstraints (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,10 +41,10 @@ ms.locfileid: "88423339"
 |**constid**|**int**|Número de restricción.|  
 |**id**|**int**|Id. de la tabla que posee la restricción.|  
 |**colid**|**smallint**|Id. de la columna en la que se define la restricción.<br /><br /> 0 = Restricción de tabla|  
-|**spare1**|**tinyint**|Reserved|  
+|**spare1**|**tinyint**|Reservada|  
 |**status**|**int**|Pseudomáscara de bits que indica el estado. Entre los valores posibles figuran los siguientes:<br /><br /> 1 = Restricción PRIMARY KEY<br /><br /> 2 = Restricción UNIQUE KEY<br /><br /> 3 = Restricción FOREIGN KEY<br /><br /> 4 = Restricción CHECK<br /><br /> 5 = Restricción DEFAULT<br /><br /> 16 = Restricción de nivel de columna<br /><br /> 32 = Restricción de nivel de tabla|  
-|**actions**|**int**|Reserved|  
-|**error**|**int**|Reserved|  
+|**actions**|**int**|Reservada|  
+|**error**|**int**|Reservada|  
   
 ## <a name="see-also"></a>Consulte también  
  [Asignar tablas del sistema a vistas del sistema &#40;Transact-SQL&#41;](../../relational-databases/system-tables/mapping-system-tables-to-system-views-transact-sql.md)   

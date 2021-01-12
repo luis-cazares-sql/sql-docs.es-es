@@ -14,19 +14,18 @@ f1_keywords:
 dev_langs:
 - TSQL
 helpviewer_keywords:
-- database_query_store_options catalog view
 - sys.database_query_store_options catalog view
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.custom: ''
-ms.date: 05/27/2020
+ms.date: 1/8/2021
 monikerRange: =azuresqldb-current||>=sql-server-2016||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f8fce0932d546470206bbc7752429090c0212158
-ms.sourcegitcommit: d681796e8c012eca2d9629d3b816749e9f50f868
+ms.openlocfilehash: 273e5c4446853c3f44d0c99535880c9c9da2aa5f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98005420"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098089"
 ---
 # <a name="sysdatabase_query_store_options-transact-sql"></a>sys.database_query_store_options (Transact-SQL)
 
@@ -49,12 +48,17 @@ ms.locfileid: "98005420"
 |**max_storage_size_mb**|**bigint**|Tamaño máximo del disco para la Almacén de consultas en megabytes (MB). El valor predeterminado es **100** MB hasta [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] y **1 GB** a partir de [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] .<br />Para la [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] Edición Premium, el valor predeterminado es 1 GB y, para la [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] edición Basic, el valor predeterminado es 10 MB.<br /><br /> Cambie mediante la `ALTER DATABASE <database> SET QUERY_STORE (MAX_STORAGE_SIZE_MB = <size>)` instrucción.|  
 |**stale_query_threshold_days**|**bigint**|Número de días que se conserva la información de una consulta en el Almacén de consultas. El valor predeterminado es **30**. Establézcalo en 0 para deshabilitar la Directiva de retención.<br />En la edición básica de [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] , el valor predeterminado es 7 días.<br /><br /> Cambie mediante la `ALTER DATABASE <database> SET QUERY_STORE ( CLEANUP_POLICY = ( STALE_QUERY_THRESHOLD_DAYS = <value> ) )` instrucción.|  
 |**max_plans_per_query**|**bigint**|Limita el número máximo de planes almacenados. El valor predeterminado es **200**. Si se alcanza el valor máximo, Almacén de consultas deja de capturar nuevos planes para esa consulta. Si se establece en 0, se quita la limitación con respecto al número de planes capturados.<br /><br /> Cambie mediante la `ALTER DATABASE<database> SET QUERY_STORE (MAX_PLANS_PER_QUERY = <n>)` instrucción.|  
-|**query_capture_mode**|**smallint**|El modo de captura de consulta actualmente activo:<br /><br /> **1** = todas las consultas se capturan. Este es el valor de configuración predeterminado para [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ( [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores).<br /><br /> 2 = captura automática de consultas relevantes según el recuento de ejecución y el consumo de recursos. Es el valor de configuración predeterminado para [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)].<br /><br /> 3 = ninguno: detiene la captura de nuevas consultas. El almacén de consultas seguirá recopilando estadísticas de compilación y tiempo de ejecución para las consultas que ya se capturaron. Use esta configuración con precaución, ya que puede que se pierda la captura de consultas importantes.|  
-|**query_capture_mode_desc**|**nvarchar(60)**|Descripción textual del modo de captura real de Almacén de consultas:<br /><br /> TODOS (valor predeterminado para [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] )<br /><br /> **Auto** (valor predeterminado para [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] )<br /><br /> NONE|  
+|**query_capture_mode**|**smallint**|El modo de captura de consulta actualmente activo:<br /><br /> **1** = todas las consultas se capturan. Este es el valor de configuración predeterminado para [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ( [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores).<br /><br /> 2 = captura automática de consultas relevantes según el recuento de ejecución y el consumo de recursos. Es el valor de configuración predeterminado para [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)].<br /><br /> 3 = ninguno: detiene la captura de nuevas consultas. El almacén de consultas seguirá recopilando estadísticas de compilación y tiempo de ejecución para las consultas que ya se capturaron. Use esta configuración con precaución, ya que puede que se pierda la captura de consultas importantes. <br /><br /> 4 = personalizado: permite el control adicional sobre la Directiva de captura de consultas mediante las [Opciones de QUERY_CAPTURE_POLICY](../../t-sql/statements/alter-database-transact-sql-set-options.md#SettingOptions).<br /> **Válido para** : [!INCLUDE[ssSQL19](../../includes/sssql19-md.md)] y versiones posteriores.|  
+|**query_capture_mode_desc**|**nvarchar(60)**|Descripción textual del modo de captura real de Almacén de consultas:<br /><br /> TODOS (valor predeterminado para [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] )<br /><br /> **Auto** (valor predeterminado para [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] )<br /><br /> NONE <br /><br /> CUSTOM|  
+|**capture_policy_execution_count**|**int**|Opción de directiva personalizada del modo de captura de consultas. Define el número de veces que se ejecuta una consulta durante el período de evaluación. El valor predeterminado es 30.<br />**Válido para** : [!INCLUDE[ssSQL19](../../includes/sssql19-md.md)] y versiones posteriores.| 
+|**capture_policy_total_compile_cpu_time_ms**|**bigint**|Opción de directiva personalizada del modo de captura de consultas. Define el tiempo total de CPU de compilación transcurrido que usa una consulta durante el período de evaluación. El valor predeterminado es 1000.<br /> **Válido para** : [!INCLUDE[ssSQL19](../../includes/sssql19-md.md)] y versiones posteriores.|
+|**capture_policy_total_execution_cpu_time_ms**|**bigint**|Opción de directiva personalizada del modo de captura de consultas. Define el tiempo de ejecución total de CPU transcurrido que ha utilizado una consulta durante el período de evaluación. El valor predeterminado es 100.<br /> **Válido para** : [!INCLUDE[ssSQL19](../../includes/sssql19-md.md)] y versiones posteriores.|
+|**capture_policy_stale_threshold_hours**|**int**|Opción de directiva personalizada del modo de captura de consultas. Define el período de intervalo de evaluación para determinar si se debe capturar una consulta. El valor predeterminado es 24 horas.<br /> **Válido para** : [!INCLUDE[ssSQL19](../../includes/sssql19-md.md)] y versiones posteriores.|
 |**size_based_cleanup_mode**|**smallint**|Controla si la limpieza se activará automáticamente cuando la cantidad total de datos se acerque al tamaño máximo:<br /><br /> 0 = la limpieza basada en el tamaño no se activará automáticamente.<br /><br /> **1** = la limpieza basada en el tamaño automático se activará automáticamente cuando el tamaño en disco alcance el **90 por ciento** de *max_storage_size_mb*. Es el valor de configuración predeterminado.<br /><br />La limpieza según el tamaño quita primero las consultas menos caras y más antiguas. Se detiene cuando se alcanza aproximadamente el **80 por ciento** de *max_storage_size_mb* .|  
 |**size_based_cleanup_mode_desc**|**nvarchar(60)**|Descripción textual del modo de limpieza real basado en el tamaño de Almacén de consultas:<br /><br /> Apagado <br /> **Auto** (valor predeterminado)|  
 |**wait_stats_capture_mode**|**smallint**|Controla si Almacén de consultas realiza la captura de las estadísticas de espera: <br /><br /> 0 = OFF <br /> **1** = activado<br /> **Válido para** : [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] y versiones posteriores.|
-|**wait_stats_capture_mode_desc**|**nvarchar(60)**|Descripción textual del modo real de captura de las estadísticas de espera: <br /><br /> Apagado <br /> **Activado** (valor predeterminado)<br /> **Válido para** : [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] y versiones posteriores.| 
+|**wait_stats_capture_mode_desc**|**nvarchar(60)**|Descripción textual del modo real de captura de las estadísticas de espera: <br /><br /> Apagado <br /> **Activado** (valor predeterminado)<br /> **Válido para** : [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] y versiones posteriores.|
+|**actual_state_additional_info**|**nvarchar (8000)**|Actualmente no se usa. Puede implementarse en el futuro.|
   
 ## <a name="permissions"></a>Permisos  
  Requiere el permiso `VIEW DATABASE STATE`.  
@@ -71,5 +75,3 @@ ms.locfileid: "98005420"
  [Vistas de catálogo &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
  [sys.fn_stmt_sql_handle_from_sql_stmt &#40;&#41;de Transact-SQL ](../../relational-databases/system-functions/sys-fn-stmt-sql-handle-from-sql-stmt-transact-sql.md)   
  [Procedimientos almacenados del almacén de consultas &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/query-store-stored-procedures-transact-sql.md)  
-  
-  

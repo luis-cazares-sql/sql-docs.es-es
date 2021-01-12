@@ -1,6 +1,6 @@
 ---
 description: sys.dm_xe_session_events (Transact-SQL)
-title: Sys. dm_xe_session_events (Transact-SQL) | Microsoft Docs
+title: sys.dm_xe_session_events (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - sys.dm_xe_session_events dynamic management view
 - extended events [SQL Server], views
 ms.assetid: 4f027b31-4e03-43a6-849d-1ba9d8d34ae8
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 3a31075286ec950ba41c6d8280fef436d3ae17bc
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 347cb9421b158efe988acb59a0b3dc9b3cc147f5
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536934"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098835"
 ---
 # <a name="sysdm_xe_session_events-transact-sql"></a>sys.dm_xe_session_events (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "89536934"
 |From|En|Relación|  
 |----------|--------|------------------|  
 |sys.dm_xe_session_events.event_session_address|sys.dm_xe_sessions.address|Varios a uno|  
-|Sys. dm_xe_session_events. event_package_guid,<br /><br /> Sys. dm_xe_session_events. event_name|sys.dm_xe_objects.name,<br /><br /> sys.dm_xe_objects.package_guid|Varios a uno|  
+|Sys.dm_xe_session_events sys.dm_xe_session_events.event_package_guid,<br /><br /> Sys.dm_xe_session_events sys.dm_xe_session_events.event_name|sys.dm_xe_objects.name,<br /><br /> sys.dm_xe_objects.package_guid|Varios a uno|  
   
 ## <a name="see-also"></a>Consulte también  
  [Funciones y vistas de administración dinámica &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)  

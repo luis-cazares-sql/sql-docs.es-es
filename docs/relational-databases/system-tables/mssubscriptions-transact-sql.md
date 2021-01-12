@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - MSsubscriptions system table
 ms.assetid: b7e8301d-d115-41f6-8d4f-e0d25f453b25
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 70edbd52e02904a16cd5aa6bef31d1679457e03b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: cee2d6298c2136a886cba29a89bc540230746092
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545505"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098128"
 ---
 # <a name="mssubscriptions-transact-sql"></a>MSsubscriptions (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "89545505"
 |**subscription_seqno**|**varbinary(16)**|Número de secuencia de la transacción de instantáneas.|  
 |**snapshot_seqno_flag**|**bit**|Indica el origen del número de secuencia de la transacción de instantáneas, donde el valor **1** significa que **subscription_seqno** es el número de secuencia de la instantánea.|  
 |**independent_agent**|**bit**|Indica si hay un agente de distribución independiente para esta publicación.|  
-|**subscription_time**|**datetime**|Exclusivamente para uso interno.|  
+|**subscription_time**|**datetime**|Solo para uso interno.|  
 |**loopback_detection**|**bit**|Se aplica a las suscripciones que forman parte de una topología de replicación transaccional bidireccional. La detección de bucles de retorno determina si el Agente de distribución envía las transacciones originadas en el suscriptor al mismo suscriptor:<br /><br /> **1** = no devuelve.<br /><br /> **0** = devuelve.<br /><br />|  
 |**agent_id**|**int**|Id. del agente.|  
 |**update_mode**|**tinyint**|Tipo de actualización.|  

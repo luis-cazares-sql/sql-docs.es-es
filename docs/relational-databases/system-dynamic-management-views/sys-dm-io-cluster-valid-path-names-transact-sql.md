@@ -1,6 +1,6 @@
 ---
 description: sys.dm_io_cluster_valid_path_names (Transact-SQL)
-title: Sys. dm_io_cluster_valid_path_names (Transact-SQL) | Microsoft Docs
+title: sys.dm_io_cluster_valid_path_names (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -21,14 +21,14 @@ helpviewer_keywords:
 - csv name
 - cluster shared volume names
 ms.assetid: 5bc8a0e5-6c72-425b-8c58-f276eb9add2c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 18a1e01e893486a7ce32f1c3510fb52d5fd7ec0e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 24bddc071b9ad5b64ef796f16718d1465dec7eaa
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89532232"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097595"
 ---
 # <a name="sysdm_io_cluster_valid_path_names-transact-sql"></a>sys.dm_io_cluster_valid_path_names (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "89532232"
  Una instancia de clúster de conmutación por error (FCI) de SQL Server debe usar almacenamiento compartido entre todos los nodos de FCI para el almacenamiento de archivos de datos y de registro. Los discos que se muestran en esta vista son los que se encuentran en el grupo de recursos de clúster asociado a la instancia y son los únicos discos que se pueden usar para el almacenamiento de archivos de datos o de registro.  
   
 > [!NOTE]  
->  Esta vista reemplazará [Sys. dm_io_cluster_shared_drives &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-io-cluster-shared-drives-transact-sql.md) en una versión futura.  
+>  Esta vista reemplazará [sys.dm_io_cluster_shared_drives &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-io-cluster-shared-drives-transact-sql.md) en una versión futura.  
   
 ## <a name="permissions"></a>Permisos  
  El usuario debe tener permiso VIEW SERVER STATE para la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
@@ -58,8 +58,8 @@ SELECT * FROM sys.dm_io_cluster_valid_path_names;
 ```  
   
 ## <a name="see-also"></a>Consulte también  
- [Sys. dm_os_cluster_nodes &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-cluster-nodes-transact-sql.md)   
- [Sys. dm_io_cluster_shared_drives &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-io-cluster-shared-drives-transact-sql.md)   
+ [sys.dm_os_cluster_nodes &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-os-cluster-nodes-transact-sql.md)   
+ [sys.dm_io_cluster_shared_drives &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-io-cluster-shared-drives-transact-sql.md)   
  [Funciones y vistas de administración dinámica &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)  
   
   
