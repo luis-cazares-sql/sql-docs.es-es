@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - DROP RESOURCE POOL
 ms.assetid: 18cd6dd9-7a6d-4a08-b9d5-649af23583d5
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c6545e1b06f2bcfac792868ec8c18bfde0da56f8
-ms.sourcegitcommit: 197a6ffb643f93592edf9e90b04810a18be61133
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 3de30be9f5a0fc2b7aa98f4201320f1811ae30f9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91380322"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98081404"
 ---
 # <a name="drop-resource-pool-transact-sql"></a>DROP RESOURCE POOL (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -45,7 +45,7 @@ DROP RESOURCE POOL pool_name
  *pool_name*  
  Es el nombre de un grupo de recursos de servidor definido por el usuario existente.  
   
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
  No se puede quitar un grupo de recursos de servidor si contiene grupos de cargas de trabajo.  
   
  No se pueden quitar los grupos de recursos de servidor predeterminados o internos del regulador de recursos.  

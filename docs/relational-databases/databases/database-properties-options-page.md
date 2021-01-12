@@ -13,12 +13,12 @@ f1_keywords:
 ms.assetid: a3447987-5507-4630-ac35-58821b72354d
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: bf329c6537df49ace1ae78bba64e146641e1e664
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 87c3b10b95a37c74ea1595dca15341aeffe5c261
+ms.sourcegitcommit: 4a813a0741502c56c0cd5ecaafafad2e857a9d7f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195050"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98031109"
 ---
 # <a name="database-properties-options-page"></a>Propiedades de la base de datos (página Opciones)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -165,7 +165,7 @@ Habilita esta característica.
  Cuando es **False**, no se mantienen estadísticas de correlación.  
  
  **Durabilidad diferida**  
- Habilita esta característica.  
+ Habilita esta característica. Para saber más, vea [Control de la durabilidad de las transacciones](../logs/control-transaction-durability.md).
  
  **Instantánea de lectura confirmada activa**  
  Habilita esta característica.  
@@ -189,7 +189,7 @@ Habilita esta característica.
   
  Esta propiedad también permite la creación y ejecución de ensamblados con acceso externo y no seguros dentro de la base de datos. Además de establecer esta propiedad en **True**, el propietario de la base de datos debe tener los permisos EXTERNAL ACCESS ASSEMBLY o UNSAFE ASSEMBLY en el nivel de servidor.  
   
- Todas las bases de datos de usuario y todas las bases de datos del sistema (a excepción de **MSDB**) tienen esta propiedad establecida en **False**de forma predeterminada. No es posible cambiar este valor para las bases de datos **model** y **tempdb** .  
+ Todas las bases de datos de usuario y todas las bases de datos del sistema (a excepción de **MSDB**) tienen esta propiedad establecida en **False** de forma predeterminada. No es posible cambiar este valor para las bases de datos **model** y **tempdb** .  
   
  TRUSTWORTHY se establece en **False** siempre que la base de datos se conecte al servidor.  
   
@@ -202,7 +202,7 @@ Habilita esta característica.
   
 ## <a name="recovery"></a>Recuperación  
  **Comprobación de páginas**  
- Especifique la opción utilizada para detectar y notificar las transacciones de E/S incompletas debido a errores de E/S de disco. Los valores posibles son **None**, **TornPageDetection**y **Checksum**. Para obtener más información, vea [Administrar la tabla suspect_pages &#40;SQL Server&#41;](../../relational-databases/backup-restore/manage-the-suspect-pages-table-sql-server.md).  
+ Especifique la opción utilizada para detectar y notificar las transacciones de E/S incompletas debido a errores de E/S de disco. Los valores posibles son **None**, **TornPageDetection** y **Checksum**. Para obtener más información, vea [Administrar la tabla suspect_pages &#40;SQL Server&#41;](../../relational-databases/backup-restore/manage-the-suspect-pages-table-sql-server.md).  
   
  **Tiempo de recuperación de destino (segundos)**  
  Especifica el límite máximo de tiempo, expresado en segundos, para recuperar la base de datos especificada en caso de bloqueo. Para obtener más información, vea [Puntos de comprobación de base de datos &#40;SQL Server&#41;](../../relational-databases/logs/database-checkpoints-sql-server.md).  
