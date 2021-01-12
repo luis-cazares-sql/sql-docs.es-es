@@ -15,12 +15,12 @@ ms.assetid: e1d03d74-2572-4a55-afd6-7edf0bc28bdb
 author: MightyPen
 ms.author: genemi
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9f462f256c98c4482af67527401cc6d30f3f0776
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 281fe018c5c2d5e0717fb2c35dfcc8c3c9e8c3fc
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465386"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100245"
 ---
 # <a name="in-memory-oltp-and-memory-optimization"></a>OLTP en memoria y optimización en memoria
 
@@ -56,7 +56,7 @@ Para información más detallada de OLTP en memoria y una revisión de los escen
 |[Ejemplos de código de OLTP en memoria](./sample-database-for-in-memory-oltp.md)|Contiene ejemplos de código en los que se muestra cómo crear y utilizar una tabla optimizada para memoria.|  
 |[Tablas optimizadas para la memoria](./sample-database-for-in-memory-oltp.md)|Presenta las tablas optimizadas para memoria.|  
 |[Variables de tabla con optimización para memoria](./faster-temp-table-and-table-variable-by-using-memory-optimization.md)|Ejemplo de código que muestra cómo utilizar una variable de tabla optimizada para memoria en lugar de una variable de tabla tradicional para reducir el uso de tempdb.|  
-|[Índices de las tablas con optimización para memoria](/sql/relational-databases/in-memory-oltp/indexes-for-memory-optimized-tables)|Presenta los índices optimizados para memoria.|  
+|[Índices de las tablas con optimización para memoria](./indexes-for-memory-optimized-tables.md)|Presenta los índices optimizados para memoria.|  
 |[Procedimientos almacenados compilados de forma nativa](./a-guide-to-query-processing-for-memory-optimized-tables.md)|Presenta los procedimientos almacenados compilados de forma nativa.|  
 |[Administrar memoria para OLTP en memoria](/previous-versions/sql/sql-server-2016/dn465872(v=sql.130))|Descripción y administración del uso de memoria en el sistema.|  
 |[Crear y administrar el almacenamiento de objetos optimizados para memoria](../../relational-databases/in-memory-oltp/creating-and-managing-storage-for-memory-optimized-objects.md)|Describe los archivos delta y de datos, que almacenan información sobre las transacciones en tablas optimizadas para memoria.|  
@@ -136,4 +136,3 @@ Los pasos generales que se muestran en el vídeo son los siguientes:
 
 ## <a name="see-also"></a>Consulte también  
  [Características de la base de datos](../databases/databases.md)  
-  
