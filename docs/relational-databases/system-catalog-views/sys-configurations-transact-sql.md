@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.configurations catalog view
 ms.assetid: c4709ed1-bf88-4458-9e98-8e9b78150441
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: d470cda4e0c5cf54bcce0827fff4e5f9b9d1acb7
-ms.sourcegitcommit: 7f76975c29d948a9a3b51abce564b9c73d05dcf0
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 10956e1c3738c64829ec18d92a05b9f427b1833d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96901068"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100693"
 ---
 # <a name="sysconfigurations-transact-sql"></a>sys.configurations (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "96901068"
 |**is_dynamic**|**bit**|1 = La variable que surte surte efecto cuando se ejecuta la instrucción RECONFIGURE.|  
 |**is_advanced**|**bit**|1 = la variable solo se muestra cuando se establece **Show advancedoption** .|  
   
- ## <a name="remarks"></a>Comentarios
+ ## <a name="remarks"></a>Observaciones
   Para obtener una lista de todas las opciones de configuración del servidor, consulte [Opciones de configuración del servidor &#40;SQL Server&#41;](../../database-engine/configure-windows/server-configuration-options-sql-server.md).  
   
 > [!NOTE]  
@@ -78,7 +78,7 @@ En el caso de una opción de configuración que no sea dinámica, no hay ninguna
 ## <a name="permissions"></a>Permisos  
  Debe pertenecer al rol **public** . Para obtener más información, consulte [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md).  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
  [Vistas de catálogo de configuración de todo el servidor &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/server-wide-configuration-catalog-views-transact-sql.md)   
  [Vistas de catálogo &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)  
   

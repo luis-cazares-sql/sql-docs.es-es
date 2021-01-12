@@ -1,6 +1,6 @@
 ---
-description: 'Captura de datos modificados: sys. dm_cdc_errors'
-title: Sys. dm_cdc_errors (Transact-SQL) | Microsoft Docs
+description: 'Captura de datos modificados: sys.dm_cdc_errors'
+title: sys.dm_cdc_errors (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,16 +18,16 @@ helpviewer_keywords:
 - sys.dm_cdc_errors dynamic management view
 - change data capture [SQL Server], error reporting
 ms.assetid: 898f2d76-9e63-45ef-94da-8034e86004ab
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 4c15c3365904e727abae31d89f15cfc23b6f5d53
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: ce058600c4a912e13695817a533f8e9ec4c8f856
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542389"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100148"
 ---
-# <a name="change-data-capture---sysdm_cdc_errors"></a>Captura de datos modificados: sys. dm_cdc_errors
+# <a name="change-data-capture---sysdm_cdc_errors"></a>Captura de datos modificados: sys.dm_cdc_errors
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Devuelve una fila para cada error encontrado durante la sesión de recorrido de registro de captura de datos del cambio.  
@@ -36,7 +36,7 @@ ms.locfileid: "89542389"
 |Nombre de la columna|Tipo de datos|Descripción|  
 |-----------------|---------------|-----------------|  
 |**session_id**|**int**|Id. de la sesión.<br /><br /> 0 = el error no se produjo durante una sesión de recorrido del registro.|  
-|**phase_number**|**int**|Número que indica la fase en que se encontraba la sesión en el momento en que se produjo el error. Para obtener una descripción de cada fase, vea [Sys. dm_cdc_log_scan_sessions &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/change-data-capture-sys-dm-cdc-log-scan-sessions.md).|  
+|**phase_number**|**int**|Número que indica la fase en que se encontraba la sesión en el momento en que se produjo el error. Para obtener una descripción de cada fase, vea [sys.dm_cdc_log_scan_sessions &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/change-data-capture-sys-dm-cdc-log-scan-sessions.md).|  
 |**entry_time**|**datetime**|Fecha y hora de registro del error. Este valor corresponde a la marca de tiempo en el registro de errores de SQL.|  
 |**error_number**|**int**|Id. del mensaje de error.|  
 |**error_severity**|**int**|Nivel de gravedad del mensaje, entre 1 y 25.|  
@@ -47,14 +47,14 @@ ms.locfileid: "89542389"
 |**sequence_value**|**nvarchar (23)**|Valor LSN de las filas que se estaban procesando en el momento de producirse el error.<br /><br /> 0 = el error no se produjo durante una sesión de recorrido del registro.|  
   
 ## <a name="remarks"></a>Observaciones  
- **Sys. dm_cdc_errors** contiene información de error para las sesiones anteriores de 32.  
+ **Sys.dm_cdc_errors** contiene información de error para las sesiones anteriores de 32.  
   
 ## <a name="permissions"></a>Permisos  
- Requiere el permiso VIEW DATABASE STATE para consultar la vista de administración dinámica **Sys. dm_cdc_errors** . Para obtener más información acerca de los permisos en las vistas de administración dinámica, vea [funciones y vistas de administración dinámica &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md).  
+ Requiere el permiso VIEW DATABASE STATE para consultar la vista de administración dinámica **Sys.dm_cdc_errors** . Para obtener más información acerca de los permisos en las vistas de administración dinámica, vea [funciones y vistas de administración dinámica &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md).  
   
 ## <a name="see-also"></a>Consulte también  
- [Sys. dm_cdc_log_scan_sessions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/change-data-capture-sys-dm-cdc-log-scan-sessions.md)   
- [Sys. dm_repl_traninfo &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-repl-traninfo-transact-sql.md)  
+ [sys.dm_cdc_log_scan_sessions &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/change-data-capture-sys-dm-cdc-log-scan-sessions.md)   
+ [sys.dm_repl_traninfo &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-repl-traninfo-transact-sql.md)  
   
   
 

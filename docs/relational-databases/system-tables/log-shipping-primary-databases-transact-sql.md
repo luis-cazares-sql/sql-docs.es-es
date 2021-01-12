@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - log_shipping_primary_databases system table
 ms.assetid: 56888756-a798-42be-9b5e-0f9aa05a2cc6
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ae5bde1d9d9abde1d1bbf6ddabc0b29e378414e0
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 8dd97d1baa37b71fec2e1ceb113e4b0a3614a2e4
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540947"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102155"
 ---
 # <a name="log_shipping_primary_databases-transact-sql"></a>log_shipping_primary_databases (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "89540947"
 |**monitor_server_security_mode**|**bit**|Modo de seguridad utilizado para conectarse al servidor de supervisión.<br /><br /> 1 = Autenticación de Windows.<br /><br /> 0 = [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] autenticación.|  
 |**last_backup_file**|**nvarchar (500)**|Ruta de acceso absoluta de la copia de seguridad más reciente del registro de transacciones.|  
 |**last_backup_date**|**datetime**|Fecha y hora de la última operación de copia de seguridad del registro.|  
-|**user_specified_monitor**|**bit**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]<br /><br /> **sp_help_log_shipping_primary_database** y **sp_help_log_shipping_secondary_primary** utilizar esta columna para controlar la visualización de la configuración del monitor en [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] .<br /><br /> 0 = al invocar cualquiera de estos dos procedimientos almacenados, el usuario no especificó un valor explícito para el parámetro ** \@ monitor_server** .<br /><br /> 1 = El usuario especificó un valor explícito.|  
+|**user_specified_monitor**|**bit**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]<br /><br /> **sp_help_log_shipping_primary_database** y **sp_help_log_shipping_secondary_primary** utilizar esta columna para controlar la visualización de la configuración del monitor en [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] .<br /><br /> 0 = al invocar cualquiera de estos dos procedimientos almacenados, el usuario no especificó un valor explícito para el parámetro **\@ monitor_server** .<br /><br /> 1 = El usuario especificó un valor explícito.|  
 |**backup_compression**|**tinyint**|Indica si la configuración de trasvase de registros invalida el comportamiento de compresión de copia de seguridad del nivel servidor.<br /><br /> 0 = Deshabilitada. Nunca se comprimen las copias de seguridad de registros, independientemente de la configuración de la compresión de copia de seguridad configurada por el servidor.<br /><br /> 1 = Habilitada. Las copias de seguridad de registros siempre se comprimen, independientemente de la configuración de la compresión de copia de seguridad configurada por el servidor.<br /><br /> 2 = usa la configuración del servidor para [ver o establecer la opción de configuración del servidor opciones](../../database-engine/configure-windows/view-or-configure-the-backup-compression-default-server-configuration-option.md) de configuración del servidor de compresión de copia de seguridad predeterminada. Este es el valor predeterminado.<br /><br /> La compresión de copia de seguridad solo se admite en la edición Enterprise de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].|  
   
 ## <a name="see-also"></a>Consulte también  

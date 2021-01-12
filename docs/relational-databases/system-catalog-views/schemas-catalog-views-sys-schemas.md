@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.schemas catalog view
 ms.assetid: 29af5ce5-2af7-4103-8f08-3ec92603ba05
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 473dd22d2f19d29e5b778a585ad59d0d99acbaee
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: d41745e41db18f720f85fbc4aef0b8dcec89892f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97479106"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100674"
 ---
 # <a name="schemas-catalog-views---sysschemas"></a>Vistas de catálogo de esquemas: sys. Schemas
 [!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "97479106"
 |**schema_id**|**int**|Id. del esquema. Es único en la base de datos.|  
 |**principal_id**|**int**|Id. de la entidad de seguridad propietaria del esquema.|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
 Los esquemas de base de datos actúan como espacios de nombres o contenedores para objetos, como tablas, vistas, procedimientos y funciones, que se pueden encontrar en la vista de catálogo **Sys. Objects** .  
 
 Cada esquema tiene un propietario. El propietario es una [entidad](../../relational-databases/security/authentication-access/principals-database-engine.md)de seguridad.

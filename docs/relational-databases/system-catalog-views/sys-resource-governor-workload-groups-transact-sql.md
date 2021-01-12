@@ -1,6 +1,6 @@
 ---
 description: sys.resource_governor_workload_groups (Transact-SQL)
-title: Sys. resource_governor_workload_groups (Transact-SQL) | Microsoft Docs
+title: sys.resource_governor_workload_groups (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/16/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.resource_governor_workload_groups catalog view
 ms.assetid: 619ba4b7-868f-4784-b527-ec1dfd703c4f
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: f85ef2691091911e937bae9fbf21649ace7a943e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 83d699e2da5e1de1e25a2618171924843c569188
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550442"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101768"
 ---
 # <a name="sysresource_governor_workload_groups-transact-sql"></a>sys.resource_governor_workload_groups (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,11 +42,11 @@ ms.locfileid: "89550442"
 |request_memory_grant_timeout_sec|**int**|Tiempo de espera de la concesión de memoria, en segundos, para una única solicitud. El valor predeterminado, 0, utiliza un cálculo interno basado en el costo de la consulta. No admite valores NULL.|  
 |max_dop|**int**|Grado máximo de paralelismo para el grupo de cargas de trabajo. El valor predeterminado, 0, utiliza la configuración global. No admite valores NULL.<br /><br /> **Nodo:** Esta configuración invalidará la opción de consulta **maxdop**.|  
 |group_max_requests|**int**|Número máximo de solicitudes simultáneas. El valor predeterminado, 0, especifica que no hay límite. No admite valores NULL.|  
-|pool_id|**int**|Identificador del grupo de recursos de servidor que usa este grupo de cargas de trabajo.|  
+|{1}pool_id{2}|**int**|Identificador del grupo de recursos de servidor que usa este grupo de cargas de trabajo.|  
 |external_pool_id|**int**|**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores.<br /><br /> IDENTIFICADOR del grupo de recursos externos que usa este grupo de cargas de trabajo.|  
   
 ## <a name="remarks"></a>Observaciones  
- La vista de catálogo muestra los metadatos almacenados. Para ver la configuración en memoria, use la vista de administración dinámica correspondiente, [Sys. dm_resource_governor_workload_groups &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-workload-groups-transact-sql.md).  
+ La vista de catálogo muestra los metadatos almacenados. Para ver la configuración en memoria, use la vista de administración dinámica correspondiente, [sys.dm_resource_governor_workload_groups &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-workload-groups-transact-sql.md).  
   
  La configuración almacenada puede ser diferente a la configuración en memoria si se ha cambiado la configuración del regulador de recursos pero sin aplicar la instrucción ALTER RESOURCE GOVERNOR RECONFIGURE.  
   

@@ -1,6 +1,6 @@
 ---
-description: Sys. resource_governor_external_resource_pools (Transact-SQL)
-title: Sys. resource_governor_external_resource_pools (Transact-SQL) | Microsoft Docs
+description: sys.resource_governor_external_resource_pools (Transact-SQL)
+title: sys.resource_governor_external_resource_pools (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 11/13/2017
 ms.prod: sql
@@ -17,16 +17,16 @@ helpviewer_keywords:
 - sys.resource_governor_external_resource_pools
 - resource_governor_external_resource_pools
 ms.assetid: 75063e36-a91b-496f-9936-88f3d57bd447
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 24b51d8970e9609e486c3a5623ba914aee5e64bd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 47e09dba80cf7c1b931f8d6949d4667023baf4e6
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550474"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101761"
 ---
-# <a name="sysresource_governor_external_resource_pools-transact-sql"></a>Sys. resource_governor_external_resource_pools (Transact-SQL)
+# <a name="sysresource_governor_external_resource_pools-transact-sql"></a>sys.resource_governor_external_resource_pools (Transact-SQL)
 [!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 **Se aplica a:** [!INCLUDE[sssql15-md](../../includes/sssql15-md.md)] [!INCLUDE[rsql-productname-md](../../includes/rsql-productname-md.md)]y [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)][!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)]
 
@@ -55,7 +55,7 @@ Requiere el permiso VIEW SERVER STATE.
 
 [Regulador de recursos](../../relational-databases/resource-governor/resource-governor.md)
 
-[Sys. dm_resource_governor_resource_pool_affinity &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pool-affinity-transact-sql.md)
+[sys.dm_resource_governor_resource_pool_affinity &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pool-affinity-transact-sql.md)
 
 [Opción de configuración de servidor Scripts externos habilitados](../../database-engine/configure-windows/external-scripts-enabled-server-configuration-option.md)
 

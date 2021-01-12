@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - MSrepl_version system table
 ms.assetid: c1330f03-940b-4564-ac42-6030c6e21173
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 978cae29c7a2ec1a60c106d4ed29acd45852ff19
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 2705f8bba91c26bebf886064b795f0f27a78ec2b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544475"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100589"
 ---
 # <a name="msrepl_version-transact-sql"></a>MSrepl_version (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "89544475"
 |-----------------|---------------|-----------------|  
 |**major_version**|**int**|Número de versión principal de la base de datos de distribución.|  
 |**minor_version**|**int**|Número de versión secundario de la base de datos de distribución.|  
-|**revisión**|**int**|Número de revisión.|  
+|**revision**|**int**|Número de revisión.|  
 |**db_existed**|**bit**|Indica si la base de datos de distribución existe antes de que se llame a **sp_adddistributiondb** .|  
   
 ## <a name="see-also"></a>Consulte también  

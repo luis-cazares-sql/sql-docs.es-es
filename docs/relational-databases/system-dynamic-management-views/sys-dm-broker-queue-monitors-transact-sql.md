@@ -1,6 +1,6 @@
 ---
 description: sys.dm_broker_queue_monitors (Transact-SQL)
-title: Sys. dm_broker_queue_monitors (Transact-SQL) | Microsoft Docs
+title: sys.dm_broker_queue_monitors (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_broker_queue_monitors dynamic management view
 ms.assetid: 401207dc-ef4a-4a3f-879c-76dcbb52d6bc
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 15090a3b52be40dba3735bb0b10ef185efe5de2b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: a553a293d5423b4731f0f2547a6b5d9d4d5c60ac
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551319"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099972"
 ---
 # <a name="sysdm_broker_queue_monitors-transact-sql"></a>sys.dm_broker_queue_monitors (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "89551319"
 |-----------------|---------------|-----------------|  
 |**database_id**|**int**|Identificador del objeto de la base de datos que contiene la cola que supervisa el monitor. Acepta valores NULL.|  
 |**queue_id**|**int**|Identificador del objeto de la cola que supervisa el monitor. Acepta valores NULL.|  
-|**state**|**nvarchar(32)**|Estado del monitor. Acepta valores NULL. Es uno de los siguientes:<br /><br /> **INACTIVE**<br /><br /> **NOTIFIED**<br /><br /> **RECEIVES_OCCURRING**|  
+|**state**|**nvarchar(32)**|Estado del monitor. Acepta valores NULL. Es uno de los siguientes:<br /><br /> **INACTIVA**<br /><br /> **NOTIFIED**<br /><br /> **RECEIVES_OCCURRING**|  
 |**last_empty_rowset_time**|**datetime**|Última vez que una instrucción RECEIVE de la cola devolvió un resultado vacío. Acepta valores NULL.|  
 |**last_activated_time**|**datetime**|Última vez que este monitor de cola activó un procedimiento almacenado. Acepta valores NULL.|  
 |**tasks_waiting**|**int**|Número de sesiones que esperan actualmente en una instrucción RECEIVE de esta cola. Acepta valores NULL.<br /><br /> Nota: este número incluye cualquier sesión que ejecute una instrucción Receive, independientemente de si el monitor de cola inició la sesión. Es así si usa WAITFOR junto con RECEIVE. Básicamente, estas tareas esperan que lleguen mensajes a la cola.|  

@@ -1,6 +1,6 @@
 ---
 description: sys.availability_databases_cluster (Transact-SQL)
-title: Sys. availability_databases_cluster (Transact-SQL) | Microsoft Docs
+title: sys.availability_databases_cluster (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -21,14 +21,14 @@ helpviewer_keywords:
 - sys.availability_databases_cluster catalog view
 - Availability Groups [SQL Server], databases
 ms.assetid: 8d9c57e5-7f39-4315-b466-92748231140a
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 3d600d524c5bee67113c98065989b0706acbd0f4
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 1316bf5c7a619eb5f9c204ec32e1ac6e63e5d4bb
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551517"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099252"
 ---
 # <a name="sysavailability_databases_cluster-transact-sql"></a>sys.availability_databases_cluster (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -45,13 +45,13 @@ ms.locfileid: "89551517"
 |**database_name**|**sysname**|Nombre de la base de datos que se agregó al grupo de disponibilidad.|  
   
 ## <a name="permissions"></a>Permisos  
- Si el autor de la llamada de **Sys. availability_databases_cluster** no es el propietario de la base de datos, los permisos mínimos necesarios para ver la fila correspondiente son el permiso ALTER any Database o View any Database de nivel de servidor, o el permiso CREATE DATABASE en la base de datos **maestra** .  
+ Si el autor de la llamada de **Sys.availability_databases_cluster** no es el propietario de la base de datos, los permisos mínimos necesarios para ver la fila correspondiente son el permiso ALTER any Database o View any Database de nivel de servidor, o el permiso CREATE DATABASE en la base de datos **maestra** .  
   
 ## <a name="see-also"></a>Consulte también  
  [sys.availability_groups &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-availability-groups-transact-sql.md)   
  [sys.databases &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md)   
- [Sys. dm_hadr_database_replica_states &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-states-transact-sql.md)   
- [Sys. dm_hadr_database_replica_cluster_states &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-cluster-states-transact-sql.md)   
+ [sys.dm_hadr_database_replica_states &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-states-transact-sql.md)   
+ [sys.dm_hadr_database_replica_cluster_states &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-cluster-states-transact-sql.md)   
  [Información general de los grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server.md)  
   
   

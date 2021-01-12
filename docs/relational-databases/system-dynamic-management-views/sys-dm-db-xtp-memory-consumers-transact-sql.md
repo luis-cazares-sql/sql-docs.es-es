@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_xtp_memory_consumers dynamic management view
 ms.assetid: f7ab2eaf-e627-464d-91fe-0e170b3f37bc
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a962925e0a359055286b6598914cd3e79cf8036c
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 5b27a5202f20e6ced2ad73734688702cfbb7e7a2
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474976"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099895"
 ---
 # <a name="sysdm_db_xtp_memory_consumers-transact-sql"></a>sys.dm_db_xtp_memory_consumers (Transact-SQL)
 [!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -51,10 +51,10 @@ ms.locfileid: "97474976"
 |sizeclass_count|**int**|Solo para uso interno.|  
 |min_sizeclass|**int**|Solo para uso interno.|  
 |max_sizeclass|**int**|Solo para uso interno.|  
-|memory_consumer_address|**varbinary**|Dirección interna del consumidor. Solo para uso interno.|  
+|memory_consumer_address|**varbinary**|Dirección interna del consumidor. Sólo para uso interno.|  
 |xtp_object_id|**bigint**|IDENTIFICADOR de objeto de OLTP en memoria que corresponde a la tabla optimizada para memoria.|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  En la salida, los asignadores en los niveles de base de datos hacen referencia a las tablas de usuario, los índices y las tablas del sistema. VARHEAP con object_id = NULL hace referencia en la memoria asignada a tablas con columnas de longitud variable.  
   
 ## <a name="permissions"></a>Permisos  
