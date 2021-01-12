@@ -1,6 +1,6 @@
 ---
 description: sys.tcp_endpoints (Transact-SQL)
-title: Sys. tcp_endpoints (Transact-SQL) | Microsoft Docs
+title: sys.tcp_endpoints (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.tcp_endpoints catalog view
 ms.assetid: 43cc3afa-cced-4463-8e97-fbfdaf2e4fa8
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0b6a262bad2d897725d625df592f5a6a8b712a6c
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: f5717389606bb3b73dc95c6a7eaedd6e03312cfd
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545015"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094435"
 ---
 # <a name="systcp_endpoints-transact-sql"></a>sys.tcp_endpoints (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  Contiene una fila por cada extremo TCP que haya en el sistema. Los extremos descritos por **Sys. tcp_endpoints** proporcionan un objeto para conceder y revocar el privilegio de conexión. La información que se muestra sobre puertos y direcciones IP no se utiliza para configurar los protocolos y es posible que no coincida con la configuración real del protocolo. Para ver y configurar protocolos, utilice el Administrador de configuración de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
+  Contiene una fila por cada extremo TCP que haya en el sistema. Los extremos que se describen en **Sys.tcp_endpoints** proporcionan un objeto para conceder y revocar el privilegio de conexión. La información que se muestra sobre puertos y direcciones IP no se utiliza para configurar los protocolos y es posible que no coincida con la configuración real del protocolo. Para ver y configurar protocolos, utilice el Administrador de configuración de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
   
 |Nombre de la columna|Tipo de datos|Descripción|  
@@ -41,7 +41,7 @@ ms.locfileid: "89545015"
 |**ip_address**|**nvarchar (45)**|Dirección IP de escucha según se especifica en la cláusula LISTENER_IP. Acepta valores NULL.|  
   
 ## <a name="remarks"></a>Observaciones  
- Ejecute la siguiente consulta para reunir información sobre los extremos y las conexiones. Los extremos sin conexiones actuales o sin conexiones TCP aparecerán con valores NULL. Agregue la **WHERE** cláusula WHERE `WHERE des.session_id = @@SPID` para devolver información sobre la conexión actual.  
+ Ejecute la siguiente consulta para reunir información sobre los extremos y las conexiones. Los extremos sin conexiones actuales o sin conexiones TCP aparecerán con valores NULL. Agregue la  cláusula WHERE `WHERE des.session_id = @@SPID` para devolver información sobre la conexión actual.  
   
 ```  
 SELECT des.login_name, des.host_name, program_name,  dec.net_transport, des.login_time,   

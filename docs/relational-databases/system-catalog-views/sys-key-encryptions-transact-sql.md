@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.key_encryptions catalog view
 ms.assetid: c39cecf8-af63-40b9-98e5-f84a5bf3ae54
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c841e05d54ee5ba672107426c2f10b2396b84a76
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3210dabc99d3bdd80a6cd274f259e5027fe83dec
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97472996"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094540"
 ---
 # <a name="syskey_encryptions-transact-sql"></a>sys.key_encryptions (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "97472996"
 |Nombres de columna|Tipos de datos|Descripción|  
 |------------------|----------------|-----------------|  
 |**key_id**|**int**|Id. de la clave cifrada.|  
-|**thumbprint**|**varbinary(32)**|Hash SHA-1 del certificado o GUID de la clave simétrica con el que se cifra la clave.|  
+|**huella**|**varbinary(32)**|Hash SHA-1 del certificado o GUID de la clave simétrica con el que se cifra la clave.|  
 |**crypt_type**|**Char (4)**|Tipo de cifrado:<br /><br /> ESKS = Cifrado mediante clave simétrica<br /><br /> ESKP, ESP2 o ESP3 = cifrado por contraseña<br /><br /> EPUC = Cifrado mediante certificado<br /><br /> EPUA = Cifrado mediante clave asimétrica<br /><br /> ESKM = Cifrado mediante clave maestra|  
 |**crypt_type_desc**|**nvarchar(60)**|Descripción del tipo de cifrado:<br /><br /> ENCRYPTION BY SYMMETRIC KEY<br /><br /> ENCRYPTION BY PASSWORD <br />(A partir de [!INCLUDE[sssqlv14_md](../../includes/sssqlv14-md.md)] , incluye un número de versión para su uso con CSS).<br /><br /> ENCRYPTION BY CERTIFICATE<br /><br /> ENCRYPTION BY ASYMMETRIC KEY<br /><br /> ENCRYPTION BY MASTER KEY<br /><br /> Nota: Windows DPAPI se usa para proteger la clave maestra de servicio.|  
 |**crypt_property**|**varbinary(max)**|Bits firmados o cifrados.|  

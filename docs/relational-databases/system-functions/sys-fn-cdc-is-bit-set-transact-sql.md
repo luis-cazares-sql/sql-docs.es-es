@@ -1,6 +1,6 @@
 ---
 description: sys.fn_cdc_is_bit_set (Transact-SQL)
-title: Sys. fn_cdc_is_bit_set (Transact-SQL) | Microsoft Docs
+title: sys.fn_cdc_is_bit_set (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.fn_cdc_is_bit_set
 - fn_cdc_is_bit_set
 ms.assetid: 792fe7cf-b3b8-4f25-8329-78d63f0e6921
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: ab93830bd9e2b164f5b76412b2b412dc095c6c9c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 3c68325c46c275eeb797a4601fa7fd2ea375576f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88321621"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094997"
 ---
 # <a name="sysfn_cdc_is_bit_set-transact-sql"></a>sys.fn_cdc_is_bit_set (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -43,19 +43,19 @@ sys.fn_cdc_is_bit_set ( position , update_mask )
 ```  
   
 ## <a name="arguments"></a>Argumentos  
- *localización*  
+ *position*  
  Es la posición ordinal en la máscara que hay que comprobar. la *posición* es **int**.  
   
  *update_mask*  
  Es la máscara que identifica las columnas actualizadas. *update_mask* es **varbinary (128)**.  
   
-## <a name="return-type"></a>Tipo de valor devuelto  
+## <a name="return-type"></a>Tipo devuelto  
  **bit**  
   
 ## <a name="remarks"></a>Observaciones  
- Esta función se utiliza normalmente como parte de una consulta de datos modificados para indicar si una columna ha cambiado. En este escenario, la función [Sys. fn_cdc_get_column_ordinal](../../relational-databases/system-functions/sys-fn-cdc-get-column-ordinal-transact-sql.md) se utiliza antes de la consulta para obtener el ordinal de columna necesario. a continuación, se aplica **Sys. fn_cdc_is_bit_set** a cada fila de datos modificados que se devuelve, y proporciona la información específica de la columna como parte del conjunto de resultados devuelto.  
+ Esta función se utiliza normalmente como parte de una consulta de datos modificados para indicar si una columna ha cambiado. En este escenario, la función [Sys.fn_cdc_get_column_ordinal](../../relational-databases/system-functions/sys-fn-cdc-get-column-ordinal-transact-sql.md) se utiliza antes de la consulta para obtener el ordinal de columna necesario. a continuación, **Sys.fn_cdc_is_bit_set** se aplica a cada fila de datos modificados que se devuelve, y proporciona la información específica de la columna como parte del conjunto de resultados devuelto.  
   
- Se recomienda usar esta función en lugar de la función [Sys. fn_cdc_has_column_changed](../../relational-databases/system-functions/sys-fn-cdc-has-column-changed-transact-sql.md) cuando se determine si las columnas han cambiado en todas las filas de un conjunto de resultados devuelto.  
+ Se recomienda usar esta función en lugar de la función [Sys.fn_cdc_has_column_changed](../../relational-databases/system-functions/sys-fn-cdc-has-column-changed-transact-sql.md) a la hora de determinar si las columnas han cambiado en todas las filas de un conjunto de resultados devuelto.  
   
 ## <a name="permissions"></a>Permisos  
  Debe pertenecer al rol **public** .  
@@ -79,10 +79,10 @@ GO
   
 ## <a name="see-also"></a>Consulte también  
  [Funciones de captura de datos modificados &#40;Transact-SQL&#41;](../../relational-databases/system-functions/change-data-capture-functions-transact-sql.md)   
- [Sys. fn_cdc_get_column_ordinal &#40;Transact-SQL&#41;](../../relational-databases/system-functions/sys-fn-cdc-get-column-ordinal-transact-sql.md)   
- [Sys. fn_cdc_has_column_changed &#40;Transact-SQL&#41;](../../relational-databases/system-functions/sys-fn-cdc-has-column-changed-transact-sql.md)   
- [CDC. fn_cdc_get_all_changes_&#60;capture_instance&#62;  &#40;Transact-SQL&#41;](../../relational-databases/system-functions/cdc-fn-cdc-get-all-changes-capture-instance-transact-sql.md)   
- [CDC. fn_cdc_get_net_changes_&#60;capture_instance&#62; &#40;Transact-SQL&#41;](../../relational-databases/system-functions/cdc-fn-cdc-get-net-changes-capture-instance-transact-sql.md)   
+ [sys.fn_cdc_get_column_ordinal &#40;&#41;de Transact-SQL ](../../relational-databases/system-functions/sys-fn-cdc-get-column-ordinal-transact-sql.md)   
+ [sys.fn_cdc_has_column_changed &#40;&#41;de Transact-SQL ](../../relational-databases/system-functions/sys-fn-cdc-has-column-changed-transact-sql.md)   
+ [cdc.fn_cdc_get_all_changes_&#60;capture_instance&#62;  &#40;Transact-SQL&#41;](../../relational-databases/system-functions/cdc-fn-cdc-get-all-changes-capture-instance-transact-sql.md)   
+ [cdc.fn_cdc_get_net_changes_&#60;capture_instance&#62; &#40;Transact-SQL&#41;](../../relational-databases/system-functions/cdc-fn-cdc-get-net-changes-capture-instance-transact-sql.md)   
  [Acerca de la captura de datos modificados &#40;SQL Server&#41;](../../relational-databases/track-changes/about-change-data-capture-sql-server.md)  
   
   

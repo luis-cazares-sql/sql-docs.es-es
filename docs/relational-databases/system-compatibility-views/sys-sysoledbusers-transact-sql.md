@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysoledbusers system table
 - sys.sysoledbusers compatibility view
 ms.assetid: fe924c17-9cad-4b2b-8124-1e0fd82931e3
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 01a2683f063280800606ebd42ba9ce65a286ab82
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 442ca09761a75a5ca53b028bf8ac0a7f58c59314
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482118"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095462"
 ---
 # <a name="syssysoledbusers-transact-sql"></a>sys.sysoledbusers (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "88482118"
 |Nombre de la columna|Tipo de datos|Descripción|  
 |-----------------|---------------|-----------------|  
 |**rmtsrvid**|**smallint**|SID (número de identificación de seguridad) del servidor.|  
-|**rmtloginame**|**nvarchar (** 128 **)**|Nombre del inicio de sesión remoto al que se asigna **loginsid** para **rmtservid**vinculado.|  
+|**rmtloginame**|**nvarchar (** 128 **)**|Nombre del inicio de sesión remoto al que se asigna **loginsid** para **rmtservid** vinculado.|  
 |**rmtpassword**|**nvarchar (** 128 **)**|Devuelve NULL.|  
 |**loginsid**|**varbinary (** 85 **)**|SID del inicio de sesión local que se va a asignar.|  
 |**status**|**smallint**|Si este valor es 1, la asignación debe utilizar las credenciales del usuario.|  

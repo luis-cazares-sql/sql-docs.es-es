@@ -20,15 +20,15 @@ helpviewer_keywords:
 - fn_xe_file_target_read_file function
 - sys.fn_xe_file_target_read_file function
 ms.assetid: cc0351ae-4882-4b67-b0d8-bd235d20c901
-author: rothja
-ms.author: jroth
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e5a79b5e3f9ded81069364ec144a8e88fede811d
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 8af7ee0bc6c899026e51110264f2b28c2f579dd7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474726"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096368"
 ---
 # <a name="sysfn_xe_file_target_read_file-transact-sql"></a>sys.fn_xe_file_target_read_file (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -49,16 +49,16 @@ sys.fn_xe_file_target_read_file ( path, mdpath, initial_file_name, initial_offse
   
 ## <a name="arguments"></a>Argumentos  
  *path*  
- Ruta de acceso a los archivos que se van a leer. la *ruta de acceso* puede contener caracteres comodín e incluir el nombre de un archivo. *path* es **nvarchar (260)**. No existe ningún valor predeterminado. En el contexto de Azure SQL Database, este valor es una dirección URL HTTP a un archivo en Azure Storage.
+ Ruta de acceso a los archivos que se van a leer. la *ruta de acceso* puede contener caracteres comodín e incluir el nombre de un archivo. *path* es **nvarchar (260)**. No tiene ningún valor predeterminado. En el contexto de Azure SQL Database, este valor es una dirección URL HTTP a un archivo en Azure Storage.
   
  *mdpath*  
- Ruta de acceso al archivo de metadatos correspondiente al archivo o archivos especificados por el argumento *path* . *mdpath* es **nvarchar (260)**. No existe ningún valor predeterminado. A partir de SQL Server 2016, este parámetro se puede proporcionar como null.
+ Ruta de acceso al archivo de metadatos correspondiente al archivo o archivos especificados por el argumento *path* . *mdpath* es **nvarchar (260)**. No tiene ningún valor predeterminado. A partir de SQL Server 2016, este parámetro se puede proporcionar como null.
   
 > [!NOTE]  
 >  [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] no requiere el parámetro *mdpath* . Sin embargo, se mantiene para la compatibilidad con versiones anteriores para los archivos de registro generados en versiones anteriores de SQL Server.  
   
  *initial_file_name*  
- Primer archivo que se va a leer de *path*. *initial_file_name* es **nvarchar (260)**. No existe ningún valor predeterminado. Si se especifica **null** como argumento, se leen todos los archivos encontrados en la *ruta de acceso* .  
+ Primer archivo que se va a leer de *path*. *initial_file_name* es **nvarchar (260)**. No tiene ningún valor predeterminado. Si se especifica **null** como argumento, se leen todos los archivos encontrados en la *ruta de acceso* .  
   
 > [!NOTE]  
 >  *initial_file_name* y *initial_offset* son argumentos emparejados. Si especifica un valor para cualquiera de ellos, debe especificar un valor para el otro.  
@@ -79,7 +79,7 @@ sys.fn_xe_file_target_read_file ( path, mdpath, initial_file_name, initial_offse
 |timestamp_utc|**datetime2**|**Se aplica a**: [!INCLUDE[ssSQLv14](../../includes/sssqlv14-md.md)] y versiones posteriores, y [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]<br /><br />Fecha y hora (zona horaria UTC) del evento. No admite valores NULL.|  
 
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  La lectura de grandes conjuntos de resultados ejecutando **Sys.fn_xe_file_target_read_file** en [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] puede producir un error. Use el modo **resultados a archivo** (**Ctrl + Mayús + F**) para exportar grandes conjuntos de resultados a un archivo y, en su lugar, leer el archivo con otra herramienta.  
   
 ## <a name="permissions"></a>Permisos  

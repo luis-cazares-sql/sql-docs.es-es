@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_tran_active_snapshot_database_transactions dynamic management view
 ms.assetid: 55b83f9c-da10-4e65-9846-f4ef3c0c0f36
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 8284708f43c600085baea8774a797a4688256c7e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 24259c4e5842243545b9fc02d07c6b7a33387289
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474896"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094013"
 ---
 # <a name="sysdm_tran_active_snapshot_database_transactions-transact-sql"></a>sys.dm_tran_active_snapshot_database_transactions (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "97474896"
 > [!NOTE]  
 >  Para llamar a este método desde [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] o [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] , use el nombre **Sys.dm_pdw_nodes_tran_active_snapshot_database_transactions**.  
   
-## <a name="syntax"></a>Syntax  
+## <a name="syntax"></a>Sintaxis  
   
 ```  
   
@@ -77,7 +77,7 @@ sys.dm_tran_active_snapshot_database_transactions
 En [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] , requiere el `VIEW SERVER STATE` permiso.   
 En SQL Database objetivos de servicio Basic, S0 y S1, y para las bases de datos de grupos elásticos, `Server admin` `Azure Active Directory admin` se requiere la cuenta o. En el resto de los objetivos del servicio SQL Database, `VIEW DATABASE STATE` se requiere el permiso en la base de datos.   
 
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  **Sys.dm_tran_active_snapshot_database_transactions** notifica las transacciones que tienen asignado un número de secuencia de la transacción (xsn). Este XSN se asigna cuando la transacción tiene acceso por primera vez al almacén de versiones. En una base de datos habilitada para el aislamiento de instantáneas o el aislamiento de lectura confirmada que utiliza las versiones de fila, los ejemplos muestran cuándo se asigna un valor XSN a una transacción:  
   
 -   Si una transacción se ejecuta con el nivel de aislamiento serializable, se asigna un XSN cuando la transacción ejecuta por primera vez una instrucción, como una operación UPDATE, que provoca la creación de una versión de fila.  

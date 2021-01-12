@@ -1,6 +1,6 @@
 ---
 description: sys.spatial_index_tessellations (Transact-SQL)
-title: Sys. spatial_index_tessellations (Transact-SQL) | Microsoft Docs
+title: sys.spatial_index_tessellations (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.spatial_index_tessellations catalog view
 ms.assetid: 8b17a9a4-b57f-4220-8138-fc73581b1670
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 783c73ba514e348cd515929ae988c4097225ec5b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: ddf7b9cd75999da6cc48f6e7a83bab7a733f822b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539502"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095426"
 ---
 # <a name="sysspatial_index_tessellations-transact-sql"></a>sys.spatial_index_tessellations (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "89539502"
 
 |Nombre de la columna|Tipo de datos|Descripción|  
 |-----------------|---------------|-----------------|  
-|object_id|**int**|Identificador del objeto en el que se define el índice. Cada par (object_id, index_id) tiene una entrada correspondiente en [Sys. spatial_indexes](../../relational-databases/system-catalog-views/sys-spatial-indexes-transact-sql.md).|  
+|object_id|**int**|Identificador del objeto en el que se define el índice. Cada par (object_id, index_id) tiene una entrada correspondiente en [Sys.spatial_indexes](../../relational-databases/system-catalog-views/sys-spatial-indexes-transact-sql.md).|  
 |index_id|**int**|Identificador del índice espacial en el que se define la columna indizada.|  
 |tessellation_scheme|**sysname**|Nombre del esquema de teselación, uno de los siguientes: GEOMETRY_GRID, GEOGRAPHY_GRID|  
 |bounding_box_xmin|**float(53)**|Coordenada x de la esquina inferior izquierda del cuadro de límite; uno de los siguientes: NULL = no es aplicable para un esquema de teselación determinado (como GEOGRAPHY_GRID) *n* = si tessellation_scheme es GEOMETRY_GRID, el valor de la coordenada x mín.                     **Nota:** Las coordenadas definidas por los parámetros del cuadro de límite se interpretan para cada objeto según su [identificador de referencia espacial (SRID)](../../relational-databases/spatial/spatial-reference-identifiers-srids.md).|  

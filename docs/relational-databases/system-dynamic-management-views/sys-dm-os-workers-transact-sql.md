@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_os_workers dynamic management view
 ms.assetid: 4d5d1e52-a574-4bdd-87ae-b932527235e8
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a7439c541a15f980cb85b91bc336e0e63d2f3dec
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: d93b2be18167232798b3d8de6ce1ca67f9e8c9d6
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97482676"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095140"
 ---
 # <a name="sysdm_os_workers-transact-sql"></a>sys.dm_os_workers (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -77,7 +77,7 @@ ms.locfileid: "97482676"
 |processor_group|**smallint**|Almacena el identificador de grupo de procesadores que está asignado a este subproceso.|  
 |pdw_node_id|**int**|**Se aplica a**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] , [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> Identificador del nodo en el que se encuentra esta distribución.|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  Si el estado de trabajador es RUNNING y se está ejecutando de forma no preferente, la dirección del trabajador coincide con active_worker_address en sys.dm_os_schedulers.  
   
  Cuando se señala a un trabajador que espera en un evento, el trabajador se coloca al principio de la cola de ejecutables. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] permite que suceda esto 1.000 veces en una fila; después, el trabajador se coloca al final de la cola. Mover un trabajador al final de la cola tiene algunas implicaciones sobre el rendimiento.  

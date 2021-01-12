@@ -17,14 +17,14 @@ helpviewer_keywords:
 - backup media [SQL Server], sysopentapes system table
 - sysopentapes system table
 ms.assetid: c066ca9b-9cfd-46b1-90a3-5c8dc9e7b6ae
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5a64ea925775daacdbd44a71a945e86fe0f2c9aa
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 0cb05c0ac88f7f362651b872fa84598a656ff25d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537911"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096066"
 ---
 # <a name="sysopentapes-transact-sql"></a>sysopentapes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "89537911"
   Contiene una fila por cada dispositivo de cinta abierto. Esta vista se almacena en la base de datos **maestra** .  
   
 > [!IMPORTANT]  
->  Esta tabla del sistema se incluye como una vista para la compatibilidad con versiones anteriores. En su lugar, use la vista de administración dinámica [Sys. dm_io_backup_tapes &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-io-backup-tapes-transact-sql.md) .  
+>  Esta tabla del sistema se incluye como una vista para la compatibilidad con versiones anteriores. En su lugar, use el sys.dm_io_backup_tapes &#40;la vista de administración dinámica [de Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-io-backup-tapes-transact-sql.md) .  
   
 > [!NOTE]  
 >  No se puede quitar la vista **sysopentapes** .  

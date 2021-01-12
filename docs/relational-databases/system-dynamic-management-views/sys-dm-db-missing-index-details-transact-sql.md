@@ -19,15 +19,15 @@ helpviewer_keywords:
 - missing indexes feature [SQL Server], sys.dm_db_missing_index_details dynamic management view
 - sys.dm_db_missing_index_details dynamic management view
 ms.assetid: ced484ae-7c17-4613-a3f9-6d8aba65a110
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d67255c0e42b42794ed97797513ae699d287afd8
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: fdce3b3269d0b60c20d82064955c83416c4254eb
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97462786"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095207"
 ---
 # <a name="sysdm_db_missing_index_details-transact-sql"></a>sys.dm_db_missing_index_details (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "97462786"
 |**included_columns**|**nvarchar(4000)**|Lista de columnas de cobertura separadas por comas requeridas por la consulta. Para obtener más información sobre cómo abarcar o incluir columnas, vea [crear índices con columnas incluidas](../../relational-databases/indexes/create-indexes-with-included-columns.md).<br /><br /> En el caso de los índices optimizados para memoria (hash y optimizado para memoria no agrupado), omita **included_columns**. Todas las columnas de la tabla se incluyen en cada índice optimizado para memoria.|  
 |**instrucción**|**nvarchar(4000)**|Nombre de la tabla en la que falta el índice.|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  La información devuelta por **sys.dm_db_missing_index_details** se actualiza cuando se optimiza una consulta mediante el optimizador de consultas y no se guarda. La información sobre índices que faltan solo se conserva hasta que se reinicia [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Los administradores de bases de datos deben realizar copias de seguridad de forma periódica de la información de índices que faltan si desean conservarla después de reciclar el servidor.  
   
  Para determinar a cuáles de los grupos de índices que faltan pertenece un índice que falta específico, puede consultar la vista de administración dinámica **sys.dm_db_missing_index_groups** mediante una combinación de igualdad con **sys.dm_db_missing_index_details** basada en la columna **index_handle**.  

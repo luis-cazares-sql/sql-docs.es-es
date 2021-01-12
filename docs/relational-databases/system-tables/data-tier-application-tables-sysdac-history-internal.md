@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - sysdac_history_internal
 ms.assetid: 774a1678-0b27-42be-8adc-a6d7a4a56510
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 7f89db526d638a6e934e8db7ac791875b467e487
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: eaea0060136a928e6fab1184c9fd0c08d88df09f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544655"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094905"
 ---
 # <a name="data-tier-application-tables---sysdac_history_internal"></a>Tablas de aplicación de capa de datos: sysdac_history_internal
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,12 +36,12 @@ ms.locfileid: "89544655"
 |**sequence_id**|**int**|Identifica un paso dentro de una acción.|  
 |**instance_id**|**uniqueidentifier**|Identificador de la instancia de DAC. Esta columna se puede combinar en la columna **instance_id** en [dbo.sysdac_instances &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/data-tier-application-views-dbo-sysdac-instances.md).|  
 |**action_type**|**tinyint**|Identificador del tipo de acción:<br /><br /> **0** = implementar<br /><br /> **1** = crear<br /><br /> **2** = cambiar nombre<br /><br /> **3** = desasociar<br /><br /> **4** = eliminar|  
-|**action_type_name**|**VARCHAR (19)**|Nombre del tipo de acción:<br /><br /> **deploy**<br /><br /> **create**<br /><br /> **rename**<br /><br /> **conecta**<br /><br /> **delete**|  
+|**action_type_name**|**VARCHAR (19)**|Nombre del tipo de acción:<br /><br /> **deploy**<br /><br /> **crear**<br /><br /> **rename**<br /><br /> **conecta**<br /><br /> **delete**|  
 |**dac_object_type**|**tinyint**|Identificador del tipo de objeto afectado por la acción:<br /><br /> **0** = dacpac<br /><br /> **1** = inicio de sesión<br /><br /> **2** = base de datos|  
 |**dac_object_type_name**|**VARCHAR (8)**|Nombre del tipo de objeto afectado por la acción:<br /><br /> **dacpac** = instancia de DAC<br /><br /> **Inicio**<br /><br /> **database**|  
 |**action_status**|**tinyint**|Código que identifica el estado actual de la acción:<br /><br /> **0** = pendiente<br /><br /> **1** = correcto<br /><br /> **2** = error|  
-|**action_status_name**|**VARCHAR (11)**|Estado actual de la acción:<br /><br /> **pending**<br /><br /> **realizado**<br /><br /> **puedan**|  
-|**Requerido**|**bit**|Lo utiliza el [!INCLUDE[ssDE](../../includes/ssde-md.md)] al revertir una operación DAC.|  
+|**action_status_name**|**VARCHAR (11)**|Estado actual de la acción:<br /><br /> **pendientes**<br /><br /> **realizado**<br /><br /> **puedan**|  
+|**Obligatorio**|**bit**|Lo utiliza el [!INCLUDE[ssDE](../../includes/ssde-md.md)] al revertir una operación DAC.|  
 |**dac_object_name_pretran**|**sysname**|Nombre del objeto antes de que se confirme la transacción que contiene la acción. Solo se utiliza para las bases de datos e inicios de sesión.|  
 |**dac_object_name_posttran**|**sysname**|Nombre del objeto después de que se confirme la transacción que contiene la acción. Solo se utiliza para las bases de datos e inicios de sesión.|  
 |**sqlscript**|**nvarchar(max)**|Script [!INCLUDE[tsql](../../includes/tsql-md.md)] que implementa una acción en una base de datos o inicio de sesión.|  

@@ -1,6 +1,6 @@
 ---
-description: Sys. fn_all_changes_ &lt; capture_instance &gt; (TRANSACT-SQL)
-title: Sys. fn_all_changes_ &lt; capture_instance &gt; (TRANSACT-SQL) | Microsoft Docs
+description: '&lt;capture_instance sys.fn_all_changes_ &gt; (TRANSACT-SQL)'
+title: sys.fn_all_changes_ &lt; capture_instance &gt; (TRANSACT-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/02/2016
 ms.prod: sql
@@ -19,16 +19,16 @@ helpviewer_keywords:
 - fn_all_changes_<capture_instance>
 - sys.fn_all_changes_<capture_instance>
 ms.assetid: 564fae96-b88c-4f22-9338-26ec168ba6f5
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: e091db783b29a767a5f1f762dbbc037a878ce8a7
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c1b411daa6ccdfdb34da1a9560520416e26e1191
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88486348"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096486"
 ---
-# <a name="sysfn_all_changes_ltcapture_instancegt-transact-sql"></a>Sys. fn_all_changes_ &lt; capture_instance &gt; (TRANSACT-SQL)
+# <a name="sysfn_all_changes_ltcapture_instancegt-transact-sql"></a>&lt;capture_instance sys.fn_all_changes_ &gt; (TRANSACT-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contenedores para las funciones de consulta **All Changes** . El procedimiento almacenado sys.sp_cdc_generate_wrapper_function genera los scripts necesarios para crear estas funciones.  
@@ -59,7 +59,7 @@ fn_all_changes_<capture_instance> ('start_time' ,'end_time', '<row_filter_option
  *end_time*  
  Valor **DateTime** que representa el extremo superior del intervalo de entradas de la tabla de cambios que se va a incluir en el conjunto de resultados.  
   
- Este parámetro puede tomar uno de dos significados posibles según el valor elegido para @closed_high_end_point cuando se llama a sys. sp_cdc_generate_wrapper_function para generar el script de creación para la función de contenedor:  
+ Este parámetro puede tomar uno de dos significados posibles según el valor elegido para @closed_high_end_point cuando se llama a sys.sp_cdc_generate_wrapper_function para generar el script de creación para la función de contenedor:  
   
 -   @closed_high_end_point = 1  
   
@@ -67,7 +67,7 @@ fn_all_changes_<capture_instance> ('start_time' ,'end_time', '<row_filter_option
   
 -   @closed_high_end_point = 0  
   
-     Solo se incluyen en el conjunto de resultados las filas de la tabla de cambios CDC. capture_instance_CT que tienen un tiempo de confirmación asociado estrictamente inferior a end_time.  
+     Solo se incluyen en el conjunto de resultados las filas de la tabla de cambios cdc.capture_instance_CT que tienen un tiempo de confirmación asociado estrictamente inferior a end_time.  
   
  Si se proporciona un valor NULL para este argumento, el extremo superior del intervalo de consulta se corresponderá con el extremo superior del intervalo válido de la instancia de captura.  
   
@@ -76,7 +76,7 @@ fn_all_changes_<capture_instance> ('start_time' ,'end_time', '<row_filter_option
   
  Puede ser una de las siguientes opciones:  
   
- todo  
+ all  
  Devuelve todos los cambios dentro del intervalo LSN especificado. Para los cambios que se producen debido a una operación de actualización, esta opción devuelve solo la fila que contiene los valores nuevos una vez aplicada la actualización.  
   
  all update old  
@@ -93,7 +93,7 @@ fn_all_changes_<capture_instance> ('start_time' ,'end_time', '<row_filter_option
 |\<columns from @update_flag_list>|**bit**|Un indicador de bits se denomina anexando _uflag al nombre de la columna. La marca siempre se establece en NULL cuando \_ _CDC_OPERATION es ' d ', ' I ', de ' uo '. Cuando \_ _CDC_OPERATION es ' un ', se establece en 1 si la actualización generó un cambio en la columna correspondiente. De lo contrario, es 0.|  
   
 ## <a name="remarks"></a>Observaciones  
- La fn_all_changes_<capture_instance función> actúa como contenedor de la función de consulta CDC. fn_cdc_get_all_changes_<capture_instance>. El procedimiento almacenado sys.sp_cdc_generate_wrapper se utiliza para generar el script que crea el contenedor.  
+ La fn_all_changes_<capture_instance función> actúa como contenedor de la CDC.fn_cdc_get_all_changes_<capture_instance> consulta. El procedimiento almacenado sys.sp_cdc_generate_wrapper se utiliza para generar el script que crea el contenedor.  
   
  Las funciones contenedoras no se crean automáticamente. Para crear funciones contenedoras hay que seguir dos pasos:  
   
@@ -105,14 +105,14 @@ fn_all_changes_<capture_instance> ('start_time' ,'end_time', '<row_filter_option
   
  Si se usa el parámetro @closed_high_end_point al crear el script, se pueden generar contenedores para admitir un límite superior cerrado o un límite superior abierto en la ventana de consulta especificada. Es decir, puede decidir si las entradas que tienen un tiempo de confirmación igual al límite superior del intervalo de extracción se incluirán en el intervalo. De forma predeterminada, se incluye el límite superior.  
   
- El conjunto de resultados devuelto por la función de contenedor **All Changes** devuelve las columnas _ _ $ start_lsn y \_ \_ $seqval de la tabla de cambios como columnas \_ _CDC_STARTLSN y \_ _CDC_SEQVAL, respectivamente. Se sigue con las columnas sometidas a seguimiento que aparecían en el parámetro * \@ column_list* cuando se generó el contenedor. Si * \@ COLUMN_LIST* es null, se devuelven todas las columnas de origen sometidas a seguimiento. Las columnas de origen van seguidas de una columna de operación, \_ _CDC_OPERATION, que es una columna de uno o dos caracteres que identifica la operación.  
+ El conjunto de resultados devuelto por la función de contenedor **All Changes** devuelve las columnas _ _ $ start_lsn y \_ \_ $seqval de la tabla de cambios como columnas \_ _CDC_STARTLSN y \_ _CDC_SEQVAL, respectivamente. Se sigue con las columnas sometidas a seguimiento que aparecían en el parámetro *\@ column_list* cuando se generó el contenedor. Si *\@ COLUMN_LIST* es null, se devuelven todas las columnas de origen sometidas a seguimiento. Las columnas de origen van seguidas de una columna de operación, \_ _CDC_OPERATION, que es una columna de uno o dos caracteres que identifica la operación.  
   
  A continuación, las marcas de bits se anexan al conjunto de resultados para cada columna que se identifica en el parámetro @update_flag_list. Para el contenedor **All Changes** , las marcas de bits siempre serán NULL si __CDC_OPERATION es ' d ', ' I ' o ' uo '. Si \_ _CDC_OPERATION es ' un ', la marca se establecerá en 1 o 0, dependiendo de si la operación de actualización provocó un cambio en la columna.  
   
  La plantilla de configuración de captura de datos modificados ' Create CDC wrapper TVF for Schema ' muestra cómo usar el sp_cdc_generate_wrapper_function procedimiento almacenado para obtener scripts de creación para todas las funciones de contenedor para las funciones de consulta definidas de un esquema. A continuación, la plantilla crea esos scripts. Para obtener más información acerca de las plantillas, vea [Explorador de plantillas](../../ssms/template/template-explorer.md).  
   
-## <a name="see-also"></a>Vea también  
- [Sys. sp_cdc_generate_wrapper_function &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-generate-wrapper-function-transact-sql.md)   
+## <a name="see-also"></a>Consulte también  
+ [sys.sp_cdc_generate_wrapper_function &#40;&#41;de Transact-SQL ](../../relational-databases/system-stored-procedures/sys-sp-cdc-generate-wrapper-function-transact-sql.md)   
  [cdc.fn_cdc_get_all_changes_&#60;capture_instance&#62;  &#40;Transact-SQL&#41;](../../relational-databases/system-functions/cdc-fn-cdc-get-all-changes-capture-instance-transact-sql.md)  
   
   

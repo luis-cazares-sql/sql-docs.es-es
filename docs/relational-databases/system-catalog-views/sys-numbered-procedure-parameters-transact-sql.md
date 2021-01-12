@@ -1,6 +1,6 @@
 ---
 description: sys.numbered_procedure_parameters (Transact-SQL)
-title: Sys. numbered_procedure_parameters (Transact-SQL) | Microsoft Docs
+title: sys.numbered_procedure_parameters (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.numbered_procedure_parameters catalog view
 ms.assetid: a441d46d-1f30-41c2-8d94-e9442f59786e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 4bb67e0f0063c9ed7469b0a3d9e29a29b8117e22
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 6d716d8b08d479043bfb592b743d987ddd7bf73f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539606"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095507"
 ---
 # <a name="sysnumbered_procedure_parameters-transact-sql"></a>sys.numbered_procedure_parameters (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  Contiene una fila por cada parámetro de un procedimiento numerado. Cuando se crea un procedimiento almacenado numerado, el procedimiento base es el número 1. Todos los procedimientos subsiguientes tienen los números 2, 3, etc. **Sys. numbered_procedure_parameters** contiene las definiciones de los parámetros de todos los procedimientos subsiguientes, numerados con 2 y mayores. Esta vista no muestra los parámetros del procedimiento almacenado base (número = 1). El procedimiento almacenado base es similar a un procedimiento almacenado no numerado. Por lo tanto, sus parámetros se representan en [Sys. Parameters (Transact-SQL)](../../relational-databases/system-catalog-views/sys-parameters-transact-sql.md).  
+  Contiene una fila por cada parámetro de un procedimiento numerado. Cuando se crea un procedimiento almacenado numerado, el procedimiento base es el número 1. Todos los procedimientos subsiguientes tienen los números 2, 3, etc. **Sys.numbered_procedure_parameters** contiene las definiciones de los parámetros de todos los procedimientos subsiguientes, numerados con 2 y mayores. Esta vista no muestra los parámetros del procedimiento almacenado base (número = 1). El procedimiento almacenado base es similar a un procedimiento almacenado no numerado. Por lo tanto, sus parámetros se representan en [Sys. Parameters (Transact-SQL)](../../relational-databases/system-catalog-views/sys-parameters-transact-sql.md).  
   
 > [!IMPORTANT]  
 >  Los procedimientos numerados son desusados. Por tanto, se desaconseja su uso. Se desencadena un evento DEPRECATION_ANNOUNCEMENT cuando se compila una consulta que utiliza esta vista de catálogo.  

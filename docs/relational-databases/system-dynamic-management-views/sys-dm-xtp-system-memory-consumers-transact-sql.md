@@ -1,6 +1,6 @@
 ---
 description: sys.dm_xtp_system_memory_consumers (Transact-SQL)
-title: Sys. dm_xtp_system_memory_consumers (Transact-SQL) | Microsoft Docs
+title: sys.dm_xtp_system_memory_consumers (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_xtp_system_memory_consumers dynamic management view
 ms.assetid: 9eb0dd82-7920-42e0-9e50-7ce6e7ecee8b
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e998b531c867d78bbf27bff516aaecda6f7f9f88
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 20edce0accbe4549b5c109b8d6958fd742cd4ede
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543800"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096412"
 ---
 # <a name="sysdm_xtp_system_memory_consumers-transact-sql"></a>sys.dm_xtp_system_memory_consumers (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,7 +38,7 @@ select * from sys.dm_xtp_system_memory_consumers
   
  Para obtener más información, vea [OLTP en memoria &#40;optimización en memoria&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md).  
   
-|Nombre de columna|Tipo|Descripción|  
+|Nombre de la columna|Tipo|Descripción|  
 |-----------------|----------|-----------------|  
 |memory_consumer_id|**bigint**|Identificador interno del consumidor de memoria.|  
 |memory_consumer_type|**int**|Entero que representa el tipo de consumidor de memoria con uno de los valores siguientes:<br /><br /> 0: no debe mostrarse. Agrega el uso de memoria de dos o varios consumidores.<br /><br /> 1-pista: realiza un seguimiento del consumo de memoria de una traducción del sistema.<br /><br /> 2-VARHEAP: realiza el seguimiento del consumo de memoria para un montón de longitud variable.<br /><br /> 4-Grupo de páginas de e/s: realiza un seguimiento del consumo de memoria de un grupo de páginas del sistema utilizado para operaciones de e/s.|  
@@ -49,10 +49,10 @@ select * from sys.dm_xtp_system_memory_consumers
 |allocated_bytes|**bigint**|Número de bytes reservados para el consumidor.|  
 |used_bytes|**bigint**|Bytes utilizados por el consumidor. Solo se aplica a los consumidores de memoria varheap.|  
 |allocation_count|**int**|Número de asignaciones.|  
-|partition_count|**int**|Exclusivamente para uso interno.|  
-|sizeclass_count|**int**|Exclusivamente para uso interno.|  
-|min_sizeclass|**int**|Exclusivamente para uso interno.|  
-|max_sizeclass|**int**|Exclusivamente para uso interno.|  
+|partition_count|**int**|Solo para uso interno.|  
+|sizeclass_count|**int**|Solo para uso interno.|  
+|min_sizeclass|**int**|Solo para uso interno.|  
+|max_sizeclass|**int**|Solo para uso interno.|  
 |memory_consumer_address|**varbinary**|Dirección interna del consumidor.|  
   
 ## <a name="permissions"></a>Permisos  

@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysindexes system table
 - sys.sysindexes compatibility view
 ms.assetid: f483d89c-35c4-4a08-8f8b-737fd80d13f5
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 4b78a272e9fa2ec3a0cc3d4418986078ff02f457
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: cf8982115b1a4399c327aefc66a5e99a1d46c575
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88399411"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094200"
 ---
 # <a name="syssysindexes-transact-sql"></a>sys.sysindexes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -66,12 +66,12 @@ ms.locfileid: "88399411"
 |**name**|**sysname**|Nombre del índice o estadística. Devuelve NULL cuando **indid** = 0. Modifique la aplicación para que busque un nombre de montón NULL.|  
 |**statblob**|**image**|Objeto binario grande de estadística (BLOB).<br /><br /> Devuelve NULL.|  
 |**maxlen**|**int**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
-|**las**|**int**|Recuento de filas de nivel de datos basado en **indid** = 0 e **indid** = 1, y el valor se repite para **indid** >1.|  
+|**rows**|**int**|Recuento de filas de nivel de datos basado en **indid** = 0 e **indid** = 1, y el valor se repite para **indid** >1.|  
   
 ## <a name="remarks"></a>Observaciones  
  Las columnas definidas como reservadas no deben utilizarse.  
   
- Las columnas **DPAGES**, **Reserved**y **Used** no devolverán resultados precisos si la tabla o el índice contienen datos en la unidad de asignación ROW_OVERFLOW. Además, se realiza el seguimiento para el total de páginas de cada índice por separado y no se agregan para la tabla base. Para ver los recuentos de páginas, use las vistas de catálogo [Sys. allocation_units](../../relational-databases/system-catalog-views/sys-allocation-units-transact-sql.md) o [Sys. partitions](../../relational-databases/system-catalog-views/sys-partitions-transact-sql.md) , o la vista de administración dinámica [Sys. dm_db_partition_stats](../../relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql.md) .  
+ Las columnas **DPAGES**, **Reserved** y **Used** no devolverán resultados precisos si la tabla o el índice contienen datos en la unidad de asignación ROW_OVERFLOW. Además, se realiza el seguimiento para el total de páginas de cada índice por separado y no se agregan para la tabla base. Para ver los recuentos de páginas, use las vistas de catálogo [Sys.allocation_units](../../relational-databases/system-catalog-views/sys-allocation-units-transact-sql.md) o [Sys. partitions](../../relational-databases/system-catalog-views/sys-partitions-transact-sql.md) , o la vista de administración dinámica [Sys.dm_db_partition_stats](../../relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql.md) .  
   
  En SQL Server 2000 y versiones anteriores, [!INCLUDE[ssDE](../../includes/ssde-md.md)] mantenía contadores de modificaciones de filas. Este tipo de contadores se mantienen ahora en el nivel de columna. Por lo tanto, la columna **rowmodctr** se calcula y genera resultados similares a los resultados de versiones anteriores, pero no son exactos.  
   

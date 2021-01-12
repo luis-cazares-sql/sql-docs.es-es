@@ -1,6 +1,6 @@
 ---
 description: sys.fn_cdc_get_column_ordinal (Transact-SQL)
-title: Sys. fn_cdc_get_column_ordinal (Transact-SQL) | Microsoft Docs
+title: sys.fn_cdc_get_column_ordinal (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 01/25/2016
 ms.prod: sql
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - fn_cdc_get_column_ordinal
 - sys.fn_cdc_get_column_ordinal
 ms.assetid: 4bb21a57-2b94-4208-8bdf-6a3e2681d881
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: edf094b9476813e649bb12038f243407e8d11f2c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 4ebab4e1b02b325c5abb7e7b6fbc62b2b970ae50
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88322131"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095005"
 ---
 # <a name="sysfn_cdc_get_column_ordinal-transact-sql"></a>sys.fn_cdc_get_column_ordinal (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -53,7 +53,7 @@ sys.fn_cdc_get_column_ordinal ( 'capture_instance','column_name')
  **int**  
   
 ## <a name="remarks"></a>Observaciones  
- Esta función se utiliza para identificar la posición ordinal de una columna capturada dentro de la máscara de actualización de la captura de datos modificados. Se usa principalmente junto con la función [Sys. fn_cdc_is_bit_set](../../relational-databases/system-functions/sys-fn-cdc-is-bit-set-transact-sql.md) para extraer información de la máscara de actualización al consultar los datos modificados.  
+ Esta función se utiliza para identificar la posición ordinal de una columna capturada dentro de la máscara de actualización de la captura de datos modificados. Se usa principalmente junto con la función [Sys.fn_cdc_is_bit_set](../../relational-databases/system-functions/sys-fn-cdc-is-bit-set-transact-sql.md) para extraer información de la máscara de actualización al consultar los datos modificados.  
   
 ## <a name="permissions"></a>Permisos  
  Requiere el permiso SELECT en todas las columnas capturadas de la tabla de origen. Si se especifica un rol de base de datos en la captura de datos de cambio para la instancia de captura, también se requiere la pertenencia a ese rol.  
@@ -79,8 +79,8 @@ GO
 ## <a name="see-also"></a>Consulte también  
  [Funciones de captura de datos modificados &#40;Transact-SQL&#41;](../../relational-databases/system-functions/change-data-capture-functions-transact-sql.md)   
  [Acerca de la captura de datos modificados &#40;SQL Server&#41;](../../relational-databases/track-changes/about-change-data-capture-sql-server.md)   
- [Sys. sp_cdc_help_change_data_capture &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-help-change-data-capture-transact-sql.md)   
- [Sys. sp_cdc_get_captured_columns &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-get-captured-columns-transact-sql.md)   
+ [sys.sp_cdc_help_change_data_capture &#40;&#41;de Transact-SQL ](../../relational-databases/system-stored-procedures/sys-sp-cdc-help-change-data-capture-transact-sql.md)   
+ [sys.sp_cdc_get_captured_columns &#40;&#41;de Transact-SQL ](../../relational-databases/system-stored-procedures/sys-sp-cdc-get-captured-columns-transact-sql.md)   
  [sys.fn_cdc_is_bit_set &#40;Transact-SQL&#41;](../../relational-databases/system-functions/sys-fn-cdc-is-bit-set-transact-sql.md)  
   
   

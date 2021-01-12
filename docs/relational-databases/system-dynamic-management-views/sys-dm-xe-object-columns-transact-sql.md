@@ -1,6 +1,6 @@
 ---
 description: sys.dm_xe_object_columns (Transact-SQL)
-title: Sys. dm_xe_object_columns (Transact-SQL) | Microsoft Docs
+title: sys.dm_xe_object_columns (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - sys.dm_xe_object_columns dynamic management view
 - extended events [SQL Server], views
 ms.assetid: d96a14f3-4284-45ff-b1fe-4858e540a013
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0e381833a5869f20364b7797bb86a1c4e06fed81
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c5da079cfecbf1ddaa622f05ce71e5c04d63f4f0
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546370"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095077"
 ---
 # <a name="sysdm_xe_object_columns-transact-sql"></a>sys.dm_xe_object_columns (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "89546370"
 |-----------------|---------------|-----------------|  
 |name|**nvarchar(256)**|El nombre de la columna. Name es único en el objeto. No admite valores NULL.|  
 |column_id|**int**|Identificador de la columna. column_id es único dentro del objeto cuando se usa con column_type. No admite valores NULL.|  
-|object_name|**nvarchar(256)**|Nombre del objeto al que pertenece esta columna. Hay una relación de varios a uno con sys. dm_xe_objects. ID. No acepta valores NULL.|  
+|object_name|**nvarchar(256)**|Nombre del objeto al que pertenece esta columna. Hay una relación de varios a uno con sys.dm_xe_objects. ID. No acepta valores NULL.|  
 |object_package_guid|**uniqueidentifier**|GUID del paquete que contiene el objeto. No admite valores NULL.|  
 |type_name|**nvarchar(256)**|Nombre del tipo de esta columna. No admite valores NULL.|  
 |type_package_guid|**uniqueidentifier**|GUID del paquete que contiene el tipo de datos de la columna. No admite valores NULL.|  

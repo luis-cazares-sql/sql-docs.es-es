@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysservers system table
 - sys.sysservers compatibility view
 ms.assetid: d02f186f-c00f-44a6-b38d-dc78a3d2145b
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: ea79d90f7ccb75243246cc64713c746e05c8996c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 1cf2a9649745eeeb5fbf10667b9849c0c1de5dec
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88475141"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095345"
 ---
 # <a name="syssysservers-transact-sql"></a>sys.sysservers (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -47,8 +47,8 @@ ms.locfileid: "88475141"
 |**ubicación**|**nvarchar(4000)**|Valor de ubicación OLE DB.|  
 |**providerstring**|**nvarchar(4000)**|Valor de cadena de proveedor OLE DB.|  
 |**schemadate**|**datetime**|Fecha en que se actualizó la fila por última vez.|  
-|**topologyx**|**int**|No se utiliza.|  
-|**topologyy**|**int**|No se utiliza.|  
+|**topologyx**|**int**|No se usa.|  
+|**topologyy**|**int**|No se usa.|  
 |**catalog**|**sysname**|Catálogo utilizado al establecer una conexión con un proveedor OLE DB.|  
 |**srvcollation**|**sysname**|La intercalación del servidor.|  
 |**ConnectTimeout**|**int**|Configuración de tiempo de espera para la conexión del servidor.|  

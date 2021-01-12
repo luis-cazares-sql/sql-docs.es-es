@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - MSsubscription_agents system table
 ms.assetid: 86ad5891-0bef-4963-9381-7d5b45245a0c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e92e0e3476aa377577d00fca63a8348c47d09002
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: e8569eba1925879f2f757953f36e4ae632292100
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540879"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094731"
 ---
 # <a name="mssubscription_agents-transact-sql"></a>MSsubscription_agents (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "89540879"
 |**last_sync_status**|**int**|El último estado del Agente de distribución actualmente en ejecución o recientemente ejecutado. El estado puede ser:<br /><br /> **1** = iniciado.<br /><br /> **2** = correcto.<br /><br /> **3** = en curso.<br /><br /> **4** = inactivo.<br /><br /> **5** = Reintentar.<br /><br /> **6** = error.|  
 |**last_sync_summary**|**sysname**|El último mensaje del Agente de distribución actualmente en ejecución o recientemente ejecutado. El estado puede ser:<br /><br /> **Introducción.**<br /><br /> **Completa.**<br /><br /> **En curso.**<br /><br /> **Activos.**<br /><br /> **Realizar.**<br /><br /> **Puedan.**|  
 |**last_sync_time**|**datetime**|Fecha y hora en que se actualizaron las columnas *last_sync_summary* y *last_sync_status* . Los Agentes de distribución anónimos o de extracción que se ejecutan como trabajos del servicio del Agente SQL Server no actualizan estas columnas. En su lugar, la información del historial se registra en la tabla del historial de trabajos en ese caso.|  
-|**queue_server**|**sysname**|Exclusivamente para uso interno.|  
+|**queue_server**|**sysname**|Solo para uso interno.|  
   
 ## <a name="see-also"></a>Consulte también  
  [Tablas de replicación &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   

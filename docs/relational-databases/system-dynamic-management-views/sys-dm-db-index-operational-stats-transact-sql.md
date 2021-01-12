@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_index_operational_stats dynamic management function
 ms.assetid: 13adf2e5-2150-40a6-b346-e74a33ce29c6
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b1f177d09dd741eadc967a2b32a87a905e04dfb6
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a6eb4083361d07fee44557d20dd4be4625cbdb12
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97475076"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095204"
 ---
 # <a name="sysdm_db_index_operational_stats-transact-sql"></a>sys.dm_db_index_operational_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -133,7 +133,7 @@ sys.dm_db_index_operational_stats (
 |**page_compression_attempt_count**|**bigint**|Número de páginas que se evaluaron para la compresión en el nivel de página para particiones específicas de una tabla, un índice o una vista indizada. Incluye páginas que no se comprimieron porque no se consiguieron ahorros de espacio significativos. Siempre es 0 para el índice de almacén de columnas.|    
 |**page_compression_success_count**|**bigint**|Número de páginas de datos que se comprimieron utilizando la compresión de páginas para particiones específicas de una tabla, un índice o una vista indizada. Siempre es 0 para el índice de almacén de columnas.|    
     
-## <a name="remarks"></a>Comentarios    
+## <a name="remarks"></a>Observaciones    
  Este objeto de administración dinámica no acepta parámetros correlacionados de `CROSS APPLY` y `OUTER APPLY` .    
     
  Puede utilizar **sys.dm_db_index_operational_stats** para realizar el seguimiento del tiempo que los usuarios tienen que esperar para leer o escribir en una tabla, índice o partición, e identificar las tablas o índices que tienen puntos o actividades de E/S importantes.    

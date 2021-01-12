@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - MSmerge_agents system table
 ms.assetid: 639d2ebb-2c37-4fe0-b14b-1637bc5fc221
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0dd3ef69b380122d173436e19ae42ed3227b30e5
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 9380cd5c5e04293e0296c098ee7455eb803e3972
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545704"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096222"
 ---
 # <a name="msmerge_agents-transact-sql"></a>MSmerge_agents (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "89545704"
 |**creation_date**|**datetime**|Fecha y hora en que se creó la distribución o el Agente de mezcla.|  
 |**offload_enabled**|**bit**|Especifica que el agente puede activarse de manera remota.<br /><br /> **0** especifica que no se puede activar el agente de forma remota.<br /><br /> **1** especifica que el agente se activará de forma remota y en el equipo remoto especificado en la propiedad offload_server.|  
 |**offload_server**|**sysname**|Especifica el nombre de red del servidor a utilizar en la activación remota del agente.|  
-|**sid**|**varbinary(85)**|Número de identificación de seguridad (SID) del Agente de distribución o del Agente de mezcla durante su primera ejecución.|  
+|**Junction**|**varbinary(85)**|Número de identificación de seguridad (SID) del Agente de distribución o del Agente de mezcla durante su primera ejecución.|  
 |**subscriber_security_mode**|**smallint**|Modo de seguridad utilizado por el agente cuando se conecta al suscriptor, que puede ser uno de los siguientes:<br /><br /> **0**  =  [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] autenticación.<br /><br /> **1**  =  [!INCLUDE[msCoName](../../includes/msconame-md.md)] autenticación de Windows.|  
 |**subscriber_login**|**sysname**|Inicio de sesión que se utilizará en la conexión con el suscriptor.|  
 |**subscriber_password**|**nvarchar (524)**|Valor cifrado de la contraseña que se utilizará en la conexión con el suscriptor.|  

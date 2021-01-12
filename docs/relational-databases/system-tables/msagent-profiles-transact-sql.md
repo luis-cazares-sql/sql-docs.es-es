@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - MSagent_profiles system table
 ms.assetid: 4ab1b2ae-b6d9-42b7-9b31-98547dbb7f99
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 2f9b44e872ef5175d07a679c330b7662ff9e5bf6
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 237ecf85225d5c16160ee4b04f6e0ccdc41f2e31
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540926"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094810"
 ---
 # <a name="msagent_profiles-transact-sql"></a>MSagent_profiles (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "89540926"
 |**profile_id**|**int**|Id. de perfil.|  
 |**profile_name**|**sysname**|Nombre de perfil único para el tipo de agente.|  
 |**agent_type**|**int**|El tipo de agente:<br /><br /> **1** = agente de instantáneas<br /><br /> **2** = agente de registro del log<br /><br /> **3** = agente de distribución<br /><br /> **4** = agente de mezcla<br /><br /> **9** = agente de lectura de cola|  
-|**type**|**int**|Tipo de perfil:<br /><br /> **0** = sistema**1** = personalizado|  
+|**type**|**int**|Tipo de perfil:<br /><br /> **0** = sistema **1** = personalizado|  
 |**description**|**nvarchar (3000)**|La descripción del perfil.|  
 |**def_profile**|**bit**|Especifica si este perfil es el predeterminado para este tipo de agente.|  
   

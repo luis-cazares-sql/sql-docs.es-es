@@ -1,6 +1,6 @@
 ---
 description: sys.dm_server_audit_status (Transact-SQL)
-title: Sys. dm_server_audit_status (Transact-SQL) | Microsoft Docs
+title: sys.dm_server_audit_status (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 04/19/2016
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_server_audit_status dynamic management view
 ms.assetid: 4aa32d54-2ae1-437e-bbaa-7f1df1404b44
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 2138e06195e8f8c34a5f8f9abde96306c2d92cc5
-ms.sourcegitcommit: b93beb4f03aee2c1971909cb1d15f79cd479a35c
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: bcb3334eb564eab7a30aa544c35b74aa89c69ccb
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91498163"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096515"
 ---
 # <a name="sysdm_server_audit_status-transact-sql"></a>sys.dm_server_audit_status (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -34,11 +34,11 @@ ms.locfileid: "91498163"
 |Nombre de la columna|Tipo de datos|Descripción|  
 |-----------------|---------------|-----------------|  
 |**audit_id**|**int**|Identificador de la auditoría. Asigna al campo **audit_id** de la vista de catálogo **Sys. Audits** .|  
-|**name**|**sysname**|Nombre de la auditoría. Igual que el campo **nombre** de la vista de catálogo **Sys. server_audits** .|  
+|**name**|**sysname**|Nombre de la auditoría. Igual que el campo **nombre** de la vista de catálogo **Sys.server_audits** .|  
 |**status**|**smallint**|Estado numérico de la auditoría de servidor:<br /><br /> 0 = no iniciado<br /><br /> 1 =<br />        Iniciado<br /><br /> 2 =<br />      Error de tiempo de ejecución<br /><br /> 3 = error de creación de destino<br /><br /> 4 = cerrando|  
 |**status_desc**|**nvarchar(256)**|Cadena que muestra el estado de la auditoría de servidor:<br /><br /> NOT_STARTED<br /><br /> STARTED<br /><br /> RUNTIME_FAIL<br /><br /> TARGET_CREATION_FAILED<br /><br /> SHUTTING_DOWN|  
 |**status_time**|**datetime2**|Marca de tiempo en UTC del último cambio de estado de la auditoría.|  
-|**event_session_address**|**varbinary(8**|Dirección de la sesión de Extended Events asociada a la auditoría. Relacionado con la vista de catálogo **Sys. dm_xe_sessions. Address** .|  
+|**event_session_address**|**varbinary(8**|Dirección de la sesión de Extended Events asociada a la auditoría. Relacionado con la vista de catálogo **Sys.dm_xe_sessions. Address** .|  
 |**audit_file_path**|**nvarchar(256)**|Ruta de acceso completa y nombre de archivo del destino de archivo de auditoría que se está usando actualmente. Solo se rellena para la auditoría de archivos.|  
 |**audit_file_size**|**bigint**|Tamaño aproximado del archivo de auditoría, en bytes. Solo se rellena para la auditoría de archivos.|  
   
@@ -65,7 +65,7 @@ ms.locfileid: "91498163"
  [sys.server_audit_specification_details &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-server-audit-specification-details-transact-sql.md)   
  [sys.database_audit_specifications &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-audit-specifications-transact-sql.md)   
  [sys.database_audit_specification_details &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-audit-specification-details-transact-sql.md)   
- [Sys. dm_server_audit_status](../../relational-databases/system-dynamic-management-views/sys-dm-server-audit-status-transact-sql.md)   
+ [sys.dm_server_audit_status](../../relational-databases/system-dynamic-management-views/sys-dm-server-audit-status-transact-sql.md)   
  [sys.dm_audit_actions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-audit-actions-transact-sql.md)   
  [sys.dm_audit_class_type_map &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-audit-class-type-map-transact-sql.md)   
  [Crear una auditoría de servidor y una especificación de auditoría de servidor](../../relational-databases/security/auditing/create-a-server-audit-and-server-audit-specification.md)  

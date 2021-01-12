@@ -20,15 +20,15 @@ helpviewer_keywords:
 - dm_exec_compute_node_errors
 - sys.dm_exec_compute_node_errors management view
 ms.assetid: 9a03c039-70e4-4974-95d8-d3fa45984ffb
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 8259a8a2f80bc96c52f0059cedef3036ce29cde9
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 6f2de93073776522947a227f60ef9aa3fd894323
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97428162"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094095"
 ---
 # <a name="sysdm_exec_compute_node_errors-transact-sql"></a>sys.dm_exec_compute_node_errors (Transact-SQL)
 
@@ -40,7 +40,7 @@ ms.locfileid: "97428162"
 |-----------------|---------------|-----------------|-----------|  
 |error_id|`nvarchar(36)`|Identificador numérico único asociado al error.|Único en todos los errores de consulta del sistema|  
 |source|`nvarchar(255)`|Descripción del proceso o subproceso de origen||  
-|tipo|`nvarchar(255)`|Tipo de error.||  
+|type|`nvarchar(255)`|Tipo de error.||  
 |create_time|`datetime`|La hora de la ocurrencia del error||  
 |compute_node_id|`int`|Identificador del nodo de proceso específico|Vea compute_node_id de [sys.dm_exec_compute_nodes &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-compute-nodes-transact-sql.md)|  
 |rexecution_id|`nvarchar(36)`|Identificador de la consulta de polybase, si existe.||  

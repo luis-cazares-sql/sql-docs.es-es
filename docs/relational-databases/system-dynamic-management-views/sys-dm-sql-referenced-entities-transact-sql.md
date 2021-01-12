@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_sql_referenced_entities dynamic management function
 ms.assetid: 077111cb-b860-4d61-916f-bac5d532912f
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: cd6c12416a4e1626b7439ace6921b5d1981f0051
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a5b90048297d0573749f4751a3730beb87d56ddb
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484607"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094015"
 ---
 # <a name="sysdm_sql_referenced_entities-transact-sql"></a>sys.dm_sql_referenced_entities (Transact-SQL)
 
@@ -89,7 +89,7 @@ sys.dm_sql_referenced_entities (
 |referenced_id|**int**|Identificador de la entidad a la que se hace referencia. Cuando el valor de referenced_minor_id no es 0, referenced_id es la entidad en la que se define la columna.<br /><br /> Siempre es NULL para las referencias entre servidores.<br /><br /> NULL para las referencias entre bases de datos cuando no se puede determinar el identificador porque la base de datos está sin conexión o no se puede enlazar la entidad.<br /><br /> NULL para las referencias dentro de la base de datos si no se puede determinar el identificador. En el caso de las referencias no enlazadas a un esquema, el identificador no se puede resolver cuando la entidad a la que se hace referencia no existe en la base de datos o cuando la resolución de nombres depende del autor de la llamada.  En el último caso, is_caller_dependent se establece en 1.<br /><br /> Nunca es NULL para las referencias enlazadas a un esquema.|  
 |referenced_minor_id|**int**|Identificador de la columna cuando la entidad a la que se hace referencia es una columna; en caso contrario, es 0. Por ejemplo, referenced_minor_name es 0 en la fila que contiene la propia entidad a la que se hace referencia.<br /><br /> Para las referencias no enlazadas a esquema, se notifican las dependencias de las columnas únicamente cuando se pueden enlazar todas las entidades a las que se hace referencia. Si no se pueden enlazar todas las entidades a las que se hace referencia, no se notifican las dependencias del nivel de columna y referenced_minor_id es 0. Vea el ejemplo D.|  
 |referenced_class|**tinyint**|Clase de la entidad a la que se hace referencia.<br /><br /> 1 = Objeto o columna<br /><br /> 6 = Tipo<br /><br /> 10 = Colección de esquemas XML<br /><br /> 21 = Función de partición|  
-|referenced_class_desc|**nvarchar(60)**|Descripción de la clase de la entidad a la que se hace referencia.<br /><br /> OBJECT_OR_COLUMN<br /><br /> TIPO<br /><br /> XML_SCHEMA_COLLECTION<br /><br /> PARTITION_FUNCTION|  
+|referenced_class_desc|**nvarchar(60)**|Descripción de la clase de la entidad a la que se hace referencia.<br /><br /> OBJECT_OR_COLUMN<br /><br /> TYPE<br /><br /> XML_SCHEMA_COLLECTION<br /><br /> PARTITION_FUNCTION|  
 |is_caller_dependent|**bit**|Indica que el enlace de esquema de la entidad a la que se hace referencia se realiza en tiempo de ejecución; por consiguiente, la resolución del identificador de la entidad depende del esquema del autor de la llamada. Esto ocurre cuando la entidad a la que se hace referencia es un procedimiento almacenado, un procedimiento almacenado extendido o una función definida por el usuario llamada en una instrucción EXECUTE.<br /><br /> 1 = La entidad a la que se hace referencia es dependiente del autor de la llamada y se resuelve en tiempo de ejecución. En este caso, referenced_id es NULL.<br /><br /> 0 = El identificador de la entidad a la que se hace referencia no es dependiente del autor de la llamada. Es siempre 0 para las referencias enlazadas a esquema y para las referencias entre bases de datos o entre servidores que especifican explícitamente un nombre de esquema. Por ejemplo, una referencia a una entidad con el formato `EXEC MyDatabase.MySchema.MyProc` no es dependiente del autor de la llamada. Sin embargo, una referencia con el formato `EXEC MyDatabase..MyProc` es dependiente del autor de la llamada.|  
 |is_ambiguous|**bit**|Indica que la referencia es ambigua y se puede resolver en tiempo de ejecución en una función definida por el usuario, un tipo definido por el usuario (UDT) o una referencia XQuery a una columna de tipo **XML**. Por ejemplo, supongamos que la instrucción `SELECT Sales.GetOrder() FROM Sales.MySales` está definida en un procedimiento almacenado. Hasta que no se ejecute el procedimiento almacenado, no se sabrá si `Sales.GetOrder()` es una función definida por el usuario en el esquema `Sales` o en la columna con nombre `Sales` de tipo UDT con un método denominado `GetOrder()`.<br /><br /> 1 = La referencia a una función definida por el usuario o el método de tipo definido por el usuario (UDT) de columna es ambiguo.<br /><br /> 0 = La referencia no es ambigua o la entidad puede enlazarse correctamente cuando se llama a la función.<br /><br /> Siempre es 0 para las referencias enlazadas a esquema.|  
 |is_selected|**bit**|1 = Se ha seleccionado el objeto o la columna.|  
@@ -115,7 +115,7 @@ sys.dm_sql_referenced_entities (
   
  Devuelve el error 2020 cuando no se pueden resolver las dependencias de columna. Este error no impide que la consulta devuelva dependencias de nivel de objeto.  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  Se puede ejecutar esta función en el contexto de cualquier base de datos para devolver las entidades que hacen referencia a un desencadenador DDL de servidor.  
   
  La tabla siguiente enumera los tipos de entidades para las que se crea y mantiene la información de dependencia. La información de dependencia no se crea ni mantiene para reglas, valores predeterminados, tablas temporales, procedimientos almacenados temporales u objetos del sistema.  

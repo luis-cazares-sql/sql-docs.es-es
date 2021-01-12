@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - log_shipping_monitor_history_detail system table
 ms.assetid: 7080c888-323b-4206-a1ab-e6c51f9e2579
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 515a2b38f10beca9c4797ce02d48387bfa662707
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 3cd8f1b5c42d62ed508527b46d4a3705ad63dd09
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544566"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094854"
 ---
 # <a name="log_shipping_monitor_history_detail-transact-sql"></a>log_shipping_monitor_history_detail (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "89544566"
 |**message**|**nvarchar(max)**|Texto del mensaje.|  
   
 ## <a name="remarks"></a>Observaciones  
- Esta tabla contiene los detalles del historial para los agentes de trasvase de registros. Para identificar una sesión del agente, utilice las columnas **agent_id**, **agent_type**y **session_id**. Para ver los detalles del historial de la sesión del agente, ordene por **log_time**.  
+ Esta tabla contiene los detalles del historial para los agentes de trasvase de registros. Para identificar una sesión del agente, utilice las columnas **agent_id**, **agent_type** y **session_id**. Para ver los detalles del historial de la sesión del agente, ordene por **log_time**.  
   
  Además de almacenarse en el servidor de supervisión remoto, la información relacionada con el servidor principal se almacena en el servidor principal en la tabla de **log_shipping_monitor_history_detail** , y la información relacionada con un servidor secundario también se almacena en el servidor secundario de la tabla **log_shipping_monitor_history_detail** .  
   

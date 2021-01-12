@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_fts_index_physical_stats dynamic management view
 ms.assetid: 997c3278-3630-47f6-ada3-190b6c16ce0e
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e3fd365f2e3a503b295f14b90a61702e3b8106bb
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a89fdf2ed35d3f3725407bb467138ec3874df81f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97475036"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095218"
 ---
 # <a name="sysdm_db_fts_index_physical_stats-transact-sql"></a>sys.dm_db_fts_index_physical_stats (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "97475036"
   
 ||||  
 |-|-|-|  
-|**Nombre de la columna**|**Tipo**|**Descripción**|  
+|**Nombre de la columna**|**Type**|**Descripción**|  
 |**object_id**|int|Identificador de objeto de la tabla que contiene el índice.|  
 |**fulltext_index_page_count**|**bigint**|Tamaño lógico de la extracción en número de páginas de índice.|  
 |**keyphrase_index_page_count**|**bigint**|Tamaño lógico de la extracción en número de páginas de índice.|  

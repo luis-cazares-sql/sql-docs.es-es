@@ -14,17 +14,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_describe_first_result_set catalog view
 ms.assetid: 6ea88346-0bdb-4f0e-9f1f-4d85e3487d23
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.custom: ''
 ms.date: 06/10/2016
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 21b823aeaa319263a3e90a3ddd917e9605506c0c
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 00bb311a4b1faad0e85a7f3b450db2f1057dcb4e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97472866"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094107"
 ---
 # <a name="sysdm_exec_describe_first_result_set-transact-sql"></a>sys.dm_exec_describe_first_result_set (Transact-SQL)
 
@@ -103,7 +103,7 @@ sys.dm_exec_describe_first_result_set(@tsql, @params, @include_browse_informatio
 |**error_type**|**int**|Contiene un entero que representa el error que se va a devolver. Se asigna a error_type_desc. Vea la lista bajo las notas.|  
 |**error_type_desc**|**nvarchar(60)**|Contiene una cadena corta en mayúsculas que representa el error que se va a devolver. Se asigna a error_type. Vea la lista bajo las notas.|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  Esta función utiliza el mismo algoritmo que **sp_describe_first_result_set**. Para obtener más información, vea [sp_describe_first_result_set &#40;&#41;de Transact-SQL ](../../relational-databases/system-stored-procedures/sp-describe-first-result-set-transact-sql.md).  
   
  En la tabla siguiente se muestran los tipos de error y su descripción.  

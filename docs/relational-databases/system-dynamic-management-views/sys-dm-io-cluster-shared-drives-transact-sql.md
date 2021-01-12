@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_io_cluster_shared_drives dynamic management view
 ms.assetid: c8fcced8-c780-49dc-99bd-6beb3ca532c4
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ed6f7581fb605009fbbdc25c116e3317a5236ec7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 42c6b5bc337ae80099037181dc0d5fb0681f36bf
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97444275"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096540"
 ---
 # <a name="sysdm_io_cluster_shared_drives-transact-sql"></a>sys.dm_io_cluster_shared_drives (Transact-SQL)
 [!INCLUDE [sql-asdbmi-pdw](../../includes/applies-to-version/sql-asdbmi-pdw.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "97444275"
 |**DriveName**|**nchar(2)**|Nombre de la unidad (la letra de unidad) que representa un disco individual que forma parte de la matriz de discos compartida del clúster. La columna no acepta valores NULL.|  
 |**pdw_node_id**|**int**|**Se aplica a**: ssPDW<br /><br /> Identificador del nodo en el que se encuentra esta distribución.|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  Cuando se habilita la agrupación en clústeres, la instancia en clúster de conmutación por error requiere que los archivos de datos y de registro estén en discos compartidos para que puedan estar accesibles después de que la instancia realice una conmutación por error a otro nodo. Cada una de las filas de esta vista representa un único disco compartido que utiliza esta instancia en clúster de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Para almacenar archivos de registros o datos de esta instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] solo se pueden utilizar los discos enumerados en esta vista. Los discos enumerados en esta vista son los que están en el grupo de recursos del clúster asociado a la instancia.  
   
 > [!NOTE]  

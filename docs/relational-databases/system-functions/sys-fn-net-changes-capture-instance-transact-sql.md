@@ -1,6 +1,6 @@
 ---
-description: Sys. fn_net_changes_ &lt; capture_instance &gt; (TRANSACT-SQL)
-title: Sys. fn_net_changes_ &lt; capture_instance &gt; (TRANSACT-SQL) | Microsoft Docs
+description: '&lt;capture_instance sys.fn_net_changes_ &gt; (TRANSACT-SQL)'
+title: sys.fn_net_changes_ &lt; capture_instance &gt; (TRANSACT-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -19,16 +19,16 @@ helpviewer_keywords:
 - fn_net_changes_<capture_instance>
 - sys.fn_net_changes_<capture_instance>
 ms.assetid: 342fa030-9fd9-4b74-ae4d-49f6038a5073
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 59d8214083046510d9c4d71724d1aab1c96b1e1d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: eb0c58b3544afd5fa529db0c95af7c2f6ba3e6d3
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427767"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096357"
 ---
-# <a name="sysfn_net_changes_ltcapture_instancegt-transact-sql"></a>Sys. fn_net_changes_ &lt; capture_instance &gt; (TRANSACT-SQL)
+# <a name="sysfn_net_changes_ltcapture_instancegt-transact-sql"></a>&lt;capture_instance sys.fn_net_changes_ &gt; (TRANSACT-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contenedores para las funciones de consulta **net Changes** . El procedimiento almacenado sys.sp_cdc_generate_wrapper_function genera los scripts necesarios para crear estas funciones.  
@@ -60,7 +60,7 @@ fn_net_changes_<capture_instance> ('start_time', 'end_time', '<row_filter_option
  *end_time*  
  Valor **DateTime** que representa el extremo superior del intervalo de entradas de la tabla de cambios que se va a incluir en el conjunto de resultados.  
   
- Este parámetro puede tomar uno de dos significados, según el valor elegido para @closed_high_end_point cuando se llama a sys. sp_cdc_generate_wrapper_function para generar el script con el fin de crear la función de contenedor:  
+ Este parámetro puede tomar uno de dos significados, según el valor elegido para @closed_high_end_point cuando se llama a sys.sp_cdc_generate_wrapper_function para generar el script con el fin de crear la función de contenedor:  
   
 -   @closed_high_end_point = 1  
   
@@ -75,7 +75,7 @@ fn_net_changes_<capture_instance> ('start_time', 'end_time', '<row_filter_option
  *<row_filter_option>* :: = {ALL | ALL with Mask | All with Merge}  
  Una opción que rige el contenido de las columnas de metadatos y las filas devueltas en el conjunto de resultados. Puede ser una de las siguientes opciones:  
   
- todo  
+ all  
  Devuelve el contenido final de una fila cambiada en las columnas de contenido y la operación que se necesita para aplicar la fila en la columna de metadatos __CDC_OPERATION.  
   
  all with mask  
@@ -101,7 +101,7 @@ fn_net_changes_<capture_instance> ('start_time', 'end_time', '<row_filter_option
 |\<columns from @update_flag_list>|**bit**|Marca de bits que se denomina anexando _uflag al nombre de columna. La marca solo toma un valor no nulo cuando *row_filter_option* **= ' All with mask '** y \_ _CDC_OPERATION **= ' un '**. Se establece en 1 si la columna correspondiente se modificó dentro de la ventana de consulta. De lo contrario, es 0.|  
   
 ## <a name="remarks"></a>Observaciones  
- La fn_net_changes_<capture_instance función> actúa como contenedor de la función de consulta CDC. fn_cdc_get_net_changes_<capture_instance>. El procedimiento almacenado sys.sp_cdc_generate_wrapper se utiliza para crear el script del contenedor.  
+ La fn_net_changes_<capture_instance función> actúa como contenedor de la CDC.fn_cdc_get_net_changes_<capture_instance> consulta. El procedimiento almacenado sys.sp_cdc_generate_wrapper se utiliza para crear el script del contenedor.  
   
  Las funciones contenedoras no se crean automáticamente. Para crear funciones contenedoras hay que seguir dos pasos:  
   
@@ -120,7 +120,7 @@ fn_net_changes_<capture_instance> ('start_time', 'end_time', '<row_filter_option
  La plantilla de configuración de captura de datos modificados ' Create CDC wrapper TVF for Schema ' muestra cómo usar el sp_cdc_generate_wrapper_function procedimiento almacenado para obtener scripts de creación para todas las funciones de contenedor para las funciones de consulta definidas de un esquema. A continuación, la plantilla crea esos scripts. Para obtener más información acerca de las plantillas, vea [Explorador de plantillas](../../ssms/template/template-explorer.md).  
   
 ## <a name="see-also"></a>Consulte también  
- [Sys. sp_cdc_generate_wrapper_function &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-generate-wrapper-function-transact-sql.md)   
+ [sys.sp_cdc_generate_wrapper_function &#40;&#41;de Transact-SQL ](../../relational-databases/system-stored-procedures/sys-sp-cdc-generate-wrapper-function-transact-sql.md)   
  [cdc.fn_cdc_get_net_changes_&#60;capture_instance&#62; &#40;Transact-SQL&#41;](../../relational-databases/system-functions/cdc-fn-cdc-get-net-changes-capture-instance-transact-sql.md)  
   
   

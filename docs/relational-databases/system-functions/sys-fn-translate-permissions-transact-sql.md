@@ -1,6 +1,6 @@
 ---
 description: sys.fn_translate_permissions (Transact-SQL)
-title: Sys. fn_translate_permissions (Transact-SQL) | Microsoft Docs
+title: sys.fn_translate_permissions (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - sys.fn_translate_permissions function
 - fn_translate_permissions function
 ms.assetid: ac97121f-2bd0-4f71-8e45-42c8584edbc5
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 1069d5b76d6ee404ddd2e671eb6a7b63396424ee
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: e4d00e0b945012cb8a1b583921328009d12a34ad
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88481770"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094954"
 ---
 # <a name="sysfn_translate_permissions-transact-sql"></a>sys.fn_translate_permissions (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -54,7 +54,7 @@ sys.fn_translate_permissions ( level , perms )
  **table**  
   
 ## <a name="remarks"></a>Observaciones  
- El valor devuelto en la columna **Permissions** de un seguimiento de SQL es una representación de entero de una máscara de máscara utilizada por [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para calcular los permisos efectivos. Cada una de las 25 clases de elementos protegibles tiene su propio conjunto de permisos con sus valores numéricos correspondientes. **Sys. fn_translate_permissions** traduce esta máscara de máscara en una tabla de nombres de permisos.  
+ El valor devuelto en la columna **Permissions** de un seguimiento de SQL es una representación de entero de una máscara de máscara utilizada por [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para calcular los permisos efectivos. Cada una de las 25 clases de elementos protegibles tiene su propio conjunto de permisos con sus valores numéricos correspondientes. **Sys.fn_translate_permissions** traduce esta máscara de máscara en una tabla de nombres de permisos.  
   
 ## <a name="permissions"></a>Permisos  
  Debe pertenecer al rol **public** .  
@@ -69,7 +69,7 @@ SELECT '0010' AS Input, * FROM sys.fn_translate_permissions('CERTIFICATE', 0010)
 SELECT '0011' AS Input, * FROM sys.fn_translate_permissions('CERTIFICATE', 0011);  
 ```  
   
-## <a name="see-also"></a>Consulte también  
+## <a name="see-also"></a>Vea también  
  [Permisos &#40;motor de base de datos&#41;](../../relational-databases/security/permissions-database-engine.md)   
  [sys.server_permissions &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-server-permissions-transact-sql.md)   
  [sys.database_permissions &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-permissions-transact-sql.md)  

@@ -1,6 +1,6 @@
 ---
 description: sys.dm_xtp_transaction_stats (Transact-SQL)
-title: Sys. dm_xtp_transaction_stats (Transact-SQL) | Microsoft Docs
+title: sys.dm_xtp_transaction_stats (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_xtp_transaction_stats dynamic management view
 ms.assetid: 9389f48d-0de5-47bd-9821-4db8f04504e4
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 4ec1926e523ef388ddac159b3b2208069eb93f80
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 23913759f951d4bdb0f870ddaf73f1d0a0808520
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539223"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096409"
 ---
 # <a name="sysdm_xtp_transaction_stats-transact-sql"></a>sys.dm_xtp_transaction_stats (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -40,30 +40,30 @@ ms.locfileid: "89539223"
 |total_aborts|**bigint**|El número total de transacciones que se anularon, bien mediante intervención del usuario o del sistema.|  
 |user_aborts|**bigint**|Número de interrupciones iniciadas por el sistema. Por ejemplo, debido a conflictos de escritura, errores de validación o errores de dependencia.|  
 |validation_failures|**bigint**|Número de veces que una transacción se ha anulado debido a un error de validación.|  
-|dependencies_taken|**bigint**|Exclusivamente para uso interno.|  
+|dependencies_taken|**bigint**|Solo para uso interno.|  
 |dependencies_failed|**bigint**|Número de veces que una transacción se anula debido a que una transacción de la que dependía se anula.|  
 |savepoint_create|**bigint**|El número de puntos de retorno creados. Se crea un nuevo punto de retorno para cada bloque atomic.|  
 |savepoint_rollbacks|**bigint**|El número de reversiones a un punto de retorno anterior.|  
-|savepoint_refreshes|**bigint**|Exclusivamente para uso interno.|  
+|savepoint_refreshes|**bigint**|Solo para uso interno.|  
 |log_bytes_written|**bigint**|Número total de bytes escritos en las entradas del registro de OLTP en memoria.|  
 |log_IO_count|**bigint**|Número total de transacciones que requieren E/S del registro. Solo se tienen en cuenta las transacciones en tablas perdurables.|  
-|phantom_scans_started|**bigint**|Exclusivamente para uso interno.|  
-|phatom_scans_retries|**bigint**|Exclusivamente para uso interno.|  
-|phantom_rows_touched|**bigint**|Exclusivamente para uso interno.|  
-|phantom_rows_expiring|**bigint**|Exclusivamente para uso interno.|  
-|phantom_rows_expired|**bigint**|Exclusivamente para uso interno.|  
-|phantom_rows_expired_removed|**bigint**|Exclusivamente para uso interno.|  
-|scans_started|**bigint**|Exclusivamente para uso interno.|  
-|scans_retried|**bigint**|Exclusivamente para uso interno.|  
-|rows_returned|**bigint**|Exclusivamente para uso interno.|  
-|rows_touched|**bigint**|Exclusivamente para uso interno.|  
-|rows_expiring|**bigint**|Exclusivamente para uso interno.|  
-|rows_expired|**bigint**|Exclusivamente para uso interno.|  
-|rows_expired_removed|**bigint**|Exclusivamente para uso interno.|  
-|rows_inserted|**bigint**|Exclusivamente para uso interno.|  
-|rows_updated|**bigint**|Exclusivamente para uso interno.|  
-|rows_deleted|**bigint**|Exclusivamente para uso interno.|  
-|write_conflicts|**bigint**|Exclusivamente para uso interno.|  
+|phantom_scans_started|**bigint**|Solo para uso interno.|  
+|phatom_scans_retries|**bigint**|Solo para uso interno.|  
+|phantom_rows_touched|**bigint**|Solo para uso interno.|  
+|phantom_rows_expiring|**bigint**|Solo para uso interno.|  
+|phantom_rows_expired|**bigint**|Solo para uso interno.|  
+|phantom_rows_expired_removed|**bigint**|Solo para uso interno.|  
+|scans_started|**bigint**|Solo para uso interno.|  
+|scans_retried|**bigint**|Solo para uso interno.|  
+|rows_returned|**bigint**|Solo para uso interno.|  
+|rows_touched|**bigint**|Solo para uso interno.|  
+|rows_expiring|**bigint**|Solo para uso interno.|  
+|rows_expired|**bigint**|Solo para uso interno.|  
+|rows_expired_removed|**bigint**|Solo para uso interno.|  
+|rows_inserted|**bigint**|Solo para uso interno.|  
+|rows_updated|**bigint**|Solo para uso interno.|  
+|rows_deleted|**bigint**|Solo para uso interno.|  
+|write_conflicts|**bigint**|Solo para uso interno.|  
 |unique_constraint_violations|**bigint**|Número total de infracciones de la restricción UNIQUE.|  
   
 ## <a name="permissions"></a>Permisos  

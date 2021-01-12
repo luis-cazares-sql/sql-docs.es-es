@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_os_threads dynamic management view
 ms.assetid: a5052701-edbf-4209-a7cb-afc9e65c41c1
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 96a25a69c14919c4e0108537af105108a813c3fd
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c0163e4176202f4bfe8b55ecca0fe4812ec5d26b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97472876"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096510"
 ---
 # <a name="sysdm_os_threads-transact-sql"></a>sys.dm_os_threads (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -52,7 +52,7 @@ ms.locfileid: "97472876"
 |stack_bytes_used|**int**|Número de bytes que se usan de forma activa en el subproceso.|  
 |affinity|**bigint**|Máscara de CPU en la que se ejecuta este subproceso. Esto depende del valor configurado por la instrucción **ALTER Server Configuration Set Process Affinity** . Puede ser distinta del programador en caso de afinidad de software.|  
 |Prioridad|**int**|Valor de prioridad de este subproceso.|  
-|Configuración regional|**int**|LCID de la configuración regional en memoria caché del subproceso.|  
+|Locale|**int**|LCID de la configuración regional en memoria caché del subproceso.|  
 |Token|**varbinary(8**|Identificador del token de suplantación en caché del subproceso.|  
 |is_impersonating|**int**|Indica si este subproceso usa suplantación de Win32.<br /><br /> 1 = El subproceso usa credenciales de seguridad diferentes de las predeterminadas del proceso. Indica que el subproceso suplanta una entidad distinta de la que creó el proceso.|  
 |is_waiting_on_loader_lock|**int**|Estado del sistema operativo que indica si el subproceso espera en el bloqueo de carga.|  

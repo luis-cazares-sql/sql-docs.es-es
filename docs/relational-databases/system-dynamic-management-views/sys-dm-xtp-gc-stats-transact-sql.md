@@ -1,6 +1,6 @@
 ---
 description: sys.dm_xtp_gc_stats (Transact-SQL)
-title: Sys. dm_xtp_gc_stats (Transact-SQL) | Microsoft Docs
+title: sys.dm_xtp_gc_stats (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -17,25 +17,25 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_xtp_gc_stats dynamic management view
 ms.assetid: 8287d611-50e3-43e1-ba8d-3e3793d3ba0e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e69ed7bc99077962489a81e44484fb2a90b33b70
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: a25b5e02c4a89bce85ae65575f80a588163074f7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543817"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096415"
 ---
 # <a name="sysdm_xtp_gc_stats-transact-sql"></a>sys.dm_xtp_gc_stats (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
   Proporciona información (las estadísticas generales) sobre el comportamiento actual del proceso de recopilación de elementos no utilizados de [!INCLUDE[hek_2](../../includes/hek-2-md.md)].  
   
- La recopilación de elementos no utilizados de filas forma parte del procesamiento normal de transacciones o del subproceso principal de recopilación de elementos no utilizados, que se conoce como trabajador inactivo. Cuando se confirma una transacción de usuario, se quita de la cola un elemento de trabajo de la cola de recolección de elementos no utilizados ([Sys. dm_xtp_gc_queue_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-xtp-gc-queue-stats-transact-sql.md)). Como parte del recorrido de esquinas sucias (un recorrido en búsqueda de áreas del índice a las que se tiene menos acceso), el trabajador inactivo recopila todas las filas que se pueden recopilar pero a las que no ha accedido la transacción de usuario principal.  
+ La recopilación de elementos no utilizados de filas forma parte del procesamiento normal de transacciones o del subproceso principal de recopilación de elementos no utilizados, que se conoce como trabajador inactivo. Cuando se confirma una transacción de usuario, se quita de la cola un elemento de trabajo de la cola de recolección de elementos no utilizados ([sys.dm_xtp_gc_queue_stats &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-xtp-gc-queue-stats-transact-sql.md)). Como parte del recorrido de esquinas sucias (un recorrido en búsqueda de áreas del índice a las que se tiene menos acceso), el trabajador inactivo recopila todas las filas que se pueden recopilar pero a las que no ha accedido la transacción de usuario principal.  
   
  Para obtener más información, vea [OLTP en memoria &#40;optimización en memoria&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md).  
   
-|Nombre de columna|Tipo|Descripción|  
+|Nombre de la columna|Tipo|Descripción|  
 |-----------------|----------|-----------------|  
 |rows_examined|**bigint**|El número de filas que ha examinado el subsistema de recolección de elementos no utilizados desde que se inició el servidor.|  
 |rows_no_sweep_needed|**bigint**|Número de filas quitadas sin un recorrido de esquinas sucias.|  

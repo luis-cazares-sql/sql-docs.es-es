@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.master_files catalog view
 ms.assetid: 803b22f2-0016-436b-a561-ce6f023d6b6a
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3bd6320435c372b99d9b88f9e0ecc7e41c41cf90
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 55b5465b2c43b02247a48478272393f941a4a51d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97405443"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095547"
 ---
 # <a name="sysmaster_files-transact-sql"></a>sys.master_files (Transact-SQL)
 [!INCLUDE [sql-asdbmi-pdw](../../includes/applies-to-version/sql-asdbmi-pdw.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "97405443"
 |database_id|**int**|Id. de la base de datos a la que se refiere este archivo. El masterdatabase_id es siempre 1.|  
 |file_id|**int**|Identificador del archivo dentro de la base de datos. El valor de file_id principal siempre es 1.|  
 |file_guid|**uniqueidentifier**|Identificador único del archivo.<br /><br /> NULL = la base de datos se actualizó desde una versión anterior de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (válida para SQL Server 2005 y versiones anteriores).|  
-|tipo|**tinyint**|Tipo de archivo:<br /><br /> 0 = Filas.<br /><br /> 1 = Registro<br /><br /> 2 = FILESTREAM<br /><br /> 3 = [!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]<br /><br /> 4 = Texto completo (catálogos de texto completo anteriores a [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)]; los catálogos de texto completo actualizados o creados en [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] o versiones posteriores notificarán un tipo de archivo 0).|  
+|type|**tinyint**|Tipo de archivo:<br /><br /> 0 = Filas.<br /><br /> 1 = Registro<br /><br /> 2 = FILESTREAM<br /><br /> 3 = [!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]<br /><br /> 4 = Texto completo (catálogos de texto completo anteriores a [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)]; los catálogos de texto completo actualizados o creados en [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] o versiones posteriores notificarán un tipo de archivo 0).|  
 |type_desc|**nvarchar(60)**|Descripción del tipo de archivo:<br /><br /> ROWS<br /><br /> REGISTRO<br /><br /> FILESTREAM<br /><br /> FULLTEXT (catálogos de texto completo anteriores a [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)]).|  
 |data_space_id|**int**|Id. del espacio de datos al que pertenece este archivo. El espacio de datos es un grupo de archivos.<br /><br /> 0 = Archivos de registro|  
 |name|**sysname**|Nombre lógico del archivo de la base de datos.|  

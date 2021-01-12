@@ -1,6 +1,6 @@
 ---
 description: sys.dm_xe_session_object_columns (Transact-SQL)
-title: Sys. dm_xe_session_object_columns (Transact-SQL) | Microsoft Docs
+title: sys.dm_xe_session_object_columns (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - xe
 - sys.dm_xe_session_object_columns dynamic management view
 ms.assetid: e97f3307-2da6-4c54-b818-a474faec752e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e4bb7b45f21e4d05984232d1453a1ca1fd69c9d6
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 14213f30fed5d57a794c147486aa8f9bcc077575
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536906"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096434"
 ---
 # <a name="sysdm_xe_session_object_columns-transact-sql"></a>sys.dm_xe_session_object_columns (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -49,8 +49,8 @@ ms.locfileid: "89536906"
   
 |From|En|Relación|  
 |----------|--------|------------------|  
-|dm_xe_session_object_columns. object_name,<br /><br /> dm_xe_session_object_columns.object_package_guid|Sys. dm_xe_objects. package_guid,<br /><br /> sys.dm_xe_objects.name|Varios a uno|  
-|dm_xe_session_object_columns. column_name,<br /><br /> dm_xe_session_object_columns.column_id|Sys. dm_xe_object_columns. Name,<br /><br /> sys.dm_xe_object_columns.column_id|Varios a uno|  
+|dm_xe_session_object_columns dm_xe_session_object_columns.object_name,<br /><br /> dm_xe_session_object_columns.object_package_guid|Sys.dm_xe_objects sys.dm_xe_objects.package_guid,<br /><br /> sys.dm_xe_objects.name|Varios a uno|  
+|dm_xe_session_object_columns dm_xe_session_object_columns.column_name,<br /><br /> dm_xe_session_object_columns.column_id|sys.dm_xe_object_columns. Name,<br /><br /> sys.dm_xe_object_columns.column_id|Varios a uno|  
   
 ## <a name="see-also"></a>Consulte también  
  [Funciones y vistas de administración dinámica &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)  

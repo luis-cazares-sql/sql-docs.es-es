@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_sql_referencing_entities dynamic management function
 ms.assetid: c16f8f0a-483f-4feb-842e-da90426045ae
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 517e6f8faaccf40091535b8a78d47d0fa8a43032
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 109791409e050201f64a7f7f9b207ccac58372b9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484577"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094011"
 ---
 # <a name="sysdm_sql_referencing_entities-transact-sql"></a>sys.dm_sql_referencing_entities (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -95,7 +95,7 @@ sys.dm_sql_referencing_entities (
   
  Devuelve un error si la entidad especificada a la que se hace referencia es un procedimiento almacenado numerado.  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  La tabla siguiente enumera los tipos de entidades para las que se crea y mantiene la información de dependencia. La información de dependencia no se crea ni mantiene para reglas, valores predeterminados, tablas temporales, procedimientos almacenados temporales u objetos del sistema.  
   
 |Tipo de entidad|Entidad que hace la referencia|Entidad a la que se hace referencia|  

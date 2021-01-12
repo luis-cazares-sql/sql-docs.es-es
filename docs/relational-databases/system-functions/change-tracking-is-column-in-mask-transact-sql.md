@@ -17,15 +17,15 @@ helpviewer_keywords:
 - change tracking [SQL Server], CHANGE_TRACKING_IS_COLUMN_IN_MASK
 - CHANGE_TRACKING_IS_COLUMN_IN_MASK
 ms.assetid: 649b370b-da54-4915-919d-1b597a39d505
-author: rothja
-ms.author: jroth
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e1961dec1f32006d7a4b3d91b7b8763f34ce3514
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a9d5ee6c44e0b0ca9544ee4a32b7cbd455497fe6
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97440624"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095018"
 ---
 # <a name="change_tracking_is_column_in_mask-transact-sql"></a>CHANGE_TRACKING_IS_COLUMN_IN_MASK (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -48,7 +48,7 @@ CHANGE_TRACKING_IS_COLUMN_IN_MASK ( column_id , change_columns )
  *change_columns*  
  Son los datos binarios de la columna SYS_CHANGE_COLUMNS de los datos [CHANGETABLE](../../relational-databases/system-functions/changetable-transact-sql.md) .  
   
-## <a name="return-type"></a>Tipo de valor devuelto  
+## <a name="return-type"></a>Tipo devuelto  
  **bit**  
   
 ## <a name="return-values"></a>Valores devueltos  
@@ -59,7 +59,7 @@ CHANGE_TRACKING_IS_COLUMN_IN_MASK ( column_id , change_columns )
 |0|La columna especificada no está en la lista de *change_columns* .|  
 |1|La columna especificada está en la lista de *change_columns* .|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  CHANGE_TRACKING_IS_COLUMN_IN_MASK no realiza ninguna comprobación para validar el valor *column_id* o si el parámetro *change_columns* se obtuvo de la tabla de la que se obtuvo el *column_id* .  
   
 ## <a name="examples"></a>Ejemplos  
