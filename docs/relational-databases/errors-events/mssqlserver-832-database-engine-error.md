@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 846ce27ff8e7d9560a6d4cc691d1523fddd913fa
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+ms.openlocfilehash: 5252cae293cd4c700f359b8168e0d5d5d10a70cf
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418912"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099258"
 ---
 # <a name="mssqlserver_832"></a>MSSQLSERVER_832
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -60,4 +60,4 @@ Solo se comprueban las páginas que no se han modificado en caché (o no están 
 
 Es posible que ni siquiera `DBCC CHECKDB` notifique un error de una página en este estado después de su escritura en el disco. Esto se debe a que la modificación incorrecta podría encontrarse en ubicaciones de la página que no contienen ningún dato ni información importante sobre la estructura de las páginas o las filas, o bien podría tratarse de una modificación en los datos que CHECKDB no puede detectar.  
 
-Puede obtener más información sobre el mensaje 832 en las notas del producto: [Elementos fundamentales de E/S de SQL Server, capítulo 2](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/administrator/cc917726(v=technet.10)).
+Puede obtener más información sobre el mensaje 832 en las notas del producto: [Elementos fundamentales de E/S de SQL Server, capítulo 2](/previous-versions/sql/sql-server-2005/administrator/cc917726(v=technet.10)).

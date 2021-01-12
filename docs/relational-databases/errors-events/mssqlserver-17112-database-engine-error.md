@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 870f9b9f4d3fcc8186ed1d16faee861ed63e4135
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+ms.openlocfilehash: 8b9d79dc7b23339b5b152695daf5efc5c47847a4
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418905"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099360"
 ---
 # <a name="mssqlserver_17112"></a>MSSQLSERVER_17112
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "92418905"
 
 ## <a name="explanation"></a>Explicación
 
-Este error indica que se ha especificado una [opción de inicio del servicio de motor de base de datos](/sql/database-engine/configure-windows/database-engine-service-startup-options) no válida. Cuando no se especifica correctamente una opción de inicio, SQL Server no se inicia o no se puede ejecutar según lo esperado. También se genera el error 17112.
+Este error indica que se ha especificado una [opción de inicio del servicio de motor de base de datos](../../database-engine/configure-windows/database-engine-service-startup-options.md) no válida. Cuando no se especifica correctamente una opción de inicio, SQL Server no se inicia o no se puede ejecutar según lo esperado. También se genera el error 17112.
 
 En algunos casos, la instancia podría iniciarse, pero, al revisar el registro de errores de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], los parámetros de inicio no parecen correctos:
 
@@ -67,5 +67,5 @@ Use la herramienta Administrador de configuración de [!INCLUDE[ssNoVersion](../
 
 Consulte los siguientes artículos para obtener más información acerca de este tema:
 
-- [Opciones de inicio del servicio de motor de base de datos](/sql/database-engine/configure-windows/database-engine-service-startup-options)
-- [Servicios SCM - Configurar opciones de inicio del servidor](/sql/database-engine/configure-windows/scm-services-configure-server-startup-options)
+- [Opciones de inicio del servicio de motor de base de datos](../../database-engine/configure-windows/database-engine-service-startup-options.md)
+- [Servicios SCM - Configurar opciones de inicio del servidor](../../database-engine/configure-windows/scm-services-configure-server-startup-options.md)

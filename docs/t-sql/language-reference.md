@@ -16,12 +16,12 @@ ms.assetid: dbba47d7-e08e-4435-b876-35dced1f325d
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 1af7b24a5a28861b30fba01dba60f5b85d2809b4
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 00d01b9b0646848ceb8b1deff2ab7cbe16518d0f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481846"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095855"
 ---
 # <a name="transact-sql-reference-database-engine"></a>Referencia de Transact-SQL (motor de base de datos)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -37,7 +37,7 @@ Estas son algunas de las herramientas de Microsoft que emiten comandos T-SQL:
 - [SQL Server Management Studio (SSMS)](../ssms/download-sql-server-management-studio-ssms.md)
 - [SQL Server Data Tools (SSDT)](../ssdt/download-sql-server-data-tools-ssdt.md)
 - [sqlcmd](../tools/sqlcmd-utility.md)
-- [Azure Data Studio](../azure-data-studio/what-is.md)
+- [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md)
   
 ## <a name="locate-the-transact-sql-reference-topics"></a>Encontrar los temas de referencia de Transact-SQL  
 Para encontrar los temas de T-SQL, utilice la búsqueda situada en la parte superior derecha de esta página, o bien la tabla de contenido que hay en la parte izquierda de la página. También puede escribir una palabra clave de T-SQL en la ventana del editor de consultas de Management Studio y pulsar F1. 
@@ -83,4 +83,3 @@ Ahora que ya sabe cómo encontrar los temas de referencia de T-SQL, ya puede hac
 - Consultar un breve tutorial sobre cómo escribir instrucciones T-SQL, vea [Tutorial: Escribir instrucciones Transact-SQL](../t-sql/tutorial-writing-transact-sql-statements.md). 
 - Ver el artículo [Convenciones de sintaxis de Transact-SQL &#40;Transact-SQL&#41;](../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md).  
 
-  

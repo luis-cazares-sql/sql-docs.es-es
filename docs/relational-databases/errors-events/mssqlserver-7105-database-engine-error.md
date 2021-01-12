@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: rgward
 ms.author: ramakoni
-ms.openlocfilehash: bfcd8763c649f83bb9e72881c6facda29917f7b8
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+ms.openlocfilehash: 7aa3b39996f8dc282e11d92706743a7ba42998da
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418925"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099278"
 ---
 # <a name="mssqlserver_7105"></a>MSSQLSERVER_7105
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -55,7 +55,7 @@ Consulte la resolución y la sección [Más información](#more-information) par
 1. Como indica el mensaje, lo primero que debe hacer es ejecutar `DBCC CHECKDB` en la base de datos en la que se encontró el problema (o bien `DBCC CHECKTABLE` si se trata de una tabla).
 
     - El identificador de la base de datos se proporciona en el mensaje.
-    - Para averiguar cuál es la tabla afectada sin ejecutar `DBCC CHECKDB`, deberá conocer a qué tablas ha accedido la consulta que ha encontrado el error. Un método consiste en usar SQL Server Profiler para hacer un seguimiento de la consulta. Por otro lado, en [!INCLUDE[sskatmai](../../includes/sskatmai-md.md)] y [!INCLUDE[sskatmai](../../includes/sskatmai-md.md)] R2, es posible que pueda encontrar la consulta mediante la sesión de eventos extendidos system_health. Consulte este vínculo para obtener más información sobre el uso de la sesión system_health: [Usar la sesión system_health](/sql/relational-databases/extended-events/use-the-system-health-session).
+    - Para averiguar cuál es la tabla afectada sin ejecutar `DBCC CHECKDB`, deberá conocer a qué tablas ha accedido la consulta que ha encontrado el error. Un método consiste en usar SQL Server Profiler para hacer un seguimiento de la consulta. Por otro lado, en [!INCLUDE[sskatmai](../../includes/sskatmai-md.md)] y [!INCLUDE[sskatmai](../../includes/sskatmai-md.md)] R2, es posible que pueda encontrar la consulta mediante la sesión de eventos extendidos system_health. Consulte este vínculo para obtener más información sobre el uso de la sesión system_health: [Usar la sesión system_health](../extended-events/use-the-system-health-session.md).
 
     - Como con cualquier problema de coherencia de la base de datos, puede resolver estos errores restaurando la base de datos a partir de una copia de seguridad en buen estado que no contenga este problema.
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: c417631d-be1f-42e0-8844-9f92c77e11f7
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 409e87d937641386747ccf5210551aadb3f5b761
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 9eec7ad0a11116b1eb9e8bf1c33b57ff3bd2b419
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195567"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099302"
 ---
 # <a name="mssqlserver_18456"></a>MSSQLSERVER_18456
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -104,7 +104,7 @@ En este ejemplo, el estado de error de autenticación es 8. Esto indica que la c
 > Cuando se instala [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] mediante el modo de autenticación de Windows y posteriormente se cambia al modo de autenticación de Windows y [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], el inicio de sesión **sa** está deshabilitado inicialmente. Esto provoca el estado de error 7: "Error de inicio de sesión del usuario 'sa'". Para habilitar el inicio de sesión **sa**, vea [Cambiar el modo de autenticación del servidor](~/database-engine/configure-windows/change-server-authentication-mode.md).  
   
 ## <a name="user-action"></a>Acción del usuario  
-Si intenta establecer conexión usando la Autenticación de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], compruebe que [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] está configurado en modo de autenticación mixto. Para obtener más información sobre cómo cambiar el modo de autenticación de SQL Server, revise [Cambio del modo de autenticación del servidor](https://docs.microsoft.com/sql/database-engine/configure-windows/change-server-authentication-mode).
+Si intenta establecer conexión usando la Autenticación de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], compruebe que [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] está configurado en modo de autenticación mixto. Para obtener más información sobre cómo cambiar el modo de autenticación de SQL Server, revise [Cambio del modo de autenticación del servidor](../../database-engine/configure-windows/change-server-authentication-mode.md).
   
 Si intenta establecer conexión usando la Autenticación de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], compruebe que el inicio de sesión de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] existe y que lo ha escrito correctamente.  
   
@@ -116,4 +116,4 @@ Si intenta conectarse con sus credenciales de administrador, inicie la aplicaci�
   
 Si el [!INCLUDE[ssDE](../../includes/ssde-md.md)] admite bases de datos independientes, confirme que el inicio de sesión no se eliminó tras la migración a un usuario de base de datos independiente.  
   
-Al conectarse a una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] de forma local, las conexiones de los servicios que se ejecutan en **NT AUTHORITY\NETWORK SERVICE** deben autenticarse con el nombre de dominio completo del equipo. Para obtener más información, consulte: [Procedimientos: Usar la cuenta de servicio de red para obtener acceso a recursos en ASP.NET](/previous-versions/msp-n-p/ff647402(v=pandp.10))  
+Al conectarse a una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] de forma local, las conexiones de los servicios que se ejecutan en **NT AUTHORITY\NETWORK SERVICE** deben autenticarse con el nombre de dominio completo del equipo. Para obtener más información, consulte: [Procedimientos: Usar la cuenta de servicio de red para obtener acceso a recursos en ASP.NET](/previous-versions/msp-n-p/ff647402(v=pandp.10))

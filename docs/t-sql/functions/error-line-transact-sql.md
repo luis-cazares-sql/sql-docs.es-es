@@ -21,14 +21,14 @@ helpviewer_keywords:
 - ERROR_LINE function
 - CATCH block
 ms.assetid: 47335734-0baf-45a6-8b3b-6c4fd80d2cb8
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c914c69646f99fdcb3ff4a214d37faa61feef3b6
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 44402d9f0af858381041e9f5bb5ff989971f44f1
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91116734"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097192"
 ---
 # <a name="error_line-transact-sql"></a>ERROR_LINE (Transact-SQL)
 
@@ -56,7 +56,7 @@ Cuando se llama en un bloque CATCH, `ERROR_LINE` devuelve
 -   el número de línea de una rutina, si el error se produjo en un procedimiento almacenado o desencadenador.  
 -   NULL, si se llamó desde fuera del ámbito del bloque CATCH.  
   
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
 Una llamada a `ERROR_LINE` se puede producir en cualquier lugar del ámbito de un bloque CATCH.  
   
 `ERROR_LINE` devuelve el número de línea en que se produjo el error. Esto ocurre independientemente de la ubicación de la llamada a `ERROR_LINE` dentro del ámbito del bloque CATCH y del número de llamadas a `ERROR_LINE`. Esto contrasta con las funciones, como @@ERROR. @@ERROR devuelve el número de error en la instrucción inmediatamente posterior a la que produjo el error o en la primera instrucción de un bloque CATCH.  

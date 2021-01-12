@@ -12,12 +12,12 @@ ms.assetid: df347f9b-b950-4e3a-85f4-b9f21735eae3
 author: MightyPen
 ms.author: genemi
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 0d28550dba1a4703bab01324910436b7256597bb
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: b4cf02b18cdaef035cd27b568d5f8d84f0a25619
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97643874"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094627"
 ---
 # <a name="sample-database-for-in-memory-oltp"></a>Base de datos de ejemplo para OLTP en memoria
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -183,10 +183,10 @@ A partir de [!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] CTP 1.1, se a
   
  Se pueden usar índices hash para optimizar aún más la carga de trabajo. Están optimizados especialmente para las búsquedas de puntos y las inserciones de filas. Sin embargo, hay que tener en cuenta que no admiten recorridos de intervalo, exámenes ordenados ni búsquedas en columnas de clave de índice iniciales. Por tanto, hay que tener cuidado cuando se usen estos índices. Además, es necesario especificar el bucket_count en el momento de la creación. Normalmente se debe establecer entre una y dos veces el número de valores de clave de índice, pero la sobrestimación no suele suponer ningún problema.  
   
-Para obtener más información, vea los Libros en pantalla para obtener detalles sobre las [directrices para usar índices](/sql/relational-databases/indexes/guidelines-for-online-index-operations) y las directrices para [elegir el número correcto de depósitos](https://sqlserver-help.com/tag/bucket_count/).  
+Para obtener más información, vea los Libros en pantalla para obtener detalles sobre las [directrices para usar índices](../indexes/guidelines-for-online-index-operations.md) y las directrices para [elegir el número correcto de depósitos](https://sqlserver-help.com/tag/bucket_count/).  
 
 Los libros en pantalla proporcionan más información sobre los temas siguientes:
-- [Instrucciones de índices](/sql/relational-databases/in-memory-oltp/indexes-for-memory-optimized-tables) <!-- On MSDN-TechNet was version sql.120 (2014), library/dn133166 -->
+- [Instrucciones de índices](./indexes-for-memory-optimized-tables.md) <!-- On MSDN-TechNet was version sql.120 (2014), library/dn133166 -->
 
  Los índices de las tablas migradas se han optimizado para la carga de trabajo de procesamiento de pedidos de venta de demostración. La carga de trabajo usa inserciones y búsquedas de puntos en las tablas Sales.SalesOrderHeader_inmem y Sales.SalesOrderDetail_inmem, y también usa búsquedas de puntos en las columnas de clave principal en las tablas Production.Product_inmem y Sales.SpecialOffer_inmem.  
   

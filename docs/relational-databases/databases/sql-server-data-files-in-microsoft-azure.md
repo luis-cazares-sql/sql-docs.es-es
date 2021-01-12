@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 38ffd9c2-18a5-43d2-b674-e425addec4e4
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 23b04ae0e205a70b195b7da39a666256463bfa1c
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 85d9e42b9c0ac537d6f33bd884b898374119972d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192855"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099339"
 ---
 # <a name="sql-server-data-files-in-microsoft-azure"></a>Archivos de datos de SQL Server en Microsoft Azure
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -126,7 +126,7 @@ Para obtener más información, consulte [Manage anonymous read access to contai
   
 - Cuando se utiliza la característica Archivos de datos de SQL Server en Azure, SQL Server realiza todas las comparaciones de direcciones URL o de rutas de acceso de archivo mediante la intercalación establecida en la base de datos **maestra**.  
   
-- Se admiten**Grupos de disponibilidad AlwaysOn** siempre y cuando no agregue nuevos archivos de base de datos a la base de datos principal. Si una operación de base de datos requiere que se cree un nuevo archivo en la base de datos principal, primero deshabilite los grupos de disponibilidad en el nodo secundario. Posteriormente, realice la operación de base de datos en la base de datos principal y haga una copia de seguridad de la base de datos en el nodo principal. Después, restaure la base de datos en el nodo secundario. Cuando termine, vuelva a habilitar los grupos de disponibilidad AlwaysOn en el nodo secundario. 
+- Se admiten **Grupos de disponibilidad AlwaysOn** siempre y cuando no agregue nuevos archivos de base de datos a la base de datos principal. Si una operación de base de datos requiere que se cree un nuevo archivo en la base de datos principal, primero deshabilite los grupos de disponibilidad en el nodo secundario. Posteriormente, realice la operación de base de datos en la base de datos principal y haga una copia de seguridad de la base de datos en el nodo principal. Después, restaure la base de datos en el nodo secundario. Cuando termine, vuelva a habilitar los grupos de disponibilidad AlwaysOn en el nodo secundario. 
 
    >[!NOTE]
    >Las instancias de clúster de conmutación por error de AlwaysOn no se admiten al usar Archivos de datos de SQL Server en Azure.
@@ -145,7 +145,7 @@ Para obtener más información, consulte [Manage anonymous read access to contai
 ### <a name="sql-server-management-studio-support"></a>Compatibilidad con SQL Server Management Studio  
  SQL Server Management Studio le permite usar esta característica a través de varias ventanas de diálogo. Por ejemplo, `https://teststorageaccnt.blob.core.windows.net/testcontainer/` representa la ruta de acceso de la dirección URL de un contenedor de almacenamiento.
  
- como una **Ruta de acceso** en varias ventanas de diálogo, como **Nueva base de datos**, **Adjuntar base de datos**y **Restaurar base de datos**. Para más información, consulte el [Tutorial: Uso del servicio Microsoft Azure Blob Storage con bases de datos de SQL Server 2016](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md).  
+ como una **Ruta de acceso** en varias ventanas de diálogo, como **Nueva base de datos**, **Adjuntar base de datos** y **Restaurar base de datos**. Para más información, consulte el [Tutorial: Uso del servicio Microsoft Azure Blob Storage con bases de datos de SQL Server 2016](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md).  
   
 ### <a name="sql-server-management-objects-smo-support"></a>Compatibilidad con Objetos de administración de SQL Server (SMO)  
  Cuando se usa la característica Archivos de datos de SQL Server en Azure, se admiten todos los Objetos de administración de SQL Server (SMO). Si un objeto SMO requiere una ruta de acceso, use el formato de dirección URL BLOB en lugar de una ruta de acceso de archivos local, como `https://teststorageaccnt.blob.core.windows.net/testcontainer/`. Para obtener más información sobre Objetos de administración de SQL Server (SMO), vea [Guía de programación para objetos de administración de SQL Server &#40;SMO&#41;](../../relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide.md)en los Libros en pantalla de SQL Server.  
@@ -177,7 +177,7 @@ Para obtener más información, consulte [Manage anonymous read access to contai
   
  **Errores de base de datos:**  
   
-**Errores al crear una base de datos** Resolución: Consulte las instrucciones de la lección 4 del [Tutorial: Uso del servicio Microsoft Azure Blob Storage con bases de datos de SQL Server 2016](../lesson-4-restore-database-to-virtual-machine-from-url.md).  
+**Errores al crear una base de datos** Resolución: Consulte las instrucciones de la lección 4 del [Tutorial: Uso del servicio Microsoft Azure Blob Storage con bases de datos de SQL Server 2016](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md#4----restore-database-to-virtual-machine-from-url).  
   
 **Errores al ejecutar la instrucción ALTER** Solución: asegúrese de ejecutar la instrucción ALTER DATABASE cuando la base de datos esté en línea. Cuando copie archivos de datos en Azure Storage, cree siempre un blob en páginas y no un blob en bloques. De lo contrario, ALTER DATABASE no se ejecutará correctamente. Consulte las instrucciones de la lección 7 del [Tutorial: Uso del servicio Microsoft Azure Blob Storage con bases de datos de SQL Server 2016](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md).  
   

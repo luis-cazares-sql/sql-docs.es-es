@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 59cf1ed10d71bf9813f2ce814d88e7f7d64b6b2e
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+ms.openlocfilehash: 905b961e2fbf882f59b050a3acb7ba0f9c2f9046
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418902"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099353"
 ---
 # <a name="mssqlserver_17892"></a>MSSQLSERVER_17892
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "92418902"
 
 ## <a name="explanation"></a>Explicación
 
-El error 17892 se produce cuando un código del desencadenador de inicio de sesión no se puede ejecutar correctamente. Los [desencadenadores de inicio de sesión](/sql/relational-databases/triggers/logon-triggers) activan procedimientos almacenados en respuesta a un evento LOGON. Este evento se genera cuando se establece una sesión de usuario con una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. El usuario recibe un mensaje de error similar al siguiente:
+El error 17892 se produce cuando un código del desencadenador de inicio de sesión no se puede ejecutar correctamente. Los [desencadenadores de inicio de sesión](../triggers/logon-triggers.md) activan procedimientos almacenados en respuesta a un evento LOGON. Este evento se genera cuando se establece una sesión de usuario con una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. El usuario recibe un mensaje de error similar al siguiente:
 
 > Mensaje 17892, nivel 14, estado 1, servidor \<Server Name>, línea 1  
 Error del inicio de sesión \<Login Name> debido a la ejecución del desencadenador.
@@ -52,7 +52,7 @@ El problema puede producirse si hay un error al ejecutar el código del desencad
 
 Puede usar una de las siguientes soluciones en función de su escenario.
 
-- **Escenario 1** : Actualmente tiene acceso a una sesión abierta de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] en una cuenta de administrador.
+- **Escenario 1**: Actualmente tiene acceso a una sesión abierta de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] en una cuenta de administrador.
 
   En este caso, puede llevar a cabo la acción correctiva necesaria para corregir el código del desencadenador.
 
@@ -62,25 +62,25 @@ Puede usar una de las siguientes soluciones en función de su escenario.
   
   De forma alternativa, puede quitar o deshabilitar el desencadenador de inicio de sesión para que los usuarios puedan seguir iniciando sesión en [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
 
-- **Escenario 2** : No tiene ninguna sesión actual abierta con privilegios de administración, pero la conexión de administrador dedicada (DAC) está habilitada en [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
+- **Escenario 2**: No tiene ninguna sesión actual abierta con privilegios de administración, pero la conexión de administrador dedicada (DAC) está habilitada en [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
 
-    En este caso, puede usar la conexión DAC para seguir los pasos descritos en el escenario 1, ya que las conexiones DAC no se ven afectadas por los desencadenadores de inicio de sesión. Para obtener más información sobre la conexión de administrador dedicada (DAC), vea: [Conexión de diagnóstico para administradores de bases de datos](/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators).
+    En este caso, puede usar la conexión DAC para seguir los pasos descritos en el escenario 1, ya que las conexiones DAC no se ven afectadas por los desencadenadores de inicio de sesión. Para obtener más información sobre la conexión de administrador dedicada (DAC), vea: [Conexión de diagnóstico para administradores de bases de datos](../../database-engine/configure-windows/diagnostic-connection-for-database-administrators.md).
 
     Para comprobar si la conexión DAC está habilitada en su instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], revise si hay un mensaje similar al siguiente en el registro de errores de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]:
 
     > 2020-02-09 16:17:44.150 Servidor Se estableció la compatibilidad con la conexión de administración dedicada para escuchar localmente en el puerto 1434.  
 
-- **Escenario 3** : No tiene una conexión DAC habilitada en el servidor ni una sesión de administrador para [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
+- **Escenario 3**: No tiene una conexión DAC habilitada en el servidor ni una sesión de administrador para [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
 
     En este escenario, la única forma de corregir el problema sería realizar los pasos siguientes:
   
     1. Detenga [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] y los servicios relacionados.
-    2. Inicie [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] desde el [símbolo del sistema](/previous-versions/sql/sql-server-2008-r2/ms180965(v=sql.105)) con los parámetros de inicio `-c`, `-m` y `-f`. Esto deshabilita el desencadenador de inicio de sesión y le permite tomar las mismas medidas correctivas descritas anteriormente en el **escenario 1** .
+    2. Inicie [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] desde el [símbolo del sistema](/previous-versions/sql/sql-server-2008-r2/ms180965(v=sql.105)) con los parámetros de inicio `-c`, `-m` y `-f`. Esto deshabilita el desencadenador de inicio de sesión y le permite tomar las mismas medidas correctivas descritas anteriormente en el **escenario 1**.
   
         > [!NOTE]
         > El procedimiento anterior requiere una cuenta de *administrador del sistema* o una cuenta de administrador equivalente.
   
-         Para obtener más información sobre estas y otras opciones de inicio, vea: [Opciones de inicio del servicio de motor de base de datos](/sql/database-engine/configure-windows/database-engine-service-startup-options).
+         Para obtener más información sobre estas y otras opciones de inicio, vea: [Opciones de inicio del servicio de motor de base de datos](../../database-engine/configure-windows/database-engine-service-startup-options.md).
 
 ## <a name="more-information"></a>Más información
 

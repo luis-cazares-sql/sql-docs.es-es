@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 4a3857e9e98bfbe7fcc86ee07272698f0fcac763
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+ms.openlocfilehash: 3228a21b43fd5b5ed2a23c5e13b47353e55cd028
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418777"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093288"
 ---
 # <a name="mssqlserver_3859"></a>MSSQLSERVER_3859
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -52,10 +52,10 @@ Este error indica que un usuario ha iniciado cambios en las tablas del sistema. 
 
     Se devuelve el siguiente mensaje de advertencia cuando se ejecuta el comando `DBCC_CHECKDB` después de actualizar manualmente una tabla del sistema:
 
-    > Resultados de DBCC para " **database_name** ".  
+    > Resultados de DBCC para "**database_name**".  
     Mensaje 8992, nivel 16, estado 1, línea 1  
-    Mensaje de comprobación del catálogo 3859, estado 1: Advertencia: el catálogo del sistema se actualizó directamente en la base de datos con id. \%d, la vez más reciente a las **date_time** .  
-    CHECKDB detectó 0 errores de asignación y 0 errores de coherencia en la base de datos " **db_name** ".  
+    Mensaje de comprobación del catálogo 3859, estado 1: Advertencia: el catálogo del sistema se actualizó directamente en la base de datos con id. \%d, la vez más reciente a las **date_time**.  
+    CHECKDB detectó 0 errores de asignación y 0 errores de coherencia en la base de datos "**db_name**".  
     Ejecución de DBCC completada. Si DBCC imprime algún mensaje de error, póngase en contacto con el administrador del sistema.
 
 ## <a name="user-action"></a>Acción del usuario
@@ -77,4 +77,4 @@ Para solucionar este problema, use uno de los siguientes métodos:
 
 ## <a name="more-information"></a>Más información
 
-Para obtener más información, consulte el artículo [Tablas base del sistema](/sql/relational-databases/system-tables/system-base-tables).
+Para obtener más información, consulte el artículo [Tablas base del sistema](../system-tables/system-base-tables.md).

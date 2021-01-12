@@ -13,12 +13,12 @@ ms.assetid: 5b13b5ac-1e4c-45e7-bda7-ebebe2784551
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a973fd5ec66f101c162e35baec0269f7b6d3d601
-ms.sourcegitcommit: d8a9ad86401bff422d506078c6200494c795e7c0
+ms.openlocfilehash: cccb47e059938745aa6166902402c8b94b674722
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97765214"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099349"
 ---
 # <a name="best-practices-with-query-store"></a>Procedimientos recomendados con el almacén de consultas
 
@@ -34,7 +34,7 @@ Para obtener una descripción rápida sobre cómo usar el almacén de consultas 
 
 ## <a name="use-query-performance-insight-in-azure-sql-database"></a><a name="Insight"></a> Uso de Información de rendimiento de consultas en Azure SQL Database
 
-Si ejecuta Almacén de consultas en [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)], puede usar [Información de rendimiento de consultas](/azure/sql-database/sql-database-query-performance) para analizar el consumo de recursos a lo largo del tiempo. Aunque se puede usar [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] y [Azure Data Studio](../../azure-data-studio/what-is.md) para obtener el consumo de recursos detallado para todas las consultas (CPU, memoria y E/S) Información de rendimiento de consultas ofrece una forma rápida y eficaz de determinar su impacto en el consumo global de DTU de la base de datos. Para obtener más información, vea [Información de rendimiento de consultas de Base de datos SQL de Azure](/azure/azure-sql/database/query-performance-insight-use).
+Si ejecuta Almacén de consultas en [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)], puede usar [Información de rendimiento de consultas](/azure/sql-database/sql-database-query-performance) para analizar el consumo de recursos a lo largo del tiempo. Aunque se puede usar [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] y [Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md) para obtener el consumo de recursos detallado para todas las consultas (CPU, memoria y E/S) Información de rendimiento de consultas ofrece una forma rápida y eficaz de determinar su impacto en el consumo global de DTU de la base de datos. Para obtener más información, vea [Información de rendimiento de consultas de Base de datos SQL de Azure](/azure/azure-sql/database/query-performance-insight-use).
 
 En esta sección se describen los valores predeterminados de configuración óptimos que están diseñados para garantizar el funcionamiento confiable del Almacén de consultas y de las características que dependen de él. La configuración predeterminada está optimizada para una recopilación continua de los datos, es decir, un tiempo mínimo en los estados OFF y READ_ONLY. Para obtener más información sobre todas las opciones disponibles del Almacén de consultas, vea [Opciones de ALTER DATABASE SET (Transact-SQL)](../../t-sql/statements/alter-database-transact-sql-set-options.md#query-store).
 

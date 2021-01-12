@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: SQLvariant
 ms.author: aanelson
 ms.reviewer: vanto
-ms.openlocfilehash: d9df9281926008ddac99b6827c41a0b6e73b2290
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+ms.openlocfilehash: a65ad9ad35e4feb2a55ffbdc259601a7b16106f9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115603"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094560"
 ---
 # <a name="manage-sql-server-on-linux-with-powershell-core"></a>Administración de SQL Server en Linux con PowerShell Core
 
@@ -27,10 +27,10 @@ Todos los pasos de PowerShell Core que se indican a continuación funcionarán e
 
 Para obtener más información sobre la instalación de PowerShell Core en varias plataformas compatibles y experimentales, consulte los siguientes artículos:
 
-- [Instalación de PowerShell Core en Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6)
-- [Instalación de PowerShell Core en Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6)
-- [Instalación de PowerShell Core en macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6)
-- [Instalación de PowerShell Core en ARM](/powershell/scripting/install/powershell-core-on-arm?view=powershell-6)
+- [Instalación de PowerShell Core en Windows](/powershell/scripting/install/installing-powershell-core-on-windows)
+- [Instalación de PowerShell Core en Linux](/powershell/scripting/install/installing-powershell-core-on-linux)
+- [Instalación de PowerShell Core en macOS](/powershell/scripting/install/installing-powershell-core-on-macos)
+- [Instalación de PowerShell Core en ARM](/powershell/scripting/install/powershell-core-on-arm)
 
 ## <a name="install-the-sqlserver-module"></a>Instalación del módulo SqlServer
 

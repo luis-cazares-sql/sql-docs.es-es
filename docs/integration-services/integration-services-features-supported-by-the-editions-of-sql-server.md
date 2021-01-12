@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: e5018225-68bb-4f34-ae4a-ead79d8ad13a
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: b5cb516c1d7058d455919a3faffed5b653a1bae6
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 2a8b60c36831622713103786727c4225ac0c351c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88449885"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095677"
 ---
 # <a name="integration-services-features-supported-by-the-editions-of-sql-server"></a>Características de Integration Services compatibles con las ediciones de SQL Server
 
@@ -36,7 +36,7 @@ Para consultar las notas de la versión más reciente e información sobre las n
 
 La edición de evaluación de SQL Server está disponible durante un período de prueba de 180 días.  
     
-> [![Descargar desde el Centro de evaluación](https://docs.microsoft.com/analysis-services/analysis-services/media/download.png)](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016) **[Descargar SQL Server 2016 desde el Centro de evaluación](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)**    
+> [![Descargar desde el Centro de evaluación](/analysis-services/analysis-services/media/download.png)](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016) **[Descargar SQL Server 2016 desde el Centro de evaluación](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)**    
     
 ## <a name="new-integration-services-features-in-sql-server-2017"></a><a name="ISNew"></a> Nuevas características de Integration Services en SQL Server 2017
   
