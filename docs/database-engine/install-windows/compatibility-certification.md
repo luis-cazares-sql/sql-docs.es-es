@@ -19,12 +19,12 @@ ms.assetid: 3c036813-36cf-4415-a0c9-248d0a433856
 author: pmasl
 ms.author: pelopes
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 8f680d2569bd05a5adb922e273378f920830a1ea
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 82d5aee8d0fa37ca66c49cf00b22385a896c653d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481496"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091798"
 ---
 # <a name="compatibility-certification"></a>Certificación de compatibilidad
 
@@ -41,7 +41,7 @@ Por ejemplo, el nivel de compatibilidad de la base de datos 130 era el valor pre
 
 Este es un principio fundamental para el modelo de operación de integración continua de [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)]. El [!INCLUDE[ssde_md](../../includes/ssde_md.md)] se mejora y actualiza continuamente en Azure, pero dado que las bases de datos existentes mantienen su nivel de compatibilidad actual, estas continúan funcionando como se han diseñado incluso después de las actualizaciones al [!INCLUDE[ssde_md](../../includes/ssde_md.md)]subyacente. 
 
-Así es también como SharePoint Server 2016 y SharePoint Server 2019 certifican en [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] y [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)], lo que le permite implementar cualquier [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] que pueda usar los niveles de compatibilidad de base de datos admitidos para esas versiones de SharePoint Server. Para más información, consulte [Requisitos de hardware y software para SharePoint Server 2016](https://docs.microsoft.com/sharepoint/install/hardware-and-software-requirements#minimum-requirements-for-a-database-server-in-a-farm) y [Requisitos de hardware y software para SharePoint Server 2019](https://docs.microsoft.com/sharepoint/install/hardware-and-software-requirements-2019#minimum-requirements-for-a-database-server-in-a-farm).
+Así es también como SharePoint Server 2016 y SharePoint Server 2019 certifican en [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] y [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)], lo que le permite implementar cualquier [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] que pueda usar los niveles de compatibilidad de base de datos admitidos para esas versiones de SharePoint Server. Para más información, consulte [Requisitos de hardware y software para SharePoint Server 2016](/sharepoint/install/hardware-and-software-requirements#minimum-requirements-for-a-database-server-in-a-farm) y [Requisitos de hardware y software para SharePoint Server 2019](/sharepoint/install/hardware-and-software-requirements-2019#minimum-requirements-for-a-database-server-in-a-farm).
 
 ## <a name="managing-upgrade-risk-with-compatibility-certification"></a>Administración del riesgo de actualización con la certificación de compatibilidad
 El uso de la certificación de compatibilidad es un enfoque valioso para la modernización de las bases de datos. Mediante la certificación basada en el nivel de compatibilidad, los desarrolladores establecen los requisitos técnicos para que una aplicación se admita en [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] y [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)], pero desacoplan el ciclo de vida de la aplicación del de la plataforma de las bases de datos. Esto permite a las empresas mantener el [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] actualizado según sea necesario de acuerdo con las directivas del ciclo de vida, así como aprovechar las nuevas mejoras de escalabilidad y rendimiento que no dependen del código y conectar aplicaciones para **mantener su estado funcional** a través de actualizaciones.
@@ -115,4 +115,4 @@ Esto se puede hacer fácilmente mediante el uso de la herramienta [Microsoft Da
 ## <a name="see-also"></a>Consulte también 
 [Nivel de compatibilidad de ALTER DATABASE (Transact-SQL)](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md)       
 [Ver o cambiar el nivel de compatibilidad de una base de datos](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)       
-[Prácticas recomendadas para actualizar el nivel de compatibilidad de base de datos](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#best-practices-for-upgrading-database-compatibility-level)      
+[Prácticas recomendadas para actualizar el nivel de compatibilidad de base de datos](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#best-practices-for-upgrading-database-compatibility-level)

@@ -13,12 +13,12 @@ f1_keywords:
 - sql14.dts.designer.afpextfiledest.f1
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 253bd5f8accf3e2fd9fc28dcaa535bea6f736316
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: d331004e82b155a1c101a31253a82e029ec4a31b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96127159"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091658"
 ---
 # <a name="flexible-file-destination"></a>Destino de archivo flexible
 
@@ -53,7 +53,7 @@ Las propiedades siguientes están disponibles en el **Editor avanzado**.
 - **escapeChar:** carácter especial utilizado para aplicar una secuencia de escape a un delimitador de columna en el contenido de un archivo de entrada. No puede especificar ambos valores escapeChar y quoteChar para una tabla. Solo se permite un carácter. Ningún valor predeterminado.
 - **quoteChar:** carácter utilizado para citar el valor de una cadena. Los delimitadores de columna y fila de dentro de las comillas se tratan como parte del valor de la cadena. Esta propiedad es aplicable tanto al conjunto de datos de entrada como al de salida. No puede especificar ambos valores escapeChar y quoteChar para una tabla. Solo se permite un carácter. Ningún valor predeterminado.
 - **nullValue:** uno o varios caracteres empleados para representar un valor nulo. El valor **predeterminado** es \N.
-- **encodingName:** permite especificar el nombre de la codificación. Consulte la propiedad [Encoding.EncodingName](/dotnet/api/system.text.encoding?view=netframework-4.8).
+- **encodingName:** permite especificar el nombre de la codificación. Consulte la propiedad [Encoding.EncodingName](/dotnet/api/system.text.encoding).
 - **skipLineCount:**  permite indicar el número de filas no vacías que hay que omitir al leer datos de archivos de entrada. Si se especifican ambos valores skipLineCount y firstRowAsHeader, las líneas se omiten primero y, luego, la información del encabezado se lee a partir del archivo de entrada.
 - **treatEmptyAsNull:** permite especificar si hay que tratar una cadena nula o vacía como un valor nulo al leer datos de un archivo de entrada. El valor **predeterminado** es true.
 

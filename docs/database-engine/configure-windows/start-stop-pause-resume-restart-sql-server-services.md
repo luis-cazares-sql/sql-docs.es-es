@@ -41,12 +41,12 @@ ms.assetid: 32660a02-e5a1-411a-9e57-7066ca459df6
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-ms.openlocfilehash: e971592b20dd2321e4265752cb8b01c38387b639
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+ms.openlocfilehash: 697cf043c4582796015b061c857145c214d105fb
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670758"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091778"
 ---
 # <a name="start-stop-pause-resume-restart-sql-server-services"></a>Inicio, detención, pausa, reanudación o reinicio de servicios de SQL Server
 
@@ -110,7 +110,7 @@ La detención del Motor de base de datos mediante el comando **SHUTDOWN** de Tra
 
 ### <a name="starting-sql-server-configuration-manager"></a>Inicio del Administrador de configuración de SQL Server
 
-En el menú **Inicio** , seleccione **Todos los programas**, **Microsoft SQL Server**, **Herramientas de configuración**y haga clic en **Administrador de configuración de SQL Server**.
+En el menú **Inicio** , seleccione **Todos los programas**, **Microsoft SQL Server**, **Herramientas de configuración** y haga clic en **Administrador de configuración de SQL Server**.
 
 Como el Administrador de configuración de SQL Server es un complemento del programa Microsoft Management Console y no un programa independiente, el Administrador de configuración de SQL Server no aparece como aplicación en las versiones más recientes de Windows. Cuando instala Windows en la unidad C, estas son las rutas de acceso a las cuatro últimas versiones.  
 
@@ -130,7 +130,7 @@ Como el Administrador de configuración de SQL Server es un complemento del pro
 
 3. En el panel de la izquierda del Administrador de configuración de SQL Server, haga clic en **Servicios de SQL Server**.
 
-4. En el panel de resultados, haga clic con el botón derecho en **SQL Server (MSSQLServer)** o en una instancia con nombre y luego haga clic en **Iniciar**, **Detener**, **Pausar**, **Reanudar**o **Reiniciar**.
+4. En el panel de resultados, haga clic con el botón derecho en **SQL Server (MSSQLServer)** o en una instancia con nombre y luego haga clic en **Iniciar**, **Detener**, **Pausar**, **Reanudar** o **Reiniciar**.
 
 5. Haga clic en **Aceptar** para cerrar la herramienta Administrador de configuración de SQL Server.
 
@@ -145,7 +145,7 @@ Como el Administrador de configuración de SQL Server es un complemento del pro
 
 3. En el panel de la izquierda del Administrador de configuración de SQL Server, haga clic en **Servicios de SQL Server**.
 
-4. En el panel de resultados, haga clic con el botón derecho en **SQL Server Browser**, **Agente SQL Server (MSSQLServer)** , o bien en**Agente SQL Server (<nombre_de_instancia>)** para una instancia con nombre y, luego, haga clic en **Iniciar**, **Detener**, **Pausar**, **Reanudar** o **Reiniciar**.  
+4. En el panel de resultados, haga clic con el botón derecho en **SQL Server Browser**, **Agente SQL Server (MSSQLServer)** , o bien en **Agente SQL Server (<nombre_de_instancia>)** para una instancia con nombre y, luego, haga clic en **Iniciar**, **Detener**, **Pausar**, **Reanudar** o **Reiniciar**.  
 
 5. Haga clic en **Aceptar** para cerrar la herramienta Administrador de configuración de SQL Server.  
 
@@ -342,7 +342,7 @@ Para obtener más información sobre la instrucción **SHUTDOWN**, vea [SHUTDOWN
   
 ##  <a name="using-service-controller-class"></a><a name="ServiceController"></a> Uso de la clase de controlador de servicio
 
-Puede utilizar la clase ServiceController para controlar el servicio SQL Server o cualquier otro servicio de Windows. Para obtener un ejemplo sobre cómo hacerlo, vea la [clase ServiceController](/dotnet/api/system.serviceprocess.servicecontroller?view=netframework-4.8).
+Puede utilizar la clase ServiceController para controlar el servicio SQL Server o cualquier otro servicio de Windows. Para obtener un ejemplo sobre cómo hacerlo, vea la [clase ServiceController](/dotnet/api/system.serviceprocess.servicecontroller).
 
 ## <a name="manage-the-sql-server-service-on-linux"></a>Administración del servicio SQL Server en Linux
 

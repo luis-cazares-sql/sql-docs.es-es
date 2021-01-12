@@ -9,20 +9,20 @@ ms.custom: ''
 ms.technology: integration-services
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 597792aa200edf6dcb9cfe49c95ab5e1befa0c55
-ms.sourcegitcommit: 5f3e0eca9840db20038f0362e5d88a84ff3424af
+ms.openlocfilehash: ce752b03e085ab70b033876d5c30ae3ff96d777c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92343657"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091542"
 ---
 # <a name="sql-server-integration-services-ssis-devops-tools-azure-devops-extension"></a>Extensión de Azure DevOps para las herramientas de DevOps para SQL Server Integration Services (SSIS)
 
-La extensión [SSIS DevOps Tools](https://marketplace.visualstudio.com/items?itemName=SSIS.ssis-devops-tools) está disponible en el marketplace de **Azure DevOps** .
+La extensión [SSIS DevOps Tools](https://marketplace.visualstudio.com/items?itemName=SSIS.ssis-devops-tools) está disponible en el marketplace de **Azure DevOps**.
 
-Si no dispone de ninguna organización de **Azure DevOps** , primero debe registrarse en [Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops) y, después, agregar la extensión **SSIS DevOps Tools** siguiendo [estos pasos](/azure/devops/marketplace/overview?tabs=browser&view=azure-devops#add-an-extension).
+Si no dispone de ninguna organización de **Azure DevOps**, primero debe registrarse en [Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops&preserve-view=true) y, después, agregar la extensión **SSIS DevOps Tools** siguiendo [estos pasos](/azure/devops/marketplace/overview?tabs=browser&view=azure-devops&preserve-view=true#add-an-extension).
 
-Las **herramientas de DevOps de SSIS** incluyen la tarea **de compilación de SSIS** , la tarea de la versión **de implementación de SSIS** y la **tarea de configuración de catálogo de SSIS** .
+Las **herramientas de DevOps de SSIS** incluyen la tarea **de compilación de SSIS**, la tarea de la versión **de implementación de SSIS** y la **tarea de configuración de catálogo de SSIS**.
 
 - La tarea **[de compilación de SSIS](#ssis-build-task)** admite la generación de archivos dtproj en el modelo de implementación de proyectos o en el modelo de implementación de paquetes.
 
@@ -50,7 +50,7 @@ Las **herramientas de DevOps de SSIS** incluyen la tarea **de compilación de SS
 
 Ruta de acceso de la carpeta o el archivo del proyecto que se va a compilar. Si se especifica una ruta de acceso de carpeta, la tarea de compilación de SSIS buscará todos los archivos dtproj de forma recursiva en esta carpeta y los compilará todos.
 
-La ruta de acceso del proyecto no puede estar *vacía* ; establézcala como **.** para realizar la compilación desde la carpeta raíz del repositorio.
+La ruta de acceso del proyecto no puede estar *vacía*; establézcala como **.** para realizar la compilación desde la carpeta raíz del repositorio.
 
 #### <a name="project-configuration"></a>Configuración de proyecto
 
@@ -58,13 +58,13 @@ Nombre de la configuración del proyecto que se va a usar para la compilación. 
 
 #### <a name="output-path"></a>Ruta de acceso de resultados
 
-Ruta de acceso de una carpeta independiente para guardar los resultados de la compilación, que se pueden publicar como artefactos de compilación a través de una [tarea de publicación de artefactos de compilación](/azure/devops/pipelines/tasks/utility/publish-build-artifacts?view=azure-devops).
+Ruta de acceso de una carpeta independiente para guardar los resultados de la compilación, que se pueden publicar como artefactos de compilación a través de una [tarea de publicación de artefactos de compilación](/azure/devops/pipelines/tasks/utility/publish-build-artifacts?view=azure-devops&preserve-view=true).
 
 ### <a name="limitations-and-known-issues"></a>Limitaciones y problemas conocidos
 
 - La tarea de compilación de SSIS se basa en Visual Studio y en el diseñador de SSIS, que es obligatorio en los agentes de compilación. Por lo tanto, para ejecutar la tarea de compilación de SSIS en la canalización, debe elegir **vs2017-win2016** para los agentes hospedados en Microsoft o bien instalar Visual Studio y el diseñador de SSIS (ya sea VS2017 + SSDT2017 o VS2019 + la extensión de proyectos de SSIS) en agentes autohospedados.
 
-- Para compilar proyectos de SSIS mediante el uso de componentes integrados (incluido Azure Feature Pack de SSIS y otros componentes de terceros), los componentes integrados deben instalarse en el equipo en el que se ejecuta el agente de canalización.  Para el agente hospedado por Microsoft, el usuario puede agregar una [tarea PowerShell Script](/azure/devops/pipelines/tasks/utility/powershell?view=azure-devops) o una [Command Line Script](/azure/devops/pipelines/tasks/utility/command-line?view=azure-devops) para descargar e instalar los componentes antes de que se ejecute la tarea de compilación de SSIS. A continuación se muestra el script de PowerShell de ejemplo para instalar Azure Feature Pack: 
+- Para compilar proyectos de SSIS mediante el uso de componentes integrados (incluido Azure Feature Pack de SSIS y otros componentes de terceros), los componentes integrados deben instalarse en el equipo en el que se ejecuta el agente de canalización.  Para el agente hospedado por Microsoft, el usuario puede agregar una [tarea PowerShell Script](/azure/devops/pipelines/tasks/utility/powershell?view=azure-devops&preserve-view=true) o una [Command Line Script](/azure/devops/pipelines/tasks/utility/command-line?view=azure-devops&preserve-view=true) para descargar e instalar los componentes antes de que se ejecute la tarea de compilación de SSIS. A continuación se muestra el script de PowerShell de ejemplo para instalar Azure Feature Pack: 
 
 ```powershell
 wget -Uri https://download.microsoft.com/download/E/E/0/EE0CB6A0-4105-466D-A7CA-5E39FA9AB128/SsisAzureFeaturePack_2017_x86.msi -OutFile AFP.msi
@@ -74,7 +74,7 @@ start -Wait -FilePath msiexec -Args "/i AFP.msi /quiet /l* log.txt"
 cat log.txt
 ```
 
-- En la tarea de compilación de SSIS no se admiten los niveles de protección **EncryptSensitiveWithPassword** y **EncryptAllWithPassword** . Asegúrese de que todos los proyectos de SSIS del código base no usan ninguno de estos dos niveles de protección, o la tarea de compilación de SSIS dejará de responder y agotará el tiempo de espera durante la ejecución.
+- En la tarea de compilación de SSIS no se admiten los niveles de protección **EncryptSensitiveWithPassword** y **EncryptAllWithPassword**. Asegúrese de que todos los proyectos de SSIS del código base no usan ninguno de estos dos niveles de protección, o la tarea de compilación de SSIS dejará de responder y agotará el tiempo de espera durante la ejecución.
 
 ## <a name="ssis-deploy-task"></a>Tarea de implementación de SSIS
 
@@ -90,8 +90,8 @@ Ruta de acceso de los archivos de origen ISPAC o SSISDeploymentManifest que quie
 
 Tipo de destino. Actualmente, la tarea de implementación de SSIS admite dos tipos de destino:
 
-- *Sistema de archivos* : los archivos SSISDeploymentManifest y sus archivos asociados se implementan en un sistema de archivos especificado. Se admiten recursos compartidos de archivos tanto locales como en Azure.
-- *SSISDB* : los archivos ISPAC se implementan en un catálogo de SSIS específico, que se puede hospedar localmente en SQL Server o en Azure-SSIS Integration Runtime.
+- *Sistema de archivos*: los archivos SSISDeploymentManifest y sus archivos asociados se implementan en un sistema de archivos especificado. Se admiten recursos compartidos de archivos tanto locales como en Azure.
+- *SSISDB*: los archivos ISPAC se implementan en un catálogo de SSIS específico, que se puede hospedar localmente en SQL Server o en Azure-SSIS Integration Runtime.
 
 #### <a name="destination-server"></a>Servidor de destino
 
@@ -172,7 +172,7 @@ Consulte los detalles sobre cómo [definir el archivo JSON de configuración](#d
 
 Ruta de acceso del archivo JSON de configuración del catálogo de SSIS. Esta propiedad solo es visible cuando se selecciona "Ruta de acceso al archivo" como origen del archivo de configuración.
 
-Para usar [variables de canalización](/azure/devops/pipelines/process/variables) en el archivo JSON de configuración, debe agregar una [tarea de transformación de archivo](/azure/devops/pipelines/tasks/utility/file-transform?view=azure-devops) antes de esta para reemplazar los valores de configuración con variables de canalización. Para obtener más información, vea [Sustitución de variables JSON](/azure/devops/pipelines/tasks/transforms-variable-substitution?tabs=Classic&view=azure-devops#json-variable-substitution).
+Para usar [variables de canalización](/azure/devops/pipelines/process/variables) en el archivo JSON de configuración, debe agregar una [tarea de transformación de archivo](/azure/devops/pipelines/tasks/utility/file-transform?view=azure-devops&preserve-view=true) antes de esta para reemplazar los valores de configuración con variables de canalización. Para obtener más información, vea [Sustitución de variables JSON](/azure/devops/pipelines/tasks/transforms-variable-substitution?tabs=Classic&view=azure-devops&preserve-view=true#json-variable-substitution).
 
 #### <a name="inline-configuration-json"></a>Archivo JSON de configuración insertado
 
@@ -297,7 +297,7 @@ El esquema JSON de configuración tiene tres niveles:
 |Propiedad.  |Descripción  |Notas  |
 |---------|---------|---------|
 |name  |Nombre de la carpeta del catálogo.|La carpeta se creará si no existe.|
-|description|Descripción de la carpeta del catálogo.|Se omitirá el valor de *null* .|
+|description|Descripción de la carpeta del catálogo.|Se omitirá el valor de *null*.|
 |projects|Matriz de objetos de proyecto. Cada objeto contiene información de configuración de un proyecto.|Vea *Atributos del proyecto* para obtener el esquema de un objeto de proyecto.|
 |environments|Matriz de objetos de entorno. Cada objeto contiene información de configuración de un entorno.|Vea *Atributos de entorno* para obtener el esquema de un objeto de entorno.|
 
@@ -314,9 +314,9 @@ El esquema JSON de configuración tiene tres niveles:
 |Propiedad.  |Descripción  |Notas  |
 |---------|---------|---------|
 |name|Nombre del parámetro.|<li>El parámetro puede ser un parámetro de proyecto o un parámetro de paquete. <li>El parámetro se omite si no existe. <li>Si el parámetro es una propiedad del administrador de conexiones, el nombre debe estar con el formato **CM.\<Connection Manager Name>.\<Property Name>** . |
-|contenedor|Contenedor del parámetro.|<li>Si el parámetro es un parámetro de proyecto, *container* debe ser el nombre del proyecto. <li>Si es un parámetro de paquete, *container* debe ser el nombre del paquete con la extensión **.dtsx** .|
-|value|Valor del parámetro.|<li>Cuando *valueType* es *referenced* : el valor es una referencia a una variable de entorno con el tipo de *cadena* . <li> Cuando *valueType* es *literal* : este atributo admite cualquier valor JSON *booleano* , de *número* y de *cadena* válido. <li> El valor se convertirá al tipo de parámetro de destino. Se producirá un error si no se puede convertir.<li> El valor de *null* no es válido. La tarea omitirá este objeto de parámetro y mostrará una advertencia.|
-|valueType|Tipo del valor del parámetro.|Los tipos válidos son los siguientes: <br> *literal* : el atributo *value* representa un valor literal. <br> *referenced* : el atributo *value* es una referencia a una variable de entorno.|
+|contenedor|Contenedor del parámetro.|<li>Si el parámetro es un parámetro de proyecto, *container* debe ser el nombre del proyecto. <li>Si es un parámetro de paquete, *container* debe ser el nombre del paquete con la extensión **.dtsx**.|
+|value|Valor del parámetro.|<li>Cuando *valueType* es *referenced*: el valor es una referencia a una variable de entorno con el tipo de *cadena*. <li> Cuando *valueType* es *literal*: este atributo admite cualquier valor JSON *booleano*, de *número* y de *cadena* válido. <li> El valor se convertirá al tipo de parámetro de destino. Se producirá un error si no se puede convertir.<li> El valor de *null* no es válido. La tarea omitirá este objeto de parámetro y mostrará una advertencia.|
+|valueType|Tipo del valor del parámetro.|Los tipos válidos son los siguientes: <br> *literal*: el atributo *value* representa un valor literal. <br> *referenced*: el atributo *value* es una referencia a una variable de entorno.|
 
 ##### <a name="reference-attributes"></a>Atributos de referencia
 
@@ -330,7 +330,7 @@ El esquema JSON de configuración tiene tres niveles:
 |Propiedad.  |Descripción  |Notas  |
 |---------|---------|---------|
 |name|Nombre del entorno.|Si el entorno no existe, se creará.|
-|description|Descripción del entorno.|Se omitirá el valor de *null* .|
+|description|Descripción del entorno.|Se omitirá el valor de *null*.|
 |variables|Matriz de objetos de variable.|Cada objeto contiene información de configuración para una variable de entorno. Vea *Atributos de variables* para obtener el esquema de un objeto de variable.|
 
 ##### <a name="variable-attributes"></a>Atributos de variables
@@ -339,8 +339,8 @@ El esquema JSON de configuración tiene tres niveles:
 |---------|---------|---------|
 |name|Nombre de la variable de entorno.|Si la variable de entorno no existe, se creará.|
 |type|Tipo de datos de la variable de entorno.|Los tipos válidos son los siguientes: <br> *boolean* <br> *byte* <br> *datetime* <br> Decimal <br> *double* <br> *int16* <br> *int32* <br> *int64* <br> *sbyte* <br> *single* <br> *string* <br> *uint32* <br> *uint64*|
-|description|Descripción de la variable de entorno.|Se omitirá el valor de *null* .|
-|value|Valor de la variable de entorno.|Este atributo admite cualquier valor JSON booleano, de número y de cadena válido.<br> El valor se convertirá al tipo especificado por el atributo **type** . Se producirá un error si no se puede realizar la conversión.<br>El valor de *null* no es válido. La tarea omitirá este objeto de variable de entorno y mostrará una advertencia.|
+|description|Descripción de la variable de entorno.|Se omitirá el valor de *null*.|
+|value|Valor de la variable de entorno.|Este atributo admite cualquier valor JSON booleano, de número y de cadena válido.<br> El valor se convertirá al tipo especificado por el atributo **type**. Se producirá un error si no se puede realizar la conversión.<br>El valor de *null* no es válido. La tarea omitirá este objeto de variable de entorno y mostrará una advertencia.|
 |sensitive|Si el valor de la variable de entorno es confidencial.|Las entradas válidas son: <br> *true* <br> *false*|
 
 ## <a name="release-notes"></a>Notas de la versión

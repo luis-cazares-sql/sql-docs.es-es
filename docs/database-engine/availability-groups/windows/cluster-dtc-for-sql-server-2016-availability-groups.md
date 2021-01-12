@@ -11,12 +11,12 @@ ms.assetid: a47c5005-20e3-4880-945c-9f78d311af7a
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 981ce2dcfadf234383382103a33faf4f0ab9302e
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 4fd420fd7d07af5a6efa81cdb7e716020c03a89b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97643073"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091817"
 ---
 # <a name="how-to-cluster-the-dtc-service-for-an-always-on-availability-group"></a>Cómo agrupar en clústeres el servicio DTC para un grupo de disponibilidad Always On
 
@@ -48,7 +48,7 @@ Una vez que haya creado el recurso de grupo de disponibilidad, cree un recurso D
 |Tarea|Referencia|  
 |-----------------|----------|  
 |Habilite el acceso de red de forma segura para el recurso del DTC en clúster.|[Habilitar el acceso de red de forma segura para MS DTC](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753620(v=ws.10))|
-|Detenga y deshabilite el servicio DTC local.|[Configurar la forma en que se inicia un servicio](https://technet.microsoft.com/library/cc755249(v=ws.11).aspx)|
+|Detenga y deshabilite el servicio DTC local.|[Configurar la forma en que se inicia un servicio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755249(v=ws.11))|
 |Reinicie el servicio SQL Server para cada instancia del grupo de disponibilidad.  Conmute por error el grupo de disponibilidad según sea necesario.|[Realizar una conmutación por error manual planeada de un grupo de disponibilidad (SQL Server)](../../../database-engine/availability-groups/windows/perform-a-planned-manual-failover-of-an-availability-group-sql-server.md)<br /><br />[Iniciar, detener, pausar, reanudar y reiniciar el motor de base de datos, Agente SQL Server o el Servicio SQL Server Browser](../../../database-engine/configure-windows/start-stop-pause-resume-restart-sql-server-services.md)|
 
 - Si el servidor es Windows Server 2012 R2, el sistema operativo debe tener aplicado [KB 3030373](https://support.microsoft.com/kb/3090973) .

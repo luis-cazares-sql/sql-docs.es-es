@@ -9,12 +9,12 @@ ms.author: alayu
 ms.reviewer: maghan, jrasnick
 ms.custom: seodec18; seo-lt-2019
 ms.date: 10/15/2020
-ms.openlocfilehash: 1b0fe9ee55f9e0e1243ea72e8160b39a95876a55
-ms.sourcegitcommit: 2144a22ad4380182133e87664a907fe6f06b5f95
+ms.openlocfilehash: 8215e84c4c61935b3f5831ca771e2868e27be428
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94570931"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091728"
 ---
 # <a name="quickstart-use-azure-data-studio-to-connect-and-query-data-using-a-dedicated-sql-pool-in-azure-synapse-analytics"></a>Inicio rápido: Uso de Azure Data Studio para conectarse a datos y consultarlos mediante un grupo de SQL dedicado en Azure Synapse Analytics
 
@@ -139,6 +139,6 @@ El editor de consultas aún está conectado a la base de datos *maestra*, pero l
 Si no tiene pensado seguir trabajando con las bases de datos de ejemplo creadas en este artículo, [elimine el grupo de recursos](/azure/synapse-analytics/sql-data-warehouse/create-data-warehouse-portal#clean-up-resources).
 
 ## <a name="next-steps"></a>Pasos siguientes
-Para obtener más información, visite [Conexión a Synapse SQL con Azure Data Studio](https://docs.microsoft.com/azure/synapse-analytics/sql/get-started-azure-data-studio).
+Para obtener más información, visite [Conexión a Synapse SQL con Azure Data Studio](/azure/synapse-analytics/sql/get-started-azure-data-studio).
 
 Ahora que ya se ha conectado correctamente a una instancia de Azure Synapse Analytics y ha ejecutado una consulta, pruebe el [Tutorial del editor de código](tutorial-sql-editor.md).

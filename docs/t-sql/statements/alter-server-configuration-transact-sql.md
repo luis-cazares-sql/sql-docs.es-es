@@ -19,14 +19,14 @@ helpviewer_keywords:
 - ALTER SERVER CONFIGURATION statement
 - setting process affinity
 ms.assetid: f3059e42-5f6f-4a64-903c-86dca212a4b4
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: d3381300671d2303f8766351e19018d8122c861f
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 5fc18fa93e47267d299c3b568011de5645f943da
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300926"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092040"
 ---
 # <a name="alter-server-configuration-transact-sql"></a>ALTER SERVER CONFIGURATION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -131,7 +131,7 @@ Especifica que los subprocesos no se asignan a ninguna CPU. El sistema operativo
 Especifica la CPU o el rango de las CPU a las que se asignan los subprocesos.  
   
 { CPU_ID | CPU_ID  TO  CPU_ID } [ ,...n ]  
-Es la lista de una o varias CPU. Los identificadores de CPU comienzan en 0 y son valores **integer** .  
+Es la lista de una o varias CPU. Los identificadores de CPU comienzan en 0 y son valores **integer**.  
   
 NUMANODE = \<NUMA_node_range_spec>  
 Asigna subprocesos a todas las CPU que pertenecen al nodo o rango de nodos NUMA especificado.  
@@ -140,11 +140,11 @@ Asigna subprocesos a todas las CPU que pertenecen al nodo o rango de nodos NUMA 
 Especifica el nodo o rango de nodos NUMA.  
   
 { NUMA_node_ID | NUMA_node_ID  TO NUMA_node_ID } [ ,...n ]  
-Es la lista de uno o varios nodos NUMA. Los identificadores del nodo NUMA comienzan por 0 y son valores **integer** .  
+Es la lista de uno o varios nodos NUMA. Los identificadores del nodo NUMA comienzan por 0 y son valores **integer**.  
   
 **\<diagnostic_log> ::=**  
   
-**Se aplica a** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]).  
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]).  
 
   
 DIAGNOSTICS LOG  
@@ -167,7 +167,7 @@ Número máximo de archivos de registro de diagnóstico que pueden almacenarse e
   
 **\<failover_cluster_property> ::=**  
   
-**Se aplica a** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]).    
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]).    
   
 FAILOVER CLUSTER PROPERTY  
 Modifica las propiedades privadas de clúster de conmutación por error de recursos de SQL Server.  
@@ -200,7 +200,7 @@ Valor de tiempo de espera que establece cuánto tiempo debe la DLL del recurso d
   
 **\<hadr_cluster_context> ::=**  
   
-**Se aplica a** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]).   
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]).   
   
 HADR CLUSTER CONTEXT **=** { **'** _remote\_windows\_cluster_ **'** | LOCAL }  
 Cambia el contexto de clúster de HADR de la instancia de servidor al clúster de conmutación por error de Windows Server (WSFC) especificado. El *contexto de clúster de HADR* determina qué clúster de conmutación por error de Windows Server administra los metadatos para las réplicas de disponibilidad hospedadas por la instancia de servidor. Use la opción SET HADR CLUSTER CONTEXT solo durante una migración entre clústeres de [!INCLUDE[ssHADR](../../includes/sshadr-md.md)] a una instancia de [!INCLUDE[ssSQL11SP1](../../includes/sssql11sp1-md.md)] o una versión posterior en un nuevo WSFC.  
@@ -224,7 +224,7 @@ Para obtener más información, consulte [Cambiar el contexto de clúster de HAD
   
 **\<buffer_pool_extension>::=**  
   
-**Se aplica a** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]).    
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]).    
   
 ACTIVAR  
 Habilita la opción de extensión del grupo de búferes. Esta opción extiende el tamaño del grupo de búferes con almacenamiento permanente. El almacenamiento permanente, como las unidades de estado sólido (SSD), conservan las páginas de datos limpias en el grupo. Para obtener más información sobre esta característica, vea [Buffer Pool Extension](../../database-engine/configure-windows/buffer-pool-extension.md). La extensión del grupo de búferes no está disponible en todas las ediciones de SQL Server. Para obtener más información, consulte [Ediciones y características admitidas de SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md).  
@@ -245,7 +245,7 @@ Deshabilita la opción de extensión del grupo de búferes. Deshabilite la opci�
   
 **\<soft_numa>**  
 
-**Se aplica a** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]).  
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]).  
   
 ACTIVAR  
 Permite la creación automática de particiones para dividir grandes nodos de hardware NUMA en nodos NUMA más pequeños. Para cambiar el valor de ejecución, es necesario reiniciar el motor de base de datos.  
@@ -264,7 +264,7 @@ Deshabilita la creación automática de particiones de software de grandes nodos
 
 **\<memory_optimized> ::=**
 
-**Se aplica a** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]).
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]).
 
 ACTIVAR <br>
 Habilita todas las características en el nivel de instancia que forman parte de la familia de características de la [base de datos en memoria](../../relational-databases/in-memory-database.md). Esto incluye los [metadatos tempdb optimizados para memoria](../../relational-databases/databases/tempdb-database.md#memory-optimized-tempdb-metadata) y el [grupo de búferes híbrido](../../database-engine/configure-windows/hybrid-buffer-pool.md). Es necesario llevar a cabo un reinicio para que surta efecto.
@@ -359,7 +359,7 @@ SET PROCESS AFFINITY CPU=AUTO;
   
 ###  <a name="setting-diagnostic-log-options"></a><a name="Diagnostic"></a> Setting diagnostic log options  
   
-**Se aplica a** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]).    
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]).    
   
 En los ejemplos de esta sección se muestra cómo establecer los valores para la opción de registro de diagnóstico.  
   
@@ -395,7 +395,7 @@ SET DIAGNOSTICS LOG MAX_SIZE = 10 MB;
   
 ###  <a name="setting-failover-cluster-properties"></a><a name="Failover"></a> Configuración de las propiedades de clúster de conmutación por error  
   
-**Se aplica a** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]).   
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]).   
   
 En el ejemplo siguiente se muestra la forma de establecer los valores de las propiedades de recurso de clúster de conmutación por error de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
@@ -418,7 +418,7 @@ ALTER SERVER CONFIGURATION SET HADR CLUSTER CONTEXT = 'clus01.xyz.com';
   
 ####  <a name="a-setting-the-buffer-pool-extension-option"></a><a name="BufferPoolExtension"></a> A. Establecer la opción de extensión del grupo de búferes  
   
-**Se aplica a** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]).    
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]).    
   
 En el siguiente ejemplo se habilita la opción de extensión del grupo de búferes y se especifica un nombre de archivo y un tamaño.  
   
@@ -447,7 +447,7 @@ GO
 
 ### <a name="setting-in-memory-database-options"></a><a name="MemoryOptimized"></a> Configurar las opciones de base de datos en memoria
 
-**Se aplica a** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]).
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (a partir de [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]).
 
 #### <a name="a-enable-all-in-memory-database-features-with-default-options"></a>A. Habilitar todas las características de base de datos en memoria con las opciones predeterminadas
 
