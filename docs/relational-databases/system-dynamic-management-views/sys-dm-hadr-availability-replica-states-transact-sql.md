@@ -1,6 +1,6 @@
 ---
 description: sys.dm_hadr_availability_replica_states (Transact-SQL)
-title: Sys. dm_hadr_availability_replica_states (Transact-SQL) | Microsoft Docs
+title: sys.dm_hadr_availability_replica_states (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 10/16/2017
 ms.prod: sql
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], monitoring
 - sys.dm_hadr_availability_replica_states dynamic management view
 ms.assetid: d2e678bb-51e8-4a61-b223-5c0b8d08b8b1
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 347d05c0bfc37b1c14fddb728df5508e062cb13d
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 549c37fdcc04d16eb2163fc7cca7e2ffddf9ce3e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546567"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092797"
 ---
 # <a name="sysdm_hadr_availability_replica_states-transact-sql"></a>sys.dm_hadr_availability_replica_states (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "89546567"
   Devuelve una fila para cada réplica local y una fila para cada réplica remota en el mismo grupo de disponibilidad Always On que una réplica local. Cada fila contiene información sobre el estado de una réplica determinada.  
   
 > [!IMPORTANT]  
->  Para obtener información sobre cada réplica de un grupo de disponibilidad determinado, consulte **Sys. dm_hadr_availability_replica_states** en la instancia del servidor que hospeda la réplica principal. Cuando se consulta en una instancia de servidor que hospeda una réplica secundaria de un grupo de disponibilidad, esta vista de administración dinámica devuelve solo información local para el grupo de disponibilidad.  
+>  Para obtener información sobre cada réplica de un grupo de disponibilidad determinado, consulte **Sys.dm_hadr_availability_replica_states** en la instancia del servidor que hospeda la réplica principal. Cuando se consulta en una instancia de servidor que hospeda una réplica secundaria de un grupo de disponibilidad, esta vista de administración dinámica devuelve solo información local para el grupo de disponibilidad.  
   
 |Nombre de la columna|Tipo de datos|Descripción|  
 |-----------------|---------------|-----------------|  
@@ -43,8 +43,8 @@ ms.locfileid: "89546567"
 |**role**|**tinyint**|[!INCLUDE[ssHADR](../../includes/sshadr-md.md)]Rol actual de una réplica local o una réplica remota conectada, uno de los siguientes:<br /><br /> 0 = Resolver<br /><br /> 1 = Principal<br /><br /> 2 = Secundario<br /><br /> Para obtener más información sobre los roles de [!INCLUDE[ssHADR](../../includes/sshadr-md.md)], vea [Información general de los grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server.md).|  
 |**role_desc**|**nvarchar(60)**|Descripción del **rol**, uno de los siguientes:<br /><br /> RESOLVING<br /><br /> PRIMARY<br /><br /> SECONDARY|  
 |**operational_state**|**tinyint**|Estado operativo actual de la réplica, uno de los siguientes:<br /><br /> 0 = conmutación por error pendiente<br /><br /> 1 = pendiente<br /><br /> 2 = en línea<br /><br /> 3 = sin conexión<br /><br /> 4 = error<br /><br /> 5 = No se pudo establecer quórum<br /><br /> NULL = La réplica no es local.<br /><br /> Para obtener más información, vea [roles y Estados operativos](#RolesAndOperationalStates), más adelante en este tema.|  
-|**\_desc. estado operativo \_**|**nvarchar(60)**|Descripción del ** \_ estado operativo**, uno de los siguientes:<br /><br /> PENDING_FAILOVER<br /><br /> PENDING<br /><br /> ONLINE<br /><br /> OFFLINE<br /><br /> FAILED<br /><br /> FAILED_NO_QUORUM<br /><br /> NULL|  
-|**mantenimiento de la recuperación \_**|**tinyint**|Resumen de la columna de ** \_ Estado de base de datos** de la vista de administración dinámica [Sys. dm_hadr_database_replica_states](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-states-transact-sql.md) . A continuación se muestran los valores posibles y sus descripciones.<br /><br /> 0: en curso.  Al menos una base de datos combinada tiene un estado de base de datos distinto de ONLINE (el** \_ Estado** de la base de datos no es 0).<br /><br /> 1: en línea. Todas las bases de datos Unidas tienen el estado de base de datos en línea (**database_state** es 0).<br /><br /> NULL: **is_local** = 0|  
+|**\_desc. estado operativo \_**|**nvarchar(60)**|Descripción del **\_ estado operativo**, uno de los siguientes:<br /><br /> PENDING_FAILOVER<br /><br /> PENDING<br /><br /> ONLINE<br /><br /> OFFLINE<br /><br /> FAILED<br /><br /> FAILED_NO_QUORUM<br /><br /> NULL|  
+|**mantenimiento de la recuperación \_**|**tinyint**|Resumen de la **columna \_ Estado de base de datos** de la vista de administración dinámica [Sys.dm_hadr_database_replica_states](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-states-transact-sql.md) . A continuación se muestran los valores posibles y sus descripciones.<br /><br /> 0: en curso.  Al menos una base de datos combinada tiene un estado de base de datos distinto de ONLINE (el **\_ Estado** de la base de datos no es 0).<br /><br /> 1: en línea. Todas las bases de datos Unidas tienen el estado de base de datos en línea (**database_state** es 0).<br /><br /> NULL: **is_local** = 0|  
 |**recovery_health_desc**|**nvarchar(60)**|Descripción de **recovery_health**, uno de los siguientes:<br /><br /> ONLINE_IN_PROGRESS<br /><br /> ONLINE<br /><br /> NULL|  
 |**Estado de sincronización \_**|**tinyint**|Refleja un resumen del estado de sincronización de base de datos (**synchronization_state**) de todas las bases de datos de disponibilidad Unidas (también conocidas como *réplicas*) y el modo de disponibilidad de la réplica (modo de confirmación sincrónica o asincrónica). El Resumen reflejará el estado acumulado menos correcto en las bases de datos de la réplica. A continuación se muestran los valores posibles y sus descripciones.<br /><br /> 0: no es correcto.   El estado de al menos una de las bases de datos unidas es NOT SYNCHRONIZING.<br /><br /> 1: parcialmente correcto. Algunas réplicas no están en el estado de sincronización del destino: las réplicas de confirmación sincrónica deben ser sincronizadas y las réplicas de confirmación asincrónica deberían estar sincronizándose.<br /><br /> 2: correcto. Todas las réplicas están en el estado de sincronización del destino: las réplicas de confirmación sincrónica se sincronizan y las réplicas de confirmación asincrónica se están sincronizando.|  
 |**synchronization_health_desc**|**nvarchar(60)**|Descripción de **synchronization_health**, uno de los siguientes:<br /><br /> NOT_HEALTHY<br /><br /> PARTIALLY_HEALTHY<br /><br /> HEALTHY|  

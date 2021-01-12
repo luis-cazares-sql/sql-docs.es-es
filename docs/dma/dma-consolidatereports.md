@@ -14,12 +14,12 @@ ms.assetid: ''
 author: rajeshsetlem
 ms.author: rajpo
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 03ea9cc4d6b7842739f4431fea2e9a418e0f3f9e
-ms.sourcegitcommit: 67befbf7435f256e766bbce6c1de57799e1db9ad
+ms.openlocfilehash: 4d1bcf2cdc9997ea33be87184c38447b7cd62973
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523922"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091611"
 ---
 # <a name="assess-an-enterprise-and-consolidate-assessment-reports-with-dma"></a>Evaluación de una empresa y consolidación de informes de evaluación con DMA.
 
@@ -34,7 +34,7 @@ Las siguientes instrucciones paso a paso le ayudarán a usar la Data Migration A
   - [.NET Framework](https://www.microsoft.com/download/details.aspx?id=30653) v 4.5 o superior.
   - [SSMS](../ssms/download-sql-server-management-studio-ssms.md) 17,0 o superior.
   - [Escritorio Power BI](/power-bi/fundamentals/desktop-get-the-desktop).
-  - [Módulos de Azure PowerShell](/powershell/azure/install-az-ps?view=azps-1.0.0)
+  - [Módulos de Azure PowerShell](/powershell/azure/install-az-ps)
 - Descargar y extraer:
   - La [plantilla de Power BI de informes DMA](https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/MicrosoftDataMigration/161/4/PowerBI-Reports.zip).
   - El [script LoadWarehouse](https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/MicrosoftDataMigration/161/3/LoadWarehouse1.zip).
@@ -80,7 +80,7 @@ Este inventario puede estar en una de estas dos formas:
 >
 > En el caso de las instancias predeterminadas, establezca el nombre de instancia en MSSQLServer.
 
-Al usar un archivo CSV para importar los datos, asegúrese de que hay solo dos columnas de **nombre de instancia** de datos y **nombre de base**de datos, y que las columnas no tienen filas de encabezado.
+Al usar un archivo CSV para importar los datos, asegúrese de que hay solo dos columnas de **nombre de instancia** de datos y **nombre de base** de datos, y que las columnas no tienen filas de encabezado.
 
  ![contenido del archivo CSV](../dma/media//dma-consolidatereports/dma-csv-file-contents.png)
 
@@ -110,7 +110,7 @@ Cree una base de datos denominada **EstateInventory** y una tabla denominada **I
 
 - nombreDeServidor
 - InstanceName
-- Puerto
+- Port
 - AssessmentFlag
 
 ![Captura de pantalla de un SQL Server contenido de la tabla si se usa un inventario de instancia.](../dma/media//dma-consolidatereports/dma-sql-server-table-contents-instance-inventory.png)
@@ -131,7 +131,7 @@ Los parámetros asociados a la función dmaDataCollector se describen en la tabl
 |**databaseName** | La base de datos que hospeda la tabla de inventario. |
 |**useInstancesOnly** | Marca de bits para especificar si se va a usar una lista de instancias para la evaluación o no.  Si se establece en 0, se usará la tabla DatabaseInventory para compilar la lista de destino de la evaluación. |
 |**AssessmentName** | Nombre de la evaluación de DMA. |
-|**TargetPlatform** | El tipo de destino de la evaluación que desea realizar.  Los valores posibles son **AzureSQLDatabase**, **ManagedSqlServer**, **SQLServer2012**, **SQLServer2014**, **SQLServer2016**, **SQLServerLinux2017**, **SQLServerWindows2017**,  **SqlServerWindows2019**y **SqlServerLinux2019**.  |
+|**TargetPlatform** | El tipo de destino de la evaluación que desea realizar.  Los valores posibles son **AzureSQLDatabase**, **ManagedSqlServer**, **SQLServer2012**, **SQLServer2014**, **SQLServer2016**, **SQLServerLinux2017**, **SQLServerWindows2017**,  **SqlServerWindows2019** y **SqlServerLinux2019**.  |
 |**AuthenticationMethod** | El método de autenticación para conectarse a los destinos SQL Server que desea evaluar. Los valores posibles son **SQLAuth** y **WindowsAuth**. |
 |**OutputLocation** | Directorio en el que se va a almacenar el archivo de salida de evaluación de JSON. Dependiendo del número de bases de datos que se estén evaluando y del número de objetos dentro de las bases de datos, las evaluaciones pueden tardar un tiempo excepcionalmente largo. El archivo se escribirá una vez completadas todas las evaluaciones. |
 
@@ -274,7 +274,7 @@ Esta sección es la parte principal del informe, que muestra la preparación de 
 
 - InstanceDatabase
 - ChangeCategory
-- Title
+- Título
 - ObjectType
 - ImpactedObjectName
 
@@ -282,7 +282,7 @@ Esta sección es la parte principal del informe, que muestra la preparación de 
 
 Este informe también sirve como punto de filtro para crear el informe del plan de corrección.
 
-Para profundizar en el informe del plan de corrección, haga clic con el botón derecho en un punto de datos de este gráfico, elija **obtención de detalles**y, a continuación, seleccione **planes de corrección**.
+Para profundizar en el informe del plan de corrección, haga clic con el botón derecho en un punto de datos de este gráfico, elija **obtención de detalles** y, a continuación, seleccione **planes de corrección**.
 
 Esta tarea filtra el informe del plan de corrección hasta el nivel de la jerarquía actual en función del punto en el que se selecciona la opción de obtención de detalles.
 

@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - sysmergesubscriptions system table
 ms.assetid: 6adc78da-991d-4c08-98c3-ecb4762e0e99
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: aef0f508cc4d3c3034fe49c7e46762f3b9bb2645
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: e3caa66b5e8e938a0e54f7212b37e0442e29ebfe
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537890"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98090970"
 ---
 # <a name="sysmergesubscriptions-transact-sql"></a>sysmergesubscriptions (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -60,9 +60,9 @@ ms.locfileid: "89537890"
 |partition_id|**int**|Identifica la partición precalculada a la que pertenece la suscripción.|  
 |cleanedup_unsent_changes|**bit**|Identifica que los metadatos de los cambios no enviados se han eliminado en el suscriptor.|  
 |replica_version|**int**|Identifica la versión de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] del suscriptor al que pertenece la suscripción, que puede ser uno de estos valores:<br /><br /> **90** = [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]<br /><br /> **100** = [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)]|  
-|supportability_mode|**int**|Exclusivamente para uso interno.|  
-|application_name|**nvarchar(128)**|Exclusivamente para uso interno.|  
-|subscriber_number|**int**|Exclusivamente para uso interno.|  
+|supportability_mode|**int**|Solo para uso interno.|  
+|application_name|**nvarchar(128)**|Solo para uso interno.|  
+|subscriber_number|**int**|Solo para uso interno.|  
 |last_makegeneration_datetime|**datetime**|Última **fecha y hora** que el proceso makegeneration ejecutó para el publicador. Para obtener más información, consulte el parámetro-MakeGenerationInterval en [replication agente de mezcla](../../relational-databases/replication/agents/replication-merge-agent.md).|  
   
 ## <a name="see-also"></a>Consulte también  

@@ -17,14 +17,14 @@ helpviewer_keywords:
 - system catalogs [SQL Server], example queries
 - catalog views [SQL Server], frequently asked questions
 ms.assetid: ca202580-c37e-4ccd-9275-77ce79481f64
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 346ae709b81c1d5f3892a7e7b5acfd98c3ff7d3b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: a67ede3c053d3b9458e1b880a268e923226f68d1
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539795"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093291"
 ---
 # <a name="querying-the-sql-server-system-catalog-faq"></a>Consultar las preguntas más frecuentes (P+F) del catálogo del sistema de SQL Server
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "89539795"
 ##  <a name="frequently-asked-questions"></a><a name="_TOP"></a> Preguntas más frecuentes  
  En las secciones siguientes se enumeran las preguntas más frecuentes por categoría.  
   
-### <a name="data-types"></a>Tipos de datos  
+### <a name="data-types"></a>Tipo de datos  
   
 -   [¿Cómo busco los tipos de datos de las columnas de una tabla específica?](#_FAQ7)  
   
@@ -780,7 +780,7 @@ GO
 ###  <a name="how-do-i-find-the-views-transact-sql-functions-and-transact-sql-stored-procedures-that-depend-on-a-specified-clr-user-defined-type-or-alias-type"></a><a name="_FAQ26"></a> Cómo encontrar las vistas, las funciones de Transact-SQL y los procedimientos almacenados de Transact-SQL que dependen de un tipo definido por el usuario o un tipo de alias CLR específico?  
  Antes de ejecutar la consulta siguiente, reemplace `<database_name>` por un nombre válido y `<schema_name.data_type_name>` por un nombre del tipo CLR definido por el usuario del esquema o del nombre de tipo alias válido.  
   
- Los parámetros definidos en una función o procedimiento están enlazados a esquemas de forma implícita. Por lo tanto, los parámetros que dependen de un tipo definido por el usuario CLR o de un tipo de alias se pueden ver mediante la vista de catálogo [Sys. sql_dependencies](../../relational-databases/system-catalog-views/sys-sql-dependencies-transact-sql.md) . Los procedimientos y los desencadenadores no están enlazados a ningún esquema. Esto significa que las dependencias entre cualquier expresión definida en el cuerpo del procedimiento o del desencadenador y los tipos CLR definidos por el usuario o alias no se mantienen. Las vistas enlazadas a esquema y las funciones definidas por el usuario enlazadas a esquema que tienen expresiones que dependen de un tipo definido por el usuario CLR o de un tipo de alias se mantienen en la vista de catálogo **Sys. sql_dependencies** . Las dependencias entre los tipos y las funciones y procedimientos CLR no se mantienen.  
+ Los parámetros definidos en una función o procedimiento están enlazados a esquemas de forma implícita. Por lo tanto, los parámetros que dependen de un tipo definido por el usuario CLR o de un tipo de alias se pueden ver mediante la vista de catálogo [Sys.sql_dependencies](../../relational-databases/system-catalog-views/sys-sql-dependencies-transact-sql.md) . Los procedimientos y los desencadenadores no están enlazados a ningún esquema. Esto significa que las dependencias entre cualquier expresión definida en el cuerpo del procedimiento o del desencadenador y los tipos CLR definidos por el usuario o alias no se mantienen. Las vistas enlazadas a esquema y las funciones definidas por el usuario enlazadas a esquema que tienen expresiones que dependen de un tipo definido por el usuario CLR o de un tipo de alias se mantienen en la vista de catálogo **Sys.sql_dependencies** . Las dependencias entre los tipos y las funciones y procedimientos CLR no se mantienen.  
   
  La consulta siguiente devuelve todas las dependencias enlazadas a esquemas en vistas, funciones [!INCLUDE[tsql](../../includes/tsql-md.md)] y procedimientos almacenados [!INCLUDE[tsql](../../includes/tsql-md.md)] de un tipo CLR definido por el usuario determinado o de un tipo de alias.  
   

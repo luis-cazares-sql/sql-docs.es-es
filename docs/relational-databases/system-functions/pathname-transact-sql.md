@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - PathName FILESTREAM [SQL Server]
 ms.assetid: 6b95ad90-6c82-4a23-9294-a2adb74934a3
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: fc5b4b67074c85aef7d5d6d0f7c889a02cbb047d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 85058a3d551a385e4d2de8aed2ea9f56dc3b19c7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88489756"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093916"
 ---
 # <a name="pathname-transact-sql"></a>PathName (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -46,7 +46,7 @@ column_name.PathName ( @option [ , use_replica_computer_name ] )
  La solicitud del nombreruta para una columna de cualquier otro tipo de datos o de un columnthat **varbinary (Max)** no tiene el atributo de almacenamiento FileStream producirá un error en tiempo de compilación de la consulta.  
   
  *\@desea*  
- [Expresión](../../t-sql/language-elements/expressions-transact-sql.md) de tipo entero que define cómo se debe dar formato al componente de servidor de la ruta de acceso. la * \@ opción* puede ser uno de los valores siguientes. El valor predeterminado es 0.  
+ [Expresión](../../t-sql/language-elements/expressions-transact-sql.md) de tipo entero que define cómo se debe dar formato al componente de servidor de la ruta de acceso. la *\@ opción* puede ser uno de los valores siguientes. El valor predeterminado es 0.  
   
 |Value|Descripción|  
 |-----------|-----------------|  
@@ -67,7 +67,7 @@ column_name.PathName ( @option [ , use_replica_computer_name ] )
 |0|La función devuelve el nombre de red virtual (VNN) en la ruta de acceso.|  
 |1|La función devuelve el nombre del equipo en la ruta de acceso.|  
   
-## <a name="return-type"></a>Tipo de valor devuelto  
+## <a name="return-type"></a>Tipo devuelto  
  **nvarchar(max)**  
   
 ## <a name="return-value"></a>Valor devuelto  

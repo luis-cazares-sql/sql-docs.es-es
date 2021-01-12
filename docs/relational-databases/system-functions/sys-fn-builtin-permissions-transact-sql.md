@@ -25,15 +25,15 @@ helpviewer_keywords:
 - displaying permission hierarchy
 - sys.fn_builtin_permissions function
 ms.assetid: 704b1ad3-3534-4cf3-aff4-9fb70064b6cc
-author: rothja
-ms.author: jroth
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 117c4c2e6bc3e08ea32869cd198850eb3bb29ab2
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: ca23195b680ca5e2e16010b04c357fa2369d7f0a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484567"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093883"
 ---
 # <a name="sysfn_builtin_permissions-transact-sql"></a>sys.fn_builtin_permissions (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -77,7 +77,7 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |-----------------|---------------|---------------|-----------------|  
 |class_desc|**nvarchar(60)**|Intercalación del servidor|Descripción de la clase protegible.|  
 |permission_name|**nvarchar(60)**|Intercalación del servidor|Nombre del permiso.|  
-|tipo|**varchar(4)**|Intercalación del servidor|Código de tipo de permiso compacto. Vea la tabla siguiente.|  
+|type|**varchar(4)**|Intercalación del servidor|Código de tipo de permiso compacto. Vea la tabla siguiente.|  
 |covering_permission_name|**nvarchar(60)**|Intercalación del servidor|Si no es NULL, es el nombre del permiso en esta clase que implica los otros permisos en la clase.|  
 |parent_class_desc|**nvarchar(60)**|Intercalación del servidor|S no es NULL, es el nombre de la clase principal que contiene la clase actual.|  
 |parent_covering_permission_name|**nvarchar(60)**|Intercalación del servidor|Si no es NULL, es el nombre del permiso en la clase principal que implica los otros permisos en esa clase.|  
@@ -221,7 +221,7 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |CRVW|CREATE VIEW|DATABASE|  
 |CRXS|CREATE XML SCHEMA COLLECTION|DATABASE|  
 |DABO|ADMINISTER DATABASE BULK OPERATIONS<br /> **Se aplica a**: [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)].|DATABASE|  
-|DL|DELETE|DATABASE|  
+|DL|Delete|DATABASE|  
 |DL|Delete|OBJECT|  
 |DL|Delete|SCHEMA|  
 |EAES|EXECUTE ANY EXTERNAL SCRIPT<br />**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
@@ -281,7 +281,7 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |TO|TAKE OWNERSHIP<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|SERVER ROLE|  
 |TO|TAKE OWNERSHIP|SERVICE|  
 |TO|TAKE OWNERSHIP|SYMMETRIC KEY|  
-|TO|TAKE OWNERSHIP|TIPO|  
+|TO|TAKE OWNERSHIP|TYPE|  
 |TO|TAKE OWNERSHIP|XML SCHEMA COLLECTION|  
 |UMSK|UNMASK<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
 |UP|UPDATE|DATABASE|  
@@ -323,7 +323,7 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |XA|EXTERNAL ACCESS ASSEMBLY|SERVER|  
 |XU|UNSAFE ASSEMBLY|SERVER|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
  `sys.fn_builtin_permissions` es una función con valores de tabla que emite una copia de la jerarquía de permisos predefinida. Esta jerarquía incluye los permisos que cubre. El `DEFAULT` conjunto de resultados describe un grafo dirigido y acíclicos de la jerarquía de permisos, de la que la raíz es (Class = Server, Permission = Control Server).  
   
  `sys.fn_builtin_permissions` no acepta parámetros correlacionados.  

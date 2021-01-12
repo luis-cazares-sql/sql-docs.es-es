@@ -1,6 +1,6 @@
 ---
 description: sys.server_audits (Transact-SQL)
-title: Sys. server_audits (Transact-SQL) | Microsoft Docs
+title: sys.server_audits (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 04/05/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.server_audits catalog view
 ms.assetid: c2c4a000-1127-46a8-b1e9-947fd1136e1e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ea8ed9b7b779b9a81743ab909aa2bbba1e3c4856
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 3bb5b8b56cb2fec01b6fe655f3f51841cc7ebb21
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539630"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093100"
 ---
 # <a name="sysserver_audits-transact-sql"></a>sys.server_audits (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "89539630"
 |**modify_date**|**datetime**|Fecha UTC en la que se modificó por última vez la auditoría.|  
 |**principal_id**|**int**|ID del propietario de la auditoría, tal y como se registró en el servidor.|  
 |**type**|**char(2)**|Tipo de auditoría:<br /><br /> Registro de eventos de seguridad de SL-NT<br /><br /> Registro de eventos de la aplicación AL-NT<br /><br /> FL: archivo en el sistema de archivos|  
-|**type_desc**|**nvarchar(60)**|SECURITY LOG<br /><br /> APPICATION LOG<br /><br /> FILE|  
+|**type_desc**|**nvarchar(60)**|SECURITY LOG<br /><br /> APPICATION LOG<br /><br /> ARCHIVO|  
 |**on_failure**|**tinyint**|En caso de error escribir una entrada de acción:<br /><br /> 0-continuar<br /><br /> 1-cerrar instancia de servidor<br /><br /> 2-error de operación|  
 |**on_failure_desc**|**nvarchar(60)**|En caso de error escribir una entrada de acción:<br /><br /> CONTINUE<br /><br /> SHUTDOWN SERVER INSTANCE<br /><br /> FAIL_OPERATION|  
 |**is_state_enabled**|**tinyint**|0: deshabilitado<br /><br /> 1 – Habilitado|  

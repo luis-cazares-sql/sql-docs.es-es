@@ -1,6 +1,6 @@
 ---
 description: cdc.change_tables (Transact-SQL)
-title: CDC. change_tables (Transact-SQL) | Microsoft Docs
+title: cdc.change_tables (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - cdc.change_tables
 ms.assetid: 3525a5f5-8d8b-46a8-b334-4b7cd9fb7c21
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0205d5ca01ab1d969af8803bfa0e7f11daaafb08
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 28da42d6fbf03a01dc1c0719bd62a6270cb6525e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538403"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091516"
 ---
 # <a name="cdcchange_tables-transact-sql"></a>cdc.change_tables (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  Devuelve una fila por cada tabla de cambios en la base de datos. Se creará una tabla de cambios si la captura de datos modificados está habilitada en una tabla de origen. Se recomienda que no consulte directamente las tablas del sistema. En su lugar, ejecute el procedimiento almacenado [Sys. sp_cdc_help_change_data_capture](../../relational-databases/system-stored-procedures/sys-sp-cdc-help-change-data-capture-transact-sql.md) .  
+  Devuelve una fila por cada tabla de cambios en la base de datos. Se creará una tabla de cambios si la captura de datos modificados está habilitada en una tabla de origen. Se recomienda que no consulte directamente las tablas del sistema. En su lugar, ejecute el procedimiento almacenado [Sys.sp_cdc_help_change_data_capture](../../relational-databases/system-stored-procedures/sys-sp-cdc-help-change-data-capture-transact-sql.md) .  
 
 |Nombre de la columna|Tipo de datos|Descripción|  
 |-----------------|---------------|-----------------|  

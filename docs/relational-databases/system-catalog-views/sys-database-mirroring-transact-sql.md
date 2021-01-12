@@ -1,6 +1,6 @@
 ---
 description: sys.database_mirroring (Transact-SQL)
-title: Sys. database_mirroring (Transact-SQL) | Microsoft Docs
+title: sys.database_mirroring (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.database_mirroring catalog view
 ms.assetid: 480de2b0-2c16-497d-a6a3-bf7f52a7c9a0
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: cf5b55565a97669b78deedeb2487881e2aa1d808
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7ecce00c7981f59cfa1d145336e757b3d443379b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546862"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093148"
 ---
 # <a name="sysdatabase_mirroring-transact-sql"></a>sys.database_mirroring (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -57,7 +57,7 @@ ms.locfileid: "89546862"
 |**mirroring_failover_lsn**|**numeric(25,0)**|Número de secuencia de registro (LSN) de la última entrada del registro de transacciones para la que se garantiza que será reforzada en el disco de ambos asociados. Después de una conmutación por error, los asociados usan el **mirroring_failover_lsn** como el punto de conciliación en el que el nuevo servidor reflejado comienza a sincronizar la nueva base de datos reflejada con la nueva base de datos principal.|  
 |**mirroring_connection_timeout**|**int**|Tiempo de espera de la conexión de creación de reflejo, en segundos. Es el número de segundos durante los cuales se espera una respuesta de un asociado o testigo antes de considerarlos no disponibles. El valor predeterminado del tiempo de espera es de 10 segundos.<br /><br /> NULL= No se puede tener acceso a la base de datos o no está reflejada.|  
 |**mirroring_redo_queue**|**int**|Cantidad máxima de registro que debe rehacerse en el reflejo. Si mirroring_redo_queue_type se establece en UNLIMITED (valor predeterminado), esta columna es NULL. Si la base de datos no está en línea, esta columna también es NULL.<br /><br /> En caso contrario, esta columna contiene la cantidad máxima de registro, en megabytes. Cuando se alcanza el valor máximo, el registro se detiene temporalmente en el servidor principal mientras el servidor reflejado se pone al mismo nivel. Esta característica limita el tiempo de conmutación por error.<br /><br /> Para obtener más información, vea [Calcular la interrupción del servicio durante la conmutación de roles &#40;creación de reflejo de la base de datos&#41;](../../database-engine/database-mirroring/estimate-the-interruption-of-service-during-role-switching-database-mirroring.md).|  
-|**mirroring_redo_queue_type**|**nvarchar(60)**|UNLIMITED indica que la creación de reflejo no impedirá la cola de rehacer. Ésta es la configuración predeterminada.<br /><br /> MB indica el tamaño máximo de la cola de rehacer, en megabytes. Tenga en cuenta que, si el tamaño de la cola se especificó en kilobytes o gigabytes, el [!INCLUDE[ssDE](../../includes/ssde-md.md)] convertirá el valor a megabytes.<br /><br /> Si la base de datos no está en línea, esta columna es NULL.|  
+|**mirroring_redo_queue_type**|**nvarchar(60)**|UNLIMITED indica que la creación de reflejo no impedirá la cola de rehacer. Esta es la configuración predeterminada.<br /><br /> MB indica el tamaño máximo de la cola de rehacer, en megabytes. Tenga en cuenta que, si el tamaño de la cola se especificó en kilobytes o gigabytes, el [!INCLUDE[ssDE](../../includes/ssde-md.md)] convertirá el valor a megabytes.<br /><br /> Si la base de datos no está en línea, esta columna es NULL.|  
 |**mirroring_end_of_log_lsn**|**numeric(25,0)**|El final de registro local se ha volcado en el disco. Esto es comparable al LSN protegido del servidor reflejado (vea la columna **mirroring_failover_lsn** ).|  
 |**mirroring_replication_lsn**|**numeric(25,0)**|El LSN máximo que la replicación puede enviar.|  
   
@@ -67,7 +67,7 @@ ms.locfileid: "89546862"
 ## <a name="see-also"></a>Consulte también  
  [Vistas de catálogo &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
  [ALTER DATABASE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql.md)   
- [Sys. database_mirroring_witnesses &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/database-mirroring-witness-catalog-views-sys-database-mirroring-witnesses.md)   
+ [sys.database_mirroring_witnesses &#40;&#41;de Transact-SQL ](../../relational-databases/system-catalog-views/database-mirroring-witness-catalog-views-sys-database-mirroring-witnesses.md)   
  [sys.database_mirroring_endpoints &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-mirroring-endpoints-transact-sql.md)   
  [Vistas de catálogo de archivos y bases de datos &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/databases-and-files-catalog-views-transact-sql.md)   
  [Consultar las preguntas más frecuentes (P+F) del catálogo del sistema de SQL Server](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.md)  
