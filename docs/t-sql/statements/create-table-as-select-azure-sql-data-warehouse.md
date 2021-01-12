@@ -12,12 +12,12 @@ ms.assetid: d1e08f88-64ef-4001-8a66-372249df2533
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
-ms.openlocfilehash: 906e475bb5234d4bb007f1bfaa3577382c9c4037
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 55b57802b33ed1e0187ba2f83f3dd9a20ffdd3c1
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478536"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102359"
 ---
 # <a name="create-table-as-select-azure-synapse-analytics"></a>CREATE TABLE AS SELECT (Azure Synapse Analytics)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
@@ -142,7 +142,7 @@ Se puede crear un índice de almacén de columnas agrupado y ordenado en columna
 
 [SET ROWCOUNT &#40;Transact-SQL&#41;](../../t-sql/statements/set-rowcount-transact-sql.md) no tiene ningún efecto en CTAS. Para lograr un comportamiento similar, use [TOP &#40;Transact-SQL&#41;](../../t-sql/queries/top-transact-sql.md).  
  
-Para más información, vea [Limitaciones y restricciones](https://msdn.microsoft.com/library/mt203953/#LimitationsRestrictions) en CREATE TABLE.
+Para más información, vea [Limitaciones y restricciones](./create-table-azure-sql-data-warehouse.md#LimitationsRestrictions) en CREATE TABLE.
 
 <a name="locking-behavior-bk"></a>
   
@@ -848,4 +848,3 @@ OPTION (MAXDOP 1);
  [DROP EXTERNAL TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/drop-external-table-transact-sql.md)   
  [ALTER TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-transact-sql.md)   
  [ALTER EXTERNAL TABLE &#40;Transact-SQL&#41;](./create-external-table-transact-sql.md)  
-  

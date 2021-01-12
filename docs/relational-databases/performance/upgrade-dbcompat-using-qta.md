@@ -21,12 +21,12 @@ ms.assetid: 07f8f594-75b4-4591-8c29-d63811e7753e
 author: pmasl
 ms.author: pelopes
 manager: amitban
-ms.openlocfilehash: 31cdd59e519437f679cd738ef1dc959919b86667
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 08e105eac49b8377e128aa1cc746de1eebdee389
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96504939"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102235"
 ---
 # <a name="upgrading-databases-by-using-the-query-tuning-assistant"></a>Actualización de bases de datos mediante el Asistente para la optimización de consultas
 
@@ -231,4 +231,4 @@ Requiere la pertenencia al rol **db_owner**.
 - [Sugerencias de consulta USE HINT](../../t-sql/queries/hints-transact-sql-query.md#use_hint)
 - [Estimación de cardinalidad](../../relational-databases/performance/cardinality-estimation-sql-server.md)
 - [Ajuste automático](../../relational-databases/automatic-tuning/automatic-tuning.md)   
-- [Uso del Asistente para la optimización de consultas de SQL Server](https://docs.microsoft.com/learn/modules/use-sql-server-query-tuning-assistant/)
+- [Uso del Asistente para la optimización de consultas de SQL Server](/learn/modules/use-sql-server-query-tuning-assistant/)

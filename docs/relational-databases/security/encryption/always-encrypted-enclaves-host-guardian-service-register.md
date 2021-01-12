@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: rpsqrd
 ms.author: ryanpu
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1774e2b2a27b2b1f0c36b298f98c916318fd1543
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 5d1b2a7209de25b1ce5c988ec9a46b77369dcf70
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477656"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101837"
 ---
 # <a name="register-computer-with-host-guardian-service"></a>Registro del equipo con el servicio de protección de host
 
@@ -243,7 +243,7 @@ Repita el paso 4B para cada equipo [!INCLUDE [ssnoversion-md](../../../includes
 
 Una vez que haya registrado el equipo de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] con HGS ([paso 4A](#step-4a-register-a-computer-in-tpm-mode) para el modo TPM, [paso 4B](#step-4b-register-a-computer-in-host-key-mode) para el modo de clave de host), debe confirmar que es capaz de realizar la atestación correctamente.
 
-Puede comprobar la configuración del cliente de atestación de HGS y realizar un intento de atestación en cualquier momento con [Get-HgsClientConfiguration](/powershell/module/hgsclient/get-hgsclientconfiguration?view=win10-ps).
+Puede comprobar la configuración del cliente de atestación de HGS y realizar un intento de atestación en cualquier momento con [Get-HgsClientConfiguration](/powershell/module/hgsclient/get-hgsclientconfiguration).
 La salida del comando será similar a esta:
 
 ```

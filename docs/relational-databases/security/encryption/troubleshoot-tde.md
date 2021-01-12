@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 11/06/2019
 ms.author: jaszymas
 monikerRange: = azuresqldb-current || = azure-sqldw-latest
-ms.openlocfilehash: 2328cb73bbd101af12074620d0f755209e6dd185
-ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
+ms.openlocfilehash: b1725b11a5cc491c4624a7196240546a649f9afa
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97489845"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102247"
 ---
 # <a name="common-errors-for-transparent-data-encryption-with-customer-managed-keys-in-azure-key-vault"></a>Errores comunes en el cifrado de datos transparente con claves administradas por el cliente en Azure Key Vault
 
@@ -68,7 +68,7 @@ _401 AzureKeyVaultNoServerIdentity: la identidad del servidor no se ha configura
 
 Use el comando o el cmdlet siguiente para asegurarse de que se asignó una identidad a la instancia de SQL Server lógica:
 
-- Azure PowerShell: [Get-AzureRMSqlServer](/powershell/module/AzureRM.Sql/Get-AzureRmSqlServer?view=azurermps-6.13.0) 
+- Azure PowerShell: [Get-AzureRMSqlServer](/powershell/module/AzureRM.Sql/Get-AzureRmSqlServer) 
 
 - CLI de Azure: [az-sql-server-show](/cli/azure/sql/server#az-sql-server-show)
 
@@ -76,7 +76,7 @@ Use el comando o el cmdlet siguiente para asegurarse de que se asignó una ident
 
 Use el comando o el cmdlet siguiente para configurar una identidad de Azure AD (una AppId) para la instancia de SQL Server lógica:
 
-- Azure PowerShell: [Set-AzureRmSqlServer](/powershell/module/azurerm.sql/set-azurermsqlserver?view=azurermps-6.13.0) con la opción `-AssignIdentity`.
+- Azure PowerShell: [Set-AzureRmSqlServer](/powershell/module/azurerm.sql/set-azurermsqlserver) con la opción `-AssignIdentity`.
 
 - CLI de Azure: [az sql server update](/cli/azure/sql/server#az-sql-server-update) con la opción `--assign_identity`.
 
@@ -103,7 +103,7 @@ Para identificar un URI de clave y el almacén de claves:
 
 1. Use el comando o el cmdlet siguiente para obtener el URI de clave de una instancia de SQL Server lógica específica:
 
-    - Azure PowerShell: [Get-AzureRmSqlServerKeyVaultKey](/powershell/module/azurerm.sql/get-azurermsqlserverkeyvaultkey?view=azurermps-6.13.0)
+    - Azure PowerShell: [Get-AzureRmSqlServerKeyVaultKey](/powershell/module/azurerm.sql/get-azurermsqlserverkeyvaultkey)
 
     - CLI de Azure: [az-sql-server-tde-key-show](/cli/azure/sql/server/tde-key#az-sql-server-tde-key-show) 
 
