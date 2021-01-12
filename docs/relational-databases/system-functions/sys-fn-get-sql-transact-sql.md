@@ -1,6 +1,6 @@
 ---
 description: sys.fn_get_sql (Transact-SQL)
-title: Sys. fn_get_sql (Transact-SQL) | Microsoft Docs
+title: sys.fn_get_sql (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -22,14 +22,14 @@ helpviewer_keywords:
 - valid SQL handles [SQL Server]
 - SQL handles
 ms.assetid: d5fe49b5-0813-48f2-9efb-9187716b2fd4
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 6f5e3f4af1cd1bae33f0a340333cb6afd3268158
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 4b3e28e4c66d45f28c6239431e8e6d5440d5d4a0
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427807"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093825"
 ---
 # <a name="sysfn_get_sql-transact-sql"></a>sys.fn_get_sql (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88427807"
   Devuelve el texto de la instrucción SQL para el identificador SQL especificado.  
   
 > [!IMPORTANT]  
->  Esta característica se quitará en una versión futura de Microsoft SQL Server. Evite utilizar esta característica en nuevos trabajos de desarrollo y tenga previsto modificar las aplicaciones que actualmente la utilizan. Use sys.dm_exec_sql_text en su lugar. Para obtener más información, vea [Sys. dm_exec_sql_text &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md).  
+>  Esta característica se quitará en una versión futura de Microsoft SQL Server. Evite utilizar esta característica en nuevos trabajos de desarrollo y tenga previsto modificar las aplicaciones que actualmente la utilizan. Use sys.dm_exec_sql_text en su lugar. Para obtener más información, vea [sys.dm_exec_sql_text &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md).  
   
  
   
@@ -62,12 +62,12 @@ sys.fn_get_sql ( SqlHandle )
 |objectid|**int**|Identificador del objeto de base de datos. Este valor es NULL para las instrucciones SQL ad hoc.|  
 |number|**smallint**|Indica el número del grupo, si se agrupan los procedimientos.<br /><br /> 0 = Las no son procedimientos.<br /><br /> NULL = Instrucciones SQL ad hoc.|  
 |encrypted|**bit**|Indica si el objeto está cifrado.<br /><br /> 0 = No cifrado<br /><br /> 1 = Cifrada|  
-|text|**text**|Texto de la instrucción SQL. Este valor es NULL para objetos cifrados.|  
+|texto|**text**|Texto de la instrucción SQL. Este valor es NULL para objetos cifrados.|  
   
 ## <a name="remarks"></a>Observaciones  
- Puede obtener un identificador SQL válido de la columna sql_handle de la vista de administración dinámica [Sys. dm_exec_requests &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md) .  
+ Puede obtener un identificador SQL válido de la columna sql_handle del sys.dm_exec_requests &#40;la vista de administración dinámica de [Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md) .  
   
- Si pasa un identificador que ya no existe en la memoria caché, fn_get_sq**l** devuelve un conjunto de resultados vacío. Si pasa un identificador no válido, el archivo por lotes se detiene y aparece un mensaje de error.  
+ Si pasa un identificador que ya no existe en la memoria caché, fn_get_sq **l** devuelve un conjunto de resultados vacío. Si pasa un identificador no válido, el archivo por lotes se detiene y aparece un mensaje de error.  
   
  [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]No puede almacenar en caché algunas [!INCLUDE[tsql](../../includes/tsql-md.md)] instrucciones, como instrucciones de copia masiva e instrucciones con literales de cadena mayores de 8 KB. No se pueden recuperar identificadores de esas instrucciones utilizando la función fn_get_sql.  
   
