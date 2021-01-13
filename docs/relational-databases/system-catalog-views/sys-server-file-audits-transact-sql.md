@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 553288a0-be57-4d79-ae53-b7cbd065e127
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: aa516146c4db55cbfcb3b3f3817cdcf9d11216be
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: b72b618559f02fed01e1760168f72ea4a12065ae
+ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98096730"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98151298"
 ---
 # <a name="sysserver_file_audits-transact-sql"></a>sys.server_file_audits (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "98096730"
 |create_date|**datetime**|Fecha UTC en la que se creó la auditoría de archivos.|  
 |modify_date|**datatime**|Fecha UTC en la que se modificó por última vez la auditoría de archivos.|  
 |principal_id|**int**|Identificador del propietario de la auditoría tal y como se registró en el servidor.|  
-|type|**char(2)**|Tipo de auditoría:<br /><br /> 0 = Registro de eventos de seguridad de NT<br /><br /> 1 = Registro de eventos de aplicación de NT<br /><br /> 2 = Archivo del sistema de archivos|  
+|type|**char(2)**|Tipo de auditoría:<br /><br /> SL = registro de eventos de seguridad de NT<br /><br /> AL = registro de eventos de aplicación NT<br /><br /> FL = archivo en el sistema de archivos|  
 |type_desc|**nvarchar(60)**|Descripción del tipo de auditoría.|  
 |on_failure|**tinyint**|Condición en caso de error:<br /><br /> 0 = Continuar<br /><br /> 1 = Cerrar la instancia del servidor<br /><br /> 2 = Error en la operación|  
 |on_failure_desc|**nvarchar(60)**|En caso de error escribir una entrada de acción:<br /><br /> CONTINUE<br /><br /> SHUTDOWN SERVER INSTANCE<br /><br /> FAIL OPERATION|  

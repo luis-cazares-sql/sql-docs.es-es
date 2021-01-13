@@ -21,17 +21,17 @@ ms.assetid: fa3e321f-6fe5-45ff-b397-02a0dd3d6b7d
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d7e5e19b8add37d3a544cfb75328f060d4551585
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 48292ef07266a6dff28479a4f08e09d0be824d93
+ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98101575"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98151309"
 ---
 # <a name="sysdm_io_virtual_file_stats-transact-sql"></a>sys.dm_io_virtual_file_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
 
-  Devuelve las estadísticas de E/S de los archivos de registro y datos. Esta vista de administración dinámica reemplaza a la función [fn_virtualfilestats](../../relational-databases/system-functions/sys-fn-virtualfilestats-transact-sql.md) .  
+  Devuelve las estadísticas de E/S de los archivos de registro y datos. Esta función de administración dinámica reemplaza a la función [fn_virtualfilestats](../../relational-databases/system-functions/sys-fn-virtualfilestats-transact-sql.md) .  
   
 > [!NOTE]  
 >  Para llamarlo desde [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] , utilice el nombre **Sys.dm_pdw_nodes_io_virtual_file_stats**. 

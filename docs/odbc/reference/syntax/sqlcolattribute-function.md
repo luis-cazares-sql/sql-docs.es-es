@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 8c45c598-cb01-4789-a571-e93619a18ed9
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: d5cc7020300fd9099b70ed6f33716f343d47d571
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 43980caf7a592284aba87d57725c30ae9fe8e949
+ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88448820"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98151251"
 ---
 # <a name="sqlcolattribute-function"></a>Función SQLColAttribute
 **Conformidad**  
@@ -69,7 +69,7 @@ SQLRETURN SQLColAttribute (
  Si *CharacterAttributePtr* es null, *StringLengthPtr* devolverá el número total de bytes (sin incluir el carácter de terminación null para los datos de caracteres) disponible para devolver en el búfer señalado por *CharacterAttributePtr*.  
   
  *BufferLength*  
- Entradas Si *FieldIdentifier* es un campo definido por ODBC y *CharacterAttributePtr* apunta a una cadena de caracteres o a un búfer binario, este argumento debe ser la longitud de \* *CharacterAttributePtr*. Si *FieldIdentifier* es un campo definido por ODBC y \* *CharacterAttribute*PTR es un entero, se omite este campo. Si * \* CharacterAttributePtr* es una cadena Unicode (al llamar a **SQLColAttributeW**), el argumento *BufferLength* debe ser un número par. Si *FieldIdentifier* es un campo definido por el controlador, la aplicación indica la naturaleza del campo en el administrador de controladores estableciendo el argumento *BufferLength* . *BufferLength* puede tener los siguientes valores:  
+ Entradas Si *FieldIdentifier* es un campo definido por ODBC y *CharacterAttributePtr* apunta a una cadena de caracteres o a un búfer binario, este argumento debe ser la longitud de \* *CharacterAttributePtr*. Si *FieldIdentifier* es un campo definido por ODBC y \* *CharacterAttribute* PTR es un entero, se omite este campo. Si *\* CharacterAttributePtr* es una cadena Unicode (al llamar a **SQLColAttributeW**), el argumento *BufferLength* debe ser un número par. Si *FieldIdentifier* es un campo definido por el controlador, la aplicación indica la naturaleza del campo en el administrador de controladores estableciendo el argumento *BufferLength* . *BufferLength* puede tener los siguientes valores:  
   
 -   Si *CharacterAttributePtr* es un puntero a un puntero, *BufferLength* debe tener el valor SQL_IS_POINTER.  
   
@@ -77,7 +77,7 @@ SQLRETURN SQLColAttribute (
   
 -   Si *CharacterAttributePtr* es un puntero a un búfer binario, la aplicación coloca el resultado de la macro SQL_LEN_BINARY_ATTR (*length*) en *BufferLength*. Esto coloca un valor negativo en *BufferLength*.  
   
--   Si *CharacterAttributePtr* es un puntero a un tipo de datos de longitud fija, *BufferLength* debe ser uno de los siguientes: SQL_IS_INTEGER, SQL_IS_UNINTEGER, SQL_SMALLINT o SQLUSMALLINT.  
+-   Si *CharacterAttributePtr* es un puntero a un tipo de datos de longitud fija, *BufferLength* debe ser uno de los siguientes: SQL_IS_INTEGER, SQL_IS_UINTEGER, SQL_IS_SMALLINT o SQL_IS_USMALLINT.  
   
  *StringLengthPtr*  
  Genere Puntero a un búfer en el que se va a devolver el número total de bytes (sin incluir el byte de terminación null para los datos de caracteres) disponible para devolver en **CharacterAttributePtr*.  
@@ -104,9 +104,9 @@ SQLRETURN SQLColAttribute (
 |HY000|Error general|Se produjo un error para el que no había ningún SQLSTATE específico y para el que no se definió ningún SQLSTATE específico de la implementación. El mensaje de error devuelto por **SQLGetDiagField** de la estructura de datos de diagnóstico describe el error y su causa.|  
 |HY001|Error de asignación de memoria|El controlador no pudo asignar la memoria necesaria para admitir la ejecución o la finalización de la función.|  
 |HY008|Operación cancelada|El procesamiento asincrónico se ha habilitado para *StatementHandle*. Se llamó a la función y antes de completar la ejecución, se llamó a **SQLCancel** o **SQLCancelHandle** en *StatementHandle*. A continuación, se llamó de nuevo a la función en *StatementHandle*.<br /><br /> Se llamó a la función y antes de completar la ejecución, se llamó a **SQLCancel** o **SQLCancelHandle** en el *StatementHandle* desde un subproceso diferente en una aplicación multiproceso.|  
-|HY010|Error de secuencia de función|(DM) se llamó a una función que se ejecuta de forma asincrónica para el identificador de conexión que está asociado a *StatementHandle*. Esta función aynchronous todavía se estaba ejecutando cuando se llamó a SQLColAttribute.<br /><br /> Se llamó a **SQLExecute**, **SQLExecDirect**o **SQLMoreResults** para *StatementHandle* y se devolvió SQL_PARAM_DATA_AVAILABLE. Se llamó a esta función antes de recuperar los datos de todos los parámetros transmitidos por secuencias.<br /><br /> (DM) se llamó a la función antes de llamar a **SQLPrepare**, **SQLExecDirect**o una función de catálogo para el *StatementHandle*.<br /><br /> (DM) se llamó a una función que se ejecuta de forma asincrónica (no a esta) para *StatementHandle* y que todavía se estaba ejecutando cuando se llamó a esta función.<br /><br /> Se llamó a **SQLExecute**, **SQLExecDirect**, **SQLBulkOperations**o **SQLSetPos** para *StatementHandle* y se devolvió SQL_NEED_DATA. Se llamó a esta función antes de enviar los datos para todos los parámetros o columnas de datos en ejecución.|  
+|HY010|Error de secuencia de función|(DM) se llamó a una función que se ejecuta de forma asincrónica para el identificador de conexión que está asociado a *StatementHandle*. Esta función aynchronous todavía se estaba ejecutando cuando se llamó a SQLColAttribute.<br /><br /> Se llamó a **SQLExecute**, **SQLExecDirect** o **SQLMoreResults** para *StatementHandle* y se devolvió SQL_PARAM_DATA_AVAILABLE. Se llamó a esta función antes de recuperar los datos de todos los parámetros transmitidos por secuencias.<br /><br /> (DM) se llamó a la función antes de llamar a **SQLPrepare**, **SQLExecDirect** o una función de catálogo para el *StatementHandle*.<br /><br /> (DM) se llamó a una función que se ejecuta de forma asincrónica (no a esta) para *StatementHandle* y que todavía se estaba ejecutando cuando se llamó a esta función.<br /><br /> Se llamó a **SQLExecute**, **SQLExecDirect**, **SQLBulkOperations** o **SQLSetPos** para *StatementHandle* y se devolvió SQL_NEED_DATA. Se llamó a esta función antes de enviar los datos para todos los parámetros o columnas de datos en ejecución.|  
 |HY013|Error de administración de memoria|No se pudo procesar la llamada de función porque no se pudo tener acceso a los objetos de memoria subyacentes, posiblemente debido a condiciones de memoria insuficientes.|  
-|HY090|Longitud de búfer o cadena no válida|(DM) * \* CharacterAttributePtr* es una cadena de caracteres y *BufferLength* era menor que 0 pero no es igual a SQL_NTS.|  
+|HY090|Longitud de búfer o cadena no válida|(DM) *\* CharacterAttributePtr* es una cadena de caracteres y *BufferLength* era menor que 0 pero no es igual a SQL_NTS.|  
 |HY091|Identificador de campo descriptor no válido|El valor especificado para el argumento *FieldIdentifier* no era uno de los valores definidos y no era un valor definido por la implementación.|  
 |HY117|La conexión se suspendió debido a un estado de transacción desconocido. Solo se permiten las funciones de desconexión y de solo lectura.|(DM) para obtener más información sobre el estado suspendido, consulte [función SQLEndTran](../../../odbc/reference/syntax/sqlendtran-function.md).|  
 |HYC00|Controlador no compatible|El valor especificado para el argumento *FieldIdentifier* no era compatible con el controlador.|  
@@ -122,7 +122,7 @@ SQLRETURN SQLColAttribute (
 ## <a name="comments"></a>Comentarios  
  Para obtener información sobre cómo usan las aplicaciones la información devuelta por **SQLColAttribute**, consulte [metadatos del conjunto de resultados](../../../odbc/reference/develop-app/result-set-metadata.md).  
   
- **SQLColAttribute** devuelve información en \* *NumericAttributePtr* o en \* *CharacterAttributePtr*. La información de enteros se devuelve en \* *NumericAttributePtr* como un valor SQLLEN; todos los demás formatos de información se devuelven en \* *CharacterAttributePtr*. Cuando se devuelve información en \* *NumericAttributePtr*, el controlador omite *CharacterAttributePtr*, *BufferLength*y *StringLengthPtr*. Cuando se devuelve información en \* *CharacterAttributePtr*, el controlador omite *NumericAttributePtr*.  
+ **SQLColAttribute** devuelve información en \* *NumericAttributePtr* o en \* *CharacterAttributePtr*. La información de enteros se devuelve en \* *NumericAttributePtr* como un valor SQLLEN; todos los demás formatos de información se devuelven en \* *CharacterAttributePtr*. Cuando se devuelve información en \* *NumericAttributePtr*, el controlador omite *CharacterAttributePtr*, *BufferLength* y *StringLengthPtr*. Cuando se devuelve información en \* *CharacterAttributePtr*, el controlador omite *NumericAttributePtr*.  
   
  **SQLColAttribute** devuelve valores de los campos de descriptor de IRD. Se llama a la función con un identificador de instrucción en lugar de un identificador de descriptor. Los valores devueltos por **SQLColAttribute** para los valores de *FieldIdentifier* que se enumeran más adelante en esta sección también se pueden recuperar llamando a **SQLGetDescField** con el identificador IRD adecuado.  
   
@@ -131,7 +131,7 @@ SQLRETURN SQLColAttribute (
  ODBC 3. el controlador *x* debe devolver un valor para cada uno de los campos de descriptor. Si un campo descriptor no se aplica a un controlador o a un origen de datos y, a menos que se indique lo contrario, el controlador devuelve 0 en \* *StringLengthPtr* o una cadena vacía en **CharacterAttributePtr*.  
   
 ## <a name="backward-compatibility"></a>Backward Compatibility  
- ODBC 3. la función *x* **SQLCOLATTRIBUTE** reemplaza a ODBC 2 en desuso. *x* función x **SQLColAttributes**. Al asignar **SQLColAttributes** a **SQLColAttribute** (cuando se trata de un ODBC 2.* * la aplicación x está trabajando con un ODBC 3. *x* ) o asignar **SQLColAttribute** a **SQLColAttributes** (cuando se trata de un ODBC 3.* * la aplicación x está trabajando con ODBC 2. *x* ), el administrador de controladores pasa el valor de *FieldIdentifier* a, lo asigna a un nuevo valor o devuelve un error, como se indica a continuación:  
+ ODBC 3. la función *x* **SQLCOLATTRIBUTE** reemplaza a ODBC 2 en desuso.  función x **SQLColAttributes**. Al asignar **SQLColAttributes** a **SQLColAttribute** (cuando se trata de un ODBC 2.** la aplicación x está trabajando con un ODBC 3. *x* ) o asignar **SQLColAttribute** a **SQLColAttributes** (cuando se trata de un ODBC 3.** la aplicación x está trabajando con ODBC 2. *x* ), el administrador de controladores pasa el valor de *FieldIdentifier* a, lo asigna a un nuevo valor o devuelve un error, como se indica a continuación:  
   
 > [!NOTE]  
 >  El prefijo usado en los valores de *FieldIdentifier* en ODBC 3. *x* se ha cambiado de la utilizada en ODBC 2. *x*. El nuevo prefijo es "SQL_DESC"; el prefijo anterior era "SQL_COLUMN".  
@@ -144,9 +144,9 @@ SQLRETURN SQLColAttribute (
   
 -   Si *FieldIdentifier* es un nuevo valor de ODBC 3. *x*, para el que no hay ningún valor correspondiente en ODBC 2. *x*, no se asignará cuando se trata de un ODBC 3. la aplicación *x* lo usa en una llamada a **SQLColAttribute** en ODBC 2. *x* y la llamada devolverá SQLSTATE HY091 (identificador de campo de descriptor no válido).  
   
- En la tabla siguiente se enumeran los tipos de descriptores devueltos por **SQLColAttribute**. El tipo de los valores de *NumericAttributePtr* es **SQLLEN \* **.  
+ En la tabla siguiente se enumeran los tipos de descriptores devueltos por **SQLColAttribute**. El tipo de los valores de *NumericAttributePtr* es **SQLLEN \** _.  
   
-|*FieldIdentifier*|Información<br /><br /> se devuelve en|Descripción|  
+|_FieldIdentifier *|Información<br /><br /> se devuelve en|Descripción|  
 |-----------------------|---------------------------------|-----------------|  
 |SQL_DESC_AUTO_UNIQUE_VALUE (ODBC 1,0)|*NumericAttributePtr*|SQL_TRUE si la columna es una columna de incremento automático.<br /><br /> SQL_FALSE si la columna no es una columna de incremento automático o no es numérica.<br /><br /> Este campo solo es válido para las columnas de tipos de datos numéricos. Una aplicación puede insertar valores en una fila que contenga una columna de incremento automático, pero normalmente no puede actualizar los valores de la columna.<br /><br /> Cuando se realiza una inserción en una columna de incremento automático, se inserta un valor único en la columna en el momento de la inserción. El incremento no está definido, pero es específico del origen de datos. Una aplicación no debe suponer que una columna de incremento automático se inicia en un punto determinado o se incrementa en un determinado valor.|  
 |SQL_DESC_BASE_COLUMN_NAME (ODBC 3,0)|*CharacterAttributePtr*|Nombre de la columna base para la columna del conjunto de resultados. Si no existe un nombre de columna base (como en el caso de las columnas que son expresiones), esta variable contiene una cadena vacía.<br /><br /> Esta información se devuelve desde el campo SQL_DESC_BASE_COLUMN_NAME registro de IRD, que es un campo de solo lectura.|  
@@ -306,7 +306,7 @@ int main() {
 }  
 ```  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
  [Referencia de la API de ODBC](../../../odbc/reference/syntax/odbc-api-reference.md)   
  [Archivos de encabezado ODBC](../../../odbc/reference/install/odbc-header-files.md)   
  [Programa de ejemplo de ODBC](../../../odbc/reference/sample-odbc-program.md)
