@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c36e5865-25d5-42b7-b045-dc5036225081
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 86a86eec0b939a579d01c36d8c9739f8d9251636
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 6e29fade73adba6cb82b6d4ac22cae122d4c60cd
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543731"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169448"
 ---
 # <a name="sp_changepublication-transact-sql"></a>sp_changepublication (Transact-SQL)
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -42,7 +42,7 @@ sp_changepublication [ [ @publication = ] 'publication' ]
 ```  
   
 ## <a name="arguments"></a>Argumentos  
-`[ @publication = ] 'publication'` Es el nombre de la publicación. *Publication* es de **tipo sysname y su**valor predeterminado es NULL.  
+`[ @publication = ] 'publication'` Es el nombre de la publicación. *Publication* es de **tipo sysname y su** valor predeterminado es NULL.  
   
 `[ @property = ] 'property'` Es la propiedad de la publicación que se va a cambiar. *Property* es de tipo **nvarchar (255)**.  
   
@@ -95,7 +95,7 @@ sp_changepublication [ [ @publication = ] 'publication' ]
 |**pre_snapshot_script**||Especifica la ubicación de un archivo de script de [!INCLUDE[tsql](../../includes/tsql-md.md)] que el Agente de distribución ejecutará antes de que se hayan aplicado todos los demás datos y scripts de objetos replicados durante una sincronización inicial.|  
 |**publish_to_ActiveDirectory**|**true**|Este parámetro ha quedado desusado y solo se admite para la compatibilidad de scripts con versiones anteriores. Ya no se puede agregar información de publicación a [!INCLUDE[msCoName](../../includes/msconame-md.md)] Active Directory.|  
 ||**false**|Quita la información de publicaciones de Active Directory.|  
-|**queue_type**|**Server**|Utiliza [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para almacenar las transacciones. Esta propiedad se puede cambiar únicamente si no hay suscripciones activas.<br /><br /> Nota: ya no se admite el uso de [!INCLUDE[msCoName](../../includes/msconame-md.md)] Message Queue Server. Si se especifica un valor de **MSMQ** para el *valor* , se producirá un error.|  
+|**queue_type**|**sql**|Utiliza [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para almacenar las transacciones. Esta propiedad se puede cambiar únicamente si no hay suscripciones activas.<br /><br /> Nota: ya no se admite el uso de [!INCLUDE[msCoName](../../includes/msconame-md.md)] Message Queue Server. Si se especifica un valor de **MSMQ** para el *valor* , se producirá un error.|  
 |**repl_freq**|**continua**|Publica la salida de todas las transacciones basadas en el registro.|  
 ||**archivos**|Publica solamente los eventos de sincronización programados.|  
 |**replicate_ddl**|**1**|Las instrucciones de Lenguaje de definición de datos (DDL) que se ejecutan en el publicador se replican. Esta propiedad no se puede cambiar para publicaciones que no sean de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].|  
@@ -112,21 +112,21 @@ sp_changepublication [ [ @publication = ] 'publication' ]
 ||**simultáneas**|Utiliza un programa de copia masiva en modo nativo de todas las tablas, pero no bloquea las tablas durante el proceso de generación de instantáneas. No es válido para la replicación de instantáneas.|  
 ||**concurrent_c**|Utiliza un programa de copia masiva en modo de carácter de todas las tablas, pero no bloquea las tablas durante el proceso de generación de instantáneas. No es válido para la replicación de instantáneas.|  
 |**TaskID**||Esta propiedad ha quedado desusada y ya no se admite.|  
-|**allow_drop**|**true**|Habilita `DROP TABLE` la compatibilidad con archivos DLL para los artículos que forman parte de la replicación transaccional. Versión mínima admitida: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] Service Pack 2 o posterior y [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] Service Pack 1 o posterior. Referencia adicional: [KB 3170123](https://support.microsoft.com/help/3170123/supports-drop-table-ddl-for-articles-that-are-included-in-transactional-replication-in-sql-server-2014-or-in-sql-server-2016-sp1)|
+|**allow_drop**|**true**|Habilita `DROP TABLE` la compatibilidad con archivos DLL para los artículos que forman parte de la replicación transaccional. Versión mínima admitida: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] Service Pack 2 o posterior y [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] Service Pack 1 o posterior. Referencia adicional: [KB 3170123](https://support.microsoft.com/help/3170123/supports-drop-table-ddl-for-articles-that-are-included-in-transactional-replication-in-sql-server-2014-or-in-sql-server-2016-sp1)|
 ||**false**|Deshabilita la `DROP TABLE` compatibilidad de dll con los artículos que forman parte de la replicación transaccional. Este es el valor **predeterminado** para esta propiedad.|
 |**Null** (valor predeterminado)||Devuelve la lista de valores admitidos para la *propiedad*.|  
   
-`[ @force_invalidate_snapshot = ] force_invalidate_snapshot` Confirma que la acción realizada por este procedimiento almacenado puede invalidar una instantánea existente. *force_invalidate_snapshot* es de **bit**y su valor predeterminado es **0**.  
+`[ @force_invalidate_snapshot = ] force_invalidate_snapshot` Confirma que la acción realizada por este procedimiento almacenado puede invalidar una instantánea existente. *force_invalidate_snapshot* es de **bit** y su valor predeterminado es **0**.  
   - **0** especifica que los cambios en el artículo no hacen que la instantánea no sea válida. Si el procedimiento almacenado detecta que el cambio requiere una nueva instantánea, se producirá un error y no se realizarán cambios.  
   - **1** especifica que los cambios en el artículo pueden hacer que la instantánea no sea válida. Si existen suscripciones que requieran una nueva instantánea, este valor da permiso para que la instantánea existente se marque como obsoleta y se genere otra nueva.   
 Vea en la sección de Notas las propiedades que, si se cambian, requieren que se genere una instantánea nueva.  
   
-[** @force_reinit_subscription =** ] *force_reinit_subscription*  
+[**@force_reinit_subscription =** ] *force_reinit_subscription*  
  Confirma que la acción realizada por este procedimiento almacenado puede requerir que se reinicialicen las suscripciones existentes. *force_reinit_subscription* es un **bit** con un valor predeterminado de **0**.  
   - **0** especifica que los cambios en el artículo no harán que se reinicialice la suscripción. Si el procedimiento almacenado detecta que el cambio requiere la reinicialización de las suscripciones existentes, se producirá un error y no se realizarán cambios.  
   - **1** especifica que los cambios en el artículo hacen que se reinicialice la suscripción existente y concede permiso para que se produzca la reinicialización de la suscripción.  
   
-`[ @publisher = ] 'publisher'` Especifica un publicador que no es de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . *Publisher* es de **tipo sysname y su**valor predeterminado es NULL.  
+`[ @publisher = ] 'publisher'` Especifica un publicador que no es de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . *Publisher* es de **tipo sysname y su** valor predeterminado es NULL.  
   
   > [!NOTE]  
   >  no se debe usar el *publicador* al cambiar las propiedades de un artículo en un [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] publicador.  
@@ -134,7 +134,7 @@ Vea en la sección de Notas las propiedades que, si se cambian, requieren que se
 ## <a name="return-code-values"></a>Valores de código de retorno  
  **0** (correcto) o **1** (error)  
   
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
  **sp_changepublication** se utiliza en la replicación de instantáneas y en la replicación transaccional.  
   
  Después de cambiar cualquiera de las siguientes propiedades, debe generar una nueva instantánea y debe especificar el valor **1** para el parámetro *force_invalidate_snapshot* .  

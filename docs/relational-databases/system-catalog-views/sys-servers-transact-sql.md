@@ -21,12 +21,12 @@ ms.assetid: 4e774ed9-4e83-4726-9f1d-8efde8f9feff
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: 542db6b144471e2942bb160f1b91d7e2628ace69
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 5324370d1635914fbf6436e97cfaaee7d062329b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98097919"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171667"
 ---
 # <a name="sysservers-transact-sql"></a>sys.servers (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -60,7 +60,7 @@ ms.locfileid: "98097919"
 |**is_nonsql_subscriber**|**bit**|El servidor es un suscriptor de replicación que no es de SQL Server.|  
 |**is_remote_proc_transaction_promotion_enabled**|**bit**|Si es 1, al llamar a un procedimiento remoto almacenado se inicia una transacción distribuida y se da de alta en MS DTC. Para obtener más información, vea [sp_serveroption &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-serveroption-transact-sql.md).|  
 |**modify_date**|**datetime**|Fecha en que cambió por última vez la información del servidor.|  
-|**is_rda_server**|**bit**|**Se aplica a:** A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] .<br /><br />El servidor es habilitado para el archivo de datos remotos (habilitado para Stretch). Para obtener más información, consulte [enable Stretch Database on The Server](../../sql-server/stretch-database/enable-stretch-database-for-a-database.md#EnableTSQLServer).|
+|**is_rda_server**|**bit**|**Se aplica a:** A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] .<br /><br />El servidor es habilitado para el archivo de datos remotos (habilitado para Stretch). Para obtener más información, consulte [enable Stretch Database on The Server](../../sql-server/stretch-database/enable-stretch-database-for-a-database.md#EnableTSQLServer).|
   
 ## <a name="permissions"></a>Permisos  
  El valor de **provider_string** siempre es null, a menos que el autor de la llamada tenga el permiso ALTER any Linked Server.  

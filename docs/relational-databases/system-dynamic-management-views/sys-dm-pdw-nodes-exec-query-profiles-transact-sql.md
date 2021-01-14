@@ -13,12 +13,12 @@ ms.assetid: ''
 author: XiaoyuMSFT
 ms.author: xiaoyul
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: c5c908d8db988e83d682bbf636de08ef86a8223a
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: f1917899d58262f670b58843c118864618702950
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97644072"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169967"
 ---
 # <a name="sysdm_pdw_nodes_exec_query_profiles-transact-sql"></a>sys.dm_pdw_nodes_exec_query_profiles (Transact-SQL)
 
@@ -68,9 +68,9 @@ Los contadores devueltos son por operador y por subproceso. Los resultados son d
 |segment_read_count|**int**|Número de lecturas anticipadas de segmento hasta ahora.|  
 |segment_skip_count|**int**|Número de segmentos omitidos hasta ahora.| 
 |actual_read_row_count|**bigint**|Número de filas leídas por un operador antes de que se aplicara el predicado residual.| 
-|estimated_read_row_count|**bigint**|**Se aplica a:** A partir de [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] SP1. <br/>Número de filas que un operador debe leer antes de que se aplicara el predicado residual.|  
+|estimated_read_row_count|**bigint**|**Se aplica a:** A partir de [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] SP1. <br/>Número de filas que un operador debe leer antes de que se aplicara el predicado residual.|  
   
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Se aplican los mismos comentarios en [Sys.dm_exec_query_profiles](./sys-dm-exec-query-profiles-transact-sql.md) .  
 

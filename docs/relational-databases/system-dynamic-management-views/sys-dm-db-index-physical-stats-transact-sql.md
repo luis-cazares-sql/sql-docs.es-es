@@ -22,12 +22,12 @@ ms.assetid: d294dd8e-82d5-4628-aa2d-e57702230613
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 603ad99e126f1175cce21a48933362e4ad6d7aaa
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 1cdcf7bdcca72f8c80576dcd68146ebfbd36e672
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98094183"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171737"
 ---
 # <a name="sysdm_db_index_physical_stats-transact-sql"></a>sys.dm_db_index_physical_stats (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -66,7 +66,7 @@ sys.dm_db_index_physical_stats (
  *object_id* \| \| \| Valor predeterminado de NULL 0  
  Es el identificador de objeto de la tabla o vista donde está activado el índice. *object_id* es de **tipo int**.  
   
- Las entradas válidas son el número de identificador de una tabla o vista, NULL, 0 y DEFAULT. El valor predeterminado es 0. NULL, 0 y DEFAULT son valores equivalentes en este contexto. A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] , las entradas válidas también incluyen el nombre de la cola de Service Broker o el nombre de la tabla interna de la cola. Cuando se aplican los parámetros predeterminados (es decir, todos los objetos, todos los índices, etc.), la información de fragmentación de todas las colas se incluye en el conjunto de resultados.  
+ Las entradas válidas son el número de identificador de una tabla o vista, NULL, 0 y DEFAULT. El valor predeterminado es 0. NULL, 0 y DEFAULT son valores equivalentes en este contexto. A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] , las entradas válidas también incluyen el nombre de la cola de Service Broker o el nombre de la tabla interna de la cola. Cuando se aplican los parámetros predeterminados (es decir, todos los objetos, todos los índices, etc.), la información de fragmentación de todas las colas se incluye en el conjunto de resultados.  
   
  Especifique NULL para devolver información de todas las tablas y vistas de la base de datos especificada. Si especifica NULL para *object_id*, también debe especificar null para *index_id* y *partition_number*.  
   
@@ -121,7 +121,7 @@ sys.dm_db_index_physical_stats (
 |offrow_regular_version_record_count|**bigint**|Recuento de registros de versión que se mantienen fuera de la fila de datos original. <br /><br /> [!INCLUDE[SQL2019](../../includes/applies-to-version/sqlserver2019.md)], [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|  
 |offrow_long_term_version_record_count|**bigint**|Recuento de registros de versión considerados a largo plazo. <br /><br /> [!INCLUDE[SQL2019](../../includes/applies-to-version/sqlserver2019.md)], [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] |  
 
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
  La función de administración dinámica sys.dm_db_index_physical_stats sustituye a la instrucción DBCC SHOWCONTIG.  
   
 ## <a name="scanning-modes"></a>Modos de recorrido  
@@ -417,7 +417,7 @@ FROM sys.dm_db_index_physical_stats (db_id(),
   
 ||  
 |-|  
-|**Se aplica a**: desde [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] hasta [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].|  
+|**Se aplica a**: desde [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] hasta [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].|  
   
  En los siguientes ejemplos se muestra cómo consultar las colas del agente de servidor para la fragmentación.  
   

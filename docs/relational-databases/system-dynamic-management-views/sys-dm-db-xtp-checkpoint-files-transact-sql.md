@@ -21,12 +21,12 @@ ms.assetid: ac8e6333-7a9f-478a-b446-5602283e81c9
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: bed4fa18b01a295815c07f6a0f37d4bc0b942c16
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: d94ff0799552f1d6c89e30e3b2712942ed0d4177
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98092946"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171417"
 ---
 # <a name="sysdm_db_xtp_checkpoint_files-transact-sql"></a>sys.dm_db_xtp_checkpoint_files (Transact-SQL)
 [!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -41,8 +41,8 @@ ms.locfileid: "98092946"
   
  Para obtener más información, vea [crear y administrar el almacenamiento de objetos de Memory-Optimized](../../relational-databases/in-memory-oltp/creating-and-managing-storage-for-memory-optimized-objects.md).  
   
-##  <a name="sssql15-and-later"></a><a name="bkmk_2016"></a> [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores  
- En la tabla siguiente se describen las columnas de `sys.dm_db_xtp_checkpoint_files` , a partir de **[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]** .  
+##  <a name="sssql15-and-later"></a><a name="bkmk_2016"></a> [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores  
+ En la tabla siguiente se describen las columnas de `sys.dm_db_xtp_checkpoint_files` , a partir de **[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]** .  
   
 |Nombre de la columna|Tipo|Descripción|  
 |-----------------|----------|-----------------|  

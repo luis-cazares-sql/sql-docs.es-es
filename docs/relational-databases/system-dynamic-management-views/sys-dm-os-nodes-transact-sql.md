@@ -21,12 +21,12 @@ ms.assetid: c768b67c-82a4-47f5-850b-0ea282358d50
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b4cbcefbe3249a06e0f49fff5f0abe43010e9a54
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 4409ba73ba7231f674ac60f3ed63b06b6c454fa7
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98101514"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170647"
 ---
 # <a name="sysdm_os_nodes-transact-sql"></a>sys.dm_os_nodes (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "98101514"
 Un componente interno denominado SQLOS crea las estructuras de nodo que imitan el procesador de hardware. Estas estructuras se pueden cambiar mediante [el uso de Soft-Numa](../../database-engine/configure-windows/soft-numa-sql-server.md) para crear diseños de nodo personalizados.  
 
 > [!NOTE]
-> A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] , el [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] usará automáticamente Soft-Numa para ciertas configuraciones de hardware. Para obtener más información, consulte [Automatic Soft-Numa](../../database-engine/configure-windows/soft-numa-sql-server.md#automatic-soft-numa).
+> A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] , el [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] usará automáticamente Soft-Numa para ciertas configuraciones de hardware. Para obtener más información, consulte [Automatic Soft-Numa](../../database-engine/configure-windows/soft-numa-sql-server.md#automatic-soft-numa).
   
 En la tabla siguiente se proporciona información acerca de estos nodos.  
   

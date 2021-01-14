@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 1a17b0c9-2535-4f3d-8013-cd0a6d08f773
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 18642535521a50c7beb005c0ae8181f04ac3c6d5
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 8287eab936b7f95cc0cbaba78d4d7a90e403c42c
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98097597"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171167"
 ---
 # <a name="sysdm_hadr_database_replica_states-transact-sql"></a>sys.dm_hadr_database_replica_states (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "98097597"
 |**last_commit_lsn**|**Numeric (25, 0)**|Número de secuencia de registro real correspondiente al último registro de confirmación del registro de transacciones.<br /><br /> En la base de datos principal, corresponde al último registro de confirmación procesado. Las filas para las bases de datos secundarias muestran el número de secuencia de registro que la réplica secundaria ha enviado a la principal.<br /><br /> En la réplica secundaria, es el último registro de confirmación que se rehízo.|  
 |**last_commit_time**|**datetime**|Hora correspondiente al último registro de confirmación.<br /><br /> En la base de datos secundaria, esta hora es igual la misma que para la base de datos principal.<br /><br /> En la réplica principal, cada fila de la base de datos secundaria muestra la hora que la réplica secundaria que hospeda dicha base de datos secundaria ha notificado a la réplica principal. La diferencia en el tiempo entre la fila de base de datos principal y una fila de base de datos secundaria determinada representa aproximadamente el objetivo de punto de recuperación (RPO), suponiendo que el proceso de puesta al día se ha detenido y que la réplica secundaria ha devuelto el progreso a la réplica principal.|  
 |**low_water_mark_for_ghosts**|**bigint**|Un número que aumenta regularmente para la base de datos que indica una marca de límite inferior utilizada por la limpieza de registros fantasma en la base de datos principal. Si este número no aumenta con el tiempo, implica que no puede producirse la limpieza de registros fantasma. Para decidir qué filas fantasma se han de limpiar, la réplica principal utiliza el valor mínimo de esta columna para esta base de datos en todas las réplicas de disponibilidad (incluida la réplica principal).|  
-|**secondary_lag_seconds**|**bigint**|El número de segundos que la réplica secundaria está detrás de la réplica principal durante la sincronización.<br /><br />**Se aplica a:** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores.|  
+|**secondary_lag_seconds**|**bigint**|El número de segundos que la réplica secundaria está detrás de la réplica principal durante la sincronización.<br /><br />**Se aplica a:** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores.|  
   
 ##  <a name="understanding-the-lsn-column-values"></a><a name="LSNcolumns"></a> Descripción de los valores de columna LSN  
  Los valores de las columnas **end_of_log_lsn**, **last_hardened_lsn**, **last_received_lsn**, **last_sent_lsn**, **recovery_lsn** y **truncation_lsn** no son números de secuencia de registro (LSN) reales. En su lugar, cada uno de estos valores refleja un identificador de bloque de registro rellenado con ceros.  

@@ -21,12 +21,12 @@ ms.assetid: 1897fd4a-8d51-461e-8ef2-c60be9e563f2
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 02ab47e249eed0d82a2d373685b34c11584dcfe0
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 240737da03fa21d1076251062d99f64b46aecad8
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98099944"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98168334"
 ---
 # <a name="sysdm_db_stats_histogram-transact-sql"></a>sys.dm_db_stats_histogram (Transact-SQL)
 
@@ -35,7 +35,7 @@ ms.locfileid: "98099944"
 Devuelve el histograma de estadísticas para el objeto de base de datos especificado (tabla o vista indizada) en la [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] base de datos actual. Similar a `DBCC SHOW_STATISTICS WITH HISTOGRAM`.
 
 > [!NOTE] 
-> Esta DMF está disponible a partir de [!INCLUDE[ssSQL15](../../includes/ssSQL15-md.md)] SP1 Cu2
+> Esta DMF está disponible a partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 Cu2
 
 ## <a name="syntax"></a>Sintaxis  
   
@@ -63,7 +63,7 @@ sys.dm_db_stats_histogram (object_id, stats_id)
 |distinct_range_rows |**bigint** |Número calculado de filas que tienen un valor de columna distinto en un paso del histograma, sin incluir el límite superior. |
 |average_range_rows |**real** |Número promedio de filas con valores de columna duplicados dentro de un paso del histograma, excluido el límite superior ( `RANGE_ROWS / DISTINCT_RANGE_ROWS` para `DISTINCT_RANGE_ROWS > 0` ). |
   
- ## <a name="remarks"></a>Observaciones  
+ ## <a name="remarks"></a>Comentarios  
  
  El conjunto de resultados de `sys.dm_db_stats_histogram` devuelve información similar a `DBCC SHOW_STATISTICS WITH HISTOGRAM` y también incluye `object_id` , `stats_id` y `step_number` .
 

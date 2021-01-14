@@ -28,12 +28,12 @@ ms.assetid: 704b1ad3-3534-4cf3-aff4-9fb70064b6cc
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ca23195b680ca5e2e16010b04c357fa2369d7f0a
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 6db232d77311b4d9e82bfe0afda8b14a4822d29f
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98093883"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172647"
 ---
 # <a name="sysfn_builtin_permissions-transact-sql"></a>sys.fn_builtin_permissions (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -88,10 +88,10 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |---------------------|---------------------|-----------------------------------|  
 |AADS|ALTER ANY DATABASE EVENT SESSION<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
 |AAES|ALTER ANY EVENT SESSION|SERVER|  
-|AAMK|ALTER ANY MASK<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|AAMK|ALTER ANY MASK<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
 |ADBO|ADMINISTER BULK OPERATIONS|SERVER|  
-|AEDS|ALTER ANY EXTERNAL DATA SOURCE<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
-|AEFF|ALTER ANY EXTERNAL FILE FORMAT<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|AEDS|ALTER ANY EXTERNAL DATA SOURCE<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|AEFF|ALTER ANY EXTERNAL FILE FORMAT<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
 |AL|ALTER|APPLICATION ROLE|  
 |AL|ALTER|ASSEMBLY|  
 |AL|ALTER<br />**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|AVAILABILITY GROUP|  
@@ -123,12 +123,12 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |ALAS|ALTER ANY ASSEMBLY|DATABASE|  
 |ALCD|ALTER ANY CREDENTIAL|SERVER|  
 |ALCF|ALTER ANY CERTIFICATE|DATABASE|  
-|ALCK|ALTER ANY COLUMN ENCRYPTION KEY<br />**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
-|ALCM|ALTER ANY COLUMN MASTER KEY<br />**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|ALCK|ALTER ANY COLUMN ENCRYPTION KEY<br />**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|ALCM|ALTER ANY COLUMN MASTER KEY<br />**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
 |ALCO|ALTER ANY CONNECTION|SERVER|  
 |ALDA|ALTER ANY DATABASE AUDIT|DATABASE|  
 |ALDB|ALTER ANY DATABASE|SERVER|  
-|ALDC|ALTER ANY DATABASE SCOPED CONFIGURATION<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|ALDC|ALTER ANY DATABASE SCOPED CONFIGURATION<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
 |ALDS|ALTER ANY DATASPACE|DATABASE|  
 |ALED|ALTER ANY DATABASE EVENT NOTIFICATION|DATABASE|  
 |ALES|ALTER ANY EVENT NOTIFICATION|SERVER|  
@@ -144,7 +144,7 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |ALSC|ALTER ANY CONTRACT|DATABASE|  
 |ALSK|ALTER ANY SYMMETRIC KEY|DATABASE|  
 |ALSM|ALTER ANY SCHEMA|DATABASE|  
-|ALSP|ALTER ANY SECURITY POLICY<br />**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|ALSP|ALTER ANY SECURITY POLICY<br />**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
 |ALSR|ALTER ANY SERVER ROLE<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|SERVER|  
 |ALSS|ALTER SERVER STATE|SERVER|  
 |ALST|ALTER SETTINGS|SERVER|  
@@ -224,7 +224,7 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |DL|Delete|DATABASE|  
 |DL|Delete|OBJECT|  
 |DL|Delete|SCHEMA|  
-|EAES|EXECUTE ANY EXTERNAL SCRIPT<br />**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|EAES|EXECUTE ANY EXTERNAL SCRIPT<br />**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
 |EX|Ejecute|DATABASE|  
 |EX|Ejecute|OBJECT|  
 |EX|Ejecute|SCHEMA|  
@@ -283,7 +283,7 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |TO|TAKE OWNERSHIP|SYMMETRIC KEY|  
 |TO|TAKE OWNERSHIP|TYPE|  
 |TO|TAKE OWNERSHIP|XML SCHEMA COLLECTION|  
-|UMSK|UNMASK<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|UMSK|UNMASK<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
 |UP|UPDATE|DATABASE|  
 |UP|UPDATE|OBJECT|  
 |UP|UPDATE|SCHEMA|  
@@ -313,8 +313,8 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |VW|VIEW DEFINITION|USER|  
 |VW|VIEW DEFINITION|XML SCHEMA COLLECTION|  
 |VWAD|VIEW ANY DEFINITION|SERVER|  
-|VWCK|VIEW ANY COLUMN ENCRYPTION KEY DEFINITION<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
-|VWCM|VIEW ANY COLUMN MASTER KEY DEFINITION<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|VWCK|VIEW ANY COLUMN ENCRYPTION KEY DEFINITION<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
+|VWCM|VIEW ANY COLUMN MASTER KEY DEFINITION<br /> **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|DATABASE|  
 |VWCT|VIEW CHANGE TRACKING|OBJECT|  
 |VWCT|VIEW CHANGE TRACKING|SCHEMA|  
 |VWDB|VIEW ANY DATABASE|SERVER|  
@@ -323,7 +323,7 @@ sys.fn_builtin_permissions ( [ DEFAULT | NULL ]
 |XA|EXTERNAL ACCESS ASSEMBLY|SERVER|  
 |XU|UNSAFE ASSEMBLY|SERVER|  
   
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
  `sys.fn_builtin_permissions` es una función con valores de tabla que emite una copia de la jerarquía de permisos predefinida. Esta jerarquía incluye los permisos que cubre. El `DEFAULT` conjunto de resultados describe un grafo dirigido y acíclicos de la jerarquía de permisos, de la que la raíz es (Class = Server, Permission = Control Server).  
   
  `sys.fn_builtin_permissions` no acepta parámetros correlacionados.  

@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 3f0defd0-478d-4e7f-96be-8795c9de4e3f
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 2133cd83a96a6db171f078c89dec887aec0e0646
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 65ba3ca60ceb6d1c4ba327ee191084fc63aca8d6
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095095"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170657"
 ---
 # <a name="sysdm_server_services-transact-sql"></a>sys.dm_server_services (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "98095095"
 |filename|**nvarchar(256)**|Ruta de acceso y nombre del archivo ejecutable del servicio. No puede ser NULL.|  
 |is_clustered|**nvarchar (1)**|Indica si el servicio está instalado como un recurso de un servidor en clúster. No puede ser NULL.|  
 |cluster_nodename|**nvarchar(256)**|Nombre del nodo de clúster en el que está instalado el servicio. Acepta valores NULL.|
-|instant_file_initialization_enabled|**nvarchar (1)**|Especifica si la inicialización instantánea de archivos está habilitada para el [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] servicio.<br /><br />Y = la inicialización instantánea de archivos está habilitada para el servicio.<br /><br />N = la inicialización instantánea de archivos está deshabilitada para el servicio.<br /><br /> Acepta valores NULL.<br /><br /> **Nota:** No se aplica a otros servicios como el Agente SQL Server.<br /><br /> **Se aplica a:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (A partir de [!INCLUDE[sssql11](../../includes/sssql11-md.md)] SP4 y [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 y versiones posteriores).|  
+|instant_file_initialization_enabled|**nvarchar (1)**|Especifica si la inicialización instantánea de archivos está habilitada para el [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] servicio.<br /><br />Y = la inicialización instantánea de archivos está habilitada para el servicio.<br /><br />N = la inicialización instantánea de archivos está deshabilitada para el servicio.<br /><br /> Acepta valores NULL.<br /><br /> **Nota:** No se aplica a otros servicios como el Agente SQL Server.<br /><br /> **Se aplica a:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (A partir de [!INCLUDE[sssql11](../../includes/sssql11-md.md)] SP4 y [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 y versiones posteriores).|  
 
 ## <a name="security"></a>Seguridad  
   

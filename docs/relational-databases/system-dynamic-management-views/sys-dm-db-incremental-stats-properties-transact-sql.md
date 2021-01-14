@@ -19,19 +19,19 @@ helpviewer_keywords:
 ms.assetid: aa0db893-34d1-419c-b008-224852e71307
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: b11acf31ca9f20aaf70acbe530106e58ca787439
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 27585efd99f537e6b2f6d3082c341533e8bbea3b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98094155"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172097"
 ---
 # <a name="sysdm_db_incremental_stats_properties-transact-sql"></a>sys.dm_db_incremental_stats_properties (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
 
   Devuelve propiedades de estadísticas incrementales para el objeto de base de datos especificado (tabla) en la base de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . El uso de `sys.dm_db_incremental_stats_properties` (que contiene un número de partición) es similar a `sys.dm_db_stats_properties` , que se usa para estadísticas no incrementales. 
   
-  Esta función se presentó en el [!INCLUDE[ssSQL14_md](../../includes/sssql14-md.md)] Service Pack 2 y en el [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] Service Pack 1.
+  Esta función se presentó en el [!INCLUDE[ssSQL14_md](../../includes/sssql14-md.md)] Service Pack 2 y en el [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] Service Pack 1.
   
 ## <a name="syntax"></a>Sintaxis  
   

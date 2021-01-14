@@ -1,6 +1,6 @@
 ---
 description: sys.sp_xtp_merge_checkpoint_files (Transact-SQL)
-title: Sys. sp_xtp_merge_checkpoint_files (Transact-SQL) | Microsoft Docs
+title: sys.sp_xtp_merge_checkpoint_files (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 11/28/2016
 ms.prod: sql
@@ -18,25 +18,25 @@ helpviewer_keywords:
 ms.assetid: da04df2a-f7a1-41e7-a1ef-2d5d68919892
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 9bd8cf3735ecc240a0d99929fc0ef1c40d931887
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 16cf2326ad9b732d2d01f75a14ccb9026111803f
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89541067"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98168153"
 ---
 # <a name="syssp_xtp_merge_checkpoint_files-transact-sql"></a>sys.sp_xtp_merge_checkpoint_files (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
 
-  **Sys. sp_xtp_merge_checkpoint_files** combina todos los archivos Delta y de datos en el intervalo de transacciones especificado.  
+  **Sys.sp_xtp_merge_checkpoint_files** combina todos los archivos Delta y de datos en el intervalo de transacciones especificado.  
   
- Para obtener más información, vea [crear y administrar el almacenamiento de objetos con optimización para memoria](../../relational-databases/in-memory-oltp/creating-and-managing-storage-for-memory-optimized-objects.md).  
+ Para obtener más información, vea [crear y administrar el almacenamiento de objetos de Memory-Optimized](../../relational-databases/in-memory-oltp/creating-and-managing-storage-for-memory-optimized-objects.md).  
   
  ![Icono de vínculo de tema](../../database-engine/configure-windows/media/topic-link.gif "Icono de vínculo de tema") [Convenciones de sintaxis de Transact-SQL](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ||  
 |-|  
-|**Nota**: este procedimiento almacenado está en desuso en [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] . Ya no es necesario y no se puede utilizar, a partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] .|  
+|**Nota**: este procedimiento almacenado está en desuso en [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] . Ya no es necesario y no se puede utilizar, a partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] .|  
   
 ## <a name="syntax"></a>Sintaxis  
   
@@ -51,10 +51,10 @@ sys.sp_xtp_merge_checkpoint_files database_name, @transaction_lower_bound, @tran
  Nombre de la base de datos en la que se va a invocar la combinación. Si la base de datos no tiene tablas en memoria, este procedimiento devuelve un error de usuario. Si la base de datos está sin conexión, devuelve un error.  
   
  *lower_bound_Tid*  
- El límite inferior (BIGINT) de las transacciones de un archivo de datos, tal como se muestra en [Sys. dm_db_xtp_checkpoint_files &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-xtp-checkpoint-files-transact-sql.md) correspondiente al archivo de punto de comprobación de inicio de la combinación. Se genera un error si se especifica un valor no válido para transactonId.  
+ El límite inferior (BIGINT) de las transacciones de un archivo de datos, tal como se muestra en [sys.dm_db_xtp_checkpoint_files &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-db-xtp-checkpoint-files-transact-sql.md) correspondiente al archivo de punto de comprobación de inicio de la combinación. Se genera un error si se especifica un valor no válido para transactonId.  
   
  *upper_bound_Tid*  
- El límite superior (BIGINT) de las transacciones para un archivo de datos, tal como se muestra en [Sys. dm_db_xtp_checkpoint_files &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-db-xtp-checkpoint-files-transact-sql.md). Se genera un error si se especifica un valor no válido para transactonId.  
+ El límite superior (BIGINT) de las transacciones para un archivo de datos, tal como se muestra en [sys.dm_db_xtp_checkpoint_files &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-db-xtp-checkpoint-files-transact-sql.md). Se genera un error si se especifica un valor no válido para transactonId.  
   
 ## <a name="return-code-values"></a>Valores de código de retorno  
  Ninguno  
@@ -65,7 +65,7 @@ sys.sp_xtp_merge_checkpoint_files database_name, @transaction_lower_bound, @tran
 ## <a name="permissions"></a>Permisos  
  Requiere el rol fijo de servidor sysadmin y el rol fijo de base de datos db_owner.  
   
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
  Combina todos los archivos delta y de datos del intervalo válido para generar un único archivo delta y de datos. Este procedimiento no respeta la directiva de combinación.  
   
 ## <a name="see-also"></a>Consulte también  

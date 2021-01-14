@@ -21,12 +21,12 @@ author: pmasl
 ms.author: pelopes
 ms.reviewer: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f1c9ac32f202766e118f7e44d3cf7c0d7fafdb6a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a1ad13d4cdbcf8820a318a87f4ef9f52c488a406
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97482806"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171267"
 ---
 # <a name="sysdm_exec_requests-transact-sql"></a>sys.dm_exec_requests (Transact-SQL)
 
@@ -39,8 +39,8 @@ Devuelve información sobre cada una de las solicitudes que se ejecutan en [!INC
 |session_id|**smallint**|Identificador de la sesión con la que está relacionada esta solicitud. No admite valores NULL.|  
 |request_id|**int**|Id. de la solicitud. Es único en el contexto de la sesión. No admite valores NULL.|  
 |start_time|**datetime**|Marca de tiempo de la llegada de la solicitud. No admite valores NULL.|  
-|status|**nvarchar(30)**|Estado de la solicitud. Este puede ser uno de los siguientes:<br /><br /> Información previa<br />En ejecución<br />Ejecutable<br />En espera<br />Suspended<br /><br /> No admite valores NULL.|  
-|command|**nvarchar(32)**|Identifica el tipo de comando actual que se está procesando. Los tipos de comandos comunes incluyen lo siguiente:<br /><br /> SELECT<br />INSERT<br />UPDATE<br />Delete<br />BACKUP LOG<br />BACKUP DATABASE<br />DBCC<br />FOR<br /><br /> El texto de la solicitud se puede recuperar mediante sys.dm_exec_sql_text con el correspondiente sql_handle para la solicitud. Los procesos internos del sistema establecen el comando según el tipo de tarea que realizan. Las tareas pueden incluir las siguientes:<br /><br /> LOCK MONITOR<br />CHECKPOINTLAZY<br />WRITER<br /><br /> No admite valores NULL.|  
+|status|**nvarchar(30)**|Estado de la solicitud. Este puede ser uno de los siguientes:<br /><br /> Segundo plano<br />En ejecución<br />Ejecutable<br />En espera<br />Suspended<br /><br /> No admite valores NULL.|  
+|.|**nvarchar(32)**|Identifica el tipo de comando actual que se está procesando. Los tipos de comandos comunes incluyen lo siguiente:<br /><br /> SELECT<br />INSERT<br />UPDATE<br />Delete<br />BACKUP LOG<br />BACKUP DATABASE<br />DBCC<br />FOR<br /><br /> El texto de la solicitud se puede recuperar mediante sys.dm_exec_sql_text con el correspondiente sql_handle para la solicitud. Los procesos internos del sistema establecen el comando según el tipo de tarea que realizan. Las tareas pueden incluir las siguientes:<br /><br /> LOCK MONITOR<br />CHECKPOINTLAZY<br />WRITER<br /><br /> No admite valores NULL.|  
 |sql_handle|**varbinary (64)**|Es un token que identifica de forma única el lote o el procedimiento almacenado del que forma parte la consulta. Acepta valores NULL.| 
 |statement_start_offset|**int**|Indica, en bytes, empezando por 0, la posición inicial de la instrucción que se está ejecutando actualmente para el lote que se está ejecutando actualmente o el objeto almacenado. Se puede usar junto con `sql_handle` , `statement_end_offset` y la `sys.dm_exec_sql_text` función de administración dinámica para recuperar la instrucción que se está ejecutando actualmente para la solicitud. Acepta valores NULL.|  
 |statement_end_offset|**int**|Indica, en bytes, empezando por 0, la posición final de la instrucción que se está ejecutando actualmente para el lote que se está ejecutando actualmente o el objeto almacenado. Se puede usar junto con `sql_handle` , `statement_start_offset` y la `sys.dm_exec_sql_text` función de administración dinámica para recuperar la instrucción que se está ejecutando actualmente para la solicitud. Acepta valores NULL.|  
@@ -91,9 +91,9 @@ Devuelve información sobre cada una de las solicitudes que se ejecutan en [!INC
 |query_plan_hash|**Binary(8**|Valor hash binario que se calcula en el plan de ejecución de consulta y que se usa para identificar planes de ejecución de consulta similares. Puede usar el hash del plan de consulta para buscar el costo acumulativo de las consultas con planes de ejecución similares.|  
 |statement_sql_handle|**varbinary (64)**|**Válido para** : [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] y versiones posteriores.<br /><br /> Identificador SQL de la consulta individual.<br /><br />Esta columna es NULL si Almacén de consultas no está habilitada para la base de datos. |  
 |statement_context_id|**bigint**|**Válido para** : [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] y versiones posteriores.<br /><br /> Clave externa opcional que se va a sys.query_context_settings.<br /><br />Esta columna es NULL si Almacén de consultas no está habilitada para la base de datos. |  
-|dop |**int** |**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores.<br /><br /> Grado de paralelismo de la consulta. |  
-|parallel_worker_count |**int** |**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores.<br /><br /> El número de trabajadores paralelos reservados si se trata de una consulta en paralelo.  |  
-|external_script_request_id |**uniqueidentifier** |**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores.<br /><br /> IDENTIFICADOR de solicitud de script externo asociado a la solicitud actual. |  
+|dop |**int** |**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores.<br /><br /> Grado de paralelismo de la consulta. |  
+|parallel_worker_count |**int** |**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores.<br /><br /> El número de trabajadores paralelos reservados si se trata de una consulta en paralelo.  |  
+|external_script_request_id |**uniqueidentifier** |**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores.<br /><br /> IDENTIFICADOR de solicitud de script externo asociado a la solicitud actual. |  
 |is_resumable |**bit** |**Válido para** : [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] y versiones posteriores.<br /><br /> Indica si la solicitud es una operación de índice reanudable. |  
 |page_resource |**Binary(8** |**Se aplica a**: [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]<br /><br /> Representación hexadecimal de 8 bytes del recurso de página si la `wait_resource` columna contiene una página. Para obtener más información, vea [Sys.fn_PageResCracker](../../relational-databases/system-functions/sys-fn-pagerescracker-transact-sql.md). |  
 |page_server_reads|**bigint**|**Se aplica a**: hiperescala Azure SQL Database<br /><br /> Número de lecturas del servidor de páginas realizadas por esta solicitud. No admite valores NULL.|  

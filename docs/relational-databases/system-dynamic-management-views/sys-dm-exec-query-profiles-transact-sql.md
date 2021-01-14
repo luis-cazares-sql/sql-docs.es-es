@@ -21,12 +21,12 @@ ms.assetid: 54efc6cb-eea8-4f6d-a4d0-aa05eeb54081
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 80c59436a83795f4111dfae2997b8678b94e617e
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 461898cf3bf9e694e8d8272608861fdbfa0aff79
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98096612"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170257"
 ---
 # <a name="sysdm_exec_query_profiles-transact-sql"></a>sys.dm_exec_query_profiles (Transact-SQL)
 [!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -73,7 +73,7 @@ Los contadores devueltos son por operador y por subproceso. Los resultados son d
 |segment_read_count|**int**|Número de lecturas anticipadas de segmento hasta ahora.|  
 |segment_skip_count|**int**|Número de segmentos omitidos hasta ahora.| 
 |actual_read_row_count|**bigint**|Número de filas leídas por un operador antes de que se aplicara el predicado residual.| 
-|estimated_read_row_count|**bigint**|**Se aplica a:** A partir de [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] SP1. <br/>Número de filas que un operador debe leer antes de que se aplicara el predicado residual.|  
+|estimated_read_row_count|**bigint**|**Se aplica a:** A partir de [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] SP1. <br/>Número de filas que un operador debe leer antes de que se aplicara el predicado residual.|  
   
 ## <a name="general-remarks"></a>Notas generales  
  Si el nodo del plan de consulta no tiene ninguna e/s, todos los contadores relacionados con la e/s se establecen en NULL.  
@@ -84,7 +84,7 @@ Los contadores devueltos son por operador y por subproceso. Los resultados son d
   
 -   Si se realizaran búsquedas en paralelo, esta DMV informa sobre los contadores para cada uno de los subprocesos paralelos que se ejecutan en la búsqueda.
  
-A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1, la *infraestructura de generación de perfiles de estadísticas de ejecución de consultas estándar* existe en paralelo con una *infraestructura ligera de generación de perfiles de estadísticas de ejecución de consultas*. `SET STATISTICS XML ON` y `SET STATISTICS PROFILE ON` usan siempre la *infraestructura de generación de perfiles de estadísticas de ejecución de consultas estándar*. Para `sys.dm_exec_query_profiles` que se rellene, una de las infraestructuras de generación de perfiles de consulta debe estar habilitada. Para obtener más información, vea [Infraestructura de generación de perfiles de consultas](../../relational-databases/performance/query-profiling-infrastructure.md).    
+A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1, la *infraestructura de generación de perfiles de estadísticas de ejecución de consultas estándar* existe en paralelo con una *infraestructura ligera de generación de perfiles de estadísticas de ejecución de consultas*. `SET STATISTICS XML ON` y `SET STATISTICS PROFILE ON` usan siempre la *infraestructura de generación de perfiles de estadísticas de ejecución de consultas estándar*. Para `sys.dm_exec_query_profiles` que se rellene, una de las infraestructuras de generación de perfiles de consulta debe estar habilitada. Para obtener más información, vea [Infraestructura de generación de perfiles de consultas](../../relational-databases/performance/query-profiling-infrastructure.md).    
 
 >[!NOTE]
 > La consulta en investigación tiene que iniciarse **después** de que se haya habilitado la infraestructura de generación de perfiles de consulta, lo que lo habilitará después de iniciar la consulta no producirá resultados en `sys.dm_exec_query_profiles` . Para obtener más información sobre cómo habilitar las infraestructuras de generación de perfiles de consulta, consulte la [infraestructura de generación de perfiles de consulta](../../relational-databases/performance/query-profiling-infrastructure.md).

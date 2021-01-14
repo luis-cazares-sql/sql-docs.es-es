@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 538c93cf-c5bb-43d5-b758-186d9fb00c19
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 165287fd2d699c56dc635d85fd58a1b081a497a4
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 2f39965e87911f7fef8d50c0b0888d552a451a90
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427037"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172657"
 ---
 # <a name="project-settings-conversion-db2tosql"></a>Configuración del proyecto (conversión) (DB2ToSQL)
 La página conversión del cuadro de diálogo **configuración del proyecto** contiene opciones que personalizan cómo SSMA convierte la sintaxis de DB2 en [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Sintaxis.  
@@ -364,7 +364,7 @@ DB2 y [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] devuelven result
   
 -   Si selecciona **sí**, SSMA reemplaza el carácter de concatenación de DB2 (| |) por el [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] carácter de concatenación (+). SSMA también comprueba las expresiones en ambos lados de la concatenación para los valores NULL.  
   
--   Si selecciona no, SSMA reemplaza los caracteres de concatenación, pero no comprueba si **hay**valores NULL.  
+-   Si selecciona no, SSMA reemplaza los caracteres de concatenación, pero no comprueba si **hay** valores NULL.  
   
 Al seleccionar un modo de conversión en el cuadro **modo** , SSMA aplica la siguiente configuración:  
   
@@ -478,6 +478,6 @@ Solo es visible cuando el generador de secuencias de conversión se establece en
   
 -   Si selecciona **no**, SSMA marcará todas las referencias a los desencadenadores externos en la secuencia convertida CURRVAL con un error.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
 [Referencia de la interfaz de usuario &#40;DB2ToSQL&#41;](../../ssma/db2/user-interface-reference-db2tosql.md)  
   

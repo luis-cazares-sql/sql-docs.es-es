@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 01f4590f-427a-4280-a1c3-18de9f7d86c1
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 937524b89d199ee3ae0bd5d1d722bf3a14ec8ce4
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 457896a5c845bc42e446f1a115ee47863f7fced3
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88461006"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171857"
 ---
 # <a name="sqlgetenvattr-function"></a>Función SQLGetEnvAttr
 **Conformidad**  
@@ -60,10 +60,10 @@ SQLRETURN SQLGetEnvAttr(
  Si *ValuePtr* es null, *StringLengthPtr* devolverá el número total de bytes (sin incluir el carácter de terminación null para los datos de caracteres) disponible para devolver en el búfer señalado por *ValuePtr*.  
   
  *BufferLength*  
- Entradas Si *ValuePtr* apunta a una cadena de caracteres, este argumento debe ser la longitud de \* *ValuePtr*. Si \* *ValuePtr* es un entero, *BufferLength* se omite. Si * \* ValuePtr* es una cadena Unicode (al llamar a **SQLGetEnvAttrW**), el argumento *BufferLength* debe ser un número par. Si el valor del atributo no es una cadena de caracteres, *BufferLength* no se utiliza.  
+ Entradas Si *ValuePtr* apunta a una cadena de caracteres, este argumento debe ser la longitud de \* *ValuePtr*. Si \* *ValuePtr* es un entero, *BufferLength* se omite. Si *\* ValuePtr* es una cadena Unicode (al llamar a **SQLGetEnvAttrW**), el argumento *BufferLength* debe ser un número par. Si el valor del atributo no es una cadena de caracteres, *BufferLength* no se utiliza.  
   
  *StringLengthPtr*  
- Genere Un puntero a un búfer en el que se va a devolver el número total de bytes (sin incluir el carácter de terminación de NULL) disponible para devolver en * \* ValuePtr*. Si *ValuePtr* es un puntero nulo, no se devuelve ninguna longitud. Si el valor del atributo es una cadena de caracteres y el número de bytes disponibles para devolver es mayor o igual que *BufferLength*, los datos de \* *ValuePtr* se truncan en *BufferLength* menos la longitud de un carácter de terminación NULL y el controlador termina en NULL.  
+ Genere Un puntero a un búfer en el que se va a devolver el número total de bytes (sin incluir el carácter de terminación de NULL) disponible para devolver en *\* ValuePtr*. Si el valor del atributo es una cadena de caracteres y el número de bytes disponibles para devolver es mayor o igual que *BufferLength*, los datos de \* *ValuePtr* se truncan en *BufferLength* menos la longitud de un carácter de terminación NULL y el controlador termina en NULL.  
   
 ## <a name="returns"></a>Devoluciones  
  SQL_SUCCESS, SQL_SUCCESS_WITH_INFO, SQL_NO_DATA, SQL_ERROR o SQL_INVALID_HANDLE.  
@@ -75,7 +75,7 @@ SQLRETURN SQLGetEnvAttr(
 |--------------|-----------|-----------------|  
 |01000|ADVERTENCIA general|Mensaje informativo específico del controlador. (La función devuelve SQL_SUCCESS_WITH_INFO).|  
 |01004|Datos de cadena, truncados a la derecha|Los datos devueltos en \* *ValuePtr* se truncaron para *BufferLength* menos el carácter de terminación null. La longitud del valor de cadena no truncado se devuelve en **StringLengthPtr*. (La función devuelve SQL_SUCCESS_WITH_INFO).|  
-|HY000|Error general|Se produjo un error para el que no había ningún SQLSTATE específico y para el que no se definió ningún SQLSTATE específico de la implementación. El mensaje de error devuelto por **SQLGetDiagRec** en el búfer * \* MessageText* describe el error y su causa.|  
+|HY000|Error general|Se produjo un error para el que no había ningún SQLSTATE específico y para el que no se definió ningún SQLSTATE específico de la implementación. El mensaje de error devuelto por **SQLGetDiagRec** en el búfer *\* MessageText* describe el error y su causa.|  
 |HY001|Error de asignación de memoria|El controlador no pudo asignar la memoria necesaria para admitir la ejecución o la finalización de la función.|  
 |HY010|Error de secuencia de función|El **SQL_ATTR_ODBC_VERSION** (DM) aún no se ha establecido a través de **SQLSetEnvAttr**. No es necesario establecer **SQL_ATTR_ODBC_VERSION** explícitamente si se usa **SQLAllocHandleStd**.|  
 |HY013|Error de administración de memoria|No se pudo procesar la llamada de función porque no se pudo tener acceso a los objetos de memoria subyacentes, posiblemente debido a condiciones de memoria insuficientes.|  
@@ -102,6 +102,6 @@ SQLRETURN SQLGetEnvAttr(
 |Establecer un atributo de entorno|[Función SQLSetEnvAttr](../../../odbc/reference/syntax/sqlsetenvattr-function.md)|  
 |Establecer un atributo de instrucción|[Función SQLSetStmtAttr](../../../odbc/reference/syntax/sqlsetstmtattr-function.md)|  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
  [Referencia de la API de ODBC](../../../odbc/reference/syntax/odbc-api-reference.md)   
  [Archivos de encabezado de ODBC](../../../odbc/reference/install/odbc-header-files.md)

@@ -22,12 +22,12 @@ ms.assetid: 96b28abb-b059-48db-be2b-d60fe127f6aa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 21ebb356139cf33f87a4e3da84a5004bd7405ae9
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 4c49575ef666cf35c26dd4e924cbb75b17cb9c4e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98096396"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170147"
 ---
 # <a name="sysfn_virtualfilestats-transact-sql"></a>sys.fn_virtualfilestats (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -56,7 +56,7 @@ fn_virtualfilestats ( { database_id | NULL } , { file_id | NULL } )
 |-----------------|---------------|-----------------|  
 |**DbId**|**smallint**|Id. de la base de datos.|  
 |**FileId**|**smallint**|Identificador de archivo.|  
-|**Indicaciones**|**bigint**|Marca de tiempo de la base de datos en la que se obtuvieron los datos. **int** en versiones anteriores a [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] . |  
+|**Indicaciones**|**bigint**|Marca de tiempo de la base de datos en la que se obtuvieron los datos. **int** en versiones anteriores a [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] . |  
 |**NumberReads**|**bigint**|Número de operaciones de lectura realizadas en el archivo.|  
 |**BytesRead**|**bigint**|Número de bytes leídos emitidos en el archivo.|  
 |**IoStallReadMS**|**bigint**|Tiempo total, en milisegundos, que los usuarios han esperado para que finalicen las E/S de lectura en el archivo.|  
@@ -67,7 +67,7 @@ fn_virtualfilestats ( { database_id | NULL } , { file_id | NULL } )
 |**FileHandle**|**bigint**|Valor del identificador de archivos.|  
 |**BytesOnDisk**|**bigint**|Tamaño físico del archivo (recuento de bytes) en disco.<br /><br /> En el caso de los archivos de base de datos, es el mismo valor que el **tamaño** en **Sys.database_files**, pero se expresa en bytes en lugar de en páginas.<br /><br /> En los archivos dispersos de instantáneas de base de datos, se trata del espacio que utiliza el sistema operativo para el archivo.|  
   
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
  **fn_virtualfilestats** es una función con valores de tabla del sistema que proporciona información estadística, como el número total de operaciones de e/s realizadas en un archivo. Puede utilizarse esta función como ayuda para realizar un seguimiento del tiempo que los usuarios tienen que esperar para leer un archivo o escribir en él. La función también ayuda a identificar los archivos que tienen mucha actividad de E/S.  
   
 ## <a name="permissions"></a>Permisos  

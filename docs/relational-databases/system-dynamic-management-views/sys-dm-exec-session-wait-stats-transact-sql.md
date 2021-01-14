@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: df84842a-71eb-4fda-b448-5953cf9985dc
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 7555332848e338fe73e0add1a1fb4e9a3097256e
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: d0c91c8af4b0264c6cb418e858e18e0c252eda15
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98098942"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171427"
 ---
 # <a name="sysdm_exec_session_wait_stats-transact-sql"></a>sys.dm_exec_session_wait_stats (Transact-SQL)
 
@@ -30,7 +30,7 @@ ms.locfileid: "98098942"
 
   Devuelve información sobre todas las esperas encontradas por los subprocesos que se ejecutaron para cada sesión. Puede usar esta vista para diagnosticar problemas de rendimiento con la [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] sesión y también con lotes y consultas específicos.  Esta vista devuelve la misma información que se agrega para [sys.dm_os_wait_stats &#40;&#41;de Transact-SQL](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md) , pero también proporciona el número de **session_id** .  
   
-**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores)  
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores)  
   
 |Nombre de la columna|Tipo de datos|Descripción|  
 |-----------------|---------------|-----------------|  
@@ -41,7 +41,7 @@ ms.locfileid: "98098942"
 |max_wait_time_ms|**bigint**|Tiempo de espera máximo de este tipo de espera.|  
 |signal_wait_time_ms|**bigint**|Diferencia entre el momento en que se indicó el subproceso en espera y el momento en que empezó a ejecutarse.|  
   
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
  Esta DMV restablece la información de una sesión cuando se abre la sesión, o cuando se restablece la sesión (si se agrupa la conexión),  
   
  Para obtener información sobre los tipos de espera, vea [sys.dm_os_wait_stats &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md).  

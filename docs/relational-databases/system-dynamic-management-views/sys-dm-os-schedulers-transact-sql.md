@@ -21,12 +21,12 @@ ms.assetid: 3a09d81b-55d5-416f-9cda-1a3a5492abe0
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a6ac7202b637b6760d88756aef60a722f99f5b7b
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 6a2d8ed3f8eb3aa5a89ee7176863165a2a0a0b74
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98099861"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171727"
 ---
 # <a name="sysdm_os_schedulers-transact-sql"></a>sys.dm_os_schedulers (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -62,9 +62,9 @@ ms.locfileid: "98099861"
 |memory_object_address|**varbinary(8**|Dirección de memoria del objeto de memoria del programador. No acepta valores NULL.|  
 |task_memory_object_address|**varbinary(8**|Dirección de memoria del objeto de memoria de la tarea. No admite valores NULL. Para obtener más información, vea [sys.dm_os_memory_objects &#40;&#41;de Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-objects-transact-sql.md).|  
 |quantum_length_us|**bigint**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)] Expone el cuanto del programador que utiliza SQLOS.|  
-| total_cpu_usage_ms |**bigint**|**Válido para** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores. <br><br> CPU total consumida por este programador tal y como lo indican los trabajadores no preferentes. No admite valores NULL.|
+| total_cpu_usage_ms |**bigint**|**Válido para** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores. <br><br> CPU total consumida por este programador tal y como lo indican los trabajadores no preferentes. No admite valores NULL.|
 |total_cpu_idle_capped_ms|**bigint**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)] Indica que la limitación se basa en el [objetivo de nivel de servicio](/azure/sql-data-warehouse/what-is-a-data-warehouse-unit-dwu-cdwu#service-level-objective); siempre será 0 para las versiones que no sean de Azure de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Acepta valores NULL.|
-|total_scheduler_delay_ms|**bigint**|**Válido para** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores. <br><br> El tiempo entre un trabajador que está desactivando y otro que está cambiando. Puede deberse a que los trabajadores preferentemente retrasan la programación del siguiente trabajo no preferente o debido a los subprocesos de programación del sistema operativo de otros procesos. No admite valores NULL.|
+|total_scheduler_delay_ms|**bigint**|**Válido para** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores. <br><br> El tiempo entre un trabajador que está desactivando y otro que está cambiando. Puede deberse a que los trabajadores preferentemente retrasan la programación del siguiente trabajo no preferente o debido a los subprocesos de programación del sistema operativo de otros procesos. No admite valores NULL.|
 |ideal_workers_limit|**int**|**Válido para** [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] y versiones posteriores. <br><br> El número de trabajadores que idealmente deberían estar en el programador. Si los trabajadores actuales superan el límite debido a la carga de tareas desequilibrada, una vez que estén inactivas, se recortarán. No admite valores NULL.|
 |pdw_node_id|**int**|**Se aplica a**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] , [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> Identificador del nodo en el que se encuentra esta distribución.|  
   
