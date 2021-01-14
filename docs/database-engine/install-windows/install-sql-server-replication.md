@@ -17,12 +17,12 @@ ms.assetid: c50ad078-060b-4a8d-ad45-9e31a8d85729
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: d258594f464a18d1c2495c2ca868a043d91e415e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: b1995d22488693a31adb7c9a421f5a2e32de463d
+ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97460718"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97975489"
 ---
 # <a name="install-sql-server-replication"></a>Instalar la replicación de SQL Server
 
@@ -48,5 +48,5 @@ Después de instalar los componentes de replicación, debe configurar el servido
 ## <a name="see-also"></a>Consulte también  
  [Instalar SQL Server](../../database-engine/install-windows/install-sql-server.md)   
  [Instalar SQL Server desde el símbolo del sistema](./install-sql-server-from-the-command-prompt.md)   
- [Características compatibles con las ediciones de SQL Server](../../sql-server/editions-and-components-of-sql-server-2017.md)  
+ [Ediciones y características admitidas de SQL Server 2017](../../sql-server/editions-and-components-of-sql-server-2017.md) y [Ediciones y características admitidas de SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md)
   

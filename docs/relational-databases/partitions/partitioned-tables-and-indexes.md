@@ -2,7 +2,7 @@
 description: Partitioned Tables and Indexes
 title: Tablas e índices con particiones | Microsoft Docs
 ms.custom: ''
-ms.date: 01/20/2016
+ms.date: 1/5/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: ''
@@ -17,12 +17,12 @@ ms.assetid: cc5bf181-18a0-44d5-8bd7-8060d227c927
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4cb894ef393f767d85af5c43b50bffce87f3a6fc
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: dcc5d8e3602261c975f5517ea859e19fc7902936
+ms.sourcegitcommit: 629229a7c33a3ed99db63b89127bb016449f7d3d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480046"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952062"
 ---
 # <a name="partitioned-tables-and-indexes"></a>Partitioned Tables and Indexes
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -55,6 +55,9 @@ Una función de partición define la forma de asignar las filas de una tabla o u
   
 ### <a name="partition-scheme"></a>Esquema de partición 
 Objeto de base de datos que asigna las particiones de una función de partición a un conjunto de grupos de archivos. La principal razón para colocar las particiones en distintos grupos de archivos es garantizar que se puedan realizar operaciones de copia de seguridad en particiones de forma independiente. Esto se debe a que se pueden realizar copias de seguridad en grupos de archivos individuales.  
+
+> [!NOTE]
+> En Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] solamente se admiten grupos de archivos principales.  
   
 ### <a name="partitioning-column"></a>Columna de partición  
 La columna de una tabla o índice que una función de partición usa para crear particiones en la tabla o índice. Las columnas calculadas que participan en una función de partición deben marcarse explícitamente como PERSISTED. Todos los tipos de datos válidos para el uso en columnas de índice pueden utilizarse como una columna de partición con la excepción de **timestamp**. No se pueden especificar los tipos de datos **ntext**, **text**, **image**, **xml**, **varchar(max)** , **nvarchar(max)** o **varbinary(max)** . Tampoco se pueden especificar columnas de tipo de datos de alias y de tipo definido por el usuario de Common Language Runtime (CLR) de Microsoft .NET Framework.  

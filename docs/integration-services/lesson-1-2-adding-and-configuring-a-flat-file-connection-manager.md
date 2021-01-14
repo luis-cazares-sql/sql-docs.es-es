@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.assetid: 9a77dd32-d8c2-4961-ad37-2a971f9d6043
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: d83b2c6a19b7a73be4293dcb66edc6cbc22909d9
-ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
+ms.openlocfilehash: 57bf9bd3863e5486c890088324641a5100581a02
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "88449741"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099243"
 ---
 # <a name="lesson-1-2-add-and-configure-a-flat-file-connection-manager"></a>Lección 1-2: Adición y configuración de un administrador de conexiones de archivos planos
 
@@ -48,7 +48,7 @@ En esta lección, configurará las propiedades siguientes en el administrador de
   
 4.  En el cuadro de diálogo **Abrir**, busque el archivo **SampleCurrencyData.txt** en el equipo.  
   
-5.  Borre los nombres de columna de la primera casilla de fila de datos.  
+5.  Desactive la casilla **Nombres de columna en la primera fila de datos**.  
   
 ### <a name="set-locale-sensitive-properties"></a>Establecimiento de propiedades sensibles a la configuración regional  
   

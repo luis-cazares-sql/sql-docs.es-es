@@ -9,12 +9,12 @@ ms.topic: how-to
 author: bluefooted
 ms.author: pamela
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a25835dd5fbac5f95434d46ac152d44ea6974496
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 00b4856ab0c057b7f63aae44834884bc775d8e92
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97440136"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102173"
 ---
 # <a name="diagnose-and-resolve-spinlock-contention-on-sql-server"></a>Diagnóstico y resolución de contención de bloqueos por subproceso en SQL Server
 
@@ -137,7 +137,7 @@ El proceso técnico general para diagnosticar la contención de bloqueos por sub
 
 2. **Paso 2**: Capturar estadísticas de *sys.dm_os_spinlock_stats* para encontrar el tipo de bloqueo por subproceso que tiene más contención.
 
-3. **Paso 3**: Obtener símbolos de depuración para sqlservr.exe (sqlservr.pdb) y colocar los símbolos en el mismo directorio que el archivo .exe (sqlservr. exe) del servicio SQL Server para la instancia de SQL Server. \ Para ver las pilas de llamadas de los eventos de interrupción, debe tener símbolos para la versión concreta de SQL Server que se ejecute. Los símbolos para SQL Server están disponibles en el servidor de símbolos de Microsoft. Para obtener más información sobre cómo descargar símbolos del servidor de símbolos de Microsoft, consulte el artículo sobre la [depuración con símbolos](https://docs.microsoft.com/windows/win32/dxtecharts/debugging-with-symbols).
+3. **Paso 3**: Obtener símbolos de depuración para sqlservr.exe (sqlservr.pdb) y colocar los símbolos en el mismo directorio que el archivo .exe (sqlservr. exe) del servicio SQL Server para la instancia de SQL Server. \ Para ver las pilas de llamadas de los eventos de interrupción, debe tener símbolos para la versión concreta de SQL Server que se ejecute. Los símbolos para SQL Server están disponibles en el servidor de símbolos de Microsoft. Para obtener más información sobre cómo descargar símbolos del servidor de símbolos de Microsoft, consulte el artículo sobre la [depuración con símbolos](/windows/win32/dxtecharts/debugging-with-symbols).
 
 4. **Paso 4**: Usar eventos extendidos de SQL Server para realizar un seguimiento de los eventos de interrupción de los tipos de bloqueo por subproceso de interés.
 
@@ -237,7 +237,7 @@ drop event session spin_lock_backoff on server
 Mediante el análisis de la salida, podemos ver las pilas de llamadas de las rutas de acceso al código más comunes para los giros de SOS_CACHESTORE. El script se ejecutó un par de veces distintas en el momento en que el uso de CPU era elevado para comprobar la coherencia de las pilas de llamadas devueltas. Observe que las pilas de llamadas con el mayor número de cubos de ranuras son comunes entre las dos salidas (35.668 y 8.506). Estas pilas de llamadas tienen un "número de ranuras" que es dos órdenes de magnitud mayor que la siguiente entrada más alta. Esta condición indica una ruta de acceso al código de interés.
 
 > [!NOTE]
-> No es raro ver pilas de llamadas devueltas por el script anterior. Cuando el script se ejecuta durante un minuto, hemos observado que es probable que las pilas con un número de ranuras \>1000 sean problemáticas y que es probable las pilas con un número de ranuras \>10 000 sean problemáticas.
+> No es raro ver pilas de llamadas devueltas por el script anterior. Cuando el script se ejecutó durante un minuto, observamos que las pilas de llamadas con más de 1000 ranuras eran problemáticas. Sin embargo, las de más de 10 000 presentaban más probabilidades de crear problemas, ya que el número de ranuras era mayor.
 
 > [!NOTE]
 > El formato de la siguiente salida se ha limpiado con fines de legibilidad.

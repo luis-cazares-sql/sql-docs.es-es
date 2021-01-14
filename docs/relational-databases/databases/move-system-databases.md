@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: 72bb62ee-9602-4f71-be51-c466c1670878
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: a72ccacd9401a8b7955eae10751c5ac67ca211ac
-ms.sourcegitcommit: eeb30d9ac19d3ede8d07bfdb5d47f33c6c80a28f
+ms.openlocfilehash: c24a98684e87eb94a3cd9e100f203509789b7a0f
+ms.sourcegitcommit: 4a813a0741502c56c0cd5ecaafafad2e857a9d7f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96523069"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98031114"
 ---
 # <a name="move-system-databases"></a>Mover bases de datos del sistema
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -68,7 +68,7 @@ ms.locfileid: "96523069"
   
 2.  Detenga la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] o cierre el sistema para realizar el mantenimiento. Para más información, consulte [Iniciar, detener, pausar, reanudar y reiniciar el motor de base de datos, Agente SQL Server o el Servicio SQL Server Browser](../../database-engine/configure-windows/start-stop-pause-resume-restart-sql-server-services.md).  
   
-3.  Mueva el archivo o los archivos a la nueva ubicación.  
+3.  Mueva los archivos a la nueva ubicación y compruebe que la cuenta del servicio [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] siga teniendo permisos de acceso.
 
 4.  Reinicie la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] o el servidor. Para más información, consulte [Iniciar, detener, pausar, reanudar y reiniciar el motor de base de datos, Agente SQL Server o el Servicio SQL Server Browser](../../database-engine/configure-windows/start-stop-pause-resume-restart-sql-server-services.md).  
   
@@ -151,14 +151,10 @@ ms.locfileid: "96523069"
   
 3.  En el cuadro de diálogo **Propiedades de (** _nombre_de_instancia_ **) de SQL Server** , haga clic en la pestaña **Parámetros de inicio** .  
   
-4.  En el cuadro **Parámetros existentes**, seleccione el parámetro -d para mover el archivo de datos maestros. Haga clic en **Actualizar** para guardar el cambio.  
+4.  En el cuadro **Parámetros existentes**, seleccione el parámetro -d. En el cuadro **Especifique un parámetro de inicio**, cambie el parámetro a la nueva ruta del archivo de *datos* maestros. Haga clic en **Actualizar** para guardar el cambio.
   
-     En el cuadro **Especifique un parámetro de inicio** , cambie el parámetro a la nueva ruta de acceso de la base de datos maestra.  
-  
-5.  En el cuadro **Parámetros existentes**, seleccione el parámetro -l para mover el archivo de registro maestro. Haga clic en **Actualizar** para guardar el cambio.  
-  
-     En el cuadro **Especifique un parámetro de inicio** , cambie el parámetro a la nueva ruta de acceso de la base de datos maestra.  
-  
+5.  En el cuadro **Parámetros existentes**, seleccione el parámetro -l. En el cuadro **Especifique un parámetro de inicio**, cambie el parámetro a la nueva ruta del archivo de *registro* maestro. Haga clic en **Actualizar** para guardar el cambio.
+
      El valor de parámetro del archivo de datos debe ir a continuación del parámetro `-d` y el valor del archivo de registro debe ir a continuación del parámetro `-l` . En el siguiente ejemplo se muestran los valores de los parámetros para la ubicación predeterminada del archivo de datos maestros.  
   
      `-dC:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\DATA\master.mdf`  
@@ -170,14 +166,16 @@ ms.locfileid: "96523069"
      `-dE:\SQLData\master.mdf`  
   
      `-lE:\SQLData\mastlog.ldf`  
+
+6.  Haga clic en **Aceptar** para guardarlos cambios de forma permanente y cierre el cuadro de diálogo **Propiedades de (** _nombre_instancia_ **) de SQL Server**.
+
+7.  Para detener la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , haga clic con el botón derecho en el nombre de la instancia y elija **Detener**.  
   
-6.  Para detener la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , haga clic con el botón derecho en el nombre de la instancia y elija **Detener**.  
+8.  Mueva los archivos master.mdf y mastlog.ldf a la nueva ubicación.  
   
-7.  Mueva los archivos master.mdf y mastlog.ldf a la nueva ubicación.  
+9.  Reinicie la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
-8.  Reinicie la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
-  
-9. Compruebe el cambio de archivo de la base de datos maestra ejecutando la siguiente consulta.  
+10. Compruebe el cambio de archivo de la base de datos maestra ejecutando la siguiente consulta.  
   
     ```  
     SELECT name, physical_name AS CurrentLocation, state_desc  
@@ -186,7 +184,7 @@ ms.locfileid: "96523069"
     GO  
     ```  
 
-10. En este punto, SQL Server se debería ejecutar con normalidad. Sin embargo, Microsoft también recomienda ajustar la entrada del Registro en `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\instance_ID\Setup`, donde *instance_ID* es similar a `MSSQL13.MSSQLSERVER`. En ese subárbol, cambie el valor de `SQLDataRoot` a la ruta de acceso nuevo. Si no actualiza el Registro, puede que la aplicación de revisiones y las actualizaciones presenten errores.
+11. En este punto, SQL Server se debería ejecutar con normalidad. Sin embargo, Microsoft también recomienda ajustar la entrada del Registro en `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\instance_ID\Setup`, donde *instance_ID* es similar a `MSSQL13.MSSQLSERVER`. En ese subárbol, cambie el valor de `SQLDataRoot` a la ruta de acceso nuevo. Si no actualiza el Registro, puede que la aplicación de revisiones y las actualizaciones presenten errores.
 
   
 ##  <a name="moving-the-resource-database"></a><a name="Resource"></a> Mover la base de datos Resource  

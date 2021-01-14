@@ -17,12 +17,12 @@ ms.assetid: 36af59d7-ce96-4a02-8598-ffdd78cdc948
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: cc6e5734edbf7203f98d1b7fc7a685e699aaa635
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: bbad843d482945a29cb03fde9545b1c19fb354f9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481436"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098404"
 ---
 # <a name="contained-databases"></a>Bases de datos independientes
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -128,15 +128,13 @@ ms.locfileid: "97481436"
 ##  <a name="limitations"></a><a name="Limitations"></a> Limitaciones  
  Las bases de datos parcialmente independientes no permiten las siguientes características.  
   
--   Las bases de datos parcialmente independientes no pueden utilizar la replicación, la captura de datos modificados ni el seguimiento de cambios.  
+-   Replicación, captura de datos modificados o seguimiento de cambios  
   
 -   Procedimientos numerados  
   
 -   Objetos enlazados a esquema que dependen de funciones integradas con cambios de intercalación  
   
--   Cambios de enlace que son el resultado de los cambios de intercalación, incluidas las referencias a los objetos, columnas, símbolos o tipos.  
-  
--   Replicación, captura de datos modificados y seguimiento de cambios  
+-   Cambios de enlace que son el resultado de los cambios de intercalación, incluidas las referencias a los objetos, columnas, símbolos o tipos.
   
 > [!WARNING]  
 >  Los procedimientos almacenados temporales se admiten ahora. Dado que los procedimientos almacenados temporales incumplen la contención, no está previsto que se admitan en las versiones futuras de una base de datos independiente.  

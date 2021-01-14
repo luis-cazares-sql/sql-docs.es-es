@@ -15,18 +15,18 @@ ms.reviewer: ''
 ms.custom: ''
 ms.date: 09/07/2019
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 3481a3d5252752e1cf952375d1c35c1c4b9939f1
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a8a0e3db546f4a74e1ec9bcc3c6312d8ca848777
+ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97438838"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97975510"
 ---
 # <a name="add-features-to-an-instance-of-sql-server-setup"></a>Agregar características a una instancia de SQL Server (programa de instalación)
 
 [!INCLUDE [ SQL Server - Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
 
-En este artículo se proporciona un procedimiento paso a paso para agregar características a una instancia de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Algunos componentes o servicios de SQL Server son específicos de una instancia de SQL Server. También se denominan dependientes de la instancia. Comparten la misma versión que la instancia que los hospeda y se usan exclusivamente para dicha instancia. Puede agregar los componentes dependientes de la instancia a una instancia de SQL Server, junto con los componentes compartidos si no están instalados. Para obtener una lista de las características admitidas por las diferentes ediciones de SQL Server, vea [Características compatibles con las ediciones de SQL Server 2017](../../sql-server/editions-and-components-of-sql-server-2017.md).
+En este artículo se proporciona un procedimiento paso a paso para agregar características a una instancia de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Algunos componentes o servicios de SQL Server son específicos de una instancia de SQL Server. También se denominan dependientes de la instancia. Comparten la misma versión que la instancia que los hospeda y se usan exclusivamente para dicha instancia. Puede agregar los componentes dependientes de la instancia a una instancia de SQL Server, junto con los componentes compartidos si no están instalados. Para obtener una lista de las características admitidas por las diferentes ediciones de SQL Server, consulte [Ediciones y características admitidas de SQL Server 2017](../../sql-server/editions-and-components-of-sql-server-2017.md) o [Ediciones y características admitidas de SQL Server 2019 (15.x)](../../sql-server/editions-and-components-of-sql-server-version-15.md).
 
 Para agregar características a una instancia de SQL Server desde el símbolo del sistema, vea [Instalar SQL Server desde el símbolo del sistema](./install-sql-server-from-the-command-prompt.md).
 
@@ -58,7 +58,7 @@ Antes de continuar, lea los artículos de [Planear una instalación de SQL Serve
 
 7. En la página Tipo de instalación, seleccione la opción **Agregar características a una instancia existente de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]** y seleccione la instancia que quiera actualizar.
 
-8. En la página Selección de características, seleccione los componentes de la instalación. Después de seleccionar el nombre de la característica, la descripción de cada grupo de componentes aparece en el panel derecho. Puede activar cualquier combinación de casillas. Para más información, vea [Ediciones y características admitidas de SQL Server 2017](../../sql-server/editions-and-components-of-sql-server-2017.md). Cada componente solo se puede instalar una vez en cada instancia de SQL Server. Para instalar varios componentes, deberá instalar una instancia adicional de SQL Server.
+8. En la página Selección de características, seleccione los componentes de la instalación. Después de seleccionar el nombre de la característica, la descripción de cada grupo de componentes aparece en el panel derecho. Puede activar cualquier combinación de casillas. Para obtener más información, consulte [Ediciones y características admitidas de SQL Server 2017](../../sql-server/editions-and-components-of-sql-server-2017.md) y [Ediciones y características admitidas de SQL Server 2019 (15.x)](../../sql-server/editions-and-components-of-sql-server-version-15.md). Cada componente solo se puede instalar una vez en cada instancia de SQL Server. Para instalar varios componentes, deberá instalar una instancia adicional de SQL Server.
 
     Los requisitos previos para las características seleccionadas se muestran en el recuadro del lado derecho. La instalación de SQL Server instalará los requisitos previos que no se hayan instalado todavía durante el paso de instalación que se describe más adelante en este procedimiento.
 

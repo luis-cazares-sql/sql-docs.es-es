@@ -2,7 +2,7 @@
 description: Crear tablas e índices con particiones
 title: Creación de tablas e índices con particiones | Microsoft Docs
 ms.custom: ''
-ms.date: 03/14/2017
+ms.date: 1/5/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -30,12 +30,12 @@ ms.assetid: 7641df10-1921-42a7-ba6e-4cb03b3ba9c8
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 791c2fa9d0ea4aad3c59f0edbafb2a28a2585d25
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 387a2f88afd22004f7146384ce29ddc2ba2f2da7
+ms.sourcegitcommit: 629229a7c33a3ed99db63b89127bb016449f7d3d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464856"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952058"
 ---
 # <a name="create-partitioned-tables-and-indexes"></a>Crear tablas e índices con particiones
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -50,6 +50,9 @@ ms.locfileid: "97464856"
 3.  Crear un esquema de partición que asigna las particiones de una tabla o índice con particiones a los nuevos grupos de archivos.  
   
 4.  Crear o modificar una tabla o un índice y especificar el esquema de partición como ubicación de almacenamiento.  
+ 
+> [!NOTE]
+> En Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] solamente se admiten grupos de archivos principales.  
   
  **En este tema**  
   
@@ -96,7 +99,7 @@ ms.locfileid: "97464856"
 3.  En **Filas**, haga clic en **Agregar**. En la nueva fila, escriba el nombre del grupo de archivos.  
   
     > [!WARNING]  
-    >  Siempre debe haber un grupo de archivos adicional además de los que especifique para los valores de límite cuando cree las particiones.  
+    >  Al especificar varios grupos de archivos, siempre debe haber uno adicional, además de los que especifique para los valores de límite en el momento de crear las particiones.  
   
 4.  Continúe agregando filas hasta que haya creado todos los grupos de archivos que la tabla con particiones.  
   
@@ -138,7 +141,7 @@ ms.locfileid: "97464856"
   
      Después de completar esta página, haga clic en **Siguiente**.  
   
-6.  En la página **Asignar particiones** , debajo de **Intervalo**, seleccione **Límite izquierdo** o **Límite derecho** para especificar si se debe incluir el valor de límite superior o inferior de cada grupo de archivos que se crea. Siempre debe escribir un grupo de archivos adicional además de los que especifique para los valores de límite cuando cree las particiones.  
+6.  En la página **Asignar particiones** , debajo de **Intervalo**, seleccione **Límite izquierdo** o **Límite derecho** para especificar si se debe incluir el valor de límite superior o inferior de cada grupo de archivos que se crea. Al especificar varios grupos de archivos, siempre debe indicar uno adicional, además de los que especifique para los valores de límite en el momento de crear las particiones.  
   
      En la cuadrícula **Seleccione grupos de archivos y especifique valores límite** , debajo de **Grupo de archivos**, seleccione el grupo de archivos en el que desea crear particiones de los datos. Debajo de **Límite**, escriba el valor límite para cada grupo de archivos. Si el valor límite está vacío, la función de partición asigna la tabla o el índice completos a una sola partición y usa el nombre de la función de partición.  
   
@@ -345,6 +348,34 @@ ms.locfileid: "97464856"
         ON myRangePS1 (col1) ;  
     GO  
     ```  
+
+
+#### <a name="to-create-a-partitioned-table-in-azure-sqldbesa"></a>Procedimiento para crear una tabla con particiones en Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]
+
+En Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)], no se permite agregar archivos ni grupos de archivos, pero las tablas con particiones sí que se admiten mediante la creación de particiones únicamente en el grupo de archivos con el valor PRIMARY.
+  
+1.  En el **Explorador de objetos**, conéctese a una instancia del [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
+  
+1.  En la barra de Estándar, haga clic en **Nueva consulta**.  
+  
+1.  Copie y pegue el siguiente ejemplo en la ventana de consulta y haga clic en **Ejecutar**. En este ejemplo, se crean una función de partición y un esquema de partición. Se crea una nueva tabla con el esquema de partición especificado como ubicación de almacenamiento. 
+
+    ```
+    -- Creates a partition function called myRangePF1 that will partition a table into four partitions  
+    CREATE PARTITION FUNCTION myRangePF1 (int)  
+        AS RANGE LEFT FOR VALUES (1, 100, 1000) ;  
+    GO  
+    -- Creates a partition scheme called myRangePS1 that applies myRangePF1 to the PRIMARY filegroup 
+    CREATE PARTITION SCHEME myRangePS1  
+        AS PARTITION myRangePF1  
+        ALL TO ('PRIMARY') ;  
+    GO  
+    -- Creates a partitioned table called PartitionTable that uses myRangePS1 to partition col1  
+    CREATE TABLE PartitionTable (col1 int PRIMARY KEY, col2 char(10))  
+        ON myRangePS1 (col1) ;  
+    GO
+    ```  
+
   
 #### <a name="to-determine-if-a-table-is-partitioned"></a>Para determinar si se crean particiones de una tabla  
   
