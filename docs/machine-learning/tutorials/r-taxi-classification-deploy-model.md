@@ -10,12 +10,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||>=azuresqldb-mi-current'
-ms.openlocfilehash: 0b32d12a694062e56611abaff18dc4f1e2f23061
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 026090f3eb61e2bd2ffe2b96eb09751cc3543dbf
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470116"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101876"
 ---
 # <a name="r-tutorial-run-predictions-in-sql-stored-procedures"></a>Tutorial de R: Ejecución de predicciones en procedimientos almacenados de SQL
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -70,7 +70,7 @@ GO
 
 + La instrucción SELECT obtiene el modelo serializado de la base de datos y lo almacena en la variable de R `mod` para su posterior procesamiento con R.
 
-+ Los nuevos casos que se van a puntuar se obtienen de la consulta de [!INCLUDE[tsql](../../includes/tsql-md.md)] especificada en `@inquery`, el primer parámetro del procedimiento almacenado. Cuando se leen los datos de la consulta, las filas se guardan en la trama de datos predeterminada, `InputDataSet`. Esta trama de datos se pasa a la función [PREDICT](/sql/t-sql/queries/predict-transact-sql) que genera las puntuaciones.
++ Los nuevos casos que se van a puntuar se obtienen de la consulta de [!INCLUDE[tsql](../../includes/tsql-md.md)] especificada en `@inquery`, el primer parámetro del procedimiento almacenado. Cuando se leen los datos de la consulta, las filas se guardan en la trama de datos predeterminada, `InputDataSet`. Esta trama de datos se pasa a la función [PREDICT](../../t-sql/queries/predict-transact-sql.md) que genera las puntuaciones.
   
   `OutputDataSet <- data.frame(predict(mod, InputDataSet, type = "response"));`
   

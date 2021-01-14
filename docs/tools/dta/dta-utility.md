@@ -21,12 +21,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/09/2017
-ms.openlocfilehash: ebeb72707e1dd65344b30ffe88c0ae5b4425f796
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: a80c3fc49962ad4a67430163f81d00b37c05329b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85786015"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169223"
 ---
 # <a name="dta-utility"></a>dta, utilidad
 
@@ -164,7 +164,7 @@ dta -d AdventureWorks2012 ...
 >  La utilidad **dta** no elimina el contenido de las tablas de registro de optimización especificadas por el usuario si se elimina la sesión. Cuando optimice cargas de trabajo de gran tamaño, se recomienda especificar una tabla para el registro de optimización. Puesto que la optimización de cargas de trabajo de gran tamaño puede producir registros de optimización grandes, las sesiones se pueden eliminar mucho más rápidamente cuando se usa una tabla.  
   
  **-F**  
- Permite que **dta** sobrescriba un archivo de salida existente. Si ya existe un archivo de salida con el mismo nombre y no se especifica **-F** , **dta**devuelve un error. Puede usar **-F** con **-of**, **-or**o **-ox**.  
+ Permite que **dta** sobrescriba un archivo de salida existente. Si ya existe un archivo de salida con el mismo nombre y no se especifica **-F** , **dta** devuelve un error. Puede usar **-F** con **-of**, **-or** o **-ox**.  
   
  **-fa** _physical_design_structures_to_add_  
  Especifica los tipos de estructuras de diseño físico que **dta** debe incluir en la recomendación. En la tabla siguiente se muestran y describen los valores que se pueden especificar para este argumento. Cuando no se especifica ningún valor, **dta** usa el parámetro **-fa IDX** predeterminado.  
@@ -184,7 +184,7 @@ dta -d AdventureWorks2012 ...
 [Recomendaciones de índice de almacén de columnas en el Asistente para la optimización de motor de base de datos (DTA)](../../relational-databases/performance/columnstore-index-recommendations-in-database-engine-tuning-advisor-dta.md).
  ||  
 |-|  
-|**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores.|  
+|**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores.|  
 
   
  **-fk** _keep_existing_option_  
@@ -210,7 +210,7 @@ dta -d AdventureWorks2012 ...
  ALIGNED significa que, en la recomendación generada por **dta** , cada índice propuesto se divide exactamente igual que la tabla subyacente para la que se ha definido el índice. Los índices no clúster de una vista indizada se alinean con la vista indizada. Solo se puede especificar un valor para este argumento. El valor predeterminado es **-fp NONE**.  
   
  **-fx** _drop_only_mode_  
- Especifica que **dta** solo tiene en cuenta la eliminación de estructuras de diseño físicas existentes. No se tienen en cuenta las nuevas estructuras de diseño físico. Cuando se especifica esta opción, **dta** evalúa la utilidad de las estructuras de diseño físico existentes y recomienda la eliminación de las estructuras que se usan en contadas ocasiones. Este argumento no necesita valores. No puede usarse con los argumentos **-fa**, **-fp**o **-fk ALL** .  
+ Especifica que **dta** solo tiene en cuenta la eliminación de estructuras de diseño físicas existentes. No se tienen en cuenta las nuevas estructuras de diseño físico. Cuando se especifica esta opción, **dta** evalúa la utilidad de las estructuras de diseño físico existentes y recomienda la eliminación de las estructuras que se usan en contadas ocasiones. Este argumento no necesita valores. No puede usarse con los argumentos **-fa**, **-fp** o **-fk ALL** .  
   
  **-ID** _session_ID_  
  Especifica un identificador numérico para la sesión de optimización. Si no se especifica, **dta** genera un número de identificación. Puede usar este identificador para ver la información de las sesiones de optimización existentes. Si no especifica un valor para **-ID**, debe especificar un nombre de sesión con **-s**.  
@@ -222,7 +222,7 @@ dta -d AdventureWorks2012 ...
  Especifica que el Almacén de consultas se usará como carga de trabajo. Se analizan los primeros 1000 eventos del Almacén de consultas para las bases de datos seleccionadas explícitamente. Este valor se puede cambiar mediante la opción **- n**.  Para obtener más información, vea [Almacén de consultas](../../relational-databases/performance/how-query-store-collects-data.md) y [Optimización de la base de datos mediante carga de trabajo del Almacén de consultas](../../relational-databases/performance/tuning-database-using-workload-from-query-store.md).
  ||  
 |-|  
-|**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores.|  
+|**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores.|  
      
  **-if** _workload_file_  
  Especifica el nombre y la ruta del archivo de carga de trabajo que se desea usar como entrada para la optimización. El archivo debe estar en uno de estos formatos: .trc (archivo de seguimiento de SQL Server Profiler). .sql (archivo de SQL) o .log (archivo de seguimiento de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]). Debe especificarse un archivo de carga de trabajo o una tabla de carga de trabajo.  
@@ -281,7 +281,7 @@ dta -iq -I 48
 En este caso, DTA usará el Almacén de consultas como el origen de la carga de trabajo y solo tenga en cuenta las consultas que se han ejecutado con las últimas 48 horas.  
   ||  
 |-|  
-|**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y versiones posteriores.|  
+|**Válido para** : [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y versiones posteriores.|  
 
 
   
@@ -409,7 +409,7 @@ AdventureWorks2012.Production.Product  2000000
 
 El contenido de table_list.txt especifica que:  
 
-- Solo deben optimizarse las tablas **Customer**, **Store**y **Product** de la base de datos.  
+- Solo deben optimizarse las tablas **Customer**, **Store** y **Product** de la base de datos.  
   
 - Se asume que el número de filas de las tablas **Customer** y **Product** es 100.000 y 2.000.000, respectivamente.  
   

@@ -10,22 +10,22 @@ ms.date: 09/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 80535a9baefe60301927723511a5bf1afeb805a8
-ms.sourcegitcommit: 29a2be59c56f8a4b630af47760ef38d2bf56a3eb
+ms.openlocfilehash: be07fa7f00f38f4f7ff3782593b19a584627e2f7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378478"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091703"
 ---
 # <a name="monitor-cluster-with-azdata-and-kubectl"></a>Supervisión del clúster con azdata y kubectl
 
 ## <a name="use-azdata"></a>Usar azdata
 
-También puede usar los comandos de [azdata](deploy-install-azdata.md) para ver tanto los puntos de conexión como el estado del clúster.
+También puede usar los comandos de [azdata](../azdata/install/deploy-install-azdata.md) para ver tanto los puntos de conexión como el estado del clúster.
 
 ### <a name="service-endpoints"></a>Puntos de conexión del servicio
 
-1. Inicie sesión en el clúster de macrodatos con [azdata login](reference-azdata.md). Establezca el parámetro **--controller-endpoint** en la dirección IP externa del punto de conexión del controlador.
+1. Inicie sesión en el clúster de macrodatos con [azdata login](../azdata/reference/reference-azdata.md). Establezca el parámetro **--controller-endpoint** en la dirección IP externa del punto de conexión del controlador.
 
    ```bash
    azdata login --endpoint https://<ip-address-of-controller-svc-external>:30080 --username <user-name>
@@ -39,7 +39,7 @@ También puede usar los comandos de [azdata](deploy-install-azdata.md) para ver 
    azdata login --endpoint https://<control_domain_name>:30080 --auth ad
    ```
 
-1. Ejecute [`azdata bdc endpoint list`](reference-azdata-bdc-endpoint.md) para obtener una lista con una descripción de cada punto de conexión y los valores correspondientes de dirección IP y puerto. 
+1. Ejecute [`azdata bdc endpoint list`](../azdata/reference/reference-azdata-bdc-endpoint.md) para obtener una lista con una descripción de cada punto de conexión y los valores correspondientes de dirección IP y puerto. 
 
    ```bash
    azdata bdc endpoint list -o table
@@ -65,14 +65,14 @@ También puede usar los comandos de [azdata](deploy-install-azdata.md) para ver 
 
 ### <a name="view-cluster-status"></a>Vista del estado del clúster
 
-Puede ver el estado del clúster con el comando [`azdata bdc status show`](reference-azdata-bdc-status.md).
+Puede ver el estado del clúster con el comando [`azdata bdc status show`](../azdata/reference/reference-azdata-bdc-status.md).
 
 ```bash
 azdata bdc status show
 ```
 
 > [!TIP]
-> Para ejecutar los comandos de estado, primero necesita iniciar sesión con el comando **azdata login** , que se ha mostrado en la sección de puntos de conexión anterior.
+> Para ejecutar los comandos de estado, primero necesita iniciar sesión con el comando **azdata login**, que se ha mostrado en la sección de puntos de conexión anterior.
 
 Este es un resultado de ejemplo de este comando:
 
@@ -150,7 +150,7 @@ Este es un resultado de ejemplo de este comando:
 
 ### <a name="view-specific-resource-status"></a>Visualización del estado de un recurso específico
 
-Puede ver el estado de un recurso específico en el clúster con el comando [azdata bdc status show](reference-azdata-bdc-status.md). Cuando se usa este comando, se puede filtrar con el parámetro `--resource`. Estos son algunos ejemplos de entradas del parámetro `--resource`:
+Puede ver el estado de un recurso específico en el clúster con el comando [azdata bdc status show](../azdata/reference/reference-azdata-bdc-status.md). Cuando se usa este comando, se puede filtrar con el parámetro `--resource`. Estos son algunos ejemplos de entradas del parámetro `--resource`:
 
 - maestro
 - control
@@ -242,7 +242,7 @@ Este es una salida de ejemplo:
 
 ### <a name="view-controller-status"></a>Ver el estado del controlador
 
-Puede ver el estado del controlador con el comando [`azdata bdc control status show`](reference-azdata-bdc-control-status.md). Proporciona vínculos similares a los paneles de supervisión relacionados con los complementos de controlador del clúster de macrodatos.
+Puede ver el estado del controlador con el comando [`azdata bdc control status show`](../azdata/reference/reference-azdata-bdc-control-status.md). Proporciona vínculos similares a los paneles de supervisión relacionados con los complementos de controlador del clúster de macrodatos.
 
 
 ## <a name="next-steps"></a>Pasos siguientes

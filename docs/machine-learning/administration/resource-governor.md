@@ -9,12 +9,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 85ee78e0d7558cf2ad683321a13a842ff5d8daf5
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3e71b33eb08fd386232e992e9b47da7b5057aa32
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471336"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170727"
 ---
 # <a name="manage-python-and-r-workloads-with-resource-governor-in-sql-server-machine-learning-services"></a>Administración de cargas de trabajo de Python y R con Resource Governor en SQL Server Machine Learning Services
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -36,7 +36,7 @@ De forma predeterminada, los tiempos de ejecución de scripts externos para apre
  
 De forma predeterminada, los procesos externos usan hasta un 20 % del total de memoria del host en el servidor local. Puede modificar el grupo de recursos predeterminado para realizar cambios en todo el servidor, de forma que los procesos de R y Python usen la capacidad que configure como disponible para procesos externos.
 
-Como opción, puede crear **grupos de recursos externos** personalizados, con clasificadores y grupos de cargas de trabajo asociados, para determinar la asignación de recursos de las solicitudes originadas desde programas o hosts específicos, o bien otros criterios que proporcione. Un grupo de recursos externos es un tipo de grupo de recursos introducido en [!INCLUDE[sssql15-md](../../includes/sssql15-md.md)] para facilitar la administración de procesos de R y Python externos al motor de base de datos.
+Como opción, puede crear **grupos de recursos externos** personalizados, con clasificadores y grupos de cargas de trabajo asociados, para determinar la asignación de recursos de las solicitudes originadas desde programas o hosts específicos, o bien otros criterios que proporcione. Un grupo de recursos externos es un tipo de grupo de recursos introducido en [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] para facilitar la administración de procesos de R y Python externos al motor de base de datos.
 
 1. [Habilite la gobernanza de recursos](../../relational-databases/resource-governor/enable-resource-governor.md) (está desactivada de forma predeterminada).
 

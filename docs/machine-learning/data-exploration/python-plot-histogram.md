@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.prod: sql
 ms.technology: machine-learning
 monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current||=azuresqldb-current'
-ms.openlocfilehash: d4e47c95ec9deb98e06659f85e6ec9840409f629
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 466abc8687a7f325d216a6b5b6545bc516b2b34d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471276"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102004"
 ---
 # <a name="plot-histograms-in-python"></a>Trazado de histogramas en Python 
 [!INCLUDE[SQL Server SQL DB SQL MI](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -37,7 +37,7 @@ En este artículo se describe cómo trazar datos mediante el paquete de Python [
 * [SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md) para restaurar la base de datos de ejemplo en Azure SQL Managed Instance.
 ::: moniker-end
 
-* Azure Data Studio. Para realizar la instalación, vea [Azure Data Studio](../../azure-data-studio/what-is.md).
+* Azure Data Studio. Para realizar la instalación, vea [Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md).
 
 * [Restaure la base de datos DW de ejemplo](../../samples/adventureworks-install-configure.md) para obtener los datos de ejemplo que se usan en este artículo.
 

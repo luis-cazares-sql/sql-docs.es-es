@@ -9,12 +9,12 @@ ms.topic: overview
 author: dphansen
 ms.author: davidph
 monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current'
-ms.openlocfilehash: b73b8521593b81e38d5b0b3931da793f943c45a0
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 98e9dd928f2639bfd1df3e6782bcc9aaed60f31e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470696"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102881"
 ---
 # <a name="what-is-sql-server-machine-learning-services-with-python-and-r"></a>¿Qué es Machine Learning Services para SQL Server con Python y R?
 [!INCLUDE [SQL Server 2017 SQL MI](../includes/applies-to-version/sqlserver2017-asdbmi.md)]
@@ -47,7 +47,7 @@ Machine Learning Services usa un marco de extensibilidad para ejecutar scripts d
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 1. [Instale Machine Learning Services de SQL Server en Windows](install/sql-machine-learning-services-windows-install.md) o [en Linux](../linux/sql-server-linux-setup-machine-learning.md?toc=/sql/machine-learning/toc.json). También puede usar [Machine Learning Services en clústeres de macrodatos](../big-data-cluster/machine-learning-services.md) y [Machine Learning Services en Azure SQL Managed Instance](/azure/azure-sql/managed-instance/machine-learning-services-overview).
 
-1. Configure las herramientas de desarrollo. Puede [ejecutar scripts de Python y R en cuadernos de Azure Data Studio](install/sql-machine-learning-azure-data-studio.md). También puede ejecutar T-SQL en [Azure Data Studio](../azure-data-studio/what-is.md).
+1. Configure las herramientas de desarrollo. Puede [ejecutar scripts de Python y R en cuadernos de Azure Data Studio](install/sql-machine-learning-azure-data-studio.md). También puede ejecutar T-SQL en [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md).
 
 1. Escriba su primer script de Python o R.
 
@@ -65,7 +65,7 @@ Machine Learning Services usa un marco de extensibilidad para ejecutar scripts d
 ::: moniker range="=sql-server-2017"
 1. [Instale Machine Learning Services de SQL Server en Windows](install/sql-machine-learning-services-windows-install.md).
 
-1. Configure las herramientas de desarrollo. Puede [ejecutar scripts de Python y R en cuadernos de Azure Data Studio](install/sql-machine-learning-azure-data-studio.md). También puede usar T-SQL en [Azure Data Studio](../azure-data-studio/what-is.md).
+1. Configure las herramientas de desarrollo. Puede [ejecutar scripts de Python y R en cuadernos de Azure Data Studio](install/sql-machine-learning-azure-data-studio.md). También puede usar T-SQL en [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md).
 
 1. Escriba su primer script de Python o R.
 

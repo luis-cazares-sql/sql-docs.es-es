@@ -11,12 +11,12 @@ ms.assetid: 13942af8-5a40-4cef-80f5-918386767a47
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: = sql-server-2017
-ms.openlocfilehash: 0c70b2a7202ea7bcd14128a544487ec011c9c7b8
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: cd13f9fea3ade8f0bcb92e77470ab74f40d69ae2
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97643340"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98167717"
 ---
 # <a name="sql-server-2017-release-notes"></a>Notas de la versión de SQL Server 2017
 [!INCLUDE[SQL Server 2017](../includes/applies-to-version/sqlserver2017.md)]
@@ -83,7 +83,7 @@ No hay notas de la versión de SQL Server en Windows relacionadas con esta versi
 ![barra_horizontal](../sql-server/media/horizontal-bar.png)
 ## <a name="sql-server-2017-ctp-21-may--2017"></a>SQL Server 2017 CTP 2.1 (mayo de 2017)
 ### <a name="documentation-ctp-21"></a>Documentación (CTP 2.1)
-- **Problema e impacto en el cliente:** La documentación de [!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)] es limitada, y el contenido está incluido en el conjunto de documentación de [!INCLUDE[ssSQL15_md](../includes/sssql15-md.md)].  El contenido de los artículos específico de [!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)] se distinguirá con **Se aplica a**. 
+- **Problema e impacto en el cliente:** La documentación de [!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)] es limitada, y el contenido está incluido en el conjunto de documentación de [!INCLUDE[ssSQL15_md](../includes/sssql16-md.md)].  El contenido de los artículos específico de [!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)] se distinguirá con **Se aplica a**. 
 - **Problema e impacto en el cliente:** No hay ningún contenido sin conexión disponible para [!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)].
 
 ### <a name="sql-server-reporting-services-ctp-21"></a>SQL Server Reporting Services (CTP 2.1)
@@ -129,7 +129,7 @@ No hay notas de la versión de SQL Server en Windows relacionadas con esta versi
 ![barra_horizontal](../sql-server/media/horizontal-bar.png)
 ## <a name="sql-server-2017-ctp-20-april--2017"></a>SQL Server 2017 CTP 2.0 (abril 2017)
 ### <a name="documentation-ctp-20"></a>Documentación (CTP 2.0)
-- **Problema e impacto en el cliente:** La documentación de [!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)] es limitada, y el contenido está incluido en el conjunto de documentación de [!INCLUDE[ssSQL15_md](../includes/sssql15-md.md)].  El contenido de los artículos específico de [!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)] se distinguirá con **Se aplica a**. 
+- **Problema e impacto en el cliente:** La documentación de [!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)] es limitada, y el contenido está incluido en el conjunto de documentación de [!INCLUDE[ssSQL15_md](../includes/sssql16-md.md)].  El contenido de los artículos específico de [!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)] se distinguirá con **Se aplica a**. 
 - **Problema e impacto en el cliente:** No hay ningún contenido sin conexión disponible para [!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)].
 
 ### <a name="always-on-availability-groups"></a>Grupos de disponibilidad AlwaysOn

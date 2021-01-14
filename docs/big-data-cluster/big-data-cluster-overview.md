@@ -9,12 +9,12 @@ ms.date: 01/07/2020
 ms.topic: overview
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: bd3a092906bf2a7d46c7f343b7edf913bdd4d9cf
-ms.sourcegitcommit: ab9ddcc16fdfc245cf9a49d1e90bb1ffe3958c38
+ms.openlocfilehash: ced001726b7a8306f2064c1436ddb41cf65a6eb0
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92914351"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091815"
 ---
 # <a name="what-are-big-data-clusters-2019"></a>¿Qué son los [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]?
 
@@ -69,11 +69,11 @@ Los [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)
 
 Se ofrece administración y supervisión mediante una combinación de herramientas de línea de comandos, interfaces API, portales y vistas de administración dinámica.
 
-Puede usar [Azure Data Studio](../azure-data-studio/what-is.md) para realizar diversas tareas en el clúster de macrodatos:
+Puede usar [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md) para realizar diversas tareas en el clúster de macrodatos:
 - Fragmentos de código integrados para las tareas de administración comunes.
 - Capacidad de examinar HDFS, cargar archivos, obtener una vista previa de los archivos y crear directorios.
 - Capacidad para crear, abrir y ejecutar cuadernos compatibles con Jupyter.
-- Asistente para la virtualización de datos para simplificar la creación de orígenes de datos externos (habilitado por la **Extensión de virtualización de datos** ).
+- Asistente para la virtualización de datos para simplificar la creación de orígenes de datos externos (habilitado por la **Extensión de virtualización de datos**).
 
 ## <a name="architecture"></a><a id="architecture"></a> Arquitectura
 

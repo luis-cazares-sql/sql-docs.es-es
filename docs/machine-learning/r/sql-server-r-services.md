@@ -9,12 +9,12 @@ ms.topic: overview
 author: dphansen
 ms.author: davidph
 monikerRange: =sql-server-2016
-ms.openlocfilehash: d1910099e1f0aa4a8f3e58f1faa01dfbe177c517
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 66e023799f69f35b8e220983b261d9e5ae074f24
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470766"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102249"
 ---
 # <a name="what-is-sql-server-2016-r-services"></a>¿Qué es SQL Server 2016 R Services?
 
@@ -92,7 +92,7 @@ Además de los paquetes de empresa de Microsoft, pueden usarse usar marcos y paq
 
 1. Configure las herramientas de desarrollo. Puede usar:
 
-    + [Azure Data Studio](../../azure-data-studio/what-is.md) o [SQL Server Management Studio (SSMS)](../../ssms/sql-server-management-studio-ssms.md) para usar T-SQL y el procedimiento almacenado [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) con el fin de ejecutar el script de R.
+    + [Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md) o [SQL Server Management Studio (SSMS)](../../ssms/sql-server-management-studio-ssms.md) para usar T-SQL y el procedimiento almacenado [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) con el fin de ejecutar el script de R.
     + R en su propio equipo portátil o estación de trabajo de desarrollo para ejecutar scripts. Puede extraer datos de forma local u ordenar la ejecución de forma remota en SQL Server con [RevoScaleR](../r/ref-r-revoscaler.md). Para obtener más información, vea cómo [configurar el desarrollo de R de un cliente de ciencia de datos](../r/set-up-a-data-science-client.md).
 
 1. Escritura del primer script de R

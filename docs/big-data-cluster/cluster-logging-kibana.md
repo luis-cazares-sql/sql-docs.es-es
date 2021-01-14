@@ -10,12 +10,12 @@ ms.date: 10/01/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 66b405f020728c0ed7040a712d56bcadc3180e38
-ms.sourcegitcommit: 29a2be59c56f8a4b630af47760ef38d2bf56a3eb
+ms.openlocfilehash: 55dc3056b9f66f7a96b55ab750a5f74fe9bfd394
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378477"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091715"
 ---
 # <a name="check-out-cluster-logs--with-kibana-dashboard"></a>Consulta de los registros de clúster con el panel de Kibana
 
@@ -24,18 +24,18 @@ En este artículo se describe cómo supervisar una aplicación dentro de un clú
 ## <a name="prerequisites"></a>Prerrequisitos
 
 - [Clúster de macrodatos de SQL Server 2019](deployment-guidance.md)
-- [Utilidad de línea de comandos azdata](deploy-install-azdata.md)
+- [Utilidad de línea de comandos azdata](../azdata/install/deploy-install-azdata.md)
 
 ## <a name="capabilities"></a>Capacidades
 
-En SQL Server 2019, puede crear, eliminar, describir, inicializar, enumerar, ejecutar y actualizar la aplicación. En la tabla siguiente se describen los comandos de implementación de aplicaciones que puede usar con **azdata** .
+En SQL Server 2019, puede crear, eliminar, describir, inicializar, enumerar, ejecutar y actualizar la aplicación. En la tabla siguiente se describen los comandos de implementación de aplicaciones que puede usar con **azdata**.
 
 |Get-Help |Descripción |
 |:---|:---|
 |`azdata bdc endpoint list` | Enumera los puntos de conexión para el clúster de macrodatos. |
 
 
-Puede usar el ejemplo siguiente para enumerar el punto de conexión del **panel de Kibana** :
+Puede usar el ejemplo siguiente para enumerar el punto de conexión del **panel de Kibana**:
 
 ```bash
 azdata bdc endpoint list --endpoint-name logsui 

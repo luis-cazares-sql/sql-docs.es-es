@@ -12,12 +12,12 @@ helpviewer_keywords:
 - failover clustering [SQL Server], upgrading
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 90ab761cdc9a84008803ebb4bc5493eb87778f20
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 4d9e3116902ae96eaa97e9624ea33ba3fa8952d3
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642681"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171587"
 ---
 # <a name="upgrade-sql-server-instances-running-on-windows-server-20082008-r22012-clusters"></a>Actualizar instancias de SQL Server que se ejecutan en clústeres de Windows Server 2008/2008 R2/2012
 
@@ -30,7 +30,7 @@ ms.locfileid: "97642681"
 
 -   El clúster paralelo no deberá tener [!INCLUDE[sshadrc-md](../../../includes/sshadrc-md.md)] instalado antes de la migración.
 
--   El tiempo de actividad al realizar la migración de un clúster que usa Grupos de disponibilidad de forma estricta (con o sin FCI de SQL) se puede limitar ampliamente usando grupos de disponibilidad distribuidos, pero no requiere que todas las instancias ejecuten [!INCLUDE[sssql15-md](../../../includes/sssql15-md.md)] RTM o versiones posteriores.
+-   El tiempo de actividad al realizar la migración de un clúster que usa Grupos de disponibilidad de forma estricta (con o sin FCI de SQL) se puede limitar ampliamente usando grupos de disponibilidad distribuidos, pero no requiere que todas las instancias ejecuten [!INCLUDE[sssql15-md](../../../includes/sssql16-md.md)] RTM o versiones posteriores.
 
 -   Todas las estrategias de migración requieren el rol sysadmin de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. Todos los usuarios de Windows usados por los servicios de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] (es decir, la cuenta Windows que ejecuta los agentes de replicación) deberán tener los permisos de nivel de sistema operativo en cada equipo del nuevo entorno.
 
@@ -54,11 +54,11 @@ La estrategia de migración adecuada dependerá de ciertos parámetros de la top
 \* Excluir nombres de agentes de escucha del grupo de disponibilidad
 
 ## <a name="scenario-1-windows-cluster-with-sql-server-availability-groups-and-no-failover-cluster-instances-fcis"></a>Escenario 1: Windows Cluster con grupos de disponibilidad de SQL Server y sin instancias de clúster de conmutación por error (FCI)
-Si tiene una configuración de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] que usa grupos de disponibilidad sin instancias de clúster de conmutación por error, puede llevar a cabo la migración a un nuevo clúster creando una implementación de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] paralela en otra instancia de Windows Cluster con Windows Server 2016/2012 R2. Después de esto, puede crear un grupo de disponibilidad distribuido en el que el clúster de destino sea la base de datos secundaria para el clúster de producción actual. Esto requiere que el usuario actualice a [!INCLUDE[sssql15-md](../../../includes/sssql15-md.md)] o versiones posteriores.
+Si tiene una configuración de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] que usa grupos de disponibilidad sin instancias de clúster de conmutación por error, puede llevar a cabo la migración a un nuevo clúster creando una implementación de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] paralela en otra instancia de Windows Cluster con Windows Server 2016/2012 R2. Después de esto, puede crear un grupo de disponibilidad distribuido en el que el clúster de destino sea la base de datos secundaria para el clúster de producción actual. Esto requiere que el usuario actualice a [!INCLUDE[sssql15-md](../../../includes/sssql16-md.md)] o versiones posteriores.
 
 ###  <a name="to-perform-the-upgrade"></a>Para realizar la actualización
 
-1.  Si es necesario, actualice todas las instancias a [!INCLUDE[sssql15-md](../../../includes/sssql15-md.md)] o versiones posteriores. Las instancias paralelas deben estar ejecutando la misma versión de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)].
+1.  Si es necesario, actualice todas las instancias a [!INCLUDE[sssql15-md](../../../includes/sssql16-md.md)] o versiones posteriores. Las instancias paralelas deben estar ejecutando la misma versión de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)].
 
 2.  Cree un grupo de disponibilidad para el clúster de destino. Si el nodo principal del clúster de destino no es una FCI, cree un agente de escucha.
 
