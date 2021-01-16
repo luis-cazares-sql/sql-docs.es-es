@@ -19,12 +19,12 @@ ms.assetid: ''
 author: jovanpop-msft
 ms.author: jovanpop
 monikerRange: =azuresqldb-current
-ms.openlocfilehash: 142269f7c3cd8a5a1e764e2e48cf41f83490bd76
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 8a913c3bf4f01828fcf75df1e3c69dca9149e2de
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464606"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241826"
 ---
 # <a name="sysserver_resource_stats-azure-sql-database"></a>sys.server_resource_stats (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -63,18 +63,17 @@ La vista **Sys.server_resource_stats** tiene definiciones diferentes en función
  Los datos devueltos por **Sys.server_resource_stats** se expresan como el total que se usa en bytes o megabytes (indicados en nombres de columna) distintos de avg_cpu, que se expresa como un porcentaje de los límites máximos permitidos para el nivel de servicio/nivel de rendimiento que se está ejecutando.  
  
 ## <a name="examples"></a>Ejemplos  
- El ejemplo siguiente devuelve todas las bases de datos cuyo promedio de uso de proceso fue al menos del 80 % durante la semana pasada.  
+En el ejemplo siguiente se devuelve el uso promedio de la CPU en los últimos siete días.  
   
 ```sql  
 DECLARE @s datetime;  
 DECLARE @e datetime;  
 SET @s= DateAdd(d,-7,GetUTCDate());  
 SET @e= GETUTCDATE();  
-SELECT resource_name, AVG(avg_cpu_percent) AS Average_Compute_Utilization   
+SELECT AVG(avg_cpu_percent) AS Average_Compute_Utilization   
 FROM sys.server_resource_stats   
 WHERE start_time BETWEEN @s AND @e  
-GROUP BY resource_name  
-HAVING AVG(avg_cpu_percent) >= 80  
+GO;
 ```  
     
 ## <a name="see-also"></a>Consulte también  
