@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: a7ead67d-1404-4e67-97e7-4c7b0d942070
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 15e8b648603952226af45d485d5678f5d0d3bbd6
-ms.sourcegitcommit: f0772f614482e0b3cde3609e178689ce62ca3a19
+ms.openlocfilehash: 28d083e053e31c1fcce26e233ba22211e211a993
+ms.sourcegitcommit: 1f826eb3f73bd4d94bc9638b9cdd60991a2e2fa0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84548017"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98125596"
 ---
 # <a name="report-server-executionlog-and-the-executionlog3-view"></a>Registro de ejecución del servidor de informes y la vista ExecutionLog3
   El registro de la ejecución del servidor de informes de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]contiene información sobre los informes que se ejecutan en el servidor o en varios servidores de una implementación escalada en modo nativo o de una granja de servidores de SharePoint. Puede usar el registro de la ejecución de informes para averiguar con qué frecuencia se solicita el informe, qué formatos de salida se usan más y cuántos milisegundos del tiempo de procesamiento se dedica a cada fase del procesamiento. El registro contiene información sobre el tiempo de ejecución de la consulta de conjunto de datos de un informe y el tiempo empleado en el procesamiento de los datos. Si es administrador del servidor de informes, puede revisar la información del registro e identificar las tareas de ejecución prolongada, y realizar sugerencias a los autores de informes en las áreas del informe (conjunto de datos o procesamiento) que se puedan mejorar.  
@@ -27,7 +27,7 @@ ms.locfileid: "84548017"
 ##  <a name="viewing-log-information"></a><a name="bkmk_top"></a> Ver la información del registro  
  La ejecución del servidor de informes registra datos sobre la ejecución de informes en una tabla interna de la base de datos. La información de la tabla está disponible en las vistas de SQL Server.  
   
- El registro de la ejecución de informes se almacena en la base de datos del servidor de informes que se denomina **ReportServer**de forma predeterminada. Las vistas de SQL proporcionan la información del registro de la ejecución. Las vistas "2" y "3" se agregaron en versiones más recientes y contienen campos nuevos o campos con nombres más descriptivos que las versiones anteriores. Permanece en el producto las vistas antiguas para que no se vean afectadas las aplicaciones personalizadas que dependen de ellas. Si no tiene una dependencia en una vista anterior, por ejemplo ExecutionLog, se recomienda utilizar la vista más reciente, ExecutionLog**3**.  
+ El registro de la ejecución de informes se almacena en la base de datos del servidor de informes que se denomina **ReportServer** de forma predeterminada. Las vistas de SQL proporcionan la información del registro de la ejecución. Las vistas "2" y "3" se agregaron en versiones más recientes y contienen campos nuevos o campos con nombres más descriptivos que las versiones anteriores. Permanece en el producto las vistas antiguas para que no se vean afectadas las aplicaciones personalizadas que dependen de ellas. Si no tiene una dependencia en una vista anterior, por ejemplo ExecutionLog, se recomienda utilizar la vista más reciente, ExecutionLog **3**.  
   
  En este tema:  
   
@@ -328,11 +328,11 @@ select * from ExecutionLog2 order by TimeStart DESC
 |Formato|Formato de representación.|  
 |Parámetros|Valores de parámetros utilizados para la ejecución de un informe.|  
 |ReportAction|Valores posibles: Render, Sort, BookMarkNavigation, DocumentNavigation, GetDocumentMap, Findstring|  
-|TimeStart|Horas de inicio y detención que indican la duración del procesamiento de un informe.|  
-|TimeEnd||  
-|TimeDataRetrieval|Número de milisegundos dedicados a recuperar los datos, procesar el informe y representarlo.|  
-|TimeProcessing||  
-|TimeRendering||  
+|TimeStart|Hora de inicio que indica la duración de un proceso de informe.|
+|TimeEnd|Hora de finalización que indica la duración de un proceso de informe.|
+|TimeDataRetrieval|Número de milisegundos empleados en recuperar los datos.|
+|TimeProcessing|Número de milisegundos empleados en procesar el informe.|
+|TimeRendering|Número de milisegundos empleados en representar el informe.|
 |Source|Origen de la ejecución del informe (1=Activo, 2=Caché, 3=Instantánea, 4=Historial).|  
 |Estado|Estado (rsSuccess o un código de error; si se producen varios errores, solo se registra el primero).|  
 |ByteCount|Tamaño de los informes representados en bytes|  

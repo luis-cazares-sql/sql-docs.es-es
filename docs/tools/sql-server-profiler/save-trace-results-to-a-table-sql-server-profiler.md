@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: bc7cb3a37d2fc7683321ca666f408f475b9ffa02
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 9e1dbe5def1065874cf840245bfaa3f2676af042
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85726896"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171597"
 ---
 # <a name="save-trace-results-to-a-table-sql-server-profiler"></a>Guardar los resultados de un seguimiento en una tabla (SQL Server Profiler)
 
@@ -27,12 +27,12 @@ En este tema se describe cómo utilizar el [!INCLUDE[ssSqlProfiler](../../includ
   
 ## <a name="to-save-trace-results-to-a-table"></a>Para guardar los resultados de un seguimiento en una tabla
   
-1.  En el menú **Archivo** , haga clic en **Nuevo seguimiento**y conéctese a una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
+1.  En el menú **Archivo** , haga clic en **Nuevo seguimiento** y conéctese a una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
      Aparecerá el cuadro de diálogo **Propiedades de seguimiento**.  
   
     > [!NOTE]  
-    >  Si se selecciona **Iniciar el seguimiento inmediatamente tras realizar la conexión**, el cuadro de diálogo **Propiedades de seguimiento**no aparecerá y, en su lugar, se iniciará el seguimiento. Para desactivar esta configuración, en el menú **Herramientas**, haga clic en **Opciones**y desactive la casilla **Iniciar el seguimiento inmediatamente tras realizar la conexión** .  
+    >  Si se selecciona **Iniciar el seguimiento inmediatamente tras realizar la conexión**, el cuadro de diálogo **Propiedades de seguimiento** no aparecerá y, en su lugar, se iniciará el seguimiento. Para desactivar esta configuración, en el menú **Herramientas**, haga clic en **Opciones** y desactive la casilla **Iniciar el seguimiento inmediatamente tras realizar la conexión** .  
   
 2.  En el cuadro **Nombre de seguimiento** , escriba un nombre para el seguimiento y haga clic en **Guardar en la tabla**.  
   
@@ -44,7 +44,7 @@ En este tema se describe cómo utilizar el [!INCLUDE[ssSqlProfiler](../../includ
   
 6.  En la lista **Tabla** , escriba o seleccione el nombre de tabla para los resultados de seguimiento. Haga clic en **Aceptar**.  
   
-7.  En el cuadro de diálogo **Propiedades de seguimiento** , active la casilla **Establecer número máximo de filas (en miles)** para especificar el número máximo de filas que se guardarán.  
+7.  En el cuadro de diálogo **Trace Properties** (Propiedades de seguimiento), active la casilla **Set maximum rows (in thousands)** (Establecer número máximo de filas [en miles]) para especificar el número máximo de filas que se guardarán.  
   
 ## <a name="see-also"></a>Consulte también  
  [SQL Server Profiler](../../tools/sql-server-profiler/sql-server-profiler.md)  

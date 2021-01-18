@@ -11,12 +11,12 @@ ms.assetid: 67399b24-e48a-49f3-9dd4-32d78c6a2ece
 author: maggiesMSFT
 ms.author: maggies
 manager: kfile
-ms.openlocfilehash: 805247f2fdf491bf75295c232e15d4b066ac179c
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: e901d6dd36709994c056eaa5ef159303d49c00f1
+ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85893952"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97975516"
 ---
 # <a name="install-sql-server-business-intelligence-features"></a>Install SQL Server Business Intelligence Features (Instalar las características de SQL Server Business Intelligence)
 
@@ -51,7 +51,7 @@ ms.locfileid: "85893952"
  [Novedades de Analysis Services](https://docs.microsoft.com/analysis-services/what-s-new-in-analysis-services)   
  [Novedades de Integration Services](../../integration-services/what-s-new-in-integration-services-in-sql-server-2016.md)   
  [Novedades en Master Data Services &#40;MDS&#41;](../../master-data-services/what-s-new-in-master-data-services-mds.md)   
- [Instalar SQL Server 2016](../../database-engine/install-windows/install-sql-server.md)   
- [Actualizar a SQL Server 2016](../../database-engine/install-windows/upgrade-sql-server.md)  
+ [Instalar SQL Server](../../database-engine/install-windows/install-sql-server.md)   
+ [Actualización a SQL Server](../../database-engine/install-windows/upgrade-sql-server.md)  
   
   
