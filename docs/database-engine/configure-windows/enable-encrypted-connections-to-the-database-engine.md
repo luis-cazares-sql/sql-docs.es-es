@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: e1e55519-97ec-4404-81ef-881da3b42006
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: b18a3131329e0485221a0ae2cdaafd0726a4f31c
-ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
+ms.openlocfilehash: 1b5726aad103012b0ed7619749c1f6f669baa234
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97878978"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241849"
 ---
 # <a name="enable-encrypted-connections-to-the-database-engine"></a>Habilitación de conexiones cifradas en el Motor de base de datos
 
@@ -40,7 +40,7 @@ ms.locfileid: "97878978"
  El equipo de servidor debe tener un certificado aprovisionado. Para aprovisionar el certificado en el equipo de servidor, debe [importarlo en Windows](#single-server). El equipo cliente se debe configurar para que [confíe en la entidad de certificación raíz del certificado](#about).  
   
 > [!IMPORTANT]
-> A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], ya no se incluye Capa de sockets seguros (SSL). En su lugar use Seguridad de la capa de transporte (TLS).
+> A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], ya no se incluye Capa de sockets seguros (SSL). En su lugar use Seguridad de la capa de transporte (TLS).
 
 ## <a name="transport-layer-security-tls"></a>Seguridad de la capa de transporte (TLS)
 
@@ -92,7 +92,7 @@ Para que [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] cargue un cer
 
 - La propiedad **Asunto** del certificado debe indicar que el nombre común (CN) es el mismo que el nombre del host o nombre de dominio completo (FQDN) del servidor. Si se usa el nombre de host, se debe especificar el sufijo DNS en el certificado. Si [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] se ejecuta en un clúster de conmutación por error, el nombre común debe coincidir con el del host o FQDN del servidor virtual, y los certificados se deben aprovisionar en todos los nodos del clúster de conmutación por error.
 
-- [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] y [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] Native Client (SNAC) admiten los certificados comodín. SNAC ha quedado en desuso y se ha reemplazado por [Microsoft OLE DB Driver for SQL Server](../../connect/oledb/oledb-driver-for-sql-server.md) y [Microsoft ODBC Driver for SQL Server](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md). Es posible que otros clientes no admitan los certificados comodín. Para más información, vea la documentación del cliente y [KB 258858](https://support.microsoft.com/kb/258858).       
+- [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] y [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] Native Client (SNAC) admiten los certificados comodín. SNAC ha quedado en desuso y se ha reemplazado por [Microsoft OLE DB Driver for SQL Server](../../connect/oledb/oledb-driver-for-sql-server.md) y [Microsoft ODBC Driver for SQL Server](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md). Es posible que otros clientes no admitan los certificados comodín.      
   El certificado comodín no se puede seleccionar con el Administrador de configuración de SQL Server. Para usar un certificado comodín, debe editar la clave del Registro `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQLServer\SuperSocketNetLib` y escribir la huella digital del certificado, sin espacios en blanco, en el valor **Certificado**.  
 
   > [!WARNING]  

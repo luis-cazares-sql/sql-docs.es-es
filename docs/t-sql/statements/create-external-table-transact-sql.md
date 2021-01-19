@@ -22,12 +22,12 @@ ms.assetid: 6a6fd8fe-73f5-4639-9908-2279031abdec
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2595db017ce9572f6ceb7a4c7eca16f9db9e5abc
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: be0e9f5298430dc1abb6ca6b0c2c59c84d601ba2
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095803"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241796"
 ---
 # <a name="create-external-table-transact-sql"></a>CREATE EXTERNAL TABLE (Transact-SQL)
 
@@ -849,8 +849,6 @@ Si se especifica LOCATION para que sea una carpeta, una consulta de PolyBase que
 En este ejemplo, si LOCATION='/webdata/', una consulta de PolyBase devolverá filas de mydata.txt y mydata2.txt. No devolverá mydata3.txt porque es una subcarpeta de una carpeta oculta. Y no devolverá _hidden.txt porque es un archivo oculto.
 
 ![Datos recursivos para tablas externas](../../t-sql/statements/media/aps-polybase-folder-traversal.png "Datos recursivos para tablas externas")
-
-Para cambiar el valor predeterminado y leer solo de la carpeta raíz, establezca el atributo \<polybase.recursive.traversal> en "false" en el archivo de configuración core-site.xml. Este archivo se encuentra en `<SqlBinRoot>\PolyBase\Hadoop\Conf with SqlBinRoot the bin root of SQl Server`. Por ejemplo, `C:\\Program Files\\Microsoft SQL Server\\MSSQL13.XD14\\MSSQL\\Binn`.
 
 DATA_SOURCE = *nombre_del_origen_de_datos_externo* Especifica el nombre del origen de datos externo que contiene la ubicación de los datos externos. Esta ubicación se encuentra en Azure Data Lake. Para crear un origen de datos externo, use[CREATE EXTERNAL DATA SOURCE](../../t-sql/statements/create-external-data-source-transact-sql.md).
 

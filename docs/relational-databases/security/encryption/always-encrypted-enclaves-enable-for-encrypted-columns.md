@@ -2,7 +2,7 @@
 description: Habilitación de Always Encrypted con enclaves seguros para las columnas cifradas existentes
 title: Habilitación de Always Encrypted con enclaves seguros para las columnas cifradas existentes | Microsoft Docs
 ms.custom: ''
-ms.date: 10/30/2019
+ms.date: 01/15/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: vanto
@@ -11,15 +11,15 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 monikerRange: '>= sql-server-ver15'
-ms.openlocfilehash: 3c23c10d99ab16e3da138a03eac14b48d2468909
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 03a57949624897b2cd2e0552892803c21a408b52
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477676"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534814"
 ---
 # <a name="enable-always-encrypted-with-secure-enclaves-for-existing-encrypted-columns"></a>Habilitación de Always Encrypted con enclaves seguros para las columnas cifradas existentes 
-[!INCLUDE [sqlserver2019-windows-only](../../../includes/applies-to-version/sqlserver2019-windows-only.md)]
+[!INCLUDE [sqlserver2019-windows-only-asdb](../../../includes/applies-to-version/sqlserver2019-windows-only-asdb.md)]
 
 En este artículo se describe cómo desbloquear la funcionalidad de Always Encrypted con enclaves seguros y habilitar los cálculos de enclave para las columnas cifradas existentes.  
 
@@ -74,5 +74,5 @@ Este método implica volver a cifrar una columna con una clave de cifrado de col
 Para obtener más información sobre cómo girar el cifrado de una columna a través de una herramienta de cliente, vea [Rotación de claves de Always Encrypted con SQL Server Management Studio](rotate-always-encrypted-keys-using-ssms.md) y [Rotación de claves de Always Encrypted con PowerShell](rotate-always-encrypted-keys-using-powershell.md).
 
 ## <a name="next-steps"></a>Pasos siguientes
-- [Consulta de columnas mediante Always Encrypted con enclaves seguros](always-encrypted-enclaves-query-columns.md)
+- [Configuración y uso de Always Encrypted con enclaves seguros](always-encrypted-enclaves-query-columns.md)
 - [Desarrollo de aplicaciones mediante Always Encrypted con enclaves seguros](always-encrypted-enclaves-client-development.md)
