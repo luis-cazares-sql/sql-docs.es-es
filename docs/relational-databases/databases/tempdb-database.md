@@ -16,12 +16,12 @@ ms.assetid: ce4053fb-e37a-4851-b711-8e504059a780
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 345c02a175643967a509900ab415b90708a3d9e7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 910db0887a50e12163ddeda927159f5e6c97b74b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478306"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169283"
 ---
 # <a name="tempdb-database"></a>tempdb [base de datos]
 
@@ -213,7 +213,7 @@ Coloque la base de datos `tempdb` en un subsistema de E/S rápido. Cree bandas e
 Coloque la base de datos `tempdb` en discos diferentes de los que usan las bases de datos de usuario.
 
 ## <a name="performance-improvements-in-tempdb-for-sql-server"></a>Mejoras de rendimiento de tempdb para SQL Server
-A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], se optimiza el rendimiento de `tempdb` de las maneras siguientes:  
+A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], se optimiza el rendimiento de `tempdb` de las maneras siguientes:  
   
 - Las tablas temporales y las variables de tabla se almacenan en caché. El almacenamiento en caché permite que las operaciones que quitan y crean los objetos temporales se ejecuten muy rápidamente. También reduce la asignación de páginas y la contención de metadatos.  
 - El protocolo de bloqueo temporal de página de asignación se ha mejorado para reducir el número de bloqueos temporales `UP` (actualizaciones).  

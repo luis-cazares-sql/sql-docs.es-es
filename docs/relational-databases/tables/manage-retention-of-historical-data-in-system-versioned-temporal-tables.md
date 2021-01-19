@@ -12,12 +12,12 @@ ms.assetid: 7925ebef-cdb1-4cfe-b660-a8604b9d2153
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f742ece496377a224a67b12223b09d198327812a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c0dac2b5d344969f96016a86622ee4e07ab8c23d
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484497"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98168189"
 ---
 # <a name="manage-retention-of-historical-data-in-system-versioned-temporal-tables"></a>Administración de la retención de datos históricos en las tablas temporales con versiones del sistema
 
@@ -70,7 +70,7 @@ Puede configurar una tabla de historial temporal para Stretch con el Asistente d
 
 ### <a name="using-the-stretch-wizard-to-stretch-the-entire-history-table"></a>Uso del Asistente de Stretch para ajustar la tabla de historial completo
 
-El método más sencillo para los principiantes es usar el Asistente de Stretch para habilitar el ajuste para la base de datos completa y, después, seleccionar la tabla de historial temporal en el Asistente de Stretch (en este ejemplo se supone que ha configurado la tabla de departamento como una tabla temporal con versiones del sistema en una base de datos vacía). En [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], no puede hacer clic con el botón derecho en la propia tabla de historial temporal y hacer clic en Stretch.
+El método más sencillo para los principiantes es usar el Asistente de Stretch para habilitar el ajuste para la base de datos completa y, después, seleccionar la tabla de historial temporal en el Asistente de Stretch (en este ejemplo se supone que ha configurado la tabla de departamento como una tabla temporal con versiones del sistema en una base de datos vacía). En [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], no puede hacer clic con el botón derecho en la propia tabla de historial temporal y hacer clic en Stretch.
 
 1. Haga clic con el botón derecho en la base de datos y seleccione **Tareas**, seleccione **Stretch** y, después, haga clic en **Habilitar** para iniciar el asistente.
 2. En la ventana **Seleccionar tablas** , seleccione la casilla de la tabla de historial temporal y haga clic en Siguiente.
