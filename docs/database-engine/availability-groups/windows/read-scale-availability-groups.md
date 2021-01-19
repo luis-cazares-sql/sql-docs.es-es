@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: ''
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 4ccfc459fb5dbbc2a607fd0eb87853a776820098
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: c8f5f050598129e674a74e8b924c6b2ba274cb34
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642505"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171127"
 ---
 # <a name="use-read-scale-with-always-on-availability-groups"></a>Uso de escalado de lectura con grupos de disponibilidad Always On
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -30,7 +30,7 @@ Las aplicaciones cliente que ejecutan cargas de trabajo de informes o análisis 
 
 ## <a name="read-scale-availability-groups-without-cluster"></a>Grupos de disponibilidad de escalado de lectura sin clúster
 
-En [!INCLUDE[sssql15-md](../../../includes/sssql15-md.md)] y versiones anteriores, todos los grupos de disponibilidad requerían un clúster. Ese clúster proporcionaba alta disponibilidad y recuperación ante desastres (HADR) para respaldar la continuación del negocio. Además, las réplicas secundarias se configuraban para operaciones de lectura. Si la alta disponibilidad no era el objetivo, se invertía una sobrecarga operativa considerable en configurar y usar un clúster. SQL Server 2017 incluye los grupos de disponibilidad de escalado de lectura sin un clúster. 
+En [!INCLUDE[sssql15-md](../../../includes/sssql16-md.md)] y versiones anteriores, todos los grupos de disponibilidad requerían un clúster. Ese clúster proporcionaba alta disponibilidad y recuperación ante desastres (HADR) para respaldar la continuación del negocio. Además, las réplicas secundarias se configuraban para operaciones de lectura. Si la alta disponibilidad no era el objetivo, se invertía una sobrecarga operativa considerable en configurar y usar un clúster. SQL Server 2017 incluye los grupos de disponibilidad de escalado de lectura sin un clúster. 
 
 Si lo que necesita su negocio es conservar los recursos de cara a las cargas de trabajo críticas que se ejecutan en la réplica principal, puede usar enrutamiento de solo lectura o conectarse directamente a las réplicas secundarias legibles. No es necesario depender de la integración con ninguna tecnología de agrupación en clústeres. Estas nuevas funciones están disponibles en sistemas SQL Server 2017 que se ejecutan en plataformas tanto Windows como Linux.
 

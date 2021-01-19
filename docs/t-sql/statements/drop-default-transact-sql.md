@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: d2d3af25-8877-46ba-95d9-1844961d97ee
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 43c75b4462f8a725e5ce06d4d5eb545000bc8bb7
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: ea4130d49d35f1bdb9a5c74b74fff32052db9bc5
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095808"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172057"
 ---
 # <a name="drop-default-transact-sql"></a>DROP DEFAULT (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -46,7 +46,7 @@ DROP DEFAULT [ IF EXISTS ] { [ schema_name . ] default_name } [ ,...n ] [ ; ]
 
 ## <a name="arguments"></a>Argumentos
  *IF EXISTS*  
- **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (desde [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] hasta la [versión actual](https://go.microsoft.com/fwlink/p/?LinkId=299658)).  
+ **Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (desde [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] hasta la [versión actual](https://go.microsoft.com/fwlink/p/?LinkId=299658)).  
   
  Quita condicionalmente el valor predeterminado solo si ya existe.  
   
@@ -79,7 +79,7 @@ IF EXISTS (SELECT name FROM sys.objects
 GO  
 ```  
   
- A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] se puede usar la siguiente sintaxis.  
+ A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] se puede usar la siguiente sintaxis.  
   
 ```sql  
 DROP DEFAULT IF EXISTS datedflt;  

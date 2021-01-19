@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: f039d0de-ade7-4aaf-8b7b-d207deb3371a
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 5c80e55d2a2dc54e90d33785bc64153fa1dbf8a6
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+ms.openlocfilehash: 23cd700fd8b25778118b2141bf0205dcbd87c92e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300846"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170467"
 ---
 # <a name="alter-availability-group-transact-sql"></a>ALTER AVAILABILITY GROUP (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -94,7 +94,7 @@ ALTER AVAILABILITY GROUP group_name
      | PRIMARY_ROLE ( {   
             [ ALLOW_CONNECTIONS = { READ_WRITE | ALL } ]   
         [,] [ READ_ONLY_ROUTING_LIST = { ( '<server_instance>' [ ,...n ] ) | NONE } ]  
-        [,] [ READ_WRITE_ROUTING_URL = { ( '<server_instance>' ) ] 
+        [,] [ READ_WRITE_ROUTING_URL = { ( '<server_instance>' ) ] 
      } )  
      | SESSION_TIMEOUT = integer
   
@@ -228,10 +228,10 @@ ALTER AVAILABILITY GROUP group_name
  Para obtener más información sobre este valor, vea [Opción de conmutación por error de detección del estado del nivel de la base de datos de un grupo de disponibilidad](../../database-engine/availability-groups/windows/sql-server-always-on-database-health-detection-failover-option.md). 
 
 DTC_SUPPORT  **=** { PER_DB | NONE }  
-Especifica si las transacciones distribuidas están habilitadas para este grupo de disponibilidad. Las transacciones distribuidas para bases de datos de grupo de disponibilidad solo se admiten a partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], y las transacciones entre bases de datos solo a partir de [!INCLUDE[ssSQL16](../../includes/sssql15-md.md)] SP2. `PER_DB` crea el grupo de disponibilidad con compatibilidad con estas transacciones y promoverá de forma automática a transacciones distribuidas las transacciones entre las bases de datos relacionadas con las bases de datos del grupo de disponibilidad. `NONE` impide la promoción automática de transacciones entre bases de datos a transacciones distribuidas y no registra la base de datos con un RMID estable en DTC. Las transacciones distribuidas no se evitan cuando se usa el valor `NONE`, pero es posible que la conmutación por error de base de datos y la recuperación automática no se puedan realizar correctamente en algunas circunstancias. Para obtener más información, vea [Transacciones entre bases de datos y transacciones distribuidas para la creación de reflejo de la base de datos o grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md). 
+Especifica si las transacciones distribuidas están habilitadas para este grupo de disponibilidad. Las transacciones distribuidas para bases de datos de grupo de disponibilidad solo se admiten a partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], y las transacciones entre bases de datos solo a partir de [!INCLUDE[ssSQL16](../../includes/sssql16-md.md)] SP2. `PER_DB` crea el grupo de disponibilidad con compatibilidad con estas transacciones y promoverá de forma automática a transacciones distribuidas las transacciones entre las bases de datos relacionadas con las bases de datos del grupo de disponibilidad. `NONE` impide la promoción automática de transacciones entre bases de datos a transacciones distribuidas y no registra la base de datos con un RMID estable en DTC. Las transacciones distribuidas no se evitan cuando se usa el valor `NONE`, pero es posible que la conmutación por error de base de datos y la recuperación automática no se puedan realizar correctamente en algunas circunstancias. Para obtener más información, vea [Transacciones entre bases de datos y transacciones distribuidas para la creación de reflejo de la base de datos o grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md). 
  
 > [!NOTE]
-> La compatibilidad para cambiar la configuración de DTC_SUPPORT de un grupo de disponibilidad se introdujo en [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] Service Pack 2. Esta opción no se puede usar con versiones anteriores. Para cambiar esta configuración en versiones anteriores de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], debe usar DROP y CREATE en el grupo de disponibilidad.
+> La compatibilidad para cambiar la configuración de DTC_SUPPORT de un grupo de disponibilidad se introdujo en [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] Service Pack 2. Esta opción no se puede usar con versiones anteriores. Para cambiar esta configuración en versiones anteriores de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], debe usar DROP y CREATE en el grupo de disponibilidad.
  
  REQUIRED_SYNCHRONIZED_SECONDARIES_TO_COMMIT   
  Introducido en SQL Server 2017. Se usa para establecer un número mínimo de réplicas secundarias sincrónicas que se deben confirmar antes de que la réplica principal confirme una transacción. Garantiza que las transacciones de SQL Server esperen hasta que se actualicen los registros de transacciones en el número mínimo de réplicas secundarias. El valor predeterminado es 0, que proporciona el mismo comportamiento que SQL Server 2016. El valor mínimo es 0. El valor máximo es el número de réplicas menos 1. Esta opción se relaciona con las réplicas en el modo de confirmación sincrónica. Cuando las réplicas están en modo de confirmación sincrónica, las escrituras en la réplica principal esperan hasta que las escrituras en las réplicas secundarias sincrónicas se confirman en el registro de transacciones de la base de datos de réplica. Si un servidor SQL Server que hospeda una réplica secundaria sincrónica deja de responder, el servidor SQL Server que hospeda la réplica principal marcará esa réplica secundaria como NO SINCRONIZADA y continuará. Cuando la base de datos que no responde vuelve a estar en línea, se encontrará en un estado "no sincronizado" y la réplica se marcará como incorrecta hasta que la réplica principal la convierta en sincrónica nuevo. Esta configuración garantiza que la réplica principal no continúe hasta que el número mínimo de réplicas haya confirmado cada transacción. Si el número mínimo de réplicas no está disponible, se producirá un error en las confirmaciones de la réplica principal. Para el tipo de clúster `EXTERNAL`, se ha cambiado esta configuración cuando se agrega el grupo de disponibilidad a un recurso de clúster. Vea [Alta disponibilidad y protección de datos para las configuraciones de grupo de disponibilidad](../../linux/sql-server-linux-availability-group-ha.md).
@@ -259,7 +259,7 @@ Especifica si las transacciones distribuidas están habilitadas para este grupo 
  \<server_instance>  
  Especifica la dirección de la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] que es el host para la réplica. El formato de la dirección depende de si la instancia es la instancia predeterminada o una instancia con nombre y de si es una instancia independiente o una instancia de clúster de conmutación por error (FCI). La sintaxis es la siguiente:  
   
- { ' *nombre_sistema* [\\*nombre_instancia* ]' | ' *nombre_red_FCI* [\\*nombre_instancia* ]' }  
+ { '*nombre_sistema*[\\*nombre_instancia*]' | '*nombre_red_FCI*[\\*nombre_instancia*]' }  
   
  Los componentes de esta dirección son los siguientes:  
   
@@ -267,17 +267,17 @@ Especifica si las transacciones distribuidas están habilitadas para este grupo 
  Es el nombre de NetBIOS del equipo en el que reside la instancia de destino de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Este equipo debe ser un nodo de WSFC.  
   
  *nombre_red_FCI*  
- Es el nombre de red que se utiliza para tener acceso a un clúster de conmutación por error de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Utilice este argumento si la instancia de servidor participa como asociado de conmutación por error de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. La ejecución de SELECT [@@SERVERNAME](../../t-sql/functions/servername-transact-sql.md) en una instancia de servidor de FCI devuelve la cadena ' *FCI_network_name* [\\*instance_name* ]' completa (que es el nombre completo de la réplica).  
+ Es el nombre de red que se utiliza para tener acceso a un clúster de conmutación por error de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Utilice este argumento si la instancia de servidor participa como asociado de conmutación por error de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. La ejecución de SELECT [@@SERVERNAME](../../t-sql/functions/servername-transact-sql.md) en una instancia de servidor de FCI devuelve la cadena '*FCI_network_name*[\\*instance_name*]' completa (que es el nombre completo de la réplica).  
   
  *instance_name*  
  Es el nombre de una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] hospedada por *system_name* o *FCI_network_name* y que tiene AlwaysOn habilitado. En el caso de una instancia del servidor predeterminada, *nombre_instancia* es opcional. El nombre de la instancia no distingue mayúsculas de minúsculas. En una instancia de servidor independiente, este nombre de valor es el mismo que el valor devuelto al ejecutar SELECT [@@SERVERNAME](../../t-sql/functions/servername-transact-sql.md).  
   
  \  
- Es un separador que solo se usa cuando se especifica *instance_name* , para separarlo de *system_name* o *FCI_network_name* .  
+ Es un separador que solo se usa cuando se especifica *instance_name*, para separarlo de *system_name* o *FCI_network_name*.  
   
  Para obtener más información sobre los requisitos previos de los nodos de WSFC y las instancias de servidor, vea [Requisitos previos, restricciones y recomendaciones - Grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability.md).  
   
- ENDPOINT_URL ='TCP:// *system-address* : *port* '  
+ ENDPOINT_URL ='TCP://*system-address*:*port*'  
  Especifica la ruta de acceso de la dirección URL para el [extremo de creación de reflejo de la base de datos](../../database-engine/database-mirroring/the-database-mirroring-endpoint-sql-server.md) en la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] que hospedará la réplica de disponibilidad que va a agregar o modificar.  
   
  ENDPOINT_URL es obligatorio en la cláusula ADD REPLICA ON y opcional en la cláusula MODIFY REPLICA ON.  Para obtener más información, vea [Especificar la dirección URL del punto de conexión al agregar o modificar una réplica de disponibilidad &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/specify-endpoint-url-adding-or-modifying-availability-replica.md).  
@@ -324,7 +324,7 @@ Especifica si las transacciones distribuidas están habilitadas para este grupo 
 >  Las instancias de clúster de conmutación por error (FCI) de SQL Server no admiten la conmutación automática por error de grupos de disponibilidad, por lo tanto, todas las réplicas de disponibilidad hospedadas por un FCI solo se pueden configurar para la conmutación por error manual.  
   
  MANUAL  
- Permite que el administrador de la base de datos habilite la conmutación por error manual o la conmutación por error manual forzada ( *conmutación por error forzada* ).  
+ Permite que el administrador de la base de datos habilite la conmutación por error manual o la conmutación por error manual forzada (*conmutación por error forzada*).  
   
  FAILOVER_MODE es obligatorio en la cláusula ADD REPLICA ON y opcional en la cláusula MODIFY REPLICA ON. Existen dos tipos de conmutación por error manual, la conmutación por error manual sin pérdida de datos y la conmutación por error forzada (con pérdida de datos posible), que se admiten en diferentes condiciones.  Para obtener más información, vea [Conmutación por error y modos de conmutación por error &#40;Grupos de disponibilidad AlwaysOn&#41;](../../database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups.md).  
   
@@ -335,7 +335,7 @@ Especifica si las transacciones distribuidas están habilitadas para este grupo 
  Habilita la propagación directa. Este método propagará la réplica secundaria a través de la red. Este método no requiere la realización de una copia de seguridad ni la restauración de una copia de la base de datos principal en la réplica.  
   
 > [!NOTE]  
->  Para la propagación directa, debe permitir la creación de bases de datos en cada réplica secundaria mediante una llamada a **ALTER AVAILABILITY GROUP** con la opción **GRANT CREATE ANY DATABASE** .  
+>  Para la propagación directa, debe permitir la creación de bases de datos en cada réplica secundaria mediante una llamada a **ALTER AVAILABILITY GROUP** con la opción **GRANT CREATE ANY DATABASE**.  
   
  MANUAL  
  Especifica la propagación manual (valor predeterminado). Este método requiere la creación de una copia de seguridad de la base de datos en la réplica principal y su restauración manual en la réplica secundaria.  
@@ -361,7 +361,7 @@ Especifica si las transacciones distribuidas están habilitadas para este grupo 
  No se permiten conexiones de usuario a las bases de datos secundarias de esta réplica. No están disponibles para acceso de lectura. Este es el comportamiento predeterminado.  
   
  READ_ONLY  
- Solo se permiten conexiones con las bases de datos de la réplica secundaria en las que la propiedad Application Intent está establecida en **ReadOnly** . Para obtener más información acerca de esta propiedad, vea [Using Connection String Keywords with SQL Server Native Client](../../relational-databases/native-client/applications/using-connection-string-keywords-with-sql-server-native-client.md).  
+ Solo se permiten conexiones con las bases de datos de la réplica secundaria en las que la propiedad Application Intent está establecida en **ReadOnly**. Para obtener más información acerca de esta propiedad, vea [Using Connection String Keywords with SQL Server Native Client](../../relational-databases/native-client/applications/using-connection-string-keywords-with-sql-server-native-client.md).  
   
  ALL  
  Se permiten todas las conexiones con las bases de datos de la réplica secundaria para acceso de solo lectura.  
@@ -371,7 +371,7 @@ Especifica si las transacciones distribuidas están habilitadas para este grupo 
  READ_ONLY_ROUTING_URL **='** TCP **://** _system-address_ **:** _port_ **'**  
  Especifica la dirección URL que se va a usar para enrutar las solicitudes de conexión de intención de lectura de enrutamiento para esta réplica de disponibilidad. Es la dirección URL en la que escucha el motor de base de datos de SQL Server. Normalmente, la instancia predeterminada del motor de base de datos de SQL Server escucha en el puerto TCP 1433.  
   
- En una instancia con nombre, puede obtener el número de puerto si consulta a las columnas **port** y **type_desc** de la vista de administración dinámica [sys.dm_tcp_listener_states](../../relational-databases/system-dynamic-management-views/sys-dm-tcp-listener-states-transact-sql.md). La instancia de servidor usa el agente de escucha de Transact-SQL ( **type_desc='TSQL'** ).  
+ En una instancia con nombre, puede obtener el número de puerto si consulta a las columnas **port** y **type_desc** de la vista de administración dinámica [sys.dm_tcp_listener_states](../../relational-databases/system-dynamic-management-views/sys-dm-tcp-listener-states-transact-sql.md). La instancia de servidor usa el agente de escucha de Transact-SQL (**type_desc='TSQL'** ).  
   
  Para más información sobre cómo calcular la dirección URL de enrutamiento de solo lectura para una réplica de disponibilidad, vea [Calculating read_only_routing_url for Always On](/archive/blogs/mattn/calculating-read_only_routing_url-for-alwayson) (Calcular read_only_routing_url para AlwaysOn).  
   
@@ -392,7 +392,7 @@ Especifica si las transacciones distribuidas están habilitadas para este grupo 
  ALL  
  Se permiten todas las conexiones con las bases de datos de la réplica principal. Este es el comportamiento predeterminado.  
   
- READ_ONLY_ROUTING_LIST **=** { **("** \<server_instance> **"** [ **,** ... *n* ] **)** | NONE }  
+ READ_ONLY_ROUTING_LIST **=** { **("** \<server_instance> **"** [ **,** ...*n* ] **)** | NONE }  
  Especifica una lista separada por comas de instancias de servidor que hospedan réplicas de disponibilidad para este grupo de disponibilidad y que cumplen los requisitos siguientes al ejecutarse con el rol secundario:  
   
 -   Está configurado para permitir todas las conexiones o las conexiones de solo lectura (vea el argumento ALLOW_CONNECTIONS de la opción SECONDARY_ROLE de más arriba).  
@@ -406,7 +406,7 @@ Especifica si las transacciones distribuidas están habilitadas para este grupo 
   
  Use una lista separada por comas para especificar todas las instancias del servidor que pueden hospedar una réplica secundaria inteligible. El enrutamiento de solo lectura seguirá el orden en que las instancias de servidor se especifican en la lista. Si incluye la instancia del servidor de host de una réplica en la lista de enrutamiento de solo lectura de la réplica, por lo general, resulta recomendable colocar esta instancia del servidor al final de la lista, ya que las conexiones de intención de lectura van a una réplica secundaria, si hay alguna disponible. .  
   
- A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], puede equilibrar la carga de las solicitudes de intención de lectura en las réplicas secundarias legibles. Para especificarlo, coloque las réplicas en un conjunto anidado de paréntesis dentro de la lista de enrutamiento de solo lectura. Para obtener más información y ejemplos, vea [Configuración del equilibrio de carga entre réplicas de solo lectura](../../database-engine/availability-groups/windows/configure-read-only-routing-for-an-availability-group-sql-server.md#loadbalancing).  
+ A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], puede equilibrar la carga de las solicitudes de intención de lectura en las réplicas secundarias legibles. Para especificarlo, coloque las réplicas en un conjunto anidado de paréntesis dentro de la lista de enrutamiento de solo lectura. Para obtener más información y ejemplos, vea [Configuración del equilibrio de carga entre réplicas de solo lectura](../../database-engine/availability-groups/windows/configure-read-only-routing-for-an-availability-group-sql-server.md#loadbalancing).  
   
  Ninguno  
  Especifica que cuando esta réplica de disponibilidad es la réplica primaria, no se admitirá en el enrutamiento de solo lectura. Este es el comportamiento predeterminado. Cuando se utiliza con MODIFY REPLICA ON, este valor deshabilita una lista existente, en caso de que la hubiera.  
@@ -449,7 +449,7 @@ Para obtener más información, consulte [Redireccionamiento de la conexión de 
  Para obtener más información, vea [Combinar una réplica secundaria con un grupo de disponibilidad &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/join-a-secondary-replica-to-an-availability-group-sql-server.md).  
   
  FAILOVER  
-Inicia una conmutación por error manual del grupo de disponibilidad sin pérdida de datos a la réplica secundaria a la que está conectado. La réplica que hospedará la réplica principal es el *destino de conmutación por error* .  El destino de la conmutación por error asumirá el rol principal y recuperará su copia de cada base de datos y las pondrá en línea como las nuevas bases de datos principales. La réplica principal anterior realiza la transición de forma simultánea al rol secundario y sus bases de datos se convierten en bases de datos secundarias, además quedan suspendidas inmediatamente. Potencialmente, estos roles se pueden alternar mediante una serie de errores.  
+Inicia una conmutación por error manual del grupo de disponibilidad sin pérdida de datos a la réplica secundaria a la que está conectado. La réplica que hospedará la réplica principal es el *destino de conmutación por error*.  El destino de la conmutación por error asumirá el rol principal y recuperará su copia de cada base de datos y las pondrá en línea como las nuevas bases de datos principales. La réplica principal anterior realiza la transición de forma simultánea al rol secundario y sus bases de datos se convierten en bases de datos secundarias, además quedan suspendidas inmediatamente. Potencialmente, estos roles se pueden alternar mediante una serie de errores.  
   
  Solo se admite en una réplica secundaria de confirmación sincrónica que se sincronice actualmente con la réplica primaria. Tenga en cuenta que para sincronizar réplicas secundarias, la réplica principal también debe ejecutarse en modo de confirmación sincrónica.  
   
@@ -462,7 +462,7 @@ Inicia una conmutación por error manual del grupo de disponibilidad sin pérdid
  > [!CAUTION]  
 >  Forzar la conmutación por error, que podría causar pérdida de datos, es estrictamente un método de recuperación ante desastres. Por lo tanto, es absolutamente recomendable que solo fuerce la conmutación por error si la réplica principal ya no se está ejecutando, si asume el riesgo de perder datos o si debe restaurar el servicio al grupo de disponibilidad inmediatamente.  
   
- Solo se admite en una réplica cuyo rol esté en el estado SECONDARY o RESOLVING. La réplica en la que se escribe un comando de conmutación por error se denomina *destino de conmutación por error* .  
+ Solo se admite en una réplica cuyo rol esté en el estado SECONDARY o RESOLVING. La réplica en la que se escribe un comando de conmutación por error se denomina *destino de conmutación por error*.  
   
  Fuerza la conmutación por error del grupo de disponibilidad, con posible pérdida de datos, al destino de la conmutación por error. El destino de la conmutación por error asumirá el rol principal y recuperará su copia de cada base de datos y las pondrá en línea como las nuevas bases de datos principales. En cualquier réplica secundaria restante, cada base de datos secundaria se suspende hasta que se reanude manualmente. Cuando la réplica principal anterior está disponible, cambiará al rol secundario y sus bases de datos se convertirán en bases de datos secundarias suspendidas.  
   
@@ -493,7 +493,7 @@ Inicia una conmutación por error manual del grupo de disponibilidad sin pérdid
 >  NetBIOS reconoce solo los 15 primeros caracteres en dns_name. Si tiene dos clústeres de WSFC controlados por la misma instancia de Active Directory e intenta crear agentes de escucha del grupo de disponibilidad en los dos clústeres utilizando nombres con más de 15 caracteres y un prefijo idéntico de 15 caracteres, obtendrá un error notificando que el recurso de nombre de red virtual no se pudo poner en línea. Para obtener información acerca de las reglas de nomenclatura de prefijos para los nombres DNS, vea [Asignación de nombres de dominio](https://technet.microsoft.com/library/cc731265\(WS.10\).aspx).  
   
  JOIN AVAILABILITY GROUP ON  
- Se une a un *grupo de disponibilidad distribuido* . Cuando se crea un grupo de disponibilidad distribuido, el grupo de disponibilidad del clúster donde se crea es el grupo de disponibilidad principal. El grupo de disponibilidad que se une al grupo de disponibilidad distribuido es el grupo de disponibilidad secundario.  
+ Se une a un *grupo de disponibilidad distribuido*. Cuando se crea un grupo de disponibilidad distribuido, el grupo de disponibilidad del clúster donde se crea es el grupo de disponibilidad principal. El grupo de disponibilidad que se une al grupo de disponibilidad distribuido es el grupo de disponibilidad secundario.  
   
  \<ag_name>  
  Especifica el nombre del grupo de disponibilidad que constituye la mitad del grupo de disponibilidad distribuido.  
@@ -527,7 +527,7 @@ Inicia una conmutación por error manual del grupo de disponibilidad sin pérdid
  Especifica el modo de conmutación por error del grupo de disponibilidad distribuido.  
   
  MANUAL  
- Permite que el administrador de la base de datos habilite la conmutación por error manual planeada o la conmutación por error manual forzada (denominada normalmente *conmutación por error forzada* ).  
+ Permite que el administrador de la base de datos habilite la conmutación por error manual planeada o la conmutación por error manual forzada (denominada normalmente *conmutación por error forzada*).  
   
  No se admite la conmutación por error automática al grupo de disponibilidad secundario.  
   
@@ -565,7 +565,7 @@ Inicia una conmutación por error manual del grupo de disponibilidad sin pérdid
   
  `WITH DHCP ON ('10.120.19.0','255.255.254.0')`  
   
- WITH IP **(** { **('** _four\_part\_ipv4\_address_ **','** _four\_part\_ipv4\_mask_ **')**  |  **('** _ipv6\_address_ **')** } [ **,** ... _n_ ] **)** [ **,** PORT **=** _listener\_port_ ]  
+ WITH IP **(** { **('** _four\_part\_ipv4\_address_ **','** _four\_part\_ipv4\_mask_ **')**  |  **('** _ipv6\_address_ **')** } [ **,** ..._n_ ] **)** [ **,** PORT **=** _listener\_port_ ]  
  Especifica que, en lugar de utilizar DHCP, la escucha del grupo de disponibilidad utilizará una o más direcciones IP estáticas. Para crear un grupo de disponibilidad a través de varias subredes, cada subred requiere una dirección IP estática en la configuración de la escucha. Para una subred determinada, la dirección IP estática puede ser una dirección IPv4 o una dirección IPv6. Póngase en contacto con el administrador de red para obtener una dirección IP estática para cada subred que hospeda una réplica de disponibilidad para el nuevo grupo de disponibilidad.  
   
  Por ejemplo:  
@@ -582,7 +582,7 @@ Inicia una conmutación por error manual del grupo de disponibilidad sin pérdid
  Especifica una dirección IPv6 para el agente de escucha de un grupo de disponibilidad. Por ejemplo, `2001::4898:23:1002:20f:1fff:feff:b3a3`.  
   
  PORT **=** *listener_port*  
- Especifica el número de puerto ( *listener_port* ) que va a usar el agente de escucha del grupo de disponibilidad especificado por una cláusula WITH IP. PORT es opcional.  
+ Especifica el número de puerto (*listener_port*) que va a usar el agente de escucha del grupo de disponibilidad especificado por una cláusula WITH IP. PORT es opcional.  
   
  Se admite el número de puerto predeterminado, 1433. Sin embargo, si le preocupa la seguridad, le recomendamos que use otro número de puerto.  
   
@@ -595,7 +595,7 @@ Inicia una conmutación por error manual del grupo de disponibilidad sin pérdid
  MODIFY LISTENER toma una de las siguientes opciones:  
   
  ADD IP { **('** _four\_part\_ipv4\_address_ **','** _four\_part\_ipv4_mask_ **')** \| <b>('</b>dns\_name *ipv6\_address* __')__ }  
- Agrega la dirección IP especificada a la escucha de grupo de disponibilidad especificada por *dns\_name* .  
+ Agrega la dirección IP especificada a la escucha de grupo de disponibilidad especificada por *dns\_name*.  
   
  PORT **=** *listener_port*  
  Vea la descripción de este argumento anteriormente en esta sección.  

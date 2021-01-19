@@ -72,7 +72,7 @@ El elemento *value* es un entero hasta [!INCLUDE[ssSQL17](sssql17-md.md)], y un 
 > De forma predeterminada, Resource Governor no evita que una solicitud continúe si se supera el tiempo máximo. Sin embargo, se generará un evento. Para obtener más información, vea [Clase de eventos Umbral de la CPU superado](../relational-databases/event-classes/cpu-threshold-exceeded-event-class.md). 
 
 > [!IMPORTANT]
-> A partir de [!INCLUDE[ssSQL15](sssql15-md.md)] SP2 y [!INCLUDE[ssSQL17](sssql17-md.md)] CU3, y si se usa la [marca de seguimiento 2422](../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md), Resource Governor anula una solicitud cuando se supera el tiempo máximo.
+> A partir de [!INCLUDE[ssSQL15](sssql16-md.md)] SP2 y [!INCLUDE[ssSQL17](sssql17-md.md)] CU3, y si se usa la [marca de seguimiento 2422](../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md), Resource Governor anula una solicitud cuando se supera el tiempo máximo.
   
  REQUEST_MEMORY_GRANT_TIMEOUT_SEC =*value*  
  Especifica el tiempo máximo, en segundos, que una consulta puede esperar hasta que esté disponible la concesión de memoria (memoria de búfer de trabajo).  

@@ -28,12 +28,12 @@ ms.assetid: 98a80238-7409-4708-8a7d-5defd9957185
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3583f0f780df284dc16e54eda6b2406ff8737911
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c98d84c8e3bc08bfae13c149cfc0487c57e40008
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97473856"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171577"
 ---
 # <a name="database-checkpoints-sql-server"></a>Puntos de comprobación de base de datos (SQL Server)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -47,7 +47,7 @@ Por motivos de rendimiento, [!INCLUDE[ssDE](../../includes/ssde-md.md)] realiza 
 |Nombre|[!INCLUDE[tsql](../../includes/tsql-md.md)] Interfaz|Descripción|  
 |----------|----------------------------------|-----------------|  
 |Automático|EXEC sp_configure **'** recovery interval **','** _seconds_ **'**|Se emite automáticamente en segundo plano para cumplir el límite de tiempo superior que sugiere la opción de configuración de servidor **recovery interval** . Los puntos de comprobación automáticos se ejecutan hasta completarse.  Los puntos de comprobación automáticos están limitados según el número de operaciones de escritura pendientes y en función de si [!INCLUDE[ssDE](../../includes/ssde-md.md)] detecta un aumento de la latencia de escritura superior a 50 milisegundos.<br /><br /> Para más información, consulte [Configure the recovery interval Server Configuration Option](../../database-engine/configure-windows/configure-the-recovery-interval-server-configuration-option.md).|  
-|Indirecto|ALTER DATABASE ... SET TARGET_RECOVERY_TIME **=** _target\_recovery\_time_ { SECONDS &#124; MINUTES }|Se emiten en segundo plano para cumplir un tiempo de recuperación de destino especificado por el usuario para una determinada base de datos. Empezando por [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)], el valor predeterminado es 1 minuto. El valor predeterminado es 0 para versiones antiguas, que indica que la base de datos utilizará puntos de comprobación automáticos, cuya frecuencia depende del valor de intervalo de recuperación de la instancia de servidor.<br /><br /> Para obtener más información, vea [Cambiar el tiempo de recuperación de destino de una base de datos &#40;SQL Server&#41;](../../relational-databases/logs/change-the-target-recovery-time-of-a-database-sql-server.md).|  
+|Indirecto|ALTER DATABASE ... SET TARGET_RECOVERY_TIME **=** _target\_recovery\_time_ { SECONDS &#124; MINUTES }|Se emiten en segundo plano para cumplir un tiempo de recuperación de destino especificado por el usuario para una determinada base de datos. Empezando por [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)], el valor predeterminado es 1 minuto. El valor predeterminado es 0 para versiones antiguas, que indica que la base de datos utilizará puntos de comprobación automáticos, cuya frecuencia depende del valor de intervalo de recuperación de la instancia de servidor.<br /><br /> Para obtener más información, vea [Cambiar el tiempo de recuperación de destino de una base de datos &#40;SQL Server&#41;](../../relational-databases/logs/change-the-target-recovery-time-of-a-database-sql-server.md).|  
 |Manual|CHECKPOINT [*duración_del_punto_de_comprobación*]|Se emite cuando se ejecuta un comando CHECKPOINT de [!INCLUDE[tsql](../../includes/tsql-md.md)] . El punto de comprobación manual se produce en la base de datos actual para la conexión. De forma predeterminada, los puntos de comprobación manuales se ejecutan hasta completarse. La limitación funciona de la misma forma que para los puntos de comprobación automáticos.  Opcionalmente, el parámetro *checkpoint_duration* especifica un periodo de tiempo solicitado, en segundos, para que se complete el punto de comprobación.<br /><br /> Para más información, consulte [CHECKPOINT &#40;Transact-SQL&#41;](../../t-sql/language-elements/checkpoint-transact-sql.md).|  
 |Interno|Ninguno.|Se emite por varias operaciones de servidor, como la copia de seguridad y la creación de instantánea de base de datos, para garantizar que las imágenes de disco coinciden con el estado actual del registro.|  
   
@@ -107,7 +107,7 @@ Si se produce un bloqueo del sistema, los puntos de comprobación indirectos pro
 Pero una carga de trabajo transaccional en línea en una base de datos que esté configurada para puntos de comprobación indirectos puede experimentar un deterioro del rendimiento. Esto se debe a que el escritor en segundo plano que usa el punto de comprobación indirecto en ocasiones aumenta la carga de escritura total para una instancia de servidor.  
  
 > [!IMPORTANT]
-> El punto de comprobación indirecto es el comportamiento predeterminado para nuevas bases de datos creadas en [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], incluidas las bases de datos Model y TempDB.          
+> El punto de comprobación indirecto es el comportamiento predeterminado para nuevas bases de datos creadas en [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], incluidas las bases de datos Model y TempDB.          
 > Las bases de datos que se actualizan in situ o se restauraron a partir de una versión anterior de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] usarán el comportamiento de punto de comprobación automático anterior, a menos que explícitamente se modifique para usar el punto de comprobación indirecto.       
 
 ### <a name="improved-indirect-checkpoint-scalability"></a><a name="ctp23"></a> Escalabilidad mejorada de puntos de control indirectos

@@ -12,25 +12,25 @@ ms.assetid: a4891c57-56bb-49f4-9bb5-f11b745279e5
 author: MightyPen
 ms.author: genemi
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 251af732e6c55ee2b5567bb181859b1fdec1360a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3e72e67bf033ecef94b318d69b31f33604572cf8
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97485227"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172067"
 ---
 # <a name="scalability"></a>Escalabilidad
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] contiene mejoras de escalabilidad en el almacenamiento en disco para las tablas optimizadas para memoria. 
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] contiene mejoras de escalabilidad en el almacenamiento en disco para las tablas optimizadas para memoria. 
 
 ## <a name="multiple-threads-to-persist-memory-optimized-tables"></a>Varios subprocesos para conservar las tablas optimizadas para memoria  
   
 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] tenía un subproceso de punto de control único sin conexión que examinaba los cambios del registro de transacciones de las tablas optimizadas para memoria y los conservaba en archivos de punto de control (como archivos delta y de datos). En equipos con mayor número de núcleos, el subproceso de punto de control único sin conexión podría retrasarse.  
   
-A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], hay varios subprocesos simultáneos responsables de conservar los cambios en tablas optimizadas para memoria.  
+A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], hay varios subprocesos simultáneos responsables de conservar los cambios en tablas optimizadas para memoria.  
   
 ## <a name="multi-threaded-recovery"></a>Recuperación multiproceso
-En la versión anterior de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], la aplicación del registro como parte de la operación de recuperación era de un solo subproceso. A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], la aplicación del registro es multiproceso.  
+En la versión anterior de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], la aplicación del registro como parte de la operación de recuperación era de un solo subproceso. A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], la aplicación del registro es multiproceso.  
   
 ## <a name="merge-operation"></a>Operación de COMBINACIÓN  
 La operación de COMBINACIÓN ahora es multiproceso.  

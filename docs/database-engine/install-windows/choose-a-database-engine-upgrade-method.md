@@ -11,12 +11,12 @@ ms.assetid: 5e57a427-2e88-4ef6-b142-4ccad97bcecc
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: c36d6718455f85314f98219b860a801984804d9d
-ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
+ms.openlocfilehash: 4acdd7f1d8b6a39af4054f30381665d1504bcb71
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97975479"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171837"
 ---
 # <a name="choose-a-database-engine-upgrade-method"></a>Elegir un método de actualización del motor de base de datos
 [!INCLUDE [SQL Server -Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
@@ -86,10 +86,10 @@ Existen varios métodos que se deben considerar a la hora de planear la actualiz
  Por ejemplo, puede utilizar este enfoque para actualizar los siguientes elementos:  
   
 -   Una instalación de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] en un sistema operativo no compatible.    
--   Una instalación x86 de SQL Server, ya que ni [!INCLUDE[ss2016](../../includes/sssql15-md.md)] ni las versiones posteriores admiten este tipo de instalaciones.   
+-   Una instalación x86 de SQL Server, ya que ni [!INCLUDE[ss2016](../../includes/sssql16-md.md)] ni las versiones posteriores admiten este tipo de instalaciones.   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] en hardware nuevo o una nueva versión del sistema operativo.    
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] junto con una consolidación de servidores.   
--   SQL Server 2005, ya que ni [!INCLUDE[ss2016](../../includes/sssql15-md.md)] ni las versiones posteriores admiten la actualización local de SQL Server 2005. Para más información, vea [¿Desea actualizar desde SQL Server 2005?](../../sql-server/end-of-support/sql-server-end-of-life-overview.md).
+-   SQL Server 2005, ya que ni [!INCLUDE[ss2016](../../includes/sssql16-md.md)] ni las versiones posteriores admiten la actualización local de SQL Server 2005. Para más información, vea [¿Desea actualizar desde SQL Server 2005?](../../sql-server/end-of-support/sql-server-end-of-life-overview.md).
 
   
 Los pasos necesarios realizar una actualización mediante una nueva instalación varían ligeramente en función de si usa almacenamiento conectado o SAN.  

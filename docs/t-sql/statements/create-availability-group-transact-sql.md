@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: a3d55df7-b4e4-43f3-a14b-056cba36ab98
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: af27cbc5aaa05412052940b020ce9268a1c74ea3
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+ms.openlocfilehash: fde4d33f9de2bd3103d1c48ad1a80fe211c8e1a3
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300418"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170347"
 ---
 # <a name="create-availability-group-transact-sql"></a>CREATE AVAILABILITY GROUP (Transact-SQL)
 
@@ -85,7 +85,7 @@ CREATE AVAILABILITY GROUP group_name
      | PRIMARY_ROLE ( {   
             [ ALLOW_CONNECTIONS = { READ_WRITE | ALL } ]   
         [,] [ READ_ONLY_ROUTING_LIST = { ( '<server_instance>' [ ,...n ] ) | NONE } ]  
-        [,] [ READ_WRITE_ROUTING_URL = { ( '<server_instance>' ) ] 
+        [,] [ READ_WRITE_ROUTING_URL = { ( '<server_instance>' ) ] 
      } )  
      | SESSION_TIMEOUT = integer  
   
@@ -180,13 +180,13 @@ AUTOMATED_BACKUP_PREFERENCE **=** { PRIMARY \| SECONDARY_ONLY \| SECONDARY \| NO
   Para obtener más información sobre este valor, vea [Opción de conmutación por error de detección del estado del nivel de la base de datos de un grupo de disponibilidad](../../database-engine/availability-groups/windows/sql-server-always-on-database-health-detection-failover-option.md). 
   
  DTC_SUPPORT  **=** { PER_DB | NONE }  
- Especifica si se admiten transacciones entre bases de datos en el Coordinador de transacciones distribuidas (DTC). Solo se admiten transacciones entre bases de datos a partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]. PER_DB crea el grupo de disponibilidad con compatibilidad con estas transacciones. Para obtener más información, vea [Transacciones entre bases de datos y transacciones distribuidas para la creación de reflejo de la base de datos o grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md).  
+ Especifica si se admiten transacciones entre bases de datos en el Coordinador de transacciones distribuidas (DTC). Solo se admiten transacciones entre bases de datos a partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]. PER_DB crea el grupo de disponibilidad con compatibilidad con estas transacciones. Para obtener más información, vea [Transacciones entre bases de datos y transacciones distribuidas para la creación de reflejo de la base de datos o grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md).  
   
  BASIC  
- Se usa para crear un grupo de disponibilidad básica. Los grupos de disponibilidad básica se limitan a una base de datos y dos réplicas: una réplica principal y una secundaria. Esta opción sustituye a la característica de creación de reflejo de la base de datos en desuso en SQL Server Standard Edition. Para obtener más información, vea [Grupos de disponibilidad básica &#40;grupos de disponibilidad AlwaysOn&#41;](../../database-engine/availability-groups/windows/basic-availability-groups-always-on-availability-groups.md). Los grupos de disponibilidad básica se admiten a partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)].  
+ Se usa para crear un grupo de disponibilidad básica. Los grupos de disponibilidad básica se limitan a una base de datos y dos réplicas: una réplica principal y una secundaria. Esta opción sustituye a la característica de creación de reflejo de la base de datos en desuso en SQL Server Standard Edition. Para obtener más información, vea [Grupos de disponibilidad básica &#40;grupos de disponibilidad AlwaysOn&#41;](../../database-engine/availability-groups/windows/basic-availability-groups-always-on-availability-groups.md). Los grupos de disponibilidad básica se admiten a partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)].  
 
  DISTRIBUTED  
- Se usa para crear un grupo de disponibilidad distribuido. Esta opción se usa con el parámetro AVAILABILITY GROUP ON para conectar dos grupos de disponibilidad de clústeres de conmutación por error de Windows Server independientes.  Para obtener más información, vea [Distributed Availability Groups &#40;Always On Availability Groups&#41; (Grupos de disponibilidad distribuida &#40;grupos de disponibilidad AlwaysOn&#41;)](../../database-engine/availability-groups/windows/distributed-availability-groups.md). Los grupos de disponibilidad distribuidos se admiten a partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]. 
+ Se usa para crear un grupo de disponibilidad distribuido. Esta opción se usa con el parámetro AVAILABILITY GROUP ON para conectar dos grupos de disponibilidad de clústeres de conmutación por error de Windows Server independientes.  Para obtener más información, vea [Distributed Availability Groups &#40;Always On Availability Groups&#41; (Grupos de disponibilidad distribuida &#40;grupos de disponibilidad AlwaysOn&#41;)](../../database-engine/availability-groups/windows/distributed-availability-groups.md). Los grupos de disponibilidad distribuidos se admiten a partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]. 
 
  REQUIRED_SYNCHRONIZED_SECONDARIES_TO_COMMIT   
  Introducido en SQL Server 2017. Se usa para establecer un número mínimo de réplicas secundarias sincrónicas que se deben confirmar antes de que la réplica principal confirme una transacción. Garantiza que las transacciones de SQL Server esperen hasta que se actualicen los registros de transacciones en el número mínimo de réplicas secundarias. El valor predeterminado es 0, que proporciona el mismo comportamiento que SQL Server 2016. El valor mínimo es 0. El valor máximo es el número de réplicas menos 1. Esta opción se relaciona con las réplicas en el modo de confirmación sincrónica. Cuando las réplicas están en modo de confirmación sincrónica, las escrituras en la réplica principal esperan hasta que las escrituras en las réplicas secundarias sincrónicas se confirman en el registro de transacciones de la base de datos de réplica. Si un servidor SQL Server que hospeda una réplica secundaria sincrónica deja de responder, el servidor SQL Server que hospeda la réplica principal marca esa réplica secundaria como NOT SYNCHRONIZED y continúa. Cuando la base de datos que no responde vuelve a estar en línea, se encuentra en un estado "no sincronizado" y la réplica se marca como incorrecta hasta que la réplica principal la convierte en sincrónica de nuevo. Esta configuración garantiza que la réplica principal espere hasta que el número mínimo de réplicas hayan confirmado cada transacción. Si el número mínimo de réplicas no está disponible, se produce un error en las confirmaciones de la réplica principal. Para el tipo de clúster `EXTERNAL`, se ha cambiado esta configuración cuando se agrega el grupo de disponibilidad a un recurso de clúster. Vea [Alta disponibilidad y protección de datos para las configuraciones de grupo de disponibilidad](../../linux/sql-server-linux-availability-group-ha.md).
@@ -214,7 +214,7 @@ AUTOMATED_BACKUP_PREFERENCE **=** { PRIMARY \| SECONDARY_ONLY \| SECONDARY \| NO
   
  \<server_instance> Especifica la dirección de la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] que es el host de una réplica. El formato de la dirección depende de si la instancia es la instancia predeterminada o una instancia con nombre y de si es una instancia independiente o una instancia de clúster de conmutación por error (FCI), tal como sigue:  
   
- { ' *nombre_sistema* [\\*nombre_instancia* ]' | ' *nombre_red_FCI* [\\*nombre_instancia* ]' }  
+ { '*nombre_sistema*[\\*nombre_instancia*]' | '*nombre_red_FCI*[\\*nombre_instancia*]' }  
   
  Los componentes de esta dirección son los siguientes:  
   
@@ -222,13 +222,13 @@ AUTOMATED_BACKUP_PREFERENCE **=** { PRIMARY \| SECONDARY_ONLY \| SECONDARY \| NO
  Es el nombre de NetBIOS del equipo en el que reside la instancia de destino de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Este equipo debe ser un nodo de WSFC.  
   
  *nombre_red_FCI*  
- Es el nombre de red que se utiliza para tener acceso a un clúster de conmutación por error de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Utilice este argumento si la instancia de servidor participa como asociado de conmutación por error de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. La ejecución de SELECT [@@SERVERNAME](../../t-sql/functions/servername-transact-sql.md) en una instancia de servidor de FCI devuelve la cadena ' *FCI_network_name* [\\*instance_name* ]' completa (que es el nombre completo de la réplica).  
+ Es el nombre de red que se utiliza para tener acceso a un clúster de conmutación por error de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Utilice este argumento si la instancia de servidor participa como asociado de conmutación por error de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. La ejecución de SELECT [@@SERVERNAME](../../t-sql/functions/servername-transact-sql.md) en una instancia de servidor de FCI devuelve la cadena '*FCI_network_name*[\\*instance_name*]' completa (que es el nombre completo de la réplica).  
   
  *instance_name*  
  Es el nombre de una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] hospedada por *system_name* o *FCI_network_name* que tiene el servicio HADR habilitado. En el caso de una instancia del servidor predeterminada, *nombre_instancia* es opcional. El nombre de la instancia no distingue mayúsculas de minúsculas. En una instancia con nombre, este nombre de valor es el mismo que el valor devuelto al ejecutar `select ServerProperty(N'InstanceName');`.  
   
  \  
- Es un separador que solo se usa cuando se especifica *instance_name* , para separarlo de *system_name* o *FCI_network_name* .  
+ Es un separador que solo se usa cuando se especifica *instance_name*, para separarlo de *system_name* o *FCI_network_name*.  
   
  Para obtener más información sobre los requisitos previos de los nodos de WSFC y las instancias de servidor, vea [Requisitos previos, restricciones y recomendaciones - Grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability.md).  
   
@@ -276,7 +276,7 @@ AUTOMATED_BACKUP_PREFERENCE **=** { PRIMARY \| SECONDARY_ONLY \| SECONDARY \| NO
 >  Las instancias de clúster de conmutación por error (FCI) de SQL Server no admiten la conmutación automática por error de grupos de disponibilidad, por lo tanto, todas las réplicas de disponibilidad hospedadas por un FCI solo se pueden configurar para la conmutación por error manual.  
   
  MANUAL  
- Permite que el administrador de la base de datos habilite la conmutación por error manual planeada o la conmutación por error manual forzada (denominada normalmente *conmutación por error forzada* ).  
+ Permite que el administrador de la base de datos habilite la conmutación por error manual planeada o la conmutación por error manual forzada (denominada normalmente *conmutación por error forzada*).  
   
  La cláusula FAILOVER_MODE es obligatoria. Los dos tipos de conmutación por error manual, la conmutación por error manual sin pérdida de datos y la conmutación por error forzada (con posible pérdida de datos), se admiten en diferentes condiciones. Para obtener más información, vea [Conmutación por error y modos de conmutación por error &#40;Grupos de disponibilidad AlwaysOn&#41;](../../database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups.md).  
   
@@ -287,7 +287,7 @@ AUTOMATED_BACKUP_PREFERENCE **=** { PRIMARY \| SECONDARY_ONLY \| SECONDARY \| NO
  Habilita la propagación directa. Este método propaga la réplica secundaria a través de la red. Este método no requiere la realización de una copia de seguridad ni la restauración de una copia de la base de datos principal en la réplica.  
   
 > [!NOTE]  
->  Para la propagación directa, debe permitir la creación de bases de datos en cada réplica secundaria mediante una llamada a **ALTER AVAILABILITY GROUP** con la opción **GRANT CREATE ANY DATABASE** .  
+>  Para la propagación directa, debe permitir la creación de bases de datos en cada réplica secundaria mediante una llamada a **ALTER AVAILABILITY GROUP** con la opción **GRANT CREATE ANY DATABASE**.  
   
  MANUAL  
  Especifica la propagación manual (valor predeterminado). Este método requiere la creación de una copia de seguridad de la base de datos en la réplica principal y su restauración manual en la réplica secundaria.  
@@ -313,7 +313,7 @@ AUTOMATED_BACKUP_PREFERENCE **=** { PRIMARY \| SECONDARY_ONLY \| SECONDARY \| NO
  No se permiten conexiones de usuario a las bases de datos secundarias de esta réplica. No están disponibles para acceso de lectura. Este es el comportamiento predeterminado.  
   
  READ_ONLY  
- Solo se permiten conexiones con las bases de datos de la réplica secundaria en las que la propiedad Application Intent está establecida en **ReadOnly** . Para obtener más información acerca de esta propiedad, vea [Using Connection String Keywords with SQL Server Native Client](../../relational-databases/native-client/applications/using-connection-string-keywords-with-sql-server-native-client.md).  
+ Solo se permiten conexiones con las bases de datos de la réplica secundaria en las que la propiedad Application Intent está establecida en **ReadOnly**. Para obtener más información acerca de esta propiedad, vea [Using Connection String Keywords with SQL Server Native Client](../../relational-databases/native-client/applications/using-connection-string-keywords-with-sql-server-native-client.md).  
   
  ALL  
  Se permiten todas las conexiones con las bases de datos de la réplica secundaria para acceso de solo lectura.  
@@ -323,7 +323,7 @@ AUTOMATED_BACKUP_PREFERENCE **=** { PRIMARY \| SECONDARY_ONLY \| SECONDARY \| NO
  READ_ONLY_ROUTING_URL **='** TCP **://** _system-address_ **:** _port_ **'**  
  Especifica la dirección URL que se va a usar para enrutar las solicitudes de conexión de intención de lectura de enrutamiento para esta réplica de disponibilidad. Es la dirección URL en la que escucha el motor de base de datos de SQL Server. Normalmente, la instancia predeterminada del motor de base de datos de SQL Server escucha en el puerto TCP 1433.  
   
- En una instancia con nombre, puede obtener el número de puerto si consulta a las columnas **port** y **type_desc** de la vista de administración dinámica [sys.dm_tcp_listener_states](../../relational-databases/system-dynamic-management-views/sys-dm-tcp-listener-states-transact-sql.md). La instancia de servidor usa el agente de escucha de Transact-SQL ( **type_desc='TSQL'** ).  
+ En una instancia con nombre, puede obtener el número de puerto si consulta a las columnas **port** y **type_desc** de la vista de administración dinámica [sys.dm_tcp_listener_states](../../relational-databases/system-dynamic-management-views/sys-dm-tcp-listener-states-transact-sql.md). La instancia de servidor usa el agente de escucha de Transact-SQL (**type_desc='TSQL'** ).  
   
  Para obtener más información sobre el cálculo de la dirección URL de enrutamiento de solo lectura para una réplica, vea [Calculating read_only_routing_url for Always On](/archive/blogs/mattn/calculating-read_only_routing_url-for-alwayson) (Calcular read_only_routing_url para AlwaysOn).  
   
@@ -344,7 +344,7 @@ AUTOMATED_BACKUP_PREFERENCE **=** { PRIMARY \| SECONDARY_ONLY \| SECONDARY \| NO
  ALL  
  Se permiten todas las conexiones con las bases de datos de la réplica principal. Este es el comportamiento predeterminado.  
   
- READ_ONLY_ROUTING_LIST **=** { **('** \<server_instance> **'** [ **,** ... *n* ] **)** | NONE } Especifica una lista separada por comas de instancias de servidor que hospedan réplicas de disponibilidad de este grupo de disponibilidad y que cumplen los requisitos siguientes al ejecutarse en el rol secundario:  
+ READ_ONLY_ROUTING_LIST **=** { **('** \<server_instance> **'** [ **,** ...*n* ] **)** | NONE } Especifica una lista separada por comas de instancias de servidor que hospedan réplicas de disponibilidad de este grupo de disponibilidad y que cumplen los requisitos siguientes al ejecutarse en el rol secundario:  
   
 -   Está configurado para permitir todas las conexiones o las conexiones de solo lectura (vea el argumento ALLOW_CONNECTIONS de la opción SECONDARY_ROLE de más arriba).  
   
@@ -356,7 +356,7 @@ AUTOMATED_BACKUP_PREFERENCE **=** { PRIMARY \| SECONDARY_ONLY \| SECONDARY \| NO
   
  Use una lista separada por comas para especificar todas las instancias del servidor que pueden hospedar una réplica secundaria inteligible. El enrutamiento de solo lectura sigue el orden en que se hayan especificado las instancias de servidor en la lista. Si incluye la instancia del servidor de host de una réplica en la lista de enrutamiento de solo lectura de la réplica, por lo general, resulta recomendable colocar esta instancia del servidor al final de la lista, ya que las conexiones de intención de lectura van a una réplica secundaria, si hay alguna disponible. .  
   
- A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], puede equilibrar la carga de las solicitudes de intención de lectura en las réplicas secundarias legibles. Para especificarlo, coloque las réplicas en un conjunto anidado de paréntesis dentro de la lista de enrutamiento de solo lectura. Para obtener más información y ejemplos, vea [Configuración del equilibrio de carga entre réplicas de solo lectura](../../database-engine/availability-groups/windows/configure-read-only-routing-for-an-availability-group-sql-server.md#loadbalancing).  
+ A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], puede equilibrar la carga de las solicitudes de intención de lectura en las réplicas secundarias legibles. Para especificarlo, coloque las réplicas en un conjunto anidado de paréntesis dentro de la lista de enrutamiento de solo lectura. Para obtener más información y ejemplos, vea [Configuración del equilibrio de carga entre réplicas de solo lectura](../../database-engine/availability-groups/windows/configure-read-only-routing-for-an-availability-group-sql-server.md#loadbalancing).  
   
  Ninguno  
  Especifica que cuando esta réplica de disponibilidad es la réplica principal, no se admite el enrutamiento de solo lectura. Este es el comportamiento predeterminado.  
@@ -379,7 +379,7 @@ Para obtener más información, consulte [Redireccionamiento de la conexión de 
  Para obtener más información sobre el período de tiempo de espera de sesión, vea [Información general de los grupos de disponibilidad AlwaysOn &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server.md).  
   
  AVAILABILITY GROUP ON  
- Especifica dos grupos de disponibilidad que constituyen un *grupo de disponibilidad distribuido* . Cada grupo de disponibilidad forma parte de su propio clúster de conmutación por error de Windows Server (WSFC). Cuando se crea un grupo de disponibilidad distribuido, el grupo de disponibilidad de la instancia actual de SQL Server se convierte en el grupo de disponibilidad principal. El segundo grupo de disponibilidad se convierte en el grupo de disponibilidad secundario.  
+ Especifica dos grupos de disponibilidad que constituyen un *grupo de disponibilidad distribuido*. Cada grupo de disponibilidad forma parte de su propio clúster de conmutación por error de Windows Server (WSFC). Cuando se crea un grupo de disponibilidad distribuido, el grupo de disponibilidad de la instancia actual de SQL Server se convierte en el grupo de disponibilidad principal. El segundo grupo de disponibilidad se convierte en el grupo de disponibilidad secundario.  
   
  Tiene que combinar el grupo de disponibilidad secundario con el grupo de disponibilidad distribuido. Para obtener más información, vea [ALTER AVAILABILITY GROUP &#40;Transact-SQL&#41;](../../t-sql/statements/alter-availability-group-transact-sql.md).  
   
@@ -414,7 +414,7 @@ Para obtener más información, consulte [Redireccionamiento de la conexión de 
  Especifica el modo de conmutación por error del grupo de disponibilidad distribuido.  
   
  MANUAL  
- Permite que el administrador de la base de datos habilite la conmutación por error manual planeada o la conmutación por error manual forzada (denominada normalmente *conmutación por error forzada* ).  
+ Permite que el administrador de la base de datos habilite la conmutación por error manual planeada o la conmutación por error manual forzada (denominada normalmente *conmutación por error forzada*).  
   
  La cláusula FAILOVER_MODE es obligatoria y la única opción es MANUAL. No se admite la conmutación por error automática al grupo de disponibilidad secundario.  
   
@@ -459,7 +459,7 @@ Para obtener más información, consulte [Redireccionamiento de la conexión de 
   
  `WITH DHCP ON ('10.120.19.0','255.255.254.0')`  
   
- WITH IP **(** { **('** _four\_part\_ipv4\_address_ **','** _four\_part\_ipv4\_mask_ **')**  |  **('** _ipv6\_address_ **')** } [ **,** ... *n* ] **)** [ **,** PORT **=** _listener\_port_ ]  
+ WITH IP **(** { **('** _four\_part\_ipv4\_address_ **','** _four\_part\_ipv4\_mask_ **')**  |  **('** _ipv6\_address_ **')** } [ **,** ...*n* ] **)** [ **,** PORT **=** _listener\_port_ ]  
  Especifica que, en lugar de usar DHCP, el agente de escucha del grupo de disponibilidad usa una o más direcciones IP estáticas. Para crear un grupo de disponibilidad a través de varias subredes, cada subred requiere una dirección IP estática en la configuración de la escucha. Para una subred determinada, la dirección IP estática puede ser una dirección IPv4 o una dirección IPv6. Póngase en contacto con el administrador de red para obtener una dirección IP estática para cada subred que hospeda una réplica del nuevo grupo de disponibilidad.  
   
  Por ejemplo:  
@@ -476,7 +476,7 @@ Para obtener más información, consulte [Redireccionamiento de la conexión de 
  Especifica una dirección IPv6 para el agente de escucha de un grupo de disponibilidad. Por ejemplo, `2001::4898:23:1002:20f:1fff:feff:b3a3`.  
   
  PORT **=** *listener_port*  
- Especifica el número de puerto ( *listener_port* ) que va a usar el agente de escucha del grupo de disponibilidad especificado por una cláusula WITH IP. PORT es opcional.  
+ Especifica el número de puerto (*listener_port*) que va a usar el agente de escucha del grupo de disponibilidad especificado por una cláusula WITH IP. PORT es opcional.  
   
  Se admite el número de puerto predeterminado, 1433. Sin embargo, si le preocupa la seguridad, le recomendamos que use otro número de puerto.  
   
@@ -507,7 +507,7 @@ Para obtener más información, consulte [Redireccionamiento de la conexión de 
   
 |Opción de réplica|Valor en `COMPUTER01`|Valor en `COMPUTER02`|Valor en `COMPUTER03`|Descripción|  
 |--------------------|-----------------------------|-----------------------------|-----------------------------|-----------------|  
-|ENDPOINT_URL|TCP:// *COMPUTER01:5022*|TCP:// *COMPUTER02:5022*|TCP:// *COMPUTER03:5022*|En este ejemplo, los sistemas están en el mismo dominio, por lo que las direcciones URL de extremo pueden usar el nombre del equipo como dirección del sistema.|  
+|ENDPOINT_URL|TCP://*COMPUTER01:5022*|TCP://*COMPUTER02:5022*|TCP://*COMPUTER03:5022*|En este ejemplo, los sistemas están en el mismo dominio, por lo que las direcciones URL de extremo pueden usar el nombre del equipo como dirección del sistema.|  
 |AVAILABILITY_MODE|SYNCHRONOUS_COMMIT|SYNCHRONOUS_COMMIT|ASYNCHRONOUS_COMMIT|Dos de las réplicas usan el modo de confirmación sincrónica. Cuando están sincronizadas, admiten la conmutación por error sin pérdida de datos. La tercera réplica, que usa el modo de disponibilidad de confirmación asincrónica.|  
 |FAILOVER_MODE|AUTOMATIC|AUTOMATIC|MANUAL|Las réplicas de confirmación sincrónica admiten la conmutación automática por error y la conmutación por error manual planeada. La réplica en modo de disponibilidad de confirmación sincrónica solo admite la conmutación por error manual forzada.|  
 |BACKUP_PRIORITY|30|30|90|Una prioridad más alta, 90, se asigna a la réplica de confirmación asincrónica que a las réplicas de confirmación sincrónica. Las copias de seguridad tienden a realizarse en la instancia de servidor que hospeda la réplica de confirmación asincrónica.|  

@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a9fc87cef0244afc4459c789f94855c0c0530ddd
-ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
+ms.openlocfilehash: 58f0348a84362b48520c9bd5cf46868cdaea60e0
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97697125"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171187"
 ---
 # <a name="columnstore-indexes---what39s-new"></a>Novedades de los índices de almacén de columnas
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -24,12 +24,12 @@ ms.locfileid: "97697125"
   Resumen de las características de almacén de columnas disponibles en cada versión de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] y en las últimas versiones de [!INCLUDE[ssSDS](../../includes/sssds-md.md)], [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] y [!INCLUDE[ssPDW](../../includes/sspdw-md.md)].  
 
  > [!NOTE]
- > Para [!INCLUDE[ssSDS](../../includes/sssds-md.md)], los índices de almacén de columnas están disponibles en los niveles Premium y Standard de [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] (S3 y versiones posteriores) y en todos los niveles de núcleo virtual. Para [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 y versiones posteriores, los índices de almacén de columnas están disponibles en todas las ediciones. Para [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] (antes de SP1) y versiones anteriores, los índices de almacén de columnas solo están disponibles en Enterprise Edition.
+ > Para [!INCLUDE[ssSDS](../../includes/sssds-md.md)], los índices de almacén de columnas están disponibles en los niveles Premium y Standard de [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] (S3 y versiones posteriores) y en todos los niveles de núcleo virtual. Para [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 y versiones posteriores, los índices de almacén de columnas están disponibles en todas las ediciones. Para [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] (antes de SP1) y versiones anteriores, los índices de almacén de columnas solo están disponibles en Enterprise Edition.
  
 ## <a name="feature-summary-for-product-releases"></a>Resumen de las características para cada versión del producto  
  En esta tabla se resumen las características fundamentales de los índices de almacén de columnas y los productos en los que están disponibles.  
 
-|Característica de índice de almacén de columnas|[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]|[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]|[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]|[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]|[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]|[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]|[!INCLUDE[ssSDW](../../includes/sssdw-md.md)]|  
+|Característica de índice de almacén de columnas|[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]|[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]|[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]|[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]|[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]|[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]|[!INCLUDE[ssSDW](../../includes/sssdw-md.md)]|  
 |-------------------------------|---------------------------|---------------------------|---------------------------|---------------------------|--------------------------------------------|-------------------------|---|  
 |Ejecución del modo por lotes de consultas multiproceso|sí|sí|sí|sí|sí|sí|sí| 
 |Ejecución del modo por lotes para las consultas de un solo subproceso|||sí|sí|sí|sí|sí|  
@@ -67,8 +67,8 @@ ms.locfileid: "97697125"
 ### <a name="functional"></a>Funcional
 - [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] admite columnas calculadas no persistentes en índices de almacén de columnas agrupados. No se admiten columnas persistentes en índices de almacén de columnas agrupados. No se puede crear un índice no agrupado en un índice de almacén columnas con una columna calculada. 
 
-## [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]  
- [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] incorpora mejoras esenciales destinadas a mejorar el rendimiento y la flexibilidad de los índices de almacén de columnas. Estas mejoras optimizan los escenarios de almacenamiento de datos y facilitan los análisis operativos en tiempo real.  
+## [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]  
+ [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] incorpora mejoras esenciales destinadas a mejorar el rendimiento y la flexibilidad de los índices de almacén de columnas. Estas mejoras optimizan los escenarios de almacenamiento de datos y facilitan los análisis operativos en tiempo real.  
   
 ### <a name="functional"></a>Funcional  
   

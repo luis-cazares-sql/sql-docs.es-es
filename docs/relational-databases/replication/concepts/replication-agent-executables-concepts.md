@@ -18,12 +18,12 @@ ms.assetid: cba476df-d4ea-44c9-bb86-81488971e328
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016
-ms.openlocfilehash: 41525854d161d029beae6e0956bc11e536ab813b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: bd6886f7ad5569d4eba40e9e603c9fccead17f71
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97460308"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171227"
 ---
 # <a name="replication-agent-executables-concepts"></a>Conceptos de los ejecutables del Agente de replicación
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -57,7 +57,7 @@ ms.locfileid: "97460308"
 >  Los saltos de línea de estos ejemplos se agregaron para mejorar la legibilidad. En un archivo por lotes, los comandos se deben realizar en una única línea.  
   
 ### <a name="running-the-snapshot-agent"></a>Ejecutar el Agente de instantáneas  
- Este archivo por lotes de ejemplo invoca al Agente de instantáneas desde el símbolo del sistema para generar una instantánea para la publicación **AdvWorksSalesOrdersMerge**. (Los siguientes scripts usan la ruta de acceso a archivos de [!INCLUDE[ssSQL15_md](../../../includes/sssql15-md.md)] [versión 130]). Debería ajustar los scripts para que seleccionen los archivos de la versión de [!INCLUDE[ssNoVersion_md](../../../includes/ssnoversion-md.md)] correspondiente).  
+ Este archivo por lotes de ejemplo invoca al Agente de instantáneas desde el símbolo del sistema para generar una instantánea para la publicación **AdvWorksSalesOrdersMerge**. (Los siguientes scripts usan la ruta de acceso a archivos de [!INCLUDE[ssSQL15_md](../../../includes/sssql16-md.md)] [versión 130]). Debería ajustar los scripts para que seleccionen los archivos de la versión de [!INCLUDE[ssNoVersion_md](../../../includes/ssnoversion-md.md)] correspondiente).  
   
 ```  
 REM -- Declare variables  

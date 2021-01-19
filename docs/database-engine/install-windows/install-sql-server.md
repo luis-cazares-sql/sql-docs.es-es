@@ -15,12 +15,12 @@ ms.assetid: 0300e777-d56b-4d10-9c33-c9ebd2489ee5
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 52ad20f534dc865014a760ee0408ccb77181c688
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 1930f2e9d41bb212b01a9417fb7d6c861fda228f
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97463646"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172047"
 ---
 # <a name="sql-server-installation-guide"></a>Guía de instalación de SQL Server
 
@@ -34,14 +34,14 @@ Para otros escenarios de implementación, consulte:
 - [Contenedores de Docker](../../linux/sql-server-linux-docker-container-deployment.md)
 - [Kubernetes: clústeres de macrodatos](../../big-data-cluster/deploy-get-started.md)
 
-A partir de [!INCLUDE[sssql15](../../includes/sssql15-md.md)], [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] solo está disponible como una aplicación de 64 bits. Aquí encontrará información importante acerca de cómo obtener SQL Server y cómo instalarlo.
+A partir de [!INCLUDE[sssql15](../../includes/sssql16-md.md)], [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] solo está disponible como una aplicación de 64 bits. Aquí encontrará información importante acerca de cómo obtener SQL Server y cómo instalarlo.
 
 ## <a name="getting-started"></a>Introducción
   
 * **Ediciones y características**: Revise las características admitidas en las distintas ediciones y versiones de SQL Server para determinar cuáles son las que mejor se adaptan a sus necesidades empresariales. 
     - [[!INCLUDE[ss2019](../../includes/sssqlv15-md.md)]](~/sql-server/editions-and-components-of-sql-server-version-15.md).  
     - [[!INCLUDE[ss2017](../../includes/sssqlv14-md.md)]](~/sql-server/editions-and-components-of-sql-server-2017.md).  
-    - [[!INCLUDE[ss2016](../../includes/sssql15-md.md)]](~/sql-server/editions-and-components-of-sql-server-2016.md).  
+    - [[!INCLUDE[ss2016](../../includes/sssql16-md.md)]](~/sql-server/editions-and-components-of-sql-server-2016.md).  
     - [[!INCLUDE[ss2014](../../includes/sssql14-md.md)]](https://docs.microsoft.com/previous-versions/sql/2014/getting-started/features-supported-by-the-editions-of-sql-server-2014)
 
 *  **Requisitos**: revise los requisitos de instalación de hardware y software para [SQL Server 2016 y 2017](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md), [SQL Server 2019](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md) o [SQL Server en Linux](../../linux/sql-server-linux-setup.md), además de las comprobaciones de la configuración del sistema y las consideraciones de seguridad en [Planeación de una instalación de SQL Server](../../sql-server/install/planning-a-sql-server-installation.md) 

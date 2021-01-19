@@ -26,12 +26,12 @@ ms.assetid: 344fc6ce-a008-47c8-a02e-47fae66cc590
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ff06180d1abb67239407d91c564558e4d45c2550
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 21314c02ddb58aabcee33257fc4d8d44f56b9da7
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97644425"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170577"
 ---
 # <a name="alter-user-transact-sql"></a>ALTER USER (Transact-SQL)
 
@@ -114,7 +114,7 @@ NAME = newUserName
 > [!NOTE]
 > Esta opción solo se puede especificar en una base de datos independiente y solo para los usuarios independientes.
 
- ALLOW_ENCRYPTED_VALUE_MODIFICATIONS = [ ON | **OFF** ]  **Se aplica a**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y posterior, [!INCLUDE[ssSDS](../../includes/sssds-md.md)].
+ ALLOW_ENCRYPTED_VALUE_MODIFICATIONS = [ ON | **OFF** ]  **Se aplica a**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y posterior, [!INCLUDE[ssSDS](../../includes/sssds-md.md)].
 
  Suprime las comprobaciones de metadatos criptográficos en el servidor en operaciones de copia masiva. De esta manera, el usuario puede copiar los datos de forma masiva entre tablas o bases de datos, sin descifrar los datos. El valor predeterminado es OFF.
 
@@ -302,7 +302,7 @@ ALTER USER userName
 > [!NOTE]
 > Esta opción solo está disponible para los usuarios contenidos.
 
- ALLOW_ENCRYPTED_VALUE_MODIFICATIONS = [ ON | **OFF** ]  **Se aplica a**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y posterior, [!INCLUDE[ssSDS](../../includes/sssds-md.md)].
+ ALLOW_ENCRYPTED_VALUE_MODIFICATIONS = [ ON | **OFF** ]  **Se aplica a**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y posterior, [!INCLUDE[ssSDS](../../includes/sssds-md.md)].
 
  Suprime las comprobaciones de metadatos criptográficos en el servidor en operaciones de copia masiva. De esta manera, el usuario puede copiar los datos de forma masiva entre tablas o bases de datos, sin descifrar los datos. El valor predeterminado es OFF.
 

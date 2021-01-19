@@ -12,17 +12,17 @@ ms.assetid: b0a248a4-4488-4cc8-89fc-46906a8c24a1
 author: MightyPen
 ms.author: genemi
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2e16ef746dd970926e61098eb66e8f8ddf6a98b1
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: ddc8c6bf630994b66ecd2977edc44bec888a0e8e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97438758"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172677"
 ---
 # <a name="table-and-row-size-in-memory-optimized-tables"></a>Tamaño de tabla y fila de las tablas con optimización para memoria
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-Antes de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], el tamaño de los datos de una fila de una tabla optimizada para memoria no podía superar los [8.060 bytes](?viewFallbackFrom=sql-server-2014). Pero a partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y en Azure SQL Database es posible crear una tabla optimizada para memoria con varias columnas de gran tamaño (por ejemplo, varias columnas varbinary(8000)) y columnas LOB (es decir, varbinary(max), varchar(max) y nvarchar(max)) y realizar operaciones en ellas con módulos T-SQL compilados de forma nativa y tipos de tabla. 
+Antes de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], el tamaño de los datos de una fila de una tabla optimizada para memoria no podía superar los [8.060 bytes](?viewFallbackFrom=sql-server-2014). Pero a partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y en Azure SQL Database es posible crear una tabla optimizada para memoria con varias columnas de gran tamaño (por ejemplo, varias columnas varbinary(8000)) y columnas LOB (es decir, varbinary(max), varchar(max) y nvarchar(max)) y realizar operaciones en ellas con módulos T-SQL compilados de forma nativa y tipos de tabla. 
   
 Las columnas que no quepan en el límite de tamaño de fila de 8060 bytes se colocan de forma no consecutiva, en una tabla interna aparte. Cada columna no consecutiva tiene una tabla interna correspondiente que, a su vez, tiene un único índice no agrupado. Para obtener detalles sobre estas tablas internas usadas para columnas no consecutivas, vea [sys.memory_optimized_tables_internal_attributes &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-memory-optimized-tables-internal-attributes-transact-sql.md). 
  

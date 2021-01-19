@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 9f7ed895-ad65-43e3-ba08-00d7bff1456d
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 79e04e64a4fc89bb3e745d67b1cdbe929850b6ec
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: f2295f8694a9573b0e9c541ea817e9e03e70f83e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97643003"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171087"
 ---
 # <a name="transactions---availability-groups-and-database-mirroring"></a>Transacciones - Grupos de disponibilidad y creación de reflejo de la base de datos
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -34,9 +34,9 @@ En este artículo se describe la compatibilidad de las transacciones entre bases
 SQL Server 2017 admite las transacciones distribuidas de bases de datos en los grupos de disponibilidad. Esto engloba tanto las bases de datos que hay en la misma instancia de SQL Server como las bases de datos en distintas instancias de SQL Server. Las transacciones distribuidas no son posibles con bases de datos configuradas para la creación de reflejo de base de datos.
 
 > [!NOTE]
-> [!INCLUDE[SQL Server 2016](../../../includes/sssql15-md.md)] Service Pack 2 y versiones posteriores proporcionan compatibilidad total con las transacciones distribuidas en los grupos de disponibilidad. 
+> [!INCLUDE[SQL Server 2016](../../../includes/sssql16-md.md)] Service Pack 2 y versiones posteriores proporcionan compatibilidad total con las transacciones distribuidas en los grupos de disponibilidad. 
 > 
-> En las versiones de [!INCLUDE[SQL Server 2016](../../../includes/sssql15-md.md)] anteriores al Service Pack 2, las transacciones distribuidas entre bases de datos (es decir, las transacciones que usan bases de datos en la misma instancia de SQL Server) que implican una base de datos en un grupo de disponibilidad no son compatibles.
+> En las versiones de [!INCLUDE[SQL Server 2016](../../../includes/sssql16-md.md)] anteriores al Service Pack 2, las transacciones distribuidas entre bases de datos (es decir, las transacciones que usan bases de datos en la misma instancia de SQL Server) que implican una base de datos en un grupo de disponibilidad no son compatibles.
 
 Para configurar un grupo de disponibilidad para transacciones distribuidas, vea [Configurar un grupo de disponibilidad para las transacciones distribuidas](configure-availability-group-for-distributed-transactions.md).
 

@@ -11,12 +11,12 @@ ms.assetid: 92a44d4d-0e53-4fb0-b890-de264c65c95a
 author: MightyPen
 ms.author: genemi
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 63e19c205bf635257d8b5b4957fe64b6ec310c64
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c88fd07e9af86a3c12561935364514b23bc2ea91
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465466"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172287"
 ---
 # <a name="accessing-memory-optimized-tables-using-interpreted-transact-sql"></a>Acceso a tablas con optimización para memoria mediante Transact-SQL interpretado
 [!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "97465466"
   
 [!INCLUDE[tsql](../../includes/tsql-md.md)] interpretado hace referencia a procedimientos almacenados o lotes de [!INCLUDE[tsql](../../includes/tsql-md.md)] distintos de un procedimiento almacenado compilado de forma nativa. El acceso de [!INCLUDE[tsql](../../includes/tsql-md.md)] interpretado a las tablas optimizadas para memoria se conoce como acceso de interoperabilidad.  
 
-A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], las consultas en [!INCLUDE[tsql](../../includes/tsql-md.md)] interpretado puede examinar tablas optimizadas para memoria en paralelo, en lugar de solamente en modo de serie.
+A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], las consultas en [!INCLUDE[tsql](../../includes/tsql-md.md)] interpretado puede examinar tablas optimizadas para memoria en paralelo, en lugar de solamente en modo de serie.
 
 También se puede tener acceso a las tablas con optimización para memoria mediante un procedimiento almacenado compilado de forma nativa. Los procedimientos almacenados compilados de forma nativa se recomiendan para las operaciones OLTP donde el rendimiento es un factor crítico.  
   

@@ -12,12 +12,12 @@ f1_keywords:
 ms.assetid: 50dd0a0b-a407-4aeb-bc8b-b02a793aa30a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 0fd814ec47548406eef0b8436751a034c97f4717
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: f3b5176bb0b9ac123090f032e0908d57155ff592
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96505306"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172187"
 ---
 # <a name="database-engine-tuning-advisor"></a>Database Engine Tuning Advisor
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -73,7 +73,7 @@ El Asistente para la optimización de motor de base de datos está diseñado par
  Versión del símbolo del sistema del Asistente para la optimización de motor de base de datos. La utilidad **dta** está diseñada para permitir usar la funcionalidad del Asistente para la optimización de motor de base de datos en aplicaciones y scripts.  
   
  **carga de trabajo**  
- Archivo de script Transact-SQL, archivo de seguimiento o tabla de seguimiento que contenga una carga de trabajo representativa para las bases de datos que desea optimizar. A partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)], puede especificar la memoria caché del plan como carga de trabajo.  A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], puede [especificar el Almacén de datos de consultas como carga de trabajo](../../relational-databases/performance/tuning-database-using-workload-from-query-store.md). 
+ Archivo de script Transact-SQL, archivo de seguimiento o tabla de seguimiento que contenga una carga de trabajo representativa para las bases de datos que desea optimizar. A partir de [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)], puede especificar la memoria caché del plan como carga de trabajo.  A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], puede [especificar el Almacén de datos de consultas como carga de trabajo](../../relational-databases/performance/tuning-database-using-workload-from-query-store.md). 
   
  **Archivo de entrada XML**  
  Un archivo con formato XML que el Asistente para la optimización de motor de base de datos puede usar para optimizar las cargas de trabajo. El archivo de entrada XML admite las opciones avanzadas de optimización que no están disponibles en la GUI ni en la utilidad **dta** .  

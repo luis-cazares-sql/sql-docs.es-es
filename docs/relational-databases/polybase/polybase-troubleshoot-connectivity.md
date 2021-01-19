@@ -11,12 +11,12 @@ ms.date: 10/02/2019
 ms.prod: sql
 ms.prod_service: polybase, sql-data-warehouse, pdw
 monikerRange: '>= sql-server-2016'
-ms.openlocfilehash: edf0b261b6046d63e037e601ab9e92dd13d8728e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 24a228fb504f53c1afe88b0955500e811f1073b6
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464786"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171497"
 ---
 # <a name="troubleshoot-polybase-kerberos-connectivity"></a>Solución de problemas de conectividad de Kerberos con PolyBase
 
@@ -33,7 +33,7 @@ Este artículo sirve como guía para describir el proceso de depuración de ese 
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-1. [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] RTM CU6 / [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU3 / [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] o superior con PolyBase instalado
+1. [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] RTM CU6 / [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU3 / [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] o superior con PolyBase instalado
 1. Un clúster de Hadoop (Cloudera o Hortonworks) protegido con Kerberos (Active Directory o MIT)
 
 ## <a name="introduction"></a>Introducción
@@ -71,7 +71,7 @@ Estos archivos se encuentran en:
 
 `\[System Drive\]:{install path}\{MSSQL##.INSTANCENAME}\MSSQL\Binn\PolyBase\Hadoop\conf`
 
-Por ejemplo, el valor predeterminado para [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] es `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Binn\PolyBase\Hadoop\conf`.
+Por ejemplo, el valor predeterminado para [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] es `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Binn\PolyBase\Hadoop\conf`.
 
 Actualice **core-site.xml** y agregue las tres propiedades siguientes. Establezca los valores según el entorno:
 

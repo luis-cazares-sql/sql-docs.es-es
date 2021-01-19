@@ -37,12 +37,12 @@ helpviewer_keywords:
 ms.assetid: 8bf1316f-c0ef-49d0-90a7-3946bc8e7a89
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 830b03042589ac1e9f03e94b134a48d510a37c31
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.openlocfilehash: 2043bf4c60a1154b719d81b583d055b60b85c6ec
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92035841"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172337"
 ---
 # <a name="hints-transact-sql---table"></a>Sugerencias (Tabla de Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -398,7 +398,7 @@ GO
 El optimizador de consultas no considerará una sugerencia de índice si las opciones SET no tienen los valores necesarios para los índices filtrados. Para obtener más información, vea [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md).  
   
 ## <a name="using-noexpand"></a>Usar NOEXPAND  
-NOEXPAND solo se aplica a las *vistas indizadas*. Una vista indizada es una vista con un único índice clúster creado en ella. Si una consulta tiene referencias a columnas que están presentes en una vista indizada y en tablas base, y el optimizador de consultas determina que el uso de vistas indizadas proporciona el mejor método para ejecutar la consulta, el optimizador de consultas utiliza el índice en la vista. Esta funcionalidad se denomina *coincidencia de vista indizada*. Antes de [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] SP1, el uso automático de una vista indizada por parte del optimizador de consultas solo se admite en determinadas ediciones de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Para obtener una lista de las características admitidas por las ediciones de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], consulte [Características compatibles con las ediciones de SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md), [Características compatibles con las ediciones de SQL Server 2017](../../SQL-server/editions-and-components-of-SQL-server-2017.md) y [Características compatibles con las ediciones de SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md).  
+NOEXPAND solo se aplica a las *vistas indizadas*. Una vista indizada es una vista con un único índice clúster creado en ella. Si una consulta tiene referencias a columnas que están presentes en una vista indizada y en tablas base, y el optimizador de consultas determina que el uso de vistas indizadas proporciona el mejor método para ejecutar la consulta, el optimizador de consultas utiliza el índice en la vista. Esta funcionalidad se denomina *coincidencia de vista indizada*. Antes de [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] SP1, el uso automático de una vista indizada por parte del optimizador de consultas solo se admite en determinadas ediciones de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Para obtener una lista de las características admitidas por las ediciones de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], consulte [Características compatibles con las ediciones de SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md), [Características compatibles con las ediciones de SQL Server 2017](../../SQL-server/editions-and-components-of-SQL-server-2017.md) y [Características compatibles con las ediciones de SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md).  
   
 Sin embargo, para que el optimizador de consultas considere las vistas indizadas para establecer coincidencias o utilice una vista indizada a la que se hace referencia con una sugerencia NOEXPAND, las siguientes opciones SET deben estar establecidas en ON.  
 

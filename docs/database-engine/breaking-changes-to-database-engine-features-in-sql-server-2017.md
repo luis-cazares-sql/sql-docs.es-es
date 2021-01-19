@@ -15,12 +15,12 @@ ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=sql-server-2017||>=sql-server-linux-2017'
-ms.openlocfilehash: affc62db57e4ae08e1886af0fef4ab537bcda86b
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: ddb25e9fe9e4463d47b595c77cd6e24c7e0d0976
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97665895"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171037"
 ---
 # <a name="breaking-changes-to-database-engine-features-in-sssqlv14-md"></a>Cambios sustanciales en las características del motor de base de datos de [!INCLUDE[sssqlv14-md](../includes/sssqlv14-md.md)]
 [!INCLUDE[SQL Server 2017](../includes/applies-to-version/sqlserver2017.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "97665895"
 -  CLR usa la seguridad de acceso del código (CAS) de .NET Framework, que ya no se admite como un límite de seguridad. A partir de [!INCLUDE[sssqlv14-md](../includes/sssqlv14-md.md)][!INCLUDE[ssDE](../includes/ssde-md.md)], se incluye una opción de `sp_configure` denominada `clr strict security` para mejorar la seguridad de los ensamblados CLR. La opción clr strict security está habilitada de forma predeterminada y trata los ensamblados CLR `SAFE` y `EXTERNAL_ACCESS` como si estuvieran marcados con `UNSAFE`. La opción `clr strict security` se puede deshabilitar para permitir la compatibilidad con versiones anteriores, pero no se recomienda hacerlo. Cuando la opción `clr strict security` está deshabilitada, un ensamblado CLR creado con `PERMISSION_SET = SAFE` puede tener acceso a los recursos externos del sistema, llamar a código no administrado y adquirir privilegios **sysadmin**. Después de habilitar la seguridad estricta, los ensamblados que no estén firmados no podrán cargarse. Además, si una base de datos tiene ensamblados `SAFE` o `EXTERNAL_ACCESS`, las instrucciones `RESTORE` o `ATTACH DATABASE` se completarán, pero los ensamblados no se cargarán.   
   Para cargarlos, debe modificar (o eliminar y volver a crear) cada ensamblado para que se firme con un certificado o clave asimétrica que tenga el inicio de sesión correspondiente con el permiso `UNSAFE ASSEMBLY` en el servidor. Para obtener más información, vea [CLR strict security](../database-engine/configure-windows/clr-strict-security.md). 
   
--  Los algoritmos MD2, MD4, MD5, SHA y SHA1 están en desuso en [!INCLUDE[ssSQL15](../includes/sssql15-md.md)]. Hasta [!INCLUDE[ssSQL15](../includes/sssql15-md.md)], un certificado autofirmado se creaba mediante SHA1. A partir de [!INCLUDE[ssSQL17](../includes/sssql17-md.md)], un certificado autofirmado se crea mediante SHA2_256.
+-  Los algoritmos MD2, MD4, MD5, SHA y SHA1 están en desuso en [!INCLUDE[ssSQL15](../includes/sssql16-md.md)]. Hasta [!INCLUDE[ssSQL15](../includes/sssql16-md.md)], un certificado autofirmado se creaba mediante SHA1. A partir de [!INCLUDE[ssSQL17](../includes/sssql17-md.md)], un certificado autofirmado se crea mediante SHA2_256.
 
 ## <a name="previous-versions"></a><a name="previous-versions"></a> Versiones anteriores  
 

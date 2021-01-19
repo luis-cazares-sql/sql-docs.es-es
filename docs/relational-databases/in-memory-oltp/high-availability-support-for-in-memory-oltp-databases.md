@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 2113a916-3b1e-496c-8650-7f495e492510
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 92a09ac4702cae987c4fa5f4ccd420819c29073a
-ms.sourcegitcommit: d56a834269132a83e5fe0a05b033936776cda8bb
+ms.openlocfilehash: 9b275387efa5cc44b012cccef82fb3284e594abb
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91529436"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170547"
 ---
 # <a name="high-availability-support-for-in-memory-oltp-databases"></a>Compatibilidad con alta disponibilidad para bases de datos OLTP en memoria
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "91529436"
     Las réplicas secundarias mantienen el estado en memoria de las tablas duraderas optimizadas para memoria. En caso de conmutación por error automática o forzada, el tiempo de conmutación por error a la nueva principal es comparable a las tablas de bases de disco ya que no es necesaria la recuperación. En esta configuración, se admiten tablas con optimización para memoria creadas como SCHEMA_ONLY. Sin embargo, no se registran los cambios en estas tablas y, por tanto, no existirá ningún dato en estas tablas en la réplica secundaria.  
   
 -   **Secundario legible**   
-    Puede obtener acceso a las tablas optimizadas para memoria en la réplica secundaria y consultarlas si se ha configurado para acceso de lectura. En [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], la marca de tiempo de lectura en la réplica secundaria está en estrecha sincronía con la marca de tiempo de lectura en la réplica principal, lo que significa que los cambios en la principal se ven muy rápidamente en la secundaria. Este comportamiento de sincronización tan estrecho es diferente de OLTP en memoria de [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)].  
+    Puede obtener acceso a las tablas optimizadas para memoria en la réplica secundaria y consultarlas si se ha configurado para acceso de lectura. En [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], la marca de tiempo de lectura en la réplica secundaria está en estrecha sincronía con la marca de tiempo de lectura en la réplica principal, lo que significa que los cambios en la principal se ven muy rápidamente en la secundaria. Este comportamiento de sincronización tan estrecho es diferente de OLTP en memoria de [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)].  
 
 ### <a name="considerations"></a>Consideraciones
 

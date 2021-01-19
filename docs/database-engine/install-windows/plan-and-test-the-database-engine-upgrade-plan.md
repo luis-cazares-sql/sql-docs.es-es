@@ -11,12 +11,12 @@ ms.assetid: 19c5b725-7400-4881-af8f-fd232ca28234
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 73c70e347de00a18f4c4ec5ce3228d6d000d16f0
-ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
+ms.openlocfilehash: 45b0ba2a207be68b0faaea0af0ba7592ae1f0f94
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97975501"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172277"
 ---
 # <a name="plan-and-test-the-database-engine-upgrade-plan"></a>Planear y probar el plan de actualización del Motor de base de datos
 
@@ -39,7 +39,7 @@ ms.locfileid: "97975501"
   
 -   **Entorno actual:** investigue su entorno actual para descubrir los componentes de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] que se utilizan y los clientes que se conectan a él.  
   
-    -   **Proveedores de cliente:** aunque la actualización no requiere actualizar el proveedor de cada uno de los clientes, puede optar por hacerlo. Si va a actualizar desde [!INCLUDE[sql14](../../includes/sssql14-md.md)] o desde una versión anterior, las siguientes características de [!INCLUDE[sql15](../../includes/sssql15-md.md)] requieren un proveedor actualizado para cada cliente, o bien una actualización del proveedor para ofrecer una funcionalidad adicional:  
+    -   **Proveedores de cliente:** aunque la actualización no requiere actualizar el proveedor de cada uno de los clientes, puede optar por hacerlo. Si va a actualizar desde [!INCLUDE[sql14](../../includes/sssql14-md.md)] o desde una versión anterior, las siguientes características de [!INCLUDE[sql15](../../includes/sssql16-md.md)] requieren un proveedor actualizado para cada cliente, o bien una actualización del proveedor para ofrecer una funcionalidad adicional:  
   
        -   [Always Encrypted &#40;motor de base de datos&#41;](../../relational-databases/security/encryption/always-encrypted-database-engine.md)  
   

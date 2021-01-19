@@ -11,12 +11,12 @@ ms.assetid: a62f4ff9-2953-42ca-b7d8-1f8f527c4d66
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 568b3f60205e94bd0b81ff5e80e8b3db372a4691
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 33fb069efc355ebaa8892a743b926f927d8a435e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480916"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171287"
 ---
 # <a name="dynamic-data-masking"></a>Enmascaramiento dinámico de datos
 [!INCLUDE [SQL Server 2016 ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -34,7 +34,7 @@ El enmascaramiento dinámico de datos evita el acceso no autorizado a informaci�
 
 La finalidad del enmascaramiento dinámico de datos consiste en limitar la exposición de la información confidencial, con lo que se impide que los usuarios vean datos a los que no deberían poder acceder. El enmascaramiento dinámico de datos no pretende evitar que los usuarios de la base de datos se conecten directamente a ella y ejecuten consultas exhaustivas que expongan información confidencial. El enmascaramiento dinámico de datos se complementa con otras características de seguridad de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (auditoría, cifrado, seguridad de nivel de fila...), y resulta muy recomendable usarlo con esas características para proteger mejor la información confidencial en la base de datos.  
   
-El enmascaramiento dinámico de datos está disponible en [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y en [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)], y se configura con comandos [!INCLUDE[tsql](../../includes/tsql-md.md)] . Para obtener más información sobre cómo configurar el enmascaramiento dinámico de datos con el Portal de Azure, vea [Introducción al enmascaramiento dinámico de datos de SQL Database (Portal de Azure)](/azure/azure-sql/database/dynamic-data-masking-overview).  
+El enmascaramiento dinámico de datos está disponible en [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y en [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)], y se configura con comandos [!INCLUDE[tsql](../../includes/tsql-md.md)] . Para obtener más información sobre cómo configurar el enmascaramiento dinámico de datos con el Portal de Azure, vea [Introducción al enmascaramiento dinámico de datos de SQL Database (Portal de Azure)](/azure/azure-sql/database/dynamic-data-masking-overview).  
   
 ## <a name="defining-a-dynamic-data-mask"></a>Definición de una máscara dinámica de datos
  Es posible definir una regla de enmascaramiento en una columna de una tabla, con el objetivo de ofuscar los datos de esa columna. Existen cuatro tipos de máscaras.  

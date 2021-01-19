@@ -33,12 +33,12 @@ ms.assetid: 1054c76e-0fd5-4131-8c07-a6c5d024af50
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6cccb11c84b9b5354d418dae19557f7f76e027cf
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 206aefdd3cd58b94124a0840cef7e788c5a29390
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095735"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171277"
 ---
 # <a name="insert-transact-sql"></a>INSERT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -319,7 +319,7 @@ Las filas que se insertan en un montón como el resultado de una acción de inse
   
 A diferencia de la instrucción `BULK INSERT`, que contiene un bloqueo de actualización masiva (BU) menos restrictivo, `INSERT INTO … SELECT` con la sugerencia `TABLOCK` retiene un bloqueo exclusivo (X) en la tabla. Esto significa que no se pueden insertar filas mediante varias operaciones de inserción que se ejecutan simultáneamente. 
 
-Sin embargo, a partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y del nivel de compatibilidad de la base de datos 130, una única instrucción `INSERT INTO … SELECT` se puede ejecutar en paralelo al realizar la inserción en montones o en índices de almacén de columnas (CCI) agrupados. Las inserciones paralelas son posibles cuando se usa la sugerencia `TABLOCK`.  
+Sin embargo, a partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y del nivel de compatibilidad de la base de datos 130, una única instrucción `INSERT INTO … SELECT` se puede ejecutar en paralelo al realizar la inserción en montones o en índices de almacén de columnas (CCI) agrupados. Las inserciones paralelas son posibles cuando se usa la sugerencia `TABLOCK`.  
 
 El paralelismo de la instrucción anterior tiene los siguientes requisitos, que son similares a los requisitos para el registro mínimo:  
 -   La tabla de destino es un montón vacío o no vacío.  

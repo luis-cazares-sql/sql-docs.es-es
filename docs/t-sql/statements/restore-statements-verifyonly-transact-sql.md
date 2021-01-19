@@ -24,12 +24,12 @@ ms.assetid: cba3b6a0-b48e-4c94-812b-5b3cbb408bd6
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: 00926a8ee1244112d1fb5a01273e90d22a5753a7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: eeae562c4cfbf093d3b7237a044c51084331e8a9
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97463972"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172247"
 ---
 # <a name="restore-statements---verifyonly-transact-sql"></a>Instrucciones RESTORE: VERIFYONLY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md )]
@@ -110,7 +110,7 @@ FROM <backup_device> [ ,...n ]
 >  RESTORE VERIFYONLY no funciona en una instantánea de base de datos. Para comprobar una instantánea de base de datos antes de realizar una operación de reversión, puede ejecutar DBCC CHECKDB.  
   
 > [!NOTE]  
->  Con las copias de seguridad de instantánea, RESTORE VERIFYONLY confirma la existencia de las instantáneas en las ubicaciones especificadas en el archivo de copia de seguridad. Las copias de seguridad de instantánea son una característica nueva de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]. Para obtener más información sobre las copias de seguridad de instantánea, vea [Copias de seguridad de instantánea de archivos para archivos de base de datos de Azure](../../relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure.md).  
+>  Con las copias de seguridad de instantánea, RESTORE VERIFYONLY confirma la existencia de las instantáneas en las ubicaciones especificadas en el archivo de copia de seguridad. Las copias de seguridad de instantánea son una característica nueva de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]. Para obtener más información sobre las copias de seguridad de instantánea, vea [Copias de seguridad de instantánea de archivos para archivos de base de datos de Azure](../../relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure.md).  
   
 ## <a name="security"></a>Seguridad  
  La operación de copia de seguridad puede especificar opcionalmente contraseñas para un conjunto de medios, para un conjunto de copia de seguridad o para ambos. Si se ha definido una contraseña en un conjunto de medios o un conjunto de copia de seguridad, debe especificar la contraseña o contraseñas correctas en la instrucción RESTORE. Estas contraseñas impiden operaciones de restauración y anexiones no autorizadas de los conjuntos de copia de seguridad en medios que utilizan herramientas de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. No obstante, la contraseña no impide que se sobrescriba el medio con la opción FORMAT de la instrucción BACKUP.  

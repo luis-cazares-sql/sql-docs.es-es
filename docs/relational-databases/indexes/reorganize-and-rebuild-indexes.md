@@ -31,12 +31,12 @@ ms.assetid: a28c684a-c4e9-4b24-a7ae-e248808b31e9
 author: pmasl
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: eca1dbef6ff7d519200e46cff7879d7cb0a9b128
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 991a30108d0683d89d8bece48eb0d2de1c1e0d37
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478256"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171887"
 ---
 # <a name="resolve-index-fragmentation-by-reorganizing-or-rebuilding-indexes"></a>Solución de la fragmentación de índices mediante la reorganización o recompilación de índices
 
@@ -110,7 +110,7 @@ Una vez que se conoce el grado de la fragmentación del índice, use la tabla si
 |Valor de la **fragmentación calculada en porcentaje**|Se aplica a la versión|Instrucción correctiva|
 |-----------------------------------------------|--------------------------|--------------------------|
 |> = 20 %|[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] y [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]|ALTER INDEX REBUILD|
-|> = 20 %|A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]|ALTER INDEX REORGANIZE|
+|> = 20 %|A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]|ALTER INDEX REORGANIZE|
 
 ### <a name="to-check-the-fragmentation-of-a-rowstore-index-using-tsql"></a>Para comprobar la fragmentación de un índice de almacén de filas con [!INCLUDE[tsql](../../includes/tsql-md.md)]
 
@@ -234,7 +234,7 @@ El proceso de volver a crear un índice quita y vuelve a crear el índice. En fu
 - Para los [índices de almacén de columnas](columnstore-indexes-overview.md), la recompilación quita la fragmentación, mueve todas las filas al almacén de columnas y recupera el espacio en disco mediante la eliminación física de las filas que se han quitado de forma lógica de la tabla. 
   
   > [!TIP]
-  > A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], normalmente no es necesario volver a generar el índice de almacén de columnas, ya que `REORGANIZE` realiza las operaciones básicas de una regeneración en segundo plano como una operación en línea. 
+  > A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], normalmente no es necesario volver a generar el índice de almacén de columnas, ya que `REORGANIZE` realiza las operaciones básicas de una regeneración en segundo plano como una operación en línea. 
   
   Para obtener ejemplos de sintaxis, vea [Ejemplos: recompilación de almacén de columnas](../../t-sql/statements/alter-index-transact-sql.md#examples-columnstore-indexes).
 
@@ -382,7 +382,7 @@ La recompilación de una partición después de cargar datos permite asegurarse 
 
 ## <a name="considerations-specific-to-reorganizing-a-columnstore-index"></a>Consideraciones específicas para reorganizar un índice de almacén de columnas
 
-Al reorganizar un índice de almacén de columnas, [!INCLUDE[ssde_md](../../includes/ssde_md.md)] comprime cada grupo de filas delta con el estado CLOSED en el almacén de columnas como un grupo de filas comprimido. A partir de [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] y en [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)], el comando `REORGANIZE` realiza estas otras optimizaciones de desfragmentación en línea:
+Al reorganizar un índice de almacén de columnas, [!INCLUDE[ssde_md](../../includes/ssde_md.md)] comprime cada grupo de filas delta con el estado CLOSED en el almacén de columnas como un grupo de filas comprimido. A partir de [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] y en [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)], el comando `REORGANIZE` realiza estas otras optimizaciones de desfragmentación en línea:
 
 - Quita físicamente las filas de un grupo de filas cuando el 10 % o más de las filas se hayan eliminado lógicamente. Los bytes eliminados se reclaman en los medios físicos. Por ejemplo, si en un grupo de filas comprimido que contiene un millón de filas se eliminan 100 000 filas, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] quita las filas eliminadas y vuelve a comprimir el grupo de filas con 900 000 filas. Ahorra almacenamiento mediante la eliminación de filas eliminadas.
 

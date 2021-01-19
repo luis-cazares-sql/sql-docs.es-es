@@ -19,12 +19,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2dfa929e7a669ef20eb178353fb7055f5f244f8a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 06288dc0bc6e16ab8928322005254f5fac1ddc61
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97475576"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171487"
 ---
 # <a name="transparent-data-encryption-tde"></a>Cifrado de datos transparente (TDE)
 
@@ -314,7 +314,7 @@ Cuando una base de datos se cifra con TDE, los archivos relacionados con la exte
 
 ## <a name="tde-and-in-memory-oltp"></a>TDE y OLTP en memoria
 
-TDE se puede habilitar en una base de datos que tenga objetos de OLTP en memoria. En [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] y [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)], los datos y registros de OLTP en memoria se cifran si TDE está habilitado. En [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)], los registros de OLTP en memoria se cifran si TDE está habilitado, pero no los archivos del grupo de archivos MEMORY_OPTIMIZED_DATA.
+TDE se puede habilitar en una base de datos que tenga objetos de OLTP en memoria. En [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] y [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)], los datos y registros de OLTP en memoria se cifran si TDE está habilitado. En [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)], los registros de OLTP en memoria se cifran si TDE está habilitado, pero no los archivos del grupo de archivos MEMORY_OPTIMIZED_DATA.
 
 ## <a name="related-tasks"></a>Tareas relacionadas
 

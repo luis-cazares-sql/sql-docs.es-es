@@ -30,12 +30,12 @@ ms.assetid: b48d69e8-5a00-48bf-b2f3-19278a72dd88
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 1e1d8f3d96adfd912ae1e4707d8aaaf17ffec20b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 7afde8d9db8beedc46ea597dc47e31877d170942
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97476696"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172727"
 ---
 # <a name="select---into-clause-transact-sql"></a>SELECT: cláusula INTO (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -66,7 +66,7 @@ SELECT…INTO crea una tabla en el grupo de archivos predeterminado e inserta la
  *grupo_de_archivos*    
  Especifica el nombre del grupo de archivos en el que se creará la tabla. El grupo de archivos especificado debe existir en la base de datos; de lo contrario, se mostrará un error en el motor de SQL Server.   
  
- **Se aplica a:** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 y versiones posteriores
+ **Se aplica a:** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 y versiones posteriores
   
 ## <a name="data-types"></a>Tipo de datos  
  El atributo FILESTREAM no transfiere a la nueva tabla. Los BLOB FILESTREAM se copian y se almacenan en la nueva tabla como BLOB **varbinary(max)** . Sin el atributo FILESTREAM, el tipo de datos **varbinary(max)** tiene una limitación de 2 GB. Si un FILESTREAM BLOB supera este valor, se produce el error 7119 y se detiene la instrucción.  
@@ -236,7 +236,7 @@ ORDER BY YearlyIncome;
 ### <a name="f-copying-the-data-from-one-table-to-another-and-create-the-new-table-on-a-specified-filegroup"></a>F. Copia de los datos de una tabla en otra y creación de la tabla en un grupo de archivos especificado
 En el ejemplo siguiente se muestra cómo crear una tabla como una copia de otra tabla y cargarla en un grupo de archivos especificado diferente del grupo de archivos predeterminado del usuario.
 
- **Se aplica a:** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 y versiones posteriores
+ **Se aplica a:** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 y versiones posteriores
 
 ```sql
 ALTER DATABASE [AdventureWorksDW2016] ADD FILEGROUP FG2;
