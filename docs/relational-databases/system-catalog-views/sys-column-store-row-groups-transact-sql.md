@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 76e7fef2-d1a4-4272-a2bb-5f5dcd84aedc
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: c6e99ae69d27bbaebbd0fa8bd720820f14064d9b
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: bb30e3c829dcdabde66fd1a330ec617eea7e5b34
+ms.sourcegitcommit: 7791bd2ba339edc5cd2078a6537c8f6bfe72a19b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095629"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98564473"
 ---
 # <a name="syscolumn_store_row_groups-transact-sql"></a>sys.column_store_row_groups (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
@@ -39,14 +39,14 @@ ms.locfileid: "98095629"
 |**id_de_índice**|int|Identificador del índice de la tabla que contiene este índice de almacén de columnas.|  
 |**partition_number**|int|Identificador de la partición de la tabla que contiene el grupo de filas row_group_id. Puede utilizar partition_number para unir esta DMV a sys.partitions.|  
 |**row_group_id**|int|El número de grupo de filas asociado con este grupo de filas. Es único en la partición.<br /><br /> -1 = final de una tabla en memoria.|  
-|* * delta_store_hobt_id|BIGINT * *|El hobt_id para el grupo de filas abierto en el almacén Delta.<br /><br /> Es NULL si el grupo de filas no está en el almacén Delta.<br /><br /> NULL para la cola de una tabla en memoria.|  
+|**delta_store_hobt_id**|bigint|El hobt_id para el grupo de filas abierto en el almacén Delta.<br /><br /> Es NULL si el grupo de filas no está en el almacén Delta.<br /><br /> NULL para la cola de una tabla en memoria.|  
 |**state**|TINYINT|Número de identificación asociado con el state_description.<br /><br /> 0 = INVISIBLE<br /><br /> 1 = OPEN<br /><br /> 2 = CLOSED<br /><br /> 3 = COMPRESSED <br /><br /> 4 = MARCADORES DE EXCLUSIÓN|  
 |**state_description**|nvarchar(60)|Descripción del estado persistente del grupo de filas:<br /><br /> INVISIBLE: segmento comprimido oculto en el proceso de compilación a partir de los datos de un almacén Delta. Las acciones de lectura utilizarán el almacén delta hasta que se complete el segmento comprimido invisible. Después, se hará visible el nuevo segmento y se quitará el almacén delta de origen.<br /><br /> ABRIR: un grupo de filas de lectura/escritura que acepta nuevos registros. Un grupo de filas abierto está todavía en formato de almacén de filas y no se ha comprimido al formato de almacén de columnas.<br /><br /> CLOSED: Grupo de filas que se ha rellenado, pero que aún no se ha comprimido mediante el proceso de la tupla.<br /><br /> COMPRIMIDO: Grupo de filas que se ha rellenado y comprimido.|  
 |**total_rows**|bigint|Total de filas almacenadas físicamente en el grupo de filas. Es posible que se hayan eliminado algunas, pero estas se siguen almacenando. El número máximo de filas en un grupo de filas es 1.048.576 (hexadecimal FFFFF).|  
 |**deleted_rows**|bigint|Total de filas del grupo de filas marcadas como eliminadas. Esto es siempre 0 para los grupos de filas DELTA.|  
 |**size_in_bytes**|bigint|Tamaño en bytes de todos los datos de este grupo de filas (sin incluir metadatos o diccionarios compartidos), tanto para los grupos de filas DELTA como COLUMNSTORE.|  
   
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
  Devuelve una fila para cada grupo de filas del almacén de columnas de cada tabla que tenga un índice clúster o no clúster de almacén de columnas.  
   
  Utilice **Sys.column_store_row_groups** para determinar el número de filas incluidas en el grupo de filas y el tamaño del grupo de filas.  
