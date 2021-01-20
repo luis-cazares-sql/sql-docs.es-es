@@ -9,12 +9,12 @@ metadata:
   author: MashaMSFT
   ms.author: mathoma
   ms.date: 10/14/2019
-  ms.openlocfilehash: e5fc8f3df8974ebde59f1ed2443565a0ab538b5e
-  ms.sourcegitcommit: 8a8c89b0ff6d6dfb8554b92187aca1bf0f8bcc07
+  ms.openlocfilehash: 15ee670a0f489ab9922a90514d501bf177ec7fe1
+  ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 12/17/2020
-  ms.locfileid: "97617534"
+  ms.lasthandoff: 01/20/2021
+  ms.locfileid: "98595777"
 landingContent:
 - title: SQL en Azure
   linkLists:
@@ -22,7 +22,7 @@ landingContent:
     links:
     - text: Base de datos única de Azure SQL Database
       url: /azure/sql-database/sql-database-single-database
-    - text: Instancia administrada de Azure SQL
+    - text: Azure SQL Managed Instance
       url: /azure/sql-database/sql-database-managed-instance
     - text: Azure Synapse Analytics
       url: /azure/sql-data-warehouse/sql-data-warehouse-overview-what-is
@@ -41,7 +41,7 @@ landingContent:
     - text: Guía de migración de datos
       url: https://datamigration.microsoft.com/
     - text: Certificación de compatibilidad de base de datos
-      url: https://aka.ms/dbcompat
+      url: ../database-engine/install-windows/compatibility-certification.md
     - text: Data Migration Assistant (DMA)
       url: ../dma/dma-overview.md
     - text: SQL Server Migration Assistant (SSMA)
@@ -55,7 +55,7 @@ landingContent:
     - text: Clústeres de macrodatos de SQL Server
       url: ../big-data-cluster/big-data-cluster-overview.md
     - text: Azure Data Studio
-      url: ../azure-data-studio/what-is.md
+      url: ../azure-data-studio/what-is-azure-data-studio.md
     - text: SQL Server en Linux
       url: ../linux/sql-server-linux-overview.md
     - text: SQL Server para Azure Arc (versión preliminar)
@@ -73,21 +73,21 @@ landingContent:
     - text: SQL Server Management Studio
       url: ../ssms/download-sql-server-management-studio-ssms.md
     - text: Azure Data Studio
-      url: ../azure-data-studio/download.md
+      url: ../azure-data-studio/download-azure-data-studio.md
   - linkListType: reference
     links:
     - text: Transact-SQL (T-SQL)
       url: ../t-sql/language-reference.md
     - text: Documentación de SQL Server 2014
-      url: https://docs.microsoft.com/sql/sql-server/sql-server-2014-release-notes
+      url: ./sql-server-2014-release-notes.md
     - text: Recursos educativos de SQL
       url: ../sql-server/educational-sql-resources.yml
     - text: Bases de datos de ejemplo
-      url: https://docs.microsoft.com/sql/samples/sql-samples-where-are
+      url: ../samples/sql-samples-where-are.md
     - text: Guías de elementos internos y arquitectura
-      url: https://aka.ms/sqlserverguides
+      url: ../relational-databases/sql-server-guides.md
     - text: Versiones anteriores 2005-2012
-      url: https://docs.microsoft.com/sql/toc/previous-versions-sql-server
+      url: ./previous-versions-sql-server.md
 - title: Continuidad empresarial
   linkLists:
   - linkListType: overview
@@ -171,7 +171,7 @@ landingContent:
     - text: Centro de rendimiento
       url: ../relational-databases/performance/performance-center-for-sql-server-database-engine-and-azure-sql-database.md
     - text: Procesamiento de consultas inteligentes
-      url: https://aka.ms/IQP
+      url: ../relational-databases/performance/intelligent-query-processing.md
     - text: Ajuste automático
       url: ../relational-databases/automatic-tuning/automatic-tuning.md
     - text: Asistente para la optimización de bases de datos
@@ -211,7 +211,7 @@ landingContent:
     - text: Sistema de la plataforma de análisis
       url: https://www.microsoft.com/sql/analytics-platform-system/
     - text: Aprendizaje automático de SQL Server (R y Python)
-      url: https://docs.microsoft.com/sql/machine-learning/
+      url: ../machine-learning/index.yml
     - text: Virtualización de datos con PolyBase
       url: ../relational-databases/polybase/polybase-guide.md
 - title: Inteligencia empresarial
@@ -225,4 +225,4 @@ landingContent:
     - text: SQL Server Integration Services (SSIS)
       url: ../integration-services/sql-server-integration-services.md
     - text: Azure Data Factory
-      url: https://docs.microsoft.com/azure/data-factory/
+      url: /azure/data-factory/

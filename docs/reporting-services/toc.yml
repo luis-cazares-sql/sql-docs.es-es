@@ -415,8 +415,6 @@
       href: ../reporting-services/report-server-sharepoint/high-availability-reporting-services.md
     - name: Habilitar y deshabilitar el espacio seguro para RDL
       href: ../reporting-services/report-server-sharepoint/enable-and-disable-rdl-sandboxing.md
-    - name: Configurar Reporting Services para usar un nombre alternativo del asunto
-      href: ../reporting-services/report-server-sharepoint/configure-reporting-services-to-use-a-subject-alternative-name.md
 - name: Elemento web Visor de informes en un sitio de SharePoint
   href: ../reporting-services/report-server-sharepoint/report-viewer-web-part-sharepoint-site.md
   items:
@@ -1267,6 +1265,8 @@
               href: ../reporting-services/security/set-permissions-for-report-server-items-on-a-sharepoint-site.md
     - name: Configurar conexiones SSL en un servidor de informes en modo nativo
       href: ../reporting-services/security/configure-ssl-connections-on-a-native-mode-report-server.md
+    - name: Configurar Reporting Services para usar un nombre alternativo del asunto
+      href: ../reporting-services/report-server-sharepoint/configure-reporting-services-to-use-a-subject-alternative-name.md
 - name: Suscripciones de informes
   items:
     - name: Información general sobre programaciones de SSRS
