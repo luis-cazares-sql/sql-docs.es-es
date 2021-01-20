@@ -10,12 +10,12 @@ ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: 23a48cb6-ff30-49bb-b4a7-603ebcab336f
 ms.author: alexiva
-ms.openlocfilehash: 497c3df711c2cfacbb2774edf791e4c36837bb87
-ms.sourcegitcommit: e572f1642f588b8c4c75bc9ea6adf4ccd48a353b
+ms.openlocfilehash: 8e13b9ea8bcd264d1668cf0979dc2956bd11bef7
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84779047"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596726"
 ---
 # <a name="connect-to-oracle-oracletosql"></a>Conectarse a Oracle (OracleToSQL)
 
@@ -43,7 +43,7 @@ El valor predeterminado es el modo estándar.
 **Nombre del servidor**  
 Escriba el nombre del servidor de Oracle. El nombre del servidor predeterminado es el mismo que el nombre del equipo. Se trata de una opción de modo estándar.
 
-**Puerto de servidor**  
+**Puerto del servidor**  
 Si usa un número de puerto distinto de 1521 (predeterminado) para las conexiones a Oracle, escriba el número de puerto. Se trata de una opción de modo estándar.
 
 **Identificador de conexión**  
@@ -70,7 +70,7 @@ Si utiliza el modo de cadena de conexión, escriba la cadena de conexión comple
 
 Las cadenas de conexión constan de pares de nombre y valor de parámetro.
 
-- Para obtener OLE DB información de la cadena de conexión, vea [proveedor OLE DB de Microsoft para Oracle](https://go.microsoft.com/fwlink/?LinkId=85640) artículo en MSDN Library.
+- Para obtener OLE DB información de la cadena de conexión, vea [proveedor OLE DB de Microsoft para Oracle](../../ado/guide/appendixes/microsoft-ole-db-provider-for-oracle.md) artículo en MSDN Library.
 
 En el caso de las cadenas de conexión de SSMA, incluya siempre el parámetro Provider. Además, asegúrese de incluir el parámetro de puerto al conectarse a Oracle.
 

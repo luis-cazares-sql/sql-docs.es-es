@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: d0233525-a83b-4279-813e-c554042abd0e
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 74420edaffb43ba1ea7d6ee20b7c1d12ea5d589d
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+ms.openlocfilehash: 2de9fc7fdc730cb09f96bff6633cab29521e175e
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92005564"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596982"
 ---
 # <a name="sql-server-migration-assistant"></a>SQL Server Migration Assistant
 
@@ -42,9 +42,9 @@ Las siguientes versiones de destino son compatibles con SSMA.
 - SQL Server 2012
 - SQL Server 2014
 - SQL Server 2016
-- SQL Server 2017 en Windows y Linux
-- SQL Server 2019 en Windows y Linux
-- Azure SQL Database
+- SQL Server 2017 en Windows y Linux
+- SQL Server 2019 en Windows y Linux
+- Azure SQL Database
 - Instancia administrada de Azure SQL
 - Azure Synapse Analytics * *
 
@@ -66,9 +66,9 @@ Las siguientes versiones de destino son compatibles con SSMA.
   
 - **SQL Server** de los foros de la comunidad: formule una pregunta en la comunidad de SQL Server  
   
-  - [SQL Server comunidad](https://go.microsoft.com/fwlink/?LinkId=42455) : grupos de noticias y foros supervisados por la comunidad de SQL Server. En este sitio también se muestran fuentes de información de comunidades como, por ejemplo, blogs y sitios web.  
+  - [SQL Server comunidad](../sql-server/index.yml) : grupos de noticias y foros supervisados por la comunidad de SQL Server. En este sitio también se muestran fuentes de información de comunidades como, por ejemplo, blogs y sitios web.  
   
-  - [Comunidad de SQL Server Developer Center](https://go.microsoft.com/fwlink/?LinkId=42456) : grupos de noticias, foros y otros recursos de la comunidad que son útiles para los desarrolladores de SQL Server  
+  - [Comunidad de SQL Server Developer Center](../sql-server/index.yml) : grupos de noticias, foros y otros recursos de la comunidad que son útiles para los desarrolladores de SQL Server  
   
 - **Soporte técnico asistido** : vaya a [https://support.microsoft.com/assistedsupportproducts](https://support.microsoft.com/assistedsupportproducts) y busque "SQL Server Migration Assistant".  Seleccione su versión y, a continuación, seleccione "iniciar solicitud".  Se incluye soporte técnico asistido con la herramienta SQL Server Migration Assistant.  
   
@@ -102,4 +102,4 @@ En varios casos, es posible que una determinada característica no esté documen
   
 Asimismo, los clientes no deberán usar las siguientes API sin documentar, entre otras: procedimientos almacenados, procedimientos almacenados extendidos, funciones, vistas, tablas, columnas, propiedades o metadatos. El servicio de soporte al cliente de Microsoft no admite bases de datos ni aplicaciones que aprovechen o usen puntos de entrada no documentados.  
   
-Es posible que las actualizaciones de servidor y de base de datos a versiones futuras de SQL Server no funcionen como es debido en aplicaciones y bases de datos que se aprovechan de o usan puntos de entrada no documentados. Debe limitar el uso de las características y funcionalidades de SQL Server a aquellas que se incluyen en la documentación de Microsoft SQL Server. Si una característica no está documentada en la documentación de Microsoft SQL Server, no será un elemento compatible de SQL Server.  
+Es posible que las actualizaciones de servidor y de base de datos a versiones futuras de SQL Server no funcionen como es debido en aplicaciones y bases de datos que se aprovechan de o usan puntos de entrada no documentados. Debe limitar el uso de las características y funcionalidades de SQL Server a aquellas que se incluyen en la documentación de Microsoft SQL Server. Si una característica no está documentada en la documentación de Microsoft SQL Server, no será un elemento compatible de SQL Server.

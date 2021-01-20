@@ -11,12 +11,12 @@ ms.assetid: 2793bc33-38d3-46ed-8277-b8580cf78ced
 author: nahk-ivanov
 ms.author: alexiva
 manager: alexiva
-ms.openlocfilehash: 294c91e0d1fa62c548bc88c834e292ab34ec0015
-ms.sourcegitcommit: e8f6c51d4702c0046aec1394109bc0503ca182f0
+ms.openlocfilehash: 5947ea6dad4a87258476b9b98d2bc4bc1a10a73d
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935184"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596814"
 ---
 # <a name="sql-server-migration-assistant-for-mysql-mysqltosql"></a>SQL Server Migration Assistant para MySQL (MySQLToSQL)
 
@@ -28,10 +28,10 @@ En esta documentación se ofrece una introducción a SSMA para MySQL y se propor
   
 |Sección|Descripción|
 |-----------|---------------|
-|[Novedades de SSMA para MySQL](https://msdn.microsoft.com/1451a0b0-6713-4d0c-954f-ea3d8fce1d31)|Novedades de esta versión de SSMA para MySQL|  
+|[Novedades de SSMA para MySQL](./what-s-new-in-ssma-for-mysql-mysqltosql.md)|Novedades de esta versión de SSMA para MySQL|  
 |[Instalación de SSMA para MySQL &#40;MySqlToSql&#41;](../../ssma/mysql/installing-ssma-for-mysql-mysqltosql.md)|Contiene artículos que proporcionan requisitos previos e instrucciones para instalar el cliente de SSMA para MySQL y los componentes necesarios en el equipo que ejecuta SQL Server.|  
 |[Introducción con SSMA para MySQL &#40;MySQLToSQL&#41;](../../ssma/mysql/getting-started-with-ssma-for-mysql-mysqltosql.md)|Presenta la interfaz de usuario, los proyectos y las opciones de configuración.|  
 |[Migración de bases de datos de MySQL a SQL Server Azure SQL Database &#40;MySQLToSql&#41;](../../ssma/mysql/migrating-mysql-databases-to-sql-server-azure-sql-db-mysqltosql.md)|Proporciona información general sobre el proceso de conversión e información detallada sobre cada paso del proceso.|  
 |[Referencia de la interfaz de usuario &#40;MySQLToSQL&#41;](../../ssma/mysql/user-interface-reference-mysqltosql.md)|Contiene la documentación de los cuadros de diálogo de SSMA para MySQL.|  
 |[Trabajar con SSMA para la consola de MySQL](working-with-ssma-for-mysql-console-mysqltosql.md)|Contiene documentación sobre la aplicación de consola SSMA|  
-|[Obtener la ayuda de SSMA para MySQL](https://go.microsoft.com/fwlink/?LinkID=708538&clcid=0x409)|Proporciona información sobre cómo obtener ayuda adicional.|  
+|[Obtener la ayuda de SSMA para MySQL](../sql-server-migration-assistant.md)|Proporciona información sobre cómo obtener ayuda adicional.|

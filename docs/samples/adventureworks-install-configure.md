@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 1b275826c20944d11fb7e88266a882b3834fbfac
-ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
+ms.openlocfilehash: ec38d7eeed89d03bab4ebd92446517542e2e51a0
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97490095"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596997"
 ---
 # <a name="adventureworks-sample-databases"></a>Bases de datos de ejemplo AdventureWorks
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -24,7 +24,7 @@ En este artículo se proporcionan vínculos directos para descargar bases de dat
 
 Para obtener más información sobre los ejemplos, vea el [repositorio de github de ejemplos](https://github.com/microsoft/sql-server-samples/tree/master/samples/databases). 
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 - [SQL Server](https://www.microsoft.com/evalcenter/evaluate-sql-server-2019) o [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)
 - [SQL Server Management Studio](../ssms/download-sql-server-management-studio-ssms.md) o [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md)
@@ -63,7 +63,7 @@ Puede usar el `.bak` archivo para restaurar la base de datos de ejemplo en la in
 
 # <a name="sql-server-management-studio-ssms"></a>[SQL Server Management Studio (SSMS)](#tab/ssms)
 
-Si no está familiarizado con SQL Server Management Studio (SSMS), puede ver [connect & Query](../ssms/quickstarts/connect-query-sql-server.md) para comenzar. 
+Si no está familiarizado con SQL Server Management Studio (SSMS), puede ver [connect & Query](../ssms/quickstarts/ssms-connect-query-sql-server.md) para comenzar. 
 
 Para restaurar la base de datos en SQL Server Management Studio, siga estos pasos:
 
@@ -208,5 +208,5 @@ Una vez que haya restaurado la base de datos de ejemplo, use los siguientes tuto
 
 
 [Tutoriales de SQL Server motor de base de datos](../relational-databases/database-engine-tutorials.md)   
-[Conectarse y realizar consultas con SQL Server Management Studio (SSMS)](../ssms/quickstarts/connect-query-sql-server.md)   
-[Conectarse y realizar consultas con Azure Data Studio](../ssms/quickstarts/connect-query-sql-server.md)
+[Conectarse y realizar consultas con SQL Server Management Studio (SSMS)](../ssms/quickstarts/ssms-connect-query-sql-server.md)   
+[Conectarse y realizar consultas con Azure Data Studio](../ssms/quickstarts/ssms-connect-query-sql-server.md)

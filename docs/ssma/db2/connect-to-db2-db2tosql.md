@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 9d485fd0-ab5d-402a-a59a-e9982a61b7de
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: cef31b2968ea0241b3c999e0dbd781d70974b360
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: c590a76696f2729bf5d1c6c5d4ca5b0242a63df6
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426977"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596733"
 ---
 # <a name="connect-to-db2-db2tosql"></a>Conectarse a DB2 (DB2ToSQL)
 Utilice el cuadro de diálogo **conectar con DB2** para conectarse a la base de datos DB2 que desea migrar.  
@@ -43,7 +43,7 @@ El valor predeterminado es el modo estándar.
 **Nombre del servidor**  
 Escriba el nombre del servidor DB2. El nombre del servidor predeterminado es el mismo que el nombre del equipo. Se trata de una opción de modo estándar.  
   
-**Puerto de servidor**  
+**Puerto del servidor**  
 Si usa un número de puerto distinto de 1521 (predeterminado) para las conexiones a DB2, escriba el número de puerto. Se trata de una opción de modo estándar.  
   
 **Identificador de conexión**  
@@ -70,7 +70,6 @@ Si usa el modo de cadena de conexión, escriba la cadena de conexión completa p
   
 Las cadenas de conexión constan de pares de nombre y valor de parámetro.  
   
--   Para obtener OLE DB información de la cadena de conexión, vea [proveedor OLE DB de Microsoft para DB2](https://go.microsoft.com/fwlink/?LinkId=85640) artículo en MSDN Library.  
+-   Para obtener OLE DB información de la cadena de conexión, vea [proveedor OLE DB de Microsoft para DB2](../../ado/guide/appendixes/microsoft-ole-db-provider-for-oracle.md) artículo en MSDN Library.  
   
 En el caso de las cadenas de conexión de SSMA, incluya siempre el parámetro Provider. Además, asegúrese de incluir el parámetro de puerto al conectarse a DB2.  
-  
