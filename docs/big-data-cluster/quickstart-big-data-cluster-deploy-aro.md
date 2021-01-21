@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: c5889a9411c54312dd52ee1a5e9f2b7917da6838
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 9f2a96afd598a4a16ad4683f6ed096032f9b8091
+ms.sourcegitcommit: fc24f7ecc155d97e789676fffe55e45840fcb088
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97637552"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620289"
 ---
 # <a name="use-a-python-script-to-deploy-a-sql-server-big-data-cluster-on-azure-red-hat-openshift-aro"></a>Use un script de Python para implementar un clúster de macrodatos de SQL Server en Red Hat OpenShift en Azure (ARO).
 
@@ -44,7 +44,7 @@ La implementación del clúster de macrodatos predeterminada que se usa aquí co
 
 El script usa la CLI de Azure para automatizar la creación de un clúster de ARO. Antes de ejecutar el script, debe iniciar sesión en su cuenta de Azure con la CLI de Azure al menos una vez. Ejecute el siguiente comando desde el símbolo del sistema.
 
-```terminal
+```azurecli
 az login
 ```
 
@@ -58,7 +58,7 @@ az login
 
 1. Ejecute el script mediante:
 
-```terminal
+```console
 python deploy-sql-big-data-aro.py
 ```
 
@@ -82,7 +82,7 @@ Si está probando [!INCLUDE[big-data-clusters-2019](../includes/ssbigdatacluster
 
 Ejecute el siguiente comando de la CLI de Azure para quitar el clúster de macrodatos y el servicio ARO en Azure (reemplace `<resource group name>` por el **grupo de recursos de Azure** que ha especificado en el script de implementación):
 
-```terminal
+```azurecli
 az group delete -n <resource group name>
 ```
 

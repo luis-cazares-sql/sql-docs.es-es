@@ -16,12 +16,12 @@ f1_keywords:
 ms.assetid: b5e9ef21-11b7-4ed2-838e-d8eecdb5c5f0
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 9e6dde5a520b845cac47fbfd3c4820d35958c9ba
-ms.sourcegitcommit: ea0bf89617e11afe85ad85309e0ec731ed265583
+ms.openlocfilehash: a88bd03c8dd4b545fdadf3bd809f9ce64191db79
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92907273"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596792"
 ---
 # <a name="maps-report-builder-and-ssrs"></a>Mapas (Generador de informes y SSRS)
   Para visualizar datos comerciales con un fondo geográfico, puede agregar un mapa a un informe paginado de [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] . El tipo de mapa que seleccione dependerá de qué información desee comunicar en el informe. Puede agregar un mapa que solo muestre las ubicaciones, un mapa de burbujas que varíe el tamaño de la burbuja en función del número de casas de un área, un mapa de marcadores que varíe el estilo de marcador según el producto más rentable de cada almacén o un mapa de líneas que muestre las rutas entre los almacenes.  
@@ -58,7 +58,7 @@ ms.locfileid: "92907273"
  Para visualizar los datos de un mapa, los datos analíticos y los datos espaciales deben tener una relación. Cuando los datos espaciales y los datos analíticos proceden del mismo origen, la relación se conoce. Cuando proceden de orígenes diferentes, debe especificar campos coincidentes para relacionarlos.  
   
 ### <a name="spatial-data"></a>Datos espaciales  
- Los datos espaciales están compuestos de conjuntos de coordenadas. Los datos espaciales de un origen de datos pueden ser un único punto, varios puntos, una única línea, varias líneas o un conjunto de polígonos. Cada conjunto de coordenadas define un *elemento de mapa* , por ejemplo, un polígono que representa el contorno de un condado, una línea que representa un camino o un punto que representa la ubicación de una ciudad.  
+ Los datos espaciales están compuestos de conjuntos de coordenadas. Los datos espaciales de un origen de datos pueden ser un único punto, varios puntos, una única línea, varias líneas o un conjunto de polígonos. Cada conjunto de coordenadas define un *elemento de mapa*, por ejemplo, un polígono que representa el contorno de un condado, una línea que representa un camino o un punto que representa la ubicación de una ciudad.  
   
  Los datos espaciales se basan en uno de los sistemas de coordenadas siguientes:  
   
@@ -161,7 +161,7 @@ ms.locfileid: "92907273"
   
  Para obtener instrucciones paso a paso, vea [Agregar, cambiar o eliminar un mapa o una capa de mapa &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/add-change-or-delete-a-map-or-map-layer-report-builder-and-ssrs.md).  
   
- Para obtener más información acerca de los mosaicos, vea [Sistema de mosaicos de Bing Maps](https://go.microsoft.com/fwlink/?linkid=147315). Para obtener más información sobre el uso de mosaicos de Bing Maps en un informe, vea [Condiciones adicionales de uso](https://go.microsoft.com/fwlink/?LinkId=151371).  
+ Para obtener más información acerca de los mosaicos, vea [Sistema de mosaicos de Bing Maps](/bingmaps/articles/bing-maps-tile-system). Para obtener más información sobre el uso de mosaicos de Bing Maps en un informe, vea [Condiciones adicionales de uso](https://go.microsoft.com/fwlink/?LinkId=151371).  
   
 ##  <a name="understanding-map-layers-and-map-elements"></a><a name="MapLayers"></a> Descripción de las capas de mapa y los elementos de mapa  
  Un mapa puede tener varias capas. Hay tres tipos de capas. Cada capa muestra un tipo de datos espaciales:  
@@ -252,5 +252,4 @@ ms.locfileid: "92907273"
  [Agregar ubicaciones personalizadas a un mapa &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/add-custom-locations-to-a-map-report-builder-and-ssrs.md)  
   
  [Solucionar problemas de los informes: informes de mapa &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/troubleshoot-reports-map-reports-report-builder-and-ssrs.md)  
-  
   

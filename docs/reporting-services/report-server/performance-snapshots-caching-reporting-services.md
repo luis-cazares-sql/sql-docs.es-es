@@ -12,15 +12,15 @@ helpviewer_keywords:
 ms.assetid: 85afd00f-e8d7-4ef7-9174-2ff84d82f960
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 479347709474b12f84cb451b197a8df323c76e22
-ms.sourcegitcommit: 827ad02375793090fa8fee63cc372d130f11393f
+ms.openlocfilehash: f7585621cae251f639fbce4f0a219338ca01ffdc
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89480527"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595092"
 ---
 # <a name="performance-snapshots-caching-reporting-services"></a>Rendimiento, instantáneas, almacenamiento en caché (Reporting Services)
-  El rendimiento del servidor de informes se ve afectado por una combinación de factores entre los que se incluyen el hardware, el número de usuarios simultáneos que tienen acceso a los informes, la cantidad de datos de un informe y el formato de salida. Para entender los factores de rendimiento específicos de su instalación y qué remedios generarán los resultados que desea, necesitará obtener datos de línea base y ejecutar pruebas. Para obtener más información sobre herramientas e instrucciones, vea las publicaciones siguientes en MSDN: [Optimización del rendimiento de Reporting Services](https://docs.microsoft.com/archive/blogs/sqlcat/reporting-services-performance-and-optimization) y [Usar Visual Studio 2005 para realizar pruebas de carga en un servidor de informes de SQL Server 2005 Reporting Services](https://go.microsoft.com/fwlink/?LinkID=77519).  
+  El rendimiento del servidor de informes se ve afectado por una combinación de factores entre los que se incluyen el hardware, el número de usuarios simultáneos que tienen acceso a los informes, la cantidad de datos de un informe y el formato de salida. Para entender los factores de rendimiento específicos de su instalación y qué remedios generarán los resultados que desea, necesitará obtener datos de línea base y ejecutar pruebas. Para obtener más información sobre herramientas e instrucciones, vea las publicaciones siguientes en MSDN: [Optimización del rendimiento de Reporting Services](/archive/blogs/sqlcat/reporting-services-performance-and-optimization) y [Usar Visual Studio 2005 para realizar pruebas de carga en un servidor de informes de SQL Server 2005 Reporting Services](/previous-versions/sql/sql-server-2005/administrator/aa964139(v=sql.90)).  
   
  Entre los principios generales que hay que tener en cuenta se incluyen los siguientes:  
   
@@ -63,5 +63,4 @@ ms.locfileid: "89480527"
 ## <a name="see-also"></a>Consulte también  
  [Administrar un proceso en ejecución](../../reporting-services/subscriptions/manage-a-running-process.md)   
  [Verificación de la ejecución de un informe](../../reporting-services/report-server/verifying-a-report-run.md)  
-  
   

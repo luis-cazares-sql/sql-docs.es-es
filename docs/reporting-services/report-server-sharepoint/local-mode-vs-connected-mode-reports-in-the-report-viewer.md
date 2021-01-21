@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
 monikerRange: '>=sql-server-2016 <=sql-server-2016'
-ms.openlocfilehash: 76d9f23cb32818c67c34e562b6b1f714a5666c72
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: beeba27a4186aa8ea19401284b8e1f3c4c7f6990
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97482264"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597205"
 ---
 # <a name="local-mode-vs-connected-mode-reports-in-the-report-viewer"></a>Informes en modo local frente a modo conectado en el Visor de informes
 
@@ -37,7 +37,7 @@ ms.locfileid: "97482264"
   
  La siguiente es una lista de las extensiones de procesamiento de datos que admite informes en modo local:  
   
--   [!INCLUDE[msCoName](../../includes/msconame-md.md)] Access 2010. Para más información sobre Access Services, vea [Uso de Servicios de Access con SQL Reporting Services: Instalación del complemento de SQL Server 2008 R2 Reporting Services (SharePoint Server 2010)](https://go.microsoft.com/fwlink/?LinkId=192686).  
+-   [!INCLUDE[msCoName](../../includes/msconame-md.md)] Access 2010. Para más información sobre Access Services, vea [Uso de Servicios de Access con SQL Reporting Services: Instalación del complemento de SQL Server 2008 R2 Reporting Services (SharePoint Server 2010)](/previous-versions/office/sharepoint-server-2010/ee662542(v=office.14)).  
   
 -   Extensión de datos de lista de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] SharePoint Para más información sobre la extensión de datos de lista de SharePoint, vea [Orígenes de datos admitidos por Reporting Services &#40;SSRS&#41;](../../reporting-services/report-data/data-sources-supported-by-reporting-services-ssrs.md)  
   
@@ -76,7 +76,7 @@ ms.locfileid: "97482264"
   
 4.  Restablezca IIS.  
   
- Para más información, vea [Uso de Servicios de Access con SQL Reporting Services: Instalación del complemento de SQL Server 2008 R2 Reporting Services (SharePoint Server 2010)](https://go.microsoft.com/fwlink/?LinkId=192686) y [Enable-SPSessionStateService](https://technet.microsoft.com/library/ff607857\(v=office.15\).aspx).  
+ Para más información, vea [Uso de Servicios de Access con SQL Reporting Services: Instalación del complemento de SQL Server 2008 R2 Reporting Services (SharePoint Server 2010)](/previous-versions/office/sharepoint-server-2010/ee662542(v=office.14)) y [Enable-SPSessionStateService](https://technet.microsoft.com/library/ff607857\(v=office.15\).aspx).  
   
 ## <a name="connected-mode"></a>Modo conectado
 

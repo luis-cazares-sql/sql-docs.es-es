@@ -19,12 +19,12 @@ author: markingmyname
 ms.author: maghan
 ms.reviewer: sstein
 ms.date: 03/13/2018
-ms.openlocfilehash: 9d8d86fbe427b232831fa3713b94f067e0089a4b
-ms.sourcegitcommit: 544706f6725ec6cdca59da3a0ead12b99accb2cc
+ms.openlocfilehash: 2607b029389d0a0d3f4b59e55e031b768baf4aac
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92638947"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597248"
 ---
 # <a name="script-objects-in-sql-server-management-studio"></a>Creación de scripts de objetos en SQL Server Management Studio
 
@@ -37,7 +37,7 @@ En este tutorial aprenderá a crear scripts de Transact-SQL (T-SQL) para distint
 > * Procedimientos almacenados
 > * Eventos extendidos
 
-Para crear un script de cualquier objeto en el **Explorador de objetos** , haga clic con el botón derecho en él y seleccione la opción correspondiente para **crear un script de un objeto como**. En este tutorial se muestra el proceso.
+Para crear un script de cualquier objeto en el **Explorador de objetos**, haga clic con el botón derecho en él y seleccione la opción correspondiente para **crear un script de un objeto como**. En este tutorial se muestra el proceso.
 
 ## <a name="prerequisites"></a>Prerequisites
 
@@ -59,13 +59,13 @@ Puede generar el código T-SQL asociado para una tarea siempre que utilice la GU
 
 2. Expanda el nodo **Bases de datos** .
 
-3. Haga clic con el botón derecho en la base de datos **Adventureworks2016** > **Tareas** > **Hacer una copia de seguridad** :
+3. Haga clic con el botón derecho en la base de datos **Adventureworks2016** > **Tareas** > **Hacer una copia de seguridad**:
 
     ![Realizar una copia de seguridad de una base de datos](media/scripting-ssms/backupdb.png)
 
 4. Configure la copia de seguridad del modo que quiera. Para este tutorial, se ha dejado todo en los valores predeterminados, aunque todos los cambios efectuados en la ventana también se van a ver reflejados en el script. 
 
-5. Seleccione **Script** > **Generar script de acción en ventana Nueva consulta** :
+5. Seleccione **Script** > **Generar script de acción en ventana Nueva consulta**:
 
     ![Creación de un script de la copia de seguridad de base de datos: acción de script](media/scripting-ssms/scriptdbbackup.PNG)
 6. Revise el código T-SQL rellenado en la ventana de consulta.
@@ -75,19 +75,19 @@ Puede generar el código T-SQL asociado para una tarea siempre que utilice la GU
 
 ### <a name="script-t-sql-when-you-shrink-the-transaction-log"></a>Creación de un script de T-SQL al reducir el registro de transacciones
 
-1. Haga clic con el botón derecho en la base de datos **Adventureworks2016** > **Tareas** > **Reducir** > **Archivos** :
+1. Haga clic con el botón derecho en la base de datos **Adventureworks2016** > **Tareas** > **Reducir** > **Archivos**:
 
      ![Reducción de archivos](media/scripting-ssms/shrinkfiles.png)
 
-2. Seleccione **Registro**  en el cuadro de lista desplegable **Tipo de archivo** :
+2. Seleccione **Registro**  en el cuadro de lista desplegable **Tipo de archivo**:
 
     ![Reducción del registro de transacciones](media/scripting-ssms/shrinktlog.png)
 
-3. Seleccione **Generar script** y **Generar script de acción en Portapapeles** :
+3. Seleccione **Generar script** y **Generar script de acción en Portapapeles**:
 
     ![Generación de script en Portapapeles](media/scripting-ssms/scriptactiontoclipboard.png)
 
-4. Abra una ventana de **Nueva consulta** y péguelo. (Haga clic con el botón derecho en la ventana. Después, seleccione **Pegar** ).
+4. Abra una ventana de **Nueva consulta** y péguelo. (Haga clic con el botón derecho en la ventana. Después, seleccione **Pegar**).
 
     ![Pegado de script](media/scripting-ssms/paste.png)
 
@@ -103,7 +103,7 @@ En la siguiente sección se explica cómo crear un script de la base de datos co
 
 2. Expanda el nodo **Bases de datos** .
 
-3. Haga clic con el botón derecho en la base de datos **AdventureWorks2016Script** > **Generar script de base de datos como** > **Crear en** > **Nueva ventana del Editor de consultas** :
+3. Haga clic con el botón derecho en la base de datos **AdventureWorks2016Script** > **Generar script de base de datos como** > **Crear en** > **Nueva ventana del Editor de consultas**:
 
     ![Creación de script de la base de datos](media/scripting-ssms/scriptdb.png)
 
@@ -111,7 +111,7 @@ En la siguiente sección se explica cómo crear un script de la base de datos co
 
     ![Eliminación de scripts de la base de datos](media/scripting-ssms/scriptedoutdb.png) Esta opción solo elimina los scripts de las opciones de configuración de la base de datos.
 
-5. En el teclado, seleccione Ctrl + F para abrir el cuadro de diálogo **Buscar**. Seleccione la flecha hacia abajo para abrir la opción **Reemplazar**. En la línea superior de **Buscar** , escriba AdventureWorks2016; en la línea inferior de **Reemplazar** , escriba AdventureWorks2016a.
+5. En el teclado, seleccione Ctrl + F para abrir el cuadro de diálogo **Buscar**. Seleccione la flecha hacia abajo para abrir la opción **Reemplazar**. En la línea superior de **Buscar**, escriba AdventureWorks2016; en la línea inferior de **Reemplazar**, escriba AdventureWorks2016a.
 
 6. Seleccione **Reemplazar todo** para reemplazar todas las instancias de *AdventureWorks2016* por *AdventureWorks2016a*. 
 
@@ -125,7 +125,7 @@ En la siguiente sección se explica cómo crear un script de la base de datos co
 
 2. Expanda el nodo **Bases de datos** .
 
-3. Haga clic con el botón derecho en **AdventureWorks2016** > **Tareas** > **Generar script** :
+3. Haga clic con el botón derecho en **AdventureWorks2016** > **Tareas** > **Generar script**:
 
     ![Generación de scripts para bases de datos](media/scripting-ssms/generatescriptsfordb.png)
 
@@ -172,7 +172,7 @@ En esta sección se explica cómo crear scripts de tablas de la base de datos. U
 
 4. Expanda el nodo **Tablas**.
 
-5. Haga clic con el botón derecho en **dbo.ErrorLog** > **Incluir tabla como** > **DROP y CREATE To** > **Nueva ventana del Editor de consultas** :
+5. Haga clic con el botón derecho en **dbo.ErrorLog** > **Incluir tabla como** > **DROP y CREATE To** > **Nueva ventana del Editor de consultas**:
 
     ![Creación de script de tabla](media/scripting-ssms/scripttable.png)
 
@@ -193,7 +193,7 @@ En esta sección, obtendrá información sobre cómo anular y crear un procedimi
 
 4. Expanda el nodo **Procedimiento almacenado**.
 
-5. Haga clic con el botón derecho en el procedimiento almacenado **dbo.uspGetBillOfMaterials** > **Incluir procedimiento almacenado como** > **DROP y CREATE To** > **Nueva ventana del Editor de consultas** :
+5. Haga clic con el botón derecho en el procedimiento almacenado **dbo.uspGetBillOfMaterials** > **Incluir procedimiento almacenado como** > **DROP y CREATE To** > **Nueva ventana del Editor de consultas**:
 
     ![Creación de script de procedimientos almacenados](media/scripting-ssms/script-stored-procedure.png)
 
@@ -209,11 +209,11 @@ En esta sección se explica cómo crear scripts de [eventos extendidos](../../re
 
 4. Expanda el nodo **Sesiones**.
 
-5. Haga clic con el botón derecho en la sesión extendida que le interese, en **Incluir sesión como** > **CREATE To** > **Nueva ventana del Editor de consultas** :
+5. Haga clic con el botón derecho en la sesión extendida que le interese, en **Incluir sesión como** > **CREATE To** > **Nueva ventana del Editor de consultas**:
 
     ![Sesión ampliada de Nueva ventana del Editor de consultas](media/scripting-ssms/scriptxevents.png)
 
-6. En **Nueva ventana del Editor de consultas** , cambie el nuevo nombre de la sesión *system_health* por *system_health2*. Seleccione **Ejecutar** para ejecutar la consulta.
+6. En **Nueva ventana del Editor de consultas**, cambie el nuevo nombre de la sesión *system_health* por *system_health2*. Seleccione **Ejecutar** para ejecutar la consulta.
 
 7. Haga clic con el botón derecho en **Sesiones** en el **Explorador de objetos**. Seleccione **Actualizar** para ver la nueva sesión de eventos extendidos. El icono verde junto a la sesión indica que se está ejecutando. El icono rojo indica que la sesión se ha detenido.
 
@@ -226,7 +226,7 @@ En esta sección se explica cómo crear scripts de [eventos extendidos](../../re
 
 La mejor forma de familiarizarse con SSMS es practicar. Estos *tutoriales* y artículos de *procedimientos* lo ayudan con varias características disponibles dentro de SSMS. Estos artículos le mostrarán cómo administrar los componentes de SSMS y cómo localizar las características que utiliza habitualmente.
 
-* [Conexión a una instancia y realización de consultas](../quickstarts/connect-query-sql-server.md)
+* [Conexión a una instancia y realización de consultas](../quickstarts/ssms-connect-query-sql-server.md)
 * [Uso de plantillas en SSMS](../template/templates-ssms.md)
 * [Configuración de SSMS](ssms-configuration.md)
 * [Otras recomendaciones y trucos al usar SSMS](ssms-tricks.md)

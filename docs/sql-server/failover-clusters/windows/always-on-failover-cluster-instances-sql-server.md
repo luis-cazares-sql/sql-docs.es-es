@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 86a15b33-4d03-4549-8ea2-b45e4f1baad7
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: ea1413b30c4706125b711493f64210c2a875ec0f
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: a27efd6cb20a90bc1b3ce72a6e4cee74f74c3b61
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642820"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595227"
 ---
 # <a name="always-on-failover-cluster-instances-sql-server"></a>Instancias de clúster de conmutación por error de AlwaysOn (SQL Server)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -35,9 +35,9 @@ ms.locfileid: "97642820"
  Una FCI puede aprovechar los [Grupos de disponibilidad](../../../database-engine/availability-groups/windows/always-on-availability-groups-sql-server.md) para proporcionar una recuperación ante desastres remota en el nivel de base de datos. Para obtener más información, consulte [Clústeres de conmutación por error y grupos de disponibilidad &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/failover-clustering-and-always-on-availability-groups-sql-server.md).  
  
  > [!NOTE]  
- > La edición Windows Server 2016 Datacenter introduce compatibilidad con Espacios de almacenamiento directo (S2D). Las instancias de clúster de conmutación por error de SQL Server admiten S2D para recursos de almacenamiento de clúster. Para obtener más información, consulte [Espacios de almacenamiento directo en Windows Server 2016](https://technet.microsoft.com/windows-server-docs/storage/storage-spaces/storage-spaces-direct-overview).
+ > La edición Windows Server 2016 Datacenter introduce compatibilidad con Espacios de almacenamiento directo (S2D). Las instancias de clúster de conmutación por error de SQL Server admiten S2D para recursos de almacenamiento de clúster. Para obtener más información, consulte [Espacios de almacenamiento directo en Windows Server 2016](/windows-server/storage/storage-spaces/storage-spaces-direct-overview).
  > 
- >Las instancias de clúster de conmutación por error también admiten volúmenes compartidos en clúster (CSV). Para obtener más información, vea [Descripción de Volúmenes compartidos de clúster en un clúster de conmutación por error](https://technet.microsoft.com/library/dd759255.aspx). 
+ >Las instancias de clúster de conmutación por error también admiten volúmenes compartidos en clúster (CSV). Para obtener más información, vea [Descripción de Volúmenes compartidos de clúster en un clúster de conmutación por error](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759255(v=ws.11)). 
    
  **En este tema:**  
   
@@ -157,7 +157,6 @@ ms.locfileid: "97642820"
 |----------------------------|---------------|  
 |Describe cómo instalar una nueva FCI de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] .|[Crear un nuevo clúster de conmutación por error de SQL Server &#40;programa de instalación&#41;](../../../sql-server/failover-clusters/install/create-a-new-sql-server-failover-cluster-setup.md)|  
 |Describe cómo actualizarse a un clúster de conmutación por error de [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] .|[Actualización de una instancia del clúster de conmutación por error de SQL Server](../../../sql-server/failover-clusters/windows/upgrade-a-sql-server-failover-cluster-instance.md).|  
-|Describe los conceptos de clúster de conmutación por error de Windows y proporciona vínculos a las tareas relacionadas con el clúster de conmutación por error de Windows|[!INCLUDE[nextref_longhorn](../../../includes/nextref-longhorn-md.md)]: [Información general de los clústeres de conmutación por error](https://go.microsoft.com/fwlink/?LinkId=177878)<br /><br /> [!INCLUDE[nextref_longhorn](../../../includes/nextref-longhorn-md.md)] R2: [Información general de los clústeres de conmutación por error](https://go.microsoft.com/fwlink/?LinkId=177879)|  
+|Describe los conceptos de clúster de conmutación por error de Windows y proporciona vínculos a las tareas relacionadas con el clúster de conmutación por error de Windows|[!INCLUDE[nextref_longhorn](../../../includes/nextref-longhorn-md.md)]: [Información general de los clústeres de conmutación por error](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730692(v=ws.10))<br /><br /> [!INCLUDE[nextref_longhorn](../../../includes/nextref-longhorn-md.md)] R2: [Información general de los clústeres de conmutación por error](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754482(v=ws.11))|  
 |Describe las distinciones de conceptos entre nodos de una FCI y réplicas de un grupo de disponibilidad y las consideraciones para utilizar una FCI de modo que hospede una réplica para un grupo de disponibilidad.|[Clústeres de conmutación por error y grupos de disponibilidad &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/failover-clustering-and-always-on-availability-groups-sql-server.md)|  
-  
   

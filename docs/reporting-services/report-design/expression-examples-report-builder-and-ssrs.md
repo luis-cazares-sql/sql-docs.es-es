@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 87ddb651-a1d0-4a42-8ea9-04dea3f6afa4
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: f37521692b7b30cc8db1e56b81222c3e8bad38de
-ms.sourcegitcommit: 02b22274da4a103760a376c4ddf26c4829018454
+ms.openlocfilehash: 40a05ec1ed6b7ffa05132e0cefbd5157b7d3ce92
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84681344"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596328"
 ---
 # <a name="expression-examples-report-builder-and-ssrs"></a>Ejemplos de expresiones (Generador de informes y SSRS)
 Las expresiones se usan con frecuencia en los informes paginados de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] para controlar el contenido y la apariencia del informe. Las expresiones se escriben en [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vbprvb](../../includes/vbprvb-md.md)] y pueden usar funciones integradas, código personalizado, variables de informe y de grupo, y variables definidas por el usuario. Las expresiones comienzan con un signo igual (=). Para más información sobre el editor de expresiones y los tipos de referencias que se pueden incluir, vea [Usar expresiones en informes &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expression-uses-in-reports-report-builder-and-ssrs.md) y [Agregar una expresión &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/add-an-expression-report-builder-and-ssrs.md).  
@@ -70,9 +70,9 @@ Para aprender a escribir expresiones que usan muchas de las funciones y operador
  Muchas expresiones de un informe contienen funciones. Con estas funciones, se puede dar formato a los datos, aplicar lógica y obtener acceso a los metadatos del informe. Puede escribir expresiones que usen funciones de la biblioteca en tiempo de ejecución de [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vbprvb](../../includes/vbprvb-md.md)] y desde los espacios de nombres <xref:System.Convert> y <xref:System.Math>. Puede agregar referencias a las funciones desde otros ensamblados o desde código personalizado. También puede usar clases desde [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)], incluida <xref:System.Text.RegularExpressions>.  
   
 ##  <a name="visual-basic-functions"></a><a name="VisualBasicFunctions"></a> Funciones de Visual Basic  
- Las funciones de [!INCLUDE[vbprvb](../../includes/vbprvb-md.md)] se pueden usar para manipular los datos que se muestran en los cuadros de texto o que se emplean en los parámetros, las propiedades u otras áreas del informe. En esta sección se ofrecen ejemplos de algunas de estas funciones. Para obtener más información, vea [Miembros de la biblioteca en tiempo de ejecución de Visual Basic](https://go.microsoft.com/fwlink/?LinkId=198941) en MSDN.  
+ Las funciones de [!INCLUDE[vbprvb](../../includes/vbprvb-md.md)] se pueden usar para manipular los datos que se muestran en los cuadros de texto o que se emplean en los parámetros, las propiedades u otras áreas del informe. En esta sección se ofrecen ejemplos de algunas de estas funciones. Para obtener más información, vea [Miembros de la biblioteca en tiempo de ejecución de Visual Basic](/dotnet/visual-basic/language-reference/runtime-library-members) en MSDN.  
   
- [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] proporciona muchas opciones de formato, por ejemplo, formatos de fecha específicos. Para obtener más información, vea [Aplicar formato a tipos](https://go.microsoft.com/fwlink/?LinkId=112024) en MSDN.  
+ [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] proporciona muchas opciones de formato, por ejemplo, formatos de fecha específicos. Para obtener más información, vea [Aplicar formato a tipos](/previous-versions/) en MSDN.  
   
 ### <a name="math-functions"></a>Funciones matemáticas  
   
@@ -209,7 +209,7 @@ Para aprender a escribir expresiones que usan muchas de las funciones y operador
   
      Si el cuadro de texto solo contiene una fecha o un número, necesitará usar la propiedad Format del cuadro de texto para aplicar formato, en lugar de usar la función **Format** dentro del cuadro de texto.  
   
--   Las funciones **Right**, **Len**e **InStr** son útiles para devolver una subcadena (por ejemplo, para reducir *DOMINIO*\\*nombre_de_usuario* a solo el nombre de usuario). La siguiente expresión devuelve la parte de la cadena situada a la derecha de un carácter de barra diagonal inversa (\\) de un parámetro denominado *User*:  
+-   Las funciones **Right**, **Len** e **InStr** son útiles para devolver una subcadena (por ejemplo, para reducir *DOMINIO*\\*nombre_de_usuario* a solo el nombre de usuario). La siguiente expresión devuelve la parte de la cadena situada a la derecha de un carácter de barra diagonal inversa (\\) de un parámetro denominado *User*:  
   
     ```  
     =Right(Parameters!User.Value, Len(Parameters!User.Value) - InStr(Parameters!User.Value, "\"))  
@@ -515,7 +515,7 @@ Para aprender a escribir expresiones que usan muchas de las funciones y operador
  En un informe, puede utilizarse código personalizado. El código personalizado puede incrustarse en el informe o puede almacenarse en un ensamblado personalizado que se utilice en el informe. Para más información sobre código personalizado, vea [Referencias a ensamblados y código personalizado en expresiones en el Diseñador de informes &#40;SSRS&#41;](../../reporting-services/report-design/custom-code-and-assembly-references-in-expressions-in-report-designer-ssrs.md).  
   
 ### <a name="using-group-variables-for-custom-aggregation"></a>Usar variables de grupo para agregación personalizada  
- Puede inicializar el valor de una variable de grupo local en un ámbito de grupo determinado y, a continuación, incluir una referencia a esa variable en expresiones. Una forma de usar una variable de grupo con código personalizado es implementar un agregado personalizado. Para obtener más información, vea [Usar variables de grupo en Reporting Services 2008 para agregados personalizados (en inglés)](https://go.microsoft.com/fwlink/?LinkId=128714).  
+ Puede inicializar el valor de una variable de grupo local en un ámbito de grupo determinado y, a continuación, incluir una referencia a esa variable en expresiones. Una forma de usar una variable de grupo con código personalizado es implementar un agregado personalizado. Para obtener más información, vea [Usar variables de grupo en Reporting Services 2008 para agregados personalizados (en inglés)](/archive/blogs/robertbruckner/).  
   
  Para más información sobre variables, vea [Referencias a las colecciones de variables de informe y de grupo &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/built-in-collections-report-and-group-variables-references-report-builder.md).  
   
@@ -558,5 +558,4 @@ Para aprender a escribir expresiones que usan muchas de las funciones y operador
  [Usar expresiones en informes &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expression-uses-in-reports-report-builder-and-ssrs.md)   
  [Expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expressions-report-builder-and-ssrs.md)   
  [Filtros de uso frecuente &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/commonly-used-filters-report-builder-and-ssrs.md)  
-  
   

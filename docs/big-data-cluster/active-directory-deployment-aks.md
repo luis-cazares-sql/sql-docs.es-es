@@ -9,16 +9,16 @@ ms.date: 11/12/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 3f6b3ce5f6a594e5be385ee1f7ea7d1c03c1f92a
-ms.sourcegitcommit: 0f484f32709a414f05562bbaafeca9a9fc57c9ed
+ms.openlocfilehash: 4b11cef91203a9c7939d4d044220283db378e296
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94632967"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595636"
 ---
 # <a name="deploy-sql-server-big-data-clusters-in-ad-mode-on-azure-kubernetes-services-aks"></a>Implementación de clústeres de macrodatos de SQL Server en modo de AD en Azure Kubernetes Service (AKS)
 
-Los clústeres de macrodatos de SQL Server admiten el [modo de implementación de Active Directory (AD)](deploy-active-directory.md) para la **administración de identidades y acceso (IAM)** . La IAM para **Azure Kubernetes Service (AKS)** ha sido todo un desafío porque los protocolos estándar del sector, como OAuth 2.0 y OpenID Connect, ampliamente compatibles con la plataforma de identidades de Microsoft, no son compatibles con SQL Server.  
+Los clústeres de macrodatos de SQL Server admiten el [modo de implementación de Active Directory (AD)](./active-directory-prerequisites.md) para la **administración de identidades y acceso (IAM)** . La IAM para **Azure Kubernetes Service (AKS)** ha sido todo un desafío porque los protocolos estándar del sector, como OAuth 2.0 y OpenID Connect, ampliamente compatibles con la plataforma de identidades de Microsoft, no son compatibles con SQL Server.  
 
 En este artículo se explica cómo implementar clústeres de macrodatos (BDC) en el modo de AD mientras se realiza la implementación en [Azure Kubernetes Service (AKS)](/azure/aks/intro-kubernetes). 
 

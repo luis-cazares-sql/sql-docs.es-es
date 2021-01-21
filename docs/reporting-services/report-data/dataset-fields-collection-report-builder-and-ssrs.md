@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: b3884576-1f7e-4d40-bb7d-168312333bb3
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 7d19ea6df08431db42e700cabccd7a05167dd89c
-ms.sourcegitcommit: 6be9a0ff0717f412ece7f8ede07ef01f66ea2061
+ms.openlocfilehash: 6ad6853715963c9a29ee4db2e73199fecd50801a
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85808585"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597318"
 ---
 # <a name="dataset-fields-collection-report-builder-and-ssrs"></a>Colección Campos del conjunto de datos (Generador de informes y SSRS)
   Los campos de conjunto de datos representan los datos de una conexión de datos. Un campo puede representar datos numéricos o no numéricos. En los ejemplos se incluyen cantidades de ventas, ventas totales, nombres de cliente, identificadores de base de datos, direcciones URL, imágenes, datos espaciales y direcciones de correo electrónico. En la superficie de diseño, los campos aparecen como expresiones en los elementos de informe como los cuadros de texto, tablas y gráficos.  
@@ -57,7 +57,7 @@ ms.locfileid: "85808585"
  Los orígenes de datos que admiten consultas multidimensionales, como [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)], admiten las propiedades de campo en los campos. Las propiedades de campo aparecen en el conjunto de resultados para una consulta, pero no están visibles en el panel **Datos de informe** . Sí que están disponibles para usarlas en el informe. Para hacer referencia a una propiedad de un campo, arrastre el campo al informe y cambie la propiedad predeterminada **Value** por el nombre de campo de la propiedad que desee. Por ejemplo, en un cubo de [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] , puede definir los formatos para los valores de las celdas del cubo. El valor con formato está disponible mediante la propiedad de campo **FormattedValue**. Para usar directamente el valor en lugar de usar un valor y establecer la propiedad de formato del cuadro de texto, arrastre el campo al cuadro de texto y cambie la expresión predeterminada `=Fields!FieldName.Value` a `=Fields!FieldName.FormattedValue`.  
   
 > [!NOTE]
->  No todas las propiedades **Field** pueden utilizarse para todos los orígenes de datos. Las propiedades **Value** y **IsMissing** se definen para todos los orígenes de datos. Otras propiedades predefinidas (como **Key**, **UniqueName**y **ParentUniqueName** para orígenes de datos multidimensionales) solo se admiten si el origen de datos las proporciona. Algunos proveedores de datos admiten las propiedades personalizadas. Para obtener más información, vea los temas sobre las propiedades de campo extendidas para cada tipo de origen de datos en [Conjuntos de datos incrustados y compartidos de informe &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-data/report-embedded-datasets-and-shared-datasets-report-builder-and-ssrs.md). Por ejemplo, para un origen de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)][!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)], vea [Propiedades de campo extendidas para una base de datos de Analysis Services &#40;SSRS&#41;](../../reporting-services/report-data/extended-field-properties-for-an-analysis-services-database-ssrs.md).  
+>  No todas las propiedades **Field** pueden utilizarse para todos los orígenes de datos. Las propiedades **Value** y **IsMissing** se definen para todos los orígenes de datos. Otras propiedades predefinidas (como **Key**, **UniqueName** y **ParentUniqueName** para orígenes de datos multidimensionales) solo se admiten si el origen de datos las proporciona. Algunos proveedores de datos admiten las propiedades personalizadas. Para obtener más información, vea los temas sobre las propiedades de campo extendidas para cada tipo de origen de datos en [Conjuntos de datos incrustados y compartidos de informe &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-data/report-embedded-datasets-and-shared-datasets-report-builder-and-ssrs.md). Por ejemplo, para un origen de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)][!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)], vea [Propiedades de campo extendidas para una base de datos de Analysis Services &#40;SSRS&#41;](../../reporting-services/report-data/extended-field-properties-for-an-analysis-services-database-ssrs.md).  
   
   
 ##  <a name="understanding-default-expressions-for-fields"></a><a name="Defaults"></a> Descripción de las expresiones predeterminadas para campos  
@@ -77,9 +77,9 @@ ms.locfileid: "85808585"
   
 -   **Origen de datos** : los tipos de datos admitidos por la versión del tipo de origen de datos con el que se está conectando.  
   
-     Por ejemplo, para un origen de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , son típicos los tipos de datos **int**, **datetime**y **varchar**. Con [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] , se han agregado los tipos de datos **date**, **time**, **datetimetz**y **datetime2**. Para obtener más información, vea [Tipos de datos (Transact-SQL)](https://go.microsoft.com/fwlink/?linkid=98362).  
+     Por ejemplo, para un origen de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , son típicos los tipos de datos **int**, **datetime** y **varchar**. Con [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] , se han agregado los tipos de datos **date**, **time**, **datetimetz** y **datetime2**. Para obtener más información, vea [Tipos de datos (Transact-SQL)](/previous-versions/sql/sql-server-2008/ms187752(v=sql.100)).  
   
--   **Proveedor de datos o extensión de procesamiento de datos** : los tipos de datos admitidos por la versión del proveedor de datos de la extensión de procesamiento de datos que se selecciona al conectar con el origen de datos. Los proveedores de datos basados en [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] usan tipos de datos admitidos por CLR. Para obtener más información sobre los tipos de datos de los proveedores de datos de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] , vea [Asignar tipos de datos en ADO.NET](https://go.microsoft.com/fwlink/?LinkId=112178) y [Trabajar con tipos base en .NET Framework](https://go.microsoft.com/fwlink/?LinkId=112177) en MSDN.  
+-   **Proveedor de datos o extensión de procesamiento de datos** : los tipos de datos admitidos por la versión del proveedor de datos de la extensión de procesamiento de datos que se selecciona al conectar con el origen de datos. Los proveedores de datos basados en [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] usan tipos de datos admitidos por CLR. Para obtener más información sobre los tipos de datos de los proveedores de datos de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] , vea [Asignar tipos de datos en ADO.NET](/dotnet/framework/data/adonet/data-type-mappings-in-ado-net) y [Trabajar con tipos base en .NET Framework](/dotnet/standard/base-types/common-type-system) en MSDN.  
   
      Por ejemplo, los tipos de datos típicos admitidos por [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] son **Int32** y **String**. La estructura **DateTime** admite las fechas y horas del calendario. En el Service Pack 1 de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] 2.0 se introdujo la compatibilidad con la estructura **DateTimeOffset** para las fechas con un ajuste de zona horaria.  
   
@@ -97,7 +97,7 @@ ms.locfileid: "85808585"
     |**DateTimeTZ**|**DateTimeOffset**|Fecha y hora con ajuste de zona horaria|  
     |**DateTime2**|**DateTime**|Fecha y hora con fracciones de milisegundos|  
   
- Para obtener más información sobre los tipos de base de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , vea [Tipos de datos (motor de base de datos)](https://go.microsoft.com/fwlink/?linkid=98362) y [Tipos de datos y funciones de fecha y hora (Transact-SQL)](https://go.microsoft.com/fwlink/?linkid=98360).  
+ Para obtener más información sobre los tipos de base de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , vea [Tipos de datos (motor de base de datos)](/previous-versions/sql/sql-server-2008/ms187752(v=sql.100)) y [Tipos de datos y funciones de fecha y hora (Transact-SQL)](/previous-versions/sql/sql-server-2008/ms186724(v=sql.100)).  
   
  Para obtener más información sobre cómo incluir referencias a un campo de conjunto de datos desde una expresión, vea [Tipos de datos en expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/data-types-in-expressions-report-builder-and-ssrs.md).  
   
@@ -107,8 +107,7 @@ ms.locfileid: "85808585"
   
   
 ## <a name="see-also"></a>Consulte también  
- [Propiedades del conjunto de datos (cuadro de diálogo), Campos &#40;Generador de informes&#41;](https://msdn.microsoft.com/library/75c7e54a-3d20-4c9a-88da-ab36dce2ce42)   
+ [Propiedades del conjunto de datos (cuadro de diálogo), Campos &#40;Generador de informes&#41;]()   
  [Elementos de informe y conjuntos de datos en el Generador de informes](../../reporting-services/report-data/report-parts-and-datasets-in-report-builder.md)   
  [Conjuntos de datos incrustados y compartidos de informe &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-data/report-embedded-datasets-and-shared-datasets-report-builder-and-ssrs.md)  
-  
   

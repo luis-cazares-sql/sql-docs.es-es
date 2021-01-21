@@ -9,12 +9,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 995b30e9c69b14148a67f18c36e0f42d01c419eb
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 71c8852efd538ef0a702c8f96435facf4882b7d2
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470826"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596661"
 ---
 # <a name="performance-tuning-and-data-optimization-for-r"></a>Optimización del rendimiento y de los datos para R
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -175,4 +175,4 @@ También se recomienda que examine el nuevo paquete de **MicrosoftML**, que prop
 
 + Si quiere ver las funciones de R que puede usar para mejorar el rendimiento del código de R, consulte [Uso de funciones de generación de perfiles de código de R para mejorar el rendimiento](using-r-code-profiling-functions.md).
 
-+ Para información más completa sobre la optimización del rendimiento en SQL Server, consulte [Centro de rendimiento para el motor de base de datos de SQL Server y Base de datos SQL de Azure](/sql/relational-databases/performance/performance-center-for-sql-server-database-engine-and-azure-sql-database).
++ Para información más completa sobre la optimización del rendimiento en SQL Server, consulte [Centro de rendimiento para el motor de base de datos de SQL Server y Base de datos SQL de Azure](../../relational-databases/performance/performance-center-for-sql-server-database-engine-and-azure-sql-database.md).

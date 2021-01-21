@@ -12,12 +12,12 @@ ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f8e9ba976f3b5c0689eb69aec3a10bba38f70fd7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 51eaabf3196c2b7142228908dcef3587bc819b94
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97466416"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595104"
 ---
 # <a name="add-transact-sql-snippets"></a>Agregar fragmentos de código de Transact-SQL
 
@@ -26,7 +26,7 @@ ms.locfileid: "97466416"
 Puede agregar sus propios fragmentos de código de Transact-SQL al conjunto de fragmentos de código predefinidos que se incluyen en [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
 
 ## <a name="creating-a-transact-sql-snippet-file"></a>Crear un archivo de fragmento de código de Transact-SQL  
- La primera parte de la creación de un fragmento de código de [!INCLUDE[tsql](../../includes/tsql-md.md)] consiste en crear un archivo XML con el texto del fragmento de código. El archivo debe tener una extensión de archivo .snippet y cumplir los requisitos del tema sobre [referencia de esquemas de fragmento de código](https://go.microsoft.com/fwlink/?LinkId=207504). El lenguaje del fragmento de código se establece en SQL.  
+ La primera parte de la creación de un fragmento de código de [!INCLUDE[tsql](../../includes/tsql-md.md)] consiste en crear un archivo XML con el texto del fragmento de código. El archivo debe tener una extensión de archivo .snippet y cumplir los requisitos del tema sobre [referencia de esquemas de fragmento de código](/previous-versions/visualstudio/visual-studio-2015/ide/code-snippets-schema-reference). El lenguaje del fragmento de código se establece en SQL.  
   
  Puede utilizar los fragmentos de código predefinidos que se proporcionan con [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] como ejemplos. Para buscar los fragmentos de código predefinidos, abra [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)], seleccione el menú **Herramientas** y haga clic en **Administrador de fragmentos de código**. Seleccione **SQL** en el cuadro de lista **Lenguaje** ; la ruta de acceso a los fragmentos de código de [!INCLUDE[tsql](../../includes/tsql-md.md)] se muestra en el cuadro **Ubicación** .  
   
@@ -116,5 +116,4 @@ Puede agregar sus propios fragmentos de código de Transact-SQL al conjunto de f
 5.  Navegue a la carpeta que contiene el archivo TryCatch.snippet, haga clic en el citado archivo y haga clic en el botón **Abrir** . Ahora debería tener un fragmento de código TryCatch en la carpeta **Mis fragmentos de código**.  
   
 ## <a name="see-also"></a>Consulte también  
- [Insertar fragmentos de código de Transact-SQL para rodear](../../relational-databases/scripting/insert-surround-with-transact-sql-snippets.md)  
-    
+ [Insertar fragmentos de código de Transact-SQL para rodear](./insert-surround-with-transact-sql-snippets.md)  

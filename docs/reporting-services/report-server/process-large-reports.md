@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c5275a9f-c95b-46d7-bc62-633879a8a291
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 9b263aa61d02c20f55933744449151fa7676bad1
-ms.sourcegitcommit: f0772f614482e0b3cde3609e178689ce62ca3a19
+ms.openlocfilehash: 022751a3ec4b47a8e7a3a5f5295306265f659512
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84544517"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98594981"
 ---
 # <a name="process-large-reports"></a>Procesar informes grandes
   Los informes de gran tamaño presentan determinados problemas de procesamiento y requieren determinadas configuraciones para que se ejecuten correctamente. Estos informes no deben ejecutarse a petición a menos que estén configurados para admitir paginación.  
@@ -32,7 +32,7 @@ ms.locfileid: "84544517"
   
  En el caso de informes que incluyen datos volátiles, el tamaño puede variar drásticamente de una ejecución a otra del informe. En este caso, debe supervisar el origen de datos para determinar cómo afecta la volatilidad de los datos al informe y si es preciso seguir los pasos que se exponen en este tema.  
   
- Para obtener más información y sugerencias sobre cómo diagnosticar errores de tiempo de espera y errores de memoria insuficiente, vea el artículo sobre [cómo diagnosticar problemas cuando se ejecutan informes en el servidor de informes](https://go.microsoft.com/fwlink/?LinkId=85634) en blogs.msdn.microsoft.com.  
+ Para obtener más información y sugerencias sobre cómo diagnosticar errores de tiempo de espera y errores de memoria insuficiente, vea el artículo sobre [cómo diagnosticar problemas cuando se ejecutan informes en el servidor de informes](/archive/blogs/lukaszp/) en blogs.msdn.microsoft.com.  
   
 ## <a name="configuration-recommendations"></a>Recomendaciones para la configuración  
  Entre las recomendaciones para la ejecución de informes, la representación de informes y el acceso a los informes, se contemplan los siguientes aspectos:  
@@ -72,4 +72,4 @@ ms.locfileid: "84544517"
  [Establecer las propiedades del procesamiento de informes](../../reporting-services/report-server/set-report-processing-properties.md)   
  [Especificar información de credenciales y conexión para los orígenes de datos de informes](../../reporting-services/report-data/specify-credential-and-connection-information-for-report-data-sources.md)   
  [Administración de contenido del servidor de informes &#40;Modo nativo de SSRS&#41;](../../reporting-services/report-server/report-server-content-management-ssrs-native-mode.md)   
- [Carga previa de la memoria caché (SSRS)](../../reporting-services/report-server/preload-the-cache-report-manager.md)  
+ [Carga previa de la memoria caché (SSRS)](../../reporting-services/report-server/preload-the-cache-report-manager.md)

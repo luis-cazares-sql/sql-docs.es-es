@@ -11,12 +11,12 @@ ms.assetid: baf3a205-a6bb-4564-8b64-3a0475bb9273
 author: stevestein
 ms.author: sstein
 monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016'
-ms.openlocfilehash: 8f12acd87a21cca6047621abfb985906295b58c1
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: dc701901340bcea2d93c4bc4ef79b00855dd8dc2
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97461446"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596622"
 ---
 # <a name="configure-usage-and-diagnostic-data-collection-for-sql-server-tools-ceip"></a>Configuración de la recopilación de datos de uso y diagnóstico para herramientas de SQL Server (CEIP)
 
@@ -25,7 +25,7 @@ ms.locfileid: "97461446"
 Obtenga información sobre el modo en que el Programa para la mejora de la experiencia del usuario (CEIP) ayuda a Microsoft a identificar formas de mejorar el software.  Puede configurar herramientas para participar o dejar de hacerlo en cualquier momento.  
   
 > [!NOTE]  
-> Para ver una explicación de las prácticas de recopilación y uso de datos de usuario de las versiones de Microsoft SQL Server, consulte esta [declaración de privacidad](https://go.microsoft.com/fwlink/?LinkID=868444).  
+> Para ver una explicación de las prácticas de recopilación y uso de datos de usuario de las versiones de Microsoft SQL Server, consulte esta [declaración de privacidad](./sql-server-privacy.md).  
   
 ## <a name="opting-in-and-out-of-ceip-for-sql-server-data-tools"></a>Participación en el CEIP de SQL Server Data Tools o cancelación de esta  
 
@@ -74,10 +74,10 @@ Valor = (DWORD)
 > [!CAUTION]  
 >  La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo. También puede usar la opción de inicio Última configuración buena conocida en caso de detectar problemas una vez aplicados cambios manuales.  
   
- Para obtener más información acerca de los datos que se recopilan, procesan o transmiten en el CEIP, consulte la [Declaración de privacidad](https://go.microsoft.com/fwlink/?LinkID=868444).  
+ Para obtener más información acerca de los datos que se recopilan, procesan o transmiten en el CEIP, consulte la [Declaración de privacidad](./sql-server-privacy.md).  
  
 ### <a name="choice-and-control-over-ceip-and-sql-server-data-tools-for-visual-studio-2015"></a>Elección y control sobre el CEIP y SQL Server Data Tools para Visual Studio 2015  
- SSDT para Visual Studio 2015 es la herramienta de modelado de datos incluida en SQL Server 2016. Usa las opciones del CEIP integradas en Visual Studio 2015. Puede obtener más información sobre cómo enviar comentarios a través del CEIP de Visual Studio 2015 en este [documento de ayuda de Visual Studio](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017).  
+ SSDT para Visual Studio 2015 es la herramienta de modelado de datos incluida en SQL Server 2016. Usa las opciones del CEIP integradas en Visual Studio 2015. Puede obtener más información sobre cómo enviar comentarios a través del CEIP de Visual Studio 2015 en este [documento de ayuda de Visual Studio](/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017).  
   
  En las versiones preliminares de SQL Server 2016, el CEIP está activado de forma predeterminada. Puede desactivarlo o volver a activarlo con las instrucciones siguientes.  
   
@@ -116,7 +116,7 @@ Valor = (DWORD)
 > [!CAUTION]  
 >  La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo. También puede usar la opción de inicio Última configuración buena conocida en caso de detectar problemas una vez aplicados cambios manuales.  
   
- Para obtener más información acerca de los datos que se recopilan, procesan o transmiten en el CEIP, consulte la [Declaración de privacidad](https://go.microsoft.com/fwlink/?LinkID=868444).  
+ Para obtener más información acerca de los datos que se recopilan, procesan o transmiten en el CEIP, consulte la [Declaración de privacidad](./sql-server-privacy.md).  
   
 ### <a name="choice-and-control-for-ceip-and-sql-server-data-tools---bi-ssdt-bi"></a>Elección y control del CEIP y SQL Server Data Tools - BI (SSDT-BI)  
  Si usa SSDT-BI, se le ofrecerá la oportunidad de participar en el CEIP durante la instalación. Más adelante se pueden realizar cambios de configuración del CEIP de SSDT-BI mediante las herramientas de cliente o la edición de la configuración del Registro.  
@@ -148,5 +148,4 @@ Valor = (DWORD)
 -   0 para no utilizar el CEIP  
   
 -   1 para utilizarlo  
-  
   

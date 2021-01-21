@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c6674cd8-0de7-4a5a-9e7c-12ffa49f6fd2
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 2c68562c1be1817d8f7457f680b4f45169de4a1f
-ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
+ms.openlocfilehash: 9aa3a01e88b699f184ea05dfcb3650b4653837cb
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96166888"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595499"
 ---
 # <a name="deploying-a-custom-assembly"></a>Implementar un ensamblado personalizado
   Para implementar un ensamblado personalizado en [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], coloque el ensamblado en las carpetas de aplicaciones del Diseñador de informes y el servidor de informes. De forma predeterminada, a los ensamblados personalizados se les concede el permiso **Ejecución** en [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]. Para conceder privilegios a los ensamblados personalizados a parte del permiso Ejecutar, tendrá que modificar el archivo de configuración rssrvpolicy.config para el servidor de informes y el archivo de configuración rspreviewpolicy.config para la ventana de vista previa del Diseñador de informes. Otra opción es instalar el ensamblado personalizado en la memoria caché de ensamblados global (GAC).  
@@ -135,6 +135,5 @@ ms.locfileid: "96166888"
   
 ## <a name="see-also"></a>Consulte también  
  [Usar ensamblados personalizados con informes](../../reporting-services/custom-assemblies/using-custom-assemblies-with-reports.md)   
- [Trabajar con ensamblados y la memoria caché global de ensamblados](https://go.microsoft.com/fwlink/?LinkId=63912)  
-  
+ [Trabajar con ensamblados y la memoria caché global de ensamblados](/dotnet/framework/app-domains/working-with-assemblies-and-the-gac)  
   

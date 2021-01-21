@@ -19,12 +19,12 @@ helpviewer_keywords:
 - find sql server instance name
 ms.custom: seo-lt-2019
 ms.date: 03/13/2018
-ms.openlocfilehash: 1f05ea22f092573364e663165559be73857ca320
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.openlocfilehash: 9d480496cad6dafddc428c6049601521ebba88b8
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92038922"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596450"
 ---
 # <a name="tips-and-tricks-for-using-sql-server-management-studio-ssms"></a>Recomendaciones y trucos para usar SQL Server Management Studio (SSMS)
 
@@ -286,7 +286,7 @@ Si se ha conectado a un alias o a un agente de escucha del grupo de disponibilid
 
 La mejor forma de familiarizarse con SSMS es practicar. Estos *tutoriales* y artículos de *procedimientos* lo ayudan con varias características disponibles dentro de SSMS.  Estos artículos le mostrarán cómo administrar los componentes de SSMS y cómo localizar las características que utiliza habitualmente.
 
-* [Conexión a una instancia y realización de consultas](../quickstarts/connect-query-sql-server.md)
+* [Conexión a una instancia y realización de consultas](../quickstarts/ssms-connect-query-sql-server.md)
 * [Scripting](scripting-ssms.md)
 * [Uso de plantillas en SSMS](../template/templates-ssms.md)
 * [Configuración de SSMS](ssms-configuration.md)

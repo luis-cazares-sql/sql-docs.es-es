@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: a6b595dc-f775-4a53-8554-74a0bf9335ec
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 2ba53f3fa33bdb8b0f09c13b1afa9aba9398ff87
-ms.sourcegitcommit: e572f1642f588b8c4c75bc9ea6adf4ccd48a353b
+ms.openlocfilehash: 075dac12d1a4b5e393ead71da7bbf297fe40ae69
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84779147"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596776"
 ---
 # <a name="add-a-chart-to-a-report-report-builder-and-ssrs"></a>Agregar un gráfico a un informe (Generador de informes y SSRS)
   Para resumir datos con un formato visual en un informe paginado de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] , use una región de datos de gráfico. Es importante elegir el tipo de gráfico adecuado para el tipo de datos que se va a presentar. Esto determinará en qué medida se podrán interpretar correctamente los datos cuando se trasladen al gráfico. Para más información, vea [Gráficos &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/charts-report-builder-and-ssrs.md).  
@@ -31,7 +31,7 @@ ms.locfileid: "84779147"
 1.  > [!NOTE]  
     >  El Asistente para gráficos solamente está disponible en el Generador de informes.  
   
-     En la pestaña **Insertar** , haga clic en **Gráfico**y, a continuación, haga clic en **Asistente para gráficos**.  
+     En la pestaña **Insertar** , haga clic en **Gráfico** y, a continuación, haga clic en **Asistente para gráficos**.  
   
 2.  Siga los pasos en el Asistente para **Nuevo** gráfico.  
   
@@ -43,7 +43,7 @@ ms.locfileid: "84779147"
   
 1.  Cree un informe y defina un conjunto de datos. Para más información, vea [Conjuntos de datos de informe &#40;SSRS&#41;](../../reporting-services/report-data/report-datasets-ssrs.md).  
   
-2.  En la pestaña **Insertar** , haga clic en **Gráfico**y, a continuación, haga clic en **Insertar gráfico**.  
+2.  En la pestaña **Insertar** , haga clic en **Gráfico** y, a continuación, haga clic en **Insertar gráfico**.  
   
 3.  Haga clic en la superficie de diseño en la que desea que se encuentre la esquina superior izquierda del gráfico y arrastre hasta donde desee que se encuentre la esquina inferior derecha del gráfico.  
   
@@ -69,9 +69,8 @@ ms.locfileid: "84779147"
  [Gráficos &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/charts-report-builder-and-ssrs.md)   
  [Tipos de gráficos &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/chart-types-report-builder-and-ssrs.md)   
  [Puntos de datos vacíos y nulos en los gráficos &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/empty-and-null-data-points-in-charts-report-builder-and-ssrs.md)   
- [Tutorial: Incorporación de un gráfico de barras a un informe (Generador de informes)](https://go.microsoft.com/fwlink/?LinkId=198052)   
- [Tutorial: Agregar un gráfico de barras a un informe (Diseñador de informes)](https://go.microsoft.com/fwlink/?LinkId=198042)   
- [Tutorial: Incorporación de un gráfico circular a un informe (Generador de informes)](https://go.microsoft.com/fwlink/?LinkId=198051)   
- [Tutorial: Agregar un gráfico circular a un informe (Diseñador de informes)](https://go.microsoft.com/fwlink/?LinkId=198041)  
-  
+ [Tutorial: Incorporación de un gráfico de barras a un informe (Generador de informes)](../tutorial-add-a-bar-chart-to-your-report-report-builder.md)   
+ [Tutorial: Agregar un gráfico de barras a un informe (Diseñador de informes)](/previous-versions/sql/sql-server-2008-r2/cc281302(v=sql.105))   
+ [Tutorial: Incorporación de un gráfico circular a un informe (Generador de informes)](../tutorial-add-a-pie-chart-to-your-report-report-builder.md)   
+ [Tutorial: Agregar un gráfico circular a un informe (Diseñador de informes)](/previous-versions/sql/sql-server-2008-r2/cc281304(v=sql.105))  
   

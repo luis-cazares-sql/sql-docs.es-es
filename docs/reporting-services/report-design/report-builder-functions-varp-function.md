@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: e4f86ab3-bdb3-4e4a-9a9d-7ae7abdf4dc4
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 15f9d359d16100849d4808359369c3937b7a49a7
-ms.sourcegitcommit: 6c2232c4d2c1ce5710296ce97b909f5ed9787f66
+ms.openlocfilehash: a53d0d6d6bc86222bb0133349c85438a5463c945
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84462369"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596683"
 ---
 # <a name="report-builder-functions---varp-function"></a>Funciones del Generador de informes: función VarP
   Devuelve la varianza de población de todos los valores numéricos no NULL especificados por la expresión, que se evalúa en el contexto del ámbito especificado.  
@@ -43,7 +43,7 @@ VarP(expression, scope, recursive)
  Devuelve un valor **Decimal** para expresiones decimales y un valor **Double** para las demás expresiones.  
   
 ## <a name="remarks"></a>Observaciones  
- El conjunto de datos especificado en la expresión debe tener el mismo tipo de datos. Si desea convertir datos de varios tipos de datos numéricos al mismo tipo de datos, use funciones de conversión como **CInt**, **CDbl** o **CDec**. Para obtener más información, vea [Funciones de conversión de tipos](https://go.microsoft.com/fwlink/?LinkId=96142).  
+ El conjunto de datos especificado en la expresión debe tener el mismo tipo de datos. Si desea convertir datos de varios tipos de datos numéricos al mismo tipo de datos, use funciones de conversión como **CInt**, **CDbl** o **CDec**. Para obtener más información, vea [Funciones de conversión de tipos](/dotnet/visual-basic/language-reference/functions/type-conversion-functions).  
   
  El valor de *scope* debe ser una constante de cadena y no puede ser una expresión. Para los agregados exteriores o los que no especifican a otros agregados, *scope* debe hacer referencia al ámbito actual o a un ámbito de contenido. Para los agregados de agregados, los agregados anidados pueden especificar un ámbito secundario.  
   
@@ -53,7 +53,7 @@ VarP(expression, scope, recursive)
   
 -   *Scope* , para los agregados anidados, no puede ser el nombre de un conjunto de datos.  
   
--   *Expression* no debe contener las funciones **First**, **Last**, **Previous**o **RunningValue** .  
+-   *Expression* no debe contener las funciones **First**, **Last**, **Previous** o **RunningValue** .  
   
 -   *Expression* no debe contener a los agregados anidados que especifican *recursive*.  
   
@@ -73,5 +73,4 @@ VarP(expression, scope, recursive)
  [Ejemplos de expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expression-examples-report-builder-and-ssrs.md)   
  [Tipos de datos en expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/data-types-in-expressions-report-builder-and-ssrs.md)   
  [Ámbito de expresión para los totales, agregados y colecciones integradas &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expression-scope-for-totals-aggregates-and-built-in-collections.md)  
-  
   

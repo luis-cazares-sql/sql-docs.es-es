@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 14442892bc59fc733c6a67153832b95c3f368b95
-ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
+ms.openlocfilehash: 12dfcb26484b468bed9f9262403806ea88829385
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2020
-ms.locfileid: "97771465"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595769"
 ---
 # <a name="configuring-parameters"></a>Configuración de parámetros
 
@@ -27,7 +27,7 @@ ms.locfileid: "97771465"
 
 Los objetos de comando usan parámetros para pasar valores a instrucciones SQL o procedimientos almacenados que permiten realizar operaciones de comprobación de tipos y validación. A diferencia del texto de comando, la entrada de parámetros se trata como un valor literal, y no como código ejecutable. De esta forma, se protege contra ataques por "inyección de código SQL", en los que un atacante inserta un comando que pone en peligro la seguridad del servidor en una instrucción SQL.
 
-Los comandos parametrizados también pueden mejorar el rendimiento de ejecución de la consulta, ya que ayudan al servidor de bases de datos a que haga coincidir precisamente el comando entrante con un plan de consulta almacenado en caché adecuado. Para obtener más información, consulte [Almacenar en caché y volver a utilizar un plan de ejecución](/sql/relational-databases/query-processing-architecture-guide#execution-plan-caching-and-reuse) y [Parámetros y reutilización de un plan de ejecución](/sql/relational-databases/query-processing-architecture-guide#PlanReuse). Además de las ventajas en la seguridad y el rendimiento, los comandos con parámetros proporcionan un método práctico para organizar los valores que se pasan a un origen de datos.
+Los comandos parametrizados también pueden mejorar el rendimiento de ejecución de la consulta, ya que ayudan al servidor de bases de datos a que haga coincidir precisamente el comando entrante con un plan de consulta almacenado en caché adecuado. Para obtener más información, consulte [Almacenar en caché y volver a utilizar un plan de ejecución](../../relational-databases/query-processing-architecture-guide.md#execution-plan-caching-and-reuse) y [Parámetros y reutilización de un plan de ejecución](../../relational-databases/query-processing-architecture-guide.md#PlanReuse). Además de las ventajas en la seguridad y el rendimiento, los comandos con parámetros proporcionan un método práctico para organizar los valores que se pasan a un origen de datos.
 
 Para crear un objeto <xref:System.Data.Common.DbParameter> , se puede usar su constructor o bien se puede agregar a <xref:System.Data.Common.DbCommand.DbParameterCollection%2A> mediante una llamada al método `Add` de la colección <xref:System.Data.Common.DbParameterCollection> . El método `Add` acepta como entrada argumentos del constructor o cualquier objeto de parámetro ya existente, en función del proveedor de datos.
 
@@ -103,7 +103,7 @@ Para obtener más información, vea [Generar comandos con objetos CommandBuilder
 Los procedimientos almacenados ofrecen numerosas ventajas en el caso de aplicaciones que procesan datos. Mediante el uso de procedimientos almacenados, las operaciones de bases de datos se pueden encapsular en un solo comando, optimizar para lograr el mejor rendimiento, y mejorar con seguridad adicional. Aunque es cierto que para llamar a un procedimiento almacenado basta con pasar en forma de instrucción SQL su nombre seguido de los argumentos de parámetros, el uso de la colección <xref:System.Data.Common.DbCommand.Parameters%2A> del objeto <xref:System.Data.Common.DbCommand> de ADO.NET permite definir más explícitamente los parámetros del procedimiento almacenado, y tener acceso a los parámetros de salida y a los valores devueltos.
 
 > [!NOTE]
-> Las instrucciones con parámetros se ejecutan en el servidor utilizando `sp_executesql,` ; esto permite volver a utilizar el plan de consultas. Los cursores o las variables locales del lote de `sp_executesql` no son visibles para el lote que llama a `sp_executesql`. Los cambios en el contexto de base de datos solo se mantienen hasta el final de la instrucción `sp_executesql` . Para más información, consulte [sp_executesql (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql).
+> Las instrucciones con parámetros se ejecutan en el servidor utilizando `sp_executesql,` ; esto permite volver a utilizar el plan de consultas. Los cursores o las variables locales del lote de `sp_executesql` no son visibles para el lote que llama a `sp_executesql`. Los cambios en el contexto de base de datos solo se mantienen hasta el final de la instrucción `sp_executesql` . Para más información, consulte [sp_executesql (Transact-SQL)](../../relational-databases/system-stored-procedures/sp-executesql-transact-sql.md).
 
 Cuando se usan parámetros con <xref:Microsoft.Data.SqlClient.SqlCommand> para ejecutar un procedimiento almacenado de SQL Server, los nombres de los parámetros agregados a la colección <xref:Microsoft.Data.SqlClient.SqlCommand.Parameters%2A> deben coincidir con los nombres de los marcadores de parámetro del procedimiento almacenado. El proveedor de datos SqlClient de Microsoft para SQL Server no admite el marcador de posición del signo de interrogación (?) para pasar parámetros a una instrucción SQL o a un procedimiento almacenado. Este proveedor trata los parámetros del procedimiento almacenado como parámetros con nombre y busca marcadores de parámetros coincidentes. Por ejemplo, el procedimiento almacenado `CustOrderHist` se define usando un parámetro denominado `@CustomerID`. Cuando el código ejecuta el procedimiento almacenado, también debe usar un parámetro denominado `@CustomerID`.
 

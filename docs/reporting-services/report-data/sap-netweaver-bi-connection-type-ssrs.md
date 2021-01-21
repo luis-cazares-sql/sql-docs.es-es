@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: f985856b-31d5-4e56-844b-8a8ee38da67e
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 028ee19646716666314b0242e0ebe0e3c6551e95
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+ms.openlocfilehash: 4b376fddd69a44f9280d4c0aaec4f58880d9ff76
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86457755"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596494"
 ---
 # <a name="sap-netweaver-bi-connection-type-ssrs"></a>Tipo de conexión de SAP NetWeaver BI (SSRS)
   Para incluir en un informe datos de un origen de datos de SAP NetWeaver® Business Intelligence externo, debe tener un conjunto de datos basado en un origen de datos de informe de tipo [!INCLUDE[SAP_DPE_BW_1](../../includes/sap-dpe-bw-1-md.md)]. Este tipo de origen de datos integrado está basado en la extensión de datos del proveedor de datos [!INCLUDE[msCoName](../../includes/msconame-md.md)] .NET Framework 1.0 para [!INCLUDE[SAP_DPE_BW_1](../../includes/sap-dpe-bw-1-md.md)].  
@@ -50,7 +50,7 @@ DataSource=https://mySAPNetWeaverBIServer:8000/sap/bw/xml/soap/xmla
   
  Mientras se generan las consultas, el diseñador de consultas agrega automáticamente propiedades predeterminadas a la consulta MDX. Para incluir propiedades distintas de las predeterminadas, debe modificar manualmente la consulta MDX.  
   
- Para más información sobre el trabajo con este diseñador de consultas, vea [Interfaz de usuario del Diseñador de consultas SAP NetWeaver BI &#40;Generador de informes&#41;](https://msdn.microsoft.com/library/8edda06d-1608-498b-bd50-10905e54f6ce).  
+ Para más información sobre el trabajo con este diseñador de consultas, vea [Interfaz de usuario del Diseñador de consultas SAP NetWeaver BI &#40;Generador de informes&#41;](/previous-versions/sql/).  
   
   
 ##  <a name="extended-field-properties"></a><a name="Extended"></a> Propiedades de campo extendidas  
@@ -98,7 +98,7 @@ DataSource=https://mySAPNetWeaverBIServer:8000/sap/bw/xml/soap/xmla
 ##  <a name="remarks"></a><a name="Remarks"></a> Comentarios  
  Este proveedor de datos no admite todos los modos de entrega de informes. No se admite la entrega de informes a través de suscripciones controladas por datos para esta extensión de procesamiento de datos. Para más información, vea [Usar un origen de datos externo para obtener información de los suscriptores &#40;suscripción controlada por datos&#41;](../../reporting-services/subscriptions/use-an-external-data-source-for-subscriber-data-data-driven-subscription.md).  
   
- Para obtener más información, vea el tema sobre cómo [usar SQL Server 2008 Reporting Services con SAP NetWeaver Business Intelligence](https://go.microsoft.com/fwlink/?LinkId=167352).  
+ Para obtener más información, vea el tema sobre cómo [usar SQL Server 2008 Reporting Services con SAP NetWeaver Business Intelligence](/previous-versions/sql/sql-server-2008/cc974473(v=sql.100)).  
   
   
 ##  <a name="how-to-topics"></a><a name="HowTo"></a> Temas de procedimientos  
@@ -134,5 +134,4 @@ DataSource=https://mySAPNetWeaverBIServer:8000/sap/bw/xml/soap/xmla
  [Parámetros de informe &#40;Generador de informes y Diseñador de informes&#41;](../../reporting-services/report-design/report-parameters-report-builder-and-report-designer.md)   
  [Filtrar, agrupar y ordenar datos &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/filter-group-and-sort-data-report-builder-and-ssrs.md)   
  [Expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expressions-report-builder-and-ssrs.md)  
-  
   

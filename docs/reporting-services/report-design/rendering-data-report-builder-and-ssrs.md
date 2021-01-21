@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: a458fdf9-fb2a-4fee-9fbd-b38f36e91753
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: f073f61cb469c3a31ef475a93920d7beba99a508
-ms.sourcegitcommit: f898aa83561e94626024916932568ab05e73b656
+ms.openlocfilehash: 4fe6c4989b70421bdf88b87e19bc9ad31d206379
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84012233"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596151"
 ---
 # <a name="rendering-data-report-builder-and-ssrs"></a>Representar datos (Generador de informes y SSRS)
   Cuando se usan representadores de diseño, como HTML, MHTML, Word, Excel, PDF o Image, los datos y su organización permanecen invariables. Cuando se exporta usando un formato de representador de datos, como Separado por comas (CSV) o XML, no se representa ningún elemento de diseño visual. Al representar el informe, CSV y XML aplican ciertas reglas al cuerpo del informe y a su contenido. Estas reglas determinan el modo en que se representan los datos en estos formatos.  
@@ -50,6 +50,5 @@ ms.locfileid: "84012233"
  [Funcionalidad interactiva para diferentes extensiones de representación de informes &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-builder/interactive-functionality-different-report-rendering-extensions.md)   
  [Representar elementos de informe &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/rendering-report-items-report-builder-and-ssrs.md)   
  [Tablas, matrices y listas &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/tables-matrices-and-lists-report-builder-and-ssrs.md)   
- [Configuración de información de dispositivos de Reporting Services](https://go.microsoft.com/fwlink/?LinkId=102515)  
-  
+ [Configuración de información de dispositivos de Reporting Services](/previous-versions/sql/sql-server-2008/ms155397(v=sql.100))  
   

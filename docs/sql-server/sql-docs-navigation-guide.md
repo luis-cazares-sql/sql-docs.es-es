@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017'
-ms.openlocfilehash: 98fd46528437cd9a82ec7d47539db230b8be8eb8
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 4c8852c9b2ce3f7bce027632b741511a008cb646
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97409401"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595880"
 ---
 # <a name="sql-server-docs-navigation-guide"></a>Guía de navegación de documentos de SQL Server
 
@@ -23,7 +23,7 @@ En este tema se proporcionan algunas sugerencias y trucos para navegar por el es
 
 ## <a name="hub-page"></a>Página central
 
-La página central de SQL Server se puede encontrar en [https://aka.ms/sqldocs](https://aka.ms/sqldocs) y es el punto de entrada para buscar contenido pertinente a SQL Server.
+La página central de SQL Server se puede encontrar en [https://aka.ms/sqldocs](../index.yml?WT.mc_id=akams) y es el punto de entrada para buscar contenido pertinente a SQL Server.
 
 Siempre puede volver a esta página seleccionando **Documentación de SQL** en el encabezado situado en la parte superior de todas las páginas del conjunto de documentación técnica de SQL Server: 
 
@@ -31,7 +31,7 @@ Siempre puede volver a esta página seleccionando **Documentación de SQL** en e
 
 ## <a name="offline-documentation"></a>Documentación sin conexión
 
-Si desea ver la documentación de SQL Server en un sistema sin conexión, tiene dos opciones para hacerlo. Puede crear un archivo PDF cuando se encuentre en la documentación técnica de SQL Server, o bien puede descargar el contenido sin conexión usando [Visor de Ayuda y ayuda sin conexión de SQL Server](sql-server-help-installation.md). 
+Si desea ver la documentación de SQL Server en un sistema sin conexión, tiene dos opciones para hacerlo. Puede crear un archivo PDF cuando se encuentre en la documentación técnica de SQL Server, o bien puede descargar el contenido sin conexión usando [Visor de Ayuda y ayuda sin conexión de SQL Server](./sql-server-offline-documentation.md). 
 
 Si quiere crear un archivo PDF, seleccione el vínculo **Descargar PDF** que se encuentra en la parte inferior de cada tabla de contenido.
 

@@ -9,12 +9,12 @@ ms.topic: article
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=sql-server-ver15'
-ms.openlocfilehash: b04cb475579c73a26ec5977ce52b9521ce69552a
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 749e13242c81e5a566ae13dfd66385194639db37
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642655"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596226"
 ---
 # <a name="whats-new-in-sql-server-2019"></a>Novedades de [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)]
 
@@ -26,7 +26,7 @@ En este artículo se resumen las nuevas características y mejoras de [!INCLUDE[
 
 Para obtener más información y consultar los problemas conocidos, vea [Notas de la versión de [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)]](sql-server-version-15-release-notes.md).
 
-Para obtener la mejor experiencia con [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)], use las [herramientas más recientes](https://aka.ms/getazuredatastudio).
+Para obtener la mejor experiencia con [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)], use las [herramientas más recientes](../azure-data-studio/download-azure-data-studio.md).
 
 [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] presenta [!INCLUDE[big-data-clusters](../includes/ssbigdataclusters-nover.md)] para [!INCLUDE[sql-server](../includes/ssnoversion-md.md)]. También proporciona funciones y mejoras adicionales para el motor de base de datos de SQL Server, SQL Server Analysis Services, SQL Server Machine Learning Services, SQL Server en Linux y SQL Server Master Data Services.
 
@@ -76,7 +76,7 @@ Las tecnologías de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] de [b
 | &nbsp; | &nbsp; |
 
 ### <a name="intelligent-performance"></a>Rendimiento inteligente
-[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] se basa en las innovaciones en la base de datos inteligente de versiones anteriores para garantizar que [funciona más rápido](https://docs.microsoft.com/archive/blogs/bobsql/). Estas mejoras ayudan a superar cuellos de botella de recursos conocidos y proporcionan varias opciones para configurar el servidor de base de datos para que ofrezca un rendimiento predecible en todas las cargas de trabajo.
+[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] se basa en las innovaciones en la base de datos inteligente de versiones anteriores para garantizar que [funciona más rápido](/archive/blogs/bobsql/). Estas mejoras ayudan a superar cuellos de botella de recursos conocidos y proporcionan varias opciones para configurar el servidor de base de datos para que ofrezca un rendimiento predecible en todas las cargas de trabajo.
 
 |Nueva característica o actualización | Detalles |
 |:---|:---|
@@ -130,10 +130,10 @@ Para ayudar a las empresas de diferentes países y regiones en las que el requis
 |Nueva característica o actualización | Detalles |
 |:---|:---|
 |Nuevo SDK del lenguaje Java | Simplifica el desarrollo de los programas Java que se pueden ejecutar desde SQL Server. Vea [SDK de extensibilidad de Microsoft para Java para SQL Server](../language-extensions/how-to/extensibility-sdk-java-sql-server.md). |
-|El SDK del lenguaje Java está en código abierto |El [SDK de extensibilidad de Microsoft para Java para Microsoft SQL Server](https://docs.microsoft.com/sql/language-extensions/how-to/extensibility-sdk-java-sql-server) está ahora en código abierto y [disponible en GitHub](https://github.com/microsoft/sql-server-language-extensions).|
+|El SDK del lenguaje Java está en código abierto |El [SDK de extensibilidad de Microsoft para Java para Microsoft SQL Server](../language-extensions/how-to/extensibility-sdk-java-sql-server.md) está ahora en código abierto y [disponible en GitHub](https://github.com/microsoft/sql-server-language-extensions).|
 |Compatibilidad con tipos de datos de Java|Vea [Java data types](../language-extensions/how-to/java-to-sql-data-types.md) (Tipo de datos Java).|
 |Nuevo runtime de Java predeterminado | Ahora, SQL Server incluye Zulu Embedded de Azul Systems para agregar compatibilidad con Java en todo el producto. Vea [La compatibilidad gratuita con Java en SQL Server 2019 ya está disponible](https://cloudblogs.microsoft.com/sqlserver/2019/07/24/free-supported-java-in-sql-server-2019-is-now-available/). |
-|Extensiones de lenguaje de SQL Server| Ejecute código externo con el marco de extensibilidad. Vea [Extensiones de lenguaje de SQL Server](https://docs.microsoft.com/sql/language-extensions/language-extensions-overview).
+|Extensiones de lenguaje de SQL Server| Ejecute código externo con el marco de extensibilidad. Vea [Extensiones de lenguaje de SQL Server](../language-extensions/language-extensions-overview.md).
 |Registrar lenguajes externos|Un nuevo lenguaje de definición de datos (DDL), `CREATE EXTERNAL LANGUAGE`, registra lenguajes externos, como Java, en SQL Server. Vea [CREATE EXTERNAL LANGUAGE](../t-sql/statements/create-external-language-transact-sql.md) (CREAR UN LENGUAJE EXTERNO). |
 | &nbsp; | &nbsp; |
 
@@ -213,7 +213,7 @@ La manera más sencilla de empezar a trabajar con [!INCLUDE[ssNoVersion](../incl
 |Nueva característica o actualización | Detalles |
 |:---|:---|
 | Registro de contenedor de Microsoft | Ahora [Registro de contenedor de Microsoft](https://azure.microsoft.com/blog/microsoft-syndicates-container-catalog/) reemplaza a Docker Hub para nuevas imágenes de contenedor de Microsoft oficiales, incluido [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)]. |
-| Contenedores no raíz | [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] presenta la capacidad de crear contenedores más seguros mediante el inicio del proceso de [!INCLUDE[sql-server](../includes/ssnoversion-md.md)] como un usuario no raíz de forma predeterminada. Vea [Compilación y ejecución de contenedores de SQL Server como un usuario no raíz](../linux/sql-server-linux-configure-docker.md#buildnonrootcontainer). |
+| Contenedores no raíz | [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] presenta la capacidad de crear contenedores más seguros mediante el inicio del proceso de [!INCLUDE[sql-server](../includes/ssnoversion-md.md)] como un usuario no raíz de forma predeterminada. Vea [Compilación y ejecución de contenedores de SQL Server como un usuario no raíz](../linux/sql-server-linux-docker-container-deployment.md). |
 | Imágenes de contenedor certificadas de Red Hat | A partir de [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)], puede ejecutar contenedores de SQL Server en Red Hat Enterprise Linux. |
 | Compatibilidad con PolyBase y Machine Learning| [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] presenta nuevas formas de trabajar con contenedores de SQL Server como Machine Learning Services y PolyBase. Consulte algunos ejemplos en el [repositorio de GitHub de contenedores de SQL Server](https://github.com/microsoft/mssql-docker/tree/master/linux/preview/examples). |
 | &nbsp; | &nbsp; |

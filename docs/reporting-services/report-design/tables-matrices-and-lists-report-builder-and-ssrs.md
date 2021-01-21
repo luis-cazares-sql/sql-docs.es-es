@@ -34,12 +34,12 @@ f1_keywords:
 ms.assetid: 9dcf3fc8-bf9c-4a14-a03d-e78254aa4098
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: c28f2c267c49f2a31fd07eecdbb9e593237a1835
-ms.sourcegitcommit: e572f1642f588b8c4c75bc9ea6adf4ccd48a353b
+ms.openlocfilehash: f9276557c2c2d5d3f733d6f37d243eaee0eec68a
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84778077"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534296"
 ---
 # <a name="tables-matrices-and-lists-report-builder-and-ssrs"></a>Tablas, matrices y listas (Generador de informes y SSRS)
  En [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)], las tablas, matrices y listas son *regiones de datos* en las que se muestran los datos del informe paginado en celdas organizadas en filas y columnas. Normalmente, las celdas contienen datos como texto, fechas y números, pero también pueden contener medidores, gráficos o elementos de informe como imágenes. Colectivamente, las tablas, matrices y listas se denominan a menudo regiones de datos *Tablix* .  
@@ -88,7 +88,7 @@ ms.locfileid: "84778077"
   
  ![Nueva lista agregada desde el cuadro de herramientas, seleccionada](../../reporting-services/report-design/media/rs-listtemplatenewselected.gif "Nueva lista agregada desde el cuadro de herramientas, seleccionada")  
   
- Para más información, vea [Crear facturas y formularios con listas].  
+ Para obtener más información, consulte [Crear facturas y formularios con listas](../../reporting-services/report-design/create-invoices-and-forms-with-lists-report-builder-and-ssrs.md).  
   
 ##  <a name="preparing-data"></a><a name="PreparingData"></a> Preparar los datos  
  Una región de datos de tabla, matriz y lista muestra datos de un conjunto de datos. Puede preparar los datos en la consulta que recupera los datos para el conjunto de datos, o establecer las propiedades en la tabla, matriz o lista.  

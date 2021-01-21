@@ -11,18 +11,18 @@ helpviewer_keywords:
 ms.assetid: 3a26dccc-6ad6-48f5-a882-f96c6c0dd405
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 8f83c1f169706af4a02d1940049d2a1814bc26ca
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: 500ecc4e4b0dae80faa06f8d152b99423bb45251
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86914091"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597168"
 ---
 # <a name="design-reporting-services-paginated-reports-with-report-designer-ssrs"></a>Diseñar informes paginados de Reporting Services con el Diseñador de informes (SSRS)
 
 Use el Diseñador de informes para crear informes paginados de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] y soluciones de informes completos. El Diseñador de informes proporciona una interfaz gráfica en la que se pueden definir orígenes de datos, conjuntos de datos y consultas, posiciones de diseño del informe para las regiones de datos y campos, y características interactivas como parámetros y conjuntos de informes que funcionan conjuntamente.  
 
-El Diseñador de informes es una característica de  [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)], un entorno de Microsoft Visual Studio para crear soluciones de inteligencia empresarial. [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] no se incluye con SQL Server. Descargar [SQL Server Data Tools](https://go.microsoft.com/fwlink/?LinkID=616714). 
+El Diseñador de informes es una característica de  [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)], un entorno de Microsoft Visual Studio para crear soluciones de inteligencia empresarial. [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] no se incluye con SQL Server. Descargar [SQL Server Data Tools](../../ssdt/download-sql-server-data-tools-ssdt.md). 
   
 ## <a name="benefits-of-report-projects"></a>Ventajas de Proyectos de informe  
 La característica Proyectos de informe actúa como contenedor para las definiciones y los recursos de informe. Use los proyectos para hacer lo siguiente:  
@@ -70,7 +70,7 @@ Los informes paginados son archivos que se almacenan en un proyecto de informe. 
   
 -   **Agregar un elemento existente.** Se abre una definición de informe existente (.rdl) en el Diseñador de informes. El abrir un informe o un proyecto desde una versión anterior de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] puede actualizar automáticamente el proyecto a la versión actual y el informe al esquema actual. Para más información, consulte [Upgrade Reports](../../reporting-services/install-windows/upgrade-reports.md).  
   
--   **Importar un informe de [!INCLUDE[msCoName](../../includes/msconame-md.md)] Access** Se pueden importar todos los informes de Access (.mdb, .accdb) o el archivo de proyecto (.adp). El Diseñador de informes convierte a RDL (Report Definition Language) cada informe de una base de datos o archivo de proyecto y lo guarda en el proyecto de informe. No todas las funcionalidades de un informe de Access se transfieren a un archivo de definición de informe (.rdl). Para más información, vea [Importar informes desde Microsoft Access &#40;Reporting Services&#41;](https://msdn.microsoft.com/library/4f29d5b8-b77d-4714-a84a-05523df55646) y [Compatibilidad con características de informes de Access &#40;SSRS&#41;](https://msdn.microsoft.com/library/7ffec331-6365-4c13-8e58-b77a48cffb44).  
+-   **Importar un informe de [!INCLUDE[msCoName](../../includes/msconame-md.md)] Access** Se pueden importar todos los informes de Access (.mdb, .accdb) o el archivo de proyecto (.adp). El Diseñador de informes convierte a RDL (Report Definition Language) cada informe de una base de datos o archivo de proyecto y lo guarda en el proyecto de informe. No todas las funcionalidades de un informe de Access se transfieren a un archivo de definición de informe (.rdl). Para más información, vea [Importar informes desde Microsoft Access &#40;Reporting Services&#41;](../reports/reporting-services-reports-ssrs.md) y [Compatibilidad con características de informes de Access &#40;SSRS&#41;](../reports/reporting-services-reports-ssrs.md).  
   
     > [!NOTE]  
     >  Para poder usar la característica de importación, debe tener instalado Access 2002 o una versión posterior en el mismo equipo donde está instalado el Diseñador de informes. El origen de datos de los informes de Access debe estar disponible cuando se importan los informes.  
@@ -117,7 +117,7 @@ Los informes paginados son archivos que se almacenan en un proyecto de informe. 
      Si utiliza una configuración de proyecto que genera el informe pero no lo implementa, el informe especificado en la propiedad **StartItem** de la configuración actual se abrirá en una ventana de vista previa distinta.  
   
     > [!NOTE]  
-    >  Para usar el modo de depuración, debe establecer un elemento de inicio. En el Explorador de soluciones, haga clic con el botón derecho en el proyecto de informe, haga clic en **Propiedades**y, en **StartItem**, seleccione el nombre del informe que quiere mostrar.  
+    >  Para usar el modo de depuración, debe establecer un elemento de inicio. En el Explorador de soluciones, haga clic con el botón derecho en el proyecto de informe, haga clic en **Propiedades** y, en **StartItem**, seleccione el nombre del informe que quiere mostrar.  
   
      Si quiere obtener la vista previa de un informe determinado que no es el elemento de inicio del proyecto, seleccione una configuración que genere el informe pero no lo implemente (por ejemplo, la configuración de depuración local), haga clic con el botón derecho en el informe y, luego, haga clic en **Ejecutar**. Debe elegir una configuración que no implemente el informe; de lo contrario, éste se publicará en el servidor de informes en lugar de mostrarse localmente en una ventana de vista previa.  
   
@@ -181,7 +181,7 @@ Los informes paginados son archivos que se almacenan en un proyecto de informe. 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Descargar SQL Server Data Tools](https://go.microsoft.com/fwlink/?LinkID=616714)  
+[Descargar SQL Server Data Tools](../../ssdt/download-sql-server-data-tools-ssdt.md)  
 [Reporting Services en SQL Server Data Tools (SSDT)](../../reporting-services/tools/reporting-services-in-sql-server-data-tools-ssdt.md)   
 [Herramientas de diseño de consulta](../../reporting-services/report-data/query-design-tools-ssrs.md)   
 [Implementación y compatibilidad de versiones en SQL Server Data Tools](../../reporting-services/tools/deployment-and-version-support-in-sql-server-data-tools-ssrs.md)  

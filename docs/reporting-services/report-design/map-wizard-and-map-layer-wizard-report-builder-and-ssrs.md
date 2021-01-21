@@ -13,12 +13,12 @@ f1_keywords:
 ms.assetid: 48cbe18b-1290-4107-8a1c-ec6acd71f73b
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: b139dc1b0aaa0b2d1477d182cf128d0f93795ca3
-ms.sourcegitcommit: 57f1d15c67113bbadd40861b886d6929aacd3467
+ms.openlocfilehash: b307966577cfd30197963263597aee7a9d06e018
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85048334"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597336"
 ---
 # <a name="map-wizard-and-map-layer-wizard-report-builder-and-ssrs"></a>Asistente para mapas y Asistente para capas de mapa (Generador de informes y SSRS)
  En los informes paginados de [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] , el Asistente para mapas y el Asistente para capas de mapa automatizan las tareas de crear un mapa, agregar una capa de mapa o cambiar las opciones de capas de mapa en una capa existente.  
@@ -37,7 +37,7 @@ ms.locfileid: "85048334"
   
 -   Al abrir el Generador de informes, haga clic en el icono del asistente **Mapas** , en el centro de la superficie de diseño.  
   
--   En la pestaña **Insertar** , haga clic en **Mapa**y, a continuación, haga clic en **Asistente para mapas**.  
+-   En la pestaña **Insertar** , haga clic en **Mapa** y, a continuación, haga clic en **Asistente para mapas**.  
   
  Para abrir el Asistente para capas de mapa, haga lo siguiente:  
   
@@ -184,7 +184,7 @@ ms.locfileid: "85048334"
   
 -   **Híbridas.** Muestra la combinación de las vistas **Carretera** y **Aéreo** .  
   
- Para obtener más información acerca de los mosaicos, vea [Sistema de mosaicos de Bing Maps](https://go.microsoft.com/fwlink/?LinkId=147315). Para obtener más información sobre el uso de mosaicos de Bing Maps en un informe, vea [Condiciones adicionales de uso](https://go.microsoft.com/fwlink/?LinkId=151371).  
+ Para obtener más información acerca de los mosaicos, vea [Sistema de mosaicos de Bing Maps](/bingmaps/articles/bing-maps-tile-system). Para obtener más información sobre el uso de mosaicos de Bing Maps en un informe, vea [Condiciones adicionales de uso](https://go.microsoft.com/fwlink/?LinkId=151371).  
   
  Para ver un fondo de mosaico en la vista de diseño, debe tener acceso a Internet. Para ver el fondo de mosaico en una vista previa de un informe en un servidor de informes, el servidor de informes se debe configurar para ser compatible con los mosaicos de Bing Maps. Para obtener más información, consulte [Informes de solución de problemas: informes de mapa &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/troubleshoot-reports-map-reports-report-builder-and-ssrs.md) y [Planear un informe de mapa](../../reporting-services/report-design/plan-a-map-report-report-builder-and-ssrs.md).  
   
@@ -252,5 +252,4 @@ ms.locfileid: "85048334"
  [Solucionar problemas de los informes: informes de mapa &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/troubleshoot-reports-map-reports-report-builder-and-ssrs.md)   
  [Planear un informe de mapa &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/plan-a-map-report-report-builder-and-ssrs.md)   
  [Mapas &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/maps-report-builder-and-ssrs.md)  
-  
   

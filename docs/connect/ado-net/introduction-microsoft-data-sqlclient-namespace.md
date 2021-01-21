@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-jizho2
-ms.openlocfilehash: f522b856e759ec9821b5cc549ce3f801951b7283
-ms.sourcegitcommit: 4c3949f620d09529658a2172d00bfe37aeb1a387
+ms.openlocfilehash: e966e4f2f43ebe546d6baa0b757f682f3eca205b
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95011836"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596357"
 ---
 # <a name="introduction-to-microsoftdatasqlclient-namespace"></a>Introducción al espacio de nombres Microsoft.Data.SqlClient
 
@@ -43,7 +43,7 @@ Microsoft.Data.SqlClient v2.1 amplía la compatibilidad con Always Encrypted en
 
 ### <a name="azure-active-directory-device-code-flow-authentication"></a>Autenticación de flujo de código de dispositivo de Azure Active Directory
 Microsoft.Data.SqlClient v2.1 proporciona compatibilidad para la autenticación "flujo de código de dispositivo" con MSAL.NET.
-Documentación de referencia: [Flujo de concesión de autorización de dispositivo de OAuth 2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-device-code)
+Documentación de referencia: [Flujo de concesión de autorización de dispositivo de OAuth 2.0](/azure/active-directory/develop/v2-oauth2-device-code)
 
 Ejemplo de cadena de conexión:
 
@@ -60,7 +60,7 @@ public class ActiveDirectoryAuthenticationProvider
 ```
 
 ### <a name="azure-active-directory-managed-identity-authentication"></a>Autenticación de identidad administrada de Azure Active Directory
-Microsoft.Data.SqlClient v2.1 incluye compatibilidad con la autenticación de Azure Active Directory mediante [identidades administradas](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+Microsoft.Data.SqlClient v2.1 incluye compatibilidad con la autenticación de Azure Active Directory mediante [identidades administradas](/azure/active-directory/managed-identities-azure-resources/overview).
 
 Se admiten las siguientes palabras clave de modo de autenticación:
 - Identidad administrada de Active Directory

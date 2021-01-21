@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 2b45a024-398d-43b8-9948-b8b23fb674c9
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: fe8a7c4948b811a97c2f6973a04227543a496991
-ms.sourcegitcommit: b3a711a673baebb2ff10d7142b209982b46973ae
+ms.openlocfilehash: aee605371a2473fcaca096ec23e1e070ca8f0b19
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93364427"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595934"
 ---
 # <a name="report-builder-functions---sum-function"></a>Funciones del Generador de informes: función Sum
   Devuelve la suma de todos los valores numéricos no NULL especificados por la expresión, que se evalúa en el contexto del ámbito especificado.  
@@ -31,19 +31,19 @@ Sum(expression, scope, recursive)
   
 #### <a name="parameters"></a>Parámetros  
  *expression*  
- ( **Integer** o **Float** ) Expresión en la que se realiza la agregación.  
+ (**Integer** o **Float**) Expresión en la que se realiza la agregación.  
   
  *scope*  
- ( **String** ) Opcional. Nombre de un conjunto de datos, un grupo o una región de datos que contiene los elementos de informe a los que se va a aplicar la función de agregado. Si no se especifica el parámetro *scope* , se usa el ámbito actual.  
+ (**String**) Opcional. Nombre de un conjunto de datos, un grupo o una región de datos que contiene los elementos de informe a los que se va a aplicar la función de agregado. Si no se especifica el parámetro *scope* , se usa el ámbito actual.  
   
  *recursive*  
- ( **Tipo enumerado** ) Opcional. **Simple** (valor predeterminado) o **RdlRecursive**. Especifica si se debe realizar la agregación de forma recursiva.  
+ (**Tipo enumerado**) Opcional. **Simple** (valor predeterminado) o **RdlRecursive**. Especifica si se debe realizar la agregación de forma recursiva.  
   
 ## <a name="return-type"></a>Tipo de valor devuelto  
  Devuelve un valor **Decimal** para expresiones decimales y un valor **Double** para las demás expresiones.  
   
 ## <a name="remarks"></a>Observaciones  
- El conjunto de datos especificado en la expresión debe tener el mismo tipo de datos. Si desea convertir datos de varios tipos de datos numéricos al mismo tipo de datos, use funciones de conversión como **CInt** , **CDbl** o **CDec**. Para obtener más información, vea [Funciones de conversión de tipos](https://go.microsoft.com/fwlink/?LinkId=96142).  
+ El conjunto de datos especificado en la expresión debe tener el mismo tipo de datos. Si desea convertir datos de varios tipos de datos numéricos al mismo tipo de datos, use funciones de conversión como **CInt**, **CDbl** o **CDec**. Para obtener más información, vea [Funciones de conversión de tipos](/dotnet/visual-basic/language-reference/functions/type-conversion-functions).  
   
  El valor de *scope* tiene que ser una constante de cadena y no puede ser una expresión. Para los agregados exteriores o los que no especifican a otros agregados, *scope* debe hacer referencia al ámbito actual o a un ámbito de contenido. Para los agregados de agregados, los agregados anidados pueden especificar un ámbito secundario.  
   
@@ -53,7 +53,7 @@ Sum(expression, scope, recursive)
   
 -   *Scope* , para los agregados anidados, no puede ser el nombre de un conjunto de datos.  
   
--   *Expression* no debe contener las funciones **First** , **Last** , **Previous** o **RunningValue** .  
+-   *Expression* no debe contener las funciones **First**, **Last**, **Previous** o **RunningValue** .  
   
 -   *Expression* no debe contener a los agregados anidados que especifican *recursive*.  
   
@@ -84,5 +84,4 @@ Sum(expression, scope, recursive)
  [Ejemplos de expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expression-examples-report-builder-and-ssrs.md)   
  [Tipos de datos en expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/data-types-in-expressions-report-builder-and-ssrs.md)   
  [Ámbito de expresión para los totales, agregados y colecciones integradas &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expression-scope-for-totals-aggregates-and-built-in-collections.md)  
-  
   

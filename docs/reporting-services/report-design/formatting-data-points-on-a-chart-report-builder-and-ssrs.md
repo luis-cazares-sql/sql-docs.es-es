@@ -12,12 +12,12 @@ f1_keywords:
 ms.assetid: 08ec3818-f63a-4e89-b52c-750e47f48b85
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 5b2dc1633af5b4f6ff8ff981d11766c67510786d
-ms.sourcegitcommit: e572f1642f588b8c4c75bc9ea6adf4ccd48a353b
+ms.openlocfilehash: 0d9f3036e7d8c580e770ded7bbbec6e5f29b2750
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84778954"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596909"
 ---
 # <a name="formatting-data-points-on-a-chart-report-builder-and-ssrs"></a>Aplicar formato a los puntos de datos de un gráfico (Generador de informes y SSRS)
 En el informe paginado de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] , un punto de datos es la entidad individual más pequeña del gráfico. En los gráficos que no son de formas, los puntos de datos se representan en función del tipo de gráfico. Por ejemplo, una serie de líneas está formada por uno o más puntos de datos conectados. En los gráficos de formas, los puntos de datos se representan por sectores o segmentos individuales que se agregan al gráfico. Por ejemplo, en un gráfico circular, cada sector es un punto de datos. Para más información, vea [Tipos de gráficos &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/chart-types-report-builder-and-ssrs.md).  
@@ -75,7 +75,7 @@ En el informe paginado de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-
 |#MAX|Máximo de todos los valores Y de la serie.|All|`=Max(Fields!MyDataField.Value)`|  
 |#FIRST|El primero de todos los valores Y de la serie.|All|`=First(Fields!MyDataField.Value)`|  
   
- Para dar formato a la palabra clave, incluya una cadena de formato de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] entre paréntesis. Por ejemplo, para especificar el valor del punto de datos en una información sobre herramientas como un número con dos posiciones decimales, incluya la cadena de formato "N2" entre llaves (por ejemplo, "#VALY {N2}" para la propiedad **ToolTip** de la serie). Para obtener más información sobre las cadenas de formato de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] , vea [Aplicar formato a tipos](https://go.microsoft.com/fwlink/?LinkId=112024) en MSDN. Para obtener más información sobre cómo dar formato a los números en [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], vea [Aplicar formato a números y fechas &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/formatting-numbers-and-dates-report-builder-and-ssrs.md).  
+ Para dar formato a la palabra clave, incluya una cadena de formato de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] entre paréntesis. Por ejemplo, para especificar el valor del punto de datos en una información sobre herramientas como un número con dos posiciones decimales, incluya la cadena de formato "N2" entre llaves (por ejemplo, "#VALY {N2}" para la propiedad **ToolTip** de la serie). Para obtener más información sobre las cadenas de formato de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] , vea [Aplicar formato a tipos](/previous-versions/) en MSDN. Para obtener más información sobre cómo dar formato a los números en [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], vea [Aplicar formato a números y fechas &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/formatting-numbers-and-dates-report-builder-and-ssrs.md).  
   
  Para obtener más información sobre cómo agregar palabras clave a un gráfico, vea [Mostrar la información sobre herramientas en una serie &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/show-tooltips-on-a-series-report-builder-and-ssrs.md) y [Cambiar el texto de un elemento de leyenda &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/chart-legend-change-item-text-report-builder.md).  
   
@@ -102,5 +102,4 @@ En el informe paginado de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-
  [Tutorial: Agregar un gráfico circular a un informe &#40;Generador de informes&#41;](../../reporting-services/tutorial-add-a-pie-chart-to-your-report-report-builder.md)   
  [Ejemplos de expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expression-examples-report-builder-and-ssrs.md)   
  [Expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expressions-report-builder-and-ssrs.md)  
-  
   

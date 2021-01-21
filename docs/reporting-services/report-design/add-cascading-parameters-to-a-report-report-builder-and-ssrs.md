@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 3a22eec3-57a7-478e-b6fc-102a9dbe0591
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: fba193af6ef9f76c50f33ffa45a7bc668a0edead
-ms.sourcegitcommit: b3a711a673baebb2ff10d7142b209982b46973ae
+ms.openlocfilehash: 77a96c10d94bb27d52f8527e6822ff036e4a214e
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93364667"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596760"
 ---
 # <a name="add-cascading-parameters-to-a-report-report-builder-and-ssrs"></a>Agregar parámetros en cascada a un informe (Generador de informes y SSRS)
   Los parámetros en cascada permiten administrar grandes cantidades de datos de informe. Es posible definir un conjunto de parámetros relacionados de manera que la lista de valores de uno de ellos dependa del valor seleccionado en otro parámetro. Por ejemplo, el primer parámetro es independiente y podría presentar una lista de categorías de productos. Cuando el usuario selecciona una categoría, el segundo parámetro depende del valor del primer parámetro. Sus valores se actualizan con una lista de subcategorías para la categoría elegida. Cuando el usuario ve el informe, los valores de los parámetros de categoría y subcategoría se usan para filtrar los datos del informe.  
@@ -26,19 +26,19 @@ ms.locfileid: "93364667"
   
  El orden es importante para los parámetros en cascada, dado que la consulta del conjunto de datos de un parámetro que aparece más adelante en la lista incluye una referencia a cada parámetro que aparece antes en la lista. En tiempo de ejecución, el orden de los parámetros en el panel Datos de informe determina el orden en que aparecen las consultas de parámetros en el informe, y por consiguiente, el orden en el que el usuario elige cada uno de los valores de los parámetros sucesivos.  
   
- Para obtener información sobre la creación de parámetros en cascada con varios valores e incluso la función Select All, vea [Tener un parámetro en cascada con varios valores y Select All](https://go.microsoft.com/fwlink/?LinkId=184757).  
+ Para obtener información sobre la creación de parámetros en cascada con varios valores e incluso la función Select All, vea [Tener un parámetro en cascada con varios valores y Select All](/archive/blogs/psssql/).  
   
 ## <a name="to-create-the-main-dataset-with-a-query-that-includes-multiple-related-parameters"></a>Para crear el conjunto de datos principal con una consulta que incluye varios parámetros relacionados  
   
 1.  En el panel Datos de informe, haga clic con el botón derecho en un origen de datos y, después, haga clic en **Agregar conjunto de datos**.  
   
-2.  En **Nombre** , escriba el nombre del conjunto de datos.  
+2.  En **Nombre**, escriba el nombre del conjunto de datos.  
   
-3.  En **Origen de datos** , elija el nombre del origen de datos o haga clic en **Nuevo** para crear uno.  
+3.  En **Origen de datos**, elija el nombre del origen de datos o haga clic en **Nuevo** para crear uno.  
   
-4.  En **Tipo de consulta** , elija el tipo de consulta para el origen de datos seleccionado. En este tema, se supone que el tipo de consulta es **Texto** .  
+4.  En **Tipo de consulta**, elija el tipo de consulta para el origen de datos seleccionado. En este tema, se supone que el tipo de consulta es **Texto** .  
   
-5.  En **Consulta** , escriba la consulta que se debe usar para recuperar los datos para este informe. La consulta debe incluir las partes siguientes:  
+5.  En **Consulta**, escriba la consulta que se debe usar para recuperar los datos para este informe. La consulta debe incluir las partes siguientes:  
   
     1.  Una lista de campos del origen de datos. Por ejemplo, en una instrucción [!INCLUDE[tsql](../../includes/tsql-md.md)] , la instrucción SELECT especifica una lista de nombres de columnas de la base de datos de una tabla o vista determinada.  
   
@@ -57,13 +57,13 @@ ms.locfileid: "93364667"
   
 1.  En el panel Datos de informe, haga clic con el botón derecho en un origen de datos y, después, haga clic en **Agregar conjunto de datos**.  
   
-2.  En **Nombre** , escriba el nombre del conjunto de datos.  
+2.  En **Nombre**, escriba el nombre del conjunto de datos.  
   
-3.  En **Origen de datos** , compruebe que el nombre es el nombre del origen de datos que eligió en el paso 1.  
+3.  En **Origen de datos**, compruebe que el nombre es el nombre del origen de datos que eligió en el paso 1.  
   
-4.  En **Tipo de consulta** , elija el tipo de consulta para el origen de datos seleccionado. En este tema, se supone que el tipo de consulta es **Texto** .  
+4.  En **Tipo de consulta**, elija el tipo de consulta para el origen de datos seleccionado. En este tema, se supone que el tipo de consulta es **Texto** .  
   
-5.  En **Consulta** , escriba la consulta que se debe usar para recuperar los valores para este parámetro. Las consultas para los parámetros independientes normalmente no contienen los parámetros de la consulta. Por ejemplo, para crear una consulta para un parámetro que proporciona los valores de todas las categorías, podría usar una instrucción [!INCLUDE[tsql](../../includes/tsql-md.md)] similar a la siguiente:  
+5.  En **Consulta**, escriba la consulta que se debe usar para recuperar los valores para este parámetro. Las consultas para los parámetros independientes normalmente no contienen los parámetros de la consulta. Por ejemplo, para crear una consulta para un parámetro que proporciona los valores de todas las categorías, podría usar una instrucción [!INCLUDE[tsql](../../includes/tsql-md.md)] similar a la siguiente:  
   
     ```  
     SELECT DISTINCT <column name> FROM <table>  
@@ -81,13 +81,13 @@ ms.locfileid: "93364667"
   
 1.  En la carpeta Parámetros del panel Datos de informe, haga clic con el botón derecho en el primer parámetro y, después, haga clic en **Propiedades del parámetro**.  
   
-2.  En **Nombre** , compruebe que el nombre del parámetro es correcto.  
+2.  En **Nombre**, compruebe que el nombre del parámetro es correcto.  
   
 3.  Haga clic en **Valores disponibles**.  
   
 4.  Haga clic en **Obtener valores a partir de una consulta**. Aparecen tres campos.  
   
-5.  En **Conjunto de datos** , en la lista desplegable, haga clic en el nombre del conjunto de datos que creó en el procedimiento anterior.  
+5.  En **Conjunto de datos**, en la lista desplegable, haga clic en el nombre del conjunto de datos que creó en el procedimiento anterior.  
   
 6.  En el campo **Valor** , haga clic en el nombre del campo que proporciona el valor del parámetro.  
   
@@ -101,13 +101,13 @@ ms.locfileid: "93364667"
   
 1.  En el panel Datos de informe, haga clic con el botón derecho en un origen de datos y, después, haga clic en **Agregar conjunto de datos**.  
   
-2.  En **Nombre** , escriba el nombre del conjunto de datos.  
+2.  En **Nombre**, escriba el nombre del conjunto de datos.  
   
-3.  En **Origen de datos** , compruebe que el nombre es el nombre del origen de datos que eligió en el paso 1.  
+3.  En **Origen de datos**, compruebe que el nombre es el nombre del origen de datos que eligió en el paso 1.  
   
-4.  En **Tipo de consulta** , elija el tipo de consulta para el origen de datos seleccionado. En este tema, se supone que el tipo de consulta es **Texto** .  
+4.  En **Tipo de consulta**, elija el tipo de consulta para el origen de datos seleccionado. En este tema, se supone que el tipo de consulta es **Texto** .  
   
-5.  En **Consulta** , escriba la consulta que se debe usar para recuperar los valores para este parámetro. Las consultas para los parámetros dependientes normalmente incluyen parámetros de consulta para cada parámetro del que depende este parámetro. Por ejemplo, para crear una consulta para un parámetro que proporciona todos los valores de subcategoría (parámetro dependiente) para una categoría (parámetro independiente), podría usar una instrucción [!INCLUDE[tsql](../../includes/tsql-md.md)] similar a la siguiente:  
+5.  En **Consulta**, escriba la consulta que se debe usar para recuperar los valores para este parámetro. Las consultas para los parámetros dependientes normalmente incluyen parámetros de consulta para cada parámetro del que depende este parámetro. Por ejemplo, para crear una consulta para un parámetro que proporciona todos los valores de subcategoría (parámetro dependiente) para una categoría (parámetro independiente), podría usar una instrucción [!INCLUDE[tsql](../../includes/tsql-md.md)] similar a la siguiente:  
   
     ```  
     SELECT DISTINCT Subcategory FROM <table>   
@@ -124,13 +124,13 @@ ms.locfileid: "93364667"
   
 1.  En la carpeta Parámetros del panel Datos de informe, haga clic con el botón derecho en el primer parámetro y, después, haga clic en **Propiedades del parámetro**.  
   
-2.  En **Nombre** , compruebe que el nombre del parámetro es correcto.  
+2.  En **Nombre**, compruebe que el nombre del parámetro es correcto.  
   
 3.  Haga clic en **Valores disponibles**.  
   
 4.  Haga clic en **Obtener valores a partir de una consulta**.  
   
-5.  En **Conjunto de datos** , en la lista desplegable, haga clic en el nombre del conjunto de datos que creó en el procedimiento anterior.  
+5.  En **Conjunto de datos**, en la lista desplegable, haga clic en el nombre del conjunto de datos que creó en el procedimiento anterior.  
   
 6.  En el campo **Valor** , haga clic en el nombre del campo que proporciona el valor del parámetro.  
   
@@ -159,5 +159,4 @@ ms.locfileid: "93364667"
  [Tutoriales del Generador de informes](../../reporting-services/report-builder-tutorials.md)   
  [Agregar filtros de conjunto de datos, filtros de región de datos y filtros de grupo &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/add-dataset-filters-data-region-filters-and-group-filters.md)   
  [Conjuntos de datos incrustados y compartidos de informe &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-data/report-embedded-datasets-and-shared-datasets-report-builder-and-ssrs.md)  
-  
   

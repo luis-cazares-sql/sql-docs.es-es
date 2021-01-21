@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: ae8a0166-2ccc-45f4-8d28-c150da7b73de
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 603207390785ff684167b3b553b31c3b956842c6
-ms.sourcegitcommit: 5c7634b007f6808c87094174b80376cb20545d5f
+ms.openlocfilehash: 31e92b49186e79c78cbaa2d13859d8dd3abe5c5d
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84880766"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596346"
 ---
 # <a name="custom-code-and-assembly-references-in-expressions-in-report-designer-ssrs"></a>Referencias a ensamblados y código personalizado en expresiones en el Diseñador de informes (SSRS)
   Puede agregar referencias al código personalizado incrustado en un informe o a los ensamblados personalizados que haya generado y guardado en el equipo e implementado en el servidor de informes. El código incrustado se utiliza en constantes, funciones complejas o funciones personalizadas que se usan varias veces en un único informe. Use ensamblados de código personalizados para mantener el código en un único lugar y compartirlo con el fin de utilizarlos en múltiples informes. El código personalizado puede incluir nuevas constantes, variables, funciones o subrutinas personalizadas. Puede incluir referencias de solo lectura en las colecciones integradas, como la colección Parameters. Sin embargo, no puede pasar conjuntos de valores de datos de informe a las funciones personalizadas; concretamente, no se admiten agregados personalizados.  
@@ -53,12 +53,12 @@ ms.locfileid: "84880766"
   
  Para usar una función integrada, haga doble clic en el nombre de la función en el panel Elemento. En el panel Descripción, aparece una descripción de la función; en el panel Ejemplo, aparece un ejemplo de la llamada a la función. En el panel de código, al escribir el nombre de la función seguido por un paréntesis izquierdo **(** , la Ayuda de IntelliSense muestra la sintaxis válida para la llamada a la función. Por ejemplo, para calcular el valor máximo de un campo denominado `Quantity` en una tabla, agregue la expresión simple `=Max(` al panel de código y, a continuación, use las etiquetas inteligentes para ver todas las posibles sintaxis válidas para la llamada a la función. Para completar este ejemplo, escriba `=Max(Fields!Quantity.Value)`.  
   
- Para más información sobre cada función, vea <xref:System.Math>, <xref:System.Convert>y [Miembros de la biblioteca en tiempo de ejecución de Visual Basic](https://go.microsoft.com/fwlink/?LinkId=198941) en MSDN.  
+ Para más información sobre cada función, vea <xref:System.Math>, <xref:System.Convert>y [Miembros de la biblioteca en tiempo de ejecución de Visual Basic](/dotnet/visual-basic/language-reference/runtime-library-members) en MSDN.  
   
 ##  <a name="including-references-to-less-commonly-used-functions"></a><a name="NotCommon"></a> Incluir referencias a funciones de uso menos frecuente  
  Para incluir una referencia a otros espacios de nombres de CLR de uso menos frecuente es necesario usar una referencia completa (por ejemplo, <xref:System.Text.StringBuilder>. IntelliSense no se admite en el panel de código del cuadro de diálogo **Expresión** para estas funciones menos frecuentes.  
   
- Para obtener más información, vea [Miembros de la biblioteca en tiempo de ejecución de Visual Basic](https://go.microsoft.com/fwlink/?LinkId=198941) en MSDN.  
+ Para obtener más información, vea [Miembros de la biblioteca en tiempo de ejecución de Visual Basic](/dotnet/visual-basic/language-reference/runtime-library-members) en MSDN.  
   
 ##  <a name="including-references-to-external-assemblies"></a><a name="External"></a> Incluir referencias a ensamblados externos  
  Para incluir una referencia a una clase de un ensamblado externo, debe identificar el ensamblado para el procesador de informes. Use la página **Referencias** del cuadro de diálogo **Propiedades del informe** para especificar el nombre completo del ensamblado que se va a agregar al informe. En la expresión, debe usar el nombre completo para la clase del ensamblado. Las clases de un ensamblado externo no aparecen en el cuadro de diálogo **Expresión** ; es necesario que proporcione el nombre correcto de la clase. Un nombre completo incluye el espacio de nombres, el nombre de la clase y el nombre del miembro.  
@@ -196,5 +196,4 @@ End Function
  [Tutoriales de Reporting Services &#40;SSRS&#41;](../../reporting-services/reporting-services-tutorials-ssrs.md)   
  [Ejemplos de expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expression-examples-report-builder-and-ssrs.md)   
  [Ejemplos de informes (Generador de informes y SSRS)](https://go.microsoft.com/fwlink/?LinkId=198283)  
-  
   

@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 30e06a7d-75e9-44e2-bca3-b3b0c4a33f61
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 841644a1429b4c143b7f2b31b5d6ec669bb0ff58
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: c987fdf269db9787392caa5f228f97155cf673a8
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642873"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597151"
 ---
 # <a name="create-a-new-always-on-failover-cluster-instance-setup"></a>Creación de una nueva instancia de clúster de conmutación por error Always On (programa de instalación)
 
@@ -52,7 +52,7 @@ ms.locfileid: "97642873"
   
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] La instalación de clústeres de conmutación por error de Advanced/Enterprise consta de los pasos siguientes:  
   
--   En cada nodo que es un posible propietario del nuevo clústeres de conmutación por error de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] , siga los pasos de instalación referidos a la preparación de clústeres de conmutación por error que se enumeran en la [sección Preparar](#prepare). Una vez ejecutada la preparación de clústeres de conmutación por error en un nodo, el programa de instalación crea el archivo Configuration.ini, que enumera todos los valores de configuración especificados. En los nodos adicionales que se van a preparar, en lugar de seguir estos pasos, puede proporcionar el archivo Configuration.ini autogenerado del primer nodo como entrada a la línea de comandos del programa de instalación. Para obtener más información, vea [Instalar SQL Server 2016 mediante un archivo de configuración](../../../database-engine/install-windows/install-sql-server-2016-using-a-configuration-file.md). En este paso se preparan los nodos para su agrupación en clústeres, pero al final de este paso no hay ninguna instancia operativa de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] .  
+-   En cada nodo que es un posible propietario del nuevo clústeres de conmutación por error de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] , siga los pasos de instalación referidos a la preparación de clústeres de conmutación por error que se enumeran en la [sección Preparar](#prepare). Una vez ejecutada la preparación de clústeres de conmutación por error en un nodo, el programa de instalación crea el archivo Configuration.ini, que enumera todos los valores de configuración especificados. En los nodos adicionales que se van a preparar, en lugar de seguir estos pasos, puede proporcionar el archivo Configuration.ini autogenerado del primer nodo como entrada a la línea de comandos del programa de instalación. Para obtener más información, vea [Instalar SQL Server 2016 mediante un archivo de configuración](../../../database-engine/install-windows/install-sql-server-using-a-configuration-file.md). En este paso se preparan los nodos para su agrupación en clústeres, pero al final de este paso no hay ninguna instancia operativa de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] .  
   
 -   Una vez preparados los nodos para la agrupación en clústeres, ejecute el programa de instalación en uno de los nodos preparados. En este paso se configura y se finaliza la instancia de los clústeres de conmutación por error. Al final de este paso, tendrá una instancia operativa de los clústeres de conmutación por error de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] y todos los nodos que se prepararon previamente para esa instancia serán los posibles propietarios de la instancia de clúster de conmutación por error de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] que se acaba de crear.  
   
@@ -69,7 +69,7 @@ ms.locfileid: "97642873"
   
  Para obtener más información sobre la instalación remota, vea [Actualizaciones de ediciones y versiones admitidas](../../../database-engine/install-windows/supported-version-and-edition-upgrades.md).  
   
- Para obtener más información acerca de cómo instalar [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] en un clúster WSFC, vea [Organizar en clúster SQL Server Analysis Services](https://go.microsoft.com/fwlink/p/?LinkId=396548).  
+ Para obtener más información acerca de cómo instalar [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] en un clúster WSFC, vea [Organizar en clúster SQL Server Analysis Services](/previous-versions/sql/sql-server-2012/dn736073(v=msdn.10)).  
   
 ## <a name="prerequisites"></a>Requisitos previos  
  Antes de empezar, revise los siguientes temas de los Libros en pantalla de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] :  
@@ -103,7 +103,7 @@ ms.locfileid: "97642873"
   
 8.  En la página Términos de licencia, lea el contrato de licencia y active la casilla para aceptar los términos y condiciones de la licencia. Para ayudar a mejorar [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)], también puede habilitar la opción de uso de características y enviar informes a [!INCLUDE[msCoName](../../../includes/msconame-md.md)]. Haga clic en **Siguiente** para continuar. Para salir del programa de instalación, haga clic en **Cancelar**.  
   
-9. En la página Selección de características, seleccione los componentes de la instalación. Después de seleccionar el nombre de la característica se muestra una descripción de cada grupo de componentes en el panel derecho. Puede activar cualquier combinación de casillas, pero solo [!INCLUDE[ssDE](../../../includes/ssde-md.md)], [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] en modo tabular y [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] en modo multidimensional admiten los clústeres de conmutación por error. Los demás componentes seleccionados se ejecutarán como una característica independiente sin la funcionalidad de conmutación por error en el nodo actual en el que esté ejecutando el programa de instalación. Para obtener más información sobre modos de [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] , vea [Determinar el modo de servidor de una instancia de Analysis Services](https://docs.microsoft.com/analysis-services/instances/determine-the-server-mode-of-an-analysis-services-instance).  
+9. En la página Selección de características, seleccione los componentes de la instalación. Después de seleccionar el nombre de la característica se muestra una descripción de cada grupo de componentes en el panel derecho. Puede activar cualquier combinación de casillas, pero solo [!INCLUDE[ssDE](../../../includes/ssde-md.md)], [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] en modo tabular y [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] en modo multidimensional admiten los clústeres de conmutación por error. Los demás componentes seleccionados se ejecutarán como una característica independiente sin la funcionalidad de conmutación por error en el nodo actual en el que esté ejecutando el programa de instalación. Para obtener más información sobre modos de [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] , vea [Determinar el modo de servidor de una instancia de Analysis Services](/analysis-services/instances/determine-the-server-mode-of-an-analysis-services-instance).  
   
      Los requisitos previos para las características seleccionadas se muestran en el recuadro del lado derecho. [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] El programa de instalación instalará los requisitos previos que no se hayan instalado todavía durante el paso de instalación que se describe más adelante en este procedimiento.  
   
@@ -171,7 +171,7 @@ ms.locfileid: "97642873"
   
 17. En la página Configuración del servidor - Cuentas de servicio, especifique las cuentas de inicio de sesión para los servicios de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. Los servicios reales que se configuran en esta página dependen de las características que se van a instalar.  
   
-     Puede asignar la misma cuenta de inicio de sesión a todos los servicios de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] , o configurar cada cuenta de servicio individualmente. El tipo de inicio se establece en manual para todos los servicios que reconocen clústeres, incluidos la búsqueda de texto completo y el Agente [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)], y no se puede cambiar durante la instalación. [!INCLUDE[msCoName](../../../includes/msconame-md.md)] recomienda configurar las cuentas de servicio de forma individual para proporcionar a cada servicio los privilegios mínimos; así, los servicios de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] obtendrán los permisos mínimos que necesitan para completar sus tareas. Para obtener más información, vea [Configuración del servidor - Cuentas de servicio](https://msdn.microsoft.com/library/c283702d-ab20-4bfa-9272-f0c53c31cb9f) y [Configurar los permisos y las cuentas de servicio de Windows](../../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md).  
+     Puede asignar la misma cuenta de inicio de sesión a todos los servicios de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] , o configurar cada cuenta de servicio individualmente. El tipo de inicio se establece en manual para todos los servicios que reconocen clústeres, incluidos la búsqueda de texto completo y el Agente [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)], y no se puede cambiar durante la instalación. [!INCLUDE[msCoName](../../../includes/msconame-md.md)] recomienda configurar las cuentas de servicio de forma individual para proporcionar a cada servicio los privilegios mínimos; así, los servicios de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] obtendrán los permisos mínimos que necesitan para completar sus tareas. Para obtener más información, vea [Configuración del servidor - Cuentas de servicio](../../../database-engine/install-windows/install-sql-server.md) y [Configurar los permisos y las cuentas de servicio de Windows](../../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md).  
   
      Para especificar la misma cuenta de inicio de sesión para todas las cuentas de servicio en esta instancia de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)], las credenciales se proporcionan en los campos de la parte inferior de la página.  
   
@@ -226,7 +226,7 @@ ms.locfileid: "97642873"
 30. Para agregar nodos a la conmutación por error de nodo único que acaba de crear, ejecute el programa de instalación en cada nodo adicional y siga los pasos para la operación AddNode. Para más información, vea [Agregar o quitar nodos en un clúster de conmutación por error de SQL Server (programa de instalación)](../../../sql-server/failover-clusters/install/add-or-remove-nodes-in-a-sql-server-failover-cluster-setup.md).  
   
     > [!NOTE]  
-    >  Si va a agregar más de un nodo, puede utilizar el archivo de configuración para implementar las instalaciones. Para obtener más información, vea [Instalar SQL Server 2016 mediante un archivo de configuración](../../../database-engine/install-windows/install-sql-server-2016-using-a-configuration-file.md).  
+    >  Si va a agregar más de un nodo, puede utilizar el archivo de configuración para implementar las instalaciones. Para obtener más información, vea [Instalar SQL Server 2016 mediante un archivo de configuración](../../../database-engine/install-windows/install-sql-server-using-a-configuration-file.md).  
     >   
     >  La edición de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] que va a instalar debe coincidir en todos los nodos de una instancia de clúster de conmutación por error de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. Si agrega un nuevo nodo a una instancia de clúster de conmutación por error de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] existente, asegúrese de especificar que la edición coincida con la edición de la instancia de clúster de conmutación por error existente.  
   
@@ -257,7 +257,7 @@ ms.locfileid: "97642873"
   
 9. En la página Términos de licencia, lea el contrato de licencia y active la casilla para aceptar los términos y condiciones de la licencia. Para ayudar a mejorar [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)], también puede habilitar la opción de uso de características y enviar informes a [!INCLUDE[msCoName](../../../includes/msconame-md.md)]. Haga clic en **Siguiente** para continuar. Para salir del programa de instalación, haga clic en **Cancelar**.  
   
-10. En la página Selección de características, seleccione los componentes de la instalación. Después de seleccionar el nombre de la característica se muestra una descripción de cada grupo de componentes en el panel derecho. Puede activar cualquier combinación de casillas, pero solo [!INCLUDE[ssDE](../../../includes/ssde-md.md)], [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] en modo tabular y [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] en modo multidimensional admiten los clústeres de conmutación por error. Los demás componentes seleccionados se ejecutarán como una característica independiente sin la funcionalidad de conmutación por error en el nodo actual en el que esté ejecutando el programa de instalación. Para obtener más información sobre modos de [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] , vea [Determinar el modo de servidor de una instancia de Analysis Services](https://docs.microsoft.com/analysis-services/instances/determine-the-server-mode-of-an-analysis-services-instance).  
+10. En la página Selección de características, seleccione los componentes de la instalación. Después de seleccionar el nombre de la característica se muestra una descripción de cada grupo de componentes en el panel derecho. Puede activar cualquier combinación de casillas, pero solo [!INCLUDE[ssDE](../../../includes/ssde-md.md)], [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] en modo tabular y [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] en modo multidimensional admiten los clústeres de conmutación por error. Los demás componentes seleccionados se ejecutarán como una característica independiente sin la funcionalidad de conmutación por error en el nodo actual en el que esté ejecutando el programa de instalación. Para obtener más información sobre modos de [!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] , vea [Determinar el modo de servidor de una instancia de Analysis Services](/analysis-services/instances/determine-the-server-mode-of-an-analysis-services-instance).  
   
      Los requisitos previos para las características seleccionadas se muestran en el recuadro del lado derecho. [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] El programa de instalación instalará los requisitos previos que no se hayan instalado todavía durante el paso de instalación que se describe más adelante en este procedimiento.  
   
@@ -320,7 +320,7 @@ ms.locfileid: "97642873"
   
 23. Si el programa indica que se reinicie el equipo, hágalo ahora. Es importante leer el mensaje del Asistente para la instalación tras finalizar el programa de instalación. Para obtener más información sobre los archivos de registro de instalación, vea [Ver y leer los archivos de registro de instalación de SQL Server](../../../database-engine/install-windows/view-and-read-sql-server-setup-log-files.md).  
   
-24. Repita los pasos anteriores para preparar los demás nodos para la instancia de clúster de conmutación por error. También puede utilizar el archivo de configuración autogenerado para ejecutar la preparación en los demás nodos. Para obtener más información, vea [Instalar SQL Server 2016 mediante un archivo de configuración](../../../database-engine/install-windows/install-sql-server-2016-using-a-configuration-file.md).  
+24. Repita los pasos anteriores para preparar los demás nodos para la instancia de clúster de conmutación por error. También puede utilizar el archivo de configuración autogenerado para ejecutar la preparación en los demás nodos. Para obtener más información, vea [Instalar SQL Server 2016 mediante un archivo de configuración](../../../database-engine/install-windows/install-sql-server-using-a-configuration-file.md).  
   
 ## <a name="complete"></a>Operación completada  
   
@@ -404,6 +404,5 @@ ms.locfileid: "97642873"
  Para obtener más información sobre las ubicaciones de los archivos de registro, vea [Ver y leer los archivos de registro de instalación de SQL Server](../../../database-engine/install-windows/view-and-read-sql-server-setup-log-files.md).  
   
 ## <a name="see-also"></a>Consulte también  
- [Instalar SQL Server 2016 desde el símbolo del sistema](../../../database-engine/install-windows/install-sql-server-2016-from-the-command-prompt.md)  
-  
+ [Instalar SQL Server 2016 desde el símbolo del sistema](../../../database-engine/install-windows/install-sql-server-from-the-command-prompt.md)  
   

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4a121375-7424-4444-b876-baefa8fe9015
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 908aa73d20ce939696124fee2f92eb87c9b8bec8
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: b2723cef9d005ea1f5e2db7e9e915762a7cd6a11
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642770"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241870"
 ---
 # <a name="force-a-wsfc-cluster-to-start-without-a-quorum"></a>Forzar el inicio de un clúster WSFC sin un quórum
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -62,7 +62,7 @@ ms.locfileid: "97642770"
   
 4.  Use `Start-ClusterNode` con `-FixQuorum` para forzar que se inicie el servicio de clúster.  
   
-5.  Use `Get-ClusterNode` con `-Propery NodeWieght = 1` para establecer el valor que garantiza que el nodo es un miembro con derecho a voto del quórum.  
+5.  Use `Get-ClusterNode` con `-Property NodeWieght = 1` para establecer el valor que garantiza que el nodo es un miembro con derecho a voto del quórum.  
   
 6.  Enviar las propiedades de nodo de clúster en un formato legible.  
   

@@ -19,12 +19,12 @@ helpviewer_keywords:
 - scripts [SQL Server], SQL Server Management Studio
 ms.custom: seo-lt-2019
 ms.date: 03/13/2018
-ms.openlocfilehash: 4662b6e9bcea26bc93ab0d5bf07a767797a98d70
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.openlocfilehash: ee33e30ef69b0c4a464e91576dc33e6d15ca4890
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92035943"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596971"
 ---
 # <a name="use-templates-in-sql-server-management-studio"></a>Uso de plantillas en SQL Server Management Studio
 
@@ -118,7 +118,7 @@ También puede crear una plantilla en Explorador de plantillas. En los siguiente
 
 La mejor forma de familiarizarse con SSMS es practicar. Estos *tutoriales* y artículos de *procedimientos* lo ayudan con varias características disponibles dentro de SSMS.  Estos artículos le mostrarán cómo administrar los componentes de SSMS y cómo localizar las características que utiliza habitualmente.
 
-* [Conexión a una instancia y realización de consultas](../quickstarts/connect-query-sql-server.md)
+* [Conexión a una instancia y realización de consultas](../quickstarts/ssms-connect-query-sql-server.md)
 * [Scripting](../tutorials/scripting-ssms.md)
 * [Configuración de SSMS](../tutorials/ssms-configuration.md)
 * [Otras recomendaciones y trucos al usar SSMS](../tutorials/ssms-tricks.md)

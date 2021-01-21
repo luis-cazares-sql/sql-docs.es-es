@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 61c4d6ff-6435-456a-9cbd-5113d2113e8a
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: b5e94652a48eace778636335b3270046db4f1237
-ms.sourcegitcommit: 02b22274da4a103760a376c4ddf26c4829018454
+ms.openlocfilehash: 7b218b63de094ef11d04af70b8492b8fbe3522c0
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84681234"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596081"
 ---
 # <a name="report-builder-functions---max-function"></a>Funciones del Generador de informes: función Max
   Devuelve el valor máximo de todos los valores numéricos no NULL especificados por la expresión, en el contexto del ámbito especificado.  
@@ -43,7 +43,7 @@ Max(expression, scope, recursive)
  Lo determina el tipo al que pertenece la expresión.  
   
 ## <a name="remarks"></a>Observaciones  
- El conjunto de datos especificado en la expresión debe tener el mismo tipo de datos. Si desea convertir datos de varios tipos de datos numéricos al mismo tipo de datos, use funciones de conversión como **CInt**, **CDbl** o **CDec**. Para obtener más información, vea [Funciones de conversión de tipos](https://go.microsoft.com/fwlink/?LinkId=96142).  
+ El conjunto de datos especificado en la expresión debe tener el mismo tipo de datos. Si desea convertir datos de varios tipos de datos numéricos al mismo tipo de datos, use funciones de conversión como **CInt**, **CDbl** o **CDec**. Para obtener más información, vea [Funciones de conversión de tipos](/dotnet/visual-basic/language-reference/functions/type-conversion-functions).  
   
  El valor de *scope* debe ser una constante de cadena y no puede ser una expresión. Para los agregados exteriores o los que no especifican a otros agregados, *scope* debe hacer referencia al ámbito actual o a un ámbito de contenido. Para los agregados de agregados, los agregados anidados pueden especificar un ámbito secundario.  
   
@@ -53,7 +53,7 @@ Max(expression, scope, recursive)
   
 -   *Scope* , para los agregados anidados, no puede ser el nombre de un conjunto de datos.  
   
--   *Expression* no debe contener las funciones **First**, **Last**, **Previous**o **RunningValue** .  
+-   *Expression* no debe contener las funciones **First**, **Last**, **Previous** o **RunningValue** .  
   
 -   *Expression* no debe contener a los agregados anidados que especifican *recursive*.  
   
@@ -73,5 +73,4 @@ Max(expression, scope, recursive)
  [Ejemplos de expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expression-examples-report-builder-and-ssrs.md)   
  [Tipos de datos en expresiones &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/data-types-in-expressions-report-builder-and-ssrs.md)   
  [Ámbito de expresión para los totales, agregados y colecciones integradas &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/expression-scope-for-totals-aggregates-and-built-in-collections.md)  
-  
   

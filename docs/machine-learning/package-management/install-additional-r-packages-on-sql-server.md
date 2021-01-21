@@ -9,12 +9,12 @@ author: garyericson
 ms.author: garye
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current'
-ms.openlocfilehash: 9db282708c8f2e9bbd4ee44d45bac0b0d25dc5b9
-ms.sourcegitcommit: 8a8c89b0ff6d6dfb8554b92187aca1bf0f8bcc07
+ms.openlocfilehash: bdd8189559bc3de1659e4874f80f8862dc341b1d
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617564"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596277"
 ---
 # <a name="install-r-packages-with-sqlmlutils"></a>Instalación de paquetes de R con sqlmlutils
 
@@ -45,7 +45,7 @@ En este artículo se describe cómo usar las funciones del paquete [**sqlmlutils
    , @script = N'print(R.version)'
   ```
 
-- Instale [Azure Data Studio](../../azure-data-studio/what-is.md) en el equipo cliente que usa para conectarse a SQL Server. Puede usar otras herramientas de consulta o administración de bases de datos, pero en este artículo se da por supuesto que emplea Azure Data Studio.
+- Instale [Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md) en el equipo cliente que usa para conectarse a SQL Server. Puede usar otras herramientas de consulta o administración de bases de datos, pero en este artículo se da por supuesto que emplea Azure Data Studio.
 
 ### <a name="other-considerations"></a>Otras consideraciones
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 94fdf921-270c-4c12-87b3-46b1cc98fae5
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 74a15489c057490ddf358860f8cd0f78eb79ba20
-ms.sourcegitcommit: 93e4fd75e8fe0cc85e7949c9adf23b0e1c275465
+ms.openlocfilehash: 0202703dec933871d6b6a611ff1139a68ee2c938
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84255288"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595361"
 ---
 # <a name="data-types-in-expressions-report-builder-and-ssrs"></a>Tipos de datos en expresiones (Generador de informes y SSRS)
   La finalidad de los tipos de datos es permitir el almacenamiento y el procesamiento de los datos de manera eficaz. Los tipos de datos más comunes incluyen texto (también conocido como cadenas), números (con y sin decimales), fechas y horas, e imágenes. Los valores de un informe deben ser del tipo de datos de lenguaje RDL (Report Definition Language). Puede dar formato a un valor según sus preferencias al mostrarlo en un informe. Por ejemplo, un campo que representa valores de moneda se almacena en la definición del como un número de punto flotante y mostrarse en uno y otro formato en función de la propiedad de formato elegida.  
@@ -88,7 +88,7 @@ ms.locfileid: "84255288"
 |Solo la parte DateTime de un valor DateTimeOffset|`=Fields!MyDatetimeOffset.Value.DateTime`|  
 |Solo la parte Offset de un valor DateTimeOffset|`=Fields!MyDatetimeOffset.Value.Offset`|  
   
- También puede usar la función de formato para controlar el formato de visualización del valor. Para obtener más información, vea [Funciones (Visual Basic)](https://go.microsoft.com/fwlink/?linkid=111483).  
+ También puede usar la función de formato para controlar el formato de visualización del valor. Para obtener más información, vea [Funciones (Visual Basic)](/dotnet/visual-basic/language-reference/functions/).  
   
 ## <a name="advanced-examples"></a>Ejemplos avanzados  
  Cuando se establece conexión con un origen de datos cuyo proveedor de datos no permite convertir todos los tipos de datos existentes en dicho origen de datos, el tipo de datos predeterminado para los tipos de datos no compatibles es String. En los ejemplos siguientes, se ofrecen soluciones para tipos de datos concretos que se devuelven como String.  
@@ -117,7 +117,7 @@ ms.locfileid: "84255288"
   
          Si la cadena `MyDateTime.Value` tiene un ajuste UTC, la función `DateTime.Parse` primero ajusta de acuerdo con el ajuste UTC (7 a.m. - [`+08:00`] a la hora UTC de las 11 p.m. de la noche anterior). A continuación, la función `DateTime.Parse` aplica el ajuste UTC del servidor de informes local y, si fuera necesario, vuelve a ajustar la hora para adaptarla al horario de verano. Por ejemplo, en Redmond, Washington, el ajuste de la hora local adaptado al horario de verano es `[-07:00]`o 7 horas antes de las 11 p.m. El resultado es el valor **DateTime** siguiente: `2007-07-06 04:07:07 PM` (6 de julio de 2007 a las 4:07 p.m.).  
   
- Para más información acerca de la forma de convertir cadenas en tipos de datos **DateTime** , consulte [Analizar cadenas de fecha y hora](https://go.microsoft.com/fwlink/?LinkId=89703), [Aplicar formato de fecha y hora para una referencia cultural específica](https://go.microsoft.com/fwlink/?LinkId=89704)y [Choosing Between DateTime, DateTimeOffsety TimeZoneInfo](https://go.microsoft.com/fwlink/?linkid=110652) en MSDN.  
+ Para más información acerca de la forma de convertir cadenas en tipos de datos **DateTime** , consulte [Analizar cadenas de fecha y hora](https://go.microsoft.com/fwlink/?LinkId=89703), [Aplicar formato de fecha y hora para una referencia cultural específica](https://go.microsoft.com/fwlink/?LinkId=89704)y [Choosing Between DateTime, DateTimeOffsety TimeZoneInfo](/dotnet/standard/datetime/choosing-between-datetime) en MSDN.  
   
 -   Agregue un nuevo campo calculado al conjunto de datos de informe que use una expresión para extraer partes de la cadena. Para obtener más información, consulte [Agregar, editar y actualizar campos en el panel Datos de informe &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-data/add-edit-refresh-fields-in-the-report-data-pane-report-builder-and-ssrs.md).  
   
@@ -139,9 +139,8 @@ ms.locfileid: "84255288"
   
  Para obtener más información sobre los tipos de datos de las bases de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], vea [Tipos de datos &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md) y [Tipos de datos y funciones de fecha y hora &#40;Transact-SQL&#41;](../../t-sql/functions/date-and-time-data-types-and-functions-transact-sql.md).  
   
- Para obtener más información sobre los tipos de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)], consulte [Tipos de datos en Analysis Services](https://docs.microsoft.com/analysis-services/multidimensional-models/olap-physical/data-types-in-analysis-services).  
+ Para obtener más información sobre los tipos de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)], consulte [Tipos de datos en Analysis Services](/analysis-services/multidimensional-models/olap-physical/data-types-in-analysis-services).  
   
 ## <a name="see-also"></a>Consulte también  
  [Aplicar formato a los elementos de informe &#40;Generador de informes y SSRS&#41;](../../reporting-services/report-design/formatting-report-items-report-builder-and-ssrs.md)  
-  
   

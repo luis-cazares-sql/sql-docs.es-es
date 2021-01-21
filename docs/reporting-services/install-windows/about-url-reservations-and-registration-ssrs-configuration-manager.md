@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: c2c460c3-e749-4efd-aa02-0f8a98ddbc76
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: c705c0ea22b7fcd4a92c94493035764864d1a3f6
-ms.sourcegitcommit: fe59f8dc27fd633f5dfce54519d6f5dcea577f56
+ms.openlocfilehash: 1203c1190b0c14a4d5d9c3f7218adc8d6ab5d57a
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91935185"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595291"
 ---
 # <a name="about-url-reservations-and-registration--report-server-configuration-manager"></a>Acerca de las reservas y el registro de direcciones URL (Administrador de configuración del servidor de informes)
   Las direcciones URL de las aplicaciones de Reporting Services se definen como reservas de direcciones URL en HTTP.SYS. Una reserva de direcciones URL define la sintaxis de un extremo de dirección URL para una aplicación web. Las reservas de direcciones URL se definen tanto para el servicio web del servidor de informes como para el portal web al configurar las aplicaciones en el servidor de informes. Las reservas de direcciones URL se crean automáticamente al configurar direcciones URL a través del programa de instalación o de la herramienta Configuración de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] :  
@@ -30,7 +30,7 @@ ms.locfileid: "91935185"
  Tanto el programa de instalación como la herramienta también asignarán permisos en la dirección URL al servicio del servidor de informes, comprobarán si hay instancias duplicadas y agregarán la reserva de direcciones URL a HTTP.SYS. No cree ni modifique nunca una reserva de direcciones URL de Reporting Services directamente mediante HttpCfg.exe u otra herramienta. Si omite un paso o establece un valor no válido, encontrará problemas que podrían ser difíciles de diagnosticar o corregir.  
   
 > [!NOTE]  
-> HTTP.SYS es un componente del sistema operativo que escucha las solicitudes de red y las enruta a una cola de solicitudes. En esta versión de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], HTTP.SYS establece y mantiene la cola de solicitudes para el servicio web del servidor de informes y el portal web. Internet Information Services (IIS) ya no se utiliza para hospedar o tener acceso a aplicaciones de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] . Para más información sobre la funcionalidad de HTTP.SYS, vea [HTTP Server API](https://go.microsoft.com/fwlink/?LinkId=92652).  
+> HTTP.SYS es un componente del sistema operativo que escucha las solicitudes de red y las enruta a una cola de solicitudes. En esta versión de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], HTTP.SYS establece y mantiene la cola de solicitudes para el servicio web del servidor de informes y el portal web. Internet Information Services (IIS) ya no se utiliza para hospedar o tener acceso a aplicaciones de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] . Para más información sobre la funcionalidad de HTTP.SYS, vea [HTTP Server API](/windows/win32/http/http-api-start-page).  
   
 ##  <a name="urls-in-reporting-services"></a><a name="ReportingServicesURLs"></a> Direcciones URL en Reporting Services  
  En una instalación de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] , puede tener acceso a las herramientas, aplicaciones y elementos siguientes a través de direcciones URL:  
@@ -47,11 +47,11 @@ ms.locfileid: "91935185"
 > En este artículo no se describe el acceso con direcciones URL a informes específicos que se almacenan en el servidor de informes. Para más información sobre el acceso con direcciones URL a estos elementos, vea [Acceder a elementos del servidor de informes mediante el acceso URL](../../reporting-services/access-report-server-items-using-url-access.md).  
   
 ##  <a name="url-reservation-and-registration"></a><a name="URLreservation"></a> Reserva y registro de direcciones URL  
- Una reserva de direcciones URL define las direcciones URL que se pueden usar para tener acceso a una aplicación de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] . [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] reservará una o más direcciones URL para el servicio web del servidor de informes y para el [!INCLUDE[ssRSWebPortal](../../includes/ssrswebportal.md)] en HTTP.SYS, y las registrará cuando se inicie el servicio. Si anexa parámetros a la dirección URL, puede abrir los informes a través del servicio web. HTTP.SYS proporciona las reservas y permite el registro. Para más información, vea [Namespace Reservations, Registration, and Routing](https://go.microsoft.com/fwlink/?LinkId=92653).  
+ Una reserva de direcciones URL define las direcciones URL que se pueden usar para tener acceso a una aplicación de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] . [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] reservará una o más direcciones URL para el servicio web del servidor de informes y para el [!INCLUDE[ssRSWebPortal](../../includes/ssrswebportal.md)] en HTTP.SYS, y las registrará cuando se inicie el servicio. Si anexa parámetros a la dirección URL, puede abrir los informes a través del servicio web. HTTP.SYS proporciona las reservas y permite el registro. Para más información, vea [Namespace Reservations, Registration, and Routing](/windows/win32/http/namespace-reservations-registrations-and-routing).  
   
- La*reserva de direcciones URL* es el proceso por el que se crea un extremo de dirección URL para una aplicación web y se almacena en HTTP.SYS. HTTP.SYS es el repositorio común de todas las reservas de direcciones URL que se definen en un equipo y define un conjunto de reglas comunes que garantizan que las reservas sean únicas.  
+ La *reserva de direcciones URL* es el proceso por el que se crea un extremo de dirección URL para una aplicación web y se almacena en HTTP.SYS. HTTP.SYS es el repositorio común de todas las reservas de direcciones URL que se definen en un equipo y define un conjunto de reglas comunes que garantizan que las reservas sean únicas.  
   
- El*registro de direcciones URL* se produce cuando el servicio se inicia. Se crea la cola de solicitudes y HTTP.SYS empieza a enrutar las solicitudes a esa cola. Un extremo de la dirección URL se debe registrar antes de agregar a la cola las solicitudes que se dirijan a ese extremo. Cuando el servicio Servidor de informes se inicie, registrará todas las direcciones URL que haya reservado para todas las aplicaciones habilitadas. Esto significa que el servicio web debe estar habilitado para que el registro tenga lugar. Si establece la propiedad **WebServiceAndHTTPAccessEnabled** en **False** en la faceta Configuración de área expuesta para Reporting Services de Administración basada en directivas, la dirección URL del servicio web no se registrará cuando se inicie el servicio.  
+ El *registro de direcciones URL* se produce cuando el servicio se inicia. Se crea la cola de solicitudes y HTTP.SYS empieza a enrutar las solicitudes a esa cola. Un extremo de la dirección URL se debe registrar antes de agregar a la cola las solicitudes que se dirijan a ese extremo. Cuando el servicio Servidor de informes se inicie, registrará todas las direcciones URL que haya reservado para todas las aplicaciones habilitadas. Esto significa que el servicio web debe estar habilitado para que el registro tenga lugar. Si establece la propiedad **WebServiceAndHTTPAccessEnabled** en **False** en la faceta Configuración de área expuesta para Reporting Services de Administración basada en directivas, la dirección URL del servicio web no se registrará cuando se inicie el servicio.  
   
  Las direcciones URL se eliminan del Registro si detiene el servicio o recicla el servicio web o el dominio de aplicación del [!INCLUDE[ssRSWebPortal](../../includes/ssrswebportal.md)] . Si modifica una reserva de direcciones URL mientras el servicio se está ejecutando, el servidor de informes reciclará el dominio de aplicación inmediatamente para que se pueda eliminar del Registro la dirección URL anterior y empezar a usar la nueva.  
   
@@ -108,4 +108,3 @@ ms.locfileid: "91935185"
  [Configuración de una URL &#40;Administrador de configuración del servidor de informes&#41;](../../reporting-services/install-windows/configure-a-url-ssrs-configuration-manager.md)   
  [Sintaxis de reserva de URL &#40;Administrador de configuración del servidor de informes&#41;](../../reporting-services/install-windows/url-reservation-syntax-ssrs-configuration-manager.md)  
 
-  

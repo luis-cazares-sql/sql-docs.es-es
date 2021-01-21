@@ -14,18 +14,18 @@ ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 12/04/2019
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 983f6d846d1cb9be973c4976798fb55580dc7f2f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 9c895d2ac72f2c763357a2a2352009f8b2d7cab2
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97476806"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597099"
 ---
 # <a name="transact-sql-debugger---command-window"></a>Depurador de Transact-SQL: ventana Comandos
 
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-Use la **ventana Comandos** para ejecutar comandos, como debug y edit, en el código de la ventana Editor de consultas de [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] que se depura actualmente. Debe estar en modo de depuración para utilizar el **Ventana de comandos**. El depurador de [!INCLUDE[tsql](../../includes/tsql-md.md)] admite muchos de los comandos que también se admiten en la ventana [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] **Comando**. Para obtener más información, vea [Ventana de comandos de Visual Studio](https://go.microsoft.com/fwlink/?LinkId=112007).  
+Use la **ventana Comandos** para ejecutar comandos, como debug y edit, en el código de la ventana Editor de consultas de [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] que se depura actualmente. Debe estar en modo de depuración para utilizar el **Ventana de comandos**. El depurador de [!INCLUDE[tsql](../../includes/tsql-md.md)] admite muchos de los comandos que también se admiten en la ventana [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] **Comando**. Para obtener más información, vea [Ventana de comandos de Visual Studio](/previous-versions/visualstudio/visual-studio-2015/ide/reference/command-window).  
 
 [!INCLUDE[ssms-old-versions](../../includes/ssms-old-versions.md)]
 
@@ -49,4 +49,4 @@ Use la **ventana Comandos** para ejecutar comandos, como debug y edit, en el có
 
 ## <a name="see-also"></a>Consulte también
 
-[Depurador de Transact-SQL](../../relational-databases/scripting/transact-sql-debugger.md)
+[Depurador de Transact-SQL](./transact-sql-debugger.md)

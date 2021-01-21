@@ -28,12 +28,12 @@ ms.author: maghan
 ms.reviewer: “”
 ms.custom: seo-lt-2019
 ms.date: 02/09/2017
-ms.openlocfilehash: cc07f6b544740972223a632441973bce155b5f17
-ms.sourcegitcommit: 29a2be59c56f8a4b630af47760ef38d2bf56a3eb
+ms.openlocfilehash: 6ae9da5c98d625843bc01bba5d12276098e3e3f1
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92358883"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98594451"
 ---
 # <a name="transact-sql-editor-options"></a>Opciones del Editor de Transact-SQL
 
@@ -51,25 +51,25 @@ Este tema contiene información sobre algunas de las opciones del Editor de Tran
 |**SET TEXTSIZE**|El valor predeterminado, 2.147.483.647 bytes, indica que SQL Server proporcionará un campo de datos completo hasta el límite de los campos de datos text, ntext, nvarchar(max) y varchar(max). No afecta al tipo de datos XML. Especifique un número menor para limitar los resultados en caso de que los valores sean elevados. Las columnas que superen el número especificado se truncarán.|  
 |**Tiempo de espera de ejecución**|Indica el número de segundos de espera antes de cancelar la consulta. El valor 0 indica una espera infinita o que no hay tiempo de espera.|  
 |**De manera predeterminada, abrir nuevas consultas en modo SQLCMD**|Active esta casilla para abrir nuevas consultas en modo SQLCMD. Esta casilla solo se muestra cuando el cuadro de diálogo se abre desde el menú Herramientas.<br /><br />Cuando seleccione esta opción, tenga en cuenta las siguientes limitaciones:<br /><br />- IntelliSense se desactiva en el Editor de consultas del Motor de base de datos.<br />- Debido a que el Editor de consultas no se ejecuta desde la línea de comandos, no podrá pasar parámetros de línea de comandos, tales como variables.<br />- Dado que el Editor de consultas no puede responder a comandos del sistema operativo, debe tener cuidado de no ejecutar instrucciones interactivas.|  
-|**SET NOCOUNT**|Evita que se devuelva el mensaje que indica el número de filas afectadas por una instrucción Transact-SQL como parte de los resultados. Para obtener más información, vea [SET NOCOUNT](https://go.microsoft.com/fwlink/?LinkID=238731).|  
-|**SET NOEXEC**|Cuando es **ON**, indica a Microsoft® SQL Server™ que debe compilar cada lote de instrucciones Transact-SQL pero no debe ejecutarlas. Cuando es **OFF**, indica a Microsoft® SQL Server™ que ejecute todos los lotes después de la compilación. Para más información, consulte [SET NOEXEC](https://go.microsoft.com/fwlink/?LinkId=238770).|  
-|**SET PARSEONLY**|Comprueba la sintaxis de cada instrucción Transact-SQL y devuelve los mensajes de error sin compilar ni ejecutar la instrucción. Para obtener más información, vea [SET PARSEONLY](https://go.microsoft.com/fwlink/?LinkId=238734).|  
-|**SET CONCAT_NULL_YIELDS_NULL**|Determina si los resultados de la concatenación se tratan como valor NULL o como cadena vacía. Para más información, consulte [SET CONCAT_NULL_YIELDS_NULL](https://go.microsoft.com/fwlink/?LinkId=238733).|  
+|**SET NOCOUNT**|Evita que se devuelva el mensaje que indica el número de filas afectadas por una instrucción Transact-SQL como parte de los resultados. Para obtener más información, vea [SET NOCOUNT](../t-sql/statements/set-nocount-transact-sql.md).|  
+|**SET NOEXEC**|Cuando es **ON**, indica a Microsoft® SQL Server™ que debe compilar cada lote de instrucciones Transact-SQL pero no debe ejecutarlas. Cuando es **OFF**, indica a Microsoft® SQL Server™ que ejecute todos los lotes después de la compilación. Para más información, consulte [SET NOEXEC](../t-sql/statements/set-noexec-transact-sql.md).|  
+|**SET PARSEONLY**|Comprueba la sintaxis de cada instrucción Transact-SQL y devuelve los mensajes de error sin compilar ni ejecutar la instrucción. Para obtener más información, vea [SET PARSEONLY](../t-sql/statements/set-parseonly-transact-sql.md).|  
+|**SET CONCAT_NULL_YIELDS_NULL**|Determina si los resultados de la concatenación se tratan como valor NULL o como cadena vacía. Para más información, consulte [SET CONCAT_NULL_YIELDS_NULL](../t-sql/statements/set-concat-null-yields-null-transact-sql.md).|  
 |**SET ARITHABORT**|Cancela una consulta cuando se produce un error de desbordamiento o división por cero durante su ejecución. Para más información, consulte [SET ARITHABORT](https://msdn.microsoft.com/library/aa259212(v=SQL.80).aspx).|  
-|**SET SHOWPLAN_TEXT**|Hace que Microsoft® SQL Server™ no ejecute instrucciones Transact-SQL. En su lugar, SQL Server devuelve información detallada sobre el modo en que se ejecutan las instrucciones. Para más información, consulte [SET SHOWPLAN_TEXT](https://go.microsoft.com/fwlink/?LinkID=238737).|  
+|**SET SHOWPLAN_TEXT**|Hace que Microsoft® SQL Server™ no ejecute instrucciones Transact-SQL. En su lugar, SQL Server devuelve información detallada sobre el modo en que se ejecutan las instrucciones. Para más información, consulte [SET SHOWPLAN_TEXT](../t-sql/statements/set-showplan-text-transact-sql.md).|  
 |**SET STATISTICS TIME**|Muestra el número de milisegundos necesarios para analizar, compilar y ejecutar cada instrucción.|  
 |**SET STATISTICS IO**|Hace que Microsoft® SQL Server™ muestre información relacionada con la cantidad de actividad de disco generada por las instrucciones Transact-SQL.|  
-|**SET TRANSACTION ISOLATION LEVEL**|Controla el comportamiento del bloqueo predeterminado de las transacciones para todas las instrucciones de Microsoft® SQL Server™ **SELECT** emitidas por una conexión. Para obtener información, vea  [SET TRANSACTION ISOLATION LEVEL](https://go.microsoft.com/fwlink/?LinkId=238730).|  
-|**SET LOCK_TIMEOUT**|Especifica el número de milisegundos que una instrucción espera a que se libere un bloqueo. Para más información, consulte [SET LOCK_TIMEOUT](https://go.microsoft.com/fwlink/?LinkId=238747)|  
-|**SET QUERY_GOVERNOR_COST_LIMIT**|Invalida el valor configurado actualmente para la conexión actual. Para más información, consulte [SET QUERY_GOVERNOR_COST_LIMIT](https://go.microsoft.com/fwlink/?LinkId=238749).|  
-|**SET ANSI_DEFAULTS**|Controla un grupo de opciones de Microsoft® SQL Server™ que especifican de forma colectiva parte del comportamiento estándar de SQL-92. Para más información, consulte [SET ANSI_DEFAULTS](https://go.microsoft.com/fwlink/?LinkId=238750).|  
-|**SET QUOTED_IDENTIFIER**|Hace que Microsoft® SQL Server™ siga las reglas de SQL-92 en cuanto a la comilla delimitadora de identificadores y cadenas literales. Los identificadores delimitados por comillas dobles pueden ser palabras clave reservadas de Transact-SQL o pueden contener caracteres no admitidos normalmente por las reglas de sintaxis de Transact-SQL para los identificadores. Para más información, consulte [SET QUOTED_IDENTIFIER](https://go.microsoft.com/fwlink/?LinkId=238751).|  
-|**SET ANSI_NULL_DFLT_ON**|Modifica el comportamiento de la sesión para invalidar la nulabilidad predeterminada de las columnas nuevas cuando la opción ANSI null default de la base de datos es false. Para más información, consulte [SET ANSI_NULL_DFLT_ON](https://go.microsoft.com/fwlink/?LinkID=238752).|  
-|**SET IMPLICIT_TRANSACTIONS**|Cuando es **ON**, establece la conexión en el modo de transacción implícita. Cuando es **OFF**, regresa la conexión al modo de transacción con confirmación automática. Para más información, consulte [SET IMPLICIT_TRANSACTIONS](https://go.microsoft.com/fwlink/?LinkId=238753).|  
-|**SET CURSOR_CLOSE_ON_COMMIT**|Controla si un cursor se cierra o no cuando se confirma una instrucción. Para más información, consulte [SET CURSOR_CLOSE_ON_COMMIT](https://go.microsoft.com/fwlink/?LinkId=238754).|  
-|**SET ANSI_PADDING**|Controla el modo en que la columna almacena valores más cortos que el tamaño que tiene definido y cómo almacena valores con espacios en blanco a la derecha en datos de tipo **char**, **varchar**, **binary**y **varbinary** . Para más información, consulte [SET ANSI_PADDING](https://go.microsoft.com/fwlink/?LinkId=238755).|  
-|**SET ANSI_WARNINGS**|Especifica el comportamiento estándar de SQL-92 para varias condiciones de error. Para más información, consulte [SET ANSI_WARNINGS](https://go.microsoft.com/fwlink/?LinkId=238758).|  
-|**SET ANSI_NULLS**|Especifica el comportamiento conforme a SQL-92 para los operadores de comparación Igual que ( **=** ) y Distinto de ( **<>** ) cuando se usan con valores NULL. Para más información, consulte [SET ANSI_NULLS](https://go.microsoft.com/fwlink/?LinkId=238759).|  
+|**SET TRANSACTION ISOLATION LEVEL**|Controla el comportamiento del bloqueo predeterminado de las transacciones para todas las instrucciones de Microsoft® SQL Server™ **SELECT** emitidas por una conexión. Para obtener información, vea  [SET TRANSACTION ISOLATION LEVEL](../t-sql/statements/set-transaction-isolation-level-transact-sql.md).|  
+|**SET LOCK_TIMEOUT**|Especifica el número de milisegundos que una instrucción espera a que se libere un bloqueo. Para más información, consulte [SET LOCK_TIMEOUT](../t-sql/statements/set-lock-timeout-transact-sql.md)|  
+|**SET QUERY_GOVERNOR_COST_LIMIT**|Invalida el valor configurado actualmente para la conexión actual. Para más información, consulte [SET QUERY_GOVERNOR_COST_LIMIT](../t-sql/statements/set-query-governor-cost-limit-transact-sql.md).|  
+|**SET ANSI_DEFAULTS**|Controla un grupo de opciones de Microsoft® SQL Server™ que especifican de forma colectiva parte del comportamiento estándar de SQL-92. Para más información, consulte [SET ANSI_DEFAULTS](../t-sql/statements/set-ansi-defaults-transact-sql.md).|  
+|**SET QUOTED_IDENTIFIER**|Hace que Microsoft® SQL Server™ siga las reglas de SQL-92 en cuanto a la comilla delimitadora de identificadores y cadenas literales. Los identificadores delimitados por comillas dobles pueden ser palabras clave reservadas de Transact-SQL o pueden contener caracteres no admitidos normalmente por las reglas de sintaxis de Transact-SQL para los identificadores. Para más información, consulte [SET QUOTED_IDENTIFIER](../t-sql/statements/set-quoted-identifier-transact-sql.md).|  
+|**SET ANSI_NULL_DFLT_ON**|Modifica el comportamiento de la sesión para invalidar la nulabilidad predeterminada de las columnas nuevas cuando la opción ANSI null default de la base de datos es false. Para más información, consulte [SET ANSI_NULL_DFLT_ON](../t-sql/statements/set-ansi-null-dflt-on-transact-sql.md).|  
+|**SET IMPLICIT_TRANSACTIONS**|Cuando es **ON**, establece la conexión en el modo de transacción implícita. Cuando es **OFF**, regresa la conexión al modo de transacción con confirmación automática. Para más información, consulte [SET IMPLICIT_TRANSACTIONS](../t-sql/statements/set-implicit-transactions-transact-sql.md).|  
+|**SET CURSOR_CLOSE_ON_COMMIT**|Controla si un cursor se cierra o no cuando se confirma una instrucción. Para más información, consulte [SET CURSOR_CLOSE_ON_COMMIT](../t-sql/statements/set-cursor-close-on-commit-transact-sql.md).|  
+|**SET ANSI_PADDING**|Controla el modo en que la columna almacena valores más cortos que el tamaño que tiene definido y cómo almacena valores con espacios en blanco a la derecha en datos de tipo **char**, **varchar**, **binary** y **varbinary** . Para más información, consulte [SET ANSI_PADDING](../t-sql/statements/set-ansi-padding-transact-sql.md).|  
+|**SET ANSI_WARNINGS**|Especifica el comportamiento estándar de SQL-92 para varias condiciones de error. Para más información, consulte [SET ANSI_WARNINGS](../t-sql/statements/set-ansi-warnings-transact-sql.md).|  
+|**SET ANSI_NULLS**|Especifica el comportamiento conforme a SQL-92 para los operadores de comparación Igual que ( **=** ) y Distinto de ( **<>** ) cuando se usan con valores NULL. Para más información, consulte [SET ANSI_NULLS](../t-sql/statements/set-ansi-nulls-transact-sql.md).|  
   
 ## <a name="query-results"></a><a name="QueryResults"></a>Resultados de la consulta  
   
@@ -91,4 +91,3 @@ Este tema contiene información sobre algunas de las opciones del Editor de Tran
 |**Cambiar a la pestaña de resultados tras ejecutar la consulta**|Haga clic en esta opción para establecer automáticamente el foco de pantalla en el conjunto de resultados.|  
 |**Número máximo de caracteres mostrados en cada columna**|El valor predeterminado es 256. Aumente este valor para poder mostrar conjuntos de resultados mayores sin truncamientos.|  
 |**Valores predeterminados**|Restablece todos los valores de esta página a los valores predeterminados originales.|  
-  

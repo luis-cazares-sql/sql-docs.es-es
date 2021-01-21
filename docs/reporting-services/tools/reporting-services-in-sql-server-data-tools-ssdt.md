@@ -11,16 +11,16 @@ helpviewer_keywords:
 ms.assetid: 0903c7b2-ac59-45f1-b7d0-922ecd9d76f8
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 30e7824d1519fb09a7947dde1cfdc2b818ebc144
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: 9ed7c7d204fe315280e379206d56f122606d1f03
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86916591"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597306"
 ---
 # <a name="reporting-services-in-sql-server-data-tools-ssdt"></a>Reporting Services en SQL Server Data Tools (SSDT)
 
-  [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] es un entorno [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] para crear soluciones de inteligencia empresarial. SSDT cuenta con un Diseñador de informes para crear el entorno, donde puede abrir, modificar, obtener una vista previa, guardar e implementar definiciones de informe paginadas de [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] , orígenes de datos compartidos, conjuntos de datos compartidos y elementos de informe. [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] no se incluye con SQL Server. Descargar [SQL Server Data Tools](https://go.microsoft.com/fwlink/?LinkID=616714). 
+  [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] es un entorno [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] para crear soluciones de inteligencia empresarial. SSDT cuenta con un Diseñador de informes para crear el entorno, donde puede abrir, modificar, obtener una vista previa, guardar e implementar definiciones de informe paginadas de [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] , orígenes de datos compartidos, conjuntos de datos compartidos y elementos de informe. [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] no se incluye con SQL Server. Descargar [SQL Server Data Tools](../../ssdt/download-sql-server-data-tools-ssdt.md). 
   
  En este tema se describen las soluciones, proyectos, plantillas de proyecto y configuraciones de [!INCLUDE[ssBIDevStudio](../../includes/ssbidevstudio-md.md)] utilizadas para [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], y las vistas, menús, barras de herramientas y métodos abreviados que se pueden usar en el Diseñador de informes.  
   
@@ -40,7 +40,7 @@ ms.locfileid: "86916591"
   
 -   **Asistente de proyectos de servidor de informes.** Cuando se selecciona un proyecto de asistente de proyectos de servidor de informes, se crea automáticamente un proyecto de servidor de informes y se abre el Asistente para informes. En el asistente, puede crear un informe siguiendo las instrucciones de cada página para crear una cadena de conexión a un origen de datos, establecer las credenciales del origen de datos, diseñar una consulta, agregar una región de datos de tabla o matriz, especificar datos y grupos de informe, elegir un estilo de fuente y color, publicar el informe en un servidor de informes y obtener una vista previa del informe localmente. Después de crear un informe con el asistente, puede modificar los datos del informe y el diseñador de informes mediante el Diseñador de informes en el proyecto de servidor de informes.  
   
- ![Nuevas plantillas de proyecto de SSDT](https://docs.microsoft.com/analysis-services/analysis-services/media/ssdt-biprojects.png "Nuevas plantillas de proyecto de SSDT")  
+ ![Nuevas plantillas de proyecto de SSDT](/analysis-services/analysis-services/media/ssdt-biprojects.png "Nuevas plantillas de proyecto de SSDT")  
   
   
 ##  <a name="report-designer-windows-and-panes"></a><a name="bkmk_ReportDesignerWindowsandPanes"></a> Ventanas y paneles del Diseñador de informes  
@@ -94,7 +94,7 @@ ms.locfileid: "86916591"
   
  Use el panel de propiedades para:  
   
--   Establecer las propiedades del elemento seleccionado en la superficie de diseño. Algunas propiedades proporcionan una lista desplegable de valores. También puede escribir directamente el valor en la celda. En algunas propiedades se incluye una colección de valores, que se indica con el valor **(Colección)** . La mayoría de las propiedades pueden aceptar una expresión; las expresiones complejas se indican mediante el valor **\<Expression>** . Haga clic en **\<Expression>** para abrir el cuadro de diálogo **Expresión**. Para obtener más información, vea [Expression Dialog Box](https://msdn.microsoft.com/library/e6c74ccb-4594-4d4f-b958-618d710e34eb).  
+-   Establecer las propiedades del elemento seleccionado en la superficie de diseño. Algunas propiedades proporcionan una lista desplegable de valores. También puede escribir directamente el valor en la celda. En algunas propiedades se incluye una colección de valores, que se indica con el valor **(Colección)** . La mayoría de las propiedades pueden aceptar una expresión; las expresiones complejas se indican mediante el valor **\<Expression>** . Haga clic en **\<Expression>** para abrir el cuadro de diálogo **Expresión**. Para obtener más información, vea [Expression Dialog Box](/previous-versions/sql/).  
   
 -   Use los botones de la barra de herramientas del panel de propiedades para cambiar la cuadrícula de la vista por categorías a la vista alfabética. En la vista por categorías, es probable que tenga que expandir una categoría para ver todas las propiedades de la misma. Para abrir el cuadro de diálogo Propiedades de un elemento, haga clic en el botón **Páginas de propiedades** en la barra de herramientas, o bien haga clic con el botón derecho en el elemento y seleccione **Propiedades**.  
   
@@ -180,7 +180,7 @@ ms.locfileid: "86916591"
   
 -   **Encabezado de página** Agregue un encabezado de página al informe o elimine un encabezado de página del informe. Al eliminar un encabezado de página, se eliminan todos los elementos del encabezado de página.  
   
--   Agregar**Pie de página** Agregue un pie de página al informe o elimine un pie de página del informe. Al eliminar un pie de página, se eliminan todos los elementos del pie de página.  
+-   Agregar **Pie de página** Agregue un pie de página al informe o elimine un pie de página del informe. Al eliminar un pie de página, se eliminan todos los elementos del pie de página.  
   
 -   **Panel de agrupación** Muestra y oculta el panel de agrupación.  
   
@@ -306,7 +306,7 @@ ms.locfileid: "86916591"
   
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Descargar SQL Server Data Tools](https://go.microsoft.com/fwlink/?LinkID=616714)
+[Descargar SQL Server Data Tools](../../ssdt/download-sql-server-data-tools-ssdt.md)
 [Explorador de soluciones](../../ssms/solution/solution-explorer.md)   
 [Informes de Reporting Services](../../reporting-services/reports/reporting-services-reports-ssrs.md)   
 [Lenguaje RDL (Report Definition Language)](../../reporting-services/reports/report-definition-language-ssrs.md)   

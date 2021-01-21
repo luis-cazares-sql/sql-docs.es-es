@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 51ad69d8-fe92-4662-a7cd-d235692f0c03
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 22f5064c4d861c3f10f88ce4ff1a5727f545fb72
-ms.sourcegitcommit: fe59f8dc27fd633f5dfce54519d6f5dcea577f56
+ms.openlocfilehash: 60d621e9bb833615aaed5e6f622afb9591916037
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91934966"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597057"
 ---
 # <a name="tutorial-how-to-locate-and-start-reporting-services-tools-ssrs"></a>Tutorial: Cómo buscar e iniciar herramientas de Reporting Services (SSRS)
 
@@ -89,7 +89,7 @@ Antes de abrir el portal web, necesita tener permisos suficientes (inicialmente,
 
 ## <a name="management-studio"></a><a name="bkmk_managements_studio"></a> Management Studio
 
-Los administradores del servidor de informes pueden utilizar [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] para administrar un servidor de informes junto con otros servidores de componentes de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Para obtener más información, vea el tutorial de [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/tutorials/tutorial-sql-server-management-studio).
+Los administradores del servidor de informes pueden utilizar [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] para administrar un servidor de informes junto con otros servidores de componentes de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Para obtener más información, vea el tutorial de [SQL Server Management Studio](../../ssms/quickstarts/ssms-connect-query-sql-server.md).
 
 ### <a name="to-start-sql-server-management-studio"></a>Para iniciar SQL Server Management Studio
 
@@ -115,13 +115,13 @@ Puede usar dos herramientas diferentes para crear informes paginados de [!INCLUD
 
 El Diseñador de informes está disponible en [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] (Visual Studio). La superficie de diseño del Diseñador de informes incluye ventanas con pestañas, asistentes y menús que se utilizan para acceder a características de creación de informes. La herramienta del diseñador de informes está disponible al elegir un proyecto de servidor de informes o una plantilla del Asistente del servidor de informes en [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)]. Para más información, vea [Reporting Services en SQL Server Data Tools &#40;SSDT&#41;](../../reporting-services/tools/reporting-services-in-sql-server-data-tools-ssdt.md).
 
-Descargar [SQL Server Data Tools](https://go.microsoft.com/fwlink/?LinkID=616714).
+Descargar [SQL Server Data Tools](../../ssdt/download-sql-server-data-tools-ssdt.md).
 
 ### <a name="to-start-report-designer"></a>Para iniciar el Diseñador de informes
 
 1. Abra **SQL Server Data Tools**.
 
-2. En el menú **Archivo** , seleccione **Nuevo**y haga clic en **Proyecto**.
+2. En el menú **Archivo** , seleccione **Nuevo** y haga clic en **Proyecto**.
 
 3. En la lista **Tipos de proyecto** , haga clic en **Proyectos de Business Intelligence**.
 
@@ -139,7 +139,7 @@ Para empezar a crear su primer informe, vea [Crear un informe de tabla básico &
 
 [Generador de informes en SQL Server](../../reporting-services/report-builder/report-builder-in-sql-server-2016.md) es una aplicación independiente que puede usar para crear informes paginados fuera de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Puede personalizar y actualizar todos los informes existentes, independientemente de que se hayan creado en el Diseñador de informes o en las versiones anteriores del [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)]. Se instala desde el portal web de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] o desde el Centro de descarga de Microsoft.
 
-Cuando el informe paginado esté listo, puede publicarlo en un servidor de informes o [guardarlo en el servicio Power BI](https://docs.microsoft.com/power-bi/paginated-reports-save-to-power-bi-service).\
+Cuando el informe paginado esté listo, puede publicarlo en un servidor de informes o [guardarlo en el servicio Power BI](/power-bi/paginated-reports-save-to-power-bi-service).\
 [Descargue el Generador de informes](https://go.microsoft.com/fwlink/?LinkID=219138) del Centro de descarga de Microsoft.
 
 ### <a name="to-start-ssrbnoversion"></a>Para iniciar el [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)]
@@ -181,7 +181,7 @@ Puede instalarlo desde el portal web de [!INCLUDE[ssNoVersion](../../includes/ss
 
 [Descargue el Publicador de informes móviles de SQL Server](https://go.microsoft.com/fwlink/?LinkID=733527)  
 [Descargue el Generador de informes](https://go.microsoft.com/fwlink/?LinkID=219138)  
-[Descargar SQL Server Data Tools](https://go.microsoft.com/fwlink/?LinkID=616714)  
+[Descargar SQL Server Data Tools](../../ssdt/download-sql-server-data-tools-ssdt.md)  
 [Instalar el modo de SharePoint de Reporting Services](../../reporting-services/install-windows/install-reporting-services-sharepoint-mode.md)  
 [Servidor de informes de Reporting Services](../../reporting-services/report-server-sharepoint/reporting-services-report-server.md)  
 [Herramientas de diseño de consulta](../../reporting-services/report-data/query-design-tools-ssrs.md)  

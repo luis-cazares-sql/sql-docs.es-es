@@ -10,12 +10,12 @@ ms.author: maghan
 ms.reviewer: “”
 ms.custom: seo-lt-2019
 ms.date: 02/09/2017
-ms.openlocfilehash: 9a9e1b3b6dd7e46872c6196ef3257805c1f5a72f
-ms.sourcegitcommit: b860fe41b873977649dca8c1fd5619f294c37a58
+ms.openlocfilehash: b77373adb76921ee526aea70528399970bda9246
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/29/2020
-ms.locfileid: "85518765"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597021"
 ---
 # <a name="how-to--debug-database-objects"></a>Procedimientos:  Depuración de objetos de base de datos
 
@@ -23,7 +23,7 @@ Una prueba unitaria de SQL Server consta de lo siguiente:
   
 -   El código de la prueba unitaria escrito en Visual C\# o Visual Basic. Este código, que lo genera el Diseñador de pruebas unitarias de SQL Server, es el responsable de ejecutar el script de Transact\-SQL que conforma el cuerpo de la prueba.  
   
--   Una o varias condiciones de prueba, que se escriben en Visual C\# o Visual Basic. Para depurar condiciones de prueba, siga el procedimiento para depurar pruebas unitarias que se describe en [Cómo: Depurar mientras se ejecuta una prueba (Visual Studio 2010)](https://msdn.microsoft.com/library/ms182484(VS.100).aspx) o [Cómo: Depurar mientras se ejecuta una prueba (Visual Studio 2012)](https://msdn.microsoft.com/library/ms182484.aspx).  
+-   Una o varias condiciones de prueba, que se escriben en Visual C\# o Visual Basic. Para depurar condiciones de prueba, siga el procedimiento para depurar pruebas unitarias que se describe en [Cómo: Depurar mientras se ejecuta una prueba (Visual Studio 2010)](/previous-versions/visualstudio/visual-studio-2010/ms182484(v=vs.100)) o [Cómo: Depurar mientras se ejecuta una prueba (Visual Studio 2012)](/previous-versions/ms182484(v=vs.140)).  
   
 -   Uno o más scripts de Transact\-SQL que se ejecutan en objetos de la base de datos que se está probando. Estos scripts de Transact\-SQL no se pueden depurar.  
   
@@ -98,5 +98,4 @@ En los procedimientos de este tema se describe cómo depurar objetos de base de 
   
 ## <a name="see-also"></a>Consulte también  
 [Ejecutar pruebas unitarias de SQL Server](../ssdt/running-sql-server-unit-tests.md)  
-[Depuración de Transact-SQL (Visual Studio 2010)](https://go.microsoft.com/fwlink/?LinkId=163975)  
-  
+[Depuración de Transact-SQL (Visual Studio 2010)](/previous-versions/visualstudio/visual-studio-2010/zefbf0t6(v=vs.100))  

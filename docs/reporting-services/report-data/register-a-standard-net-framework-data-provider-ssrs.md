@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: d92add64-e93c-4598-8508-55d1bc46acf6
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: b50cd7f19db42111e22b26007e7bb1ca9ee48ff3
-ms.sourcegitcommit: 6be9a0ff0717f412ece7f8ede07ef01f66ea2061
+ms.openlocfilehash: 6539c9552206893f5799fbeb30ff628355dd137d
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85812130"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596937"
 ---
 # <a name="register-a-standard-net-framework-data-provider-ssrs"></a>Registrar un proveedor de datos estándar de .NET Framework (SSRS)
   Para usar un proveedor de datos de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] de terceros para recuperar datos de un conjunto de datos de informe de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] , es necesario implementar y registrar el ensamblado del proveedor de datos de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] en dos ubicaciones: en el cliente de creación de informes y en el servidor de informes. En el cliente de creación de informes, debe registrar el proveedor de datos como un tipo de origen de datos y asociarlo a un diseñador de consultas. A continuación, puede seleccionar este proveedor de datos como un tipo de origen de datos al crear un conjunto de datos de informe. El diseñador de consultas asociado se abre para ayudarle a crear consultas para este tipo de origen de datos. En el servidor de informes, debe registrar el proveedor de datos como un tipo de origen de datos. A continuación, puede procesar los informes publicados que recuperan datos de un origen de datos con este proveedor de datos.  
@@ -37,7 +37,7 @@ ms.locfileid: "85812130"
   
 1.  Navegue hasta la ubicación predeterminada del directorio bin del servidor de informes donde desea usar el proveedor de datos de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] . La ubicación predeterminada del directorio bin del servidor de informes es *\<drive>* :\Archivos de programa\Microsoft SQL Server\ MSRS10_50.MSSQLSERVER\Reporting Services\ReportServer\bin.  
   
-2.  Copie el ensamblado desde la ubicación de almacenamiento provisional en el directorio bin del servidor de informes. Otra opción es cargar el ensamblado en la caché de ensamblados global (GAC). Para obtener más información, vea [Trabajar con ensamblados y la Caché de ensamblados global](https://go.microsoft.com/fwlink/?linkid=63912) en la documentación del SDK de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] en MSDN.  
+2.  Copie el ensamblado desde la ubicación de almacenamiento provisional en el directorio bin del servidor de informes. Otra opción es cargar el ensamblado en la caché de ensamblados global (GAC). Para obtener más información, vea [Trabajar con ensamblados y la Caché de ensamblados global](/dotnet/framework/app-domains/working-with-assemblies-and-the-gac) en la documentación del SDK de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] en MSDN.  
   
 #### <a name="to-register-a-net-data-provider-on-the-report-server"></a>Para registrar un proveedor de datos de .NET en el servidor de informes  
   
@@ -110,7 +110,7 @@ ms.locfileid: "85812130"
   
 1.  Navegue hasta la ubicación predeterminada del directorio PrivateAssemblies del cliente del Diseñador de informes donde desea usar el proveedor de datos de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] . La ubicación predeterminado del directorio PrivateAssemblies es *\<drive>* :\Archivos de programa\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies.  
   
-2.  Copie el ensamblado desde la ubicación de almacenamiento provisional en el directorio PrivateAssemblies del cliente del Diseñador de informes. Otra opción es cargar el ensamblado en la caché de ensamblados global (GAC). Para obtener más información, vea [Trabajar con ensamblados y la Caché de ensamblados global](https://go.microsoft.com/fwlink/?linkid=63912) en la documentación del SDK de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] en MSDN.  
+2.  Copie el ensamblado desde la ubicación de almacenamiento provisional en el directorio PrivateAssemblies del cliente del Diseñador de informes. Otra opción es cargar el ensamblado en la caché de ensamblados global (GAC). Para obtener más información, vea [Trabajar con ensamblados y la Caché de ensamblados global](/dotnet/framework/app-domains/working-with-assemblies-and-the-gac) en la documentación del SDK de [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] en MSDN.  
   
 #### <a name="to-register-a-net-data-provider-on-the-report-designer-client"></a>Para registrar un proveedor de datos de .NET en el cliente del Diseñador de informes  
   
@@ -204,5 +204,4 @@ ms.locfileid: "85812130"
  [Implementar una extensión de procesamiento de datos](../../reporting-services/extensions/data-processing/implementing-a-data-processing-extension.md)   
  [Archivos de configuración de Reporting Services](../../reporting-services/report-server/reporting-services-configuration-files.md)   
  [Seguridad de acceso del código en Reporting Services](../../reporting-services/extensions/secure-development/code-access-security-in-reporting-services.md)  
-  
   

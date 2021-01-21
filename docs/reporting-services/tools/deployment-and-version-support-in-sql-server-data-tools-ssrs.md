@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 36f5686d-7e40-4f31-be81-bd197ca33a02
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: a33626c529d59d9ffa2b80e012dbb325c93b670a
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: c820c7a9e0cefaee2a22a401213754d0a3274152
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86917970"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596170"
 ---
 # <a name="deployment-and-version-support-in-sql-server-data-tools-ssdt"></a>Implementación y compatibilidad de versiones en SQL Server Data Tools (SSDT)
   [!INCLUDE[ssBIDevStudio](../../includes/ssbidevstudio-md.md)] admite los escenarios siguientes:  
@@ -66,9 +66,8 @@ ms.locfileid: "86917970"
 |Proyecto de servidor de informes<br /><br /> or<br /><br /> Proyecto de asistente de proyectos de servidor de informes|[!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)]|Esquema RDL 2008 R2|[!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]||  
 |Proyecto de servidor de informes<br /><br /> or<br /><br /> Proyecto de asistente de proyectos de servidor de informes|[!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)]|Esquema RDL 2008|Solo el servidor de informes de [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]|Actualiza localmente el esquema RDL 2003 y RDL 2005 al esquema RDL 2008.|  
   
- Para obtener más información sobre la forma de abrir informes en una versión anterior del esquema de definición de informes, vea [Actualizar informes](../../reporting-services/install-windows/upgrade-reports.md). Para obtener más información sobre esquemas de definición de informe concretos, vea la [SQL Server RDL Specification](https://go.microsoft.com/fwlink/?linkid=116865).  
+ Para obtener más información sobre la forma de abrir informes en una versión anterior del esquema de definición de informes, vea [Actualizar informes](../../reporting-services/install-windows/upgrade-reports.md). Para obtener más información sobre esquemas de definición de informe concretos, vea la [SQL Server RDL Specification](/openspecs/sql_server_protocols/ms-rdl/53287204-7cd0-4bc9-a5cd-d42a5925dca1).  
   
 ## <a name="see-also"></a>Consulte también  
  [Publicación de orígenes de datos e informes](../../reporting-services/reports/publishing-data-sources-and-reports.md)  
-  
   

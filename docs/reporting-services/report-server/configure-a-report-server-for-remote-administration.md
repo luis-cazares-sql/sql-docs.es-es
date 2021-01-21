@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8c7f145f-3ac2-4203-8cd6-2a4694395d09
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: f41eef01d203a873b3d5beac61ab5feb2995867f
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+ms.openlocfilehash: 7232e6b5d89ae9c73b81df16a03ebcd00859d7ee
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891405"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597050"
 ---
 # <a name="configure-a-report-server-for-remote-administration"></a>Configurar un servidor de informes para la administración remota
   En [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], puede configurar las instancias del servidor de informes local o remotamente. Para configurar una instancia del servidor de informes remota, se puede utilizar la herramienta Configuración de Reporting Services o escribir código personalizado que utilice el proveedor de Instrumental de administración de Windows (WMI) de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] . La herramienta de configuración de Reporting Services proporciona una interfaz gráfica para el proveedor WMI, de modo que se puede configurar un servidor de informes sin tener que escribir código. Al iniciar la herramienta, se puede especificar el servidor remoto con el que se desea establecer la conexión.  
@@ -40,7 +40,7 @@ ms.locfileid: "91891405"
   
  Algunas organizaciones tienen directivas de grupo que impiden la administración remota de servidores para algunos sistemas operativos o usuarios. Antes de modificar la configuración del firewall, pregunte al administrador de la red si existen restricciones en cuanto a la administración remota.  
   
- Para obtener más información, vea [Connecting Through Windows Firewall](https://go.microsoft.com/fwlink/?LinkId=63615) en la documentación de Plataform SDK en MSDN.  
+ Para obtener más información, vea [Connecting Through Windows Firewall](/windows/win32/wmisdk/connecting-to-wmi-remotely-with-vbscript) en la documentación de Plataform SDK en MSDN.  
   
 ## <a name="tasks"></a>Tareas  
  Entre las tareas que habilitan la configuración del servidor de informes remoto figuran las siguientes:  
@@ -59,9 +59,9 @@ ms.locfileid: "91891405"
   
 ### <a name="to-configure-remote-connections-to-the-report-server-database"></a>Configurar las conexiones remotas a la base de datos del servidor de informes  
   
-1.  Haga clic en **Inicio**, elija **Todos los programas**, [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)], **Herramientas de configuración**y, finalmente, haga clic en **Administrador de configuración de SQL Server**.  
+1.  Haga clic en **Inicio**, elija **Todos los programas**, [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)], **Herramientas de configuración** y, finalmente, haga clic en **Administrador de configuración de SQL Server**.  
   
-2.  En el panel izquierdo, expanda **Configuración de red de SQL Server**y, a continuación, haga clic en **Protocolos** para la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
+2.  En el panel izquierdo, expanda **Configuración de red de SQL Server** y, a continuación, haga clic en **Protocolos** para la instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
 3.  En el panel de detalles, habilite los protocolos TCP/IP y Canalizaciones con nombre y, después, reinicie el servicio [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .  
   
@@ -89,9 +89,9 @@ ms.locfileid: "91891405"
   
 ### <a name="to-set-dcom-permissions-to-enable-remote-wmi-access-for-non-administrators"></a>Para establecer permisos DCOM que habiliten el acceso remoto a WMI para usuarios que no son administradores  
   
-1.  En el menú Inicio, seleccione **Herramientas administrativas**y haga clic en **Servicios de componente**.  
+1.  En el menú Inicio, seleccione **Herramientas administrativas** y haga clic en **Servicios de componente**.  
   
-     En Windows Vista, en el menú Inicio, haga clic en **Todos los programas**, haga clic en **Ejecutar**y, a continuación, escriba **mmc comexp.msc**.  
+     En Windows Vista, en el menú Inicio, haga clic en **Todos los programas**, haga clic en **Ejecutar** y, a continuación, escriba **mmc comexp.msc**.  
   
 2.  Abra la carpeta Servicios de componente.  
   
@@ -113,11 +113,11 @@ ms.locfileid: "91891405"
   
 ### <a name="to-set-permissions-on-the-report-server-wmi-namespace-for-non-administrators"></a>Para establecer permisos para el espacio de nombres de WMI del servidor de informes para usuarios que no son administradores  
   
-1.  En el menú Inicio, seleccione **Herramientas administrativas**y haga clic en **Administración de equipos**.  
+1.  En el menú Inicio, seleccione **Herramientas administrativas** y haga clic en **Administración de equipos**.  
   
 2.  Abra la carpeta Servicios y Aplicaciones.  
   
-3.  Haga clic con el botón derecho en **Control WMI**y seleccione **Propiedades**.  
+3.  Haga clic con el botón derecho en **Control WMI** y seleccione **Propiedades**.  
   
 4.  Haga clic en **Seguridad**.  
   
@@ -135,11 +135,10 @@ ms.locfileid: "91891405"
   
 11. Seleccione la carpeta Admin y, a continuación, haga clic en **Seguridad**.  
   
-12. Haga clic en **Agregar**y, después, escriba la cuenta de usuario que se empleará para administrar el servidor.  
+12. Haga clic en **Agregar** y, después, escriba la cuenta de usuario que se empleará para administrar el servidor.  
   
-13. En la columna **Permitir** , seleccione **Habilitar cuenta**, **Llamada remota habilitada**y **Seguridad de lectura**y, a continuación, haga clic en **Aceptar**.  
+13. En la columna **Permitir** , seleccione **Habilitar cuenta**, **Llamada remota habilitada** y **Seguridad de lectura** y, a continuación, haga clic en **Aceptar**.  
   
 ## <a name="see-also"></a>Consulte también  
  [Administrador de configuración del servidor de informes &#40;modo nativo&#41;](../../reporting-services/install-windows/reporting-services-configuration-manager-native-mode.md)  
-  
   

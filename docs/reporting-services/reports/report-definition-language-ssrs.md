@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: b18b025e-f4bd-4744-8f86-0ac9fb967548
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 04c220383ef14fe6bd05b690e5c27ae73b4289a4
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: 3fd91a74fe64d055860c2382efeb16523685c2a3
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "79510086"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596706"
 ---
 # <a name="report-definition-language-ssrs"></a>Report Definition Language (SSRS)
   El lenguaje RDL (Report Definition Language) es una representación XML de una definición de informe de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]. Una definición de informe contiene información acerca de la recuperación y el diseño de los datos de un informe. RDL está formado por elementos XML que cumplen la sintaxis XML creada para [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]. Puede agregar sus propias funciones personalizadas para controlar los valores de elemento de informe, los estilos y el formato si obtiene acceso a los ensamblados de código en los archivos de definición de informe.  
@@ -37,12 +37,12 @@ ms.locfileid: "79510086"
 -   Un esquema extensible y abierto que admite espacios de nombres adicionales y elementos personalizados.  
   
 ##  <a name="rdl-specifications"></a><a name="bkmk_RDL_Specifications"></a> Especificaciones de RDL  
- Para descargar las especificaciones de versiones específicas de esquema, vea [Especificación del lenguaje RDL](https://go.microsoft.com/fwlink/?linkid=116865).  
+ Para descargar las especificaciones de versiones específicas de esquema, vea [Especificación del lenguaje RDL](/openspecs/sql_server_protocols/ms-rdl/53287204-7cd0-4bc9-a5cd-d42a5925dca1).  
   
 ##  <a name="rdl-xml-schema-definition"></a><a name="bkmk_RDL_XML_Schema_Definition"></a> Definición de esquema XML de RDL  
  Un archivo de lenguaje RDL (Report Definition Language) de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] se valida con un archivo de definición de esquema XML (XSD). El esquema define las reglas para dónde se pueden producir elementos RDL en un archivo .rdl. Un elemento incluye su tipo de datos y cardinalidad, es decir, el número de repeticiones que se permiten. Los elementos pueden ser simples o complejos. Un elemento simple no tiene elementos o atributos secundarios. Un elemento complejo tiene elementos secundarios y opcionalmente, atributos.  
   
- Por ejemplo, el esquema incluye el elemento RDL **ReportParameters**que es del tipo complejo **ReportParametersType**. Por convención, un tipo complejo para un elemento es el nombre del elemento seguido de la palabra **Type**. Un elemento **ReportParameters** puede estar contenido en un elemento **Report** (un tipo complejo) y puede contener elementos **ReportParameter** . **ReportParameterType** es un tipo simple que solo puede ser uno de los siguientes valores: **Boolean**, **DateTime**, **Integer**, **Float** o **String**. Para obtener más información sobre los tipos de datos de esquema XML, vea [XML Schema Part 2: Datatypes Second Edition](https://go.microsoft.com/fwlink/?linkid=4871) (Parte 2 del esquema XML: tipos de datos, segunda edición).  
+ Por ejemplo, el esquema incluye el elemento RDL **ReportParameters** que es del tipo complejo **ReportParametersType**. Por convención, un tipo complejo para un elemento es el nombre del elemento seguido de la palabra **Type**. Un elemento **ReportParameters** puede estar contenido en un elemento **Report** (un tipo complejo) y puede contener elementos **ReportParameter** . **ReportParameterType** es un tipo simple que solo puede ser uno de los siguientes valores: **Boolean**, **DateTime**, **Integer**, **Float** o **String**. Para obtener más información sobre los tipos de datos de esquema XML, vea [XML Schema Part 2: Datatypes Second Edition](https://go.microsoft.com/fwlink/?linkid=4871) (Parte 2 del esquema XML: tipos de datos, segunda edición).  
   
  El XSD de RDL está disponible en el archivo ReportDefinition.xsd, que se encuentra en la carpeta Extras del CD-ROM del producto. También está disponible en el servidor de informes a través de la siguiente dirección URL: `https://servername/reportserver/reportdefinition.xsd`.  
   
@@ -89,5 +89,4 @@ ms.locfileid: "79510086"
  [Buscar la versión del esquema de definición de informe &#40;SSRS&#41;](../../reporting-services/reports/find-the-report-definition-schema-version-ssrs.md)   
  [Usar ensamblados personalizados con informes](../../reporting-services/custom-assemblies/using-custom-assemblies-with-reports.md)   
  [Elementos de informe personalizados](../../reporting-services/custom-report-items/custom-report-items.md)  
-  
   

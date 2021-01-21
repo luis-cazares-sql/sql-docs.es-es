@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 81110ef6-4289-405c-a931-e7e9f49e69ba
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: ef8729d35598b59c33a827d77e5e7c5473ead049
-ms.sourcegitcommit: f0772f614482e0b3cde3609e178689ce62ca3a19
+ms.openlocfilehash: 7ce362356424cb0fdaf991faa27d90f10ef36899
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84547867"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597135"
 ---
 # <a name="turn-on-reporting-services-events-for-the-sharepoint-trace-log-uls"></a>Activar eventos de Reporting Services para el registro de seguimiento de SharePoint (ULS)
 
@@ -139,7 +139,7 @@ Get-SPDiagnosticConfig
 |Servicio compartido|Entradas de ejemplo:<br /><br /> MediumUpdating ReportingWebServiceApplication<br /><br /> Acceso de MediumGranting a las bases de datos de contenido.<br /><br /> Instancias de MediumProvisioning para ReportingWebServiceApplication<br /><br /> Cambio de la cuenta de servicio de MediumProcessing para ReportingWebServiceApplication<br /><br /> Permisos de base de datos de MediumSetting.|  
   
 ##  <a name="view-a-log-file-with-powershell"></a><a name="bkmk_powershell"></a> Ver un archivo de registro con PowerShell  
- ![Contenido relacionado con PowerShell](https://docs.microsoft.com/analysis-services/analysis-services/instances/install-windows/media/rs-powershellicon.jpg "Contenido relacionado con PowerShell")Puede usar PowerShell para devolver una lista de los eventos relacionados con [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] de un archivo de registro de ULS. Escriba el comando siguiente desde el Shell de administración de SharePoint 2010 para devolver una lista filtrada de filas desde el archivo de registro ULS UESQL11SPOINT-20110606-1530.log, que contiene "**sql server reporting services**":  
+ ![Contenido relacionado con PowerShell](/analysis-services/analysis-services/instances/install-windows/media/rs-powershellicon.jpg "Contenido relacionado con PowerShell")Puede usar PowerShell para devolver una lista de los eventos relacionados con [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] de un archivo de registro de ULS. Escriba el comando siguiente desde el Shell de administración de SharePoint 2010 para devolver una lista filtrada de filas desde el archivo de registro ULS UESQL11SPOINT-20110606-1530.log, que contiene "**sql server reporting services**":  
   
 ```  
 Get-content -path "C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\LOGS\UESQL11SPOINT-20110606-1530.log" | select-string "sql server reporting services"  
@@ -147,11 +147,11 @@ Get-content -path "C:\Program Files\Common Files\Microsoft Shared\Web Server Ext
   
  También hay herramientas que puede descargar para leer registros ULS. Por ejemplo, [SharePoint LogViewer](https://github.com/hasankhan/SharePointLogViewer), disponible en GitHub. 
   
- Para más información sobre cómo usar PowerShell para ver datos de registro, vea [Visualización de registros de diagnóstico (SharePoint Server 2010)](https://technet.microsoft.com/library/ff463595.aspx).  
+ Para más información sobre cómo usar PowerShell para ver datos de registro, vea [Visualización de registros de diagnóstico (SharePoint Server 2010)](/SharePoint/administration/view-diagnostic-logs).  
   
 ##  <a name="trace-log-location"></a><a name="bkmk_trace"></a> Ubicación del registro de seguimiento  
  Los archivos de registro de seguimiento se encuentran normalmente en la carpeta **c:\Archivos de programa\Common files\Microsoft Shared\Web Server Extensions\14\logs** , pero puede comprobar o cambiar la ruta de acceso en la página **Registro de diagnóstico** de Administración central de SharePoint.  
   
- Para más información y conocer los pasos para configurar el registro de diagnóstico en un servidor de SharePoint en Administración Central de SharePoint 2010, vea [Configuración de las opciones del registro de diagnóstico (Windows SharePoint Services)](https://go.microsoft.com/fwlink/?LinkID=114423).  
+ Para más información y conocer los pasos para configurar el registro de diagnóstico en un servidor de SharePoint en Administración Central de SharePoint 2010, vea [Configuración de las opciones del registro de diagnóstico (Windows SharePoint Services)](/previous-versions/office/sharepoint-2007-products-and-technologies/cc288649(v=office.12)).  
 
 ¿Tiene alguna pregunta más? [Puede plantear sus dudas en el foro de Reporting Services](https://go.microsoft.com/fwlink/?LinkId=620231).

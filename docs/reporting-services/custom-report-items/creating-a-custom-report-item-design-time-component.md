@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 323fd58a-a462-4c48-b188-77ebc0b4212e
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 46be46e47b7e5a5028b639ecb0e74cbe19c8446a
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: 237d056f8b42570fcab375330a9eb3172eb11758
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80217011"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596957"
 ---
 # <a name="creating-a-custom-report-item-design-time-component"></a>Crear un componente de tiempo de diseño de elemento de informe personalizado
   Un componente de tiempo de diseño de elemento de informe personalizado es un control que se puede utilizar en el entorno de Visual Studio Report Designer. El componente de tiempo de diseño de elemento de informe personalizado proporciona una superficie de diseño activada que puede aceptar las operaciones de arrastrar y colocar, la integración con el explorador de propiedades de [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)], y la capacidad de proporcionar los editores de propiedades personalizados.  
@@ -183,7 +183,7 @@ private void OnProportionalScaling(object sender, EventArgs e)
 ```  
   
 ### <a name="using-adornments"></a>Utilizar las opciones gráficas  
- Las clases de elemento de informe personalizado también pueden implementar una clase **Microsoft.ReportDesigner.Design.Adornment**. Una opción gráfica permite al control de elemento de informe personalizado proporcionar las áreas fuera del rectángulo principal de la superficie de diseño. Estas áreas pueden administrar los eventos de interfaz de usuario, como los clics del mouse y las operaciones de arrastrar y colocar. La clase **Adornment** que se define en el espacio de nombres **Microsoft.ReportDesigner** de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] es una implementación de paso a través de la clase <xref:System.Windows.Forms.Design.Behavior.Adorner> de Windows Forms. Para obtener la documentación completa de la clase **Adorner**, vea [Información general sobre servicios de comportamiento](https://go.microsoft.com/fwlink/?LinkId=116673) en MSDN Library. Para obtener el código de ejemplo que implementa una clase **Microsoft.ReportDesigner.Design.Adornment**, vea [Ejemplos del producto SQL Server Reporting Services](https://go.microsoft.com/fwlink/?LinkId=177889).  
+ Las clases de elemento de informe personalizado también pueden implementar una clase **Microsoft.ReportDesigner.Design.Adornment**. Una opción gráfica permite al control de elemento de informe personalizado proporcionar las áreas fuera del rectángulo principal de la superficie de diseño. Estas áreas pueden administrar los eventos de interfaz de usuario, como los clics del mouse y las operaciones de arrastrar y colocar. La clase **Adornment** que se define en el espacio de nombres **Microsoft.ReportDesigner** de [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] es una implementación de paso a través de la clase <xref:System.Windows.Forms.Design.Behavior.Adorner> de Windows Forms. Para obtener la documentación completa de la clase **Adorner**, vea [Información general sobre servicios de comportamiento](/previous-versions/ms171826(v=vs.140)) en MSDN Library. Para obtener el código de ejemplo que implementa una clase **Microsoft.ReportDesigner.Design.Adornment**, vea [Ejemplos del producto SQL Server Reporting Services](https://go.microsoft.com/fwlink/?LinkId=177889).  
   
  Para obtener más información acerca de cómo programar y usar Windows Forms en [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)], vea estos temas en MSDN Library:  
   
@@ -198,5 +198,4 @@ private void OnProportionalScaling(object sender, EventArgs e)
  [Creación de un componente de tiempo de ejecución de elemento de informe personalizado](../../reporting-services/custom-report-items/creating-a-custom-report-item-run-time-component.md)   
  [Bibliotecas de clases de elemento de informe personalizado](../../reporting-services/custom-report-items/custom-report-item-class-libraries.md)   
  [Cómo: Implementar un elemento de informe personalizado](../../reporting-services/custom-report-items/how-to-deploy-a-custom-report-item.md)  
-  
   

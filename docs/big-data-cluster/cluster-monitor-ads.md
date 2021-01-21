@@ -10,12 +10,12 @@ ms.date: 09/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 4c4dc9956b8c3f9802feb839096195c09664d0d6
-ms.sourcegitcommit: 29a2be59c56f8a4b630af47760ef38d2bf56a3eb
+ms.openlocfilehash: b05864804e8f3f7cbcd67291b61d2099c4d18915
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378466"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595624"
 ---
 # <a name="monitor-cluster-status-with-azure-data-studio"></a>Supervisión del estado de un clúster con Azure Data Studio
 
@@ -23,11 +23,11 @@ En este artículo se explica cómo ver el estado de un clúster de macrodatos me
 
 ## <a name="use-azure-data-studio"></a><a id="datastudio"></a> Usar Azure Data Studio
 
-Después de descargar la versión más reciente de la **compilación para los participantes del programa Insider** de [Azure Data Studio](https://aka.ms/getazuredatastudio), podrá ver los puntos de conexión del servicio y el estado de un clúster de macrodatos con el panel del clúster de macrodatos de SQL Server. Algunas de las siguientes características solo estarán disponibles por primera vez en la compilación de los participantes del programa Insider de Azure Data Studio.
+Después de descargar la versión más reciente de la **compilación para los participantes del programa Insider** de [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md), podrá ver los puntos de conexión del servicio y el estado de un clúster de macrodatos con el panel del clúster de macrodatos de SQL Server. Algunas de las siguientes características solo estarán disponibles por primera vez en la compilación de los participantes del programa Insider de Azure Data Studio.
 
 1. Primero, cree una conexión al clúster de macrodatos en Azure Data Studio. Para obtener más información, vea [Conectarse a un clúster de macrodatos de SQL Server con Azure Data Studio](connect-to-big-data-cluster.md).
 
-1. Haga clic con el botón derecho en el punto de conexión del clúster de macrodatos y, después, seleccione **Administrar** .
+1. Haga clic con el botón derecho en el punto de conexión del clúster de macrodatos y, después, seleccione **Administrar**.
 
    ![botón derecho y administrar](media/view-cluster-status/right-click-manage.png)
 
@@ -52,13 +52,13 @@ En la tabla de puntos de conexión del servicio, también se muestran varios pan
 - Supervisión de trabajos de Spark
 - Administración de recursos de Spark
 
-Puede hacer clic directamente de estos vínculos. Se le pedirá que se autentique al acceder a estos paneles. En el caso de los paneles de métricas y registros, indique las credenciales de administrador del controlador que estableció en el momento de la implementación mediante las variables de entorno **AZDATA_USERNAME** y **AZDATA_PASSWORD** . Los paneles de Spark usarán credenciales de puerta de enlace (Knox), ya sea la identidad de AD en un clúster integrado con AD o **AZDATA_USERNAME** y **AZDATA_PASSWORD** , si se usa la autenticación básica en el clúster.
+Puede hacer clic directamente de estos vínculos. Se le pedirá que se autentique al acceder a estos paneles. En el caso de los paneles de métricas y registros, indique las credenciales de administrador del controlador que estableció en el momento de la implementación mediante las variables de entorno **AZDATA_USERNAME** y **AZDATA_PASSWORD**. Los paneles de Spark usarán credenciales de puerta de enlace (Knox), ya sea la identidad de AD en un clúster integrado con AD o **AZDATA_USERNAME** y **AZDATA_PASSWORD**, si se usa la autenticación básica en el clúster.
 
 [!INCLUDE [big-data-cluster-root-user](../includes/big-data-cluster-root-user.md)]
 
 ### <a name="cluster-status-notebook"></a><a id="notebook"></a> Cuaderno de estado del clúster
 
-1. También puede ver el estado del clúster de macrodatos si inicia el cuaderno de estado del clúster. Para iniciar el cuaderno, haga clic en la tarea **Estado del clúster** .
+1. También puede ver el estado del clúster de macrodatos si inicia el cuaderno de estado del clúster. Para iniciar el cuaderno, haga clic en la tarea **Estado del clúster**.
 
     ![iniciar](media/view-cluster-status/cluster-status-launch.png)
 
@@ -69,16 +69,16 @@ Puede hacer clic directamente de estos vínculos. Se le pedirá que se autentiqu
     - Contraseña del controlador
     - Puntos de conexión del controlador
 
-    El nombre del clúster de macrodatos predeterminado es **mssql-cluster** , excepto si lo personaliza durante la implementación. Encontrará el punto de conexión del controlador del panel del clúster de macrodatos en la tabla de puntos de conexión del servicio. El punto de conexión se muestra como **Servicio de administración de clústeres** . Si no conoce las credenciales, solicítelas al administrador que implementó el clúster.
+    El nombre del clúster de macrodatos predeterminado es **mssql-cluster**, excepto si lo personaliza durante la implementación. Encontrará el punto de conexión del controlador del panel del clúster de macrodatos en la tabla de puntos de conexión del servicio. El punto de conexión se muestra como **Servicio de administración de clústeres**. Si no conoce las credenciales, solicítelas al administrador que implementó el clúster.
 
-3. En la barra de herramientas superior, haga clic en **Ejecutar celdas** .
+3. En la barra de herramientas superior, haga clic en **Ejecutar celdas**.
 
 4. Verá una solicitud de credenciales. Presione ENTRAR después de escribir cada credencial para el nombre del clúster de macrodatos, el nombre de usuario del controlador y la contraseña del controlador.
 
     > [!Note]
     > Si no tiene un archivo de configuración preparado con los macrodatos, se le pedirá que especifique el punto de conexión del controlador. Escríbalo o péguelo y, después, presione ENTRAR para continuar.
 
-5. Si la conexión se establece correctamente, en el resto del cuaderno se mostrará el resultado de cada componente del clúster de macrodatos. Para volver a ejecutar una determinada celda de código, mantenga el puntero sobre la celda de código y haga clic en el icono de **Ejecutar** .
+5. Si la conexión se establece correctamente, en el resto del cuaderno se mostrará el resultado de cada componente del clúster de macrodatos. Para volver a ejecutar una determinada celda de código, mantenga el puntero sobre la celda de código y haga clic en el icono de **Ejecutar**.
 
 
 ## <a name="next-steps"></a>Pasos siguientes

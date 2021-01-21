@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: sstein, mikeray
 ms.custom: contperf-fy21q2
 ms.date: 12/15/2020
-ms.openlocfilehash: 102eaff45b6cdfb89a159e3de77039c8735395e2
-ms.sourcegitcommit: 8a8c89b0ff6d6dfb8554b92187aca1bf0f8bcc07
+ms.openlocfilehash: e3584fe72ada1cff1d3b35324c5c5563bf97d050
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97619297"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596851"
 ---
 # <a name="quickstart-connect-and-query-a-dedicated-sql-pool-in-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Inicio rápido: Conexión a un grupo de SQL dedicado en Azure Synapse Analytics y realización de consultas con SQL Server Management Studio (SSMS)
 
@@ -71,9 +71,9 @@ Para completar este artículo, necesita SQL Server Management Studio y acceso a
 
 ## <a name="troubleshoot-connectivity-issues"></a>Solución de problemas de conectividad
 
-Puede experimentar problemas de conexión con Azure Synapse Analytics. Para obtener más información sobre cómo solucionar problemas de conexión, visite [Solución de problemas de conectividad](https://docs.microsoft.com/azure/azure-sql/database/troubleshoot-common-errors-issues).
+Puede experimentar problemas de conexión con Azure Synapse Analytics. Para obtener más información sobre cómo solucionar problemas de conexión, visite [Solución de problemas de conectividad](/azure/azure-sql/database/troubleshoot-common-errors-issues).
 
-Puede evitar, solucionar, diagnosticar y mitigar los errores de conexión y transitorios que encuentre cuando interactúa con Azure SQL Database o Azure SQL Managed Instance. Para obtener más información, visite [Solución de errores de conexión transitorios](https://docs.microsoft.com/azure/azure-sql/database/troubleshoot-common-connectivity-issues).
+Puede evitar, solucionar, diagnosticar y mitigar los errores de conexión y transitorios que encuentre cuando interactúa con Azure SQL Database o Azure SQL Managed Instance. Para obtener más información, visite [Solución de errores de conexión transitorios](/azure/azure-sql/database/troubleshoot-common-connectivity-issues).
 
 ## <a name="create-a-database"></a>Crear una base de datos
 

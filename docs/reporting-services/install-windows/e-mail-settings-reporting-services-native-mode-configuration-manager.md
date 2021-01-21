@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: cdad1529-bfa6-41fb-9863-d9ff1b802577
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 71c58ed673834c0226f9998b80fa4b12f14538e0
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+ms.openlocfilehash: 31ab6390286c748d8f9cb8f6b98b80c9c53818a1
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91892085"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596936"
 ---
 # <a name="e-mail-settings---reporting-services-native-mode-configuration-manager"></a>Configuración de correo electrónico: Modo nativo de Reporting Services (Administrador de configuración)
 SQL Server Reporting Services incluye una extensión de entrega por correo electrónico para distribuir informes por correo electrónico. Según cómo defina la suscripción del correo electrónico, una entrega podría estar compuesta de una notificación, un vínculo, datos adjuntos o un informe incrustado. La extensión de entrega por correo electrónico funciona con la tecnología de servidor de correo existente. El servidor de correo debe ser un servidor SMTP o un reenviador. El servidor de informes se conecta a un servidor SMTP a través de bibliotecas de Collaboration Data Objects (CDO), cdosys.dll, que el sistema operativo proporciona.
@@ -27,7 +27,7 @@ La extensión de entrega por correo electrónico del servidor de informes no est
 
 ## <a name="configuration-requirements"></a>Requisitos de configuración
 
-- La entrega por correo electrónico del servidor de informes se implementa en Collaboration Data Objects (CDO) y requiere un servidor del Protocolo simple de transferencia de correo (SMTP) local o remoto, o bien un reenviador SMTP. SMTP no se admite en todos los sistemas operativos Windows. Si usa la edición basada en Itanium de Windows Server 2008, no se admite SMTP. Para obtener más información sobre las opciones de configuración que se proporcionan a través de CDO, vea [el tema sobre la coclase Configuration](https://go.microsoft.com/fwlink/?LinkId=98237) en MSDN.
+- La entrega por correo electrónico del servidor de informes se implementa en Collaboration Data Objects (CDO) y requiere un servidor del Protocolo simple de transferencia de correo (SMTP) local o remoto, o bien un reenviador SMTP. SMTP no se admite en todos los sistemas operativos Windows. Si usa la edición basada en Itanium de Windows Server 2008, no se admite SMTP. Para obtener más información sobre las opciones de configuración que se proporcionan a través de CDO, vea [el tema sobre la coclase Configuration](/previous-versions/exchange-server/exchange-10/ms526939(v=exchg.10)) en MSDN.
 
 La cuenta de autenticación configurada debe tener permiso para enviar correo electrónico en el servidor SMTP.
 
@@ -225,5 +225,4 @@ La conexión entre el servidor de informes y un servidor o reenviador SMTP local
 [Administrador de configuración del servidor de informes (modo nativo)](../../reporting-services/install-windows/reporting-services-configuration-manager-native-mode.md)  
 [Modify a Reporting Services Configuration File (rsreportserver.config)](../../reporting-services/report-server/modify-a-reporting-services-configuration-file-rsreportserver-config.md)  
 [El archivo de configuración RsReportServer.config](../../reporting-services/report-server/rsreportserver-config-configuration-file.md)
-  
   

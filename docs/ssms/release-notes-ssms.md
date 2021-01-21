@@ -11,12 +11,12 @@ ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 12/17/2020
-ms.openlocfilehash: 98211695d60592c8178c4b60e45f2105c3b86db4
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 2e1d3faf6d17417ea1f4a134778ddd9342441231
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98102695"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596865"
 ---
 # <a name="release-notes-for-sql-server-management-studio-ssms"></a>Notas de la versión de SQL Server Management Studio (SSMS)
 
@@ -46,7 +46,7 @@ SSMS 18.8 es la versión de disponibilidad general (GA) más reciente de SSMS. 
 |----------|---------|
 | Integración de la instalación de Azure Data Studio | La instalación de SSMS instala Azure Data Studio 1.25.1. |
 | Analysis Services | Se ha agregado compatibilidad con las áreas de trabajo de Power BI Premium Gen2. |
-| Auditoría | Se ha agregado compatibilidad para EXTERNAL_MONITOR y el "operador audit".  Consulte la [documentación](https://docs.microsoft.com/azure/azure-sql/managed-instance/auditing-configure) de configuración para más información. |
+| Auditoría | Se ha agregado compatibilidad para EXTERNAL_MONITOR y el "operador audit".  Consulte la [documentación](/azure/azure-sql/managed-instance/auditing-configure) de configuración para más información. |
 | Integration Services | Asistente para la creación de IR mejorado, de modo que la creación de SSISDB es opcional al crear IR de SSIS |
 
 #### <a name="bug-fixes-in-188"></a>Correcciones de errores en la versión 18.8
@@ -142,7 +142,7 @@ SSMS 18.7 es la versión de disponibilidad general (GA) más reciente de SSMS. 
 | Asistente para generar scripts | Se produce un error en el asistente al intentar enumerar objetos de bases de datos en SQL Server 2014 y versiones anteriores. Vea [Comentarios del usuario de SQL Server](https://feedback.azure.com/forums/908035-sql-server/suggestions/41885587). | Use SSMS 18.6 para seleccionar objetos en el asistente para generar scripts para SQL Server 2014 y versiones anteriores. |
 | Integration Services | Al importar o exportar paquetes en Integration Services o exportar paquetes en Azure-SSIS Integration Runtime, se pierden los scripts para los paquetes que contienen tareas o componentes de script. | Quite la carpeta "C:\Archivos de programa (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild". |
 | Integration Services | Las conexiones remotas a los servicios de integración pueden generar un error que dice que el servicio especificado no existe como servicio instalado en un sistema operativo más reciente. | Identifique la ubicación del Registro relacionada con los servicios de integración en Computer\HKEY_CLASSES_ROOT\AppID & Computer\HKEY_CLASSES_ROOT\ WOW6432Node\AppID y, en estos subárboles, cambie el nombre de la clave del Registro llamada "LocalService" por "LocalService_A" correspondiente a la versión específica de los servicios de integración a los que intenta conectarse. |
-| Explorador de objetos | Las versiones de SSMS anteriores a 18.7 tienen un cambio importante en el explorador de objetos debido a los cambios del motor relacionados con el [grupo de SQL sin servidor de Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview). | Para seguir usando el explorador de objetos en SSMS con el grupo de SQL sin servidor de Azure Synapse Analytics, necesita usar SSMS 18.7 o posterior. |
+| Explorador de objetos | Las versiones de SSMS anteriores a 18.7 tienen un cambio importante en el explorador de objetos debido a los cambios del motor relacionados con el [grupo de SQL sin servidor de Azure Synapse Analytics](/azure/synapse-analytics/sql/on-demand-workspace-overview). | Para seguir usando el explorador de objetos en SSMS con el grupo de SQL sin servidor de Azure Synapse Analytics, necesita usar SSMS 18.7 o posterior. |
 
 ### <a name="187"></a>18,7
 

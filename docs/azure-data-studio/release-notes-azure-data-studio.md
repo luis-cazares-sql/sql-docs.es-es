@@ -9,12 +9,12 @@ ms.author: alayu
 ms.reviewer: maghan
 ms.custom: seodec18
 ms.date: 12/9/2020
-ms.openlocfilehash: cd990278d7478c089df7b01fa4a3738ad36368c3
-ms.sourcegitcommit: d983ad60779d90bb1c89a34d7b3d6da18447fdd8
+ms.openlocfilehash: 796499f38c9af2d7b2f6af8f860bb945d14bdac2
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96933851"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596513"
 ---
 # <a name="release-notes-for-azure-data-studio"></a>Notas de la versión de Azure Data Studio
 
@@ -50,7 +50,7 @@ ms.locfileid: "96933851"
 | Nuevo elemento | Detalles | Solución alternativa |
 |----------|---------|------------|
 | Extensión Azure Arc | [Problema conocido:](https://github.com/microsoft/azuredatastudio/issues/13319) El botón "Script a Notebook" para implementaciones de Arc MIAA & PG no realiza la validación de campos antes de generar scripts para el cuaderno. Esto significa que si los usuarios escriben una contraseña incorrecta en las entradas de confirmación de contraseña, es posible que terminen con un cuaderno que tenga el valor incorrecto para la contraseña.| El botón "Implementar" funciona según lo previsto, por lo que los usuarios deben utilizarlo en su lugar. |
-| Explorador de objetos | Las versiones de ADS anteriores a 1.24.0 tienen un cambio importante en el explorador de objetos debido a los cambios del motor relacionados con el [grupo de SQL sin servidor de Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview). | Para seguir usando el explorador de objetos en Azure Data Studio con el grupo de SQL sin servidor de Azure Synapse Analytics, debe usar Azure Data Studio 1.24.0 o posterior. |
+| Explorador de objetos | Las versiones de ADS anteriores a 1.24.0 tienen un cambio importante en el explorador de objetos debido a los cambios del motor relacionados con el [grupo de SQL sin servidor de Azure Synapse Analytics](/azure/synapse-analytics/sql/on-demand-workspace-overview). | Para seguir usando el explorador de objetos en Azure Data Studio con el grupo de SQL sin servidor de Azure Synapse Analytics, debe usar Azure Data Studio 1.24.0 o posterior. |
 
 Puede consultar los [comentarios de Azure Data Studio](https://github.com/microsoft/azuredatastudio) para obtener otras incidencias conocidas y proporcionar comentarios al equipo del producto.
 

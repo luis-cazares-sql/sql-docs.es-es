@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: e8601a8f-e66d-4649-8e4d-a46ca20ec7d0
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 196b326a9854242369efbdc6c697d292a1eb6e94
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: bca083e29d0d03a5a5470f58b4e004d81cd27a36
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88492628"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596634"
 ---
 # <a name="configure-custom-or-forms-authentication-on-the-report-server"></a>Configurar la autenticación de formularios o personalizada en el servidor de informes
 
@@ -28,7 +28,7 @@ En la práctica, implementar una extensión de autenticación personalizada requ
 > [!NOTE]
 >  La creación de una extensión de autenticación personalizada requiere código personalizado y conocimientos sobre la seguridad de [!INCLUDE[vstecasp](../../includes/vstecasp-md.md)] . Si no desea crear una extensión de autenticación personalizada, puede utilizar grupos y cuentas de [!INCLUDE[msCoName](../../includes/msconame-md.md)] Active Directory, pero tendrá que reducir en gran parte el ámbito de implementación de un servidor de informes. Para obtener más información sobre la autenticación personalizada, vea [Implementing a Security Extension](../../reporting-services/extensions/security-extension/implementing-a-security-extension.md).
 
-Además, si quiere usar una extensión de autenticación personalizada o de autenticación de formularios en un entorno de SQL Server Reporting Services que esté integrado con un producto de SharePoint, debe configurar el sitio de SharePoint para usar el método de autenticación que elija. Para obtener más información sobre cómo configurar la autenticación en SharePoint, vea [Ejemplos de autenticación](https://go.microsoft.com/fwlink/?LinkId=115575) en [!INCLUDE[msCoName](../../includes/msconame-md.md)] Developer Network (MSDN).
+Además, si quiere usar una extensión de autenticación personalizada o de autenticación de formularios en un entorno de SQL Server Reporting Services que esté integrado con un producto de SharePoint, debe configurar el sitio de SharePoint para usar el método de autenticación que elija. Para obtener más información sobre cómo configurar la autenticación en SharePoint, vea [Ejemplos de autenticación](/previous-versions/office/sharepoint-2007-products-and-technologies/cc262069(v=office.12)) en [!INCLUDE[msCoName](../../includes/msconame-md.md)] Developer Network (MSDN).
 
 
 

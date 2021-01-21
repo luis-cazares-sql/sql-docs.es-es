@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: e198575e-b154-4342-b944-2bf19ec49bfd
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 4013c119093adda0fbb721c376eef502a7b05a38
-ms.sourcegitcommit: ea0bf89617e11afe85ad85309e0ec731ed265583
+ms.openlocfilehash: df09e4168790a4607de19348f50e76a4fbd0f383
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92907253"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596538"
 ---
 # <a name="sql-server-mobile-reports-end-to-end-walk-through"></a>Informes móviles de SQL Server: tutorial completo
 Recorra la creación de informes móviles para cualquier tamaño de pantalla con [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-long.md)] en el portal web de [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] y véalos en las aplicaciones móviles de Power BI.
@@ -34,12 +34,12 @@ Para poder continuar, necesita estos productos:
   
 * Para crear orígenes de datos y KPI, además de publicar informes móviles y conjuntos de datos, tendrá que acceder a un [servidor de informes de Reporting Services en modo nativo](../install-windows/install-reporting-services-native-mode-report-server.md).  
 * Para crear conjuntos de datos compartidos, [instale el Generador de informes](../install-windows/install-report-builder.md).  
-* Para crear informes móviles, [instale Publicador de informes móviles de SQL Server](https://go.microsoft.com/fwlink/?LinkId=717766).  
+* Para crear informes móviles, [instale Publicador de informes móviles de SQL Server](../reporting-services-features-and-tasks-ssrs.md).  
 * [Bases de datos de ejemplo AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases).  
-*  O BIEN: Base de datos de ejemplo de World Wide Importers, disponible en la página [Ejemplos de Microsoft SQL Server](../../sample/microsoft-sql-server-samples.md).
+*  O BIEN: Base de datos de ejemplo de World Wide Importers, disponible en la página [Ejemplos de Microsoft SQL Server](../../samples/sql-samples-where-are.md).
 * Para ver el resultado: 
   *   [Suscríbase al servicio Power BI](https://go.microsoft.com/fwlink/?LinkID=513879) y
-  *  [Descargue la aplicación móvil de Power BI](https://docs.microsoft.com/power-bi/consumer/mobile/mobile-apps-for-mobile-devices) a su dispositivo móvil: dispositivo iOS, teléfono Android o dispositivo Windows 10.  
+  *  [Descargue la aplicación móvil de Power BI](/power-bi/consumer/mobile/mobile-apps-for-mobile-devices) a su dispositivo móvil: dispositivo iOS, teléfono Android o dispositivo Windows 10.  
 
   
 ## <a name="create-a-shared-data-source"></a>Crear un origen de datos compartido  
@@ -78,7 +78,7 @@ Use una herramienta de cliente de [!INCLUDE[PRODUCT_NAME](../../includes/ssrsnov
    
 4. En el campo de nombre, escriba el nombre del servidor donde guardó el origen de datos, con el formato siguiente:   
    
-   Nombre: https:// *localhost* /ReportServer  
+   Nombre: https://*localhost*/ReportServer  
    Elementos de tipo: orígenes de datos (*.rsds)  
    
 5. Haga clic en **Abrir** y desplácese hasta el origen de datos que creó en ese servidor.  
@@ -135,7 +135,7 @@ Puede crear KPI directamente en el portal web de [!INCLUDE[PRODUCT_NAME](../../i
     
 ## <a name=""></a><a name="create-mobile-report">Creación de un informe móvil de Reporting Services</a>  
    
-Para crear un informe móvil de Reporting Services, [instale Publicador de informes móviles de SQL Server](https://go.microsoft.com/fwlink/?LinkId=717766)o inícielo desde el portal web de [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] . 
+Para crear un informe móvil de Reporting Services, [instale Publicador de informes móviles de SQL Server](../reporting-services-features-and-tasks-ssrs.md)o inícielo desde el portal web de [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] . 
 
 Cuando se abra [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)]por primera vez, verá un lienzo en blanco donde podrá crear el informe móvil. Para empezar, puede crear objetos visuales primero o puede comenzar con los datos. Si crea primero los objetos visuales, [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] genera automáticamente datos simulados asociados al informe y cambia dinámicamente a medida que cambian sus selecciones visuales. Inténtelo.   
   
@@ -183,9 +183,9 @@ Cuando se abra [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)
   
 4. Seleccione el servidor y, luego, el conjunto de datos que creó.  
    
-3. Nuevamente en la pestaña **Datos** , en el panel **Propiedades de datos** , cambie **El tamaño representa** , **El color representa** y las otras propiedades a los campos de sus propios datos. 
+3. Nuevamente en la pestaña **Datos** , en el panel **Propiedades de datos** , cambie **El tamaño representa**, **El color representa** y las otras propiedades a los campos de sus propios datos. 
    
-   *  Los campos **El tamaño representa** , **El color representa** y **Valor central personalizado** deben tener valores numéricos. 
+   *  Los campos **El tamaño representa**, **El color representa** y **Valor central personalizado** deben tener valores numéricos. 
    *  **Agrupar por** es una categoría; por lo tanto, es un campo de texto.
    
    ![Captura de pantalla de la sección Propiedades de datos.](../../reporting-services/mobile-reports/media/ssrs-mobile-report-data-properties.png)
@@ -200,7 +200,7 @@ Agreguemos un medidor para ver una comparación de las ventas anuales hasta la f
 
 2. Nuevamente, empieza por datos simulados. 
 
-   Tenga en cuenta que en **Propiedades de los elementos visuales** , de manera predeterminada **los valores altos son mejores** y la **Etiqueta de tipo delta** es un **porcentaje del destino**. Tiene **detenciones de rango** predeterminadas que puede cambiar, pero no lo haremos por el momento.
+   Tenga en cuenta que en **Propiedades de los elementos visuales**, de manera predeterminada **los valores altos son mejores** y la **Etiqueta de tipo delta** es un **porcentaje del destino**. Tiene **detenciones de rango** predeterminadas que puede cambiar, pero no lo haremos por el momento.
 
    ![Captura de pantalla de la sección Establecer rangos de las propiedades visuales de anillo del informe móvil.](../../reporting-services/mobile-reports/media/ssrs-mobile-report-donut-visual-properties.png)
    
@@ -222,7 +222,7 @@ Las listas de selección funcionan como segmentaciones en Power BI y Excel. Es p
 
    ![Captura de pantalla de la lista de selección del informe móvil.](../../reporting-services/mobile-reports/media/ssrs-mobile-report-selection-list.png)
 
-2. En la pestaña **Datos** , **Propiedades de datos** , establezca **Claves** y **Etiquetas** en el campo de los datos según el cual desea establecer el filtro.
+2. En la pestaña **Datos** , **Propiedades de datos**, establezca **Claves** y **Etiquetas** en el campo de los datos según el cual desea establecer el filtro.
 
    ![Captura de pantalla de la sección de propiedades de datos en la lista de selección del informe móvil.](../../reporting-services/mobile-reports/media/ssrs-mobile-report-selection-list-data-properties.png)
    
@@ -232,7 +232,7 @@ Ahora que creó objetos visuales en el diseño maestro, puede crear un informe m
   
 1. En la esquina superior derecha, haga clic en el icono del lienzo > **Teléfono**.  
   
-2. En la pestaña Diseño, en **Instancias de control** , verá los dos gráficos que creó.   
+2. En la pestaña Diseño, en **Instancias de control**, verá los dos gráficos que creó.   
   
 3. Arrastre el gráfico de rectángulos al lienzo de teléfono para que tenga cuatro columnas de ancho y tres filas de alto.  
   
@@ -303,8 +303,6 @@ Los KPI y los informes móviles se muestran en las mismas carpetas en las que es
   
 ## <a name="see-also"></a>Consulte también  
  
--  Visualización [de informes y KPI locales del servidor de informes en la aplicaciones móviles de Power BI](https://docs.microsoft.com/power-bi/consumer/mobile/mobile-app-ssrs-kpis-mobile-on-premises-reports) para dispositivos iOS y Android
+-  Visualización [de informes y KPI locales del servidor de informes en la aplicaciones móviles de Power BI](/power-bi/consumer/mobile/mobile-app-ssrs-kpis-mobile-on-premises-reports) para dispositivos iOS y Android
 -  Visualización [de informes móviles y KPI de Reporting Services (SSRS) en la aplicación móvil de Power BI para Windows 10](https://powerbi.microsoft.com/documentation/powerbi-mobile-win10-kpis-mobile-reports/)    
   
-   
-

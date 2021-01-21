@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 8151915dc6c16c6225fec9ab90cb5a88e86b992f
-ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
+ms.openlocfilehash: 3fb13f3cc163bb157f418d3bda99e0173d81b842
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2020
-ms.locfileid: "97771455"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596007"
 ---
 # <a name="connection-events"></a>Eventos de conexión
 
@@ -34,7 +34,7 @@ Todos los proveedores de datos SqlClient de Microsoft tienen objetos **Connectio
 
 ## <a name="work-with-the-infomessage-event"></a>Trabajo con el evento InfoMessage
 
-Con el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage> del objeto <xref:Microsoft.Data.SqlClient.SqlConnection> puede recuperar advertencias o mensajes informativos de un origen de datos de SQL Server. Si se devuelven errores desde el origen de datos con un nivel de seguridad entre 11 y 16, se inicia una excepción. Sin embargo, el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage> se puede utilizar para obtener mensajes del origen de datos que no estén asociados a un error. En el caso de Microsoft SQL Server, cualquier error que tenga la gravedad 10, como máximo, se considera de tipo informativo y se captura mediante el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage>. Para obtener más información, consulte el artículo [Niveles de gravedad de error del motor de base de datos](/sql/relational-databases/errors-events/database-engine-error-severities).
+Con el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage> del objeto <xref:Microsoft.Data.SqlClient.SqlConnection> puede recuperar advertencias o mensajes informativos de un origen de datos de SQL Server. Si se devuelven errores desde el origen de datos con un nivel de seguridad entre 11 y 16, se inicia una excepción. Sin embargo, el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage> se puede utilizar para obtener mensajes del origen de datos que no estén asociados a un error. En el caso de Microsoft SQL Server, cualquier error que tenga la gravedad 10, como máximo, se considera de tipo informativo y se captura mediante el evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage>. Para obtener más información, consulte el artículo [Niveles de gravedad de error del motor de base de datos](../../relational-databases/errors-events/database-engine-error-severities.md).
 
 El evento <xref:Microsoft.Data.SqlClient.SqlConnection.InfoMessage> recibe un objeto <xref:Microsoft.Data.SqlClient.SqlInfoMessageEventArgs> que contiene en su propiedad **Errors** una colección de los mensajes del origen de datos. Puede consultar los objetos **Error** de esa colección para conocer el número de error y el texto del mensaje, así como el origen del error. El proveedor de datos SqlClient de Microsoft para SQL Server también incluye detalles acerca de la base de datos, el procedimiento almacenado y el número de línea del que procede el mensaje.
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.prod: sql
 ms.custom: ''
 ms.technology: configuration
-ms.openlocfilehash: 76ffe524200c2f8df136074bc089b13e7404d6bd
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: 6580e33a824807312fb7f2d37d5cab893dbab2a9
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86902124"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596521"
 ---
 # <a name="configure-usage-and-diagnostic-data-collection-for-sql-server-ceip"></a>Configuración de la recopilación de datos de uso y diagnóstico para SQL Server (CEIP)
 
@@ -50,7 +50,7 @@ Tenga en cuenta que este proceso se centra en los mecanismos necesarios para ent
 - Mediante el uso de la aplicación Informes de uso y errores
 - Mediante el establecimiento de subclaves del Registro en el servidor
 
-Para SQL Server en Linux, consulte [Customer Feedback for SQL Server on Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-customer-feedback) (Comentarios del usuario para SQL Server en Linux)
+Para SQL Server en Linux, consulte [Customer Feedback for SQL Server on Linux](../linux/usage-and-diagnostic-data-configuration-for-sql-server-linux.md) (Comentarios del usuario para SQL Server en Linux)
 
 > [!NOTE]
 > Puede deshabilitar el envío de información a Microsoft solo en versiones de pago de SQL Server.
@@ -66,7 +66,7 @@ Para no participar en la recopilación de datos, vea [Activar o desactivar la au
 Tras la instalación, la configuración de recopilación de datos de uso y diagnóstico para componentes e instancias de SQL Server se puede cambiar a través de la aplicación Informes de uso y errores. Esta aplicación está disponible como parte de la instalación de SQL Server. Esta herramienta permite a cada instancia de SQL Server establecer su propia configuración de informes de uso.
 
 > [!NOTE]
-> La aplicación Informes de uso y errores se incluye en las herramientas de configuración de SQL Server. Puede usar esta herramienta para administrar su preferencia de informes de error y la recopilación de datos de uso y diagnóstico de la misma forma que en SQL Server 2017. Los informes de error son independientes de la recopilación de datos de uso y diagnóstico, de modo que pueden activarse o desactivarse independientemente de la recopilación datos de uso o diagnóstico. Los informes de errores recopilan volcados de memoria que se envían a Microsoft y que pueden contener información confidencial, como se describe en la [declaración de privacidad](https://go.microsoft.com/fwlink/?LinkID=868444).
+> La aplicación Informes de uso y errores se incluye en las herramientas de configuración de SQL Server. Puede usar esta herramienta para administrar su preferencia de informes de error y la recopilación de datos de uso y diagnóstico de la misma forma que en SQL Server 2017. Los informes de error son independientes de la recopilación de datos de uso y diagnóstico, de modo que pueden activarse o desactivarse independientemente de la recopilación datos de uso o diagnóstico. Los informes de errores recopilan volcados de memoria que se envían a Microsoft y que pueden contener información confidencial, como se describe en la [declaración de privacidad](./sql-server-privacy.md).
 
 Para iniciar Informes de uso y errores de SQL Server, haga clic o pulse **Iniciar** y, a continuación, busque en "Error" en el cuadro de búsqueda. Se mostrará el elemento Informes de uso y errores de SQL Server. Tras iniciar la herramienta, puede administrar datos de uso y diagnóstico así como errores graves que se recopilan para instancias y componentes instalados en ese equipo.
 
@@ -144,7 +144,7 @@ El procedimiento para activar o desactivar esta característica depende de la ve
  
 - Windows Server 2016 y Windows 10
 
-    [Configuración de los datos de diagnóstico de Windows en la organización](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization)
+    [Configuración de los datos de diagnóstico de Windows en la organización](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)
 - Windows Server 2008 R2 y Windows 7
 
     [WER Settings](/windows/desktop/wer/wer-settings) (Configuración de WER)

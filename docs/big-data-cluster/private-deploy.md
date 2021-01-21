@@ -9,12 +9,12 @@ ms.date: 08/20/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 4a55d7f6c9c55891f8d1a7bf97d8834c9df4a796
-ms.sourcegitcommit: 5da46e16b2c9710414fe36af9670461fb07555dc
+ms.openlocfilehash: f83c3d1e1a5bf0c9b74d058f144c4d07025c8c05
+ms.sourcegitcommit: fc24f7ecc155d97e789676fffe55e45840fcb088
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89283124"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620273"
 ---
 # <a name="deploy-bdc-in-azure-kubernetes-service-aks-private-cluster"></a>Implementación de un clúster de macrodatos en el clúster privado de Azure Kubernetes Service (AKS)
 
@@ -36,7 +36,7 @@ En esta sección se muestra cómo implementar un clúster de macrodatos en un cl
 
 ## <a name="create-a-private-aks-cluster-with-advanced-networking"></a>Creación de un clúster de AKS privado con redes avanzadas
 
-```console
+```bash
 
 export REGION_NAME=<your Azure region >
 export RESOURCE_GROUP=< your resource group name >
@@ -70,7 +70,7 @@ echo $SUBNET_ID
 
 Para avanzar al paso siguiente, debe aprovisionar un clúster de AKS con Standard Load Balancer con la característica de clúster privado habilitada. El comando tendrá el siguiente aspecto: 
 
-```console
+```bash
 az aks create \
     --resource-group $RESOURCE_GROUP \
     --name $AKS_NAME \
@@ -90,7 +90,7 @@ Una vez implementado correctamente, puede ir al grupo de recursos `<MC_yourakscl
 
 ## <a name="connect-to-an-aks-cluster"></a>Conexión a un clúster de ACS
 
-```console
+```azurecli
 az aks get-credentials -n $AKS_NAME -g $RESOURCE_GROUP
 ```
 
@@ -98,13 +98,13 @@ az aks get-credentials -n $AKS_NAME -g $RESOURCE_GROUP
 
 Después de conectarse a un clúster de AKS, puede empezar a implementar el clúster de macrodatos, y puede preparar la variable de entorno e iniciar una implementación: 
 
-```console
+```azurecli
 azdata bdc config init --source aks-dev-test --target private-bdc-aks --force
 ```
 
 Generación y configuración de un perfil de implementación personalizado de clúster de macrodatos:
 
-```console
+```azurecli
 azdata bdc config replace -c private-bdc-aks/control.json -j "$.spec.docker.imageTag=2019-CU6-ubuntu-16.04"
 azdata bdc config replace -c private-bdc-aks/control.json -j "$.spec.storage.data.className=default"
 azdata bdc config replace -c private-bdc-aks/control.json -j "$.spec.storage.logs.className=default"
@@ -123,13 +123,13 @@ En caso de que esté [implementando un clúster de macrodatos de SQL Server (SQ
 
 En el siguiente ejemplo se establece `ServiceType` como `NodePort`:
 
-```console
+```azurecli
 azdata bdc config replace -c private-bdc-aks /bdc.json -j "$.spec.resources.master.spec.endpoints[1].serviceType=NodePort"
 ```
 
 ## <a name="deploy-bdc-in-aks-private-cluster"></a>Implementación del clúster de macrodatos en el clúster privado de AKS
 
-```console
+```azurecli
 export AZDATA_USERNAME=<your bdcadmin username>
 export AZDATA_PASSWORD=< your bdcadmin password>
 
