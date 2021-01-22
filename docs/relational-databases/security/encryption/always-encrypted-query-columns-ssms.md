@@ -2,7 +2,7 @@
 title: Consulta de columnas mediante Always Encrypted con SQL Server Management Studio | Microsoft Docs
 description: Obtenga información sobre cómo consultar columnas en Always Encrypted mediante SQL Server Management Studio. Recupere valores de texto cifrado o texto almacenados en columnas cifradas.
 ms.custom: ''
-ms.date: 10/31/2019
+ms.date: 01/15/2021
 ms.prod: sql
 ms.reviewer: vanto
 ms.technology: security
@@ -13,12 +13,12 @@ ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1406b28cae6d73228d54059cf7463b8eaa578385
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 475cda1238efc6a7c4b630d4458c719dc1b9adbd
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97406071"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534596"
 ---
 # <a name="query-columns-using-always-encrypted-with-sql-server-management-studio"></a>Consulta de columnas mediante Always Encrypted con SQL Server Management Studio
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -95,11 +95,12 @@ Para habilitar (deshabilitar) Always Encrypted:
 1. Si utiliza SSMS 18 o una versión más reciente:
     1. Seleccione la pestaña **Always Encrypted**.
     1. Para habilitar Always Encrypted, seleccione **Habilitar Always Encrypted (cifrado de columna)** . Para deshabilitar Always Encrypted, asegúrese de que **Habilitar Always Encrypted (cifrado de columna)** no esté seleccionado.
-    1. Si usa [!INCLUDE [sssqlv15-md](../../../includes/sssqlv15-md.md)] y la instancia de SQL Server está configurada con un enclave seguro, puede especificar una dirección URL de atestación del enclave. Si la instancia de SQL Server no usa un enclave seguro, asegúrese de dejar en blanco el cuadro de texto **Dirección URL de certificación enclave**. Para más información, consulte [Always Encrypted con enclaves seguros](always-encrypted-enclaves.md).
 1. Si usa SSMS 17 o anterior:
     1. Seleccione la pestaña **Propiedades adicionales**.
     1. Para habilitar Always Encrypted, escriba `Column Encryption Setting = Enabled`. Para deshabilitar Always Encrypted, especifique `Column Encryption Setting = Disabled` o quite la configuración del **valor de cifrado de columnas** de la pestaña **Propiedades adicionales** (su valor predeterminado es **Deshabilitado**).   
  1. Haga clic en **Conectar**.
+
+Para ejecutar instrucciones que aprovechen un enclave seguro del lado servidor cuando se usa [Always Encrypted con enclaves seguros](always-encrypted-enclaves.md), debe especificar una dirección URL de atestación de enclave, además de habilitar Always Encrypted para la conexión. Para obtener información detallada, vea [Requisitos previos para ejecutar instrucciones T-SQL con enclaves en SSMS](always-encrypted-enclaves-query-columns.md#prerequisites-for-running-t-sql-statements-using-enclaves-in-ssms).
 
 > [!TIP]
 > Para alternar entre Always Encrypted habilitado y deshabilitado para una ventana existente del Editor de consultas, haga lo siguiente:   

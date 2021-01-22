@@ -2,7 +2,7 @@
 description: Creación y uso de índices en columnas mediante Always Encrypted con enclaves seguros
 title: Creación y uso de índices en columnas mediante Always Encrypted con enclaves seguros | Microsoft Docs
 ms.custom: ''
-ms.date: 10/30/2019
+ms.date: 01/15/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: vanto
@@ -11,23 +11,24 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 monikerRange: '>= sql-server-ver15'
-ms.openlocfilehash: 95b797e271436108c3495f522eff3fd042631285
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 4799cd725dce4eb8300717b8c89d601e9915f7d2
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477666"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534834"
 ---
 # <a name="create-and-use-indexes-on-columns-using-always-encrypted-with-secure-enclaves"></a>Creación y uso de índices en columnas mediante Always Encrypted con enclaves seguros
-[!INCLUDE [sqlserver2019-windows-only](../../../includes/applies-to-version/sqlserver2019-windows-only.md)]
 
-En este artículo se describe cómo crear y usar índices en columnas cifradas mediante claves de cifrado de columna habilitadas para el enclave con [Always Encrypted con enclaves seguros](always-encrypted-enclaves.md). 
+[!INCLUDE [sqlserver2019-windows-only-asdb](../../../includes/applies-to-version/sqlserver2019-windows-only-asdb.md)]
+
+En este artículo se describe cómo crear y usar índices en columnas cifradas mediante claves de cifrado de columna habilitadas para el enclave con [Always Encrypted con enclaves seguros](always-encrypted-enclaves.md).
 
 Always Encrypted con enclaves seguros admite:
 - Índices agrupados y no en clúster en columnas cifradas mediante cifrado determinista y claves habilitadas para el enclave.
   - Estos índices se ordenan en función del texto cifrado. No se aplica ninguna consideración especial a dichos índices. Puede administrarlos y usarlos de la misma manera que los índices de las columnas cifradas mediante cifrado determinista y claves no habilitadas para el enclave (como con Always Encrypted). 
 - Índices no en clúster en columnas cifradas mediante cifrado aleatorio y claves habilitadas para el enclave.
-  - El procesamiento de consultas dentro de un enclave es útil y garantiza que un índice de una columna cifrada mediante cifrado aleatorio no filtre datos confidenciales. Los valores de clave de la estructura de datos de índice (árbol B) se cifran y se ordenan en función de sus valores de texto no cifrado. Para obtener más información, consulte [Índices en columnas habilitadas para enclave mediante cifrado aleatorio](always-encrypted-enclaves.md#indexes-on-enclave-enabled-columns-using-randomized-encryption).
+  - Los valores de clave de la estructura de datos de índice (árbol B) se cifran y se ordenan en función de sus valores de texto no cifrado. Para obtener más información, vea [Índices en columnas habilitadas para el enclave](always-encrypted-enclaves.md#indexes-on-enclave-enabled-columns).
 
 > [!NOTE]
 > El resto de este artículo trata sobre los índices no en clúster en columnas cifradas mediante cifrado aleatorio y claves habilitadas para el enclave.
@@ -49,11 +50,11 @@ Con este método, para que la invocación de operaciones de indexación funcione
 - Conectarse a la base de datos con Always Encrypted y cálculos de enclave habilitados para la conexión de base de datos.
 - La aplicación debe tener acceso a la clave maestra de columna que protege la clave de cifrado de columna de la columna indexada.
 
-Una vez que SQL Server Engine analiza la consulta de la aplicación y determina que será necesario actualizar un índice en una columna cifrada para ejecutar la consulta, indica al controlador cliente que proporcione la clave de cifrado de columna necesaria al enclave a través de un canal seguro. Este mecanismo es exactamente el mismo que se usa para proporcionar al enclave las claves de cifrado de columna para el procesamiento de todas las demás consultas. Por ejemplo, las consultas o el cifrado en contexto mediante la coincidencia de patrones y las comparaciones de intervalos.
+Una vez que el Motor de SQL Server analiza la consulta de la aplicación y determina que será necesario actualizar un índice en una columna cifrada para ejecutar la consulta, indica al controlador cliente que libere la clave de cifrado de columna necesaria al enclave a través de un canal seguro. Este mecanismo es exactamente el mismo que se usa para proporcionar al enclave las claves de cifrado de columna para el procesamiento de todas las demás consultas que no usen índices. Por ejemplo, las consultas o el cifrado en contexto mediante la coincidencia de patrones y las comparaciones de intervalos.
 
-Este método es útil para garantizar que la presencia de índices en columnas cifradas es transparente para las aplicaciones que ya están conectadas a la base de datos con Always Encrypted y cálculos de enclave habilitados. La conexión de la aplicación puede usar el enclave para el procesamiento de consultas. Después de crear un índice en una columna, el controlador dentro de la aplicación proporcionará de forma transparente claves de cifrado de columna al enclave para las operaciones de indexación. Tenga en cuenta que la creación de índices puede aumentar el número de consultas que requieren que la aplicación envíe las claves de cifrado de columna al enclave.
+Este método es útil para garantizar que la presencia de índices en columnas cifradas es transparente para las aplicaciones que ya están conectadas a la base de datos con Always Encrypted y cálculos de enclave habilitados. La conexión de la aplicación puede usar el enclave para el procesamiento de consultas. Después de crear un índice en una columna, el controlador dentro de la aplicación proporcionará de forma transparente claves de cifrado de columna al enclave para las operaciones de indexación. La creación de índices puede aumentar el número de consultas en las que es necesario que la aplicación envíe las claves de cifrado de columna al enclave.
 
-Para usar este método, siga las instrucciones generales para ejecutar consultas mediante un enclave seguro que se indican en [Consulta de columnas mediante Always Encrypted con enclaves seguros](always-encrypted-enclaves-query-columns.md).
+Para usar este método, siga las instrucciones generales para ejecutar instrucciones mediante un enclave seguro de [Ejecución de instrucciones de Transact-SQL mediante enclaves seguros](always-encrypted-enclaves-query-columns.md).
 
 Para obtener instrucciones paso a paso sobre cómo usar este método, consulte el [Tutorial: Creación y uso de índices en columnas basadas en enclave mediante el cifrado aleatorio](../tutorial-creating-using-indexes-on-enclave-enabled-columns-using-randomized-encryption.md).
 
@@ -86,7 +87,7 @@ Este método es útil en los siguientes casos:
 Para obtener instrucciones paso a paso sobre cómo usar este método, consulte el [Tutorial: Creación y uso de índices en columnas basadas en enclave mediante el cifrado aleatorio](../tutorial-creating-using-indexes-on-enclave-enabled-columns-using-randomized-encryption.md). 
 
 ## <a name="next-steps"></a>Pasos siguientes
-- [Consulta de columnas mediante Always Encrypted con enclaves seguros](always-encrypted-enclaves-query-columns.md)
+- [Configuración y uso de Always Encrypted con enclaves seguros](always-encrypted-enclaves-query-columns.md)
 
 ## <a name="see-also"></a>Vea también  
 - [Tutorial: Creación y uso de índices en columnas basadas en enclave mediante el cifrado aleatorio](../tutorial-creating-using-indexes-on-enclave-enabled-columns-using-randomized-encryption.md).

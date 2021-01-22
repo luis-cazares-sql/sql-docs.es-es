@@ -2,7 +2,7 @@
 title: SQL Server, réplica de base de datos | Microsoft Docs
 description: Obtenga más información sobre el objeto de rendimiento SQLServer:Database Replica, que contiene contadores de rendimiento sobre las bases de datos secundarias de un grupo de disponibilidad AlwaysOn.
 ms.custom: ''
-ms.date: 08/24/2016
+ms.date: 01/13/2021
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: a5f6bdce-2b13-4924-aaeb-b50b57d624d8
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 176f7b9ba860e6ca7f72e35f6c6a87622948fc70
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 3dff6cb9b3a65ea5f38a97786e10701bc1f31749
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96505759"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170307"
 ---
 # <a name="sql-server-database-replica"></a>SQL Server, réplica de base de datos
 
@@ -42,7 +42,7 @@ ms.locfileid: "96505759"
 |**Rehacer bytes restantes**|Cantidad restante de registro en kilobytes que se debe rehacer para finalizar la fase de reversión.|Réplica secundaria|  
 |**Bytes puestos al día/s**|Cantidad de entradas de registro rehechas en la base de datos secundaria en el último segundo.|Réplica secundaria|  
 |**Registro total que requiere la operación de deshacer**|Kilobytes totales del registro que se deben deshacer.|Réplica secundaria|  
-|**Retraso de transacción**|Retraso en la espera de reconocimiento de confirmación no terminada de todas las transacciones actuales, en milisegundos. Divida entre las *transacciones de escritura reflejadas por segundo* para obtener el *promedio de retraso de transacción*. Para obtener más información, vea [SQL Server 2012 AlwaysOn – Part 12 – Performance Aspects and Performance Monitoring II](/archive/blogs/saponsqlserver/sql-server-2012-alwayson-part-12-performance-aspects-and-performance-monitoring-ii) (SQL Server 2012 AlwaysOn – Parte 12: Cuestiones de rendimiento y supervisión del rendimiento II).|Réplica principal|  
+|**Retraso de transacción**|Retraso total en la espera de reconocimiento de confirmación no terminada de todas las transacciones actuales, en milisegundos. Divida entre las *transacciones de escritura reflejadas por segundo* para obtener el *promedio de retraso de transacción*. Para obtener más información, vea [SQL Server 2012 AlwaysOn – Part 12 – Performance Aspects and Performance Monitoring II](/archive/blogs/saponsqlserver/sql-server-2012-alwayson-part-12-performance-aspects-and-performance-monitoring-ii) (SQL Server 2012 AlwaysOn – Parte 12: Cuestiones de rendimiento y supervisión del rendimiento II).|Réplica principal|  
   
 ## <a name="see-also"></a>Consulte también
   

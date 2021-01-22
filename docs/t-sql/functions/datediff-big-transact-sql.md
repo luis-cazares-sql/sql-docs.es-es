@@ -1,11 +1,8 @@
 ---
+title: DATEDIFF_BIG (Transact-SQL)
 description: DATEDIFF_BIG (Transact-SQL)
-title: DATEDIFF_BIG (Transact-SQL) | Microsoft Docs
-ms.custom: ''
-ms.date: 07/18/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
-ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: language-reference
 f1_keywords:
@@ -21,12 +18,15 @@ helpviewer_keywords:
 ms.assetid: 19ac1693-3cfa-400d-bf83-20a9cb46599a
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: ea087da6532c43493fd10f647788297d98f35f72
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.reviewer: ''
+ms.custom: ''
+ms.date: 01/12/2021
+ms.openlocfilehash: 8f6078aebab5456b8867aca1b7f6987d8a1eb6fd
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98093671"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98168294"
 ---
 # <a name="datediff_big-transact-sql"></a>DATEDIFF_BIG (Transact-SQL)
 
@@ -90,11 +90,11 @@ Vea *startdate*.
 **bigint** con firma  
   
 ## <a name="return-value"></a>Valor devuelto  
-Devuelve la diferencia **bigint** entre *startdate* y *enddate*, expresada en el coundary establecido por *datepart*.
+Devuelve la diferencia **bigint** entre *startdate* y *enddate*, expresada en el límite establecido por *datepart*.
   
-Para un valor devuelto fuera del intervalo de **bigint** (de -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807) `DATEDIFF_BIG` devuelve un error. A diferencia de `DATEDIFF` que devuelve un valor **int** y, por tanto, se puede desbordar con una precisión de **minute** o superior, `DATEDIFF_BIG` solo se puede desbordar si se usa la precisión de **nanosecond**, donde la diferencia entre *enddate* y *startdate* es más de 292 años, 3 meses, 10 días, 23 horas, 47 minutos y 16,8547758 segundos.
+Para un valor devuelto fuera del intervalo de **bigint** (de -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807) `DATEDIFF_BIG` devuelve un error. A diferencia de **, que devuelve un valor** int **y, por tanto, se puede desbordar con un valor** minute`DATEDIFF_BIG` o superior, **solo se puede desbordar si se usa la precisión de** nanosecond *, donde la diferencia entre* enddate *y* startdate es superior a 292 años, 3 meses, 10 días, 23 horas, 47 minutos y 16,8547758 segundos.
   
-Si *startdate* y *enddate* solo tienen asignado un valor de hora y *datepart* no es un valor *datepart* de hora, `DATEDIFF_BIG` devuelve 0.
+Si *startdate* y *enddate* solo tienen asignado un valor de hora y *datepart* no es un valor *datepart* de hora, `DATEDIFF_BIG` devuelve 0.
   
 `DATEDIFF_BIG` no usa un componente de desplazamiento de zona horaria de *startdate* o *enddate* para calcular el valor devuelto.
   
@@ -127,7 +127,7 @@ Use `DATEDIFF_BIG` en las cláusulas `SELECT <list>`, `WHERE`, `HAVING`, `GROUP 
   
 La especificación de `SET DATEFIRST` no tiene ningún efecto sobre `DATEDIFF_BIG`. `DATEDIFF_BIG` siempre usa el domingo como el primer día de la semana para garantizar que la función actúa de forma determinista.
 
-`DATEDIFF_BIG` se puede desbordar con una precisión de **nanosecond** o superior si la diferencia entre *enddate* y *startdate* devuelve un valor que está fuera del intervalo para **bigint**.
+`DATEDIFF_BIG` se puede desbordar con un valor de **nanosecond** si la diferencia entre *enddate* y *startdate* devuelve un valor que está fuera del intervalo para **bigint**.
   
 ## <a name="examples"></a>Ejemplos 
   

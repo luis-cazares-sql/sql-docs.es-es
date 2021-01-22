@@ -2,7 +2,7 @@
 title: Configuración del tipo de enclave como opción de configuración del servidor Always Encrypted | Microsoft Docs
 description: Descubra cómo habilitar o deshabilitar un enclave seguro para Always Encrypted. Obtenga información sobre cómo confirmar si un enclave se ha inicializado correctamente.
 ms.custom: ''
-ms.date: 09/24/2018
+ms.date: 01/15/2021
 ms.prod: sql
 ms.prod_service: security
 ms.reviewer: ''
@@ -11,18 +11,18 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 monikerRange: '>= sql-server-ver15'
-ms.openlocfilehash: 45f6bdca2602a9a85cf9fc193269b445599c78ad
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 19e7349c3b8bb9ef104f95ef0963b6d7982a3669
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480336"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534754"
 ---
 # <a name="configure-the-enclave-type-for-always-encrypted-server-configuration-option"></a>Configuración del tipo de enclave como opción de configuración del servidor Always Encrypted
 
 [!INCLUDE [sqlserver2019-windows-only](../../includes/applies-to-version/sqlserver2019-windows-only.md)]
 
-En este artículo se describe cómo habilitar o deshabilitar un enclave seguro para Always Encrypted con enclaves seguros. Para más información, consulte [Always Encrypted con enclaves seguros](../../relational-databases/security/encryption/always-encrypted-enclaves.md).
+En este artículo se describe cómo habilitar o deshabilitar un enclave seguro para Always Encrypted con enclaves seguros. Para obtener más información, vea [Always Encrypted con enclaves seguros](../../relational-databases/security/encryption/always-encrypted-enclaves.md) y [Configuración del enclave seguro en SQL Server](../../relational-databases/security/encryption/always-encrypted-enclaves-configure-enclave-type.md).
 
 La opción de configuración del servidor relativa al **tipo de enclave de cifrado de columnas** controla el tipo de un enclave seguro que se usa para Always Encrypted. La opción se puede establecer con los siguientes valores:  
   

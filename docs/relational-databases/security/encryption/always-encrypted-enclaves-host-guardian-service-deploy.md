@@ -2,7 +2,7 @@
 title: Implementación del servicio guardián de host
 description: Implemente el servicio de protección de host para Always Encrypted con enclaves seguros.
 ms.custom: ''
-ms.date: 11/15/2019
+ms.date: 01/15/2021
 ms.prod: sql
 ms.reviewer: vanto
 ms.technology: security
@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: rpsqrd
 ms.author: ryanpu
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9ce744de4f70e30a10fad36eef6c1f28f4d8e8d4
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 88e79166a8b44139f58192feece211bc3b3d2db3
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477686"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534794"
 ---
 # <a name="deploy-the-host-guardian-service-for-ssnoversion-md"></a>Implementación del servicio de protección de host para [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]
 
@@ -23,6 +23,9 @@ ms.locfileid: "97477686"
 
 En este artículo se describe cómo implementar el servicio de protección de host (HGS) como un servicio de atestación para [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
 Antes de empezar, lea el artículo [Planificación de la atestación del Servicio de protección de host](./always-encrypted-enclaves-host-guardian-service-plan.md) para obtener una lista completa de los requisitos previos e instrucciones de arquitectura.
+
+> [!NOTE]
+> El administrador de HGS es responsable de ejecutar todos los pasos que se describen en este artículo. Vea [Roles y responsabilidades al configurar la atestación con HGS](always-encrypted-enclaves-host-guardian-service-plan.md#roles-and-responsibilities-when-configuring-attestation-with-hgs).
 
 ## <a name="step-1-set-up-the-first-hgs-computer"></a>Paso 1: Configuración del primer equipo HGS
 
@@ -216,7 +219,7 @@ En una instalación predeterminada, HGS solo expone un enlace HTTP (puerto 80).
 Puede configurar un enlace HTTPS (puerto 443) para cifrar todas las comunicaciones entre equipos de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] y HGS.
 Se recomienda que todas las instancias de producción de HGS usen un enlace HTTPS.
 
-1. Puede obtener un certificado TLS en su entidad de certificación, mediante el nombre del servicio HGS totalmente cualificado del paso 1.3 como nombre de sujeto. Si no conoce el nombre del servicio, puede encontrarlo ejecutando `Get-HgsServer` en cualquier equipo HGS. Puede agregar nombres DNS alternativos a la lista de nombres alternativos de sujeto si los equipos de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] usan un nombre DNS diferente para llegar al clúster HGS (por ejemplo, si HGS está detrás de un equilibrador de carga de red con una dirección diferente).
+1. Puede obtener un certificado TLS en su entidad de certificación, mediante el nombre del servicio HGS totalmente cualificado del paso 1.3 como nombre de sujeto. Si no conoce el nombre del servicio, puede encontrarlo ejecutando `Get-HgsServer` en cualquier equipo HGS. Puede agregar nombres DNS alternativos a la lista de nombres alternativos de sujeto si los equipos de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] usan otro nombre DNS para acceder al clúster de HGS (por ejemplo, si HGS está detrás de un equilibrador de carga de red con otra dirección).
 
 2. En el equipo HGS, use [Set-HgsServer](/powershell/module/hgsserver/set-hgsserver) para habilitar el enlace HTTPS y especifique el certificado TLS obtenido en el paso anterior. Si el certificado ya está instalado en el equipo en el almacén de certificados local, use el siguiente comando para registrarlo con HGS:
 
@@ -233,6 +236,27 @@ Se recomienda que todas las instancias de producción de HGS usen un enlace HTTP
     ```
 
 3. Repita los pasos 1 y 2 para cada equipo HGS del clúster. Los certificados TLS no se replican automáticamente entre los nodos HGS. Además, cada equipo HGS puede tener su propio certificado TLS único, siempre que el sujeto coincida con el nombre del servicio HGS.
+
+## <a name="step-6-determine-and-share-the-hgs-attestation-url"></a>Paso 6: Determinación y uso compartido de la dirección URL de atestación de HGS
+
+Como administrador de HGS, debe compartir la dirección URL de atestación de HGS con los administradores de equipos con SQL Server y los administradores de aplicaciones de la organización. Los administradores de equipos con SQL Server necesitarán la dirección URL de atestación para comprobar que los equipos con SQL Server pueden realizar la atestación con HGS. Los administradores de aplicaciones necesitarán la dirección URL de atestación para configurar cómo se conectan sus aplicaciones a SQL Server.
+
+Para determinar la dirección URL de atestación, ejecute el cmdlet siguiente.
+
+```powershell
+Get-HGSServer
+```
+La salida del comando será similar a esta:
+
+```
+Name                           Value                                                                         
+----                           -----                                                                         
+AttestationOperationMode       HostKey                                                                       
+AttestationUrl                 {http://hgs.bastion.local/Attestation}                                        
+KeyProtectionUrl               {}         
+```
+
+La dirección URL de atestación de HGS es el valor de la propiedad AttestationUrl.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

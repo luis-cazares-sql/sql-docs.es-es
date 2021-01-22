@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.assetid: 56105f3f-e500-4669-8c8e-acf434527727
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 6e2e66d27fd8658cc0e060da036cca147817d5cb
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 32daaf012159bd42a6f73330bc8371157e459609
+ms.sourcegitcommit: 1f826eb3f73bd4d94bc9638b9cdd60991a2e2fa0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422219"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98125630"
 ---
 # <a name="lesson-3-2-add-and-configure-logging"></a>Lección 3-2: Adición y configuración del registro
 
@@ -29,6 +29,7 @@ En esta tarea, habilitará el registro del flujo de datos del paquete Lesson 3.d
 ## <a name="add-logging-to-the-package"></a>Adición de registro al paquete  
   
 1.  En el menú **SSIS**, seleccione **Registro**.  
+    En Visual Studio 2019, el menú **SSIS** se encuentra en Extensiones-> SSIS. Asegúrese de que ha seleccionado la pestaña **Flujo de datos** y no **Flujo de control**.
   
 2.  En el cuadro de diálogo **Configurar registros de SSIS**, asegúrese de que en el panel **Contenedores** está seleccionado el objeto en la posición superior. Este objeto representa el paquete de la lección 3.
   

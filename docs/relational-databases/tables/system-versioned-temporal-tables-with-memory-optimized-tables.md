@@ -12,12 +12,12 @@ ms.assetid: 23274522-e5cf-4095-bed8-bf986d6342e0
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b93b419e4678b84684c524011ed4df4feb6fcb14
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 05ed5ec0d34d2a1a612b76c0117d0bf66675ad7a
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474576"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171897"
 ---
 # <a name="system-versioned-temporal-tables-with-memory-optimized-tables"></a>Tablas temporales con control de versiones del sistema con tablas con optimización para memoria
 
@@ -70,7 +70,7 @@ La tarea de vaciado de datos se activa periódicamente con una programación que
 
 El vaciado de datos elimina todos los registros del búfer interno en memoria que sean posteriores a la transacción más antigua en ejecución en ese momento para mover dichos registros a la tabla de historial basada en disco.
 
-Puede forzar un vaciado de los datos si invoca [sp_xtp_flush_temporal_history](../../relational-databases/system-stored-procedures/temporal-table-sp-xtp-flush-temporal-history.md) y especifica el nombre de esquema y tabla: **sys.sp_xtp_flush_temporal_history @schema_name, @object_name** . Con este comando ejecutado por el usuario, se invoca el mismo proceso de movimiento de datos que cuando el sistema invoca la tarea de vaciado de datos según la programación interna.
+Puede forzar un vaciado de los datos si invoca [sp_xtp_flush_temporal_history](../../relational-databases/system-stored-procedures/temporal-table-sp-xtp-flush-temporal-history.md) y especifica el esquema y el nombre de tabla: **sys.sp_xtp_flush_temporal_history \@nombre_esquema, \@nombre_objeto**. Con este comando ejecutado por el usuario, se invoca el mismo proceso de movimiento de datos que cuando el sistema invoca la tarea de vaciado de datos según la programación interna.
 
 ## <a name="see-also"></a>Consulte también
 

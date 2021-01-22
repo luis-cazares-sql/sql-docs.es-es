@@ -17,19 +17,19 @@ ms.assetid: cc5bf181-18a0-44d5-8bd7-8060d227c927
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: dcc5d8e3602261c975f5517ea859e19fc7902936
-ms.sourcegitcommit: 629229a7c33a3ed99db63b89127bb016449f7d3d
+ms.openlocfilehash: 8471695cfde49d36ba107264fa23654757d8c2ab
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952062"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241886"
 ---
 # <a name="partitioned-tables-and-indexes"></a>Partitioned Tables and Indexes
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] es compatible con la creación de particiones de tabla e índice. Los datos de tablas e índices con particiones se dividen en unidades que pueden propagarse por más de un grupo de archivos de la base de datos. Los datos se dividen en sentido horizontal, de forma que los grupos de filas se asignan a particiones individuales. Las particiones de un índice o una tabla deben encontrarse en la misma base de datos. La tabla o el índice se tratarán como una sola entidad lógica cuando se realicen consultas o actualizaciones en los datos. Antes de [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] SP1, las tablas e índices con particiones no estaban disponibles en todas las ediciones de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Para obtener una lista de las características admitidas por las ediciones de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], vea [Características compatibles con las ediciones de SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md).  
+  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] es compatible con la creación de particiones de tabla e índice. Los datos de tablas e índices con particiones se dividen en unidades que pueden propagarse por más de un grupo de archivos de la base de datos. Los datos se dividen en sentido horizontal, de forma que los grupos de filas se asignan a particiones individuales. Las particiones de un índice o una tabla deben encontrarse en la misma base de datos. La tabla o el índice se tratarán como una sola entidad lógica cuando se realicen consultas o actualizaciones en los datos. Antes de [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] SP1, las tablas e índices con particiones no estaban disponibles en todas las ediciones de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Para obtener una lista de las características admitidas por las ediciones de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], vea [Características compatibles con las ediciones de SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md).  
   
 > [!IMPORTANT]  
-> [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] admite hasta 15.000 particiones de forma predeterminada. En versiones anteriores a [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)], el número de particiones se limitaba a 1000 de forma predeterminada. En sistemas basados en x86, es posible crear una tabla o un índice con más de 1000 particiones, aunque no se admite.  
+> [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] admite hasta 15.000 particiones de forma predeterminada. En versiones anteriores a [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)], el número de particiones se limitaba a 1000 de forma predeterminada.  
   
 ## <a name="benefits-of-partitioning"></a>Ventajas de la creación de particiones  
  La creación de particiones de tablas o índices grandes puede tener las siguientes ventajas de administración y rendimiento.  
@@ -69,10 +69,10 @@ Un índice que se compila con el mismo esquema de partición que su tabla corres
  3. Definen los mismos valores de límite para las particiones.  
 
 #### <a name="partitioning-clustered-indexes"></a>Crear particiones en índices clúster
-Al crear particiones en un índice clúster, la clave de agrupación en clústeres debe contener la columna de partición. Cuando se crean particiones en un índice clúster no único y la columna de partición no se especifica explícitamente en la clave de agrupación en clústeres, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] agrega de forma predeterminada la columna de partición a la lista de claves de índice clúster. Si el índice clúster es único, deberá especificar explícitamente que la clave de índice clúster contiene la columna de partición.        
+Al crear particiones en un índice clúster, la clave de agrupación en clústeres debe contener la columna de partición. Cuando se crean particiones en un índice clúster no único y la columna de partición no se especifica explícitamente en la clave de agrupación en clústeres, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] agrega de forma predeterminada la columna de partición a la lista de claves de índice clúster. Si el índice clúster es único, deberá especificar explícitamente que la clave de índice clúster contiene la columna de partición. Para obtener más información sobre los índices agrupados y la arquitectura de índices, vea [Instrucciones de diseño de índices agrupados](../../relational-databases/sql-server-index-design-guide.md#Clustered).       
 
 #### <a name="partitioning-nonclustered-indexes"></a>Crear particiones en índices no clúster
-Al crear particiones en un índice no clúster único, la clave de índice debe contener la columna de partición. Al crear particiones de un índice no agrupado que no es único, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] agrega de forma predeterminada la columna de partición como una columna sin clave (incluida) del índice para asegurarse de que este está alineado con la tabla base. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] no agrega la columna de partición al índice si ya está presente en él. 
+Al crear particiones en un índice no clúster único, la clave de índice debe contener la columna de partición. Al crear particiones de un índice no agrupado que no es único, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] agrega de forma predeterminada la columna de partición como una columna sin clave (incluida) del índice para asegurarse de que este está alineado con la tabla base. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] no agrega la columna de partición al índice si ya está presente en él. Para obtener más información sobre los índices no agrupados y la arquitectura de índices, vea [Instrucciones de diseño de índices no agrupados](../../relational-databases/sql-server-index-design-guide.md#Nonclustered).
 
 ### <a name="non-aligned-index"></a>Índice no alineado  
 Un índice con particiones independientemente de su tabla correspondiente. Es decir, el índice tiene un esquema de partición diferente o está colocado en un grupo de archivos independiente de la tabla base. El diseño de un índice con particiones no alineado puede ser útil en los siguientes casos:  

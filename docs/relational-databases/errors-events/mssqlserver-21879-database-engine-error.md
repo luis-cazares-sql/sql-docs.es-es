@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: fcfab735-05ca-423a-89f1-fdee7e2ed8c0
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: d543c3bd25fb8a4eec99c4c5cd3e1b11fbae5a90
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 0c6b6b15e6a9224306bea073e38b9ef808edfddc
+ms.sourcegitcommit: 7791bd2ba339edc5cd2078a6537c8f6bfe72a19b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88332481"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98564442"
 ---
 # <a name="mssqlserver_21879"></a>MSSQLSERVER_21879
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,7 @@ El servidor vinculado que se usa para consultar al publicador redirigido usa el 
   
     -   Si un usuario llama a **sp_validate_redirected_publisher** de forma explícita, se usa el inicio de sesión de Windows en el que se ejecuta el usuario para la conexión.  
   
-    -   Si un agente de replicación llama a **sp_validate_redirected_** publisher desde **sp_get_redirected_publisher**, se usa el inicio de sesión de Windows asociado al agente.  
+    -   Si un agente de replicación llama a **sp_validate_redirected_publisher** desde **sp_get_redirected_publisher**, se usa el inicio de sesión de Windows asociado al agente.  
   
 El error 21879 puede indicar que se llamó a **sp_validate_redirected_publisher** con un inicio de sesión desconocido en el publicador de destino redirigido.  
   

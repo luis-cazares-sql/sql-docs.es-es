@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 45298179-4ac1-4723-8b3c-56f5926be40a
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: e8e1fd0c8e43000573d030a80ce52145bd0c8669
-ms.sourcegitcommit: 49ee3d388ddb52ed9cf78d42cff7797ad6d668f2
+ms.openlocfilehash: ac65acde470d75c616e77d21f6e62ab8d1f5e4e4
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94384884"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241863"
 ---
 # <a name="the-cdc-designer-console-introduction"></a>Introducción a la Consola del diseñador CDC
 
@@ -43,9 +43,11 @@ ms.locfileid: "94384884"
   
 ### <a name="source-oracle-database"></a>Base de datos de Oracle de origen
   
--   Oracle Database 10g versión 2
--   Oracle Database 11g versión 1 y versión 2
--   Oracle Database 12C en instalación clásica. (La instalación de tipo multiinquilino no es compatible).  
+- Oracle Database 10g versión 2
+- Oracle Database 11g versión 1 y versión 2
+- Oracle Database 12c en la instalación clásica (no se admite la instalación de varios inquilinos).  
+- Oracle Database 18c en la instalación clásica (no se admite la instalación de varios inquilinos).
+- Oracle Database 19c en la instalación clásica (no se admite la instalación de varios inquilinos).
 
 ### <a name="target-sql-server-database"></a>Base de datos de SQL Server de destino
   
@@ -64,6 +66,6 @@ ms.locfileid: "94384884"
  Haga doble clic en el kit de instalación de la Consola del diseñador CDC y siga las instrucciones del asistente para la instalación.  
   
 ## <a name="uninstalling-the-cdc-designer-console"></a>Desinstalar la Consola del diseñador CDC  
- Desinstale la Consola del diseñador CDC mediante el Panel de control, Programas y características.  
+ Desinstale la Consola de CDC Designer mediante el Panel de control, en Programas y características.  
   
   

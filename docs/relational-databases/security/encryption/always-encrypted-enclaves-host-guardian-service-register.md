@@ -2,7 +2,7 @@
 title: Registro del equipo con el servicio de protección de host
 description: Registre el equipo de SQL Server con el servicio de protección de host para Always Encrypted con enclaves seguros.
 ms.custom: ''
-ms.date: 11/15/2019
+ms.date: 01/15/2021
 ms.prod: sql
 ms.reviewer: vanto
 ms.technology: security
@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: rpsqrd
 ms.author: ryanpu
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 5d1b2a7209de25b1ce5c988ec9a46b77369dcf70
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 5864ec2b5bda5febc27bbb15606452befe7e293f
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98101837"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534784"
 ---
 # <a name="register-computer-with-host-guardian-service"></a>Registro del equipo con el servicio de protección de host
 
@@ -23,10 +23,16 @@ ms.locfileid: "98101837"
 
 En este artículo se describe cómo registrar equipos de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] para atestar con el servicio de protección de host (HGS).
 
-Antes de empezar, asegúrese de que ha implementado al menos un equipo HGS y configure el servicio de atestación.
+> [!NOTE]
+> Para el proceso de registro de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] con HGS se necesita un esfuerzo conjunto del administrador de HGS y el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]. Vea [Roles y responsabilidades al configurar la atestación con HGS](always-encrypted-enclaves-host-guardian-service-plan.md#roles-and-responsibilities-when-configuring-attestation-with-hgs).
+
+Antes de empezar, asegúrese de que ha implementado al menos un equipo de HGS y ha configurado el servicio de atestación de HGS.
 Para obtener más información, consulte [Implementación del servicio de protección de host para [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]](./always-encrypted-enclaves-host-guardian-service-deploy.md).
 
 ## <a name="step-1-install-the-attestation-client-components"></a>Paso 1: Instalación de los componentes de cliente de atestación
+
+> [!NOTE]
+> Este paso lo debe realizar el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
 
 Para permitir que un cliente de SQL compruebe que está conectando con un equipo de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] de confianza, el equipo de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] debe realizar correctamente la atestación del servicio de protección de host.
 El proceso de atestación se administra mediante un componente de Windows opcional denominado cliente del HGS.
@@ -43,6 +49,9 @@ En los pasos siguientes verá cómo instalar este componente y comenzar a realiz
 3. Reinicie el equipo para completar la instalación.
 
 ## <a name="step-2-verify-virtualization-based-security-is-running"></a>Paso 2: Verificación del funcionamiento de la seguridad basada en virtualización
+
+> [!NOTE]
+> Este paso lo debe realizar el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
 
 Al instalar la característica de compatibilidad de Hyper-V de protección de host, se configura y habilita automáticamente la seguridad basada en virtualización (VBS).
 Los enclaves para Always Encrypted de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] están protegidos y se ejecutan dentro del entorno de VBS.
@@ -66,7 +75,7 @@ En el contexto de atestación de enclaves de [!INCLUDE [ssnoversion-md](../../..
 - Se recomienda `Secure Boot`, aunque no es necesario para Always Encrypted de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]. El arranque seguro protege contra rootkits, ya que requiere que se ejecute un cargador de arranque firmado por Microsoft inmediatamente después de que se complete la inicialización de UEFI. Si usa la atestación de módulo de plataforma segura (TPM), se medirá y aplicará la habilitación del arranque seguro independientemente de si la VBS está configurada para requerir un arranque seguro.
 - Se recomienda `DMA Protection`, aunque no es necesario para Always Encrypted de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]. La protección de DMA usa IOMMU para proteger la memoria de la VBS y del enclave ante ataques de acceso directo a la memoria. En un entorno de producción, siempre debe usar equipos con protección de DMA. En un entorno de desarrollo y pruebas, se admite eliminar el requisito de protección de DMA. Si la instancia de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] está virtualizada, lo más probable es que no tenga disponible protección de DMA y tendrá que eliminar el requisito de ejecución de la VBS. Revise el [modelo de confianza](./always-encrypted-enclaves-host-guardian-service-plan.md#trust-model) para obtener información sobre las garantías de seguridad reducidas al ejecutarse en una máquina virtual.
 
-Antes de reducir las características de seguridad de la VBS requeridas, consulte a su proveedor de servicios en la nube o OEM si existe una manera de habilitar los requisitos de plataforma que faltan en UEFI o BIOS (por ejemplo, para habilitar el arranque seguro, Intel VT-d o AMD IOV).
+Antes de reducir las características de seguridad necesarias de VBS, consulte al proveedor de servicios en la nube o OEM si existe una manera de habilitar los requisitos de plataforma que faltan en UEFI o BIOS (por ejemplo, para habilitar el arranque seguro, Intel VT-d o AMD IOV).
 
 Para cambiar las características de seguridad de la plataforma necesarias para la VBS, ejecute el siguiente comando en una consola de PowerShell con privilegios elevados:
 
@@ -80,12 +89,15 @@ Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard -Name 
 
 Después de cambiar el registro, reinicie el equipo de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] y compruebe si VBS se está ejecutando de nuevo.
 
-Si el equipo está administrado por su empresa, la directiva de grupo o Microsoft Endpoint Manager puede invalidar cualquier cambio que se realice en estas claves del registro después de reiniciar.
+Si el equipo está administrado por su empresa, la directiva de grupo o el administrador de puntos de conexión de Microsoft puede invalidar cualquier cambio que se realice en estas claves del registro después de reiniciar.
 Contacte con el departamento de soporte técnico de TI para ver si implementan directivas que administran su configuración de VBS.
 
 ## <a name="step-3-configure-the-attestation-url"></a>Paso 3: Configurar la URL de atestación
 
-A continuación, configurará el equipo de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] con la URL del servicio de atestación de HGS.
+> [!NOTE]
+> Este paso lo debe realizar el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
+
+A continuación, configurará el equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] con la dirección URL del servicio de atestación de HGS, que ha obtenido del administrador de HGS.
 
 En una consola de PowerShell con privilegios elevados, actualice y ejecute los siguientes comandos para configurar la URL de atestación.
 
@@ -105,6 +117,14 @@ El campo `AttestationMode` de la salida del cmdlet indica qué modo de atestaci�
 Vaya al [paso 4A](#step-4a-register-a-computer-in-tpm-mode) para registrar el equipo en modo TPM o al [paso 4B](#step-4b-register-a-computer-in-host-key-mode) para registrar el equipo en modo de clave de host.
 
 ## <a name="step-4a-register-a-computer-in-tpm-mode"></a>Paso 4A: Registro de un equipo en modo TPM
+
+> [!NOTE]
+> Este paso lo realizan de forma conjunta el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] y el administrador de HGS. Vea las notas siguientes para obtener más información.
+
+### <a name="prepare"></a>Preparación
+
+> [!NOTE]
+> Esta acción la debe realizar el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
 
 En este paso, recopilará información sobre el estado de TPM del equipo y lo registrará con HGS.
 
@@ -128,10 +148,13 @@ Por ejemplo, si tiene tres bases de referencia de TPM registradas en HGS, las me
 
 ### <a name="configure-a-code-integrity-policy"></a>Configuración de una directiva de integridad de código
 
+> [!NOTE]
+> Los pasos siguientes los debe realizar el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
+
 HGS requiere que todos los equipos que se comparan en el modo TPM tengan aplicada una directiva de control de aplicaciones de Windows Defender (WDAC).
 Las directivas de integridad de código de WDAC restringen el software que se puede ejecutar en un equipo comprobando cada proceso que intenta ejecutar código en una lista de editores de confianza y hashes de archivo.
 En el caso de uso de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)], los enclaves están protegidos por la seguridad basada en la virtualización y no se pueden modificar desde el sistema operativo del host, por lo que la rigurosidad de la directiva de WDAC no afecta a la seguridad de las consultas cifradas.
-Por lo tanto, se recomienda implementar una directiva de modo de auditoría simple en los equipos de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] para cumplir el requisito de atestación sin imponer restricciones adicionales en el sistema.
+Por tanto, se recomienda implementar una directiva de modo de auditoría en los equipos con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] para cumplir el requisito de atestación sin imponer restricciones adicionales en el sistema.
 
 Si ya usa una directiva de integridad de código de WDAC personalizada en los equipos para proteger la configuración del sistema operativo, puede ir a la sección [Recopilación de información sobre la atestación de TPM](#collect-tpm-attestation-information).
 
@@ -153,6 +176,9 @@ Si ya usa una directiva de integridad de código de WDAC personalizada en los eq
 
 ### <a name="collect-tpm-attestation-information"></a>Recopilación de información sobre la atestación de TPM
 
+> [!NOTE]
+> Los pasos siguientes los debe realizar el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
+
 Repita los pasos siguientes para cada equipo [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] en el que se vaya a realizar la atestación con HGS:
 
 1. Con el equipo en buen estado, ejecute los siguientes comandos en PowerShell para recopilar la información de atestación de TPM:
@@ -170,9 +196,17 @@ Repita los pasos siguientes para cada equipo [!INCLUDE [ssnoversion-md](../../..
     Copy-Item -Path "$env:SystemRoot\System32\CodeIntegrity\SIPolicy.p7b" -Destination "$path\$name-CIpolicy.bin"
     ```
 
-2. Copie los tres archivos de atestación en el servidor HGS.
+2. Comparta los tres archivos de atestación con el administrador de HGS. 
 
-3. En el servidor HGS, ejecute los siguientes comandos en una consola de PowerShell con privilegios elevados para registrar el equipo de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]:
+### <a name="register-the-sql-server-computer-with-hgs"></a>Registro del equipo SQL Server con HGS
+
+> [!NOTE]
+> Los pasos siguientes los debe realizar el administrador de HGS.
+
+Repita los pasos siguientes para cada equipo [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] en el que se vaya a realizar la atestación con HGS:
+
+1. Copie en el servidor HGS los archivos de atestación que ha obtenido del administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]. 
+2. En el servidor HGS, ejecute los siguientes comandos en una consola de PowerShell con privilegios elevados para registrar el equipo de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]:
 
     ```powershell
     # TIP: REMEMBER TO CHANGE THE FILENAMES
@@ -212,38 +246,61 @@ Get-HgsAttestationTpmPolicy
 
 ## <a name="step-4b-register-a-computer-in-host-key-mode"></a>Paso 4B: Registro de un equipo en modo de clave de host
 
+> [!NOTE]
+> Este paso lo realizan de forma conjunta el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] y el administrador de HGS. Vea las notas siguientes para obtener más información.
+
 En este paso, seguirá el proceso de generación de una clave única para el host y de su registro con HGS.
 Si el servicio de atestación de HGS está configurado para usar el modo TPM, siga las instrucciones del [paso 4A](#step-4a-register-a-computer-in-tpm-mode).
 
+### <a name="generate-a-key-for-a-ssnoversion-md-computer"></a>Generación de una clave para un equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]
+
+> [!NOTE]
+> Esta parte la debe realizar de forma conjunta el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
+
 La atestación de clave de host funciona mediante la generación de un par de claves asimétricas en el equipo de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] y el suministro de HGS con la mitad pública de esa clave.
-Para generar el par de claves, ejecute el comando siguiente en una consola de PowerShell con privilegios elevados:
 
-```powershell
-Set-HgsClientHostKey
-Get-HgsClientHostKey -Path "$HOME\Desktop\$env:computername-key.cer"
-```
+Repita los pasos siguientes para cada equipo [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] en el que se vaya a realizar la atestación con HGS:
 
-Si ya ha creado una clave de host y quiere generar un nuevo par de claves, use los comandos siguientes:
+1. Para generar el par de claves, ejecute el comando siguiente en una consola de PowerShell con privilegios elevados:
 
-```powershell
-Remove-HgsClientHostKey
-Set-HgsClientHostKey
-Get-HgsClientHostKey -Path "$HOME\Desktop\$env:computername-key.cer"
-```
+    ```powershell
+    Set-HgsClientHostKey
+    Get-HgsClientHostKey -Path "$HOME\Desktop\$env:computername-key.cer"
+    ```
 
-Una vez que haya generado la clave de host, copie el archivo de certificado en un servidor HGS y ejecute el siguiente comando en una consola de PowerShell con privilegios elevados para registrar el equipo de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]:
+    Si ya ha creado una clave de host y quiere generar un nuevo par de claves, use los comandos siguientes:
 
-```powershell
-Add-HgsAttestationHostKey -Name "YourComputerName" -Path "C:\temp\yourcomputername.cer"
-```
+    ```powershell
+    Remove-HgsClientHostKey
+    Set-HgsClientHostKey
+    Get-HgsClientHostKey -Path "$HOME\Desktop\$env:computername-key.cer"
+    ```
 
-Repita el paso 4B para cada equipo [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] en el que se realizará una atestación con HGS.
+2. Comparta el archivo de certificado con el administrador de HGS.
+
+### <a name="register-the-sql-server-computer-with-hgs"></a>Registro del equipo SQL Server con HGS
+
+> [!NOTE]
+> Los pasos siguientes los debe realizar el administrador de HGS.
+
+Repita los pasos siguientes para cada equipo [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] en el que se vaya a realizar la atestación con HGS:
+
+1. Copie en un servidor HGS el archivo de certificado que ha obtenido del administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
+2. Ejecute el comando siguiente en una consola de PowerShell con privilegios elevados para registrar el equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]:
+
+    ```powershell
+    Add-HgsAttestationHostKey -Name "YourComputerName" -Path "C:\temp\yourcomputername.cer"
+   ```
 
 ## <a name="step-5-confirm-the-host-can-attest-successfully"></a>Paso 5: Confirmación de la posibilidad del host de realizar la atestación correctamente
 
+> [!NOTE]
+> Este paso lo debe realizar el administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
+
 Una vez que haya registrado el equipo de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] con HGS ([paso 4A](#step-4a-register-a-computer-in-tpm-mode) para el modo TPM, [paso 4B](#step-4b-register-a-computer-in-host-key-mode) para el modo de clave de host), debe confirmar que es capaz de realizar la atestación correctamente.
 
-Puede comprobar la configuración del cliente de atestación de HGS y realizar un intento de atestación en cualquier momento con [Get-HgsClientConfiguration](/powershell/module/hgsclient/get-hgsclientconfiguration).
+Puede comprobar la configuración del cliente de atestación de HGS y realizar un intento de atestación en cualquier momento con [Get-HgsClientConfiguration](/powershell/module/hgsclient/get-hgsclientconfiguration?view=win10-ps&preserve-view=true).
+
 La salida del comando será similar a esta:
 
 ```
@@ -269,7 +326,7 @@ A continuación se explican los valores más comunes que pueden aparecer en `Att
 | `AttestationStatus` | Explicación |
 | ----------------- | ----------- |
 | Expirada | El host ha pasado la atestación, pero el certificado de mantenimiento que se emitió ha expirado. Asegúrese de que la hora del host y del HGS están sincronizadas. |
-| `InsecureHostConfiguration` | El equipo no cumplía una o más directivas de atestación configuradas en el servidor HGS. Para más información, consulte `AttestationSubStatus`. |
+| `InsecureHostConfiguration` | El equipo no cumplía una o más directivas de atestación configuradas en el servidor HGS. Para obtener más información, vea `AttestationSubStatus`. |
 | NoConfigurado | El equipo no está configurado con una dirección URL de atestación. [Configurar la URL de atestación](#step-3-configure-the-attestation-url) |
 | Superado | El equipo ha superado la atestación y se confía en él para ejecutar los enclaves de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]. |
 | `TransientError` | No se ha podido realizar el intento de atestación debido a un error temporal. Este error suele significar que se ha producido un problema al contactar con HGS a través de la red. Compruebe la conexión de red y asegúrese de que el equipo pueda resolver el nombre del servicio HGS y redirigirlo. |
@@ -289,3 +346,7 @@ En la tabla siguiente se explican los valores más comunes y cómo corregirlos.
 | Iommu | Este equipo no tiene ningún dispositivo IOMMU habilitado. Si es un equipo físico, habilite IOMMU en el menú de configuración de UEFI. Si se trata de una máquina virtual y no tiene IOMMU disponible, ejecute `Disable-HgsAttestationPolicy Hgs_IommuEnabled` en el servidor de HGS. |
 | SecureBoot | El arranque seguro no está habilitado en este equipo. Habilite el arranque seguro en el menú de configuración de UEFI para resolver este error. |
 | VirtualSecureMode | La seguridad basada en la virtualización no se está ejecutando en este equipo. Siga las instrucciones que encontrará en el [Paso 2: Verificación de la ejecución de VBS en el equipo](#step-2-verify-virtualization-based-security-is-running). |
+
+## <a name="next-steps"></a>Pasos siguientes
+
+- [Configuración del enclave seguro en SQL Server](always-encrypted-enclaves-configure-enclave-type.md)

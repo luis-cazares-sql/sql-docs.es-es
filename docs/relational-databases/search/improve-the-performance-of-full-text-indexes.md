@@ -18,12 +18,12 @@ author: pmasl
 ms.author: pelopes
 ms.reviewer: mikeray
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 79368864ef41860d725772ee9136bb1e66e82790
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 2ec5532f22f50258334f815d12202eb4645b4b17
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97479506"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241868"
 ---
 # <a name="improve-the-performance-of-full-text-indexes"></a>Mejorar el rendimiento de los índices de texto completo
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -42,7 +42,7 @@ La causa principal de un rendimiento reducido de la indización de texto complet
 -   **Disco**. Si la longitud promedio de la cola de espera del disco es superior al doble del número de cabezales de disco, el cuello de botella está en el disco. La solución principal consiste en crear catálogos de texto completo independientes de los registros y los archivos de base de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Coloque los registros, los archivos de base de datos y los catálogos de texto completo en discos independientes. También puede ayudar a mejorar el rendimiento de la indización la instalación de discos más rápidos y el uso de RAID.  
   
     > [!NOTE]  
-    >  A partir de [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)], el motor de texto completo puede utilizar la memoria AWE porque forma parte del proceso de sqlservr.exe.  
+    > A partir de [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)], el motor de texto completo puede utilizar la memoria AWE porque forma parte del proceso de sqlservr.exe. Para obtener más información, vea [Arquitectura de la búsqueda de texto completo](../../relational-databases/search/full-text-search.md#architecture).  
 
 ### <a name="full-text-batching-issues"></a>Problemas de procesamiento por lotes de texto completo
  Si el sistema no tiene cuellos de botella de hardware, el rendimiento de la indización de la búsqueda de texto completo depende sobre todo de lo siguiente:  
@@ -67,7 +67,7 @@ Para obtener el máximo rendimiento de los índices de texto completo, implement
   
 -   Actualice las estadísticas de la tabla base mediante la instrucción [UPDATE STATISTICS](../../t-sql/statements/update-statistics-transact-sql.md) . Es muy importante que actualice las estadísticas del índice clúster o la clave de texto completo para un rellenado completo. De este modo se ayuda a que un rellenado de varios intervalos genere bien las particiones de la tabla.  
   
--   Antes de realizar un rellenado completo en un equipo grande con varias CPU, es recomendable que limite temporalmente el tamaño del grupo de búferes estableciendo el valor **max server memory** a fin de dejar suficiente memoria para el uso del sistema operativo y el proceso fdhost.exe. Para obtener más información, vea "Estimar los requisitos de memoria del proceso de host de demonio de filtro (fdhost.exe)" más adelante en este tema.
+-   Antes de realizar un rellenado completo en un equipo grande con varias CPU, es recomendable que limite temporalmente el tamaño del grupo de búferes estableciendo el valor **max server memory** a fin de dejar suficiente memoria para el uso del sistema operativo y el proceso fdhost.exe. Para obtener más información, vea [Estimación de los requisitos de memoria del proceso de host de demonio de filtro (fdhost.exe)](#estimate), más adelante en este tema.
 
 -   Si usa rellenado incremental basado en una columna de marca de tiempo, cree un índice secundario en una columna **timestamp** si desea mejorar el rendimiento del rellenado incremental.  
   
@@ -89,24 +89,24 @@ Las partes variables del nombre de archivo de registro de rastreo son las siguie
  Por ejemplo, `SQLFT0000500008.2` es el archivo de registro de rastreo para un identificador de base de datos = 5 y un identificador de catálogo de texto completo = 8. El 2 al final del nombre de archivo indica que existen dos archivos de registro de rastreo para esta pareja de base de datos y catálogo.  
 
 ### <a name="check-physical-memory-usage"></a>Comprobar el uso de la memoria física  
- Durante un rellenado de texto completo, es posible que fdhost.exe o sqlservr.exe no dispongan de suficiente memoria o se queden sin memoria.
--   Si el registro de rastreo de texto completo muestra que fdhost.exe se reinicia con frecuencia o que se devuelve el código de error 8007008, significa que uno de estos procesos se está quedando sin memoria.
--   Si fdhost.exe produce volcados, especialmente en equipos grandes con varias CPU, es posible que se esté quedando sin memoria.  
+ Durante un rellenado de texto completo, es posible que `fdhost.exe` o `sqlservr.exe` no dispongan de suficiente memoria o se queden sin memoria.
+-   Si el registro de rastreo de texto completo muestra que `fdhost.exe` se reinicia con frecuencia o que se devuelve el código de error 8007008, significa que uno de estos procesos se está quedando sin memoria.
+-   Si `fdhost.exe` produce volcados, especialmente en equipos grandes con varias CPU, es posible que se esté quedando sin memoria.  
 -   Para más información sobre los búferes de memoria empleados por un rastreo de texto completo, vea [sys.dm_fts_memory_buffers &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-fts-memory-buffers-transact-sql.md).  
   
  Las posibles causas de poca memoria o problemas de memoria insuficiente son los siguientes:  
   
 -   **Memoria suficiente**. Si la cantidad de memoria física que está disponible durante un rellenado completo es cero, el grupo de búferes de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] podría estar consumiendo la mayor parte de la memoria física del sistema.  
   
-     El proceso sqlservr.exe intenta obtener toda la memoria disponible para el grupo de búferes hasta el valor máximo de memoria del servidor configurado. Si la asignación de **max server memory** es demasiado grande, pueden producirse condiciones de memoria insuficiente y errores para asignar memoria compartida al proceso fdhost.exe.  
+     El proceso `sqlservr.exe` intenta obtener toda la memoria disponible para el grupo de búferes hasta el valor máximo de memoria del servidor configurado. Si la asignación de **max server memory** es demasiado grande, pueden producirse condiciones de memoria insuficiente y errores para asignar memoria compartida al proceso fdhost.exe.  
   
-     Puede resolver este problema si define apropiadamente el valor **max server memory** del grupo de búferes de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Para obtener más información, vea "Estimar los requisitos de memoria del proceso de host de demonio de filtro (fdhost.exe)" más adelante en este tema. Reducir el tamaño de lote utilizado para la indización de texto completo también puede ayudar.  
+     Puede resolver este problema si define apropiadamente el valor **max server memory** del grupo de búferes de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Para obtener más información, vea [Estimación de los requisitos de memoria del proceso de host de demonio de filtro (fdhost.exe)](#estimate), más adelante en este tema. Reducir el tamaño de lote utilizado para la indización de texto completo también puede ayudar.  
 
 -   **Contención de memoria**. Durante un rellenado de texto completo en un equipo con varias CPU, puede producirse una contención de la memoria del grupo de búferes entre fdhost.exe o sqlservr.exe. La falta de memoria compartida resultante produce reintentos de lotes, una paginación excesiva de la memoria y volcados por parte del proceso fdhost.exe.  
 
 -   **Problemas de paginación**. Un tamaño insuficiente del archivo de paginación, como ocurre en un sistema que tiene un archivo de paginación pequeño con un crecimiento restringido, también puede hacer que fdhost.exe o sqlservr.exe se queden sin memoria. Si los registros de rastreo no indican ningún error relacionado con la memoria, es probable que el rendimiento sea lento debido a una paginación excesiva.  
   
-### <a name="estimate-the-memory-requirements-of-the-filter-daemon-host-process-fdhostexe"></a>Estimar los requisitos de memoria del proceso de host de demonio de filtro (fdhost.exe)  
+### <a name="estimate-the-memory-requirements-of-the-filter-daemon-host-process-fdhostexe"></a><a name="estimate"></a> Estimación de los requisitos de memoria del proceso de host de demonio de filtro (fdhost.exe)  
  La cantidad de memoria requerida por el proceso fdhost.exe para un rellenado depende principalmente del número de intervalos de rastreo de texto completo que utiliza, del tamaño de la memoria compartida entrante (ISM) y del número máximo de instancias de ISM.  
   
  La cantidad de memoria (en bytes) consumida por el host de demonio de filtro puede calcularse de forma aproximada utilizando esta fórmula:  
@@ -143,19 +143,19 @@ Para información esencial sobre las fórmulas siguientes, vea las notas que sig
   
  #### <a name="example-estimate-the-memory-requirements-of-fdhostexe"></a>Ejemplo: Evaluación de los requisitos de memoria de fdhost.exe  
   
- Este ejemplo corresponde a un equipo de 64 bits que tiene 8 GB de RAM y 4 procesadores de doble núcleo. El primer cálculo evalúa la memoria que necesita fdhost.exe-*F*. El número de rangos de rastreo es `8`.  
+ Este ejemplo se corresponde a un equipo de 64 bits que tiene 8 GB de RAM y 4 procesadores de doble núcleo. El primer cálculo evalúa la memoria que necesita fdhost.exe -*F*. El número de rangos de rastreo es `8`.  
   
- `F = 8*10*8=640`  
+ `F = 8*10*8 = 640`  
   
- El cálculo siguiente obtiene el valor óptimo de **max server memory**-*M*. Total de memoria física disponible en este sistema en MB-*T* es `8192`.  
+ El cálculo siguiente obtiene el valor óptimo de **max server memory** -*M*. Total de memoria física disponible en este sistema en MB-*T* es `8192`.  
   
- `M = 8192-640-500=7052`  
+ `M = 8192-640-500 = 7052`  
   
  #### <a name="example-setting-max-server-memory"></a>Ejemplo: Establecimiento de max server memory  
   
  En este ejemplo se usan las instrucciones [!INCLUDE[tsql](../../includes/tsql-md.md)] [sp_configure](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md) y [RECONFIGURE](../../t-sql/language-elements/reconfigure-transact-sql.md) para establecer **max server memory** en el valor calculado para *M* en el ejemplo anterior, `7052`:  
   
-```  
+```sql  
 USE master;  
 GO  
 EXEC sp_configure 'max server memory', 7052;  
@@ -173,7 +173,7 @@ El rendimiento de los rellenados completos no es el óptimo cuando el consumo de
   
      Para averiguar si el tiempo de espera de una página es elevado, ejecute la instrucción de [!INCLUDE[tsql](../../includes/tsql-md.md)] siguiente:  
   
-    ```  
+    ```sql  
     SELECT TOP 10 * FROM sys.dm_os_wait_stats ORDER BY wait_time_ms DESC;  
     ```  
   
@@ -205,7 +205,7 @@ El motor de texto completo usa dos tipos de filtros cuando rellena un índice de
 -   Algunos documentos, como los de Word [!INCLUDE[msCoName](../../includes/msconame-md.md)] , se filtran utilizando un filtro multiproceso.
 -   Otros, como los documentos Portable Document Format (PDF) de Adobe Acrobat, se filtran por medio de filtros de un solo subproceso.  
   
- Por razones de seguridad, los procesos de host de demonio de filtro cargan los filtros. Una instancia del servidor utiliza un proceso multiproceso para todos los filtros multiproceso y un proceso de un solo subproceso para todos los filtros de un solo subproceso. Cuando un documento que utiliza un filtro multiproceso contiene un documento incrustado que utiliza un filtro de un solo subproceso, el motor de texto completo inicia un proceso de un solo subproceso para el documento incrustado. Por ejemplo, al encontrar un documento de Word que contiene un documento PDF, el motor de texto completo usa el proceso multiproceso para el contenido de Word e inicia un proceso de un solo subproceso para el contenido PDF. Sin embargo, un filtro de un solo subproceso podría no funcionar bien en este entorno y desestabilizar el proceso de filtrado. En ciertas circunstancias en las que tal inserción es común, la desestabilización podría provocar el bloqueo del proceso. Cuando esto ocurre, el motor de texto completo vuelve a enrutar cualquier documento con error (por ejemplo, un documento de Word que incluya contenido PDF incrustado) al proceso del filtrado de un solo subproceso. Si esto sucede con frecuencia, se produce una disminución del rendimiento del proceso de indización de texto completo.  
+ Por razones de seguridad, los procesos de host de demonio de filtro cargan los filtros. Una instancia del servidor usa un proceso multiproceso para todos los filtros multiproceso y un proceso de un solo subproceso para todos los filtros de un solo subproceso. Cuando un documento que utiliza un filtro multiproceso contiene un documento incrustado que utiliza un filtro de un solo subproceso, el motor de texto completo inicia un proceso de un solo subproceso para el documento incrustado. Por ejemplo, al encontrar un documento de Word que contiene un documento PDF, el motor de texto completo usa el proceso multiproceso para el contenido de Word e inicia un proceso de un solo subproceso para el contenido PDF. Sin embargo, un filtro de un solo subproceso podría no funcionar bien en este entorno y desestabilizar el proceso de filtrado. En ciertas circunstancias en las que tal inserción es común, la desestabilización podría provocar el bloqueo del proceso. Cuando esto ocurre, el motor de texto completo vuelve a enrutar cualquier documento con error (por ejemplo, un documento de Word que incluya contenido PDF incrustado) al proceso del filtrado de un solo subproceso. Si esto sucede con frecuencia, se produce una disminución del rendimiento del proceso de indización de texto completo.  
   
 Para solucionar este problema, marque el filtro para el documento contenedor (en este ejemplo, el documento de Word) como filtro de un solo subproceso. Para marcar un filtro como de un solo subproceso, establezca el valor del Registro **ThreadingModel** del filtro en **Apartment Threaded**. Para obtener más información sobre los contenedores uniproceso, vea las notas del producto [Understanding and Using COM Threading Models](/previous-versions/ms809971(v=msdn.10))(Descripción y uso de modelos de subprocesos COM).  
   
@@ -217,4 +217,4 @@ Para solucionar este problema, marque el filtro para el documento contenedor (en
  [sys.dm_fts_memory_buffers &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-fts-memory-buffers-transact-sql.md)   
  [sys.dm_fts_memory_pools &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-fts-memory-pools-transact-sql.md)   
  [Solucionar problemas de indización de texto completo](../../relational-databases/search/troubleshoot-full-text-indexing.md)  
-  
+ [Arquitectura de la búsqueda de texto completo](../../relational-databases/search/full-text-search.md#architecture) 

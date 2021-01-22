@@ -30,12 +30,12 @@ helpviewer_keywords:
 ms.assetid: e02b2318-bee9-4d84-a61f-2fddcf268c9f
 author: pmasl
 ms.author: umajay
-ms.openlocfilehash: 7d7d3c9e8fa3e67a4ee6ba5c2eb2590ee65c18b2
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: 478c7c784c25b1b71bcafd2279ac93bc7545c188
+ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96119555"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98151319"
 ---
 # <a name="dbcc-shrinkfile-transact-sql"></a>DBCC SHRINKFILE (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -67,7 +67,7 @@ Nombre lógico del archivo que se va a reducir.
 Número de identificación (Id.) del archivo que se va a reducir. Para obtener un identificador de archivo, use la función del sistema [FILE_IDEX](../../t-sql/functions/file-idex-transact-sql.md) o consulte la vista de catálogo [sys.database_files](../../relational-databases/system-catalog-views/sys-database-files-transact-sql.md) en la base de datos actual.
   
 *target_size*  
-Un entero: el nuevo tamaño en megabytes del archivo. Si no se especifica, DBCC SHRINKFILE reduce hasta el tamaño de creación del archivo.
+Un entero: el nuevo tamaño en megabytes del archivo. Si no se especifica o es 0, DBCC SHRINKFILE reduce hasta el tamaño de creación del archivo.
   
 > [!NOTE]  
 >  Puede reducir el tamaño predeterminado de un archivo vacío mediante DBCC SHRINKFILE *target_size*. Por ejemplo, si crea un archivo de 5 MB y, a continuación, reduce el archivo a 3 MB mientras el archivo todavía está vacío, el tamaño de archivo predeterminado se establece en 3 MB. Esto solo se aplica para vaciar archivos que nunca han contenido datos.  

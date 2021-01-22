@@ -23,12 +23,12 @@ ms.assetid: 8f1ed34e-8467-4512-a211-e0f43dee6584
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 22cd09ddfcd42223f2dd675dcd7ca76e6abcad48
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: e89da2e1d0acb2171f9080245d3f16ffcf9d547e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97468166"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171357"
 ---
 # <a name="soundex-transact-sql"></a>SOUNDEX (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -53,7 +53,7 @@ SOUNDEX ( character_expression )
  **varchar**  
   
 ## <a name="remarks"></a>Observaciones  
- SOUNDEX convierte una cadena alfanumérica en un código de cuatro caracteres que se basa en cómo suena la cadena cuando se pronuncia. El primer carácter del código es el primer carácter de *character_expression*, convertido a mayúsculas. Los caracteres segundo a cuarto del código son números que representan las letras de la expresión. Las letras A, E, I, O, U, H, W e Y se omiten a menos que sean la primera letra de la cadena. Se agregan ceros al final si se necesita crear un código de cuatro caracteres. Para más información sobre el código SOUNDEX, vea [The Soundex Indexing System](https://www.archives.gov/research/census/soundex.html) (Sistema de indización Soundex).  
+ SOUNDEX convierte una cadena alfanumérica en un código de cuatro caracteres que se basa en cómo suena la cadena cuando se pronuncia en inglés. El primer carácter del código es el primer carácter de *character_expression*, convertido a mayúsculas. Los caracteres segundo a cuarto del código son números que representan las letras de la expresión. Las letras A, E, I, O, U, H, W e Y se omiten a menos que sean la primera letra de la cadena. Se agregan ceros al final si se necesita crear un código de cuatro caracteres. Para más información sobre el código SOUNDEX, vea [The Soundex Indexing System](https://www.archives.gov/research/census/soundex.html) (Sistema de indización Soundex).  
   
  Se pueden comparar códigos SOUNDEX de distintas cadenas para ver la similitud de las cadenas cuando se pronuncian. La función DIFFERENCE realiza una operación SOUNDEX en dos cadenas y devuelve un entero que representa la similitud de los códigos SOUNDEX para esas cadenas.  
   

@@ -2,7 +2,7 @@
 title: Planificación de la atestación del Servicio de protección de host
 description: Planee la atestación del Servicio de protección de host para Always Encrypted con enclaves seguros de SQL Server.
 ms.custom: ''
-ms.date: 10/12/2019
+ms.date: 01/15/2021
 ms.prod: sql
 ms.reviewer: vanto
 ms.technology: security
@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: rpsqrd
 ms.author: ryanpu
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ed376fd4fe0f3c38d9996157c30722c24b27e8aa
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c4c80a51370de62410367b1225fd85e3ffe7f261
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477646"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534804"
 ---
 # <a name="plan-for-host-guardian-service-attestation"></a>Planificación de la atestación del Servicio de protección de host
 
@@ -126,9 +126,20 @@ Estos requisitos incluyen:
   - Si va a ejecutar [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] en una máquina virtual, el hipervisor y la CPU física deben ofrecer funciones de virtualización anidadas. Consulte la sección del [modelo de confianza](#trust-model) para obtener información sobre las garantías al ejecutar enclaves de VBS en una máquina virtual.
     - En Hyper-V 2016 o versiones posteriores, [habilite las extensiones de virtualización anidada en el procesador de máquina virtual](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization#configure-nested-virtualization).
     - En Azure, seleccione un tamaño de máquina virtual que admita la virtualización anidada. Todas las máquinas virtuales de la serie v3 admiten la virtualización anidada, por ejemplo, Dv3 y Ev3. Consulte [Creación de una máquina virtual de Azure compatible con el anidamiento](/azure/virtual-machines/windows/nested-virtualization#create-a-nesting-capable-azure-vm).
-    - En VMWare vSphere 6.7 o posterior, habilite la compatibilidad con la seguridad basada en virtualización en la máquina virtual, como se describe en la [documentación de VMware](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-C2E78F3E-9DE2-44DB-9B0A-11440800AADD.html).
+    - En VMware vSphere 6.7 o posterior, habilite la compatibilidad con la seguridad basada en virtualización en la máquina virtual, como se describe en la [documentación de VMware](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-C2E78F3E-9DE2-44DB-9B0A-11440800AADD.html).
     - Es posible que otros hipervisores y nubes públicas admitan funciones de virtualización anidada que también permitan Always Encrypted con enclaves de VBS. Consulte la documentación de la solución de virtualización para obtener instrucciones relativas a la compatibilidad y configuración.
 - Si tiene previsto usar la atestación de TPM, necesitará un chip TPM 2.0 rev 1.16 listo para su uso en el servidor. En este momento, la atestación de HGS no funciona con los chips TPM 2.0 rev 1.38. Además, el TPM debe tener un certificado de clave de aprobación válido.
+
+## <a name="roles-and-responsibilities-when-configuring-attestation-with-hgs"></a>Roles y responsabilidades al configurar la atestación con HGS
+
+La configuración de la atestación con HGS implica la configuración de componentes de tipos diferentes: HGS, equipos con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)], instancias de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] y aplicaciones que desencadenan la atestación de enclave. Los usuarios realizan la configuración de los componentes de cada tipo y asumen uno de los roles siguientes:
+
+- Administrador de HGS: implementa HGS, registra equipos con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] con HGS y comparte la dirección URL de atestación de HGS con los administradores de equipos con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] y administradores de aplicaciones cliente.
+- Administrador del equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)]: instala los componentes cliente de atestación, habilita VBS en los equipos con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)], proporciona al administrador de HGS la información necesaria para registrar los equipos con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] con HGS, configura la dirección URL de atestación en los equipos con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] y comprueba que los equipos con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] pueden realizar correctamente la atestación con HGS.
+- DBA: configura enclaves seguros en instancias de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)].
+- Administrador de aplicaciones: configura la aplicación con la dirección URL de atestación obtenida del administrador de HGS.
+
+En entornos de producción (donde se controlan datos confidenciales reales), es importante que la organización se adhiera a la separación de roles al configurar la atestación, donde cada rol distinto es asumido por usuarios diferentes. En concreto, si el objetivo de implementar Always Encrypted en la organización es reducir el área expuesta a ataques asegurándose de que los administradores de los equipo con [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] y los DBA no puedan acceder a los datos confidenciales, los administradores de [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] y los DBA no deben controlar los servidores HGS.
 
 ## <a name="devtest-environment-considerations"></a>Consideraciones sobre el entorno de desarrollo y pruebas
 

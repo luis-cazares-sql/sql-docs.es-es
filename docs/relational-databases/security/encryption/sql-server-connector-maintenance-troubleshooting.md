@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 7f5b73fc-e699-49ac-a22d-f4adcfae62b1
 author: jaszymas
 ms.author: jaszymas
-ms.openlocfilehash: 4c8a74d33e75ab19b283f3b9d1bfdaf47dc69240
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+ms.openlocfilehash: fa78eb8ef2da01514e161c58b05146b1699c93f7
+ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91869267"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98151271"
 ---
 # <a name="sql-server-connector-maintenance--troubleshooting"></a>Conector de SQL Server, apéndice
 
@@ -139,7 +139,7 @@ Vínculos profundos a versiones anteriores del Conector de SQL Server
 
 ### <a name="rolling-the-ssnoversion-service-principal"></a>Puesta en marcha de la entidad de servicio de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]
 
- [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] usa entidades de servicio creadas en Azure Active Directory como credenciales para acceder al Almacén de claves. La entidad de servicio tiene identificador de cliente y clave de autenticación. Una credencial de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] se configura con el **nombre de almacén**, el **identificador de cliente**y la **clave de autenticación**. La **clave de autenticación** es válida durante un determinado período de tiempo (uno o dos años). Antes de que expire el período de tiempo se debe generar una nueva clave en Azure AD para la entidad de servicio. Después, la credencial debe cambiarse en [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. [!INCLUDE[ssManStudio](../../../includes/ssmanstudio-md.md)] mantiene una caché para la credencial en la sesión actual, por lo que cuando se cambia una credencial, [!INCLUDE[ssManStudio](../../../includes/ssmanstudio-md.md)] se debe reiniciar.  
+ [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] usa entidades de servicio creadas en Azure Active Directory como credenciales para acceder al Almacén de claves. La entidad de servicio tiene identificador de cliente y clave de autenticación. Una credencial de [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] se configura con el **nombre de almacén**, el **identificador de cliente** y la **clave de autenticación**. La **clave de autenticación** es válida durante un determinado período de tiempo (uno o dos años). Antes de que expire el período de tiempo se debe generar una nueva clave en Azure AD para la entidad de servicio. Después, la credencial debe cambiarse en [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. [!INCLUDE[ssManStudio](../../../includes/ssmanstudio-md.md)] mantiene una caché para la credencial en la sesión actual, por lo que cuando se cambia una credencial, [!INCLUDE[ssManStudio](../../../includes/ssmanstudio-md.md)] se debe reiniciar.  
   
 ### <a name="key-backup-and-recovery"></a>Copia de seguridad y recuperación de claves
 
@@ -227,6 +227,7 @@ Código de error  |Símbolo  |Descripción
 2051 | scp_err_OutOfMemory | El motor de SQL se ha quedado sin memoria y no se ha podido asignar la memoria para el proveedor EKM.
 2052 | scp_err_ConvertKeyNameToThumbprint | No se ha podido convertir el nombre de la clave en una huella digital.
 2053 | scp_err_ConvertThumbprintToKeyName|  No se ha podido convertir la huella digital en un nombre de clave.
+2058 | scp_err_FailureInRegistry|  No se pudo realizar la operación en el Registro. La cuenta del servicio SQL Server no tiene permiso para crear la clave del Registro.
 3000 | ErrorSuccess | La operación de AKV se ha realizado correctamente.
 3001 | ErrorUnknown | Se ha producido un error en la operación de AKV con un error sin especificar.
 3002 | ErrorHttpCreateHttpClientOutOfMemory | No se puede crear un elemento HttpClient para la operación de AKV debido a que no hay memoria suficiente.
