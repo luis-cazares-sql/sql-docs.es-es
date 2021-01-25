@@ -8,12 +8,12 @@ ms.technology: report-server-sharepoint
 ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 8a70d7619f878b7091e7a49e05caf93dd814e3a0
-ms.sourcegitcommit: 66a0672e47415dbd5cfd8d19075102c8c3973e70
+ms.openlocfilehash: b0fa25f3951ab33001f84f7f44bd4617659a81ae
+ms.sourcegitcommit: 7791bd2ba339edc5cd2078a6537c8f6bfe72a19b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83767409"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98564433"
 ---
 # <a name="add-sql-server-reporting-services-report-viewer-web-part-to-a-sharepoint-page"></a>Agregar el elemento web Visor de informes de SQL Server Reporting Services a una página de SharePoint
 
@@ -43,7 +43,7 @@ Muestre un informe, en SQL Server Reporting Services o en Power BI Report Server
 
     ![Inserte un elemento web desde la cinta de opciones de Office.](media/sharepoint-insert-web-part.png)
 
-4. En **Categorías**, seleccione **SQL Server Reporting Services (modo nativo). En **Elementos**, seleccione **Visor de informes**. A continuación, seleccione **Agregar**.
+4. En **Categorías**, seleccione **SQL Server Reporting Services (modo nativo)** . En **Elementos**, seleccione **Visor de informes**. A continuación, seleccione **Agregar**.
 
     ![Agregue el elemento web Visor de informes.](media/sharepoint-report-viewer-web-part.png)
 

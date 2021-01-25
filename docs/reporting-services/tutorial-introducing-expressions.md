@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 2d05ef4c-5f91-48b2-8795-f0a201a0b3cc
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: db1efab37a24e49dcf9eac774809ec788831b037
-ms.sourcegitcommit: 9e2c682929ee64c051dc62f8917d147861f7c635
+ms.openlocfilehash: 938ac8fc2e006bc74aab59955374f1b012b66b68
+ms.sourcegitcommit: fc24f7ecc155d97e789676fffe55e45840fcb088
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043820"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620281"
 ---
 # <a name="tutorial-introducing-expressions"></a>Tutorial: Introducción a las expresiones
 En este tutorial de [!INCLUDE[ssRBnoversion_md](../includes/ssrbnoversion.md)] , se usan expresiones con operadores y funciones comunes para crear informes paginados eficaces y flexibles de [!INCLUDE[ssRSnoversion_md](../includes/ssrsnoversion-md.md)] . 
@@ -44,7 +44,7 @@ En esta sección, creará un informe de tabla, un origen de datos y un conjunto 
   
     Se abre el cuadro de diálogo **Nuevo informe o conjunto de datos** .  
   
-    Si no ve el cuadro de diálogo **Nuevo informe o conjunto de datos** , vaya al menú **Archivo** > **Nuevo**.  
+    Si no ve el cuadro de diálogo **Nuevo informe o conjunto de datos**, vaya al menú **Archivo** > **Nuevo**.  
   
 2.  En el panel de la izquierda, compruebe que está seleccionada la opción **Nuevo informe** .  
   
@@ -139,7 +139,7 @@ En esta sección, creará un informe de tabla, un origen de datos y un conjunto 
   
 1.  En el panel Datos de informe, expanda la carpeta **Conjuntos de datos** .  
   
-2.  Haga clic con el botón derecho en **ConjuntoDeDatos1** y haga clic en **Propiedades del conjunto de datos.**  
+2.  Haga clic con el botón derecho en **ConjuntoDeDatos1** y haga clic en **Propiedades del conjunto de datos**.  
 
     ![Captura de pantalla en la que se muestra cómo acceder a las propiedades del conjunto de datos en Report Builder.](../reporting-services/media/report-builder-expression-tutorial-rename-dataset.png)
   
@@ -148,7 +148,7 @@ En esta sección, creará un informe de tabla, un origen de datos y un conjunto 
 4.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
   
 ## <a name="3-display-first-initial-and-last-name"></a><a name="Concatenate"></a>3. Mostrar First Initial y Last Name  
-En esta sección, usará la función **Left** y el operador **Concatenate** ( **&** ) en una expresión que da como resultado un nombre que incluye una inicial y un apellido. Puede compilar la expresión paso a paso o avanzar en el procedimiento y copiar y pegar la expresión desde el tutorial al cuadro de diálogo **Expresión** .   
+En esta sección, usará la función **Left** y el operador **Concatenate** (**&**) en una expresión que da como resultado un nombre que incluye una inicial y un apellido. Puede compilar la expresión paso a paso o avanzar en el procedimiento y copiar y pegar la expresión desde el tutorial al cuadro de diálogo **Expresión** .   
   
 1.  Haga clic con el botón derecho en la columna **StateProvince** , seleccione **Insertar columna** y haga clic en **Izquierda**.  
   
@@ -199,7 +199,7 @@ En esta sección, dará formato a la columna **Last Purchase** que contiene fech
   
 1.  Haga clic en **Diseño** para volver a la vista de diseño.  
   
-2.  Seleccione la celda de datos en la columna **Last Purchase** y, en la pestaña **Inicio** > sección **Número** , seleccione **Fecha**.  
+2.  Seleccione la celda de datos en la columna **Last Purchase** y, en la pestaña **Inicio** > sección **Número**, seleccione **Fecha**.  
 
     ![Captura de pantalla en la que se muestra cómo establecer la columna de Última compra en Fecha.](../reporting-services/media/report-builder-expression-tutorial-date-format.png)
   
@@ -217,7 +217,7 @@ En esta sección, dará formato a la columna **Last Purchase** que contiene fech
 
 1. Seleccione la fila de los encabezados de columna.
 
-2. En la pestaña **Inicio** > sección **Párrafo** , seleccione **Izquierda**. 
+2. En la pestaña **Inicio** > sección **Párrafo**, seleccione **Izquierda**. 
 
     ![Captura de pantalla en la que se muestra cómo dar formato a los encabezados en Report Builder.](../reporting-services/media/report-builder-expression-tutorial-format-headings.png)
 
@@ -258,7 +258,7 @@ Para mantener el color que ha aplicado en la celda de la tabla cuando crea un in
   
 1.  Haga clic con el botón derecho en el rectángulo de la celda de datos de la columna **M/F** y haga clic en **Propiedades del rectángulo**.  
   
-2.  En el cuadro de diálogo **Propiedades del rectángulo** > pestaña **Relleno** , haga clic en el botón de la expresión **fx** junto a **Color de relleno**.  
+2.  En el cuadro de diálogo **Propiedades del rectángulo** > pestaña **Relleno**, haga clic en el botón de la expresión **fx** junto a **Color de relleno**.  
   
 3.  En el cuadro de diálogo **Expresión** , expanda **Funciones comunes** y, después, haga clic en **Flujo de programa**.  
   
@@ -319,7 +319,7 @@ En esta sección, creará el conjunto de datos CountryRegion y usará la funció
   
 2.  En el panel Datos de informe, haga clic en **Nuevo** y, después, en **Conjunto de datos**.  
   
-3.  En **Propiedades del conjunto de datos, haga clic en **Usar un conjunto de datos insertado en el informe**.  
+3.  En **Propiedades del conjunto de datos**, haga clic en **Usar un conjunto de datos insertado en el informe**.  
   
 4.  En la lista **Origen de datos** , seleccione ExpressionsDataSource.  
   
@@ -395,7 +395,7 @@ En esta sección, agregará una columna y, después, usará la función **Now** 
   
 4.  Haga clic con el botón derecho en la celda de datos de la columna **Días transcurridos** y haga clic en **Expresión**.  
   
-5.  En el cuadro de diálogo **Expresión** , expanda **Funciones comunes** y haga clic en **Fecha y hora**.  
+5.  En el cuadro de diálogo **Expresión**, expanda **Funciones comunes** y haga clic en **Fecha y hora**.  
   
 6.  En la lista **Elemento** , haga doble clic en **DateDiff**.  
   
@@ -405,7 +405,7 @@ En esta sección, agregará una columna y, después, usará la función **Now** 
   
 11. Inmediatamente después de `Fields!LastPurchase.Value`, escriba **,** (una coma). 
   
-13. En la lista **Categoría** , haga clic en **Fecha y hora** de nuevo y, en la lista **Elemento** , haga doble clic en **Ahora**.  
+13. En la lista **Categoría**, haga clic en **Fecha y hora** de nuevo y, en la lista **Elemento**, haga doble clic en **Ahora**.  
   
     > [!WARNING]  
     > En los informes de producción no debe usar la función **Ahora** en las expresiones que se evalúan varias veces como representadores de informes (por ejemplo, en las filas de detalle de un informe). El valor de **Ahora** cambia de una fila a otra y los diferentes valores afectan a los resultados de evaluación de las expresiones, lo que conduce a resultados ligeramente incoherentes. En su lugar, use la variable global `ExecutionTime` que proporciona [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] .  
@@ -528,9 +528,9 @@ Cree un parámetro de forma que los lectores del informe puedan especificar el c
   
     Se abrirá el cuadro de diálogo **Propiedades de parámetro de informe** .  
   
-3.  En **Pedir datos** , escriba **Elegir color**  
+3.  En **Pedir datos**, escriba **Elegir color**  
   
-4.  En **Nombre** , escriba **RowColor**  
+4.  En **Nombre**, escriba **RowColor**  
   
 5.  En la pestaña **Valores disponibles** , haga clic en **Especificar valores**.  
   
@@ -582,7 +582,7 @@ Cree un parámetro de forma que los lectores del informe puedan especificar el c
   
 7.  En la lista **Elemento** , haga doble clic en **SiInm**.  
   
-8.  En **Funciones comunes** , haga clic en **Varios** y, en la lista **Elemento** , haga doble clic en **RowNumber**.  
+8.  En **Funciones comunes**, haga clic en **Varios** y, en la lista **Elemento** , haga doble clic en **RowNumber**.  
 
 9. Inmediatamente después de **RowNumber(** escriba **Nada) MOD 2,**
   

@@ -10,12 +10,12 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan; sstein
 ms.date: 11/4/2020
-ms.openlocfilehash: 16c4200b70647c08ddee6b531acc3227d2942ad2
-ms.sourcegitcommit: 866554663ca3191748b6e4eb4d8d82fa58c4e426
+ms.openlocfilehash: 8555a183dc1f888e6ae80b78999b5fc234b431cf
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577901"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98594416"
 ---
 # <a name="sqlpackageexe"></a>SqlPackage.exe
 
@@ -71,8 +71,7 @@ Cree un script SQL que genere las diferencias de dos archivos .dacpac:
 sqlpackage.exe /Action:Script /SourceFile:"C:\sqlpackageoutput\output_current_version.dacpac" /TargetFile:"C:\sqlpackageoutput\output_target.dacpac" /TargetDatabaseName:"Contoso.Database" /OutputPath:"C:\sqlpackageoutput\output.sql"
  ```
 
-
-## <a name="version"></a>Versión
+ ## <a name="version"></a>Versión
 
 Muestra la versión de sqlpackage como un número de compilación.  Se puede usar en solicitudes interactivas o en [canalizaciones automatizadas](sqlpackage-pipelines.md).
 
@@ -87,6 +86,161 @@ Comandos que devuelven los siguientes códigos de salida:
 
 - 0 = success
 - distinto de cero = error
+
+
+## <a name="parameters"></a>Parámetros
+Algunos parámetros se comparten entre las acciones de SqlPackage. A continuación se muestra una tabla que resume los parámetros. Para más información, haga clic en las páginas de acción específicas.
+
+| Parámetro | Forma corta | [Extracción](sqlpackage-extract.md#parameters-for-the-extract-action) | [Publicar](sqlpackage-publish.md#parameters-for-the-publish-action) | [Exportar](sqlpackage-export.md#parameters-for-the-export-action) | [Importar](sqlpackage-import.md#parameters-for-the-import-action) | [DeployReport](sqlpackage-deploy-drift-report.md#deployreport-action-parameters) | [DriftReport](sqlpackage-deploy-drift-report.md#driftreport-action-parameters) | [Script](sqlpackage-script.md#parameters-for-the-script-action) |
+|---|---|---|---|---|---|---|---|---|
+|**/AccessToken:**|**/at**| x | x | x | x | x | x | x |
+|**/ClientId:**|**/cid**| | x | | | | | |
+|**/DeployScriptPath:**|**/dsp**| | x | | | | | x |
+|**/DeployReportPath:**|**/drp**| | x | | | | | x |
+|**/Diagnostics:**|**/d**| x | x | x | x | x | x | x |
+|**/ DiagnosticsFile:**|**/DF**| x | x | x | x | x | x | x |
+|**/MaxParallelism:**|**/mp**| x | x | x | x | x | x | x |
+|**/OutputPath:**|**/op**|  |  |  | | x | x | x |
+|**/OverwriteFiles:**|**/of**| x | x | x | | x | x | x |
+|**/Profile:**|**/pr**| | x | | | x | | x |
+|**/Properties:**|**/p**| x | x | x | x | x | | x |
+|**/Quiet:**|**/q**| x | x | x | x | x | x | x |
+|**/Secret:**|**/secr**| | x | | | | | |
+|**/SourceConnectionString:**|**/SCS**| x | x | x | | x | | x | x |
+|**/SourceDatabaseName:**|**/sdn**| x | x | x | | x | | x |
+|**/SourceEncryptConnection:**|**/sec**| x | x | x | | x | | x |
+|**/SourceFile:**|**/sf**| | x | | x | x | | x |
+|**/SourcePassword:**|**/sp**| x | x | x | | x | | x |
+|**/SourceServerName:**|**/ssn**| x | x | x | | x | | x |
+|**/SourceTimeout:**|**/st**| x | x | x | | x | | x |
+|**/SourceTrustServerCertificate:**|**/stsc**| x | x | x | | x | | x |
+|**/SourceUser:**|**/su**| x | x | x | | x | | x |
+|**/TargetConnectionString:**|**/tcs**| | | | x | x | x | x |
+|**/TargetDatabaseName:**|**/tdn**| | x | | x | x | x | x |
+|**/TargetEncryptConnection:**|**/tec**| | x | | x | x | x | x |
+|**/TargetFile:**|**/tf**| x | | x | | x | | x |
+|**/TargetPassword:**|**/tp**| | x | | x | x | x | x |
+|**/TargetServerName:**|**/tsn**| | x | | x | x | x | x |
+|**/TargetTimeout:**|**/tt**| | x | | x | x | x | x |
+|**/TargetTrustServerCertificate:**|**/ttsc**| | x | | x | x | x | x |
+|**/TargetUser:**|**/tu**| | x | | x | x | x | x |
+|**/TenantId:**|**/tid**| x | x | x | x | x | x | x |
+|**/UniversalAuthentication:**|**/ua**| x | x | x | x | x | x | x |
+|**/Variables:**|**/v**| | | | | x | | x |
+
+## <a name="properties"></a>Propiedades
+Algunas propiedades se comparten entre las acciones de SqlPackage.  A continuación se muestra una tabla que resume las propiedades. Para más información, haga clic en las páginas de acción específicas.
+
+| Propiedad | [Extracción](sqlpackage-extract.md#properties-specific-to-the-extract-action) | [Publicar](sqlpackage-publish.md#properties-specific-to-the-publish-action) | [Exportar](sqlpackage-export.md#properties-specific-to-the-export-action) | [Importar](sqlpackage-import.md#properties-specific-to-the-import-action) | [DeployReport](sqlpackage-deploy-drift-report.md#deployreport-action-properties) | [Script](sqlpackage-script.md#properties-specific-to-the-script-action) |
+|---|---|---|---|---|---|---|
+|AdditionalDeploymentContributorArguments=(STRING)| | x | | | x | x |
+|AdditionalDeploymentContributors=(STRING)| | x | | | x | x |
+|AdditionalDeploymentContributorPaths=(STRING)| | x | | | x | x |
+|AllowDropBlockingAssemblies=(BOOLEAN)| | x | | | x | x |
+|AllowIncompatiblePlatform=(BOOLEAN)| | x | | | x | x |
+|AllowUnsafeRowLevelSecurityDataMovement=(BOOLEAN)| | x | | | x | x |
+|BackupDatabaseBeforeChanges=(BOOLEAN)| | x | | | x | x |
+|BlockOnPossibleDataLoss=(BOOLEAN 'True')| | x | | | x | x |
+|BlockWhenDriftDetected=(BOOLEAN 'True')| | x | | | x | x |
+|CommandTimeout=(INT32 '60')| x | x | x | x | x | x |
+|CommentOutSetVarDeclarations=(BOOLEAN)| | x | | | x | x |
+|CompareUsingTargetCollation=(BOOLEAN)| | x | | | x | x |
+|CreateNewDatabase=(BOOLEAN)| | x | | | x | x |
+|DacApplicationDescription=(STRING)| x | | | | | |
+|DacApplicationName=(STRING)| x | | | | | |
+|DacMajorVersion=(INT32 '1')| x | | | | | |
+|DacMinorVersion=(INT32 '0')| x | | | | | |
+|DatabaseEdition=(ENUM 'Default')| | x | | x | x | x |
+|DatabaseLockTimeout=(INT32 '60')| x | x | x | | x | x |
+|DatabaseMaximumSize=(INT32)| | x | | x | x | x |
+|DatabaseServiceObjective=(STRING)| | x | | x | x | x |
+|DeployDatabaseInSingleUserMode=(BOOLEAN)| | x | | | x | x |
+|DisableAndReenableDdlTriggers=(BOOLEAN 'True')| | x | | | x | x |
+|DoNotAlterChangeDataCaptureObjects=(BOOLEAN 'True')| | x | | | x | x |
+|DoNotAlterReplicatedObjects=(BOOLEAN 'True')| | x | | | x | x |
+|DoNotDropObjectType=(STRING)| | x | | | x | x |
+|DoNotDropObjectTypes=(STRING)| | x | | | x | x |
+|DropConstraintsNotInSource=(BOOLEAN 'True')| | x | | | x | x |
+|DropDmlTriggersNotInSource=(BOOLEAN 'True')| | x | | | x | x |
+|DropExtendedPropertiesNotInSource=(BOOLEAN 'True')| | x | | | x | x |
+|DropIndexesNotInSource=(BOOLEAN 'True')| | x | | | x | x |
+|DropObjectsNotInSource=(BOOLEAN)| | x | | | x | x |
+|DropPermissionsNotInSource=(BOOLEAN)| | x | | | x | x |
+|DropRoleMembersNotInSource=(BOOLEAN)| | x | | | x | x |
+|DropStatisticsNotInSource=(BOOLEAN 'True')| | x | | | x | x |
+|ExcludeObjectType=(STRING)| | x | | | x | x |
+|ExcludeObjectTypes=(STRING)| | x | | | x | x |
+|ExtractAllTableData=(BOOLEAN)| x | | | | | |
+|ExtractApplicationScopedObjectsOnly=(BOOLEAN 'True')| x | | | | | |
+|ExtractReferencedServerScopedElements=(BOOLEAN 'True')| x | | | | | |
+|ExtractUsageProperties=(BOOLEAN)| x | | | | | |
+|GenerateSmartDefaults=(BOOLEAN)| | x | | | x | x |
+|IgnoreAnsiNulls=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreAuthorizer=(BOOLEAN)| | x | | | x | x |
+|IgnoreColumnCollation=(BOOLEAN)| | | | | x | x |
+|IgnoreColumnOrder=(BOOLEAN)| | x | | | x | x |
+|IgnoreComments=(BOOLEAN)| | x | | | x | x |
+|IgnoreCryptographicProviderFilePath=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreDdlTriggerOrder=(BOOLEAN)| | x | | | x | x |
+|IgnoreDdlTriggerState=(BOOLEAN)| | x | | | x | x |
+|IgnoreDefaultSchema=(BOOLEAN)| | x | | | x | x |
+|IgnoreDmlTriggerOrder=(BOOLEAN)| | x | | | x | x |
+|IgnoreDmlTriggerState=(BOOLEAN)| | x | | | x | x |
+|IgnoreExtendedProperties=(BOOLEAN)| x | x | | | x | x |
+|IgnoreFileAndLogFilePath=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreFilegroupPlacement=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreFileSize=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreFillFactor=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreFullTextCatalogFilePath=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreIdentitySeed=(BOOLEAN)| | x | | | x | x |
+|IgnoreIncrement=(BOOLEAN)| | x | | | x | x |
+|IgnoreIndexOptions=(BOOLEAN)| | x | | | x | x |
+|IgnoreIndexPadding=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreKeywordCasing=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreLockHintsOnIndexes=(BOOLEAN)| | x | | | x | x |
+|IgnoreLoginSids=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreNotForReplication=(BOOLEAN)| | x | | | x | x |
+|IgnoreObjectPlacementOnPartitionScheme=(BOOLEAN 'True')| | x | | | x | x |
+|IgnorePartitionSchemes=(BOOLEAN)| | x | | | x | x |
+|IgnorePermissions=(BOOLEAN 'True')| x | x | | | x | x |
+|IgnoreQuotedIdentifiers=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreRoleMembership=(BOOLEAN)| | x | | | x | x |
+|IgnoreRouteLifetime=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreSemicolonBetweenStatements=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreTableOptions=(BOOLEAN)| | x | | | x | x |
+|IgnoreTablePartitionOptions=(BOOLEAN)| | x | | | x | x |
+|IgnoreUserLoginMappings=(BOOLEAN)| x | | | | | |
+|IgnoreUserSettingsObjects=(BOOLEAN)| | x | | | x | x |
+|IgnoreWhitespace=(BOOLEAN 'True')| | x | | | x | x |
+|IgnoreWithNocheckOnCheckConstraints=(BOOLEAN)| | x | | | x | |
+|IgnoreWithNocheckOnForeignKeys=(BOOLEAN)| | x | | | x | |
+|ImportContributorArguments=(STRING)| | | | x | | |
+|ImportContributors=(STRING)| | | | x | | |
+|ImportContributorPaths=(STRING)| | | | x | | |
+|IncludeCompositeObjects=(BOOLEAN)| | x | | | x | x |
+|IncludeTransactionalScripts=(BOOLEAN)| | x | | | x | x |
+|LongRunningCommandTimeout=(INT32)| x | x | x | x | x | x |
+|NoAlterStatementsToChangeClrTypes=(BOOLEAN)| | x | | | x | x |
+|PopulateFilesOnFileGroups=(BOOLEAN 'True')| | x | | | x | x |
+|RegisterDataTierApplication=(BOOLEAN)| | x | | | x | x |
+|RunDeploymentPlanExecutors=(BOOLEAN)| | x | | | x | x |
+|ScriptDatabaseCollation=(BOOLEAN)| | x | | | x | x |
+|ScriptDatabaseCompatibility=(BOOLEAN)| | x | | | x | x |
+|ScriptDatabaseOptions=(BOOLEAN 'True')| | x | | | x | x |
+|ScriptDeployStateChecks=(BOOLEAN)| | x | | | x | x |
+|ScriptFileSize=(BOOLEAN)| | x | | | x | x |
+|ScriptNewConstraintValidation=(BOOLEAN 'True')| | x | | | x | x |
+|ScriptRefreshModule=(BOOLEAN 'True')| | x | | | x | x |
+|Storage=({File&#124;Memory} 'File')| x | x | x | x | x | x |
+|TableData=(STRING)| x | | x | | | |
+|TargetEngineVersion=(ENUM 'Latest')| | | x | | | |
+|TempDirectoryForTableData=(STRING)| x | | x | | | |
+|TreatVerificationErrorsAsWarnings=(BOOLEAN)| | x | | | x | x |
+|UnmodifiableObjectWarnings=(BOOLEAN 'True')| | x | | | x | x |
+|VerifyCollationCompatibility=(BOOLEAN 'True')| | x | | | x | x |
+|VerifyDeployment=(BOOLEAN 'True')| | x | | | x | x |
+|VerifyExtraction=(BOOLEAN)| x | | | | | |
+|VerifyFullTextDocumentTypesSupported=(BOOLEAN)| | | x | | | |
 
 
 ## <a name="next-steps"></a>Pasos siguientes

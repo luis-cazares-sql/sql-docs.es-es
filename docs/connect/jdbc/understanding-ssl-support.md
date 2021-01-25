@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 073f3b9e-8edd-4815-88ea-de0655d0325e
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: aa20ac9d4118e5fec4dbaf225d27c9db8257a88f
-ms.sourcegitcommit: cb620c77fe6bdefb975968837706750c31048d46
+ms.openlocfilehash: 62cf191ec41e71084dbe3ca85230108f9fc712b0
+ms.sourcegitcommit: 0576ce6d7c9c5514306a90e27fa621ef25825186
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86393123"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98575717"
 ---
 # <a name="understanding-encryption-support"></a>Descripción de la compatibilidad con cifrado
 
@@ -79,7 +79,7 @@ Durante el protocolo de enlace TLS, el servidor envía su certificado de clave p
   
 - El nombre común (CN) del asunto o un nombre DNS del nombre alternativo de sujeto (SAN) del certificado debe coincidir exactamente con el valor **serverName** especificado en la cadena de conexión o, si se ha especificado, con el valor de la propiedad **hostNameInCertificate**.  
   
-- Un nombre DNS puede incluir caracteres comodín. Pero [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] no admite la coincidencia de caracteres comodín. Es decir, abc.com no coincide con \*.com, pero \*.com sí coincide con \*.com.  
+- Un nombre DNS puede incluir caracteres comodín. La versión anterior 7.2, [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)], no admite la coincidencia de caracteres comodín. Es decir, abc.com no coincide con \*.com, pero \*.com sí coincide con \*.com. Con la versión 7.2 y versiones posteriores, se admite la coincidencia de caracteres comodín de certificado estándar.  
   
 ## <a name="see-also"></a>Consulte también
 
