@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: a0227cd8-6944-4547-87e8-7b2507e26442
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: f2e7bc60bcfd7578d70528d92ef025370c28134e
-ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
+ms.openlocfilehash: 6e980e075f23d3a943870fc6dd02aa420797f8a4
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "92194764"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596482"
 ---
 # <a name="sql-server-destination"></a>SQL Server, destino
 
@@ -117,7 +117,7 @@ ms.locfileid: "92194764"
   
 ## <a name="related-content"></a>Contenido relacionado  
   
--   Artículo técnico, sobre la [posible aparición del error "No se puede preparar la inserción masiva de SSIS para la inserción de datos" en sistemas habilitados para UAC](https://go.microsoft.com/fwlink/?LinkId=199482), en support.microsoft.com.  
+-   Artículo técnico, sobre la [posible aparición del error "No se puede preparar la inserción masiva de SSIS para la inserción de datos" en sistemas habilitados para UAC](/troubleshoot/sql/integration-services/error-you-run-ssis-package), en support.microsoft.com.  
   
 -   Artículo técnico, [The Data Loading Performance Guide](/previous-versions/sql/sql-server-2008/dd425070(v=sql.100)), en msdn.microsoft.com.  
   
@@ -206,4 +206,3 @@ ms.locfileid: "92194764"
   
 ## <a name="see-also"></a>Consulte también  
  [Flujo de datos](../../integration-services/data-flow/data-flow.md)  
-  

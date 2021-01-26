@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: f3059e42-5f6f-4a64-903c-86dca212a4b4
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: bab0801b0193d9f675ef69e566eef375f0930e5b
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
+ms.openlocfilehash: ce637e88679747faf40ec7f262ceaea3c0f01f5f
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98170867"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688894"
 ---
 # <a name="alter-server-configuration-transact-sql"></a>ALTER SERVER CONFIGURATION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -184,13 +184,13 @@ Establece el nivel de registro para clústeres de conmutación por error de SQL 
 En escenarios de conmutación por error de recursos, la DLL de recursos de SQL Server puede obtener un archivo de volcado antes de que se produzca una conmutación por error. Esto se aplica a las tecnologías FCI y de grupo de disponibilidad. Cuando el archivo DLL de recurso de SQL Server determina que se ha producido un error en un recurso de SQL Server, la DLL usa la utilidad Sqldumper.exe para obtener un archivo de volcado de memoria del proceso de SQL Server. Para asegurarse de que la utilidad Sqldumper.exe genera correctamente el archivo de volcado de memoria tras la conmutación por error del recurso, debe establecer las tres propiedades siguientes como requisitos previos: SqlDumperDumpTimeOut, SqlDumperDumpPath, SqlDumperDumpFlags.
 
 SQLDUMPEREDUMPFLAGS  
-Determina el tipo de archivos de volcado generados por la utilidad SQLDumper de SQL Server. El valor predeterminado es 0. Para esta configuración se usan valores decimales, en lugar de hexadecimales. Para el minivolcado use 288, para el minivolcado con memoria indirecta 296 y, para el volcado filtrado, 33024. Para obtener más información, vea el artículo de Knowledgebase sobre la [utilidad SQLDumper de SQL Server](https://go.microsoft.com/fwlink/?LinkId=206173).  
+Determina el tipo de archivos de volcado generados por la utilidad SQLDumper de SQL Server. El valor predeterminado es 0. Para esta configuración se usan valores decimales, en lugar de hexadecimales. Para el minivolcado use 288, para el minivolcado con memoria indirecta 296 y, para el volcado filtrado, 33024. Para obtener más información, vea el artículo de Knowledgebase sobre la [utilidad SQLDumper de SQL Server](/troubleshoot/sql/tools/use-sqldumper-generate-dump-file).  
   
 SQLDUMPERDUMPPATH = { 'os_file_path' | DEFAULT }  
-Ubicación donde la utilidad SQLDumper almacena los archivos de volcado. Para obtener más información, vea el artículo de Knowledgebase sobre la [utilidad SQLDumper de SQL Server](https://go.microsoft.com/fwlink/?LinkId=206173).  
+Ubicación donde la utilidad SQLDumper almacena los archivos de volcado. Para obtener más información, vea el artículo de Knowledgebase sobre la [utilidad SQLDumper de SQL Server](/troubleshoot/sql/tools/use-sqldumper-generate-dump-file).  
   
 SQLDUMPERDUMPTIMEOUT = { 'dump_time-out' | DEFAULT }  
-Valor de tiempo de espera en milisegundos para que la utilidad SQLDumper genere un volcado en caso de un error de SQL Server. El valor predeterminado es 0, lo que significa que no hay ningún límite de tiempo para completar el volcado. Para obtener más información, vea el artículo de Knowledgebase sobre la [utilidad SQLDumper de SQL Server](https://go.microsoft.com/fwlink/?LinkId=206173).  
+Valor de tiempo de espera en milisegundos para que la utilidad SQLDumper genere un volcado en caso de un error de SQL Server. El valor predeterminado es 0, lo que significa que no hay ningún límite de tiempo para completar el volcado. Para obtener más información, vea el artículo de Knowledgebase sobre la [utilidad SQLDumper de SQL Server](/troubleshoot/sql/tools/use-sqldumper-generate-dump-file).  
   
  FAILURECONDITIONLEVEL = { 'failure_condition_level' | DEFAULT }  
  Condiciones bajo las que la instancia de clúster de conmutación por error de SQL Server debe realizar la conmutación por error o reiniciarse. El valor predeterminado es 3, lo que significa que el recurso de SQL Server producirá la conmutación por error o se reiniciará en errores de servidor críticos. Para obtener más información sobre cómo configurar esta propiedad, vea [Configurar los valores de la propiedad FailureConditionLevel](../../sql-server/failover-clusters/windows/configure-failureconditionlevel-property-settings.md).  
@@ -484,4 +484,3 @@ GO
 [sys.dm_os_memory_nodes &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-nodes-transact-sql.md)   
 [sys.dm_os_buffer_pool_extension_configuration &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-buffer-pool-extension-configuration-transact-sql.md)   
 [Extensión del grupo de búferes](../../database-engine/configure-windows/buffer-pool-extension.md)  
-  

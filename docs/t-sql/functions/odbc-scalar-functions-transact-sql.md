@@ -53,17 +53,17 @@ ms.assetid: a0df1ac2-6699-4ac0-8f79-f362f23496f1
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6510f4310126667ac8d48382c6ff3a856b37da00
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 0fbc4c09e7d00c8836f7c3efd17dbfe660cd669a
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97402304"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597123"
 ---
 # <a name="odbc-scalar-functions-transact-sql"></a>Funciones escalares de ODBC (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  Puede usar [funciones escalares ODBC](https://go.microsoft.com/fwlink/?LinkID=88579) en instrucciones [!INCLUDE[tsql](../../includes/tsql-md.md)]. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] interpreta estas instrucciones. Se pueden utilizar en procedimientos almacenados y funciones definidas por el usuario. Entre estas últimas se incluyen funciones de cadena, de número, de hora, de fecha, de intervalo y de sistema.  
+  Puede usar [funciones escalares ODBC](../../odbc/reference/appendixes/appendix-e-scalar-functions.md) en instrucciones [!INCLUDE[tsql](../../includes/tsql-md.md)]. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] interpreta estas instrucciones. Se pueden utilizar en procedimientos almacenados y funciones definidas por el usuario. Entre estas últimas se incluyen funciones de cadena, de número, de hora, de fecha, de intervalo y de sistema.  
   
 ## <a name="usage"></a>Uso  
  ```syntaxsql
@@ -251,4 +251,4 @@ SELECT {fn WEEK( @date_exp )};
 ```  
   
 ## <a name="see-also"></a>Consulte también  
- [Funciones integradas &#40;Transact-SQL&#41;](~/t-sql/functions/functions.md)  
+ [Funciones integradas &#40;Transact-SQL&#41;](~/t-sql/functions/functions.md)

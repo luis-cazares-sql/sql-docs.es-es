@@ -12,12 +12,12 @@ ms.assetid: 32bd8af8-a832-4dc8-afff-01668e6b2b51
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1fa0db66c75fd0fc45f02dd768f69659c96d739b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 891abb94a3f9ac00edf910d5e8a830c7adee0b0f
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97440209"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597229"
 ---
 # <a name="database-engine-tutorials"></a>Tutoriales del motor de base de datos
 [!INCLUDE [SQL Server Azure SQL Database](../includes/applies-to-version/sql-asdb.md)]
@@ -26,7 +26,7 @@ Esta sección contiene los tutoriales de [!INCLUDE[ssDECurrent](../includes/ssde
 [Tutorial: Introducción al motor de base de datos](../relational-databases/tutorial-getting-started-with-the-database-engine.md)  
 En este tutorial se enseña cómo conectarse a una instancia de [!INCLUDE[ssDE](../includes/ssde-md.md)].  
   
-[Tutorial: SQL Server Management Studio](../ssms/quickstarts/connect-query-sql-server.md)  
+[Tutorial: SQL Server Management Studio](../ssms/quickstarts/ssms-connect-query-sql-server.md)  
 Este tutorial le muestra el entorno integrado para administrar la infraestructura de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] . [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] presenta una interfaz gráfica para configurar, supervisar y administrar instancias de [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]. También permite implementar, supervisar y actualizar los componentes de capa de datos usados por las aplicaciones, como bases de datos y almacenamientos de datos. [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] también proporciona editores de lenguaje de [!INCLUDE[tsql](../includes/tsql-md.md)], MDX, DMX y XML para editar y depurar scripts.  
   
 [Tutorial: Escribir instrucciones Transact-SQL](../t-sql/tutorial-writing-transact-sql-statements.md)  
@@ -56,5 +56,4 @@ Este tutorial le ayudará a saber cómo almacenar archivos de datos de SQL Serv
 ## <a name="see-also"></a>Consulte también  
 [Tutoriales de SQL Server 2016](../sql-server/tutorials-for-sql-server-2016.md)  
 [Wiki de TechNet: Ejemplos de SQL Server 2012](https://go.microsoft.com/fwlink/?linkID=220734)  
-  
   

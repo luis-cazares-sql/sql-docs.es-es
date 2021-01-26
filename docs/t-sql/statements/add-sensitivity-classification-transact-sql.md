@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.custom: ''
 ms.date: 06/10/2020
 monikerRange: " >= sql-server-linux-ver15 || >= sql-server-ver15 || = azuresqldb-current"
-ms.openlocfilehash: a9654a26ff748afa039ac5b0d2088135eea6a796
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 8aa8b00a9a24513eb925ef113db94caaea0cfe50
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97466036"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688842"
 ---
 # <a name="add-sensitivity-classification-transact-sql"></a>ADD SENSITIVITY CLASSIFICATION (Transact-SQL)
 
@@ -38,7 +38,7 @@ Agrega metadatos sobre la clasificación de confidencialidad a una o varias colu
 
 Para SQL Server, se incluyó por primera vez en SQL Server 2019.
 
-La clasificación de datos confidenciales en su entorno de base de datos le ayuda a lograr mayor visibilidad y una mejor protección. Puede encontrar información adicional en [Clasificación y detección de datos de Azure SQL Database](https://aka.ms/sqlip).
+La clasificación de datos confidenciales en su entorno de base de datos le ayuda a lograr mayor visibilidad y una mejor protección. Puede encontrar información adicional en [Clasificación y detección de datos de Azure SQL Database](/azure/azure-sql/database/data-discovery-and-classification-overview).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -129,5 +129,5 @@ ADD SENSITIVITY CLASSIFICATION TO
 
 - [DROP SENSITIVITY CLASSIFICATION (Transact-SQL)](../../t-sql/statements/drop-sensitivity-classification-transact-sql.md)
 - [sys.sensitivity_classifications (Transact-SQL)](../../relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql.md)
-- [Permisos (motor de base de datos)](https://docs.microsoft.com/sql/relational-databases/security/permissions-database-engine)
-- [Clasificación y detección de datos de Azure SQL Database](https://aka.ms/sqlip)
+- [Permisos (motor de base de datos)](../../relational-databases/security/permissions-database-engine.md)
+- [Clasificación y detección de datos de Azure SQL Database](/azure/azure-sql/database/data-discovery-and-classification-overview)

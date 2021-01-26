@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 6a854486d1867e84bcd9b13cb148d3026a41d51f
-ms.sourcegitcommit: d819173fb91af6f20ca6ee59686c35c71b060fbc
+ms.openlocfilehash: c6611fcc392d37545f50e12fa8007923d8bc5846
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797791"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596351"
 ---
 # <a name="mssqlserver_17890"></a>MSSQLSERVER_17890
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -154,7 +154,7 @@ Antes de asignar el permiso del usuario Bloquear páginas en la memoria, asegúr
 
 - Antes de configurar las opciones Memoria máxima del servidor y Memoria mínima del servidor para varias instancias de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], tenga en cuenta los requisitos de memoria del grupo que no es de búferes para cada instancia de SQL Server. A continuación, configure estas opciones para cada instancia de SQL Server.
 
-Lo ideal es recopilar esta información de línea de base durante las cargas máximas. Por lo tanto, puede determinar los requisitos de memoria para diferentes aplicaciones y componentes a fin de admitir la carga máxima. Los requisitos de memoria varían de un sistema a otro, en función de las actividades y las aplicaciones que se ejecutan en el sistema. Puede consultar la información que se proporciona en la vista de administración dinámica sys.dm_os_process_memory para comprender si el sistema encuentra condiciones de memoria insuficiente. Para más información, consulte [sys.dm_os_process_memory (Transact-SQL)](/sql/relational-databases/system-dynamic-management-views/sys-dm-os-process-memory-transact-sql).
+Lo ideal es recopilar esta información de línea de base durante las cargas máximas. Por lo tanto, puede determinar los requisitos de memoria para diferentes aplicaciones y componentes a fin de admitir la carga máxima. Los requisitos de memoria varían de un sistema a otro, en función de las actividades y las aplicaciones que se ejecutan en el sistema. Puede consultar la información que se proporciona en la vista de administración dinámica sys.dm_os_process_memory para comprender si el sistema encuentra condiciones de memoria insuficiente. Para más información, consulte [sys.dm_os_process_memory (Transact-SQL)](../system-dynamic-management-views/sys-dm-os-process-memory-transact-sql.md).
 
 ## <a name="improvements-added-in-windows-server-2008-and-r2-version"></a>Mejoras agregadas en Windows Server 2008 y R2
 

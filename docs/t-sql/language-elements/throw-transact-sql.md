@@ -19,17 +19,17 @@ ms.assetid: 43661b89-8f13-4480-ad53-70306cbb14c5
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a1ad3ea0844911d5059cc2445c2978c3866f2916
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: d91c59aced8b4b649474fdac0b89c3df6e77b4a8
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98100306"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765533"
 ---
 # <a name="throw-transact-sql"></a>THROW (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  Genera una excepción y transfiere la ejecución a un bloque CATCH de una construcción TRY…CATCH en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+  Genera una excepción y transfiere la ejecución a un bloque CATCH de una construcción TRY…CATCH en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].  
   
  ![Icono de vínculo de tema](../../database-engine/configure-windows/media/topic-link.gif "Icono de vínculo de tema") [Convenciones de sintaxis de Transact-SQL](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   

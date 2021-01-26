@@ -13,12 +13,12 @@ ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 475cda1238efc6a7c4b630d4458c719dc1b9adbd
-ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
+ms.openlocfilehash: 4bdf43c821bd278e6080e6f9244f3bb169388653
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98534596"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596250"
 ---
 # <a name="query-columns-using-always-encrypted-with-sql-server-management-studio"></a>Consulta de columnas mediante Always Encrypted con SQL Server Management Studio
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -90,7 +90,7 @@ Si no habilita Always Encrypted para una conexión, el proveedor de datos de .NE
 Puede habilitar o deshabilitar Always Encrypted cuando cree una conexión nueva o cambie una conexión existente mediante el cuadro de diálogo **Conectar a servidor**. 
 
 Para habilitar (deshabilitar) Always Encrypted:
-1. Abra el cuadro de diálogo **Conectar a servidor** (consulte [Conectarse a una instancia de SQL Server](../../../ssms/quickstarts/connect-query-sql-server.md#connect-to-a-sql-server-instance) para obtener más información).
+1. Abra el cuadro de diálogo **Conectar a servidor** (consulte [Conectarse a una instancia de SQL Server](../../../ssms/quickstarts/ssms-connect-query-sql-server.md#connect-to-a-sql-server-instance) para obtener más información).
 1. Haga clic en **Opciones >>** .
 1. Si utiliza SSMS 18 o una versión más reciente:
     1. Seleccione la pestaña **Always Encrypted**.

@@ -37,12 +37,12 @@ ms.assetid: 29ddac46-7a0f-4151-bd94-75c1908c89f8
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-current||=azuresqldb-mi-current||=azure-sqldw-latest||>=aps-pdw-2016'
-ms.openlocfilehash: 7898cec5362efc7902623993f568600271c033d5
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
+ms.openlocfilehash: 5321af1026b82d2ed49f077d7cf5604bce3a8e69
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98171617"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98689034"
 ---
 # <a name="create-database"></a>CREATE DATABASE
 
@@ -276,7 +276,7 @@ Las opciones siguientes se permiten solo cuando CONTAINMENT se ha establecido en
 
 - **PERSISTENT_LOG_BUFFER=ON ( DIRECTORY_NAME='' )**
 
-  Cuando se especifica esta opción, se crea el búfer de registro de transacciones en un volumen que se encuentra en un dispositivo de disco respaldado por la memoria de clase de almacenamiento (almacenamiento permanente de NVDIMM-N), también conocido como un búfer de registro persistente. Para más información, consulte [Transaction Commit latency acceleration using Storage Class Memory](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2016/12/02/transaction-commit-latency-acceleration-using-storage-class-memory-in-windows-server-2016sql-server-2016-sp1/) (Aceleración de latencia de confirmación de transacciones con memoria de clase de almacenamiento). **Válido para**: [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] y versiones más recientes.
+  Cuando se especifica esta opción, se crea el búfer de registro de transacciones en un volumen que se encuentra en un dispositivo de disco respaldado por la memoria de clase de almacenamiento (almacenamiento permanente de NVDIMM-N), también conocido como un búfer de registro persistente. Para más información, consulte [Transaction Commit latency acceleration using Storage Class Memory](/archive/blogs/sqlserverstorageengine/transaction-commit-latency-acceleration-using-storage-class-memory-in-windows-server-2016sql-server-2016-sp1) (Aceleración de latencia de confirmación de transacciones con memoria de clase de almacenamiento). **Válido para**: [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] y versiones más recientes.
 
 FOR ATTACH [ WITH \< attach_database_option > ] Especifica que la base de datos se crea al [adjuntar](../../relational-databases/databases/database-detach-and-attach-sql-server.md) un conjunto existente de archivos del sistema operativo. Debe haber una entrada \<filespec> que especifique el archivo principal. Las demás entradas \<filespec> obligatorias son las correspondientes a los archivos con una ruta de acceso diferente de la que tenían al crear la base de datos o cuando se adjuntó por última vez. Se debe especificar una entrada \<filespec> para estos archivos.
 
@@ -489,7 +489,7 @@ A menos que se especifique `FOR ATTACH`, todas las bases de datos nuevas heredan
 
 ## <a name="viewing-database-information"></a>Ver la información de la base de datos
 
-Se pueden utilizar vistas de catálogo, funciones del sistema y procedimientos almacenados del sistema para devolver información sobre bases de datos, archivos y grupos de archivos. Para obtener más información, vea [Vistas del sistema](https://msdn.microsoft.com/library/35a6161d-7f43-4e00-bcd3-3091f2015e90).
+Se pueden utilizar vistas de catálogo, funciones del sistema y procedimientos almacenados del sistema para devolver información sobre bases de datos, archivos y grupos de archivos. Para obtener más información, vea [Vistas del sistema](../language-reference.md).
 
 ## <a name="permissions"></a>Permisos
 
@@ -966,7 +966,7 @@ CREATE DATABASE database_name
 
 ## <a name="arguments"></a>Argumentos
 
-*database_name* El nombre de la nueva base de datos. Este nombre debe ser único en el elemento [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] y debe cumplir las reglas de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para los identificadores. Para obtener más información, consulte [Identificadores](https://go.microsoft.com/fwlink/p/?LinkId=180386).
+*database_name* El nombre de la nueva base de datos. Este nombre debe ser único en el elemento [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] y debe cumplir las reglas de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para los identificadores. Para obtener más información, consulte [Identificadores](../../relational-databases/databases/database-identifiers.md).
 
 *Collation_name* especifica la intercalación predeterminada de la base de datos. El nombre de intercalación puede ser un nombre de intercalación de Windows o un nombre de intercalación de SQL. Si no se especifica, a la base de datos se le asigna la intercalación predeterminada, que es SQL_Latin1_General_CP1_CI_AS.
 
@@ -1015,7 +1015,7 @@ MAXSIZE especifica el tamaño máximo de la base de datos. El valor de MAXSIZE d
 |1024 GB|N/D|N/D|√|√|√ (D)|
 |Desde 1024 GB hasta 4096 GB en incrementos de 256 GB* |N/D|N/D|N/D|N/A|√|√|
 
-\* P11 y P15 permiten un valor de MAXSIZE de hasta 4 TB, con 1024 GB como tamaño predeterminado. P11 y P15 pueden usar hasta 4 TB de almacenamiento incluido sin cargos adicionales. En el nivel Premium, un valor de MAXSIZE mayor de 1 TB está actualmente disponible en las regiones siguientes: Este de EE. UU. 2, Oeste de EE. UU., US Gov Virginia, Oeste de Europa, Centro de Alemania, Sudeste de Asia, Este de Japón, Este de Australia, Centro de Canadá y Este de Canadá. Para obtener más información sobre las limitaciones de recursos para el modelo de DTU, consulte [Límites de recursos de DTU](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits).
+\* P11 y P15 permiten un valor de MAXSIZE de hasta 4 TB, con 1024 GB como tamaño predeterminado. P11 y P15 pueden usar hasta 4 TB de almacenamiento incluido sin cargos adicionales. En el nivel Premium, un valor de MAXSIZE mayor de 1 TB está actualmente disponible en las regiones siguientes: Este de EE. UU. 2, Oeste de EE. UU., US Gov Virginia, Oeste de Europa, Centro de Alemania, Sudeste de Asia, Este de Japón, Este de Australia, Centro de Canadá y Este de Canadá. Para obtener más información sobre las limitaciones de recursos para el modelo de DTU, consulte [Límites de recursos de DTU](/azure/sql-database/sql-database-dtu-resource-limits).
 
 El valor MAXSIZE para el modelo de DTU, si se especifica, tiene que ser válido según lo que se indica en la tabla anterior para el nivel de servicio especificado.
 
@@ -1111,7 +1111,7 @@ El valor MAXSIZE para el modelo de DTU, si se especifica, tiene que ser válido 
 |:----- | -------: | -------: | -------: | -------: | -------: |
 |Tamaño máximo de datos (GB)|1280|1536|2048|4096|4096|
 
-Si no se establece ningún valor de `MAXSIZE` al utilizar el modelo de núcleo virtual, el valor predeterminado es 32 GB. Para obtener más información sobre las limitaciones de recursos para el modelo basado en núcleo virtual, vea [Límites de recursos del núcleo virtual](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits).
+Si no se establece ningún valor de `MAXSIZE` al utilizar el modelo de núcleo virtual, el valor predeterminado es 32 GB. Para obtener más información sobre las limitaciones de recursos para el modelo basado en núcleo virtual, vea [Límites de recursos del núcleo virtual](/azure/sql-database/sql-database-dtu-resource-limits).
 
 Las reglas siguientes se aplican a los argumentos MAXSIZE y EDITION:
 
@@ -1132,10 +1132,10 @@ SERVICE_OBJECTIVE
 
   - Especifica el tamaño de proceso (objetivo de servicio). Los valores disponibles para el objetivo de servicio son: `HS_GEN4_1` `HS_GEN4_2` `HS_GEN4_4` `HS_GEN4_8` `HS_GEN4_16`, `HS_GEN4_24`, `HS_Gen5_2`, `HS_Gen5_4`, `HS_Gen5_8`, `HS_Gen5_16`, `HS_Gen5_24`, `HS_Gen5_32`, `HS_Gen5_48`, `HS_Gen5_80`.
 
-Para obtener las descripciones de los objetivos de servicio y más información sobre las combinaciones de tamaño, ediciones y objetivos de servicio, vea [¿Qué son los niveles de servicio de Azure SQL Database?](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers). Si EDITION no admite el valor SERVICE_OBJECTIVE especificado, se devuelve un error. Para cambiar el valor SERVICE_OBJECTIVE de un nivel a otro (por ejemplo, de S1 a P1), también debe cambiar el valor EDITION. Para conocer las descripciones de los objetivos de servicio y obtener más información sobre las combinaciones de tamaño, ediciones y objetivos de servicio, consulte [Niveles de servicio y niveles de rendimiento de Azure SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-service-tiers/), [Límites de recursos de DTU](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits) y [Límites de recursos del núcleo virtual](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits). Se ha quitado la compatibilidad para los objetivos de servicio de PRS. Si tiene preguntas, use este alias de correo electrónico: premium-rs@microsoft.com.
+Para obtener las descripciones de los objetivos de servicio y más información sobre las combinaciones de tamaño, ediciones y objetivos de servicio, vea [¿Qué son los niveles de servicio de Azure SQL Database?](/azure/sql-database/sql-database-service-tiers). Si EDITION no admite el valor SERVICE_OBJECTIVE especificado, se devuelve un error. Para cambiar el valor SERVICE_OBJECTIVE de un nivel a otro (por ejemplo, de S1 a P1), también debe cambiar el valor EDITION. Para conocer las descripciones de los objetivos de servicio y obtener más información sobre las combinaciones de tamaño, ediciones y objetivos de servicio, consulte [Niveles de servicio y niveles de rendimiento de Azure SQL Database](/azure/azure-sql/database/purchasing-models), [Límites de recursos de DTU](/azure/sql-database/sql-database-dtu-resource-limits) y [Límites de recursos del núcleo virtual](/azure/sql-database/sql-database-dtu-resource-limits). Se ha quitado la compatibilidad para los objetivos de servicio de PRS. Si tiene preguntas, use este alias de correo electrónico: premium-rs@microsoft.com.
 
 ELASTIC_POOL (name = \<elastic_pool_name>) **Se aplica a:** Solo bases de datos únicas y agrupadas. No se aplica a bases de datos en el nivel de servicio Hyperscale.
-Para crear una base de datos en un grupo de bases de datos elásticas, establezca el valor SERVICE_OBJECTIVE de la base de datos en ELASTIC_POOL e indique el nombre del grupo. Para obtener más información, vea [Create and manage a SQL Database elastic pool](https://azure.microsoft.com/documentation/articles/sql-database-elastic-pool-portal/) (Creación y administración de un grupo elástico de SQL Database).
+Para crear una base de datos en un grupo de bases de datos elásticas, establezca el valor SERVICE_OBJECTIVE de la base de datos en ELASTIC_POOL e indique el nombre del grupo. Para obtener más información, vea [Create and manage a SQL Database elastic pool](/azure/azure-sql/database/elastic-pool-overview) (Creación y administración de un grupo elástico de SQL Database).
 
 AS COPY OF [source_server_name.]source_database_name **Se aplica a:** Solo bases de datos únicas y agrupadas.
 Para copiar una base de datos al mismo o a otro servidor de [!INCLUDE[ssSDS](../../includes/sssds-md.md)].
@@ -1172,12 +1172,12 @@ Cuando se completa correctamente el proceso de copia, la base de datos de destin
 Se aplican las siguientes reglas semánticas y de sintaxis al uso del argumento `AS COPY OF`:
 
 - El nombre del servidor de origen y el nombre del servidor del destino de la copia pueden ser iguales o diferentes. Si son iguales, este parámetro es opcional y se usa el contexto de servidor de la sesión actual de forma predeterminada.
-- Los nombres de las bases de datos de origen y de destino deben especificarse, ser únicos y ajustarse a las reglas de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para los identificadores. Para obtener más información, consulte [Identificadores](https://go.microsoft.com/fwlink/p/?LinkId=180386).
+- Los nombres de las bases de datos de origen y de destino deben especificarse, ser únicos y ajustarse a las reglas de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para los identificadores. Para obtener más información, consulte [Identificadores](../../relational-databases/databases/database-identifiers.md).
 - La instrucción `CREATE DATABASE` debe ejecutarse dentro del contexto de la base de datos maestra del servidor [!INCLUDE[ssSDS](../../includes/sssds-md.md)] donde se creará la nueva base de datos.
 - Una vez finalizada la copia, la base de datos de destino debe administrarse como una base de datos independiente. Puede ejecutar las instrucciones `ALTER DATABASE` y `DROP DATABASE` en la nueva base de datos de forma independiente de la base de datos de origen. También puede copiar la nueva base de datos en otra base de datos nueva.
 - Se puede seguir teniendo acceso a la base de datos de origen mientras la copia de la base de datos está en curso.
 
-Para obtener más información, consulte [Crear una copia de una base de datos de SQL Azure mediante Transact-SQL](https://azure.microsoft.com/documentation/articles/sql-database-copy-transact-sql/).
+Para obtener más información, consulte [Crear una copia de una base de datos de SQL Azure mediante Transact-SQL](/azure/azure-sql/database/database-copy).
 
 > [!IMPORTANT]
 > De forma predeterminada, la copia de la base de datos se crea con la misma redundancia de almacenamiento de copia de seguridad que la de la base de datos de origen. No se admite el cambio de la redundancia de almacenamiento de copia de seguridad al crear una copia de base de datos a través de T-SQL. 
@@ -1328,7 +1328,7 @@ CREATE DATABASE database_name [ COLLATE collation_name ]
 
 ## <a name="arguments"></a>Argumentos
 
-*database_name* El nombre de la nueva base de datos. Este nombre debe ser único en el servidor SQL Server y debe cumplir las reglas de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para los identificadores. Para obtener más información, consulte [Identificadores](https://go.microsoft.com/fwlink/p/?LinkId=180386).
+*database_name* El nombre de la nueva base de datos. Este nombre debe ser único en el servidor SQL Server y debe cumplir las reglas de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para los identificadores. Para obtener más información, consulte [Identificadores](../../relational-databases/databases/database-identifiers.md).
 
 *Collation_name* especifica la intercalación predeterminada de la base de datos. El nombre de intercalación puede ser un nombre de intercalación de Windows o un nombre de intercalación de SQL. Si no se especifica, a la base de datos se le asigna la intercalación predeterminada, que es SQL_Latin1_General_CP1_CI_AS.
 
@@ -1432,11 +1432,11 @@ CREATE DATABASE database_name [ COLLATE collation_name ]
 
 ## <a name="arguments"></a>Argumentos
 
-*database_name* El nombre de la nueva base de datos. Este nombre debe ser único en el servidor SQL, que puede hospedar tanto bases de datos de [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] como de [!INCLUDE[ssSDW](../../includes/sssdw-md.md)], y cumplir con las reglas de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para identificadores. Para obtener más información, consulte [Identificadores](https://go.microsoft.com/fwlink/p/?LinkId=180386).
+*database_name* El nombre de la nueva base de datos. Este nombre debe ser único en el servidor SQL, que puede hospedar tanto bases de datos de [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] como de [!INCLUDE[ssSDW](../../includes/sssdw-md.md)], y cumplir con las reglas de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para identificadores. Para obtener más información, consulte [Identificadores](../../relational-databases/databases/database-identifiers.md).
 
 *collation_name* Especifica la intercalación predeterminada de la base de datos. El nombre de intercalación puede ser un nombre de intercalación de Windows o un nombre de intercalación de SQL. Si no se especifica, a la base de datos se le asigna la intercalación predeterminada, que es SQL_Latin1_General_CP1_CI_AS.
 
-Para obtener más información sobre los nombres de intercalación de Windows y SQL, consulte [COLLATE (Transact-SQL)](https://msdn.microsoft.com/library/ms184391.aspx).
+Para obtener más información sobre los nombres de intercalación de Windows y SQL, consulte [COLLATE (Transact-SQL)](./collations.md).
 
 *EDITION* Especifica el nivel de servicio de la base de datos. Para [!INCLUDE[ssSDW](../../includes/sssdw-md.md)], use "datawarehouse".
 
@@ -1450,7 +1450,7 @@ El tamaño máximo permitido para la base de datos. La base de datos no puede su
 
 Tamaño máximo permitido para los datos de almacenamiento de filas de la base de datos. Los datos almacenados en tablas de almacenamiento de filas, en el almacén delta de un índice de almacén de columnas o en un índice no agrupado de un índice de almacén de columnas agrupado no pueden superar el valor de MAXSIZE. Los datos comprimidos en formato de almacén de columnas no tienen un límite de tamaño y no están restringidos por el valor de MAXSIZE.
 
-SERVICE_OBJECTIVE Especifica el tamaño de proceso (objetivo de servicio). Para más información sobre los objetivos de servicio para Azure Synapse, consulte [Unidades de almacenamiento de datos (DWU)](https://docs.microsoft.com/azure/sql-data-warehouse/what-is-a-data-warehouse-unit-dwu-cdwu).
+SERVICE_OBJECTIVE Especifica el tamaño de proceso (objetivo de servicio). Para más información sobre los objetivos de servicio para Azure Synapse, consulte [Unidades de almacenamiento de datos (DWU)](/azure/sql-data-warehouse/what-is-a-data-warehouse-unit-dwu-cdwu).
 
 ## <a name="general-remarks"></a>Notas generales
 
@@ -1458,7 +1458,7 @@ Use [DATABASEPROPERTYEX](../../t-sql/functions/databasepropertyex-transact-sql.m
 
 Use [ALTER DATABASE - Azure Synapse Analytics](../../t-sql/statements/alter-database-transact-sql.md?view=aps-pdw-2016-au7&preserve-view=true) para cambiar el tamaño máximo o los valores del objetivo de servicio más adelante.
 
-Azure Synapse se establece en COMPATIBILITY_LEVEL 130 y no se puede cambiar. Para más información, vea [Rendimiento de consultas mejorado con el nivel de compatibilidad 130 en Azure SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-compatibility-level-query-performance-130/).
+Azure Synapse se establece en COMPATIBILITY_LEVEL 130 y no se puede cambiar. Para más información, vea [Rendimiento de consultas mejorado con el nivel de compatibilidad 130 en Azure SQL Database](./alter-database-transact-sql-compatibility-level.md).
 
 ## <a name="permissions"></a>Permisos
 

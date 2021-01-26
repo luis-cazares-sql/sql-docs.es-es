@@ -26,12 +26,12 @@ ms.assetid: 11855b56-c554-495d-aad4-ba446990153b
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 021c8e18b0767fcd844a92f598b4fbcb434740a4
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: f9279883c9f032574e32056b2360a5947ffba022
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98097289"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766203"
 ---
 # <a name="datename-transact-sql"></a>DATENAME (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -135,7 +135,7 @@ Use `DATENAME` en las cláusulas siguientes:
 + SELECT \<list>
 + WHERE
   
-En [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)], DATENAME convierte implícitamente los literales de cadena como un tipo **datetime2**. Esto significa que `DATENAME` no admite el formato año-día-mes cuando la fecha se pasa como una cadena. La cadena se debe convertir explícitamente a un tipo **datetime** o **smalldatetime** para poder usar el formato año-día-mes.
+En [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], DATENAME convierte implícitamente los literales de cadena como un tipo **datetime2**. Esto significa que `DATENAME` no admite el formato año-día-mes cuando la fecha se pasa como una cadena. La cadena se debe convertir explícitamente a un tipo **datetime** o **smalldatetime** para poder usar el formato año-día-mes.
   
 ## <a name="examples"></a>Ejemplos  
 En este ejemplo se devuelven las partes de fecha para la fecha especificada. Sustituya un valor *datepart* de la tabla para el argumento `datepart` en la instrucción SELECT:

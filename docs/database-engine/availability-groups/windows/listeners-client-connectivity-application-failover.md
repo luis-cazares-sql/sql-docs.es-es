@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 76fb3eca-6b08-4610-8d79-64019dd56c44
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: c0578d5522ca998e7243fd20b77daf8d3705bd85
-ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
+ms.openlocfilehash: 145f061ff1926bc9a93244226dbd36b6ffaf9de8
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97878928"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765917"
 ---
 # <a name="connect-to-an-always-on-availability-group-listener"></a>Conexión a un agente de escucha del grupo de disponibilidad Always On 
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -121,7 +121,7 @@ Alternativamente, en la migración de creación de reflejo de la base de datos a
 > [!NOTE]  
 >  Se recomienda esta configuración para las conexiones de una red y de varias subredes a los agentes de escucha del grupo de disponibilidad y a los nombres de instancia de clúster de conmutación por error de SQL Server.  La habilitación de esta opción agrega optimizaciones adicionales, incluso en escenarios de una sola subred.  
   
- La opción de conexión **MultiSubnetFailover** funciona únicamente con el protocolo de red TCP y solo se admite en la conexión a un agente de escucha del grupo de disponibilidad y para cualquier nombre de red virtual que se conecta a [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)].  
+ La opción de conexión **MultiSubnetFailover** funciona únicamente con el protocolo de red TCP y solo se admite en la conexión a un agente de escucha del grupo de disponibilidad y para cualquier nombre de red virtual que se conecta a [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)].  
   
  El siguiente es un ejemplo de cadena de conexión del proveedor ADO.NET (System.Data.SqlClient) que habilita la conmutación por error de varias subredes:  
   

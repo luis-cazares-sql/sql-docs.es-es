@@ -9,12 +9,12 @@ ms.technology: security
 ms.topic: how-to
 author: rupp29
 ms.author: arupp
-ms.openlocfilehash: 85be425e0e352961841f5317c7db219153a6c008
-ms.sourcegitcommit: 9122251ab8bbd46ea3c699e741d6842c995195fa
+ms.openlocfilehash: 8d3f89803711e96cb1e37adc9792c54bceb259c4
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91847790"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596502"
 ---
 # <a name="sql-server-connector-error-and-information-logging"></a>Error del Conector de SQL Server y registro de la información
 
@@ -24,7 +24,7 @@ En este artículo se describe la modificación de entradas del registro para hab
 
 El [Conector de SQL Server para Microsoft Azure Key Vault](https://www.microsoft.com/download/details.aspx?id=45344) permite el cifrado de SQL Server para usar Microsoft Azure Key Vault como proveedor de administración extensible de claves (EKM) con el fin de proteger sus claves de cifrado.
 
-La [descarga](https://www.microsoft.com/download/details.aspx?id=45344) incluye el Conector de SQL Server y los scripts de ejemplo para permitir que un administrador de SQL Server obtenga información sobre cómo configurar el Conector de SQL Server y habilitar escenarios de cifrado de SQL Server. Para más información, vea [Administración extensible de claves con Azure Key Vault (SQL Server)](https://go.microsoft.com/fwlink/p/?LinkId=521690).
+La [descarga](https://www.microsoft.com/download/details.aspx?id=45344) incluye el Conector de SQL Server y los scripts de ejemplo para permitir que un administrador de SQL Server obtenga información sobre cómo configurar el Conector de SQL Server y habilitar escenarios de cifrado de SQL Server. Para más información, vea [Administración extensible de claves con Azure Key Vault (SQL Server)](./extensible-key-management-using-azure-key-vault-sql-server.md).
 
 Use el [foro de Azure Key Vault](https://social.msdn.microsoft.com/Forums/AzureKeyVault) para formular preguntas, compartir información y hablar sobre el Conector de SQL Server.
 

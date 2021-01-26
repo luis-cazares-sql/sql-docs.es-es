@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 836ad79e049d7c5613755e64ca441f9ed5d73048
-ms.sourcegitcommit: d819173fb91af6f20ca6ee59686c35c71b060fbc
+ms.openlocfilehash: f48534e104139ee7cbd4eb7602fce2a8e51eeb73
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797822"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597143"
 ---
 # <a name="mssqlserver_6522"></a>MSSQLSERVER_6522
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -205,7 +205,7 @@ Supongamos que el tipo de datos MyDateTime ocupa 9 bytes en el almacenamiento.
 ## <a name="references"></a>Referencias
 
 - Para obtener más información sobre la versión del ensamblado, consulte la [documentación retirada de Visual Studio 2005](https://www.microsoft.com/download/details.aspx?id=55984).
-- Para obtener más información sobre cómo actualizar un ensamblado, consulte [ALTER ASSEMBLY (Transact-SQL)](/sql/t-sql/statements/alter-assembly-transact-sql).
-- Para obtener más información sobre cómo colocar un ensamblado, consulte [DROP ASSEMBLY (Transact-SQL)](/sql/t-sql/statements/drop-assembly-transact-sql).
-- Para obtener más información sobre cómo registrar un ensamblado en una base de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], consulte [CREATE ASSEMBLY (Transact-SQL)](/sql/t-sql/statements/create-assembly-transact-sql)
-- Para más información acerca de la utilidad Bcp.exe, consulte [https://msdn2.microsoft.com/library/ms162802.aspx](/sql/tools/bcp-utility).
+- Para obtener más información sobre cómo actualizar un ensamblado, consulte [ALTER ASSEMBLY (Transact-SQL)](../../t-sql/statements/alter-assembly-transact-sql.md).
+- Para obtener más información sobre cómo colocar un ensamblado, consulte [DROP ASSEMBLY (Transact-SQL)](../../t-sql/statements/drop-assembly-transact-sql.md).
+- Para obtener más información sobre cómo registrar un ensamblado en una base de datos de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], consulte [CREATE ASSEMBLY (Transact-SQL)](../../t-sql/statements/create-assembly-transact-sql.md)
+- Para más información acerca de la utilidad Bcp.exe, consulte [https://msdn2.microsoft.com/library/ms162802.aspx](../../tools/bcp-utility.md).

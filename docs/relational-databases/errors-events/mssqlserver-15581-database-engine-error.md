@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: f1221474d86d95400ca955d64b4a0812cffe1c0d
-ms.sourcegitcommit: f87f2f0f1edc91fe400040d8e3a5810347aa8d70
+ms.openlocfilehash: 018252ff40ebf2ea7bd52b34f03ed25ef124a8d7
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96868919"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596315"
 ---
 # <a name="mssqlserver_15581"></a>MSSQLSERVER_15581
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -51,7 +51,7 @@ go
 alter master key drop encryption by service master key
 ```
 
-La clave maestra de servicio se usa para cifrar el certificado utilizado por la clave maestra de la base de datos. Cualquier intento de usar la base de datos habilitada para TDE requiere acceso a la clave maestra de la base de datos en la base de datos maestra. Una clave maestra que no esté cifrada por la clave maestra de servicio debe abrirse mediante la instrucción [OPEN MASTER KEY (Transact-SQL)](/sql/t-sql/statements/open-master-key-transact-sql) junto con una contraseña en cada sesión que necesite acceso a la clave maestra. Como este comando no se puede ejecutar en sesiones del sistema, la recuperación no se puede completar en las bases de datos habilitadas para TDE.
+La clave maestra de servicio se usa para cifrar el certificado utilizado por la clave maestra de la base de datos. Cualquier intento de usar la base de datos habilitada para TDE requiere acceso a la clave maestra de la base de datos en la base de datos maestra. Una clave maestra que no esté cifrada por la clave maestra de servicio debe abrirse mediante la instrucción [OPEN MASTER KEY (Transact-SQL)](../../t-sql/statements/open-master-key-transact-sql.md) junto con una contraseña en cada sesión que necesite acceso a la clave maestra. Como este comando no se puede ejecutar en sesiones del sistema, la recuperación no se puede completar en las bases de datos habilitadas para TDE.
 
 ## <a name="user-action"></a>Acción del usuario
 

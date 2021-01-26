@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 9f2feb3c-ea9b-4992-8202-2aeed4f9a6dd
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 5a23a2b4e5af84f74010d00c0d9e24c23d02146c
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 3a87c7b4dc37a7b1a70b31b9d7b9191a3570db98
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97644203"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98764756"
 ---
 # <a name="prepare-a-secondary-database-for-an-always-on-availability-group"></a>Preparación de una base de datos secundaria para un grupo de disponibilidad Always On
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -180,7 +180,7 @@ En este tema se describe cómo preparar una base de datos de un grupo de disponi
         > [!IMPORTANT]  
         >  Si los nombres de las rutas de acceso de las bases de datos principal y secundaria son distintos, no se puede agregar ningún archivo. Esto es debido a que al recibir el registro para la operación de agregar un archivo, la instancia del servidor de la réplica secundaria intenta colocar el nuevo archivo en la misma ruta de acceso utilizada por la base de datos principal.  
   
-         Por ejemplo, el siguiente comando restaura una copia de seguridad de una base de datos principal que reside en el directorio de datos de la instancia predeterminada de [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)], C:\Archivos de programa\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA. La operación de restauración de base de datos debe mover la base de datos al directorio de datos de una instancia remota de [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] denominada (*AlwaysOn1*), que hospeda la réplica secundaria en otro nodo de clúster. Allí, los archivos de registro y datos se restauran en el directorio *C:\Archivos de programa\Microsoft SQL Server\MSSQL13.Always On1\MSSQL\DATA* . La operación de restauración usa WITH NORECOVERY para la base de datos secundaria en la base de datos de restauración.  
+         Por ejemplo, el siguiente comando restaura una copia de seguridad de una base de datos principal que reside en el directorio de datos de la instancia predeterminada de [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)], C:\Archivos de programa\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA. La operación de restauración de base de datos debe mover la base de datos al directorio de datos de una instancia remota de [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] denominada (*AlwaysOn1*), que hospeda la réplica secundaria en otro nodo de clúster. Allí, los archivos de registro y datos se restauran en el directorio *C:\Archivos de programa\Microsoft SQL Server\MSSQL13.Always On1\MSSQL\DATA* . La operación de restauración usa WITH NORECOVERY para la base de datos secundaria en la base de datos de restauración.  
   
         ```  
         RESTORE DATABASE MyDB1  
