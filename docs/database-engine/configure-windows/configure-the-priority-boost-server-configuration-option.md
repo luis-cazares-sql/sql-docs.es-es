@@ -13,17 +13,17 @@ helpviewer_keywords:
 ms.assetid: 765f1e83-dd52-44fb-b0c8-1078f213607b
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 2d2793ad9a8b92efd65cba0be745fc3ad77f715e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: c8889fd32fc0d494260bf73e790cdb3a428201d4
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85785887"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783650"
 ---
 # <a name="configure-the-priority-boost-server-configuration-option"></a>Establecer la opción de configuración del servidor Aumento de prioridad
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  En este tema se describe cómo configurar la opción de configuración de **aumento de prioridad** en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)]. Use la opción **Aumento de prioridad** para especificar si [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] debe ejecutarse con una prioridad de programación de [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows 2008 o Windows 2008 R2 superior a la de otros procesos del mismo equipo. Si establece esta opción en 1, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] se ejecutará con una prioridad base de 13 en el programador de Windows 2008 o Windows Server 2008 R2. El valor predeterminado es 0, que equivale a una prioridad base de 7.  
+  En este tema se describe cómo configurar la opción de configuración de **aumento de prioridad** en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)]. Use la opción **Aumento de prioridad** para especificar si [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] debe ejecutarse con una prioridad de programación de [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows 2008 o Windows 2008 R2 superior a la de otros procesos del mismo equipo. Si establece esta opción en 1, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] se ejecutará con una prioridad base de 13 en el programador de Windows 2008 o Windows Server 2008 R2. El valor predeterminado es 0, que equivale a una prioridad base de 7.  
   
 > [!IMPORTANT]  
 >  [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)]  

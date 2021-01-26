@@ -19,16 +19,16 @@ helpviewer_keywords:
 ms.assetid: 220584d8-b291-43ae-b036-fbba3cc07a2e
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 7703c4ebe7c05dd266866170bf499f3d370ee6c9
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+ms.openlocfilehash: b93fbfea46931eb460b842a3a34ae13853726792
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867127"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766367"
 ---
 # <a name="define-an-article"></a>Definir un artículo
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
-  En este tema se describe cómo definir un artículo en [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] mediante [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)], [!INCLUDE[tsql](../../../includes/tsql-md.md)]o Replication Management Objects (RMO).  
+  En este tema se describe cómo definir un artículo en [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] mediante [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)], [!INCLUDE[tsql](../../../includes/tsql-md.md)]o Replication Management Objects (RMO).  
   
  **En este tema**  
   
@@ -133,7 +133,7 @@ ms.locfileid: "91867127"
   
  [!code-sql[HowTo#sp_AddTranArticle](../../../relational-databases/replication/codesnippet/tsql/define-an-article_1.sql)]  
   
- En este ejemplo se definen artículos para una publicación de mezcla, donde el artículo `SalesOrderHeader` se filtra estáticamente según **SalesPersonID**y el artículo `SalesOrderDetail` se filtra por combinación según `SalesOrderHeader`.  
+ En este ejemplo se definen artículos para una publicación de mezcla, donde el artículo `SalesOrderHeader` se filtra estáticamente según **SalesPersonID** y el artículo `SalesOrderDetail` se filtra por combinación según `SalesOrderHeader`.  
   
  [!code-sql[HowTo#sp_AddMergeArticle](../../../relational-databases/replication/codesnippet/tsql/define-an-article_2.sql)]  
   

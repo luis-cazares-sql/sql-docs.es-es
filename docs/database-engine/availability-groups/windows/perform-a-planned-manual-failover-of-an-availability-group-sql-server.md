@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 419f655d-3f9a-4e7d-90b9-f0bab47b3178
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 3cf135ca98a61382e12973b93eb30ab06ad6f4dd
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 663861d552b619b199e6279353f5bbdcf6658f24
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642574"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783389"
 ---
 # <a name="perform-a-planned-manual-failover-of-an-always-on-availability-group-sql-server"></a>Realización de una conmutación por error manual planeada de un grupo de disponibilidad Always On (SQL Server)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
-En este tema se describe cómo realizar una conmutación por error manual sin pérdida de datos (una *conmutación por error manual planeada*) en un grupo de disponibilidad AlwaysOn mediante [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)], [!INCLUDE[tsql](../../../includes/tsql-md.md)]o PowerShell en [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]. Un grupo de disponibilidad realiza la conmutación por error en el nivel de réplica de disponibilidad. Una conmutación por error planeada, al igual que cualquier conmutación por error de un grupo de disponibilidad AlwaysOn, realiza la transición de una réplica secundaria a un rol principal. Al mismo tiempo, la conmutación por error realiza la transición de la réplica principal antigua al rol secundario.  
+En este tema se describe cómo realizar una conmutación por error manual sin pérdida de datos (una *conmutación por error manual planeada*) en un grupo de disponibilidad AlwaysOn mediante [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)], [!INCLUDE[tsql](../../../includes/tsql-md.md)]o PowerShell en [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]. Un grupo de disponibilidad realiza la conmutación por error en el nivel de réplica de disponibilidad. Una conmutación por error planeada, al igual que cualquier conmutación por error de un grupo de disponibilidad AlwaysOn, realiza la transición de una réplica secundaria a un rol principal. Al mismo tiempo, la conmutación por error realiza la transición de la réplica principal antigua al rol secundario.  
   
 Una conmutación por error manual planeada solo se admite cuando la réplica principal y la réplica secundaria de destino se ejecutan en modo de confirmación sincrónica y están sincronizadas. Una conmutación por error manual planeada conserva todos los datos de las bases de datos secundarias que se unen al grupo de disponibilidad en la réplica secundaria de destino. Después de que la réplica principal antigua realiza la transición al rol secundario, sus bases de datos se convierten en bases de datos secundarias. A continuación, pueden empezar a sincronizarse con las bases de datos principales. Después de que todas realicen la transición al estado SYNCHRONIZED, la nueva réplica secundaria es apta para actuar como destino de una conmutación por error manual planeada futura.  
   
@@ -94,7 +94,7 @@ Una conmutación por error manual planeada solo se admite cuando la réplica pri
 2. Use el cmdlet **Switch-SqlAvailabilityGroup** . 
   
     > [!NOTE] 
-    >  Para ver la sintaxis de un cmdlet, use el cmdlet **Get-Help** en el entorno de [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] PowerShell. Para más información, consulte [Obtener ayuda de SQL Server PowerShell](../../../powershell/sql-server-powershell.md). 
+    >  Para ver la sintaxis de un cmdlet, use el cmdlet **Get-Help** en el entorno de [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] PowerShell. Para más información, consulte [Obtener ayuda de SQL Server PowerShell](../../../powershell/sql-server-powershell.md). 
   
      En el ejemplo siguiente, se realiza manualmente una conmutación por error del grupo de disponibilidad *MyAg* a la réplica secundaria que tiene la ruta de acceso especificada: 
   

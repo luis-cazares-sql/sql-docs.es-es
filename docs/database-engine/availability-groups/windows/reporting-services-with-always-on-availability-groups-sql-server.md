@@ -14,24 +14,24 @@ ms.assetid: edeb5c75-fb13-467e-873a-ab3aad88ab72
 author: cawrites
 ms.author: chadam
 manager: erikre
-ms.openlocfilehash: 306a200cadc535ea9da3d5d21dcd74fb15cf278c
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: cf6d3f8e77591e9791fe2e8dc57175f1393716ff
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97641532"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783272"
 ---
 # <a name="reporting-services-with-always-on-availability-groups-sql-server"></a>Reporting Services con Grupos de disponibilidad AlwaysOn (SQL Server)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-  Este tema contiene información acerca de la configuración de [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] para que funcione con [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] (AG) en [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]. Los tres escenarios para usar [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] y [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] son las bases de datos para orígenes de datos de informes, las bases de datos del servidor de informes y el diseñador de informes. La funcionalidad admitida y la configuración requerida son diferentes para los tres escenarios.  
+  Este tema contiene información acerca de la configuración de [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] para que funcione con [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] (AG) en [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]. Los tres escenarios para usar [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] y [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] son las bases de datos para orígenes de datos de informes, las bases de datos del servidor de informes y el diseñador de informes. La funcionalidad admitida y la configuración requerida son diferentes para los tres escenarios.  
   
  Una ventaja clave del uso de [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] con los orígenes de datos [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] es aprovechar las réplicas secundarias legibles como un origen de datos de informes, al mismo tiempo que las réplicas secundarias proporcionan una base de datos principal.  
   
  Para obtener información general sobre [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)], vea las [preguntas más frecuentes sobre Always On en SQL Server 2012 (../../../sql-server/index.yml)](../../../sql-server/index.yml).  
 
 ##  <a name="requirements-for-using-reporting-services-and-always-on-availability-groups"></a><a name="bkmk_requirements"></a> Requisitos para usar Reporting Services y Grupos de disponibilidad AlwaysOn  
- [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] y Power BI Report Server usan .NET Framework 4.0 y admiten las propiedades de cadena de conexión de [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] para su uso con orígenes de datos.  
+ [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] y Power BI Report Server usan .NET Framework 4.0 y admiten las propiedades de cadena de conexión de [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] para su uso con orígenes de datos.  
   
  Para usar [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] con  [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] 2014 y anteriores, deberá descargar e instalar una revisión para .NET 3.5 SP1. La revisión agrega compatibilidad con las características de SQL Client para AG y con las propiedades de cadenas de conexión **ApplicationIntent** y **MultiSubnetFailover**. Si la revisión no se instala en cada equipo que hospeda un servidor de informes, los usuarios que intenten obtener la vista previa de los informes verán un mensaje de error similar al siguiente y el mensaje de error se escribirá en el registro de seguimiento del servidor de informes:  
   

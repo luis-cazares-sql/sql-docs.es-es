@@ -16,18 +16,18 @@ author: markingmyname
 ms.author: maghan
 ms.custom: ''
 ms.date: 02/18/2020
-ms.openlocfilehash: 79dc463039be1100f265e6bb44561a6e2dc71c93
-ms.sourcegitcommit: bf5acef60627f77883249bcec4c502b0205300a4
+ms.openlocfilehash: a4cdc32bd0514be768ac8ed1723fc88840a7e930
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88200955"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783422"
 ---
 # <a name="change-server-authentication-mode"></a>Cambio del modo de autenticación del servidor
 
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-En este tema se describe cómo cambiar el modo de autenticación del servidor en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)]. Durante la instalación, [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] se establece en **Modo de autenticación de Windows** o **Modo de autenticación de Windows y SQL Server**. Tras la instalación, puede cambiar el modo de autenticación en cualquier momento.
+En este tema se describe cómo cambiar el modo de autenticación del servidor en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)]. Durante la instalación, [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] se establece en **Modo de autenticación de Windows** o **Modo de autenticación de Windows y SQL Server**. Tras la instalación, puede cambiar el modo de autenticación en cualquier momento.
 
 Si se selecciona **Modo de autenticación de Windows** durante la instalación, el inicio de sesión de sa está deshabilitado y el programa de instalación asigna una contraseña. Si posteriormente se cambia al **Modo de autenticación de Windows y SQL Server**, el inicio de sesión de sa permanece deshabilitado. Para usar el inicio de sesión de sa, use la instrucción ALTER LOGIN para habilitar el inicio de sesión de sa y asignar una nueva contraseña. El inicio de sesión de sa solo se puede conectar al servidor mediante la autenticación de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .
 
@@ -51,11 +51,11 @@ Puede habilitar el inicio de sesión **sa** con SSMS o T-SQL.
 
 ### <a name="use-ssms"></a>Usar SSMS
 
-1. En el Explorador de objetos, expanda **Seguridad**, expanda Inicios de sesión, haga clic con el botón derecho en **sa**y, después, haga clic en **Propiedades**.
+1. En el Explorador de objetos, expanda **Seguridad**, expanda Inicios de sesión, haga clic con el botón derecho en **sa** y, después, haga clic en **Propiedades**.
 
 2. En la página **General**, es posible que tenga que crear y confirmar una contraseña para el inicio de sesión de **sa**.
 
-3. En la página **Estado** , en la sección **Inicio de sesión** , haga clic en **Habilitado**y, a continuación, en **Aceptar**.
+3. En la página **Estado** , en la sección **Inicio de sesión** , haga clic en **Habilitado** y, a continuación, en **Aceptar**.
 
 ### <a name="using-transact-sql"></a>Usar Transact-SQL
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 05606de8-90c3-451a-938d-1ed34211dad7
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: b2fe841ef1b914f275878fa61ad40fe2a016a4a5
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: d3585a187d11ee97e409d196c81ddb00643bb3ac
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97644085"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98782977"
 ---
 # <a name="database-mirroring-witness"></a>Database Mirroring Witness
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "97644085"
   
  ![Instancia de servidor que es testigo de dos bases de datos](../../database-engine/database-mirroring/media/dbm-witness-in-2-sessions.gif "Instancia de servidor que es testigo de dos bases de datos")  
   
- Una sola instancia de servidor también puede funcionar simultáneamente como testigo en unas sesiones y como asociado en otras. Sin embargo, en la práctica, las instancias de servidor suelen funcionar o como testigo o como asociado. Esto se debe a que los asociados requieren equipos complejos que tienen hardware suficiente para admitir una base de datos de producción, mientras que los testigos se pueden ejecutar en cualquier sistema de Windows disponible que admita [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ Una sola instancia de servidor también puede funcionar simultáneamente como testigo en unas sesiones y como asociado en otras. Sin embargo, en la práctica, las instancias de servidor suelen funcionar o como testigo o como asociado. Esto se debe a que los asociados requieren equipos complejos que tienen hardware suficiente para admitir una base de datos de producción, mientras que los testigos se pueden ejecutar en cualquier sistema de Windows disponible que admita [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].  
   
 ##  <a name="software-and-hardware-recommendations"></a><a name="SwHwRecommendations"></a> Recomendaciones de software y hardware  
  Es muy recomendable que el testigo se encuentre en un equipo diferente de los asociados. Los asociados de creación de reflejo de la base de datos solo se admiten en la edición [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Standard y [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Enterprise. Por el contrario, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Workgroup y [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Express también admiten los testigos. Excepto durante una actualización de una versión anterior de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], todas las instancias de servidor de una sesión de creación de reflejo deben ejecutar la misma versión de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Por ejemplo, se admite un testigo de [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] al actualizar desde una configuración de creación de reflejo de [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] pero no se puede agregar a una configuración de creación de reflejo existente o nueva de [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] o posterior.  

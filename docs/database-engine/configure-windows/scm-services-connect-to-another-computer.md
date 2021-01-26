@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: c4c1e94f-4f5f-431e-8b5b-d5ff97baf723
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: e4a2ca1eea0ec4b42bba65b62525bb6d86e52c88
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: b178e38f6e59499ddf74e9a8aaec037bbaa4d442
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85651352"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783453"
 ---
 # <a name="scm-services---connect-to-another-computer"></a>Servicios SCM - Conectarse a otro equipo
 
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-En este artículo se describe cómo conectar con otro equipo en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Siga el primer procedimiento para abrir [!INCLUDE[msCoName](../../includes/msconame-md.md)] Management Console (mmc) de Administración de equipos de Windows, conéctese al equipo y expanda el árbol Servicios y Aplicaciones. Siga el segundo procedimiento para crear un archivo con un vínculo al Administrador de configuración de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] en un equipo remoto.
+En este artículo se describe cómo conectar con otro equipo en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. Siga el primer procedimiento para abrir [!INCLUDE[msCoName](../../includes/msconame-md.md)] Management Console (mmc) de Administración de equipos de Windows, conéctese al equipo y expanda el árbol Servicios y Aplicaciones. Siga el segundo procedimiento para crear un archivo con un vínculo al Administrador de configuración de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] en un equipo remoto.
 
 > [!NOTE]
 > Algunas acciones no se pueden realizar mediante el Administrador de configuración cuando se conecta de forma remota.
@@ -41,7 +41,7 @@ Para iniciar, detener, pausar o reanudar servicios en otro equipo, también pued
 
    Administración de equipos muestra los servicios que se ejecutan en el equipo remoto. El nodo de nivel superior cambia a **Administración de equipos** \<*remotecomputer*>.
 
-4. En el árbol de consola, expanda **Servicios y aplicaciones**y, a continuación, expanda **Administrador de configuración de SQL Server** para administrar los servicios del equipo remoto.
+4. En el árbol de consola, expanda **Servicios y aplicaciones** y, a continuación, expanda **Administrador de configuración de SQL Server** para administrar los servicios del equipo remoto.
 
 ### <a name="to-save-a-link-to-sql-server-configuration-manager-for-another-computer"></a>Para guardar un vínculo al Administrador de configuración de SQL Server para otro equipo
 
@@ -55,9 +55,9 @@ Para iniciar, detener, pausar o reanudar servicios en otro equipo, también pued
 7. En la ventana **Agregar un complemento independiente** , haga clic en **Cerrar**.
 8. En la ventana **Agregar o quitar complemento** , haga clic en **Aceptar**.
 9. Expanda **Administración de equipos (** _\<computer name>_ **)** y **Servicios y Aplicaciones**.
-10. Haga clic con el botón derecho en **Administrador de configuración de SQL Server**y, después, haga clic en **Nueva ventana desde aquí**.
-11. En el menú **Ventana**, haga clic en **Raíz de consola**para regresar a la primera ventana y eliminar la ventana.
-12. En el menú **Archivo** , haga clic en **Guardar como**y guarde el archivo en la carpeta que desee, con un nombre adecuado con la extensión de archivo **.msc** . Cierre [!INCLUDE[msCoName](../../includes/msconame-md.md)] Management Console.
+10. Haga clic con el botón derecho en **Administrador de configuración de SQL Server** y, después, haga clic en **Nueva ventana desde aquí**.
+11. En el menú **Ventana**, haga clic en **Raíz de consola** para regresar a la primera ventana y eliminar la ventana.
+12. En el menú **Archivo** , haga clic en **Guardar como** y guarde el archivo en la carpeta que desee, con un nombre adecuado con la extensión de archivo **.msc** . Cierre [!INCLUDE[msCoName](../../includes/msconame-md.md)] Management Console.
 13. Para abrir el Administrador de configuración de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] en el equipo de destino, haga doble clic en el archivo. Si lo desea, guarde un vínculo al archivo en el escritorio o en el menú **Inicio** .
 
 > [!CAUTION]

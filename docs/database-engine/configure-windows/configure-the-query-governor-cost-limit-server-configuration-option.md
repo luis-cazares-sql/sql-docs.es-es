@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: e7b8f084-1052-4133-959b-cebf4add790f
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 02b34ab8d3c0a3efd79d7d136bf26401ba92fdf4
-ms.sourcegitcommit: bf8cf755896a8c964774a438f2bd461a2a648c22
+ms.openlocfilehash: 7004a0a7b7322fc939b5df21d40c389dc4a3dc6a
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88216730"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783672"
 ---
 # <a name="configure-the-query-governor-cost-limit-server-configuration-option"></a>Configurar la opción de configuración del servidor Límite de costo de regulador de consultas
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-En este tema se describe cómo establecer la opción de configuración del servidor **límite de costo de regulador de consultas** en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)]. La opción del límite de costo especifica un límite superior en el costo estimado permitido para que se ejecute una consulta determinada. El costo de consulta es una figura abstracta determinada por el optimizador de consultas en función de los requisitos de ejecución estimados, como el tiempo de CPU, la memoria y la E/S de disco. Hace referencia al tiempo estimado, en segundos, que se necesitaría para completar una consulta con una configuración de hardware específica. Esta figura abstracta no equivale al tiempo necesario para completar una consulta en la instancia en ejecución. Debe tratarse como una medida relativa. El valor predeterminado de esta opción es 0, que establece el regulador de consultas en OFF. Establecer el valor en 0 permite que todas las consultas se ejecuten sin limitación de tiempo. Si especifica un valor positivo distinto de cero, el regulador de consultas no permitirá la ejecución de ninguna consulta que tenga un costo estimado superior a ese valor.   
+En este tema se describe cómo establecer la opción de configuración del servidor **límite de costo de regulador de consultas** en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)]. La opción del límite de costo especifica un límite superior en el costo estimado permitido para que se ejecute una consulta determinada. El costo de consulta es una figura abstracta determinada por el optimizador de consultas en función de los requisitos de ejecución estimados, como el tiempo de CPU, la memoria y la E/S de disco. Hace referencia al tiempo estimado, en segundos, que se necesitaría para completar una consulta con una configuración de hardware específica. Esta figura abstracta no equivale al tiempo necesario para completar una consulta en la instancia en ejecución. Debe tratarse como una medida relativa. El valor predeterminado de esta opción es 0, que establece el regulador de consultas en OFF. Establecer el valor en 0 permite que todas las consultas se ejecuten sin limitación de tiempo. Si especifica un valor positivo distinto de cero, el regulador de consultas no permitirá la ejecución de ninguna consulta que tenga un costo estimado superior a ese valor.   
   
  **En este tema**  
   

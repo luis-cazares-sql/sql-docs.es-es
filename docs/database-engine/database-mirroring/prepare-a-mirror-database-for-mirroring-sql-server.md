@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: 8676f9d8-c451-419b-b934-786997d46c2b
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 1fa476693286b32cb2910526bb0ea7431faa5120
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 1996d9610067e7db52c538b20df0680fbc741548
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642169"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766388"
 ---
 # <a name="prepare-a-mirror-database-for-mirroring-sql-server"></a>Preparar una base de datos reflejada para la creación de reflejo (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Para poder empezar una sesión de creación de reflejo de la base de datos, el propietario de la base de datos o el administrador del sistema debe asegurarse de que la base de datos reflejada se ha creado y está preparada para la creación de reflejo. La creación de una base de datos reflejada requiere como mínimo que se haga una copia de seguridad completa de la base de datos principal y la subsiguiente copia de seguridad de registros, y que ambas se restauren en la instancia del servidor reflejado mediante WITH NORECOVERY.  
   
- En este tema se describe cómo preparar una base de datos reflejada en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)].  
+ En este tema se describe cómo preparar una base de datos reflejada en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)].  
   
 -   **Antes de empezar:**  
   
@@ -52,7 +52,7 @@ ms.locfileid: "97642169"
   
 -   Las instancias de servidor principal y reflejado deben ejecutarse en la misma versión de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Aunque es posible que el servidor reflejado tenga una versión posterior de SQL Server, esta configuración solo se recomienda durante un proceso de actualización planeado cuidadosamente. En tal configuración, se corre el riesgo de una conmutación por error automática, en la que el movimiento de datos se suspende automáticamente debido a que los datos no pueden pasarse a una versión inferior de SQL Server. Para más información, consulte [Upgrading Mirrored Instances](../../database-engine/database-mirroring/upgrading-mirrored-instances.md).  
   
--   Las instancias de servidor principal y reflejado deben ejecutarse en la misma edición de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Para más información sobre la compatibilidad con la creación de reflejo de la base de datos en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)], vea [Ediciones y características admitidas de SQL Server 2017](~/sql-server/editions-and-components-of-sql-server-2017.md).  
+-   Las instancias de servidor principal y reflejado deben ejecutarse en la misma edición de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Para más información sobre la compatibilidad con la creación de reflejo de la base de datos en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], vea [Ediciones y características admitidas de SQL Server 2017](~/sql-server/editions-and-components-of-sql-server-2017.md).  
   
 -   La base de datos debe usar el modelo de recuperación completa.  
   

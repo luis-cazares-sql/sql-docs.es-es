@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 888c8448-933b-41e3-8aa1-c206bc0cdb78
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 8ab8099b514027c69b32427c27c22ed06614150e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 4ddf0184fd7a1bd95290fa2a041d2fede09f90bf
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85715584"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783212"
 ---
 # <a name="configure-the-remote-query-timeout-server-configuration-option"></a>Establecer la opción de configuración del servidor Tiempo de espera de consulta remota
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  En este tema se describe cómo establecer la opción de configuración del servidor **tiempo de espera de consultas remotas** en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)]. La opción de **tiempo de espera de consultas remotas** especifica cuánto tiempo, en segundos, puede tardar una operación remota antes de que [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] supere el tiempo de espera. El valor predeterminado de esta opción es 600, lo que permite una espera de 10 minutos. Este valor se aplica a una conexión saliente iniciada por el [!INCLUDE[ssDE](../../includes/ssde-md.md)] como una consulta remota. Este valor no afecta a las consultas recibidas por el [!INCLUDE[ssDE](../../includes/ssde-md.md)]. Para deshabilitar el tiempo de espera, establezca el valor en 0. Una consulta esperará hasta que finalice.  
+  En este tema se describe cómo establecer la opción de configuración del servidor **tiempo de espera de consultas remotas** en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)]. La opción de **tiempo de espera de consultas remotas** especifica cuánto tiempo, en segundos, puede tardar una operación remota antes de que [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] supere el tiempo de espera. El valor predeterminado de esta opción es 600, lo que permite una espera de 10 minutos. Este valor se aplica a una conexión saliente iniciada por el [!INCLUDE[ssDE](../../includes/ssde-md.md)] como una consulta remota. Este valor no afecta a las consultas recibidas por el [!INCLUDE[ssDE](../../includes/ssde-md.md)]. Para deshabilitar el tiempo de espera, establezca el valor en 0. Una consulta esperará hasta que finalice.  
   
  En el caso de las consultas heterogéneas, la opción de **tiempo de espera de consultas remotas** especifica los segundos (inicializados en el objeto de comando mediante la propiedad de conjunto de filas DBPROP_COMMANDTIMEOUT) que un proveedor remoto debe esperar a los conjuntos de resultados antes de que se agote el tiempo de espera de la consulta. Este valor se utiliza también para establecer DBPROP_GENERALTIMEOUT, si el proveedor remoto lo admite. Esto hará que se agote el tiempo de espera de todas las demás operaciones después del número de segundos especificado.  
   

@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: edbab896-42bb-4d17-8d75-e92ca11f7abb
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: ec3a84dc54dcaf373f8fd817c259602c7901410d
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: e1a2fe365ff2cf40e1dd7e08e113a586e7c2b666
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642543"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783525"
 ---
 # <a name="prerequisites-restrictions-and-recommendations-for-always-on-availability-groups"></a>Requisitos previos, restricciones y recomendaciones para grupos de disponibilidad Always On
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "97642543"
 >  Antes de implementar [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)], le recomendamos encarecidamente que lea todas las secciones de este tema.  
     
 ##  <a name="net-hotfixes-that-support-availability-groups"></a><a name="DotNetHotfixes"></a> Revisiones de .NET que admiten Grupos de disponibilidad  
- Según los componentes y características de [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] que use con [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)], puede que tenga que instalar las revisiones de .NET adicionales identificadas en la tabla siguiente. Las revisiones pueden instalarse en cualquier orden.  
+ Según los componentes y características de [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] que use con [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)], puede que tenga que instalar las revisiones de .NET adicionales identificadas en la tabla siguiente. Las revisiones pueden instalarse en cualquier orden.  
   
 |Característica dependiente|Revisión|Vínculo|  
 |-----------------------|------------|----------|  

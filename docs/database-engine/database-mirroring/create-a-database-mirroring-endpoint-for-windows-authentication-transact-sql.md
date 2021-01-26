@@ -17,16 +17,16 @@ helpviewer_keywords:
 ms.assetid: baf1a4b1-6790-4275-b261-490bca33bdb9
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 4a05341397185deefcc6de5d25ded34e910d7fac
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 86646e3af14403f6d48c8af009525c6c016ef9e3
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642162"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98782998"
 ---
 # <a name="create-a-database-mirroring-endpoint-for-windows-authentication-transact-sql"></a>Crear un extremo de reflejo de la base de datos para la autenticación de Windows (Transact-SQL)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  En este tema se describe cómo crear un extremo de creación de reflejo de la base de datos que utilice la autenticación de Windows en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] mediante [!INCLUDE[tsql](../../includes/tsql-md.md)]. Para admitir la creación de reflejo de la base de datos o [!INCLUDE[ssHADR](../../includes/sshadr-md.md)] , cada instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] requiere un extremo de creación de reflejo de la base de datos. Una instancia de servidor solo puede tener un extremo de creación de reflejo de base de datos, que tiene un puerto único. Un extremo de creación de reflejo de base de datos puede utilizar cualquier puerto disponible en el sistema local cuando se crea el extremo. Todas las sesiones de creación de reflejo de base de datos de una instancia de servidor escuchan en dicho puerto y todas las conexiones entrantes para la creación de reflejo de base de datos utilizan dicho puerto.  
+  En este tema se describe cómo crear un extremo de creación de reflejo de la base de datos que utilice la autenticación de Windows en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] mediante [!INCLUDE[tsql](../../includes/tsql-md.md)]. Para admitir la creación de reflejo de la base de datos o [!INCLUDE[ssHADR](../../includes/sshadr-md.md)] , cada instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] requiere un extremo de creación de reflejo de la base de datos. Una instancia de servidor solo puede tener un extremo de creación de reflejo de base de datos, que tiene un puerto único. Un extremo de creación de reflejo de base de datos puede utilizar cualquier puerto disponible en el sistema local cuando se crea el extremo. Todas las sesiones de creación de reflejo de base de datos de una instancia de servidor escuchan en dicho puerto y todas las conexiones entrantes para la creación de reflejo de base de datos utilizan dicho puerto.  
   
 > [!IMPORTANT]  
 >  Si existe un extremo de creación de reflejo de la base de datos y ya está en uso, se recomienda utilizar dicho extremo. Quitar un extremo en uso interrumpe las sesiones existentes.  

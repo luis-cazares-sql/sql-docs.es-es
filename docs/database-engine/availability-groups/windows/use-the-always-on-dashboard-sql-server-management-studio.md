@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: c9ba2589-139e-42bc-99e1-94546717c64d
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: de6d20cbd6e1b185b9e06e057c0cbe91c590fb48
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: ea85d4be41b5f7dd5c4619cd4e2f6dd315cc3a99
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97641802"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783072"
 ---
 # <a name="use-the-always-on-availability-group-dashboard-sql-server-management-studio"></a>Uso del panel de grupo de disponibilidad Always On (SQL Server Management Studio)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-  Los administradores de bases de datos usan el panel de grupo de disponibilidad Always On para obtener una vista global del estado de un grupo de disponibilidad y de sus réplicas y bases de datos de disponibilidad en [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]. Algunos de los usos habituales del panel de grupo de disponibilidad son estos:  
+  Los administradores de bases de datos usan el panel de grupo de disponibilidad Always On para obtener una vista global del estado de un grupo de disponibilidad y de sus réplicas y bases de datos de disponibilidad en [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]. Algunos de los usos habituales del panel de grupo de disponibilidad son estos:  
   
 -   Elegir una réplica para una conmutación por error manual.    
 -   Estimar la pérdida de datos si se fuerza la conmutación por error.  

@@ -15,17 +15,17 @@ f1_keywords:
 ms.assetid: bd3b0306-8384-4120-a1c9-03825f0ae26a
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 040b89181744c0f9a3ab036554987dcb1e01d3de
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: a331651b92e4781a51de8e03dcfec55797d8723f
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642523"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783499"
 ---
 # <a name="progress-page-always-on-availability-group-wizards"></a>Página Progreso (asistentes para grupos de disponibilidad AlwaysOn)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-  Utilice este cuadro de diálogo para ver el progreso del asistente de [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] que esté ejecutando en [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]. La barra de progreso indica el progreso relativo de los pasos que el asistente realiza.  
+  Utilice este cuadro de diálogo para ver el progreso del asistente de [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] que esté ejecutando en [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]. La barra de progreso indica el progreso relativo de los pasos que el asistente realiza.  
   
 ## <a name="ui-element-list"></a>Lista de elementos de la interfaz de usuario  
  **Más detalles**  

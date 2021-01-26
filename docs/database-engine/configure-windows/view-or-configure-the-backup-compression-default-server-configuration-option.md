@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 23029395-3e93-4c29-b7d6-e5a47a3526ff
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: bf58edccfbf4c0b663caadf29ffc364d9fd8bcb1
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: ae3f7070ade723af31ed191d76dd274c4137a115
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85680640"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783573"
 ---
 # <a name="view-or-configure-the-backup-compression-default-server-configuration-option"></a>Ver o establecer la opción de configuración del servidor de compresión de copia de seguridad predeterminada
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  En este tema se describe cómo ver o configurar la opción de configuración del servidor **Compresión de copia de seguridad predeterminada** en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)]. La opción **Compresión de copia de seguridad predeterminada** determina si la instancia de servidor crea copias de seguridad comprimidas de forma predeterminada. Cuando [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] está instalado, la opción **Compresión de copia de seguridad predeterminada** está desactivada.  
+  En este tema se describe cómo ver o configurar la opción de configuración del servidor **Compresión de copia de seguridad predeterminada** en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] mediante [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] o [!INCLUDE[tsql](../../includes/tsql-md.md)]. La opción **Compresión de copia de seguridad predeterminada** determina si la instancia de servidor crea copias de seguridad comprimidas de forma predeterminada. Cuando [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] está instalado, la opción **Compresión de copia de seguridad predeterminada** está desactivada.  
   
  **En este tema**  
   

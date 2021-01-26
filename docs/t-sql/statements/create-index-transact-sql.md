@@ -55,12 +55,12 @@ ms.assetid: d2297805-412b-47b5-aeeb-53388349a5b9
 author: pmasl
 ms.author: pelopes
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c472b3996683512fb6ac7cd3f001d53ca1fd73ae
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
+ms.openlocfilehash: 3f1322f21ed7ad3f09f30a0f5a5e71e5614a8d47
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98170687"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766231"
 ---
 # <a name="create-index-transact-sql"></a>CREATE INDEX (Transact-SQL)
 
@@ -642,7 +642,7 @@ Cuando se crean particiones en un índice clúster no único, el [!INCLUDE[ssDE]
 
 Se pueden crear vistas indizadas en tablas con particiones de la misma manera que se hace con índices en tablas. Para obtener más información acerca de los índices con particiones, vea [Índices y tablas con particiones](../../relational-databases/partitions/partitioned-tables-and-indexes.md) y [Guía de diseño y arquitectura de índices de SQL Server](../../relational-databases/sql-server-index-design-guide.md).
 
-En [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)], las estadísticas no se crean examinando todas las filas de la tabla cuando se crea o se vuelve a generar un índice con particiones. En su lugar, el optimizador de consultas usa el algoritmo de muestreo predeterminado para generar estadísticas. Para obtener estadísticas sobre índices con particiones examinando todas las filas de la tabla, use `CREATE STATISTICS` o `UPDATE STATISTICS` con la cláusula `FULLSCAN`.
+En [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], las estadísticas no se crean examinando todas las filas de la tabla cuando se crea o se vuelve a generar un índice con particiones. En su lugar, el optimizador de consultas usa el algoritmo de muestreo predeterminado para generar estadísticas. Para obtener estadísticas sobre índices con particiones examinando todas las filas de la tabla, use `CREATE STATISTICS` o `UPDATE STATISTICS` con la cláusula `FULLSCAN`.
 
 ## <a name="filtered-indexes"></a>Índices filtrados
 Un índice filtrado es un índice no clúster optimizado, adecuado para las consultas que seleccionan un porcentaje pequeño de las filas de una tabla. Utiliza un predicado de filtro para indizar una parte de los datos de la tabla. Un índice filtrado bien diseñado puede mejorar el rendimiento de las consultas, reducir los costos de almacenamiento y de mantenimiento.

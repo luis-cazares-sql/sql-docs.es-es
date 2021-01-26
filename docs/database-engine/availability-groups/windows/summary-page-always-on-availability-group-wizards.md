@@ -15,19 +15,19 @@ f1_keywords:
 ms.assetid: b98e2511-297f-49fd-b0e8-74652a91bc0c
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 7d7b758b1d1ee8fba24a6f4e23568f8fdc6f060c
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 48a70988539ee9a35cd8dbd933ee7c6f6f752609
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642968"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783742"
 ---
 # <a name="summary-page-always-on-availability-group-wizards"></a>Página Resumen (asistentes para grupos de disponibilidad AlwaysOn)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
 <a name="Top"></a>  
   
-  En este tema de Ayuda se describen las opciones de la página **Resumen** . Esta tema se aplica a [!INCLUDE[ssAoNewAgWiz](../../../includes/ssaonewagwiz-md.md)], [!INCLUDE[ssAoAddRepWiz](../../../includes/ssaoaddrepwiz-md.md)], [!INCLUDE[ssAoAddDbWiz](../../../includes/ssaoadddbwiz-md.md)] y [!INCLUDE[ssAoFoAgWiz](../../../includes/ssaofoagwiz-md.md)] de [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]. Use la cuadrícula de esta página para revisar las opciones para el nuevo grupo de disponibilidad. Para realizar uno o más cambios, haga clic en **Anterior** para volver a la página o páginas pertinentes. Cuando esté listo, haga clic en **Siguiente** para volver a la página **Resumen** . Cuando esté satisfecho con las opciones seleccionadas, haga clic en **Finalizar**.  
+  En este tema de Ayuda se describen las opciones de la página **Resumen** . Esta tema se aplica a [!INCLUDE[ssAoNewAgWiz](../../../includes/ssaonewagwiz-md.md)], [!INCLUDE[ssAoAddRepWiz](../../../includes/ssaoaddrepwiz-md.md)], [!INCLUDE[ssAoAddDbWiz](../../../includes/ssaoadddbwiz-md.md)] y [!INCLUDE[ssAoFoAgWiz](../../../includes/ssaofoagwiz-md.md)] de [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]. Use la cuadrícula de esta página para revisar las opciones para el nuevo grupo de disponibilidad. Para realizar uno o más cambios, haga clic en **Anterior** para volver a la página o páginas pertinentes. Cuando esté listo, haga clic en **Siguiente** para volver a la página **Resumen** . Cuando esté satisfecho con las opciones seleccionadas, haga clic en **Finalizar**.  
   
 ##  <a name="summary-page-options"></a><a name="PageOptions"></a> Opciones de página Resumen  
  **Script**  

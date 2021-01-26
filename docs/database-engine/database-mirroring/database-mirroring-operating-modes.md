@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: f8a579c2-55d7-4278-8088-f1da1de5b2e6
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 9e69236003f1c0ee2b13620b481dfddbaf9acd5a
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 1efefbb0b0a99f03d4ffa46e7d02fec05e8a8e60
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97644139"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783564"
 ---
 # <a name="database-mirroring-operating-modes"></a>Modos de funcionamiento de la creación de reflejo de la base de datos
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "97644139"
  En esta sección se describe cómo funciona la creación de reflejo de la base de datos asincrónica, cuándo es adecuado utilizar el modo de alto rendimiento y cómo responder si se produce un error en el servidor principal.  
   
 > [!NOTE]  
->  La mayoría de las ediciones de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] solo admiten la creación de reflejo de la base de datos sincrónica (“Solo seguridad completa”). Para más información sobre las ediciones que permiten totalmente crear reflejos de la base de datos, vea "Alta disponibilidad (AlwaysOn)" en [Ediciones y características admitidas de SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md).
+>  La mayoría de las ediciones de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] solo admiten la creación de reflejo de la base de datos sincrónica (“Solo seguridad completa”). Para más información sobre las ediciones que permiten totalmente crear reflejos de la base de datos, vea "Alta disponibilidad (AlwaysOn)" en [Ediciones y características admitidas de SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md).
   
  Si la seguridad de las transacciones está configurada en OFF, la sesión de creación de reflejo de la base de datos funciona de forma asincrónica. La operación asincrónica solo admite el modo operativo de alto rendimiento. Este modo mejora el rendimiento a costa de la alta disponibilidad. El modo de alto rendimiento utiliza solamente el servidor principal y el servidor reflejado. Los problemas del servidor reflejado nunca afectan al servidor principal. Al perderse el servidor principal, la base de datos reflejada se marca como DISCONNECTED, pero está disponible como base de datos en espera activa.  
   
