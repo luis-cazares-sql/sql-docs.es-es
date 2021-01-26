@@ -29,12 +29,12 @@ helpviewer_keywords:
 ms.assetid: 51b1a5f2-7591-4e11-bfe2-d88e0836403f
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 17913dab743f1aaaa7672ce855aa85ce8434f3c0
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: d23880a7ea6a1e8f4c1beccc5ec82f40303b9b76
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85727747"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783653"
 ---
 # <a name="working-with-user-defined-types---manipulating-udt-data"></a>Trabajar con tipos definidos por el usuario: manipular datos UDT
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -130,7 +130,7 @@ SELECT @PointValue.ToString() AS PointValue;
  La diferencia entre el uso de SELECT y SET para la asignación de variable es que SELECT permite asignar varias variables en una instrucción SELECT, mientras que la sintaxis de SET exige que cada asignación de variable tenga su propia instrucción SET.  
   
 ## <a name="comparing-data"></a>Comparar datos  
- Puede utilizar operadores de comparación para comparar valores en el UDT si ha establecido la propiedad **IsByteOrdered** en **true** al definir la clase. Para obtener más información, vea [crear un tipo definido por el usuario](../../relational-databases/clr-integration-database-objects-user-defined-types/creating-user-defined-types.md).  
+ Puede utilizar operadores de comparación para comparar valores en el UDT si ha establecido la propiedad **IsByteOrdered** en **true** al definir la clase. Para obtener más información, vea [crear un tipo de User-Defined](../../relational-databases/clr-integration-database-objects-user-defined-types/creating-user-defined-types.md).  
   
 ```sql  
 SELECT ID, PointValue.ToString() AS Points   
@@ -157,7 +157,7 @@ WHERE PointValue = @ComparePoint;
 ```  
   
 ## <a name="invoking-udt-methods"></a>Invocar métodos del UDT  
- También puede invocar métodos que se definen en el UDT en [!INCLUDE[tsql](../../includes/tsql-md.md)]. La clase **Point** contiene tres métodos, **Distance**, **DistanceFrom**y **DistanceFromXY**. Para ver las listas de código que definen estos tres métodos, vea [codificar tipos definidos por el usuario](../../relational-databases/clr-integration-database-objects-user-defined-types/creating-user-defined-types-coding.md).  
+ También puede invocar métodos que se definen en el UDT en [!INCLUDE[tsql](../../includes/tsql-md.md)]. La clase **Point** contiene tres métodos, **Distance**, **DistanceFrom** y **DistanceFromXY**. Para ver las listas de código que definen estos tres métodos, consulte [codificación de tipos de User-Defined](../../relational-databases/clr-integration-database-objects-user-defined-types/creating-user-defined-types-coding.md).  
   
  La siguiente [!INCLUDE[tsql](../../includes/tsql-md.md)] instrucción llama al método **PointValue. Distance** :  
   
@@ -232,7 +232,7 @@ WHERE PointValue = '3,4';
 ```  
   
 ### <a name="updating-limitations"></a>Limitaciones de la actualización  
- No puede actualizar varias propiedades a la vez mediante [!INCLUDE[tsql](../../includes/tsql-md.md)]. Por ejemplo, la siguiente instrucción UPDATE genera un error porque no puede utilizar dos veces el mismo nombre de columna en una instrucción UPDATE.  
+ No puede actualizar varias propiedades a la vez mediante [!INCLUDE[tsql](../../includes/tsql-md.md)]. Por ejemplo, la siguiente instrucción UPDATE genera un error porque no se puede usar el mismo nombre de columna dos veces en una instrucción UPDATE.  
   
 ```sql  
 UPDATE dbo.Points  
