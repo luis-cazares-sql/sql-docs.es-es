@@ -13,17 +13,17 @@ dev_langs:
 ms.assetid: 45010ff2-219f-4086-9ea4-016a6c17cddd
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 4976e0ae436fe1c9c59742b6580ae083b3e3c5c4
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: da0df555ee8eed32bc42faf035c29d0dc867dfb3
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98094949"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765710"
 ---
 # <a name="sysfn_db_backup_file_snapshots-transact-sql"></a>sys.fn_db_backup_file_snapshots (Transact-SQL)
 [!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
-  Devuelve instantáneas de Azure asociadas a los archivos de base de datos. Si no se encuentra la base de datos especificada o si los archivos de base de datos no están almacenados en el servicio Microsoft Azure BLOB Storage, no se devuelve ninguna fila. Use esta función del sistema junto con el **Sys.sp_delete_backup_file_snapshot** procedimiento almacenado del sistema para identificar y eliminar instantáneas de copia de seguridad huérfanas. Para obtener más información, vea [Copias de seguridad de instantánea de archivos para archivos de base de datos de Azure](../../relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure.md).  
+  Devuelve instantáneas de Azure asociadas a los archivos de base de datos. Si no se encuentra la base de datos especificada o si los archivos de base de datos no se almacenan en el servicio Blob Storage de Microsoft Azure, no se devuelven filas. Use esta función del sistema junto con el **Sys.sp_delete_backup_file_snapshot** procedimiento almacenado del sistema para identificar y eliminar instantáneas de copia de seguridad huérfanas. Para obtener más información, vea [Copias de seguridad de instantánea de archivos para archivos de base de datos de Azure](../../relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure.md).  
   
  ![Icono de vínculo de tema](../../database-engine/configure-windows/media/topic-link.gif "Icono de vínculo de tema") [Convenciones de sintaxis de Transact-SQL](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   

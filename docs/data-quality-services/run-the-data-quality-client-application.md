@@ -13,12 +13,12 @@ f1_keywords:
 ms.assetid: 0b2aa202-7ab2-4c9d-b0f1-802588053a1e
 author: swinarko
 ms.author: sawinark
-ms.openlocfilehash: ed5b6449ea470a63e27a1d23a057ed6507c2ed2e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: f83334dbbcc50642c463681614db5f23e10f6807
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88466682"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765640"
 ---
 # <a name="run-the-data-quality-client-application"></a>Ejecutar la aplicación Data Quality Client
 
@@ -39,13 +39,13 @@ ms.locfileid: "88466682"
 ##  <a name="run-data-quality-client"></a><a name="Run"></a> Ejecutar Data Quality Client  
  Para ejecutar [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)] en el equipo donde lo ha instalado:  
   
-1.  Haga clic en **Inicio**, seleccione **Todos los programas**, seleccione **[!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]**, seleccione **Data Quality Services**y, por último, haga clic en **Data Quality Client**.  
+1.  En el menú **Inicio** , seleccione el **[!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)]** **Data Quality Client**.  
   
 2.  En el cuadro de diálogo **Conectar con el servidor**:  
   
     1.  Especifique el servidor al que desea conectar la aplicación [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)] . Seleccione **(LOCAL)** para conectarse con [!INCLUDE[ssDQSServer](../includes/ssdqsserver-md.md)] en el equipo local. También puede hacer clic en la flecha abajo y seleccionar **\<Browse network for more servers>** para conectarse a un servidor diferente (o para conectarse al servidor local por nombre). Se mostrará el cuadro de diálogo **Buscar servidores** . Puede seleccionar un servidor en la pestaña **Servidores locales** o en la pestaña **Servidores de redes** .  
   
-    2.  Para cifrar la transferencia de datos entre [!INCLUDE[ssDQSServer](../includes/ssdqsserver-md.md)] y [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)], haga clic en **Opciones**y luego active la casilla **Cifrar conexión** .  
+    2.  Para cifrar la transferencia de datos entre [!INCLUDE[ssDQSServer](../includes/ssdqsserver-md.md)] y [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)], haga clic en **Opciones** y luego active la casilla **Cifrar conexión** .  
   
 3.  Haga clic en **Conectar**.  
   

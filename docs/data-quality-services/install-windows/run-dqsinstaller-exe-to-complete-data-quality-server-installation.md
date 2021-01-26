@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.assetid: 7a8c96e0-1328-4f35-97fc-b6d9cb808bae
 author: swinarko
 ms.author: sawinark
-ms.openlocfilehash: 7dab88e8e10bc854e3210d5898cbd965eb268e04
-ms.sourcegitcommit: 2e6c4104dca8680064eb64a7a79a3e15e1b4365f
+ms.openlocfilehash: 2933803ce4a8bce84468f4ce2e360a18d2444635
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "85942848"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765794"
 ---
 # <a name="run-dqsinstallerexe-to-complete-data-quality-server-installation"></a>Ejecutar DQSInstaller.exe para completar la instalación del servidor de calidad de datos
 
 [!INCLUDE [SQL Server - Windows only ](../../includes/applies-to-version/sql-windows-only.md)]
 
-  Para completar la instalación del [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] , debe ejecutar el archivo DQSInstaller.exe después de instalar [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. En este tema se describe cómo ejecutar DQSInstaller.exe desde la pantalla **Inicio** , el menú **Inicio** , el Explorador de Windows o el símbolo del sistema; puede elegir cualquiera de estos métodos para ejecutar el archivo DQSInstaller.exe.  
+  Para completar la instalación del [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] , debe ejecutar el archivo DQSInstaller.exe después de instalar [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. En este tema se describe cómo ejecutar DQSInstaller.exe desde la pantalla **Inicio** , el menú **Inicio** , el Explorador de Windows o el símbolo del sistema; puede elegir cualquiera de estos métodos para ejecutar el archivo DQSInstaller.exe.  
   
 ##  <a name="prerequisites"></a><a name="Prerequisites"></a> Requisitos previos  
   
@@ -32,13 +32,13 @@ ms.locfileid: "85942848"
   
 -   Debe haber iniciado sesión como miembro del grupo Administradores en el equipo donde se ejecuta DQSInstaller.exe.  
   
-##  <a name="run-dqsinstallerexe-from-start-screen-start-menu-or-windows-explorer"></a><a name="WindowsExplorer"></a>Ejecutar DQSInstaller.exe desde la pantalla Inicio, el menú Inicio o el explorador de Windows  
+##  <a name="run-dqsinstallerexe-from-start-screen-start-menu-or-windows-explorer"></a><a name="WindowsExplorer"></a> Ejecutar DQSInstaller.exe desde la pantalla Inicio, el menú Inicio o el explorador de Windows  
   
 1.  En el equipo en el que decidió instalar [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)], ejecute el archivo DQSInstaller.exe mediante cualquiera de los procedimientos siguientes:  
   
     -   **Pantalla Inicio**: en la pantalla **Inicio** , haga clic en **Instalador de Data Quality Server**  
   
-    -   **Menú Inicio**: en la barra de tareas, haga clic en **Inicio**, seleccione **Todos los programas**y haga clic en [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]. En [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)], haga clic en **Data Quality Services**y luego en **Instalador de Data Quality Server**.  
+    -   **Menú Inicio**: en la barra de tareas, haga clic en **Inicio**, seleccione **Todos los programas** y haga clic en [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]. En [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)], haga clic en **Data Quality Services** y luego en **Instalador de Data Quality Server**.  
   
     -   **Explorador de Windows**: busque el archivo DQSInstaller.exe. Si instaló la instancia predeterminada de SQL Server, el archivo DQSInstaller.exe estará disponible en C:\Archivos de programa\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Binn. Haga doble clic en el archivo DQSInstaller.exe.  
   
@@ -67,17 +67,17 @@ ms.locfileid: "85942848"
   
 6.  Se mostrará un mensaje de finalización cuando la instalación se haya completado correctamente. Presione cualquier tecla para cerrar la ventana de símbolo del sistema.  
   
-##  <a name="run-dqsinstallerexe-from-command-prompt"></a><a name="CommandPrompt"></a>Ejecutar DQSInstaller.exe desde el símbolo del sistema  
+##  <a name="run-dqsinstallerexe-from-command-prompt"></a><a name="CommandPrompt"></a> Ejecutar DQSInstaller.exe desde el símbolo del sistema  
  Puede ejecutar DQSInstaller.exe desde el símbolo del sistema mediante los siguientes parámetros de línea de comandos:  
   
 |Parámetro DQSInstaller.exe|Descripción|Sintaxis de ejemplo|  
 |--------------------------------|-----------------|-------------------|  
 |-collation|La intercalación de servidor que se usará para instalar el [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)].<br /><br /> DQS solo admite la intercalación sin distinción entre mayúsculas y minúsculas. Si especifica una intercalación con distinción entre mayúsculas y minúsculas, el instalador intenta utilizar la versión de la intercalación especificada sin distinción entre mayúsculas y minúsculas. Si no hay ninguna versión sin distinción entre mayúsculas y minúsculas, o si la intercalación no es compatible con SQL, la instalación del [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] producirá un error.<br /><br /> Si no se especifica una intercalación de servidor, se utiliza la intercalación predeterminada, SQL_Latin1_General_CP1_CI_AS.|`dqsinstaller.exe -collation <collation_name>`|  
-|-upgradedlls|Omite la reconstrucción de las bases de datos DQS (DQS_MAIN, DQS_PROJECTS y DQS_STAGING_DATA) y solo actualiza los ensamblados de Common Language Runtime de SQL (SQLCLR) utilizados por DQS en la base de datos de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] .<br /><br /> Para obtener más información, vea [Actualizar ensamblados de SQLCLR después de actualizar .NET Framework](../../data-quality-services/install-windows/upgrade-sqlclr-assemblies-after-net-framework-update.md).|`dqsinstaller.exe -upgradedlls`|  
-|-exportkbs|Exporta todas las bases de conocimiento a un archivo de copia de seguridad de DQS (.dqsb). También debe especificar la ruta de acceso completa y el nombre de archivo donde desea exportar todas las bases de conocimiento.<br /><br /> Para obtener más información, vea [Exportar e importar bases de conocimiento de DQS mediante DQSInstaller.exe](../../data-quality-services/install-windows/export-and-import-dqs-knowledge-bases-using-dqsinstaller-exe.md).|`dqsinstaller.exe -exportkbs <path><filename>`<br /><br /> Por ejemplo, `dqsinstaller.exe -exportkbs c:\DQSBackup.dqsb`.|  
-|-importkbs|Importe todas las bases de conocimiento desde un archivo de copia de seguridad de DQS (.dqsb) después de completar la instalación de [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] . También debe especificar la ruta de acceso completa y el nombre de archivo desde el que desea importar todas las bases de conocimiento.<br /><br /> Para obtener más información, vea [Exportar e importar bases de conocimiento de DQS mediante DQSInstaller.exe](../../data-quality-services/install-windows/export-and-import-dqs-knowledge-bases-using-dqsinstaller-exe.md).|`dqsinstaller.exe -importkbs <path><filename>`<br /><br /> Por ejemplo, `dqsinstaller.exe -importkbs c:\DQSBackup.dqsb`.|  
+|-upgradedlls|Omite la reconstrucción de las bases de datos DQS (DQS_MAIN, DQS_PROJECTS y DQS_STAGING_DATA) y solo actualiza los ensamblados de Common Language Runtime de SQL (SQLCLR) utilizados por DQS en la base de datos de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] .<br /><br /> Para obtener más información, vea [Actualizar ensamblados de SQLCLR después de actualizar .NET Framework](../../data-quality-services/install-windows/upgrade-sqlclr-assemblies-after-net-framework-update.md).|`dqsinstaller.exe -upgradedlls`|  
+|-exportkbs|Exporta todas las bases de conocimiento a un archivo de copia de seguridad de DQS (.dqsb). También debe especificar la ruta de acceso completa y el nombre de archivo donde desea exportar todas las bases de conocimiento.<br /><br /> Para obtener más información, vea [Exportar e importar bases de conocimiento de DQS mediante DQSInstaller.exe](../../data-quality-services/install-windows/export-and-import-dqs-knowledge-bases-using-dqsinstaller-exe.md).|`dqsinstaller.exe -exportkbs <path><filename>`<br /><br /> Por ejemplo: `dqsinstaller.exe -exportkbs c:\DQSBackup.dqsb`|  
+|-importkbs|Importe todas las bases de conocimiento desde un archivo de copia de seguridad de DQS (.dqsb) después de completar la instalación de [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] . También debe especificar la ruta de acceso completa y el nombre de archivo desde el que desea importar todas las bases de conocimiento.<br /><br /> Para obtener más información, vea [Exportar e importar bases de conocimiento de DQS mediante DQSInstaller.exe](../../data-quality-services/install-windows/export-and-import-dqs-knowledge-bases-using-dqsinstaller-exe.md).|`dqsinstaller.exe -importkbs <path><filename>`<br /><br /> Por ejemplo: `dqsinstaller.exe -importkbs c:\DQSBackup.dqsb`|  
 |-upgrade|Actualiza el esquema de bases de datos DQS. Debe usar este parámetro después de instalar una actualización de SQL Server en una instancia configurada previamente de DQS. Para obtener más información, vea [Upgrade DQS Databases Schema After Installing SQL Server Update](../../data-quality-services/install-windows/upgrade-dqs-databases-schema-after-installing-sql-server-update.md).|`dqsinstaller.exe -upgrade`|  
-|-uninstall|Desinstala [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] de la instancia de SQL Server actual.<br /><br /> También puede exportar todas las bases de conocimiento en la instalación del servidor de calidad de datos existente a un archivo de copia de seguridad de DQS (.dqsb) y, a continuación, desinstalar el servidor de calidad de datos. Para obtener más información, vea [Exportar e importar bases de conocimiento de DQS mediante DQSInstaller.exe](../../data-quality-services/install-windows/export-and-import-dqs-knowledge-bases-using-dqsinstaller-exe.md).<br /><br /> Importante: Si desinstala desde una instancia de SQL Server mediante el parámetro de línea ** \* de comandos, todos \* los objetos de DQS se eliminarán como parte del proceso de desinstalación. \* \* ** [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] `-uninstall` No es necesario eliminarlos manualmente después de desinstalar [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] como se ha mencionado en [Quitar objetos del servidor de calidad de datos](../../sql-server/install/remove-data-quality-server-objects.md).|**Para desinstalar solo el servidor de calidad de datos:**<br /><br /> `dqsinstaller.exe -uninstall`<br /><br /> **Para exportar todas las bases de conocimiento a un archivo y, a continuación, desinstalar el servidor de calidad de datos:**<br /><br /> `dqsinstaller.exe -uninstall <path><filename>`<br /><br /> Por ejemplo, `dqsinstaller.exe -uninstall c:\DQSBackup.dqsb`.|  
+|-uninstall|Desinstala [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] de la instancia de SQL Server actual.<br /><br /> También puede exportar todas las bases de conocimiento en la instalación del servidor de calidad de datos existente a un archivo de copia de seguridad de DQS (.dqsb) y, a continuación, desinstalar el servidor de calidad de datos. Para obtener más información, vea [Exportar e importar bases de conocimiento de DQS mediante DQSInstaller.exe](../../data-quality-services/install-windows/export-and-import-dqs-knowledge-bases-using-dqsinstaller-exe.md).<br /><br /> Importante: Si desinstala desde una instancia de SQL Server mediante el parámetro de línea **\* de comandos, todos \* los objetos de DQS se eliminarán como parte del proceso de desinstalación. \* \*** [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] `-uninstall` No es necesario eliminarlos manualmente después de desinstalar [!INCLUDE[ssDQSServer](../../includes/ssdqsserver-md.md)] como se ha mencionado en [Quitar objetos del servidor de calidad de datos](../../sql-server/install/remove-data-quality-server-objects.md).|**Para desinstalar solo el servidor de calidad de datos:**<br /><br /> `dqsinstaller.exe -uninstall`<br /><br /> **Para exportar todas las bases de conocimiento a un archivo y, a continuación, desinstalar el servidor de calidad de datos:**<br /><br /> `dqsinstaller.exe -uninstall <path><filename>`<br /><br /> Por ejemplo: `dqsinstaller.exe -uninstall c:\DQSBackup.dqsb`|  
   
  **Para ejecutar DQSInstaller.exe desde el símbolo del sistema:**  
   
