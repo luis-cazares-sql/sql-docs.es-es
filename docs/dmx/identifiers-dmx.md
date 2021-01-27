@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: owend
 ms.reviewer: owend
 author: minewiskan
-ms.openlocfilehash: 3a779e16b06b00cb925f28e8da34ce3959d7dc7e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: d802cb37a972eb498b485d7253a82b8445f4566d
+ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88352891"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98813477"
 ---
 # <a name="identifiers-dmx"></a>Identificadores (DMX)
 [!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
@@ -76,7 +76,7 @@ SELECT * FROM [Targeted Mailing].CONTENT;
   
 -   Cuando utilice palabras reservadas en los nombres de objeto o partes de nombres de objeto.  
   
-     Se recomienda evitar el uso de palabras clave reservadas en los nombres de objeto. Las bases de datos que se actualizan desde versiones anteriores de [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] pueden contener identificadores que incluyen palabras que no estaban reservadas en la versión anterior de [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] pero que son palabras reservadas para [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] . Puede hacer referencia al objeto con identificadores delimitados hasta que se pueda cambiar el nombre.  
+     Se recomienda evitar el uso de palabras clave reservadas en los nombres de objeto. Las bases de datos que se actualizan desde versiones anteriores de [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] pueden contener identificadores que incluyen palabras que no estaban reservadas en la versión anterior de [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] pero que son palabras reservadas para [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] . Puede hacer referencia al objeto con identificadores delimitados hasta que se pueda cambiar el nombre.  
   
 -   Cuando utilice caracteres no considerados como identificadores aceptados.  
   

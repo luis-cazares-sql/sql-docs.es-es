@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 41ade0ca-5f11-469d-bd4d-c8302ccd93b3
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 62a4904a608ccfd5ed02cbf21c3342619ea32e8f
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+ms.openlocfilehash: 07dcf9bfc42705f2ad49e3ce476ffcd8ad70f052
+ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810171"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98813276"
 ---
 # <a name="sp_cursor-transact-sql"></a>sp_cursor (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "91810171"
   
 ||  
 |-|  
-|**Se aplica a**: SQL Server ( [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).|  
+|**Se aplica a**: SQL Server ( [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] a través de la [versión actual](/troubleshoot/sql/general/determine-version-edition-update-level)).|  
   
  ![Icono de vínculo de tema](../../database-engine/configure-windows/media/topic-link.gif "Icono de vínculo de tema") [Convenciones de sintaxis de Transact-SQL](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -54,7 +54,7 @@ sp_cursor  cursor, optype, rownum, table
 |Value|Nombre|Descripción|  
 |-----------|----------|-----------------|  
 |0X0001|UPDATE|Se usa para actualizar una o varias filas en el búfer de captura.  Se vuelve a tener acceso a las filas especificadas en *ROWNUM* y se actualizan.|  
-|0x0002|Delete|Se usa para eliminar una o varias filas en el búfer de captura. Se vuelve a tener acceso a las filas especificadas en *ROWNUM* y se eliminan.|  
+|0x0002|DELETE|Se usa para eliminar una o varias filas en el búfer de captura. Se vuelve a tener acceso a las filas especificadas en *ROWNUM* y se eliminan.|  
 |0X0004|INSERT|Inserta datos sin generar una instrucción **Insert** de SQL.|  
 |0X0008|REFRESH|Se usa para rellenar el búfer a partir de las tablas subyacentes y se puede usar para actualizar la fila si una actualización o eliminación no puede realizarse debido a un control de simultaneidad optimista o después de una operación UPDATE.|  
 |0X10|LOCK|Hace que se adquiera un SQL Server U-Lock en la página que contiene la fila especificada. Este bloqueo es compatible con los bloqueos S. No es compatible con los bloqueos X ni U. Se puede usar para implementar el bloqueo a corto plazo.|  

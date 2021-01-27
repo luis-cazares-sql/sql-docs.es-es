@@ -19,17 +19,17 @@ helpviewer_keywords:
 ms.assetid: c2d2ae49-0808-46d8-8444-db69a69d0ec3
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 1f17681ffbb922b25cffc6b21ecf2f6317d400db
-ms.sourcegitcommit: 968969b62bc158b9843aba5034c9d913519bc4a7
+ms.openlocfilehash: f0a05127f4f6ddcd70fbb00cc5ae3bd2d22fe152
+ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91753799"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98813307"
 ---
 # <a name="sp_addumpdevice-transact-sql"></a>sp_addumpdevice (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
-**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (desde [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] hasta la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).  
+**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (desde [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] hasta la [versión actual](/troubleshoot/sql/general/determine-version-edition-update-level)).  
 
 Agrega un dispositivo de copia de seguridad a una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
@@ -61,7 +61,7 @@ sp_addumpdevice [ @devtype = ] 'device_type'
   
  Cuando cree un dispositivo de copia de seguridad en una ubicación de red remota, asegúrese de que el nombre con el que se haya iniciado el [!INCLUDE[ssDE](../../includes/ssde-md.md)] tenga permiso de escritura en el equipo remoto.  
   
- Si agrega un dispositivo de cinta, este parámetro debe ser el nombre físico asignado al dispositivo de cinta local por Windows; por ejemplo, ** \\ \\ .\TAPE0** para el primer dispositivo de cinta del equipo. El dispositivo de cinta tiene que estar en el equipo servidor; no se puede utilizar de forma remota. Incluya entre comillas los nombres que contengan caracteres no alfanuméricos.  
+ Si agrega un dispositivo de cinta, este parámetro debe ser el nombre físico asignado al dispositivo de cinta local por Windows; por ejemplo, **\\ \\ .\TAPE0** para el primer dispositivo de cinta del equipo. El dispositivo de cinta tiene que estar en el equipo servidor; no se puede utilizar de forma remota. Incluya entre comillas los nombres que contengan caracteres no alfanuméricos.  
   
 > [!NOTE]  
 >  Este procedimiento escribe en el catálogo el nombre físico especificado. El procedimiento no intenta tener acceso al dispositivo ni crearlo.  

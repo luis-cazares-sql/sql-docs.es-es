@@ -21,12 +21,12 @@ ms.assetid: 56fee8f3-06eb-4fff-969e-abeaa0c4b8e4
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9eb56a2c7f2708a46cc0316e1c2600e2f15f0f8e
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: c1ce6abac2c138b68831fd9ad1bd44817a789abd
+ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98092943"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98812941"
 ---
 # <a name="sysdm_database_encryption_keys-transact-sql"></a>sys.dm_database_encryption_keys (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -45,11 +45,11 @@ ms.locfileid: "98092943"
 |key_algorithm|**nvarchar(32)**|Muestra el algoritmo utilizado por la clave.|  
 |key_length|**int**|Muestra la longitud de la clave.|  
 |encryptor_thumbprint|**varbinary(20)**|Muestra la huella digital del sistema de cifrado.|  
-|encryptor_type|**nvarchar(32)**|**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] a través de la [versión actual](../../sql-server/what-s-new-in-sql-server-2016.md)).<br /><br /> Describe el sistema de cifrado.|  
+|encryptor_type|**nvarchar(32)**|**Se aplica a**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] a través de la [versión actual](/troubleshoot/sql/general/determine-version-edition-update-level)).<br /><br /> Describe el sistema de cifrado.|  
 |percent_complete|**real**|Porcentaje completado del cambio de estado del cifrado de la base de datos. Será 0 si no hay ningún cambio de estado.|
-|encryption_state_desc|**nvarchar(32)**|**Válido para** : [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] y versiones posteriores.<br><br> Cadena que indica si la base de datos está cifrada o no está cifrada.<br><br>NONE<br><br>SIN cifrar<br><br>CIFRA<br><br>DECRYPTION_IN_PROGRESS<br><br>ENCRYPTION_IN_PROGRESS<br><br>KEY_CHANGE_IN_PROGRESS<br><br>PROTECTION_CHANGE_IN_PROGRESS|
+|encryption_state_desc|**nvarchar(32)**|**Válido para** : [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] y versiones posteriores.<br><br> Cadena que indica si la base de datos está cifrada o no está cifrada.<br><br>Ninguno<br><br>SIN cifrar<br><br>CIFRA<br><br>DECRYPTION_IN_PROGRESS<br><br>ENCRYPTION_IN_PROGRESS<br><br>KEY_CHANGE_IN_PROGRESS<br><br>PROTECTION_CHANGE_IN_PROGRESS|
 |encryption_scan_state|**int**|**Válido para** : [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] y versiones posteriores.<br><br>Indica el estado actual del examen de cifrado. <br><br>0 = no se ha iniciado ningún examen, TDE no está habilitado<br><br>1 = el examen está en curso.<br><br>2 = el examen está en curso, pero se ha suspendido, el usuario se puede reanudar.<br><br>3 = el examen se ha anulado por alguna razón, se requiere la intervención manual. Póngase en contacto con Soporte técnico de Microsoft para obtener más ayuda.<br><br>4 = el examen se ha completado correctamente, TDE está habilitado y el cifrado se ha completado.|
-|encryption_scan_state_desc|**nvarchar(32)**|**Válido para** : [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] y versiones posteriores.<br><br>Cadena que indica el estado actual del examen de cifrado.<br><br> NONE<br><br>RUNNING<br><br>SUSPENDED<br><br>ABORTED<br><br>FINALIZA|
+|encryption_scan_state_desc|**nvarchar(32)**|**Válido para** : [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] y versiones posteriores.<br><br>Cadena que indica el estado actual del examen de cifrado.<br><br> Ninguno<br><br>RUNNING<br><br>SUSPENDED<br><br>ABORTED<br><br>FINALIZA|
 |encryption_scan_modify_date|**datetime**|**Válido para** : [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] y versiones posteriores.<br><br> Muestra la fecha (en UTC) en que se modificó por última vez el estado de examen de cifrado.|
   
 ## <a name="permissions"></a>Permisos

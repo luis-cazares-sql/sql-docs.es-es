@@ -1,8 +1,8 @@
 ---
 description: sys.dm_os_wait_stats (Transact-SQL)
-title: sys.dm_os_wait_stats (Transact-SQL) | Microsoft Docs
+title: sys.dm_os_wait_stats (Transact-SQL)
 ms.custom: ''
-ms.date: 08/19/2020
+ms.date: 01/25/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -17,16 +17,15 @@ dev_langs:
 - TSQL
 helpviewer_keywords:
 - sys.dm_os_wait_stats dynamic management view
-ms.assetid: 568d89ed-2c96-4795-8a0c-2f3e375081da
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 1dccbed2d872b2cd2973e644f9f02149f88b11d4
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
+ms.openlocfilehash: da16b2c28c55952e609b98637802c940ff5a6a54
+ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98172757"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98813068"
 ---
 # <a name="sysdm_os_wait_stats-transact-sql"></a>sys.dm_os_wait_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -51,7 +50,7 @@ En [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] , requiere el `V
 En SQL Database objetivos de servicio Basic, S0 y S1, y para las bases de datos de grupos elásticos, `Server admin` `Azure Active Directory admin` se requiere la cuenta o. En el resto de los objetivos del servicio SQL Database, `VIEW DATABASE STATE` se requiere el permiso en la base de datos.   
 
 ##  <a name="types-of-waits"></a><a name="WaitTypes"></a> Tipos de esperas  
- Las **esperas de recursos** se producen cuando un trabajador solicita acceso a un recurso que no está disponible porque otro trabajador lo está utilizando o aún no está disponible. Algunos ejemplos de esperas de recursos son los bloqueos, bloqueos temporales y esperas de red y E/S de disco. Las esperas de bloqueos y bloqueos temporales son esperas en objetos de sincronización.  
+ Las **esperas de recursos** se producen cuando un trabajador solicita acceso a un recurso que no está disponible porque otro trabajador lo está utilizando o aún no está disponible. Algunos ejemplos de esperas de recursos son bloqueos, bloqueos temporales, redes y esperas de e/s de disco. Las esperas de bloqueos y bloqueos temporales son esperas en objetos de sincronización.  
   
 Las **esperas de cola** se producen cuando un trabajador está inactivo, esperando que se asigne el trabajo. Las esperas de colas se ven normalmente con tareas en segundo plano del sistema como las tareas de supervisión de interbloqueos y de limpieza de registros eliminados. Estas tareas esperarán a que las solicitudes de trabajo se pongan en una cola de trabajo. Las esperas de colas también pueden activarse periódicamente incluso si no se han puesto en cola paquetes nuevos.  
   
@@ -297,7 +296,7 @@ Este comando restablece todos los contadores en 0.
 |HADR_AR_UNLOAD_COMPLETED |Solo para uso interno. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
 |HADR_ARCONTROLLER_NOTIFICATIONS_SUBSCRIBER_LIST |El publicador de un evento de réplica de disponibilidad (como un cambio de estado o de configuración) espera a un acceso de lectura/escritura exclusivo a la lista de suscriptores de evento. Solo para uso interno. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
 |HADR_BACKUP_BULK_LOCK |La base de datos principal Always On recibió una solicitud de copia de seguridad de una base de datos secundaria y está esperando a que el subproceso en segundo plano termine de procesar la solicitud al adquirir o liberar el bloqueo BulkOp. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
-|HADR_BACKUP_QUEUE |El subproceso en segundo plano de reserva de la base de datos principal Always On está esperando una nueva solicitud de trabajo de la base de datos secundaria. (generalmente, esto ocurre cuando la base de datos principal contiene el registro BulkOp y espera a que la base de datos secundaria indique que la base de datos principal puede liberar el bloqueo). <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
+|HADR_BACKUP_QUEUE |El subproceso en segundo plano de reserva de la base de datos principal Always On está esperando una nueva solicitud de trabajo de la base de datos secundaria. (Normalmente, esto ocurre cuando la base de datos principal contiene el registro BulkOp y está esperando a que la base de datos secundaria indique que la base de datos principal puede liberar el bloqueo). <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
 |HADR_CLUSAPI_CALL |Un [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] subproceso está esperando para cambiar del modo no preferente (programado por [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ) al modo preferente (programado por el sistema operativo) para invocar las API de clústeres de conmutación por error de Windows Server. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
 |HADR_COMPRESSED_CACHE_SYNC |En espera del acceso a la memoria caché de bloques de registros comprimidos que se usan para evitar la compresión redundante de los bloques de registros enviados a varias bases de datos secundarias. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
 |HADR_CONNECTIVITY_INFO |Solo para uso interno. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
@@ -333,7 +332,7 @@ Este comando restablece todos los contadores en 0.
 |HADR_PARTNER_SYNC |La espera del control de simultaneidad en la lista de asociados. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
 |HADR_READ_ALL_NETWORKS |En espera para obtener acceso de lectura o escritura a la lista de redes WSFC. Solo para uso interno. Nota: el motor mantiene una lista de redes de WSFC que se utiliza en las vistas de administración dinámica (como sys.dm_hadr_cluster_networks) o para validar Always On instrucciones Transact-SQL que hacen referencia a la información de red de WSFC. Esta lista se actualiza tras el inicio del motor, las notificaciones relacionadas con WSFC y el reinicio de Always On interno (por ejemplo, la pérdida y la reobtención del cuórum de WSFC). Normalmente, las tareas se bloquearán cuando una actualización de esa lista esté en curso. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
 |HADR_RECOVERY_WAIT_FOR_CONNECTION |En espera de que la base de datos secundaria se conecte a la principal antes de realizar la recuperación. Se trata de una espera prevista, que puede alargarse si la conexión a la principal se establece con lentitud. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
-|HADR_RECOVERY_WAIT_FOR_UNDO |La recuperación de la base de datos espera a que la base de datos secundaria finalice la fase de reversión e inicialización para traerla de nuevo al punto de registro común con la base de datos principal. Se trata de una espera prevista tras las recuperaciones por error. El progreso de la operación de deshacer se puede seguir a través del Monitor de sistema de Windows (perfmon.exe) y las vistas de administración dinámica. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
+|HADR_RECOVERY_WAIT_FOR_UNDO |La recuperación de la base de datos espera a que la base de datos secundaria finalice la fase de reversión e inicialización para traerla de nuevo al punto de registro común con la base de datos principal. Se trata de una espera esperada después de las conmutaciones por error. Se puede realizar un seguimiento del progreso mediante el monitor de sistema de Windows (perfmon.exe) y las vistas de administración dinámica. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
 |HADR_REPLICAINFO_SYNC |La espera del control de simultaneidad para actualizar el estado de la réplica actual. <br /><br /> **Válido para** : [!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] y versiones posteriores.| 
 |HADR_SEEDING_CANCELLATION |Solo para uso interno. <br /><br /> **Válido para** : [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] y versiones posteriores.| 
 |HADR_SEEDING_FILE_LIST |Solo para uso interno. <br /><br /> **Válido para** : [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] y versiones posteriores.| 
@@ -494,11 +493,11 @@ Este comando restablece todos los contadores en 0.
 |PAGEIOLATCH_SH |Tiene lugar cuando una tarea está esperando en un bloqueo temporal por un búfer que está en una solicitud de E/S. La solicitud de bloqueo temporal está en modo compartido. Las esperas largas pueden indicar problemas en el subsistema del disco.| 
 |PAGEIOLATCH_UP |Tiene lugar cuando una tarea está esperando en un bloqueo temporal por un búfer que está en una solicitud de E/S. La solicitud de bloqueo temporal está en modo de actualización. Las esperas largas pueden indicar problemas en el subsistema del disco.| 
 |PAGELATCH_DT |Tiene lugar cuando una tarea está esperando en un bloqueo temporal por un búfer que no está en una solicitud de E/S. La solicitud de bloqueo temporal está en modo de destrucción.| 
-|PAGELATCH_EX |Tiene lugar cuando una tarea está esperando en un bloqueo temporal por un búfer que no está en una solicitud de E/S. La solicitud de bloqueo temporal está en modo exclusivo.| 
+|PAGELATCH_EX |Tiene lugar cuando una tarea está esperando en un bloqueo temporal por un búfer que no está en una solicitud de E/S. La solicitud de bloqueo temporal está en modo exclusivo. </br> Un escenario común que conduce a este bloqueo temporal es la contención del bloqueo temporal del búfer de "inserción de última página". Para comprender y resolver esto, use [resolver la última inserción de la página PAGELATCH_EX la contención](/troubleshoot/sql/performance/resolve-pagelatch-ex-contention) y [diagnosticar y resolver la contención de bloqueos de última página-inserción en SQL Server](../diagnose-resolve-latch-contention.md#last-pagetrailing-page-insert-contention). Otro escenario es [la contención de bloqueos temporales en tablas pequeñas con un índice no agrupado e inserciones aleatorias (tabla de cola)](../diagnose-resolve-latch-contention.md#latch-contention-on-small-tables-with-a-non-clustered-index-and-random-inserts-queue-table).| 
 |PAGELATCH_KP |Tiene lugar cuando una tarea está esperando en un bloqueo temporal por un búfer que no está en una solicitud de E/S. La solicitud de bloqueo temporal está en modo de conservación.| 
 |PAGELATCH_NL |Solamente se identifica con fines informativos. No compatible. La compatibilidad con versiones posteriores no está garantizada.| 
 |PAGELATCH_SH |Tiene lugar cuando una tarea está esperando en un bloqueo temporal por un búfer que no está en una solicitud de E/S. La solicitud de bloqueo temporal está en modo compartido.| 
-|PAGELATCH_UP |Tiene lugar cuando una tarea está esperando en un bloqueo temporal por un búfer que no está en una solicitud de E/S. La solicitud de bloqueo temporal está en modo de actualización.| 
+|PAGELATCH_UP |Tiene lugar cuando una tarea está esperando en un bloqueo temporal por un búfer que no está en una solicitud de E/S. La solicitud de bloqueo temporal está en modo de actualización. Normalmente este tipo de espera se puede observar cuando una página del sistema (búfer) como PFS, GAM o SGAM se ha bloqueado. Para solucionar los problemas de un escenario común, consulte [reducción de la contención de asignación en SQL Server base de datos Tempdb](/troubleshoot/sql/performance/recommendations-reduce-allocation-contention).| 
 |PARALLEL_BACKUP_QUEUE |Tiene lugar cuando se serializa la salida generada por RESTORE HEADERONLY, RESTORE FILELISTONLY o RESTORE LABELONLY.| 
 |PARALLEL_REDO_DRAIN_WORKER |Solo para uso interno. <br /><br /> **Válido para** : [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] y versiones posteriores.| 
 |PARALLEL_REDO_FLOW_CONTROL |Solo para uso interno. <br /><br /> **Válido para** : [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] y versiones posteriores.| 
