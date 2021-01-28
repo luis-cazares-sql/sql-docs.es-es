@@ -39,7 +39,7 @@ ms.locfileid: "98100984"
 |3|+ (positivo), - (negativo), + (suma), + (concatenación), - (resta), & (AND bit a bit), ^ (OR exclusivo bit a bit), &#124; (OR bit a bit)|  
 |4|=, >, \<, >=, <=, <>, !=, !>, !< (operadores de comparación)|  
 |5|NOT|  
-|6|y|  
+|6|AND|  
 |7|ALL, ANY, BETWEEN, IN, LIKE, OR, SOME|  
 |8|= (asignación)|  
   
