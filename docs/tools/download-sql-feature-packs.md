@@ -11,12 +11,12 @@ ms.author: maghan
 ms.reviewer: mikeray
 ms.custom: seo-lt-2019
 ms.date: 12/15/2019
-ms.openlocfilehash: e99362bd36d99aeeb2b44d3947454f198d29be7c
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 3afde284deb138b23392eaf4632af22f52ae9b7e
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642456"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98689171"
 ---
 # <a name="download-sql-server-extended-features-and-tools"></a>Descarga de características y herramientas extendidas de SQL Server
 
@@ -28,7 +28,7 @@ En este artículo se proporciona una breve explicación de las distintas descarg
 
 | Característica | Descripción |
 |----|-----|
-| [Bibliotecas cliente de Analysis Services](https://go.microsoft.com/fwlink/?LinkID=853574) |Las bibliotecas de cliente de Microsoft Analysis Services encapsulan las interfaces de programación de aplicaciones (API) para autenticar e intercambiar solicitudes y respuestas con Microsoft SQL Server Analysis Services 2005 o versiones posteriores, Microsoft Azure Analysis Services y Microsoft Power BI.<br><br> Las bibliotecas de cliente de Analysis Services incluyen los siguientes paquetes de instalación: </br> Microsoft Analysis Services ADOMD.NET </br> Proveedor de OLEDB de Microsoft Analysis Services (MSOLAP) </br> Objetos de administración de análisis (AMO) de Microsoft |
+| [Bibliotecas cliente de Analysis Services](/analysis-services/client-libraries) |Las bibliotecas de cliente de Microsoft Analysis Services encapsulan las interfaces de programación de aplicaciones (API) para autenticar e intercambiar solicitudes y respuestas con Microsoft SQL Server Analysis Services 2005 o versiones posteriores, Microsoft Azure Analysis Services y Microsoft Power BI.<br><br> Las bibliotecas de cliente de Analysis Services incluyen los siguientes paquetes de instalación: </br> Microsoft Analysis Services ADOMD.NET </br> Proveedor de OLEDB de Microsoft Analysis Services (MSOLAP) </br> Objetos de administración de análisis (AMO) de Microsoft |
 | [NuGetAnalysisSrvs](https://www.nuget.org/profiles/NuGetAnalysisSrvs) | NuGets para Analysis Services |
 |||
 
@@ -44,8 +44,8 @@ En este artículo se proporciona una breve explicación de las distintas descarg
 | Característica | Descripción |
 |----|-----|
 | [Utilidades de línea de comandos para SQL Server](https://www.microsoft.com/download/details.aspx?id=52680) | La utilidad SQLCMD permite a los usuarios conectarse a información de conjuntos de filas desde instancias de SQL Server y además enviar lotes de Transact-SQL con esta información y generarla. |
-| [Controladores para PHP en SQL Server](https://aka.ms/downloadmsphpsql) | Los controladores de Microsoft para PHP en SQL Server son extensiones de PHP 5 que permiten leer y escribir datos de SQL Server desde scripts PHP. |
-| [Controlador JDBC en SQL Server](https://aka.ms/downloadmssqljdbc) | El controlador JDBC de Microsoft para SQL Server proporciona acceso a SQL Server desde cualquier aplicación Java, servidor de aplicaciones o applet habilitado para Java.|
+| [Controladores para PHP en SQL Server](../connect/php/download-drivers-php-sql-server.md) | Los controladores de Microsoft para PHP en SQL Server son extensiones de PHP 5 que permiten leer y escribir datos de SQL Server desde scripts PHP. |
+| [Controlador JDBC en SQL Server](../connect/jdbc/download-microsoft-jdbc-driver-for-sql-server.md) | El controlador JDBC de Microsoft para SQL Server proporciona acceso a SQL Server desde cualquier aplicación Java, servidor de aplicaciones o applet habilitado para Java.|
 | [SQL Server Data-Tier Application Framework](https://www.microsoft.com/download/details.aspx?id=56508) | El marco de trabajo de la aplicación de capa de datos (DAC) de SQL Server es un componente basado en .NET Framework que proporciona servicios de ciclo de vida de aplicación para el desarrollo y la administración de bases de datos. |
 | [Estadísticas de lenguaje semántico de SQL Server](../relational-databases/search/install-and-configure-semantic-search.md) | La base de datos de estadísticas de lenguaje semántico es un componente necesario para la característica Búsqueda semántica estadística en Microsoft SQL Server. |
 | [Objetos de administración compartida de SQL Server](../relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide.md) | Objetos de administración de SQL Server (SMO) es un modelo de objetos de .NET Framework que permite a los desarrolladores de software crear aplicaciones del lado cliente para administrar los objetos y servicios de SQL Server. |

@@ -9,12 +9,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: contperf-fy20q4
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 4c4b293b13ec59421ea5827572203ba13e526212
-ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
+ms.openlocfilehash: 51d729bcdb25900af855e7429e953ee44dc1388b
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97878813"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766304"
 ---
 # <a name="known-issues-in-sql-server-machine-learning-services"></a>Problemas conocidos de SQL Server Machine Learning Services
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -168,7 +168,7 @@ Busque Launchpad en la carpeta `Binn` de la instancia. Por ejemplo, en una insta
 
 ### <a name="9-remote-compute-contexts-are-blocked-by-a-firewall-in-sql-server-instances-that-are-running-on-azure-virtual-machines"></a>9. Un firewall bloquea los contextos de proceso remoto en instancias de SQL Server que se ejecutan en máquinas virtuales de Azure
 
-Si ha instalado [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] en una máquina virtual de Azure, es posible que no pueda usar contextos de proceso que requieran el uso del área de trabajo de la máquina virtual. El motivo es que, de forma predeterminada, el firewall de las máquinas virtuales de Azure incluye una regla que bloquea el acceso a la red de las cuentas de usuario locales de R.
+Si ha instalado [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] en una máquina virtual de Azure, es posible que no pueda usar contextos de proceso que requieran el uso del área de trabajo de la máquina virtual. El motivo es que, de forma predeterminada, el firewall de las máquinas virtuales de Azure incluye una regla que bloquea el acceso a la red de las cuentas de usuario locales de R.
 
 Como alternativa, en la máquina virtual de Azure, abra **Firewall de Windows con seguridad avanzada**, seleccione **Reglas de salida** y deshabilite la regla siguiente: **Block network access for R local user accounts in SQL Server instance MSSQLSERVER** (Bloquear el acceso a la red de las cuentas de usuario locales de R en la instancia de SQL Server MSSQLSERVER). También puede dejar la regla habilitada, pero cambiar la propiedad de seguridad a **Allow if secure** (Permitir si es seguro).
 
@@ -734,7 +734,7 @@ Con el símbolo del sistema en modo de administrador, ejecute el siguiente coman
 
 ## <a name="revolution-r-enterprise-and-microsoft-r-open"></a>Revolution R Enterprise y Microsoft R Open
 
-En esta sección se enumeran los problemas específicos de la conectividad, el desarrollo y las herramientas de rendimiento de R que proporciona Revolution Analytics. Estas herramientas se han proporcionado en versiones preliminares anteriores de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].
+En esta sección se enumeran los problemas específicos de la conectividad, el desarrollo y las herramientas de rendimiento de R que proporciona Revolution Analytics. Estas herramientas se han proporcionado en versiones preliminares anteriores de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].
 
 En general, se recomienda que desinstale estas versiones anteriores e instale la versión más reciente de SQL Server o Microsoft R Server.
 

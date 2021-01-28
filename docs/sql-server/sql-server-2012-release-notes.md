@@ -13,12 +13,12 @@ ms.assetid: 9ccb390a-67a9-4593-85ea-2b4c41c4620f
 author: rothja
 ms.author: jroth
 monikerRange: = sql-server-2016
-ms.openlocfilehash: f183c3d44525d85c26a6ba36345eb347ba1c38d3
-ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.openlocfilehash: fff3b6de7e2e83c535997194ca2622d9cd9e9595
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98594845"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766174"
 ---
 # <a name="sql-server-2012-release-notes"></a>Notas de la versión de SQL Server 2012
 [!INCLUDE [SQL Server Azure SQL Database ](../includes/applies-to-version/sqlserver.md)]
@@ -27,7 +27,7 @@ En este documento Notas de la versión se describen los problemas conocidos que 
 Para obtener una introducción e información acerca de cómo instalar SQL Server 2012, vea el documento Léame de SQL Server 2012. El documento Léame está disponible en el disco de instalación y en la página de descarga [Léame](https://download.microsoft.com/download/3/B/D/3BD9DD65-D3E3-43C3-BB50-0ED850A82AD5/ENU/Readme.htm) . También puede encontrar más información en los [Libros en pantalla de SQL Server](/previous-versions/sql/sql-server-2012/ms130214(v=sql.110)) y en los foros de [SQL Server](https://go.microsoft.com/fwlink/?LinkId=213599).  
   
 ## <a name="10-before-you-install"></a><a name="Install"></a>1.0 Antes de la instalación  
-Antes de instalar [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)], tenga en cuenta la siguiente información.  
+Antes de instalar [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)], tenga en cuenta la siguiente información.  
   
 ### <a name="11-rules-documentation-for-sql-server-2012-setup"></a>1.1 Documentación de las reglas para la instalación de SQL Server 2012  
 **Problema:** el programa de instalación de SQL Server valida la configuración del equipo antes de que se complete la operación de instalación. Las diversas reglas que se ejecutan durante la operación de instalación de SQL Server se capturan mediante el informe del Comprobador de configuración del sistema (SCC). La documentación de estas reglas de instalación ya no está disponible en MSDN Library.  

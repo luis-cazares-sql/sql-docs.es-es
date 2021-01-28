@@ -12,16 +12,16 @@ ms.assetid: d8630923-a600-4f1c-aca1-027453a3ec82
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: d623bd63cfb9d2d72f41bf498259b1d13fe651b8
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 8890ede78dbc42a885e1d994fe3aee42100085dd
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478426"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766449"
 ---
 # <a name="sql-server-properties-always-on-high-availability-tab"></a>Propiedades de SQL Server (pestaña Alta disponibilidad de AlwaysOn)
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
-  Use la pestaña **Alta disponibilidad de AlwaysOn** del cuadro de diálogo **Propiedades de SQL Server** del Administrador de configuración de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para habilitar o deshabilitar la característica Grupos de disponibilidad AlwaysOn de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. La habilitación de los Grupos de disponibilidad AlwaysOn es un requisito previo para que una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] use los grupos de disponibilidad como solución de alta disponibilidad y recuperación ante desastres.  
+  Use la pestaña **Alta disponibilidad de AlwaysOn** del cuadro de diálogo **Propiedades de SQL Server** del Administrador de configuración de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] para habilitar o deshabilitar la característica Grupos de disponibilidad AlwaysOn de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. La habilitación de los Grupos de disponibilidad AlwaysOn es un requisito previo para que una instancia de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] use los grupos de disponibilidad como solución de alta disponibilidad y recuperación ante desastres.  
   
 ##  <a name="prerequisites"></a><a name="Prerequisites"></a> Requisitos previos  
  Para tener habilitados los Grupos de disponibilidad AlwaysOn, una instancia del servidor debe cumplir los requisitos previos siguientes:  
@@ -35,7 +35,7 @@ ms.locfileid: "97478426"
 -   Habilite los Grupos de disponibilidad AlwaysOn para las distintas instancias del servidor de una en una. Después de habilitar los Grupos de disponibilidad AlwaysOn, espere hasta que se haya reiniciado el servicio [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] antes de habilitar la instancia del servidor siguiente.  
   
 > [!NOTE]  
->  Para más información sobre las características admitidas y sobre los requisitos previos, restricciones y recomendaciones adicionales para [!INCLUDE[ssHADR](../../includes/sshadr-md.md)], vea los Libros en pantalla de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] .  
+>  Para más información sobre las características admitidas y sobre los requisitos previos, restricciones y recomendaciones adicionales para [!INCLUDE[ssHADR](../../includes/sshadr-md.md)], vea los Libros en pantalla de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] .  
   
 ## <a name="dialog-options"></a>Opciones del cuadro de diálogo  
  **Nombre del clúster de conmutación por error de Windows**  
@@ -54,6 +54,6 @@ ms.locfileid: "97478426"
 ## <a name="ui-element-list"></a>Lista de elementos de la interfaz de usuario  
   
 > [!NOTE]  
->  Para más información sobre los pasos que se deben seguir después de deshabilitar los Grupos de disponibilidad AlwaysOn y si quiere saber más sobre cómo crear y configurar grupos de disponibilidad, vea los Libros en pantalla de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] .  
+>  Para más información sobre los pasos que se deben seguir después de deshabilitar los Grupos de disponibilidad AlwaysOn y si quiere saber más sobre cómo crear y configurar grupos de disponibilidad, vea los Libros en pantalla de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] .  
   
   

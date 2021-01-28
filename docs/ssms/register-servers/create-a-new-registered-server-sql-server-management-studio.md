@@ -16,18 +16,18 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: 9bdbf68766e6c271f17254afc4262de341deaeb3
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.openlocfilehash: da735323071b83aaee96c5699ef3f727fb7744f7
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92037604"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765939"
 ---
 # <a name="create-a-new-registered-server-sql-server-management-studio"></a>Crear un servidor registrado (SQL Server Management Studio)
 
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-En este tema se describe cómo guardar la información de conexión para los servidores a los que tiene acceso frecuentemente, registrando el servidor en el componente Servidores registrados de [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] en [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Un servidor puede registrarse antes de conectarlo o cuando se conecta desde el Explorador de objetos. Hay una opción de menú especial para registrar las instancias de servidor en el equipo local.  
+En este tema se describe cómo guardar la información de conexión para los servidores a los que tiene acceso frecuentemente, registrando el servidor en el componente Servidores registrados de [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] en [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. Un servidor puede registrarse antes de conectarlo o cuando se conecta desde el Explorador de objetos. Hay una opción de menú especial para registrar las instancias de servidor en el equipo local.  
   
  Hay dos tipos de servidores registrados:  
   
@@ -53,7 +53,7 @@ En este tema se describe cómo guardar la información de conexión para los ser
 1.  Si Servidores registrados no está visible en [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)], en el menú **Ver** , haga clic en **Servidores registrados**.  
   
      **Tipo de servidor**  
-     Cuando se registra un servidor desde Servidores registrados, el cuadro **Tipo de servidor** es de solo lectura y coincide con el tipo de servidor que se muestra en el panel Servidores registrados. Para registrar un tipo de servidor diferente, haga clic en **Motor de base de datos**, **Analysis Server**, **Reporting Services**o **Integration Services** en la barra de herramientas de **Servidores registrados** antes de empezar a registrar un nuevo servidor.  
+     Cuando se registra un servidor desde Servidores registrados, el cuadro **Tipo de servidor** es de solo lectura y coincide con el tipo de servidor que se muestra en el panel Servidores registrados. Para registrar un tipo de servidor diferente, haga clic en **Motor de base de datos**, **Analysis Server**, **Reporting Services** o **Integration Services** en la barra de herramientas de **Servidores registrados** antes de empezar a registrar un nuevo servidor.  
   
      **Nombre del servidor**  
      Seleccione la instancia del servidor que se va a registrar en el formato: *\<servername>* [\\ *\<instancename>* ].  
@@ -102,7 +102,7 @@ En este tema se describe cómo guardar la información de conexión para los ser
   
  Para ejecutar las consultas con todos los servidores de un grupo de servidores locales, haga clic con el botón derecho en el grupo de servidores, haga clic en **Conectar** y, después, haga clic en **Nueva consulta**. Cuando las consultas se ejecuten en la nueva ventana del Editor de consultas, se ejecutarán con todos los servidores del grupo utilizando la información de conexión almacenada incluido el contexto de autenticación del usuario. Los servidores registrados con la autenticación de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , pero que no guarden la contraseña no podrán conectarse.  
   
- Para ejecutar las consultas con todos los servidores que se registran con un Servidor de administración central, expanda el servidor, haga clic con el botón derecho en el grupo de servidores, haga clic en **Conectar**y, después, haga clic en **Nueva consulta**. Cuando las consultas se ejecuten en la nueva ventana del Editor de consultas, ejecutarán con todos los servidores del grupo de servidores, utilizando la información de conexión almacenada y el contexto de autenticación de Windows del usuario.  
+ Para ejecutar las consultas con todos los servidores que se registran con un Servidor de administración central, expanda el servidor, haga clic con el botón derecho en el grupo de servidores, haga clic en **Conectar** y, después, haga clic en **Nueva consulta**. Cuando las consultas se ejecuten en la nueva ventana del Editor de consultas, ejecutarán con todos los servidores del grupo de servidores, utilizando la información de conexión almacenada y el contexto de autenticación de Windows del usuario.  
   
 ## <a name="see-also"></a>Consulte también  
  [Ocultar objetos del sistema en el Explorador de objetos](../object/hide-system-objects-in-object-explorer.md)   

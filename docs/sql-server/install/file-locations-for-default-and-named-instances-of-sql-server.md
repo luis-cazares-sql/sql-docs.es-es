@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 463c570e-9f75-4653-b3b8-4d61753b0013
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: e109b68dbf9b2e2b1d119f2f676896f5fe682aaf
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
+ms.openlocfilehash: b542b33ee1dc4bf849131f90be0316c32b386879
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98172707"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765878"
 ---
 # <a name="file-locations-for-default-and-named-instances-of-sql-server"></a>Ubicaciones de archivos para las instancias predeterminadas y con nombre de SQL Server
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -59,14 +59,14 @@ ms.locfileid: "98172707"
   
  A continuación se enumeran algunos ejemplos de identificadores de instancia predeterminados de esta versión de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] :  
   
--   MSSQL\{nn}.MSSQLSERVER para una instancia predeterminada de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+-   MSSQL\{nn}.MSSQLSERVER para una instancia predeterminada de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].  
   
 -   MSAS\{nn}.MSSQLSERVER para una instancia predeterminada de [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Analysis Services.  
   
--   MSSQL\{nn}.MyInstance para una instancia con nombre de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] denominada "MyInstance."  
+-   MSSQL\{nn}.MyInstance para una instancia con nombre de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] denominada "MyInstance."  
   
 
- La estructura de directorios para una instancia con nombre de [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] que incluyera el [!INCLUDE[ssDE](../../includes/ssde-md.md)] y [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)], se denominara "MyInstance" y estuviera instalada en los directorios predeterminados sería como sigue:  
+ La estructura de directorios para una instancia con nombre de [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] que incluyera el [!INCLUDE[ssDE](../../includes/ssde-md.md)] y [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)], se denominara "MyInstance" y estuviera instalada en los directorios predeterminados sería como sigue:  
   
 -   C:\Archivos de programa\Microsoft SQL Server\MSSQL\{nn}.MyInstance\  
   

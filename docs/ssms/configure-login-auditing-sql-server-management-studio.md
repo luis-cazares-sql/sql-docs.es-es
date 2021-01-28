@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 16961116-57ac-4eef-8037-791b26ade548
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 26a61a26350cb566a4526893c877eb5825afc6f1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: cda64ccc66869683decf6779b3dcbfa5a407114e
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417951"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765897"
 ---
 # <a name="configure-login-auditing-sql-server-management-studio"></a>Configurar la auditoría de inicio de sesión (SQL Server Management Studio)
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
-En este tema se describe cómo configurar la auditoría de inicio de sesión en [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] para supervisar la actividad de inicio de sesión de [!INCLUDE[ssDEnoversion](../includes/ssdenoversion_md.md)]. Se puede configurar para que escriba en el registro de errores cuando se produzcan los eventos que se indican a continuación.  
+En este tema se describe cómo configurar la auditoría de inicio de sesión en [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] para supervisar la actividad de inicio de sesión de [!INCLUDE[ssDEnoversion](../includes/ssdenoversion_md.md)]. Se puede configurar para que escriba en el registro de errores cuando se produzcan los eventos que se indican a continuación.  
   
 -   Inicios de sesión erróneos  
   
