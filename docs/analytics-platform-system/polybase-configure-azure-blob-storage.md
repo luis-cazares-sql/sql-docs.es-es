@@ -1,6 +1,6 @@
 ---
-title: Uso de polybase para acceder a datos externos en Azure BLOB Storage
-description: Explica cómo usar polybase en un almacenamiento de datos paralelos (APS) para consultar datos externos en Azure BLOB Storage.
+title: Usar polybase para tener acceso a datos externos en Azure Blob Storage
+description: Explica cómo usar polybase en un almacenamiento de datos paralelos (APS) para consultar datos externos en Azure Blob Storage.
 author: mzaman1
 ms.prod: sql
 ms.technology: data-warehouse
@@ -9,35 +9,35 @@ ms.date: 04/17/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 52ad8a4e8c335eea412264b69d87453a5ce84104
-ms.sourcegitcommit: 36fe62a3ccf34979bfde3e192cfa778505add465
+ms.openlocfilehash: 59f9e29940947c1afcf3321fe138030a3fb0d5f1
+ms.sourcegitcommit: 76c5e10704e3624b538b653cf0352e606b6346d3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94520982"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98924708"
 ---
-# <a name="configure-polybase-to-access-external-data-in-azure-blob-storage"></a>Configuración de polybase para acceder a datos externos en Azure BLOB Storage
+# <a name="configure-polybase-to-access-external-data-in-azure-blob-storage"></a>Configurar PolyBase para acceder a datos externos en Azure Blob Storage
 
-En el artículo se explica cómo usar polybase en una instancia de SQL Server para consultar datos externos en Azure BLOB Storage.
+En el artículo se explica cómo usar PolyBase en una instancia de SQL Server para consultar datos externos en Azure Blob Storage.
 
 > [!NOTE]
-> APS actualmente solo admite Azure BLOB Storage estándar de uso general (LRS) con redundancia local (LRS).
+> APS actualmente solo admite el Azure Blob Storage estándar de uso general (LRS) con redundancia local.
 
 ## <a name="prerequisites"></a>Prerrequisitos
 
- - Almacenamiento de blobs de Azure en su suscripción.
- - Un contenedor creado en el almacenamiento de blobs de Azure.
+ - Azure Blob Storage en su suscripción.
+ - Contenedor creado en el Azure Blob Storage.
 
-### <a name="configure-azure-blob-storage-connectivity"></a>Configuración de la conectividad de almacenamiento de blobs de Azure
+### <a name="configure-azure-blob-storage-connectivity"></a>Configuración de la conectividad de Azure Blob Storage
 
-En primer lugar, configure APS para usar el almacenamiento de blobs de Azure.
+En primer lugar, configure APS para usar Azure Blob Storage.
 
-1. Ejecute [sp_configure](../relational-databases/system-stored-procedures/sp-configure-transact-sql.md) con "conectividad de Hadoop" establecida en un proveedor de almacenamiento de blobs de Azure. Para hallar el valor de los proveedores, consulte [Configuración de la conectividad de PolyBase](../database-engine/configure-windows/polybase-connectivity-configuration-transact-sql.md).
+1. Ejecute [sp_configure](../relational-databases/system-stored-procedures/sp-configure-transact-sql.md) con "hadoop connectivity" establecido en un proveedor de Azure Blob Storage. Para hallar el valor de los proveedores, consulte [Configuración de la conectividad de PolyBase](../database-engine/configure-windows/polybase-connectivity-configuration-transact-sql.md).
 
    ```sql  
    -- Values map to various external data sources.  
    -- Example: value 7 stands for Hortonworks HDP 2.1 to 2.6 on Linux,
-   -- 2.1 to 2.3 on Windows Server, and Azure Blob storage  
+   -- 2.1 to 2.3 on Windows Server, and Azure Blob Storage  
    sp_configure @configname = 'hadoop connectivity', @configvalue = 7;
    GO
 
@@ -49,7 +49,7 @@ En primer lugar, configure APS para usar el almacenamiento de blobs de Azure.
   
 ## <a name="configure-an-external-table"></a>Configurar una tabla externa
 
-Para consultar los datos en el almacenamiento de blobs de Azure, debe definir una tabla externa que se usará en las consultas de Transact-SQL. Los pasos siguientes describen cómo configurar la tabla externa.
+Para consultar los datos en el Azure Blob Storage, debe definir una tabla externa que se utilizará en las consultas Transact-SQL. Los pasos siguientes describen cómo configurar la tabla externa.
 
 1. Cree una clave maestra en la base de datos. Es necesario cifrar el secreto de la credencial.
 
@@ -57,7 +57,7 @@ Para consultar los datos en el almacenamiento de blobs de Azure, debe definir un
    CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'S0me!nfo';  
    ```
 
-1. Cree una credencial con ámbito de base de datos para el almacenamiento de blobs de Azure.
+1. Cree una credencial con ámbito de base de datos para Azure Blob Storage.
 
    ```sql
    -- IDENTITY: any string (this is not used for authentication to Azure storage).  
@@ -66,7 +66,7 @@ Para consultar los datos en el almacenamiento de blobs de Azure, debe definir un
    WITH IDENTITY = 'user', Secret = '<azure_storage_account_key>';
    ```
 
-1. Cree un origen de datos externo con [Crear origen de datos externo](../t-sql/statements/create-external-data-source-transact-sql.md).
+1. Cree un origen de datos externo con [CREATE EXTERNAL DATA SOURCE](../t-sql/statements/create-external-data-source-transact-sql.md).
 
    ```sql
    -- LOCATION:  Azure account storage account name and blob container name.  
@@ -81,7 +81,7 @@ Para consultar los datos en el almacenamiento de blobs de Azure, debe definir un
 1. Cree un formato de archivo externo con [CREATE EXTERNAL FILE FORMAT](../t-sql/statements/create-external-file-format-transact-sql.md).
 
    ```sql
-   -- FORMAT TYPE: Type of format in Azure Blob storage (DELIMITEDTEXT,  RCFILE, ORC, PARQUET).
+   -- FORMAT TYPE: Type of format in Azure Blob Storage (DELIMITEDTEXT,  RCFILE, ORC, PARQUET).
    -- In this example, the files are pipe (|) delimited
    CREATE EXTERNAL FILE FORMAT TextFileFormat WITH (  
          FORMAT_TYPE = DELIMITEDTEXT,
@@ -124,7 +124,7 @@ Las siguientes consultas proporcionan un ejemplo con datos de sensor de vehícul
 
 ### <a name="ad-hoc-queries"></a>Consultas ad hoc  
 
-La siguiente consulta ad hoc combina relacional con los datos de Azure BLOB Storage. Selecciona los clientes que tienen más de 35 mph y combinan datos de clientes estructurados almacenados en SQL Server con datos de sensor de automóviles almacenados en Azure BLOB Storage.  
+La siguiente consulta ad hoc combina relacional con datos de Azure Blob Storage. Selecciona los clientes que tienen más de 35 mph y combinan datos de clientes estructurados almacenados en SQL Server con los datos de sensor de automóviles almacenados en Azure Blob Storage.  
 
 ```sql  
 SELECT DISTINCT Insured_Customers.FirstName,Insured_Customers.LastName,
@@ -155,10 +155,10 @@ ON Insured_Customers.CustomerKey = SensorD.CustomerKey
 
 ### <a name="exporting-data"></a>Exportación de datos  
 
-La siguiente consulta exporta datos de APS a Azure BLOB Storage. Se puede usar para archivar datos relacionales en el almacenamiento de blobs de Azure y, al mismo tiempo, poder consultarlos.
+La siguiente consulta exporta datos de APS a Azure Blob Storage. Se puede usar para archivar datos relacionales en Azure Blob Storage y, al mismo tiempo, poder consultarlos.
 
 ```sql
--- Export data: Move old data to Azure Blob storage while keeping it query-able via an external table.  
+-- Export data: Move old data to Azure Blob Storage while keeping it query-able via an external table.  
 CREATE EXTERNAL TABLE [dbo].[FastCustomers2009] 
 WITH (  
       LOCATION='/archive/customer/2009',  
